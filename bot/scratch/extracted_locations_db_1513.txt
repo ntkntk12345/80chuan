@@ -1,0 +1,101 @@
+Created At: 2026-06-10T15:00:01Z
+Completed At: 2026-06-10T15:00:02Z
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/map1.py`
+Total Lines: 334
+Total Bytes: 13266
+Showing lines 1 to 334
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import os
+2: import json
+3: import math
+4: import sqlite3
+5: import urllib.request
+6: import urllib.parse
+7: import sys
+8: 
+9: # Configure console to support Vietnamese Unicode print out on Windows
+10: if sys.platform.startswith('win'):
+11:     try:
+12:         sys.stdout.reconfigure(encoding='utf-8')
+13:         sys.stderr.reconfigure(encoding='utf-8')
+14:     except Exception:
+15:         pass
+16: 
+17: # Paths
+18: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+19: DATABASE_PATH = os.path.join(SCRIPT_DIR, 'distance_app', 'locations_db.json')
+20: DEFAULT_DB_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, '..', 'web-ha', 'database.sqlite'))
+21: 
+22: def load_locations():
+23:     if not os.path.exists(DATABASE_PATH):
+24:         print(f"[MAP1] Cảnh báo: Không tìm thấy tệp landmarks tại {DATABASE_PATH}")
+25:         return []
+26:     try:
+27:         with open(DATABASE_PATH, 'r', encoding='utf-8') as f:
+28:             return json.load(f)
+29:     except Exception as e:
+30:         print(f"[MAP1] Lỗi đọc landmarks: {e}")
+31:         return []
+32: 
+33: import unicodedata
+34: 
+35: def remove_accents(input_str):
+36:     if not input_str:
+37:         return ""
+38:     nfkd_form = unicodedata.normalize('NFKD', input_str)
+39:     only_ascii = "".join([c for c in nfkd_form if not unicodedata.combining(c)])
+40:     return only_ascii.replace('đ', 'd').replace('Đ', 'D')
+41: 
+42: def check_known_landmarks(address):
+43:     if not address:
+44:         return None
+45:     address_lower = address.lower().strip()
+46:     
+47:     # Special override for Hoàng Quốc Việt stree
+<truncated 11247 bytes>
+oom_id,))
+291:         
+292:         # Calculate distances if coordinates are available
+293:         if lat is not None and lon is not None:
+294:             landmarks = load_locations()
+295:             if landmarks:
+296:                 distances = []
+297:                 for loc in landmarks:
+298:                     l_lat = loc.get("lat")
+299:                     l_lon = loc.get("lon")
+300:                     if l_lat is not None and l_lon is not None:
+301:                         dist = haversine_distance(lat, lon, l_lat, l_lon)
+302:                         distances.append((loc, dist))
+303:                 
+304:                 # Sort by distance
+305:                 distances.sort(key=lambda x: x[1])
+306:                 
+307:                 # Filter <= 5km
+308:                 nearby = [item for item in distances if item[1] <= 5.0]
+309:                 if not nearby and distances:
+310:                     # Fallback to nearest 1 if none within 5km
+311:                     nearby = [distances[0]]
+312:                     
+313:                 # Insert nearby distances
+314:                 for loc, dist in nearby:
+315:                     cursor.execute("""
+316:                         INSERT INTO room_distances (room_id, landmark_name, landmark_category, distance)
+317:                         VALUES (?, ?, ?, ?)
+318:                     """, (room_id, loc["name"], loc["category"], dist))
+319:                 print(f"  [SQLITE] Đã lưu {len(nearby)} mốc khoảng cách landmarks cho phòng ID {room_id}")
+320:                 
+321:         conn.commit()
+322:         return True
+323:     except Exception as e:
+324:         conn.rollback()
+325:         print(f"[MAP1] Lỗi khi lưu phòng vào SQLite: {e}")
+326:         return False
+327:     finally:
+328:         conn.close()
+329: 
+330: if __name__ == '__main__':
+331:     # Initialize the database
+332:     init_db()
+333:     print("Khởi tạo database hoàn tất.")
+334: 
+The above content shows the entire, complete file contents of the requested file.

@@ -1,0 +1,419 @@
+--- DetailView occurrence at line 20 ---
+15:   Copy
+16: } from 'lucide-react';
+17: import { getNearestLandmarks, NO_IMAGE_PLACEHOLDER } from '../utils/helpers';
+18: 
+19: 
+20: const DetailView = ({ room, setCurrentPage, isMobile, user }) => {
+21:   if (!room) return <div>Không tìm thấy thông tin phòng.</div>;
+22: 
+23:   const [showAllLandmarks, setShowAllLandmarks] = useState(false);
+24: 
+25:   // Resolve photos and videos
+
+==================================================
+
+--- DetailView occurrence at line 75 ---
+70:       return `${Math.round(num * 1000)}m`;
+71:     }
+72:     return `${num} km`;
+73:   };
+74: 
+75:   // Resolve landmarks list (from DB distances first, then fallback to mock helpers)
+76:   const resolvedLandmarks = React.useMemo(() => {
+77:     if (room.customLandmarks && room.customLandmarks.length > 0) {
+78:       return room.customLandmarks.map(cl => ({
+79:         name: cl.name,
+80:         distText: cl.distanceText ? (cl.distanceText.includes('Cách') ? cl.distanceText : `Cách ${cl.distanceText}`) : 'Lân cận',
+
+==================================================
+
+--- DetailView occurrence at line 155 ---
+150: 
+151:     return (
+152:       <div className="detail-mobile" style={{ paddingBottom: '140px' }}>
+153:         {/* Mobile Header */}
+154:         <div className="mobile-header">
+155:           <button className="mobile-header-back" onClick={() => {
+156:             if (room.category === 'chung-cu') setCurrentPage('chung-cu');
+157:             else if (room.category === 'nha-nguyen-can') setCurrentPage('nha-nguyen-can');
+158:             else setCurrentPage('phong-tro');
+159:             // Clear room param from URL
+160:             const url = new URL(window.location.href);
+
+==================================================
+
+--- DetailView occurrence at line 156 ---
+151:     return (
+152:       <div className="detail-mobile" style={{ paddingBottom: '140px' }}>
+153:         {/* Mobile Header */}
+154:         <div className="mobile-header">
+155:           <button className="mobile-header-back" onClick={() => {
+156:             if (room.category === 'chung-cu') setCurrentPage('chung-cu');
+157:             else if (room.category === 'nha-nguyen-can') setCurrentPage('nha-nguyen-can');
+158:             else setCurrentPage('phong-tro');
+159:             // Clear room param from URL
+160:             const url = new URL(window.location.href);
+161:             url.searchParams.delete('room');
+
+==================================================
+
+--- DetailView occurrence at line 157 ---
+152:       <div className="detail-mobile" style={{ paddingBottom: '140px' }}>
+153:         {/* Mobile Header */}
+154:         <div className="mobile-header">
+155:           <button className="mobile-header-back" onClick={() => {
+156:             if (room.category === 'chung-cu') setCurrentPage('chung-cu');
+157:             else if (room.category === 'nha-nguyen-can') setCurrentPage('nha-nguyen-can');
+158:             else setCurrentPage('phong-tro');
+159:             // Clear room param from URL
+160:             const url = new URL(window.location.href);
+161:             url.searchParams.delete('room');
+162:             window.history.pushState({}, '', url.toString());
+
+==================================================
+
+--- DetailView occurrence at line 158 ---
+153:         {/* Mobile Header */}
+154:         <div className="mobile-header">
+155:           <button className="mobile-header-back" onClick={() => {
+156:             if (room.category === 'chung-cu') setCurrentPage('chung-cu');
+157:             else if (room.category === 'nha-nguyen-can') setCurrentPage('nha-nguyen-can');
+158:             else setCurrentPage('phong-tro');
+159:             // Clear room param from URL
+160:             const url = new URL(window.location.href);
+161:             url.searchParams.delete('room');
+162:             window.history.pushState({}, '', url.toString());
+163:           }}>
+
+==================================================
+
+--- DetailView occurrence at line 168 ---
+163:           }}>
+164:             <ChevronRight size={20} style={{ transform: 'rotate(180deg)' }} />
+165:           </button>
+166:           <span className="mobile-header-title">Chi tiết phòng trọ</span>
+167:           <div style={{ display: 'flex', gap: '12px' }}>
+168:             <button className="mobile-header-back" style={{ color: 'var(--primary-red)' }} onClick={() => alert('Đã lưu phòng')}>
+169:               <Heart size={20} color="var(--primary-red)" fill="var(--primary-red)" />
+170:             </button>
+171:             <button className="mobile-header-back" onClick={handleShare}>
+172:               <Share2 size={20} />
+173:             </button>
+
+==================================================
+
+--- DetailView occurrence at line 171 ---
+166:           <span className="mobile-header-title">Chi tiết phòng trọ</span>
+167:           <div style={{ display: 'flex', gap: '12px' }}>
+168:             <button className="mobile-header-back" style={{ color: 'var(--primary-red)' }} onClick={() => alert('Đã lưu phòng')}>
+169:               <Heart size={20} color="var(--primary-red)" fill="var(--primary-red)" />
+170:             </button>
+171:             <button className="mobile-header-back" onClick={handleShare}>
+172:               <Share2 size={20} />
+173:             </button>
+174:           </div>
+175:         </div>
+176: 
+
+==================================================
+
+--- DetailView occurrence at line 184 ---
+179:           {mediaItems[activeImgIdx]?.type === 'video' ? (
+180:             <video
+181:               src={mediaItems[activeImgIdx].url}
+182:               controls
+183:               className="detail-mobile-gallery-img"
+184:               style={{ objectFit: 'contain', backgroundColor: '#000' }}
+185:             />
+186:           ) : (
+187:             <img src={mediaItems[activeImgIdx]?.url} alt="" className="detail-mobile-gallery-img" />
+188:           )}
+189: 
+
+==================================================
+
+--- DetailView occurrence at line 214 ---
+209:               style={{ position: 'relative', width: '60px', height: '60px', borderRadius: '8px', overflow: 'hidden', flexShrink: 0 }}
+210:             >
+211:               {item.type === 'video' ? (
+212:                 <>
+213:                   <video src={item.url} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+214:                   <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.3)', color: '#fff', fontSize: '12px' }}>▶️</div>
+215:                 </>
+216:               ) : (
+217:                 <img src={item.url} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+218:               )}
+219:             </div>
+
+==================================================
+
+--- DetailView occurrence at line 248 ---
+243:             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+244:               <h3 style={{ margin: 0 }}>Thông tin mô tả</h3>
+245:               <button
+246:                 onClick={handleCopyDescription}
+247:                 style={{
+248:                   display: 'flex', alignItems: 'center', gap: '4px', background: 'var(--bg-light)',
+249:                   border: '1px solid var(--border-color)', padding: '4px 8px', borderRadius: '6px',
+250:                   fontSize: '11px', color: 'var(--primary-red)', fontWeight: 600, cursor: 'pointer'
+251:                 }}
+252:               >
+253:                 <Copy size={12} />
+
+==================================================
+
+--- DetailView occurrence at line 295 ---
+290:                   style={{
+291:                     display: 'inline-flex',
+292:                     alignItems: 'center',
+293:                     justifyContent: 'center',
+294:                     gap: '4px',
+295:                     background: '#F1F5F9',
+296:                     border: '1px solid #E2E8F0',
+297:                     color: '#475569',
+298:                     fontSize: '12px',
+299:                     fontWeight: 600,
+300:                     cursor: 'pointer',
+
+==================================================
+
+--- DetailView occurrence at line 349 ---
+344:       <button
+345:         style={{
+346:           display: 'inline-flex',
+347:           alignItems: 'center',
+348:           gap: '6px',
+349:           background: 'none',
+350:           border: 'none',
+351:           fontSize: '13px',
+352:           fontWeight: 600,
+353:           color: 'var(--text-muted)',
+354:           cursor: 'pointer',
+
+==================================================
+
+--- DetailView occurrence at line 359 ---
+354:           cursor: 'pointer',
+355:           marginBottom: '16px',
+356:           transition: 'var(--transition-fast)'
+357:         }}
+358:         onClick={() => {
+359:           if (room.category === 'chung-cu') setCurrentPage('chung-cu');
+360:           else if (room.category === 'nha-nguyen-can') setCurrentPage('nha-nguyen-can');
+361:           else setCurrentPage('phong-tro');
+362:           // Clear room param from URL
+363:           const url = new URL(window.location.href);
+364:           url.searchParams.delete('room');
+
+==================================================
+
+--- DetailView occurrence at line 360 ---
+355:           marginBottom: '16px',
+356:           transition: 'var(--transition-fast)'
+357:         }}
+358:         onClick={() => {
+359:           if (room.category === 'chung-cu') setCurrentPage('chung-cu');
+360:           else if (room.category === 'nha-nguyen-can') setCurrentPage('nha-nguyen-can');
+361:           else setCurrentPage('phong-tro');
+362:           // Clear room param from URL
+363:           const url = new URL(window.location.href);
+364:           url.searchParams.delete('room');
+365:           window.history.pushState({}, '', url.toString());
+
+==================================================
+
+--- DetailView occurrence at line 361 ---
+356:           transition: 'var(--transition-fast)'
+357:         }}
+358:         onClick={() => {
+359:           if (room.category === 'chung-cu') setCurrentPage('chung-cu');
+360:           else if (room.category === 'nha-nguyen-can') setCurrentPage('nha-nguyen-can');
+361:           else setCurrentPage('phong-tro');
+362:           // Clear room param from URL
+363:           const url = new URL(window.location.href);
+364:           url.searchParams.delete('room');
+365:           window.history.pushState({}, '', url.toString());
+366:         }}
+
+==================================================
+
+--- DetailView occurrence at line 386 ---
+381:               {mediaItems[activeImgIdx]?.type === 'video' ? (
+382:                 <video
+383:                   src={mediaItems[activeImgIdx].url}
+384:                   controls
+385:                   className="gallery-main-img"
+386:                   style={{ objectFit: 'contain', backgroundColor: '#000' }}
+387:                 />
+388:               ) : (
+389:                 <img src={mediaItems[activeImgIdx]?.url} alt={room.title} className="gallery-main-img" />
+390:               )}
+391: 
+
+==================================================
+
+--- DetailView occurrence at line 419 ---
+414:                     style={{ position: 'relative' }}
+415:                   >
+416:                     {item.type === 'video' ? (
+417:                       <>
+418:                         <video src={item.url} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+419:                         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(0,0,0,0.3)', color: '#fff', fontSize: '16px' }}>▶️</div>
+420:                       </>
+421:                     ) : (
+422:                       <img src={item.url} alt="" />
+423:                     )}
+424:                     {isLast && mediaItems.length > 6 && (
+
+==================================================
+
+--- DetailView occurrence at line 459 ---
+454:               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+455:                 <h2 className="detail-section-title" style={{ margin: 0 }}>Mô tả chi tiết</h2>
+456:                 <button
+457:                   onClick={handleCopyDescription}
+458:                   style={{
+459:                     display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-light)',
+460:                     border: '1px solid var(--border-color)', padding: '6px 12px', borderRadius: '8px',
+461:                     fontSize: '13px', color: 'var(--primary-red)', fontWeight: 600, cursor: 'pointer',
+462:                     transition: 'all 0.2s ease'
+463:                   }}
+464:                   onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#FEE2E2'; }}
+
+==================================================
+
+--- DetailView occurrence at line 464 ---
+459:                     display: 'flex', alignItems: 'center', gap: '6px', background: 'var(--bg-light)',
+460:                     border: '1px solid var(--border-color)', padding: '6px 12px', borderRadius: '8px',
+461:                     fontSize: '13px', color: 'var(--primary-red)', fontWeight: 600, cursor: 'pointer',
+462:                     transition: 'all 0.2s ease'
+463:                   }}
+464:                   onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#FEE2E2'; }}
+465:                   onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-light)'; }}
+466:                 >
+467:                   <Copy size={14} />
+468:                   Copy thông tin phòng
+469:                 </button>
+
+==================================================
+
+--- DetailView occurrence at line 465 ---
+460:                     border: '1px solid var(--border-color)', padding: '6px 12px', borderRadius: '8px',
+461:                     fontSize: '13px', color: 'var(--primary-red)', fontWeight: 600, cursor: 'pointer',
+462:                     transition: 'all 0.2s ease'
+463:                   }}
+464:                   onMouseOver={(e) => { e.currentTarget.style.backgroundColor = '#FEE2E2'; }}
+465:                   onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-light)'; }}
+466:                 >
+467:                   <Copy size={14} />
+468:                   Copy thông tin phòng
+469:                 </button>
+470:               </div>
+
+==================================================
+
+--- DetailView occurrence at line 512 ---
+507:               style={{
+508:                 display: 'flex',
+509:                 alignItems: 'center',
+510:                 justifyContent: 'center',
+511:                 gap: '8px',
+512:                 background: '#F1F5F9',
+513:                 border: '1px solid #CBD5E1',
+514:                 color: '#334155',
+515:                 padding: '12px',
+516:                 borderRadius: '8px',
+517:                 fontWeight: 600,
+
+==================================================
+
+--- DetailView occurrence at line 544 ---
+539:             </button>
+540:           </div>
+541: 
+542:           {/* Finding Roommate Card */}
+543:           <div style={{
+544:             background: 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)',
+545:             border: '1px solid #BFDBFE',
+546:             padding: '20px',
+547:             borderRadius: '16px',
+548:             boxShadow: 'var(--shadow-sm)',
+549:             display: 'flex',
+
+==================================================
+
+--- DetailView occurrence at line 558 ---
+553:             <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+554:               <div style={{
+555:                 width: '40px',
+556:                 height: '40px',
+557:                 borderRadius: '50%',
+558:                 backgroundColor: 'var(--zalo-blue-light)',
+559:                 color: 'var(--zalo-blue)',
+560:                 display: 'flex',
+561:                 alignItems: 'center',
+562:                 justifyContent: 'center'
+563:               }}>
+
+==================================================
+
+--- DetailView occurrence at line 576 ---
+571:             <button
+572:               className="sidebar-support-btn"
+573:               style={{ borderColor: 'var(--zalo-blue)', color: 'var(--zalo-blue)', fontWeight: 700 }}
+574:               onClick={() => {
+575:                 if (user && user.role === 'admin') {
+576:                   setCurrentPage('admin-dashboard');
+577:                 } else {
+578:                   alert('Chỉ tài khoản Admin mới có quyền đăng tin. Tài khoản của bạn không có quyền đăng tin.');
+579:                 }
+580:               }}
+581:             >
+
+==================================================
+
+--- DetailView occurrence at line 614 ---
+609:                   style={{
+610:                     display: 'inline-flex',
+611:                     alignItems: 'center',
+612:                     justifyContent: 'center',
+613:                     gap: '4px',
+614:                     background: '#F8FAFC',
+615:                     border: '1px solid #E2E8F0',
+616:                     color: '#475569',
+617:                     fontSize: '12px',
+618:                     fontWeight: 600,
+619:                     cursor: 'pointer',
+
+==================================================
+
+--- DetailView occurrence at line 626 ---
+621:                     padding: '8px 12px',
+622:                     borderRadius: '6px',
+623:                     width: '100%',
+624:                     transition: 'all 0.2s'
+625:                   }}
+626:                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F1F5F9'}
+627:                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F8FAFC'}
+628:                 >
+629:                   <span>{showAllLandmarks ? 'Thu gọn' : `Xem thêm (${resolvedLandmarks.length - 3} địa điểm)`}</span>
+630:                 </button>
+631:               )}
+
+==================================================
+
+--- DetailView occurrence at line 627 ---
+622:                     borderRadius: '6px',
+623:                     width: '100%',
+624:                     transition: 'all 0.2s'
+625:                   }}
+626:                   onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F1F5F9'}
+627:                   onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#F8FAFC'}
+628:                 >
+629:                   <span>{showAllLandmarks ? 'Thu gọn' : `Xem thêm (${resolvedLandmarks.length - 3} địa điểm)`}</span>
+630:                 </button>
+631:               )}
+632:             </div>
+
+==================================================

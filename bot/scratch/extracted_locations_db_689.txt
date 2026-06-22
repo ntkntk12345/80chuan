@@ -1,0 +1,102 @@
+Created At: 2026-06-10T14:06:39Z
+Completed At: 2026-06-10T14:06:40Z
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/map1.py`
+Total Lines: 260
+Total Bytes: 10006
+Showing lines 1 to 150
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import os
+2: import json
+3: import math
+4: import sqlite3
+5: import urllib.request
+6: import urllib.parse
+7: import sys
+8: 
+9: # Configure console to support Vietnamese Unicode print out on Windows
+10: if sys.platform.startswith('win'):
+11:     try:
+12:         sys.stdout.reconfigure(encoding='utf-8')
+13:         sys.stderr.reconfigure(encoding='utf-8')
+14:     except Exception:
+15:         pass
+16: 
+17: # Paths
+18: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+19: DATABASE_PATH = os.path.join(SCRIPT_DIR, 'distance_app', 'locations_db.json')
+20: DEFAULT_DB_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, '..', 'web-ha', 'database.sqlite'))
+21: 
+22: def load_locations():
+23:     if not os.path.exists(DATABASE_PATH):
+24:         print(f"[MAP1] Cảnh báo: Không tìm thấy tệp landmarks tại {DATABASE_PATH}")
+25:         return []
+26:     try:
+27:         with open(DATABASE_PATH, 'r', encoding='utf-8') as f:
+28:             return json.load(f)
+29:     except Exception as e:
+30:         print(f"[MAP1] Lỗi đọc landmarks: {e}")
+31:         return []
+32: 
+33: def geocode_address_esri(address):
+34:     """
+35:     Geocodes an address string using Esri Public Geocoding API,
+36:     optimized specifically for Hanoi, Vietnam.
+37:     """
+38:     search_query = address
+39:     if "hà nội" not in search_query.lower() and "ha noi" not in search_query.lower():
+40:         search_query += ", Hà Nội, Việt Nam"
+41:         
+42:     encoded_query = urllib.parse.quote(search_query)
+43:     url = (
+44:         f"https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/
+<truncated 2304 bytes>
+EXT,
+103:         room_code TEXT,
+104:         address TEXT,
+105:         price TEXT,
+106:         price1 INTEGER,
+107:         price2 INTEGER,
+108:         room_type TEXT,
+109:         district TEXT,
+110:         latitude REAL,
+111:         longitude REAL,
+112:         original_text TEXT,
+113:         photos TEXT, -- JSON string array
+114:         videos TEXT,  -- JSON string array
+115:         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+116:     )
+117:     """)
+118:     
+119:     # Create room_distances table
+120:     cursor.execute("""
+121:     CREATE TABLE IF NOT EXISTS room_distances (
+122:         id INTEGER PRIMARY KEY AUTOINCREMENT,
+123:         room_id INTEGER,
+124:         landmark_name TEXT,
+125:         landmark_category TEXT,
+126:         distance REAL,
+127:         FOREIGN KEY (room_id) REFERENCES rooms (id) ON DELETE CASCADE
+128:     )
+129:     """)
+130:     
+131:     # Create index to optimize search
+132:     cursor.execute("CREATE INDEX IF NOT EXISTS idx_rooms_session_code ON rooms(session_id, room_code)")
+133:     cursor.execute("CREATE INDEX IF NOT EXISTS idx_room_distances_room ON room_distances(room_id)")
+134:     
+135:     conn.commit()
+136:     conn.close()
+137: 
+138: def save_room_to_sqlite(room_data, session_info, district_name, db_path=DEFAULT_DB_PATH):
+139:     """
+140:     Saves or updates a room record, calculates landmark distances and saves them.
+141:     """
+142:     session_id = room_data.get("session_id")
+143:     room_code = room_data.get("id") # this is the room code e.g. P301, P201
+144:     address = room_data.get("address")
+145:     price = room_data.get("price")
+146:     
+147:     price1 = int(room_data.get("price1", 0)) if room_data.get("price1") else 0
+148:     price2 = int(room_data.get("price2", 0)) if room_data.get("price2") else 0
+149:     room_type = room_data.get("type")
+150:     
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

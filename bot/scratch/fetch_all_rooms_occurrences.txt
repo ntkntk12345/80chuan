@@ -1,0 +1,119 @@
+--- Occurrence at line 679 ---
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+680:     } else if (activeTab === 'activity-logs') {
+681:       fetchLogs();
+682:     }
+683:   }, [listingsTab, activeTab]);
+684: 
+685:   // ── NEW HANDLERS ────────────────────────────────────────────────
+686: 
+687:   const fetchAllUsers = () => {
+688:     setLoadingUsers(true);
+689:     fetch('/api/users')
+
+==================================================
+
+--- Occurrence at line 800 ---
+795:         fetchAllUsers();
+796:       })
+797:       .catch(() => alert('Lỗi khi tạo CTV!'));
+798:   };
+799: 
+800:   const fetchAllRooms = (q) => {
+801:     setLoadingAllRooms(true);
+802:     fetch(`/api/admin/rooms/search?q=${encodeURIComponent(q)}`)
+803:       .then(r => r.json())
+804:       .then(d => setAllRooms(Array.isArray(d) ? d : []))
+805:       .catch(() => setAllRooms([]))
+806:       .finally(() => setLoadingAllRooms(false));
+807:   };
+808: 
+809:   const openEditRoom = (room) => {
+810:     // Parse text2 if JSON
+
+==================================================
+
+--- Occurrence at line 857 ---
+852:       .then(r => r.json())
+853:       .then(d => {
+854:         if (d.error) { alert(d.error); return; }
+855:         alert('Đã lưu thông tin phòng!');
+856:         setEditRoomModal(null);
+857:         fetchAllRooms(roomSearch);
+858:         if (refreshRooms) refreshRooms();
+859:       })
+860:       .catch(() => alert('Lỗi khi lưu!'))
+861:       .finally(() => setEditSaving(false));
+862:   };
+863: 
+864:   const handleUploadFiles = (e) => {
+865:     const files = Array.from(e.target.files);
+866:     if (!files.length) return;
+867:     setUploadLoading(true);
+
+==================================================
+
+--- Occurrence at line 4133 ---
+4128: 
+4129:           <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+4130:             <input
+4131:               value={roomSearch}
+4132:               onChange={e => setRoomSearch(e.target.value)}
+4133:               onKeyDown={e => e.key === 'Enter' && fetchAllRooms(roomSearch)}
+4134:               placeholder="Tìm theo địa chỉ, loại phòng... (Enter)"
+4135:               style={{ flex: 1, padding: '10px 14px', border: '1.5px solid #E2E8F0', borderRadius: '8px', fontSize: '14px' }}
+4136:             />
+4137:             <button onClick={() => fetchAllRooms(roomSearch)} disabled={loadingAllRooms}
+4138:               style={{ padding: '10px 20px', background: '#0F172A', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}>
+4139:               🔍 Tìm
+4140:             </button>
+4141:             <button onClick={() => { setRoomSearch(''); fetchAllRooms(''); }}
+4142:               style={{ padding: '10px 16px', background: '#F1F5F9', border: '1px solid #E2E8F0', borderRadius: '8px', cursor: 'pointer', fontSize: '13px' }}>
+4143:               Xem tất cả
+
+==================================================
+
+--- Occurrence at line 4137 ---
+4132:               onChange={e => setRoomSearch(e.target.value)}
+4133:               onKeyDown={e => e.key === 'Enter' && fetchAllRooms(roomSearch)}
+4134:               placeholder="Tìm theo địa chỉ, loại phòng... (Enter)"
+4135:               style={{ flex: 1, padding: '10px 14px', border: '1.5px solid #E2E8F0', borderRadius: '8px', fontSize: '14px' }}
+4136:             />
+4137:             <button onClick={() => fetchAllRooms(roomSearch)} disabled={loadingAllRooms}
+4138:               style={{ padding: '10px 20px', background: '#0F172A', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}>
+4139:               🔍 Tìm
+4140:             </button>
+4141:             <button onClick={() => { setRoomSearch(''); fetchAllRooms(''); }}
+4142:               style={{ padding: '10px 16px', background: '#F1F5F9', border: '1px solid #E2E8F0', borderRadius: '8px', cursor: 'pointer', fontSize: '13px' }}>
+4143:               Xem tất cả
+4144:             </button>
+4145:             <button onClick={() => {
+4146:                 if (window.confirm('Bạn có chắc chắn muốn cập nhật lại tọa độ và khoảng cách cho TẤT CẢ các phòng?\nQuá trình này sẽ chạy ngầm trên server và có thể mất vài phút. Vui lòng không bấm liên tục.')) {
+4147:                   fetch('/api/admin/recalculate-all', { method: 'POST' })
+
+==================================================
+
+--- Occurrence at line 4141 ---
+4136:             />
+4137:             <button onClick={() => fetchAllRooms(roomSearch)} disabled={loadingAllRooms}
+4138:               style={{ padding: '10px 20px', background: '#0F172A', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}>
+4139:               🔍 Tìm
+4140:             </button>
+4141:             <button onClick={() => { setRoomSearch(''); fetchAllRooms(''); }}
+4142:               style={{ padding: '10px 16px', background: '#F1F5F9', border: '1px solid #E2E8F0', borderRadius: '8px', cursor: 'pointer', fontSize: '13px' }}>
+4143:               Xem tất cả
+4144:             </button>
+4145:             <button onClick={() => {
+4146:                 if (window.confirm('Bạn có chắc chắn muốn cập nhật lại tọa độ và khoảng cách cho TẤT CẢ các phòng?\nQuá trình này sẽ chạy ngầm trên server và có thể mất vài phút. Vui lòng không bấm liên tục.')) {
+4147:                   fetch('/api/admin/recalculate-all', { method: 'POST' })
+4148:                     .then(res => res.json())
+4149:                     .then(data => alert(data.message || 'Đã gửi yêu cầu cập nhật!'))
+4150:                     .catch(err => alert('Có lỗi xảy ra: ' + err.message));
+4151:                 }
+
+==================================================

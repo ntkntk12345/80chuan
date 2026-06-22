@@ -1,0 +1,1136 @@
+Type of data in pending_queue: <class 'list'>
+Number of list items: 170
+
+--- Searching for '119' or '575' in pending_queue ---
+
+[Index 0]
+Instance ID / Session ID: 1781856731678
+Symbol: 12A
+Texts (1):
+  - text: '12A . HD 6 tháng. Mã 119\n\n🏢 Ngõ 898 Đường Láng - Đống Đa\n\n🍁 Trống P404, p505, p504, p605, p706\n\n💸 Giá 6tr fix 5tr - 5tr5\n\n👉 Thang máy\n👉 Dạng studio\n\n🍀 Nội thất\n- Full đồ , tủ lạnh, tủ bếp,…. Giặt chung\n\n🍀 Phí dvu\n- điện 4k/s\n- nước 150k/ng\n- Mạng 100k/p\n- Dvu chung 250k/ng( thang máy, vs, điện chung, giặt,….)\n\n❌ Lưu ý\n- Đóng 1 cọc 1. Ko chung chủ\n- Gọi trước khi qua 30p'
+    orig: '🌹40%.    HD 6 tháng.      Mã 119\n\n🏢 Ngõ 898 Đường Láng - Đống Đa\n\n🍁 Trống P404, p505, p504, p605, p706\n\n💸 Giá 6tr fix 5tr - 5tr5\n\n👉 Thang máy\n👉 Dạng studio\n\n\n🍀 Nội thất\n- Full đồ , tủ lạnh, tủ bếp,….  Giặt chung \n\n🍀 Phí dvu\n- điện 4k/s\n- nước 150k/ng\n- Mạng 100k/p\n- Dvu chung 250k/ng( thang máy, vs, điện chung, giặt,….)\n\n❌ Lưu ý\n- Đóng 1 cọc 1. Ko chung chủ\n- Gọi trước khi qua 30p'
+Photos count: 2
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/c419c9840bc7ce9997d6/1WUpukau9LfYHbbPeZdM9nXsJ5ddgivLtcWOPPPBh7kKTqTmmooMftJ1kefZ1J5oO70.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/7fed0870ca330f6d5622/1WUpukau9Ldvxg2fcgM3aUMr6PtRraGn7dLS7m2HMAzDPHdmkpTLefWSocFglDVWKv5.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 1]
+Instance ID / Session ID: 1781856785800
+Symbol: 13A
+Texts (1):
+  - text: '13A Mã : S34 -12TH\n*****************************************\n🎯 Địa chỉ: Số 6 Hẻm 6 Ngách 63 Ngõ 387 Vũ tông Phan - Thanh Xuân\n⏰ Trống 2 phòng ở luôn\n\n💠 P502,602 giá: 4tr\n\n👉Phòng studio\n👉Thang máy\n👉 Diện tích: 40m\n\n✅ Nội thất: Giường, tủ quần áo, bàn bếp, điều hòa, nóng lạnh, thang máy, máy giặt chung"\n✅ Dịch vụ :\nĐiện 4k/ 1 số\nNước 35k/kh\nWifi 100k/ 1p\nDịch vụ chung 100k/ 1ng\n⛔️ Lưu ý:\n- Đóng 1 cọc 1\n- K chung chủ\n- K nhận xe điện\n- xe để free'
+    orig: 'Mã : S34        🌺 30%-12TH\n*****************************************\n🎯 Địa chỉ: Số 6 Hẻm 6 Ngách 63 Ngõ 387 Vũ tông Phan  - Thanh Xuân\n⏰ Trống 2 phòng ở luôn\n\n💠 P502,602 giá: 4tr\n\n👉Phòng studio\n👉Thang máy\n👉 Diện tích: 40m\n\n✅ Nội thất:  Giường, tủ quần áo, bàn bếp, điều hòa, nóng lạnh, thang máy, máy giặt chung"\n✅ Dịch vụ : \nĐiện 4k/ 1 số\nNước 35k/kh\nWifi 100k/ 1p\nDịch vụ chung 100k/ 1ng\n⛔️ Lưu ý: \n- Đóng 1 cọc 1\n- K chung chủ\n- K nhận xe điện\n-  xe để free'
+Photos count: 9
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/64927aebfba33efd67b2/1WUpukawFCvAUe6GeKYRq6lgYIivXvHL0nVo6Kw3uQYJ0MGX9Hen5fAtQDUyR0YSrZO.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/d87fc306424e8710de5f/1WUpukawFCvGE4Py1T1mO0e4tgPPcsjjTXbdBGa96v08pIIwSVE5SXVHCoF6BJHVdcR.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/d54dd234537c9622cf6d/1WUpukawFCw2xB7Ph8362Bj9uA3PQC9V6B2kpNb2LHeTvDaYHGAvnzHdAWGogytEoh0.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/7f9976e0f7a832f66bb9/1WUpukawFCvsvBYwI8ilZr7p2PwyT6e8pdKEXDUUKJ3XcfvToQWdohi0nTrrKKHcG8W.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/d343d93a58729d2cc463/1WUpukawFCvyebsdfHC67lI8qimh3LoEtB2OO5H90rrmA9RuHtSMuN0OMA3up47xbaC.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/9506807f0137c4699d26/1WUpukawFCvLxUjfObV6vue4jbM1CdH73U024vxgMNM1qGeRv4qETJ5H9VjMcpdfWEB.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/ff25ed5c6c14a94af005/1WUpukawFCvbiubqAjIlw99tSRyfpTFB9Ng7lbLfwstWe7ZWXio7KVw7ABBFQDTa1TO.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/b732a04b2103e45dbd12/1WUpukawFCvRgv3MljyRTocsA8l28snmFQpQDmbUOuLmc2iFQNxbC12ImYuHvwmV9Ms.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/d549c43045788026d969/1WUpukawFCvVzUI8napROF9jSwvoJ1teSCHovs0bCqGgxd0uClPU5o2Ec1NYiFq1GyK.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 3]
+Instance ID / Session ID: 1781856833348
+Symbol: 13A
+Texts (4):
+  - text: '13A Mã : S34 -12TH\n*****************************************\n🎯 Địa chỉ: Số 83 ngõ 183 Vũ Tông Phan - Thanh Xuân\n⏰ Trống 2 phòng ở luôn\n\n💠 P201 giá: 6tr5\n💠 P303,404 giá: 5tr3\n\n👉Thang máy\n👉 Diện tích: 40m\n\n✅ Nội thất: Giường, tủ quần áo, tủ bếp dưới, điều hòa, nóng lạnh. rèm, sofa, bàn trà( thêm tủ lạnh 200k)\n✅ Dịch vụ :\nĐiện 4k/ 1 số\nNước 35k/kh\nWifi 100k/ 1p\nDịch vụ chung 150k/ 1ng\n⛔️ Lưu ý:\n- Đóng 1 cọc 1\n- K chung chủ\n- K nhận xe điện\n- xe để free'
+    orig: 'Mã : S34        🌺 30%-12TH\n*****************************************\n🎯 Địa chỉ: Số 83 ngõ 183 Vũ Tông Phan - Thanh Xuân\n⏰ Trống 2 phòng ở luôn\n\n💠 P201 giá: 6tr5 \n💠 P303,404 giá: 5tr3\n\n👉Thang máy\n👉 Diện tích: 40m\n\n✅ Nội thất:  Giường, tủ quần áo, tủ bếp dưới, điều hòa, nóng lạnh. rèm, sofa, bàn trà( thêm tủ lạnh 200k)\n✅ Dịch vụ : \nĐiện 4k/ 1 số\nNước 35k/kh\nWifi 100k/ 1p\nDịch vụ chung 150k/ 1ng\n⛔️ Lưu ý: \n- Đóng 1 cọc 1\n- K chung chủ\n- K nhận xe điện\n-  xe để free'
+  - text: 'P303'
+    orig: 'P303'
+  - text: 'P404'
+    orig: 'P404'
+  - text: 'P201'
+    orig: 'P201'
+Photos count: 31
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/0637aa0c2f44ea1ab355/1WUpukawFV0LD1sIODag38ht8bavHUZYfHqH84ZBGFakFXaGg7Bzi3FtPVBrZxqUuLG.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/3f46bb7d3e35fb6ba224/1WUpukawFUzfeCZTQyf1aL93eyJ2CACFWFfwdmLyanHhlvglGEOmLK0CpPCcE8UH8LY.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/e0715b4ade021b5c4213/1WUpukawFUztylMiroqLx69F4jtEUw1MK7J7L9RjLyEzupucZbgqbkEhhiPKUniibOH.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/8eb209898cc1499f10d0/1WUpukawFUziVujK7XtgrI99NesYFfMDJLOJdVqvIcaPtKyutasX0X4MA0AK6jbfTCX.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/6a68d8535d1b9845c10a/1WUpukawFV05Rc07c5n12uDuUQ5igZBJUmgiCoxqSidtvNybtO7Dv1i1dihS7G88Rvd.jpg
+  - Photo: https://photo-stal-8.zdn.vn/gr/jpg/0162b8593d11f84fa100/1WUpukawFUzoFL31UgN1PCA7eiYl85QtXXUcZOTv9bCiylx89XUxpOIfzbpJP3xMjHn.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/476de456611ea440fd0f/1WUpukawFV0QwSBzlM40b2fx0RT7jnlnQrVwfW8ASGQHVcE3x5avsUPqQfeTLAG0CMp.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/a88e77b5f2fd37a36eec/1WUpukawFV0l0RIwZKifVhlJ8vaSKXgvuJUQeyY7zJLFI48OwEEMbWTUEnCU4tv4IMt.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/0ed9bfe23aaafff4a6bb/1WUpukawFUzziBgQExJgV0ANJzyDgFA5tr3G7Haqi9nQbGksw72E8tDXDH5SJ0pLbdL.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/02dea5e520ade5f3bcbc/1WUpukawFV0Y6jacTm9fmQ9oE47e674kSGkJUdqhV0o7RgrKe6Q9M7ZlCFtxzeStCpI.jpg
+  - Photo: https://photo-stal-8.zdn.vn/gr/jpg/6957c06c4524807ad935/1WUpukawFV0FTbYb157LVEhaZSQ1JXD19tmikSu8XV0jl9g3T7mI1CclJlcSumw7DEr.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/ebb679c2ff8a3ad4639b/1WUpukawFYBOvS2zxjMDyjrtaruJwaHg4lQr0C0BEAUhju5FyJm6I7J0Ny8I2WoN7bx.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/05e9969d10d5d58b8cc4/1WUpukawFYBUesMhKrpYWdquQ4nhq25Sydse4TkZam9gJ9NLByjl8FjZvG9eVT6NT4m.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/708de1f967b1a2effba0/1WUpukawFYBaOIgOi0It4XvjImI0YGhl0Faw2ent7neYrO7FYtPZ2HTVhN6vqvmSdnv.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/df0f4b7bcd33086d5122/1WUpukawFYBq9iYZU86Y4mOneA2OhRmSmquUxSHYrBKme1ZJIpvrvHOrKLD9GJjxstY.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/a1cd36b9b0f175af2ce0/1WUpukawFYBhYa51QQOYFvXLgAQxyaaGCtqH2PhdDwUBl5mIQ6lC47KIZvJsY2YwCtZ.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/4fb8c0cc468483dada95/1WUpukawFYCD5PpMyfzsGOUAAXHn0JJrNlCBTBqdzMUALuKQPyFE56WSFqMp3t9gDMF.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/2730a9442f0cea52b31d/1WUpukawFYC8mqaawp8sLxw2wBd5jS89XlWAsBtdQl3VrPokxr74Re8D1ejjwY8a9vc.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/098381f707bfc2e19bae/1WUpukawFYC33QGtZgfXo3xulZskPtwjYc4CszT2pWa73WWs1mLWylLK5PbEWxmeAWT.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/1fc68ab20cfac9a490eb/1WUpukawFYBxJzxCCYCDG9rmrGCa8XZ2XbFgwnP9sEyxf7BDATiGmntUPeJrQPHD7Rp.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/ab9d27e9a1a164ff3db0/1WUpukawFYCPz7Xh4EYrzfyqIir8V7mkOhNURhdsDC8xQYKa0FAh406yBbnfng4gPDy.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/fa094497c3df06815fce/1WUpukawFbuX7nIzY6SOPjsar9RPOc2thw4HC34qpgX0ccZmKnmhtIqSaQSLDeARrfP.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/f59d6003e74b22157b5a/1WUpukawFbuBcx77OqBOrbGn6q8cZyHJ8qWmWNCCrALZAWMWy1IC1hbpaXQkSXnmZ54.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/b74202dc859440ca1985/1WUpukawFbuiadwOINP3VXnVydjYZhiYMgK1uZyFiOj8t9ZRWSs4YAo5y2yD1EYkyZR.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/f6445bdadc9219cc4083/1WUpukawFbupkvL10nUigvL7DKScCnm6kvA5zU4ap8qJOvxlXCCM8O8ME01VkYXBabp.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/26e0f87e7f36ba68e327/1WUpukawFbuzmutUPmp39FwTXtTLNwEXiwMj7CXZi6FqUqpjbHD77QX2adhXHB6mRVt.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/1d9aa704204ce512bc5d/1WUpukawFbuSpE4DWFbOVJLv4LJqrBrC4gKbRoFIKSynI55Pn5X1c6l2jzaw7vvUwT9.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/8c6e04f083b846e61fa9/1WUpukawFbuHMNQolyejPVK9nlBHGRwDWYnDVfpgHVeeWGHVBFxnvq3ixjIFkWy5xFx.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/b9df0541820947571e18/1WUpukawFbucrDcgvEvixduOJ1LdTQbW8o7zGSyWhzJG2qht4Z9cPtYEpwqkJxKXzi4.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/5e828d1c0a54cf0a9645/1WUpukawFbv5WLDBmvINh9w9fALB5QKaugRhbj5KT1coOy0iFL3Z7IZEChLAq4QDuaJ.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/ec763ce8bba07efe27b1/1WUpukawFbvBFlWtA3liF3uhdvvJjgRlJ3qcRYLiYbWG03WJ0bsCTQ5vkV1vaUOQePP.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 4]
+Instance ID / Session ID: 1781856872793
+Symbol: 13A
+Texts (1):
+  - text: '13A Mã : S34 -12TH\n*****************************************\n🎯 Địa chỉ: Sô 10 ngõ 358/55/20 Bùi Xương Trạch - Thanh Xuân\n⏰ Trống 1 phòng ở luôn\n\n💠 P402 giá: 5tr6 - 1N1K\n\n👉Thang máy\n👉 Diện tích: 40m\n\n✅ Nội thất: Giường, tủ quần áo, tủ bếp, hút mùi, trên dưới, điều hòa, nóng lạnh. rèm, sofa, bàn trà\n✅ Dịch vụ :\nĐiện 4k/ 1 số\nNước 35k/kh\nWifi 100k/ 1p\nDịch vụ chung 150k/ 1ng\n⛔️ Lưu ý:\n- Đóng 1 cọc 1\n- K chung chủ\n- K nhận xe điện\n- xe để free'
+    orig: 'Mã : S34        🌺 30%-12TH\n*****************************************\n🎯 Địa chỉ: Sô 10 ngõ 358/55/20 Bùi Xương Trạch - Thanh Xuân\n⏰ Trống 1 phòng ở luôn\n\n💠 P402 giá: 5tr6 - 1N1K\n\n👉Thang máy\n👉 Diện tích: 40m\n\n✅ Nội thất:  Giường, tủ quần áo, tủ bếp, hút mùi, trên dưới, điều hòa, nóng lạnh. rèm, sofa, bàn trà\n✅ Dịch vụ : \nĐiện 4k/ 1 số\nNước 35k/kh\nWifi 100k/ 1p\nDịch vụ chung 150k/ 1ng\n⛔️ Lưu ý: \n- Đóng 1 cọc 1\n- K chung chủ\n- K nhận xe điện\n-  xe để free'
+Photos count: 10
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/a1045bf2d6ba13e44aab/2aOboQeauXxkg1XuHG6tdEQBT5027QtYe1NHgCqO.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/6ef47504f84c3d12645d/2aOboQeauYDxLMQTA15nGR8hRSbPzkuoF9EWE2E4.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/09ce3107bc4f7911205e/2aOboQeauYlyPin8Z2tQ8fkbJUMKwRNQZqADXUZ6.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/dd862451a9196c473508/2aOboQeauZ2xjUVHVxM8ecUVhIauNG5Q1FcUE9zc.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/5a17d7b05af89fa6c6e9/2aOboQeauZRHwuIJahGa1b88z9bh20ZPgUrQx1t2.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/37fdd0575d1f9841c10e/2aOboQeauZp46ou2cWwLZrDetbbcs0WUgVW7sSP2.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/980a9c8911c1d49f8dd0/2aOboQeauaSqlxgR15E3Xdl3niWR9KdhzF0KUWjA.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/f9914602cb4a0e14575b/2aOboQeauarKifEz6edGHy6L2B5DJSXKczgoYzjM.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/fccd53aedee61bb842f7/2aOboQeaubHcZA6yLmFFrna3ehc9FlHGrWb0TyPA.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/e014e8616529a077f938/2aOboQeaubgh0BnCzSlKHBQ6hQrAfGCw1Yn2B11M.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 5]
+Instance ID / Session ID: 1781856825926
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 6th- 12th Mã: H220\n\n🏠 Địa chỉ: ngõ 68/91 Cầu Giấy - Cầu Giấy\n\n⏰ Trống 2P\n\n💰 Giá:\nphòng ngoài 5tr8 - 30/6 Trống\nphòng trong 5tr2 - Vào luôn\n\n👉Phòng : Studio\n👉Thang Máy\n\n✅ Nội thất : Đệm, tủ bếp trên dưới, hút mùi, tủ quần áo, tủ lạnh, hút mùi, điều hoà, bếp từ. wifi 5G riêng từng phòng, rèm, MÁY GIẶT RIÊNG\n\n✅ Dịch vụ : Điện 4k/số, nước 35k/khối, internet 100k/phòng, dịch vụ chung 180k/người.\n\n❌ Lưu ý\n- Nhận khách nc ngoài\n- Cho nuôi pet\n- Nhận xe điện đời mới\n- Thanh toán 1 cọc 1\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 6th- 12th              Mã: H220 \n\n🏠 Địa chỉ:  ngõ 68/91 Cầu Giấy - Cầu Giấy\n\n⏰ Trống 2P\n\n💰 Giá: \n phòng ngoài 5tr8 - 30/6 Trống\n phòng trong 5tr2 - Vào luôn \n  \n👉Phòng : Studio \n👉Thang Máy\n\n✅ Nội thất : Đệm, tủ bếp trên dưới, hút mùi, tủ quần áo, tủ lạnh, hút mùi, điều hoà, bếp từ. wifi 5G riêng từng phòng, rèm, MÁY GIẶT RIÊNG \n\n✅ Dịch vụ : Điện 4k/số, nước 35k/khối, internet 100k/phòng, dịch vụ chung 180k/người.\n\n❌ Lưu ý\n- Nhận khách nc ngoài\n- Cho nuôi pet\n- Nhận xe điện đời mới\n- Thanh toán 1 cọc 1\n- Khách qua gọi trước 30p'
+  - text: 'phòng trong 5tr2 - Vào luôn'
+    orig: 'phòng trong 5tr2 - Vào luôn'
+  - text: 'phòng ngoài 5tr8 - 30/6 Trống'
+    orig: 'phòng ngoài 5tr8 - 30/6 Trống'
+Photos count: 15
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/4e766328eb602e3e7771/2aOboQeau2XLqGirSliJB0iiYswrFbv3AxWJ75HM.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/e3a8888d00c5c59b9cd4/2aOboQeau2h2hDIUn3bUgGW3tCs4BBRknktKHbpw.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/da4305628d2a4874113b/2aOboQeau2y6sctOkNoast76Bbp5VmAnuKxUJ8jI.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/f622ac082440e11eb851/2aOboQeau3Ap2pyDpf0UO62NqFd3p4KvKeA4WaIK.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/e25814619c2959770038/2aOboQeau3Xm7UnzI8KFDHJYxJXswjQUeKVGYGB6.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/a8b4ee8c66c4a39afad5/2aOboQeau3eHvt6uqbPxLEMr0JcfeOveafpwcXXk.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/bf525458dc10194e4001/2aOboQeau41JsBpRJUU5r5RYIfHEU6L6XRYoFl2W.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/edcdbe3a3772f22cab63/2aOboQeau50nlhJT3s7RdGT8oT9rgcwBevnRinqq.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/20d48c210569c0379978/2aOboQeau559mtpXvv8eKg8hfh9ALhMKgwOa88ky.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/44292fdba69363cd3a82/2aOboQeau5FuK1pPqoczd2B1dpG7ACSgMyT8Xqgi.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/0a7d4ab2c3fa06a45feb/2aOboQeau5fgXqSTYEsVEU6VDXxQw5SUSeaSpkAq.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/8b7ab4b33dfbf8a5a1ea/2aOboQeau5jsplD2PSOwYYBkjWkrb5dtpKfG1QPo.jpg
+  - Photo: https://photo-stal-36.zdn.vn/no/jpg/9d53e66b6b23ae7df732/1WUpukawG3IHENEAmKqgEmZ7a5NG3WfcuQbB9hqtdRcGeUpAKhTnhdSy6s17wlUoH6w.jpg
+  - Photo: https://photo-stal-28.zdn.vn/no/jpg/031f7927f46f3131687e/1WUpukawG3IHENEAmKqgEmXforZ3rJ783pe93j8MkGS0oqx9WV690O10frnFPKk6v9o.jpg
+  - Photo: https://photo-stal-14.zdn.vn/no/jpg/1ad167e9eaa12fff76b0/1WUpukawG3IHENEAmKqgEmTuPxKNSGIUW197GR57d7tjKQGuc4jFHXcaDG8gIx16O3N.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 6]
+Instance ID / Session ID: 1781857316402
+Symbol: 11A
+Texts (2):
+  - text: '11A 6tr'
+    orig: '6tr'
+  - text: '11A 7tr5'
+    orig: '7.5tr'
+Photos count: 13
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/6594324861893675193/59cc16956a42eb1cb253.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/1967522998291038226/6f303b6947bec6e09faf.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/3645112853944744427/eb8927d25b05da5b8314.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/1837319385052919604/a1b218ec643be565bc2a.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/8010905244143363980/8fb0e5ef993818664129.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/7848684814164164919/cb340a6576b2f7ecaea3.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/8420472446443974125/11b75de72130a06ef921.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/5102024366588888059/5e8886d8fa0f7b51221e.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/7885920340208083058/1bf454a42873a92df062.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/1826130101191169639/8ed337824b55ca0b9344.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/8664346068024897852/f20dbc5cc08b41d5189a.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/582076571746672932/34e9c7babb6d3a33637c.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/6561547469244393815/e514f441889609c85087.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 7]
+Instance ID / Session ID: 1781856996506
+Symbol: 1A
+Texts (3):
+  - text: '1A 🌻 KHAI TRƯƠNG NHÀ MỚI TẠI THANH XUÂN\n@All\n6th - 12th. Mã: H208\n🏠 Địa chỉ: Số 40 hẻm 72/73/30 phố Quan Nhân - Phường Thanh Xuân\n( hoặc ngõ 109 Hoàng Ngân theo biển vào phòng khám bảo ngọc )\n\n⏰ Trống 4P\n\n💰 Giá: P201,301,401 - 5tr5\nP202,302,- 5tr\n👉Loại Phòng: Studio Cao cấp - Ban Công\n👉Thang máy\n👉Diện Tích: 20m2\n\n✅ Nội thất: Giường; tủ; Tủ bếp; Hút Mùi, Tủ lạnh; Máy giặt riêng từng phòng; Bếp từ; hệ thống vệ sinh cao cấp; điều hoà; nóng lạnh, bàn học, phơi đồ tại phòng\n\n✅ Dịch vụ: điện 4k /số, nước 35k/khối, Mạng 100k/ph , 150k/ người (Thang máy; điện sáng chung; vệ sinh chung; )\n\n❌ Lưu Ý :\n- Ngõ ra vào rộng\n- Không nuôi pet\n- Không nhận xe điện\n- Chung chủ\n- Đầy đủ hệ thống pccc, thoát hiểm, camara an ninh\n- Đóng 1 cọc 1tr5 ( hết hd 6th + 500k/ph )'
+    orig: '🌻 KHAI TRƯƠNG NHÀ MỚI TẠI THANH XUÂN\n@All\n🌺Hh 30% 6th - 12th.             Mã: H208\n🏠 Địa chỉ: Số 40 hẻm 72/73/30 phố Quan Nhân - Phường Thanh Xuân\n( hoặc ngõ 109 Hoàng Ngân theo biển vào phòng khám bảo ngọc )\n\n⏰  Trống 4P\n\n💰 Giá:  P201,301,401 - 5tr5\nP202,302,- 5tr\n👉Loại Phòng: Studio Cao cấp - Ban Công\n👉Thang máy\n👉Diện Tích: 20m2\n\n✅ Nội thất: Giường;  tủ; Tủ bếp; Hút Mùi, Tủ lạnh; Máy giặt riêng từng phòng; Bếp từ; hệ thống vệ sinh cao cấp; điều hoà; nóng lạnh, bàn học, phơi đồ tại phòng\n\n✅  Dịch vụ: điện 4k /số, nước 35k/khối, Mạng 100k/ph , 150k/ người (Thang máy; điện sáng chung; vệ sinh chung; )\n\n❌ Lưu Ý :\n- Ngõ ra vào rộng\n- Không nuôi pet\n- Không nhận xe điện\n- Chung chủ\n- Đầy đủ hệ thống pccc, thoát hiểm, camara an ninh\n- Đóng 1 cọc 1,5 ( hết hd 6th + 500k/ph )'
+  - text: '5tr5'
+    orig: '5tr5'
+  - text: '5tr'
+    orig: '5tr'
+Photos count: 14
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/5274706636335995314/0b9d8e5fff887ed62799.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/3555763945935204634/a17578b109668838d177.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/7187132355612481844/a5a2be66cfb14eef17a0.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/3528704713011868496/5a2117e56632e76cbe23.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/3096658491995444706/834a1b8f6a58eb06b249.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/3838016370305400873/91b69073e1a460fa39b5.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/7951441522953081112/7b68c5cbb41c35426c0d.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/6106540739895851806/6c4169e31834996ac025.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/8008487693195469291/477e62dd130a9254cb1b.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/4167278382611902088/a7a3740005d78489ddc6.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/7587718750898177755/0ece336d42bac3e49aab.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/426156076630756286/fea4740705d0848eddc1.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/jpg/6601341611924327995/e694533022e7a3b9faf6.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/8991834998111125875/dd79d0dda10a2054791b.jpg
+Videos count: 1
+  - Video: https://f141-zvc.dlmd.me/gr/38265b73513cbd62e42d/69637854201964355
+----------------------------------------
+
+[Index 10]
+Instance ID / Session ID: 1781857367296
+Symbol: 12A
+Texts (1):
+  - text: '12A . HD 6 tháng. Mã 119\n\n🏢 Ngõ 575/10 Kim Mã - Ba Đình\n\n🍁 Đang trống p205, p305\n\n💸 Giá 5tr5\n\n👉 Thang máy\n👉 Dạng studio\n\n🍀 Nội thất\n- Full cơ bản, tủ lạnh, máy giặt chung...\n\n🍀 Phí dvu\n- Điện 4k/s\n- Nước 150k/1ng.\n- Mạng 100k/P\n- Dv chung 200k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. ko chung chủ\n- Gọi trước khi qua 30p'
+    orig: '🌹40%.     HD 6 tháng.    Mã 119\n\n🏢 Ngõ 575/10 Kim Mã - Ba Đình\n\n🍁 Đang trống p205, p305\n\n💸 Giá 5tr5\n\n👉 Thang máy\n👉 Dạng studio\n\n🍀 Nội thất\n- Full cơ bản, tủ lạnh, máy giặt chung...\n\n🍀 Phí dvu\n- Điện 4k/s\n- Nước 150k/1ng.\n- Mạng 100k/P\n- Dv chung 200k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. ko chung chủ\n- Gọi trước khi qua 30p'
+Photos count: 4
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/51c10735ce760b285267/2aOboQeXLXUKvY0jPCml71P0tYldV2Z8EEOKNxbM.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/dfb5fb403203f75dae12/2aOboQeXLXVi4Iy01TNReopaw1dRI7g9CPbgoKnY.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/525eb3957ad6bf88e6c7/2aOboQeXLXuERpSvcFeqFU2ZbCHk62xXQTuoRzAO.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/5b3828cce18f24d17d9e/2aOboQeXLXVuEPftXVkOsVK8ndljNwc6kVQUB0vg.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 11]
+Instance ID / Session ID: 1781857491759
+Symbol: 12A
+Texts (1):
+  - text: '12A . HD 6 tháng. Mã 119\n\n🏢 Ngõ 575/10 Kim Mã - Ba Đình\n\n🍁 Đang trống p204, p304,p504\n\n💸 Giá 4tr8 fix 4tr5\n\n👉 Thang máy\n👉 Dạng studio\n\n🍀 Nội thất\n- Full cơ bản, tủ lạnh, máy giặt chung...\n\n🍀 Phí dvu\n- Điện 4k/s\n- Nước 150k/1ng.\n- Mạng 100k/P\n- Dv chung 200k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. ko chung chủ\n- Gọi trước khi qua 30p'
+    orig: '🌹40%.     HD 6 tháng.    Mã 119\n\n🏢 Ngõ 575/10 Kim Mã - Ba Đình\n\n🍁 Đang trống p204, p304,p504\n\n💸 Giá 4tr8 fix 4tr5\n\n👉 Thang máy\n👉 Dạng studio\n\n🍀 Nội thất\n- Full cơ bản, tủ lạnh, máy giặt chung...\n\n🍀 Phí dvu\n- Điện 4k/s\n- Nước 150k/1ng.\n- Mạng 100k/P\n- Dv chung 200k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. ko chung chủ\n- Gọi trước khi qua 30p'
+Photos count: 4
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/eb3443ae8ded48b311fc/2aOboQeXM8lTDLuQgNlShNt453tLNeL7ytW3wRMW.jpg
+  - Photo: https://photo-stal-8.zdn.vn/gr/jpg/351d5d75933656680f27/2aOboQeXM95MXvIcseuJgH6TE5SCzj6w3b5kZNRo.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/8342cb2c056fc031997e/2aOboQeXM8yy1zoppoRB5Kl9HUzBx6OtEHSAJDCS.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/498eade363a0a6feffb1/2aOboQeXM981xnKP6mLJ5CBnm0YtBz6gjWkt4HmC.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 12]
+Instance ID / Session ID: 1781857619405
+Symbol: 12A
+Texts (1):
+  - text: '12A . HD 6 tháng. Mã 119\n\n🏢 Ngõ 575/10 Kim Mã - Ba Đình\n\n🍁 Đang trống p402, p602, p702\n\n💸 Giá 5tr5 fix 5tr\n\n👉 Thang máy\n👉 Dạng studio\n\n🍀 Nội thất\n- Full cơ bản, tủ lạnh, máy giặt chung...\n\n🍀 Phí dvu\n- Điện 4k/s\n- Nước 150k/1ng.\n- Mạng 100k/P\n- Dv chung 200k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. ko chung chủ\n- Gọi trước khi qua 30p'
+    orig: '🌹40%.     HD 6 tháng.    Mã 119\n\n🏢 Ngõ 575/10 Kim Mã - Ba Đình\n\n🍁 Đang trống p402, p602, p702\n\n💸 Giá 5tr5 fix 5tr\n\n👉 Thang máy\n👉 Dạng studio\n\n🍀 Nội thất\n- Full cơ bản, tủ lạnh, máy giặt chung...\n\n🍀 Phí dvu\n- Điện 4k/s\n- Nước 150k/1ng.\n- Mạng 100k/P\n- Dv chung 200k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. ko chung chủ\n- Gọi trước khi qua 30p'
+Photos count: 0
+Videos count: 0
+----------------------------------------
+
+[Index 13]
+Instance ID / Session ID: 1781857444050
+Symbol: 1A
+Texts (1):
+  - text: '1A Hh 8th Mã: A115\n\n🏠 Địa chỉ: 63 Xuân Thuỷ - Cầu Giấy\n( Cách mặt đường Xuân Thuỷ 80m )\n\n⏰ Trống : P201\n\n💰 Giá: 4tr5\n\n👉Phòng: Studio\n👉Thang máy\n\n✅ Nội thất: Giường tủ, điều hoà, nóng lạnh, máy giặt riêng, hút mùi\n\n✅ Dịch vụ: Điện 4k/s, nước 35k/m3, dv chung 150k/người, mạng 100k/ph\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Free 2xe\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 8th          Mã: A115\n\n🏠 Địa chỉ: 63 Xuân Thuỷ - Cầu Giấy\n( Cách mặt đường Xuân Thuỷ 80m )  \n\n⏰ Trống : P201 \n\n💰 Giá: 4tr5\n\n👉Phòng: Studio \n👉Thang máy\n\n✅ Nội thất: Giường tủ, điều hoà, nóng lạnh, máy giặt riêng, hút mùi\n\n✅ Dịch vụ: Điện 4k/s, nước 35k/m3, dv chung 150k/người, mạng 100k/ph\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Free 2xe\n- Khách qua gọi trước 30p'
+Photos count: 12
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/a8b4162b0867cd399476/2aOboQeYJKeLwNPBEkrHjG6ifz2EmMwMV78Hb5BQ.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/c4f4efdcf19034ce6d81/2aOboQeYJMj0SWuCicrggUIxYZoulVISan7bYOSu.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/78b64677593b9c65c52a/2aOboQeYJOxykm2va6kKeMfST2Yd5CUO1qZxwNRQ.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/1292d99bc4d7018958c6/2aOboQeYJH36PFiBBFWIXMrwDPcJlQjartmOjebI.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/0b6ff87ce630236e7a21/2aOboQeYJNk65izm6WKs4TrH4x6j1lgWypBPePzc.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/e0015d2a40668538dc77/2aOboQeYJG92D8AStWVJFhrqUdCJouFEsoXElMWW.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/0559fcabe2e727b97ef6/2aOboQeYJHxHtq51yb9rM2gFE1HsNSHssSOqpwcy.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/61406fed70a1b5ffecb0/2aOboQeYJPzXZpR30UhoAPHbQmqhzQ3ihBLqZwcS.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/6a8080c29e8e5bd0029f/2aOboQeYJLhMlpdKHp9pTltgJXlDQZJdJZEG7pey.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/edfc934c8d00485e1111/2aOboQeYJJkCsbyhwc5ukv25r7GRoVR9l8seBAnI.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/025920c33f8ffad1a39e/2aOboQeYJR6zI841w1lwJ0aTuv9Wg3sMuxNkWViS.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/772086f598b95de704a8/2aOboQeYJIt7YvznufVRcsJoP1IVqoSxJrRwSW5g.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 24]
+Instance ID / Session ID: 1781858316102
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: Ngõ Hoà Bình 6, Minh Khai - Quận: Hai Bà Trưng\n\n⏰ Trống :\n\n💰 Giá: P202tr4 - 5tr1\nP304 - 5tr5\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\nXe 160k/xe\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Nhận khách Tây\n- Oto đỗ cửa\n- nhận xe điện\n- Gửi xe nhà bên cạnh\n- Phòng khách tầng 1 sd chung\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: Ngõ Hoà Bình 6, Minh Khai - Quận: Hai Bà Trưng\n\n⏰ Trống : \n\n💰 Giá: P202,401 - 5tr1 \n              P304 - 5tr5\n\n👉Phòng : STUDIO  \n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \nXe 160k/xe \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Nhận khách Tây\n- Oto đỗ cửa\n- nhận xe điện\n- Gửi xe nhà bên cạnh \n- Phòng khách tầng 1 sd chung\n- Khách qua gọi trước 30p'
+  - text: 'P202tr4'
+    orig: 'P202,401'
+  - text: 'P304'
+    orig: 'P304'
+Photos count: 18
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/ce8ac4114a598f07d648/2aOboQeauiDgN8gRbZu1yyfsDjOsInTxEN3klF44.jpg
+  - Photo: https://photo-stal-26.zdn.vn/gr/jpg/45d2e9486700a25efb11/2aOboQeauiKQmSdeBIEtAxXKPCNa9uny8SeE4XFQ.jpg
+  - Photo: https://photo-stal-23.zdn.vn/gr/jpg/c8aafcce7286b7d8ee97/2aOboQeauiRPmiF7mFotQxE4IUEMK5E9JasGQKFU.jpg
+  - Photo: https://photo-stal-26.zdn.vn/gr/jpg/75423c38b270772e2e61/2aOboQeaujHg18S4Eq3Lpv2z8Nzkba5eWMl6Cu6C.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/b0549c16125ed7008e4f/2aOboQeaujUk4k0Iqz6xwA43fHZPBmtpkSvgYhai.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/faf7d1107658b306ea49/2aOboQeaxYuBP10ZfucVuJNuo1TaSPRiAvPmdnM0.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/45461d8cbac47f9a26d5/2aOboQeaxa7fjqdw7QI42ofk0JOLjEs7TzkeYDUO.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/9f6608aea0e665b83cf7/2aOboQeaxhXuDfacP6stsYql2W1vhBpaNqo6n0am.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/faf7d1107658b306ea49/2aOboQeaxYuBP10ZfucVuJNuo1TaSPRiAvPmdnM0.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/45461d8cbac47f9a26d5/2aOboQeaxa7fjqdw7QI42ofk0JOLjEs7TzkeYDUO.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/3ebf86d12a99efc7b688/2aOboQeayD5lFXJgr3Lmip3X40IN8LJzCHMLrhLM.jpg
+  - Photo: https://photo-stal-23.zdn.vn/gr/jpg/a4a790f53cbdf9e3a0ac/2aOboQeayEFRcfcHTQEnydHsE8Ng2Uqa1LBXdfTU.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/2d270f37a57f6021396e/2aOboQeay1eZsPvhoqupmPII8dKMSxaMG9ZBzy5o.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/9f6608aea0e665b83cf7/2aOboQeaxhXuDfacP6stsYql2W1vhBpaNqo6n0am.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/0623357099385c660529/2aOboQeayEDRYlawnpf3vROLukHbd7QDyevByAbo.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/039509c9a58160df3990/2aOboQeayEPFm513JKkZ0tzUpmw4loPggyNQOAO8.jpg
+  - Photo: https://photo-stal-19.zdn.vn/gr/jpg/babf1be1b7a972f72bb8/2aOboQeayENgTDLtB1mvFPmyzeDaghYPuXMnDXou.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/534176b2ddfa18a441eb/2aOboQeay2XtqvaDXdKC1f8ZMbQ9opdMwR3eTp0y.jpg
+Videos count: 2
+  - Video: https://video-stal-36.dlmd.me/gr/25662bf4a5bc60e239ad/2aOboQeaui2E3FADOye1LWSmj6UmuEqM6ODJbXw8
+  - Video: https://video-stal-24.dlmd.me/gr/dde0b517185fdd01844e/2aOboQeayGmVLiGE9f1HxMrmHJhmH0jNb5ZL93Ee
+----------------------------------------
+
+[Index 25]
+Instance ID / Session ID: 1781858292975
+Symbol: 1A
+Texts (1):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: ngõ 1 Trung Văn - Quận: Nam Từ Liêm\n\n⏰ Trống : P303\n\n💰 Giá: 4tr\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 23m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Nhận khách Tây\n- Oto đỗ cửa\n- nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: ngõ 1 Trung Văn - Quận:  Nam Từ Liêm \n\n⏰ Trống : P303\n\n💰 Giá: 4tr\n\n👉Phòng : STUDIO  \n👉Thang máy\n👉Diện tích: 23m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Nhận khách Tây\n- Oto đỗ cửa\n- nhận xe điện\n- Khách qua gọi trước 30p'
+Photos count: 6
+  - Photo: https://photo-stal-20.zdn.vn/gr/jpg/e2e0d37c4f348a6ad325/2aOboQeasbfgzeVyhsb7NZKcNbDrovz0Xka1eX4q.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/e052f8c96481a1dff890/2aOboQeasbipbNqIyUWOuWpnpO8GejZslvWz54AS.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/3e7a5518c9500c0e5541/2aOboQeasbvXlav83liIPjubiODwYX9izgM5lxSq.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/f3d80ba697ee52b00bff/2aOboQeascbAlLxL754z3Mau1hQ0tuxD52O2cC3c.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/4b279463082bcd75943a/2aOboQeascmaeRxeaVQZhRhS7pren2T6zcMp6ewK.jpg
+  - Photo: https://photo-stal-20.zdn.vn/gr/jpg/18d911408d0848561119/2aOboQeasbncNciYNp9hteTUZA1TcJbf354EcAvQ.jpg
+Videos count: 1
+  - Video: https://video-stal-14.dlmd.me/gr/1a788cea10a2d5fc8cb3/2aOboQeasbUQprhe1Ji3xoUH9UITzAV1wkbsMDTs
+----------------------------------------
+
+[Index 26]
+Instance ID / Session ID: 1781858419726
+Symbol: 11A
+Texts (1):
+  - text: '11A Mã H240\n🏢3/7/188 Vương Thừa Vũ , thanh xuân\n❌ khách thuê giá 5tr6\n⏰ Trống 1 phòng tầng 2 trục ban công\nTT 1 cọc 1\n- Nội thất: full nội thất như hình Tủ quần áo to, điều hòa nóng lạnh, kệ tủ bếp,bếp từ, hút mùi, tủ lạnh, máy giặt riêng từng phòng, giường sẵn đệm, cửa thoáng....phơi đồ tại phòng hoặc trên tầng 7.\n- điện: 3k8/số\nnước 35k/số\ndịch vụ: thang máy, chiếu sáng đổ rác, dọn vs hành lang, bảo trì thiết bị định kỳ, xe máy: 200k/người\nWifi: 100k/phòng\n\n- Giới hạn 2 xe/p, 2 ng/p\n- Ko nuôi pet\n- Ko nhận xe điện\n- oto đỗ cách nhà 50m, cạnh hồ thoáng mát, 100m ra chợ\n- PCCC hiện đại an toàn, đầy đủ, có lối thoát hiểm.\n+ Hệ thống pccc cao cấp hiện đại : hệ thống báo khói, báo cháy, hệ thống chữa cháy tự động Spinkler trong từng phòng, từng tầng có vòi phun từ máy bơm cao áp của toà nhà.\n- cửa từ khoá vân tay, camera 24/7\nHd 6-12 thang'
+    orig: '🎉Thưởng 200.000 cho sale\n🌹30% \nMã H240\n🏢3/7/188 Vương Thừa Vũ , thanh xuân\n❌  khách thuê giá 5.6tr\n⏰ Trống 1 phòng tầng 2 trục ban công\nTT 1 cọc 1\n- Nội thất: full nội thất như hình  Tủ quần áo to, điều hòa nóng lạnh, kệ tủ bếp,bếp từ, hút mùi, tủ lạnh, máy giặt riêng từng phòng, giường sẵn đệm, cửa thoáng....phơi đồ tại phòng hoặc trên tầng 7.\n- điện: 3k8/số\nnước 35k/số\ndịch vụ: thang máy, chiếu sáng  đổ rác, dọn vs hành lang, bảo trì thiết bị định kỳ, xe máy: 200k/người\nWifi: 100k/phòng\n\n- Giới hạn 2 xe/p, 2 ng/p\n- Ko nuôi pet\n- Ko nhận xe điện\n- oto đỗ cách nhà 50m, cạnh hồ thoáng mát, 100m ra chợ  \n- PCCC hiện đại an toàn, đầy đủ, có lối thoát hiểm. \n+ Hệ thống pccc cao cấp hiện đại : hệ thống báo khói, báo cháy, hệ thống chữa cháy tự động Spinkler trong từng phòng, từng tầng có vòi phun từ máy bơm cao áp của toà nhà.\n- cửa từ khoá vân tay, camera 24/7\nHd 6-12 thang'
+Photos count: 4
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/7c3c65466c0da953f01c/2aOboQeb90Z1PSPzqUm4qWCkt5PQVYNiumy4I0Fk.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/95daf0a2f9e93cb765f8/2aOboQeb90VqMu9I4fybTDZNzeGgDZLXCP0u1q64.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/da8cbef4b7bf72e12bae/2aOboQeb90VqMu9I4fybTDY1m2FhZyaawKODq6e8.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/5f8a36f23fb9fae7a3a8/2aOboQeb90W9pTgK6Ky8DufxNQBBDb0d9OND0YjY.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 28]
+Instance ID / Session ID: 1781858364110
+Symbol: 1A
+Texts (4):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: Ngách 5 ngõ 320 Khương Đình - Quận: Thanh Xuân\n\n⏰ Trống :\n\n💰 Giá: P405 - 4tr6\nP506 - 4tr8\nP503 - 5tr\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 28m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 100k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Nhận khách Tây\n- Ngõ 3 gác, oto cách nhà 150m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: Ngách 5 ngõ 320 Khương Đình - Quận: Thanh Xuân\n\n⏰ Trống : \n\n💰 Giá: P405 - 4tr6 \n              P506 - 4tr8\n              P503 - 5tr\n\n👉Phòng : STUDIO  \n👉Thang máy\n👉Diện tích: 28m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 100k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Nhận khách Tây\n- Ngõ 3 gác, oto cách nhà 150m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+  - text: 'P405'
+    orig: 'P405'
+  - text: 'P506'
+    orig: 'P506'
+  - text: 'P503'
+    orig: 'P503'
+Photos count: 24
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/e1dd6c80aec86b9632d9/2aOboQeb0nbThyH8KN7nxUYIlJ3PIGTu9bZKMPmC.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/0b1e8d394f718a2fd360/2aOboQeb0nfuaofyCptOLa4qsBufCNotMkWeMaH2.jpg
+  - Photo: https://photo-stal-33.zdn.vn/gr/jpg/588883d7419f84c1dd8e/2aOboQeb0nUKyQu8ia32K99pZLr7HLJC4D3Bf36u.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/72bd2ae9e8a12dff74b0/2aOboQeb0nKlPx9dtumQLu36JVDceHUaCHPMEe5Q.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/a1532b74e93c2c62752d/2aOboQeb0nfpjAnDCQ90euHBI5T93nbSfgmuarWC.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/2bdc1289d0c1159f4cd0/2aOboQeb0nP50KjLGkvRCyspx8v0koJaBgHkPUEi.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/1ff77b99b9d17c8f25c0/2aOboQeb0mFkWauABFu8YCXXvK66BszqXAmEHUHI.jpg
+  - Photo: https://photo-stal-20.zdn.vn/gr/jpg/7d2c3959fb113e4f6700/2aOboQeb0mYBqlSKkqhvIcTPWtkMEFPaCW4hMWGW.jpg
+  - Photo: https://photo-stal-10.zdn.vn/gr/jpg/0a1f43598111444f1d00/2aOboQeb0mvjPkPmlR8XmrCsQxA9X9cwnO9NmPQ0.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/0d04be4a7c02b95ce013/2aOboQeb0n1LHF3zk87rV3i9HaoqKKqrRURF0kJU.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/30fc2692e2da27847ecb/2aOboQeb10TILAjTQe2IpKu0E0YKY3XZN0RJmuLw.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/bd05e2302678e326ba69/2aOboQeb12OsvWivdY8ZmhhWjWPtVLUZqJzVfXBA.jpg
+  - Photo: https://photo-stal-37.zdn.vn/gr/jpg/62b8cd9209dacc8495cb/2aOboQeb12GZDL6YvWq4pFQK7WGjBAHJMmSrGVLU.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/a1a00a8dcec50b9b52d4/2aOboQeb12CAlJe6YGwgHUnw0SmW6ASLsbkzNCPg.jpg
+  - Photo: https://photo-stal-4.zdn.vn/gr/jpg/97379604524c9712ce5d/2aOboQeb12SxuyeLz92RZkzO8AXoLimfOvzuS0eG.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/21aa558091c854960dd9/2aOboQeb12EnkMjVHBVTq4qyptKX99A9gSO0AQnA.jpg
+  - Photo: https://photo-stal-19.zdn.vn/gr/jpg/e10e352ff16734396d76/2aOboQeb12AsUCZawQ6NQN12QcjX7NIQ93bFdeKm.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/7d0af45f3017f549ac06/2aOboQeb11ctqf9J2bAwOTPyl2JcJscR7LbmBnpQ.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/7655c29005d8c08699c9/2aOboQeb1J1I3OyUakPWkeROzGqJ2JYA4HAGmWKe.jpg
+  - Photo: https://photo-stal-19.zdn.vn/gr/jpg/839d975c5014954acc05/2aOboQeb1IzWaQbQwP4vlTtCxSyAJdMITPO1Pkoa.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/d60911f3d6bb13e54aaa/2aOboQeb1Ir80b6JDy237LnpSulhWZ14066BFMe0.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/63d7912b5663933dca72/2aOboQeb1IkZlNr0AI4993meHWn5QdOCzSzq504G.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/21fc5e1099585c060549/2aOboQeb1IFcR6vu1SRQ77OVFij43tFFpXTdlnPM.jpg
+  - Photo: https://photo-stal-10.zdn.vn/gr/jpg/6321c7c80080c5de9c91/2aOboQeb1ILXlB791oQGa0zOA6LeBnIeoCABXbbE.jpg
+Videos count: 3
+  - Video: https://video-stal-1.dlmd.me/gr/3ccfe18623cee690bfdf/2aOboQeb0nIbcmnFzWfgmJ0Z6sGweMFnT6Q501OS
+  - Video: https://video-stal-4.dlmd.me/gr/d2c289964bde8e80d7cf/2aOboQeb0nKbggoaf7FQpYY5BIVYisB0sana9epk
+  - Video: https://video-stal-25.dlmd.me/gr/d579e81a2c52e90cb043/2aOboQeb10I9TqkHFhlowj8vxkhYb1LMlBqSstUG
+----------------------------------------
+
+[Index 35]
+Instance ID / Session ID: 1781858479556
+Symbol: 1A
+Texts (1):
+  - text: '1A 2N1K TẠI KHƯƠNG ĐÌNH\n\nHh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: ngách 31 ngõ 342 Khương Đình - Quận: Thanh Xuân\n\n⏰ Trống : P402\n\n💰 Giá: 8tr\n\n👉Phòng : 2N1K\n👉Thang máy\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cách 50m\n- nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '2N1K TẠI KHƯƠNG ĐÌNH \n\n🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: ngách 31 ngõ 342 Khương Đình - Quận: Thanh Xuân\n\n⏰ Trống : P402\n\n💰 Giá: 8tr\n\n👉Phòng : 2N1K  \n👉Thang máy\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cách 50m\n-  nhận xe điện\n- Khách qua gọi trước 30p'
+Photos count: 12
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/f58fde143c5cf902a04d/2aOboQeb4THmNbHvmr4oP3AUlA973eojcQD7HHzk.jpg
+  - Photo: https://photo-stal-33.zdn.vn/gr/jpg/bf50f1a914e1d1bf88f0/2aOboQeb4mNwtTf8MokQZwxFaHynbpKPCfp6yI1Q.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/5a12cad32f9beac5b38a/2aOboQeb4mdbVJMOCfUeORU9onYE0lVrVFXbHL3A.jpg
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/e5751fb0faf83fa666e9/2aOboQeb4mbsT9vi3X2FFbqVN6EEpHz6TSKnw9Eu.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/2c2b53e5b6ad73f32abc/2aOboQeb4mi2O9lE58GEmWeL7Y6OVg4MC5AmTOy0.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/af74a4b341fb84a5ddea/2aOboQeb4mSeo4ecljdLsOm6tVSqdTN1w8ICTWzY.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/0a8abb4b5e039b5dc212/2aOboQeb4mbsT9vi3X2FFbchYvd6eD96KBMlhuQy.jpg
+  - Photo: https://photo-stal-10.zdn.vn/gr/jpg/097292687620b37eea31/2aOboQeb4ldbz7dQuaUodsSqzSeP2MmilA9tbKZE.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/b0adb64e53069658cf17/2aOboQeb4ljL956mOu6ht5SJ3trwMOQzqrvwxQuW.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/ccc83827dd6f1831417e/2aOboQeb4lrV7yxd65uRTCKSqgy8o9LoaH2xaeie.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/ab3a59d4bc9c79c2208d/2aOboQeb4luptozqskCgDqkWxhg4SAonvmpGvQLg.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/594edba33eebfbb5a2fa/2aOboQeb4lzaFEvimrxnMdKJL34q2GIf1GdaQvbM.jpg
+Videos count: 1
+  - Video: https://video-stal-28.dlmd.me/gr/2b2921f7c2bf07e15eae/2aOboQeb4YaxxAivf2JMeCVQcMifjtLrq7mj2tJA
+----------------------------------------
+
+[Index 40]
+Instance ID / Session ID: 1781858596404
+Symbol: 1A
+Texts (1):
+  - text: '1A -12th Mã: A1147\n\n🏠Địa chỉ: Ngõ 7 Ao Sen Ô tô đỗ cửa - Hà Đông\nĐi bộ ra PTIT, Đại học kiến trúc\n\n⏰ 30/6 Trống\n\n💰 Giá: 5tr1\n\n👉Phòng : Studio\n👉Thang Máy\n\n✅ Nội thất: Full nội thất, Máy Giặt Riêng\n\n✅ Dịch vụ: điện 4k/số, nước 35k/kh, DVC 250k/ng\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Khách qua gọi trước 30p'
+    orig: '🌺Hh 40%-12th              Mã: A1147\n\n🏠Địa chỉ:   Ngõ 7 Ao Sen Ô tô đỗ cửa - Hà Đông\nĐi bộ ra PTIT, Đại học kiến trúc\n\n⏰ 30/6 Trống \n\n💰 Giá:  5tr1\n\n👉Phòng : Studio\n👉Thang Máy\n\n✅ Nội thất: Full nội thất, Máy Giặt Riêng\n\n✅  Dịch vụ: điện 4k/số, nước 35k/kh, DVC 250k/ng\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Khách qua gọi trước 30p'
+Photos count: 4
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/d273c9f5c3be06e05faf/2aOboQeb9668YgYG9kw67RnuzFFw7iMgpDrAfdzc.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/1c350bbb01f0c4ae9de1/1WUpukawOZMTUd2GUwHNOurV3Tz6VdZc69QB9EUzPSztWQF5OJ3SAWJtfg95k14ilvS.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/508a1920136bd6358f7a/1WUpukawOYtoN2XOoZcdsrfwyL6Yu62dZ1r3vmq4vNRYesCtxFJzAsKYsJCCtPbbfjF.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/07564ed1449a81c4d88b/1WUpukawOZD5d2ml7ZGEtip5aOT93QwJ3rhWDxYyy6ubUD2E2QszFRZyIirbBZo2hS2.jpg
+Videos count: 1
+  - Video: https://video-stal-26.dlmd.me/gr/c8354fbab8f77da924e6/1WUpukaugaVEOtFWWFv1vTptGO61xmrP2hC3uLkM2963lFNsplGA5px5PrARqD4GNtO
+----------------------------------------
+
+[Index 42]
+Instance ID / Session ID: 1781858717012
+Symbol: 1A
+Texts (1):
+  - text: '1A -12th Mã: A1147\n\n🏠Địa chỉ: Số 16 ngõ 7 Ao Sen - Quận: Hà Đông\n\n⏰ 30/6 trống\n\n💰 Giá: 5tr1\n\n👉Loại phòng: Studio\n👉Thang MÁY\n\n✅ Nội thất:\nFull đồ cơ bản giường tử hút mùi nóng lạnh tủ bếp,... MÁY GIẶT RIÊNG\n\n✅ Dịch vụ:\nĐiện 4K\nNước 35k/khối\nPhí dv:250k/ng gồm mạng riêng từng phòng rác thang máy máy giặt vs,... Ko thu thêm gì\n\n❌ Lưu ý - Đóng 1 cọc 1\n- Oto đỗ cửa\n- Khách gọi trước 30p trước khi qua'
+    orig: '🌺Hh 40%-12th             Mã: A1147\n\n🏠Địa chỉ: Số 16 ngõ 7 Ao Sen - Quận: Hà Đông\n\n⏰ 30/6 trống \n\n💰 Giá: 5tr1 \n\n👉Loại phòng: Studio \n👉Thang MÁY\n\n✅ Nội thất:\nFull đồ cơ bản giường tử hút mùi nóng lạnh tủ bếp,... MÁY GIẶT RIÊNG\n\n✅  Dịch vụ:\nĐiện 4K\nNước 35k/khối\nPhí dv:250k/ng gồm mạng riêng từng phòng rác thang máy máy giặt vs,... Ko thu thêm gì\n\n❌ Lưu ý                                                                                                                                                                                 - Đóng 1 cọc 1\n- Oto đỗ cửa\n- Khách gọi trước 30p trước khi qua'
+Photos count: 4
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/508a1920136bd6358f7a/1WUpukawOYtoN2XOoZcdsrfwyL6Yu62dZ1r3vmq4vNRYesCtxFJzAsKYsJCCtPbbfjF.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/d273c9f5c3be06e05faf/2aOboQeb9668YgYG9kw67RnuzFFw7iMgpDrAfdzc.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/1c350bbb01f0c4ae9de1/1WUpukawOZMTUd2GUwHNOurV3Tz6VdZc69QB9EUzPSztWQF5OJ3SAWJtfg95k14ilvS.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/07564ed1449a81c4d88b/1WUpukawOZD5d2ml7ZGEtip5aOT93QwJ3rhWDxYyy6ubUD2E2QszFRZyIirbBZo2hS2.jpg
+Videos count: 1
+  - Video: https://video-stal-26.dlmd.me/gr/c8354fbab8f77da924e6/1WUpukaugaVEOtFWWFv1vTptGO61xmrP2hC3uLkM2963lFNsplGA5px5PrARqD4GNtO
+----------------------------------------
+
+[Index 43]
+Instance ID / Session ID: 1781859166435
+Symbol: 11A
+Texts (1):
+  - text: '11A ❌ Cập nhât giá Flash tháng 6 ❌\nGẮP GẮP GẮP\n-12 tháng\n-6 tháng\n🏢địa chỉ: mặt phố Yết Kiêu, Hoàn Kiếm\nChính chủ cho thuê căn hộ 1N1K - 2WC\n🚘ô ltô đỗ: Cửa\n⏰1/7 trống tầng 4\n💰giá:8tr2\n👉 Diện tích: 45m2\n👉 thang: máy\n👉 dạng:1n1k\n⚡️ Tầng: 4\n💎 nội thất như hình: máy giặt riêng\n❌ Dịch vụ:\nĐiện 4.5k/ số\nNước 150k/ người\nMạng 100k/ phòng\nDịch vụ 200k/ phòng\n📌 Lưu ý\nGhan người: 3\nGhan xe :2\nĐóng 1:1\nHợp đồng 6-12 tháng\n❌ PANDA HOME ❌'
+    orig: '❌ Cập nhât giá Flash Sale tháng 6 ❌\nGẮP GẮP GẮP\n🌹40%-12 tháng\n🌹30% -6 tháng\n🏢địa chỉ: mặt phố Yết Kiêu, Hoàn Kiếm\n Chính chủ cho thuê căn hộ 1N1K - 2WC\n🚘ô ltô đỗ:   Cửa\n⏰1/7 trống  tầng 4\n💰giá:8.2tr\n👉 Diện tích: 45m2\n👉 thang: máy\n👉 dạng:1n1k\n⚡️ Tầng: 4\n💎 nội thất như hình: máy giặt riêng\n❌ Dịch vụ: \nĐiện 4.5k/ số\nNước 150k/ người\nMạng 100k/ phòng\nDịch vụ 200k/ phòng\n📌 Lưu ý\nGhan người: 3\nGhan xe :2\nĐóng 1:1\nHợp đồng 6-12 tháng\n❌ PANDA HOME ❌'
+Photos count: 11
+  - Photo: https://photo-stal-36.zdn.vn/no/jpg/4103b5ebc7a002fe5bb1/1WUpukawTRsNGbKQc6ABTccGFiq1wbomlYvvjrlzUqDdonJL0uOPjnlB3JRZvMDYv6R.jpg
+  - Photo: https://photo-stal-35.zdn.vn/no/jpg/13a5e54d970652580b17/1WUpukawTRsNGbKQc6ABTchAaDhHbeVhzJxYLQVpx7anTZd1Mws3UTABDcksA6uGhvd.jpg
+  - Photo: https://photo-stal-28.zdn.vn/no/jpg/846c748406cfc3919ade/1WUpukawTRsOhSPLxNmW76B696oM9aR48Z0RK65UZXCcON7a2rM6clgfHsbn9PYC9i6.jpg
+  - Photo: https://photo-stal-30.zdn.vn/no/jpg/c09a0e727c39b967e028/1WUpukawTRsOhSPLxNmW76CWHmvUqYG4goeDvOEVAqIpcle0uVpyXi1ac9RA7jWzcRB.jpg
+  - Photo: https://photo-stal-31.zdn.vn/no/jpg/801877f005bbc0e599aa/1WUpukawTRsNGbKQc6ABTce7INam0M2lQzwDul3Uuau9g2I03U6yetvzffgVtfY7ptC.jpg
+  - Photo: https://photo-stal-29.zdn.vn/no/jpg/41dfb337c17c04225d6d/1WUpukawTRsOhSPLxNmW76DqtZn6pDoHRNRWCY3YIwY68CNB5TT8bq49tXbpjUnB6Ej.jpg
+  - Photo: https://photo-stal-28.zdn.vn/no/jpg/f15102b970f2b5acece3/1WUpukawTRsOhSPLxNmW76B9kFUpiaPDuIFokEaexNl5sTkMjVgGCb9WBBwwJooTVwZ.jpg
+  - Photo: https://photo-stal-29.zdn.vn/no/jpg/8b92477a3531f06fa920/1WUpukawTRsOhSPLxNmW769q93zLlpRWt4usz3CPMNi42VRDTaXiZUplhJlKXctbb4H.jpg
+  - Photo: https://photo-stal-14.zdn.vn/no/jpg/9f8b6a631828dd768439/1WUpukawTRsNGbKQc6ABTch8NOa0zeavIoKLIi1v1I4VgK1TA9bLgwp2p3uTeLb5tU8.jpg
+  - Photo: https://photo-stal-16.zdn.vn/no/jpg/625fadb7dffc1aa243ed/1WUpukawTRsOhSPLxNmW76DsumVMt2zIu4MFEUv92T0WG4S4JVApN70paYUCK61IDgI.jpg
+  - Photo: https://photo-stal-7.zdn.vn/no/jpg/44bfb557c71c02425b0d/1WUpukawTRsOhSPLxNmW762rB94uivWP9tpFQU6KuOtrPR3pEWBM8aKwvoe3ESwi0Yt.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 47]
+Instance ID / Session ID: 1781859170981
+Symbol: 5A
+Texts (1):
+  - text: '5A 🌾12th. Mã : A381\n\n🏠Địa chỉ: 174 Mai Anh Tuấn, Đống Đa\n\n💰 Giá: 2tr4\n\n🛏 Full đồ, vào ở luôn\n\n🚿 Vệ sinh chung - rộng, có điều hòa, nóng lạnh, cửa sổ/ban công\n\n🛵 Có chỗ để xe, giờ giấc tự do\n🎓 Gần các trường: ĐH Văn Hóa, ĐH Mỹ thuật CN, HV Ngân Hàng, ĐH Công Đoàn...\n👥 Phù hợp SV, NV văn phòng\n⚡️Dịch vụ :\nNước sinh hoạt: 100k/1 người.\nMạng: 50k/1 người\nĐiện hành lang: 50k/1 người\nDọn vệ sinh, dọn rác: 50k/1 người\nMáy giặt: 50k/1 người.\nĐiện: 4k/1 số.\n\n🆘 Lưu ý:\n- Đóng 1 cọc 1\n- nhận 1-2-3 xe máy\n- Cho nuôi pet\n- K gh người ở\n- Khách qua điện trước 30 phút'
+    orig: '🌾25%12th.         Mã : A381\n           \n🏠Địa chỉ: 174 Mai Anh Tuấn, Đống Đa\n\n💰 Giá: 2tr4\n\n🛏 Full đồ, vào ở luôn\n\n🚿 Vệ sinh chung - rộng, có điều hòa, nóng lạnh, cửa sổ/ban công\n\n🛵 Có chỗ để xe, giờ giấc tự do\n🎓 Gần các trường: ĐH Văn Hóa, ĐH Mỹ thuật CN, HV Ngân Hàng, ĐH Công Đoàn...\n👥 Phù hợp SV, NV văn phòng\n⚡️Dịch vụ : \nNước sinh hoạt: 100k/1 người.\nMạng: 50k/1 người\nĐiện hành lang: 50k/1 người\nDọn vệ sinh, dọn rác: 50k/1 người\nMáy giặt: 50k/1 người.\nĐiện: 4k/1 số.\n\n🆘 Lưu ý:\n- Đóng 1 cọc 1\n- nhận 1-2-3 xe máy \n- Cho nuôi pet \n- K gh người ở \n- Khách qua điện trước 30 phút'
+Photos count: 1
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/8522307444131540172/c1f6ace3cf344e6a1725.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 48]
+Instance ID / Session ID: 1781859306185
+Symbol: 5A
+Texts (1):
+  - text: '5A 🌾12th. Mã : A381\n\n🏠Địa chỉ: 74 Hồ Hố Mẻ - Đống Đa\n\n⏰ Tình trạng : Trống tầng 4\n\n💰 Giá : 2tr7\n\n📚Thông tin phòng:\n- Loại phòng : đơn vs chung\n- Diện tích : 30m2\n\n🛋️ Nội thất:\nĐiều hòa, nóng lạnh,Giường ngủ, tủ ,...\n\n⚡️Dịch vụ :\nNước sinh hoạt: 100k/1 người.\nMạng: 50k/1 người\nĐiện hành lang: 50k/1 người\nDọn vệ sinh, dọn rác: 50k/1 người\nMáy giặt: 50k/1 người.\nĐiện: 4k/1 số.\n\n🆘 Lưu ý:\n- Đóng 1 cọc 1\n- nhận 1-2-3 xe máy\n- Cho nuôi pet\n- K gh người ở\n- Khách qua điện trước 30 phút'
+    orig: '🌾25%12th.         Mã : A381\n           \n🏠Địa chỉ: 74 Hồ Hố Mẻ - Đống Đa \n\n⏰ Tình trạng : Trống tầng 4\n\n💰 Giá             : 2tr7\n\n📚Thông tin phòng:  \n           - Loại phòng : đơn vs chung\n           - Diện tích     : 30m2\n\n🛋️ Nội thất: \nĐiều hòa, nóng lạnh,Giường ngủ, tủ ,...\n\n⚡️Dịch vụ : \nNước sinh hoạt: 100k/1 người.\nMạng: 50k/1 người\nĐiện hành lang: 50k/1 người\nDọn vệ sinh, dọn rác: 50k/1 người\nMáy giặt: 50k/1 người.\nĐiện: 4k/1 số.\n\n🆘 Lưu ý:\n- Đóng 1 cọc 1\n- nhận 1-2-3 xe máy \n- Cho nuôi pet \n- K gh người ở \n- Khách qua điện trước 30 phút'
+Photos count: 1
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/3996934747164549940/e0896e7a02ad83f3dabc.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 51]
+Instance ID / Session ID: 1781859495191
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: Ngõ 251 Xã Đàn - Quận: Đống Đa\n\n⏰ Trống :\n\n💰 Giá: P202 - 4tr6\nP203 - 5tr2\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 28m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 180k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cách 50m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: Ngõ 251 Xã Đàn - Quận: Đống Đa\n\n⏰ Trống : \n\n💰 Giá: P202 - 4tr6 \n              P203 - 5tr2 \n\n👉Phòng : STUDIO  \n👉Thang máy\n👉Diện tích: 28m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 180k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cách 50m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+  - text: 'P203, ảnh phòng tầng 5 nhưng phòng trống tầng 2\nban công view tường hàng xóm'
+    orig: 'P203, ảnh phòng tầng 5 nhưng phòng trống tầng 2 \nban công view tường hàng xóm'
+  - text: 'P203'
+    orig: 'P203'
+Photos count: 10
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/7047c7159a5e5f00064f/2aOboQebF2GO6hjx7AUUdHOlf6VzaEdkmPs44xQe.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/e2d2188545ce8090d9df/2aOboQebF2JRqnBWNMfOTZQiaR41MWteEvb14YrI.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/0d9bdecd838646d81f97/2aOboQebF2DRf57WMawAK04KKoZmwWdM5dMXZu2i.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/4ec8d88385c8409619d9/2aOboQebF2DziaIpPVAq8idiSvZckwMQLaEauDdQ.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/a305544f0904cc5a9515/2aOboQebF29YpjtzX2PFkdBJojOScDVkAOYIAods.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/4bbc6df430bff5e1acae/2aOboQebF2AmFD5k8TVAv4zArxUnJvi4ZBRiI1Sa.jpg
+  - Photo: https://photo-stal-5.zdn.vn/gr/jpg/91204d70103bd5658c2a/2aOboQebF2BsMDSMEHyWYW97BW0e0nTMNCy8Rkq8.jpg
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/f69015bb4af08faed6e1/2aOboQebFHHN0XyuaBvMX7Kcb5Bg7uy63cqRqD56.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/adabb184eecf2b9172de/2aOboQebFHLqKDK7xrZ8lXnw0g0RfiVcmk6ChoP2.jpg
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/00dfd1e88ea34bfd12b2/2aOboQebFHQTNAQrMMhgNJa4kJYIEbFhR3Te4BWK.jpg
+Videos count: 2
+  - Video: https://video-stal-37.dlmd.me/gr/56edd04b8e004b5e1211/2aOboQebF6L1fG7LxESKwgvrjFAKh3o6Mce6kKkS
+  - Video: https://video-stal-24.dlmd.me/gr/8ad271f02ebbebe5b2aa/2aOboQebFHA9PO9ck13z40AEBjFvvOVfnz52oK8G
+----------------------------------------
+
+[Index 52]
+Instance ID / Session ID: 1781859530386
+Symbol: 1A
+Texts (5):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: Ngõ 36 Ven Hồ Hạ Đình - Quận: Thanh Xuân\n\n⏰ Trống :\n\n💰 Giá: 4tr6 - 5tr5\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 28m2\n\n✅ Nội thất: Full đồ + máy giặt sấy\n\n✅ Dịch vụ:\nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Ko giới hạn người ở 2 xe, xe thứ 3 +100k\n- Nhận khách Tây\n- Oto đỗ cửa\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: Ngõ 36 Ven Hồ Hạ Đình - Quận: Thanh Xuân\n\n⏰ Trống : \n\n💰 Giá: 4tr6 - 5tr5\n\n👉Phòng : STUDIO  \n👉Thang máy\n👉Diện tích: 28m2\n\n✅ Nội thất: Full đồ + máy giặt sấy\n\n✅ Dịch vụ:  \nĐiện 4k/ số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Ko giới hạn người ở 2 xe, xe thứ 3 +100k\n- Nhận khách Tây\n- Oto đỗ cửa\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+  - text: 'P402,602 - 4tr6'
+    orig: 'P402,602 - 4tr6'
+  - text: 'P403 - 5tr'
+    orig: 'P403 - 5tr'
+  - text: 'P501 - 5tr5'
+    orig: 'P501 - 5tr5'
+  - text: 'P601 - 5tr5'
+    orig: 'P601 - 5tr5'
+Photos count: 27
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/0316d811965a53040a4b/2aOboQebH1D2ZqUSHPqVVYrpPgtwxgFEbjrfx28m.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/001cf31dbd5678082147/2aOboQebH1CB3lm7CqcIw8zc8CIQxEdoF18dEfZY.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/fa49824acc01095f5010/2aOboQebH1Lfkbdr168XDiRoQ0oz05jmnw1OG3w8.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/65e840e90ea2cbfc92b3/2aOboQebH1K40v2JNaIhbtR0gAirZJyHw1S7Mv6e.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/74b97870093bcc65952a/2aOboQebHHYqiARfJmOeOvuont0HEq5vLAOCgvRY.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/d3b99e47ef0c2a52731d/2aOboQebHH80oAON1kXz0NZ77WfP8EBeWEEpzZxY.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/df31b5f7c4bc01e258ad/2aOboQebHHM3gJU5E5SND3HgNbYpwhQMqaWfTGPA.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/c4a3bc50cd1b0845510a/2aOboQebHH2ALk5t1oJWEA1rd09bEZhcwyjbzFCK.jpg
+  - Photo: https://photo-stal-26.zdn.vn/gr/jpg/05c83206434d8613df5c/2aOboQebHHV7c6zeV3MVCuhEvA7SBayBoevvF5GK.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/ad4dfe8a8fc14a9f13d0/2aOboQebHHHaMe8rqPoaycq6tx2F2ksFUpV1UCeW.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/a594ba57cb1c0e42570d/2aOboQebHHTmuAylNze0VS3M5DAmudoIm5nrqkQi.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/c416aeecdfa71af943b6/2aOboQebHHFByWhk8kUwU486tmxsPd9wNgIth8ng.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/19ca912fe564203a7975/2aOboQebHbZpdmFmkPgsttfLDLKTao9Omfhl4E0O.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/1de453f820b3e5edbca2/2aOboQebHbIDOrTZkBF6sYOeeFMnjd8WyPGigz9k.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/bdf185e9f6a233fc6ab3/2aOboQebHbVCap93LuYLI7itWautAJbuqNwz8EFM.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/b650cb43b8087d562419/2aOboQebHbONJrJ5lmT6PTRty3u5QtWhH3r0VLnc.jpg
+  - Photo: https://photo-stal-10.zdn.vn/gr/jpg/7593e28091cb54950dda/2aOboQebHbNafQTVhczHWjOI0te3iZ46M4f1ZaIy.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/2c564366352df073a93c/2aOboQebHvlRo3EdaJqtADLtyY4b0b3XJShoul7I.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/ccd2b2f5c4be01e058af/2aOboQebHvQSMTTpIEEgXsmADsVUoJFWZxP7nEW0.jpg
+  - Photo: https://photo-stal-4.zdn.vn/gr/jpg/76d7d5e3a3a866f63fb9/2aOboQebHvkQYgkmUv7vDRsXAWjIScAItyxZCnHk.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/6c8487aaf1e134bf6df0/2aOboQebHvdWQ523uNIIe7jTkIXXPCbCTK0TzDtI.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/3666ab48dd03185d4112/2aOboQebHvYm4f6C0FXBVL5KgmGmoJZm8lIaEjrc.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/49d2f49982d2478c1ec3/2aOboQebHujNMJbacEWvfmp1wgjs5cgB5VS5kFLE.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/15d647f631bdf4e3adac/2aOboQebHvMUfUNXSFxOHq5HXFJZZHQfarqcPTg8.jpg
+  - Photo: https://photo-stal-26.zdn.vn/gr/jpg/5e167f5c0917cc499506/2aOboQebHul6OT2GlMzKocC4Rb1QFNwAHabEQIeO.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/eb40b117c75c02025b4d/2aOboQebHuwksUgrG2a4WiiImPc6ObL8KqO578aG.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/14074025366ef330aa7f/2aOboQebHvUoNfzuAHFtFITT2Fea6rWaWu1UCKHo.jpg
+Videos count: 2
+  - Video: https://video-stal-27.dlmd.me/gr/9d04fe1fb054750a2c45/2aOboQebH3iB6czpITnd7LV7UrcZc1qQyiWwITIW
+  - Video: https://video-stal-25.dlmd.me/gr/32ff1f41680aad54f41b/2aOboQebHzbj1szICNuoWLDQBHUNA1HEG5499vns
+----------------------------------------
+
+[Index 55]
+Instance ID / Session ID: 1781859866401
+Symbol: 11A
+Texts (1):
+  - text: '11A Mã 484\n🏢ngõ 14 ngọc hà- ba đình\n\n⏰ trống Tầng 1tr5\n💰 Giá 5.tr-5tr5\n👉 Studio\n👉- thang máy\n👉 Diện tích 28m\n\n✅ Nội thất : Giường, tủ quần áo, rèm, bàn trang điểm, kệ bếp, bếp từ, hút mùi, tủ lạnh\n\n✅ Dịch vụ :\nĐiện 4k/số, nước 36k/khối, dvchung 200k/người, mạng 100k/phòng\n❌ Lưu ý :\n- Đóng 1 cọc 1\n- Hợp đồng6- 12 tháng\n- Không nhận khách nước ngoài\n- Ôtô đỗ gần nhà\nMa. 448'
+    orig: '🎉Thưởng 200k cho sale\n🌹20% \nMã 484\n🏢ngõ 14 ngọc hà- ba đình\n\n⏰ trống   Tầng 1,5\n💰 Giá 5.tr-5.5tr\n👉 Studio \n👉- thang máy\n👉 Diện tích 28m\n\n✅ Nội thất : Giường, tủ quần áo, rèm, bàn trang điểm, kệ bếp, bếp từ, hút mùi, tủ lạnh\n\n✅ Dịch vụ : \nĐiện 4k/số, nước 36k/khối, dvchung 200k/người, mạng 100k/phòng\n ❌ Lưu ý : \n- Đóng 1 cọc 1\n- Hợp đồng6- 12 tháng\n- Không nhận khách nước ngoài \n- Ôtô đỗ gần nhà\nMa. 448'
+Photos count: 6
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/710374aec4e501bb58f4/837897065496520272.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/9c33a6b016fbd3a58aea/2255865583645432101.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/c1cbf266422d8773de3c/2255865583645432101.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/767382dd3296f7c8ae87/2255865583645432101.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/706094bf24f4e1aab8e5/2255865583645432101.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/c1f2c575753eb060e92f/3955752033940768865.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 57]
+Instance ID / Session ID: 1781859914034
+Symbol: 11A
+Texts (1):
+  - text: '11A 🏢địa chỉ: 612 lạc long quân, tây hồ\n💰giá: 11tr- 12tr\n⏰. Trống\n👉 Diện tích:80m2\n👉 thang: máy\n👉 dạng: 2n1k\n⚡️ Tầng: 4\n💎 nội thất như hình: Giường tủ, đệm, bếp, bàn ghế sofa, bàn ghế ăn, tivi, tủ lạnh, máy giặt\n❌ Dịch vụ:\n\nĐiện 4k/số, nước 36k/khối, dvchung 150k/người, mạng 100k/phòng\n\n📌 Lưu ý\nXe điện: ko\nGhan người:3-4\nGhan xe:2\nĐóng 1:1\nHợp đồng 6-12 tháng\n❌ PANDA HOME ❌'
+    orig: '🌹25% \n🏢địa chỉ: 612 lạc long quân, tây hồ\n💰giá: 11tr- 12tr\n⏰.     Trống \n👉 Diện tích:80m2\n👉 thang: máy\n👉 dạng: 2n1k\n⚡️ Tầng: 4\n💎 nội thất như hình: Giường tủ, đệm, bếp, bàn ghế sofa, bàn ghế ăn, tivi, tủ lạnh, máy giặt\n❌ Dịch vụ: \n\nĐiện 4k/số, nước 36k/khối, dvchung 150k/người, mạng 100k/phòng\n\n📌 Lưu ý\nXe điện:  ko\nGhan người:3-4\nGhan xe:2\nĐóng 1:1\nHợp đồng 6-12 tháng\n❌ PANDA HOME ❌'
+Photos count: 17
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/f3bce1bd55f690a8c9e7/3888912686851825731.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/807d76a4c3ef06b15ffe/3888912686851825731.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/6e005209e642231c7a53/3888912686851825731.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/407ee29557de9280cbcf/3888912686851825731.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/5525682cdc6719394076/3888912686851825731.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/736be3b956f293accae3/3888912686851825731.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/9a320be0beab7bf522ba/3888912686851825731.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/d170aeac1be7deb987f6/3888912686851825731.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/90b2586bed20287e7131/3888912686851825731.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/601bc5f070bbb5e5ecaa/3888912686851825731.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/306698a72dece8b2b1fd/3888912686851825731.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/96d2e80e5d45981bc154/3888912686851825731.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/26c85614e35f26017f4e/3888912686851825731.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/3051b9be0cf5c9ab90e4/3888912686851825731.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/74b2056eb025757b2c34/3888912686851825731.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/7d39232b9760523e0b71/3888912686851825731.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/47a0e34b5600935eca11/852960203679091684.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 70]
+Instance ID / Session ID: 1781864470247
+Symbol: 1A
+Texts (4):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: Ngách 57 ngõ 509 Vũ Tông Phan - Quận: Thanh Xuân\n\n⏰ Trống :\n\n💰 Giá: 4tr6 - 5tr2\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ + máy giặt sấy\n\n✅ Dịch vụ:\nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cửa 80m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: Ngách 57 ngõ 509 Vũ Tông Phan - Quận: Thanh Xuân\n\n⏰ Trống : \n\n💰 Giá: 4tr6 - 5tr2\n\n👉Phòng : STUDIO \n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ + máy giặt sấy\n\n✅ Dịch vụ:  \nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cửa 80m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+  - text: 'P201,601,701 - 4tr8tr5,4tr6'
+    orig: 'P201,601,701 - 4tr8,5tr,4tr6'
+  - text: 'P604 - 5tr'
+    orig: 'P604 - 5tr'
+  - text: 'P402,403 - 5tr2'
+    orig: 'P402,403 - 5tr2'
+Photos count: 15
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/dfbf6996c7dd02835bcc/2aOboQebRztCdnx48Gl3jbotR7ibC9bwzT14zpoW.jpg
+  - Photo: https://photo-stal-4.zdn.vn/gr/jpg/e29866b3c8f80da654e9/2aOboQebS07D586OpOnG5wcyhHAdMkzAOyUZrP7Y.jpg
+  - Photo: https://photo-stal-23.zdn.vn/gr/jpg/1eaea78409cfcc9195de/2aOboQebRzyLJRIj4TG5JlUV0lfec3GdEGyfV4K0.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/34ca47f4e9bf2ce175ae/2aOboQebS0CQcPKom12fMlkyAK33RH53ZjxfLgrw.jpg
+  - Photo: https://photo-stal-23.zdn.vn/gr/jpg/29fba9a507eec2b09bff/2aOboQebRzMg0fMnr8AgwBkERu0BIEgfyLkZgF5k.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/e411d741010ac4549d1b/2aOboQebSuoFU5zyrz5fSkGXPmOrqF1MHlieXwSO.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/6e224a689c23597d0032/2aOboQebSugzS5nqkZOKIOE1RSU0IayUwBf6pWs4.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/289728dcfe973bc96286/2aOboQebSui5Z6ASqNrfvpPHWt0p3HhnHPG7YNQu.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/cc5ff4082243e71dbe52/2aOboQebSutmTwlQqGKbUGuxHXjqAZATPE3jbBhY.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/b120fd5f2b14ee4ab705/2aOboQebSuErGyg2qghM2iSWMrD4ata8l6RaKQt6.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/ebb699a441ef84b1ddfe/2aOboQebTAyKGkPqPGIgxLIPvq8GRNVLSPp6eiki.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/f0381837c07c05225c6d/2aOboQebTAofqcmaaBHhIQ7iv6f1CS94GWhkwXaK.jpg
+  - Photo: https://photo-stal-37.zdn.vn/gr/jpg/f11a2706ff4d3a13635c/2aOboQebTAzSoZiq0HeER6zpp8vybwus6lYFwFTU.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/1cd950cf88844dda1495/2aOboQebTApSV3cAeKlWBA5Vo6s1ptg3WDWSb0wS.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/52db5adc829747c91e86/2aOboQebTAShaVUIhtoiZf3hkAvfZ6RzAKSNp3yK.jpg
+Videos count: 2
+  - Video: https://video-stal-18.dlmd.me/gr/ad0b60d6cf9d0ac3538c/2aOboQebS36zTbzpxdNZz1AqkS7KM86J2P7u5fyS
+  - Video: https://video-stal-2.dlmd.me/gr/d57844499202575c0e13/2aOboQebSxoLL9QS1sfW6VpqqL6xRf3ncHpmkoW8
+----------------------------------------
+
+[Index 73]
+Instance ID / Session ID: 1781864664738
+Symbol: 10A
+Texts (1):
+  - text: '10A 12th\nMã : Ts180\n\n🏡 Địa chỉ : Nhà số 10 ngõ 39 Nguyễn Phúc Lai - Đống Đa\n⏰ Trống : P402\n—————————\n🎍 giá : 6tr5\n🎍 Phòng : 1n1k + Gác Xép\n🎍 Thang Máy\n\n❣Nội thất : Điều hòa, nóng lạnh, kệ tủ bếp, gác xép, giường, tủ quần áo, tủ lạnh, máy giặt, sập gỗ\n\n❣Dịch vụ : Điện: 4k/ số Nước: 35k/ khối Internet: 100k/ phòng Phí dịch vụ: 150k/người/tháng (thang máy, dọn vệ sinh, điện chung, rác...)\n\n🛑 Lưu ý:\n- Thanh toán 1 cọc 1\n- Nhận xe điện ( Không sạc )\n- không nuôi pet, Không nhận nước ngoài\n- Gh 2xe\n- Khách qua gọi trước 30p'
+    orig: '🌹12th 30% \nMã : Ts180\n\n🏡 Địa chỉ : Nhà số 10 ngõ 39 Nguyễn Phúc Lai - Đống Đa\n⏰ Trống : P402\n—————————\n🎍 giá : 6tr5 \n🎍 Phòng : 1n1k + Gác Xép   \n🎍 Thang Máy \n\n❣Nội thất : Điều hòa, nóng lạnh, kệ tủ bếp, gác xép, giường, tủ quần áo, tủ lạnh, máy giặt, sập gỗ\n\n❣Dịch vụ : Điện: 4k/ số Nước: 35k/ khối Internet: 100k/ phòng Phí dịch vụ: 150k/người/tháng (thang máy, dọn vệ sinh, điện chung, rác...)\n\n🛑 Lưu ý: \n- Thanh toán 1 cọc 1\n- Nhận xe điện ( Không sạc )\n- không nuôi pet, Không nhận nước ngoài \n- Gh 2xe \n- Khách qua gọi trước 30p'
+Photos count: 6
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/546fd244d70c12524b1d/2aOboQeaeh9Zc2NYzdrFyUnSiagehxhEjSrWFBA0.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/445ac371c63903675a28/2aOboQeaeh9XBDRBUQz489xEKvAzvZ2nyzeTfbF2.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/e3cbbe01b8497d172458/2aOboQeaeh9t4bub1IqmjByXGbX7QsEXXNF59ym8.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/e164584f5d079859c116/2aOboQeaeh9Zc2NYzdrFyUjeewL2KRh1sxBdr6a8.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/8f80d04ad602135c4a13/2aOboQeaeh9qdmyDW5yasr40GJy93GVWhlAhaQro.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/24374c914ad98f87d6c8/2aOboQeaegeUzIdKLBbxPXdZjZKhHhEcK5kgvQPo.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 75]
+Instance ID / Session ID: 1781864675773
+Symbol: 10A
+Texts (3):
+  - text: '10A 12th\nMã : Ts180\n\n🏡 Địa chỉ : Nhà số 11D ngách 7 ngõ 101 Thanh Nhàn - Hai Bà Trưng\n⏰ Trống : P401,P302\n—————————\n🎍 giá : 4tr5,5tr5\n🎍 Phòng : Studio ( 30m2 )\n🎍 Thang Bộ\n\n❣Nội thất : Full nội thất\n\n❣️Dịch vụ : Điện: 4k/ số Nước: 120k/ người Internet: 100k/ phòng Phí dịch vụ: 120k/người/tháng (máy giặt, dọn vs, điện chung, rác...)\n\n🛑 Lưu ý:\n- Thanh toán 1 cọc 1\n- Không nhận xe điện, cho nuôi PET\n- Nhận khách nước ngoài\n- Giới hạn 2 xe/phòng\n- Khách qua gọi trước 30p'
+    orig: '🌹12th 30% \nMã : Ts180\n\n🏡 Địa chỉ : Nhà số 11D ngách 7 ngõ 101 Thanh  Nhàn - Hai Bà Trưng\n⏰ Trống : P401,P302 \n—————————\n🎍 giá : 4tr5,5tr5 \n🎍 Phòng : Studio ( 30m2 )\n🎍 Thang Bộ \n\n❣Nội thất : Full nội thất \n\n❣️Dịch vụ : Điện: 4k/ số Nước: 120k/ người Internet: 100k/ phòng Phí dịch vụ: 120k/người/tháng (máy giặt, dọn vs, điện chung, rác...)\n\n🛑 Lưu ý: \n- Thanh toán 1 cọc 1\n- Không nhận xe điện, cho nuôi PET\n- Nhận khách nước ngoài\n- Giới hạn 2 xe/phòng\n- Khách qua gọi trước 30p'
+  - text: 'P401 - 4tr5'
+    orig: 'P401 - 4tr5'
+  - text: 'P302 - 5tr5'
+    orig: 'P302 - 5tr5'
+Photos count: 5
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/3daaf8a5c9ed0cb355fc/2aOboQeag51gf7U3SMntEbT3aWBaf1plMmjrkzFg.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/2bf26752511a9444cd0b/2aOboQeagayeYppk3Cf2Ka3GSf4K6dUJMpwWAd4y.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/064413e525ade0f3b9bc/2aOboQeagb2cFow1tAwKacfYZlt7xjShSNWEJ5ai.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/5dac5c086a40af1ef651/2aOboQeagazABW4fau1WIxfl46Eq9dqz3KxKUbb6.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/2250c2f0f4b831e668a9/2aOboQeagb0tDfVLk2TvRn9jHzfkq3E2SX9ifKXQ.jpg
+Videos count: 2
+  - Video: https://video-stal-19.dlmd.me/gr/3065f46ac522007c5933/2aOboQeag51gf73W1Yc9svEYlbJq9AcYoddw2rqa
+  - Video: https://video-stal-12.dlmd.me/gr/a2f5a251941951470808/2aOboQeagaz7kghkesxb74fNdVQ0F3qyVJjBxOHA
+----------------------------------------
+
+[Index 82]
+Instance ID / Session ID: 1781864504320
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: ngõ 481 Vũ Tông Phan - Quận: Thanh Xuân\n\n⏰ Trống :\n\n💰 Giá: P202 - 4tr5\nP301 - 6tr6\n\n👉Phòng : STUDIO - 1N1K\n👉Thang máy\n👉Diện tích: 25m - 35m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet\n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cửa 15m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: ngõ 481 Vũ Tông Phan - Quận: Thanh Xuân\n\n⏰ Trống : \n\n💰 Giá: P202 - 4tr5 \n              P301 - 6tr6\n\n👉Phòng : STUDIO - 1N1K\n👉Thang máy\n👉Diện tích: 25m - 35m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet \n- Ko giới hạn người ở và xe\n- Nhận khách Tây\n- Oto đỗ cửa 15m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+  - text: 'P202'
+    orig: 'P202'
+  - text: 'P301 - 1N1K'
+    orig: 'P301 - 1N1K'
+Photos count: 14
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/cf9e18b8d3f316ad4fe2/2aOboQebVMjGR8sZN5u0j7INHg27MWtKYkO1z3YG.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/22d0928959c29c9cc5d3/2aOboQebVMZKzGef1Ylg9q70ZrWJ3KAMKowTA8Cu.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/24077a24b16f74312d7e/2aOboQebVMlSf9bnYiqhzzUTvgu5hdnjPwiIZ2tU.jpg
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/764b1411df5a1a04434b/2aOboQebVMSyuA7FTvAjPEeqNXobPHjFraV850bI.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/3da3b2ef79a4bcfae5b5/2aOboQebVM0SOpZeXxjqiBhfbvrQYvH9osfIlpTc.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/8ca3d5eb1ea0dbfe82b1/2aOboQebVM5HbtOHSVFLXeFR56h1JAqR5HIdxUcy.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/76fdf6133858fd06a449/2aOboQebVdRiBY8VqGmNgyQJANp0ym7cyFIlDVdA.jpg
+  - Photo: https://photo-stal-26.zdn.vn/gr/jpg/6ae8b7037948bc16e559/2aOboQebVdaNn8EI59wbFSuXx9w63TSIjrz1C64W.jpg
+  - Photo: https://photo-stal-10.zdn.vn/gr/jpg/c51cc4f60abdcfe396ac/2aOboQebVdQvX7Ivm7IYoEQgBT6ywBvIgufIsJtI.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/6b063deaf3a136ff6fb0/2aOboQebVdFCBRlaH1xRPRxc96CotXOlLEtq38Ai.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/4ad4c2210c6ac934907b/2aOboQebVde21XnXtTEMkoIaH8x8oOw5WXJ2w6Rk.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/e734add96392a6ccff83/2aOboQebVdMKuz8Zsp2D2nLfm0yhTeLfrVYe0JXs.jpg
+  - Photo: https://photo-stal-34.zdn.vn/gr/jpg/279f5972973952670b28/2aOboQebVdNObAYoTQdMptTtpvao3gQPzhaxLu1Q.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/bff1bbe276a9b3f7eab8/2aOboQebVcnL25EQtbNo48Ozi6HmKERapGdZC0hc.jpg
+Videos count: 1
+  - Video: https://video-stal-36.dlmd.me/gr/1385a4626a29af77f638/2aOboQebVd6Z0i2eJNdBYWTNDdNt8mlr04VIV4RU
+----------------------------------------
+
+[Index 93]
+Instance ID / Session ID: 1781866253206
+Symbol: 12A
+Texts (1):
+  - text: '12A . HD 6 tháng. Mã 454\n\n🏢Ngõ 144/2 Quan Nhân - Thanh Xuân\n\n🍁 Trống P202\n\n💸 Giá 4tr8\n\n👉 Đơn kk\n👉 Thang máy\n👉 Diện tích 30m2\n\n🍀 Nội thất\n- Điêù Hoà , Nóng Lạnh , Giường , Tủ , Bàn bếp , Tủ Bếp , Máy Giặt Chung\n\n🍀 Phí dvu\nĐiện : 4k/số\nNước 100k/ng\nWf : 100k/phòng - Mỗi phòng 1 cục wf riêng\nDvu chung 150k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. Ko chung chủ\n- Gọi trước khi qua 30p'
+    orig: '🌹40%.      HD 6 tháng.     Mã 454\n\n🏢Ngõ 144/2 Quan Nhân - Thanh Xuân \n\n🍁  Trống P202\n\n💸 Giá 4tr8\n\n👉 Đơn kk \n👉 Thang máy\n👉 Diện tích 30m2\n\n🍀 Nội thất\n- Điêù Hoà , Nóng Lạnh , Giường , Tủ , Bàn bếp , Tủ Bếp , Máy Giặt Chung\n\n🍀 Phí dvu\nĐiện : 4k/số\nNước 100k/ng\nWf : 100k/phòng - Mỗi phòng 1 cục wf riêng \nDvu chung 150k/ng\n\n❌ Lưu ý\n- Đóng 1 cọc 1. Ko chung chủ\n- Gọi trước khi qua 30p'
+Photos count: 4
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/90201c899adc5f8206cd/2aOboQecRSgROBSgPv5PjHMSiCV0wPa5RWweCmrA.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/323810af96fa53a40aeb/2aOboQecRTahkPiIDgTMEcxLWpNWdfxPUAXP8Taa.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/397f90041651d30f8a40/2aOboQecRUGxfJoZKJp6Ne5YhrDlrcwxoDYzNxKa.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/634b743df26837366e79/2aOboQecRUlsYlnHxwZdZFb8C82ge3DiOFXJpnfM.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 94]
+Instance ID / Session ID: 1781866330419
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: ngách 13 269 Ngõ Quỳnh - Quận: Hai Bà Trưng\n\n⏰ Trống : P301,302\n\n💰 Giá: 4tr5\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cửa 50m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: ngách 13 269 Ngõ Quỳnh - Quận: Hai Bà Trưng \n\n⏰ Trống : P301,302\n\n💰 Giá: 4tr5\n\n👉Phòng : STUDIO \n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cửa 50m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+  - text: 'P302'
+    orig: 'P302'
+  - text: 'P301'
+    orig: 'P301'
+Photos count: 14
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/1a1248520b07ce599716/2aOboQecHMX3LXbZfU4yPuhrEWgxsijWcBd5MBHs.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/48951ed85d8d98d3c19c/2aOboQecHMQLN2akaycJ4HA2N7Ayl4tsMvFoCno0.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/3a356479272ce272bb3d/2aOboQecHMOZu4DgwdHi56kOvuqvOMWolyCFyOps.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/f6ac47ed04b8c1e698a9/2aOboQecHMZ8H5VfLUP69mGQR2BN0fPKb41d9Bsu.jpg
+  - Photo: https://photo-stal-5.zdn.vn/gr/jpg/7d1417445411914fc800/2aOboQecHLvEJTu8RJUoez5Pat5dZaeApVsYu0PI.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/16097f593c0cf952a01d/2aOboQecHLvGkIqVwWN0VJxolEOK21TOGZScmSlE.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/d62e32b877edb2b3ebfc/2aOboQecHbl1RLW0kEp4jJVp7g629F1QVxOc5oW0.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/81392ba46ef1abaff2e0/2aOboQecHbneQObPT9NsHteXlhwz8MiBjt7NtTA8.jpg
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/230db49bf1ce34906ddf/2aOboQecHbmfbr3vsxX6BTGFN2f6MhirILc0fnvs.jpg
+  - Photo: https://photo-stal-33.zdn.vn/gr/jpg/90363da478f1bdafe4e0/2aOboQecHbewNzZFj3LSt4LM2dWsj55DHZVGz5Um.jpg
+  - Photo: https://photo-stal-10.zdn.vn/gr/jpg/ff8658141d41d81f8150/2aOboQecHbfURUkYlxa8hmwLJIv6ZEeudnnvdPhw.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/bd6355fd10a8d5f68cb9/2aOboQecHbaC2ZdNovaLkHeIVFsFuQELEEihuCBs.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/cb3593a4d6f113af4ae0/2aOboQecHbhKm70NQif7Nd7tNTTR4sQMsZulfRLM.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/0fe0e444a111644f3d00/2aOboQecHbIh67gJKJl9FxAPy0FZ1Mt6hJSNJlZo.jpg
+Videos count: 1
+  - Video: https://video-stal-21.dlmd.me/gr/9febc7a684f341ad18e2/2aOboQecHMQE4bC4rNxVOHmYnQZ1xX1cZwXOUnaK
+----------------------------------------
+
+[Index 99]
+Instance ID / Session ID: 1781866427574
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: 153 ngõ chợ Khâm Thiên - Quận: Đống Đa\n\n⏰ Trống : P402,701\n\n💰 Giá: 4tr8\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ máy giặt riêng\n\n✅ Dịch vụ:\nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cách 100m\n- nhận xe điện vin\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: 153 ngõ chợ Khâm Thiên - Quận: Đống Đa\n\n⏰  Trống :  P402,701\n\n💰 Giá: 4tr8 \n\n👉Phòng : STUDIO \n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ máy giặt riêng\n\n✅ Dịch vụ:  \nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cách 100m\n-  nhận xe điện vin \n- Khách qua gọi trước 30p'
+  - text: 'P402'
+    orig: 'P402'
+  - text: 'P701'
+    orig: 'P701'
+Photos count: 12
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/30a0c9f855ad90f3c9bc/2aOboQecPxcNKM0ePUIu7QODwTi9ESMdMv82JiMq.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/9627e05f7c0ab954e01b/2aOboQecPwZb5pQmNfFVQvv6CXv9UVtaJSi16hQe.jpg
+  - Photo: https://photo-stal-10.zdn.vn/gr/jpg/d72e2476b8237d7d2432/2aOboQecPxbrhflirmwQ92h4RSCT8MYYYiGwupge.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/25eb718eeddb288571ca/2aOboQecPxe6MVRKYclJGFsdtqVhLSi7yBNsBpcO.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/557f0bd3978652d80b97/2aOboQecPuwq9rPHmQgvfM7iy8nJvpInGBzZXuBk.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/ffc06e2ef07b35256c6a/2aOboQecQBZnLEq9mXCYS1Z5gw0g1raFRDZuJnGK.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/59a86043fe163b486207/2aOboQecQBOvVe19M15dceqDbr6cMIvFSMqpou6C.jpg
+  - Photo: https://photo-stal-37.zdn.vn/gr/jpg/59bfc3555d00985ec111/2aOboQecQBSvdS3ohCF7j2PY8f1NtqlBaSmV3u1A.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/6e61118f8fda4a8413cb/2aOboQecQBY9AjIEdoUWzrr2XNjvgaV7cGO4aDi4.jpg
+  - Photo: https://photo-stal-23.zdn.vn/gr/jpg/a1eb29c8b49d71c3288c/2aOboQecQ9NDR78YcidYyhuQ3IsfeuZJiDpQbhjM.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/ef61d36d4e388b66d229/2aOboQecQASSvP2JMckzqQyAvrvmS9CsWdvXvrY8.jpg
+  - Photo: https://photo-stal-33.zdn.vn/gr/jpg/6baf51b4cce109bf50f0/2aOboQecQ9eCksqhZd6HUeihbsYkcPLlS0FWU7Rg.jpg
+Videos count: 2
+  - Video: https://video-stal-6.dlmd.me/gr/f6703316af436a1d3352/2aOboQecPxX7MHGJjh94rDlt2SrWUOqhV8zbDq1g
+  - Video: https://video-stal-21.dlmd.me/gr/f073a5873bd2fe8ca7c3/2aOboQecQBNR4RfD09q9OrCcyr0PBggUih0HL1ii
+----------------------------------------
+
+[Index 102]
+Instance ID / Session ID: 1781866356191
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 12th Mã: A1286\n6th\n\n🏠 Địa chỉ: Ngõ 296 Lĩnh Nam - Quận: Hoàng Mai\n\n⏰ 1/7 Trống :\n\n💰 Giá: P303 - 3tr8\nP401 - 4tr\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cửa\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 12th                  Mã: A1286\n           30% 6th    \n\n🏠 Địa chỉ: Ngõ 296 Lĩnh Nam - Quận: Hoàng Mai\n\n⏰ 1/7 Trống : \n\n💰 Giá: P303 - 3tr8 \n              P401 - 4tr \n\n👉Phòng : STUDIO \n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cửa\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+  - text: 'P303'
+    orig: 'P303'
+  - text: 'P401'
+    orig: 'P401'
+Photos count: 13
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/cbf7f81ab64f73112a5e/2aOboQecIt9AQjwlOd8YiD70pdxvVBBL25DsidiS.jpg
+  - Photo: https://photo-stal-20.zdn.vn/gr/jpg/96f460142e41eb1fb250/2aOboQecItD87j33EbPqyFoFBodhNecFGqClZgX2.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/7bc86e222077e529bc66/2aOboQecIsvR1AO5DxDhGEqbqEAAZXONtALOhOjo.jpg
+  - Photo: https://photo-stal-19.zdn.vn/gr/jpg/752693cadd9f18c1418e/2aOboQecIt5knG1mbZ5wGsxit3SzpYNvYXpd9IJM.jpg
+  - Photo: https://photo-stal-24.zdn.vn/gr/jpg/d77233d97d8cb8d2e19d/2aOboQecIvHynzFyEVnD9AXLLcQATKPSVwJkkYl6.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/54e9270c6959ac07f548/2aOboQecItJxOgt0ojV5qu1pgJhJfyw8LBFV92zg.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/e8c59005de501b0e4241/2aOboQecIuH7liofrrZApC58JathZu8a85zo2UzI.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/ad1026226977ac29f566/2aOboQecJ8q3M5oaRQ3SA1iYo1NWWxz6scYMcdf6.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/88ab312c41798427dd68/2aOboQecJFJHCAb7go4yOplu0mDVX4INhWhXYowC.jpg
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/59a87aba35eff0b1a9fe/2aOboQecJ9uFACI6aiZjEeSyrzqqGlwgTjeLUD2m.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/377ea7f8d7ad12f34bbc/2aOboQecJFGZLTcxxTln9ZjUXnQ15i3cdQl0z72m.jpg
+  - Photo: https://photo-stal-23.zdn.vn/gr/jpg/6c08173a586f9d31c47e/2aOboQecJ8fh9BEVYbJ1J2mIfp8UMR6z6B51fWu8.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/8a198dbbfdee38b061ff/2aOboQecJDzcwL8FDhBQjP8sbxmUV2Pfk7NcfJmS.jpg
+Videos count: 1
+  - Video: https://video-stal-43.dlmd.me/gr/87198c27c372062c5f63/2aOboQecJ8bjSDYgUezUu56p0ueySAi555Fskcls
+----------------------------------------
+
+[Index 106]
+Instance ID / Session ID: 1781866515253
+Symbol: 9a
+Texts (1):
+  - text: '9a 1tr2\n\nH284\n\n📍 Phòng cho thuê tại số 6A ngách 30 ngõ 109 Quan Nhân- thanh Xuân\n\nP301- 3tr9\n\n💡 Chi phí:\nĐiện: 4tr2đ/số\nNước: 35trđ/m³\nMạng: 100trđ/phòng\nDịch vụ chung: 200trđ/người/tháng\n(thang máy, chiếu sáng, vệ sinh hành lang, đổ rác, máy giặt & máy sấy)'
+    orig: '🌹1tr2\n\nH284\n\n📍 Phòng cho thuê tại số 6A ngách 30 ngõ 109 Quan Nhân- thanh Xuân \n\nP301- 3tr9\n\n💡 Chi phí:\nĐiện: 4.200đ/số\nNước: 35.000đ/m³\nMạng: 100.000đ/phòng\nDịch vụ chung: 200.000đ/người/tháng\n(thang máy, chiếu sáng, vệ sinh hành lang, đổ rác, máy giặt & máy sấy)'
+Photos count: 5
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/92f90e7a5131946fcd20/1WUpukawSBP2VLMXun8RklD5QYgIcLjw2DAVgyf2CPfzerwjVerP259wwdrc3G1uMzq.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/6fb4b037ef7c2a22736d/1WUpukawSBNQBPnnstr9BS0wswOLlUzEFfssk7loOEAzTYzokvhVbwO66EgwY5mocsy.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/370d0e8f51c4949acdd5/1WUpukawSBMJOJzPPGBAcbuaEP5tdYmyG0ckjVCk2e96ynRuAzLlqmKlmeWmCY0r8fE.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/641f12964ddd8883d1cc/1WUpukawSBQ0hIhOKj6QUkJXAtptFwLujWK7ALAkyX3bHvaWLQF3cEVsSVSLaec3QkG.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/76068885d7ce12904bdf/1WUpukawSBOFmEf6F8786a86vujFCeDnlmVJSIAZPs56KeTOFqXMKeTRVYaymMW7Yr0.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 107]
+Instance ID / Session ID: 1781866865483
+Symbol: 9a
+Texts (3):
+  - text: '9a 1tr2\n\nH284\n\n📍 Phòng cho thuê tại số 32 ngõ 147 tổ 3 Phú Đô - Nam Từ Liêm\n\nP202 giá 3tr ở được luôn\nP502 giá 3tr1/7 trống\n\n💡 Chi phí:\nĐiện: 4tr2đ/số\nNước: 100trđ/người\nMạng: 100trđ/phòng\nDịch vụ chung: 200trđ/người/tháng\n(thang máy, chiếu sáng, vệ sinh hành lang, đổ rác, máy giặt & máy sấy)'
+    orig: '🌹1tr2\n\nH284\n\n📍 Phòng cho thuê tại số 32 ngõ 147 tổ 3 Phú Đô - Nam Từ Liêm\n\nP202 giá 3tr ở được luôn\nP502 giá 3tr 1/7 trống\n\n💡 Chi phí:\nĐiện: 4.200đ/số\nNước: 100.000đ/người\nMạng: 100.000đ/phòng\nDịch vụ chung: 200.000đ/người/tháng\n(thang máy, chiếu sáng, vệ sinh hành lang, đổ rác, máy giặt & máy sấy)'
+  - text: 'P502'
+    orig: 'P502'
+  - text: 'P202'
+    orig: 'P202'
+Photos count: 9
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/52d93d56ec03295d7012/2aOboQecY5VHx7TcZUxGnXz4AIApwP0LudyDFPGa.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/91bdfd322c67e939b076/2aOboQecY5VHx7TcZUxGnY12ujZ9L3ojuSmIdkQK.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/1d07c88a19dfdc8185ce/2aOboQecY5bDHBerZqw7GRaej4avFE603sBLpEA4.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/947cf4f325a6e0f8b9b7/2aOboQecY5VxJ5U481oW9HJbsQ75idpwHVurG43c.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/978df9022857ed09b446/2aOboQecY5VHx7TcZUxGnY1KpE9j8WrbdiJWeeAK.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/53befa3b2b6eee30b77f/2aOboQecY5lISLeHwDZDD4NoX2xjrfoWncLM5XOK.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/924cceae1cfbd9a580ea/2aOboQecYBKNEf0LtSpMTXPxnfMJRVbPG5EBWfwW.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/64ee1f03cd5608085147/2aOboQecYBJY9PEOK6TLkSY2QcGqqcuu0agbnf3Q.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/b927edca3f9ffac1a38e/2aOboQecYBHyqXZEBnVhyycGV8GRKbJTYyjZstHc.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 116]
+Instance ID / Session ID: 1781867204909
+Symbol: 12A
+Texts (1):
+  - text: '12A . HD 6 tháng. Mã 135\n\n🏢Địa chỉ : 225 Âu Cơ - Tây Hồ\n\n🍁05/07 Trống p501\n\n💸 Giá 10tr\n\n👉Phòng 2N1K\n👉Thang máy\n👉Diện tích 70m2\n\n🍀Nội thất :\n- Full đồ nội thất\n\n🍀Dịch vụ :\nĐiện 4k/số\nDv chung 300k/ng\n\n❌Lưu ý:\n- Thanh toán 1 cọc 1. ko chung chủ\n- Khách qua gọi trước 30p'
+    orig: '🌹40%.    HD 6 tháng.     Mã 135\n\n🏢Địa chỉ : 225 Âu Cơ - Tây  Hồ\n\n🍁05/07 Trống p501\n\n💸 Giá 10tr\n\n👉Phòng 2N1K\n👉Thang máy\n👉Diện tích 70m2\n\n🍀Nội thất : \n- Full đồ nội thất\n\n🍀Dịch vụ : \nĐiện 4k/số\nDv chung 300k/ng\n\n❌Lưu ý: \n- Thanh toán 1 cọc 1. ko chung chủ\n- Khách qua gọi trước 30p'
+Photos count: 5
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/89aa92ba50ef95b1ccfe/2aOboQecals3KAtu3YuM8NTSBBnaYaHBy5XLqcN6.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/26a40eb1cce409ba50f5/2aOboQecalwbVU7sReIW3TVWpwSTuJ64yMAGoQ7s.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/7fb857b795e250bc09f3/2aOboQecamEZdnNUykc0fqo17lu7knlzYhcNe6Nc.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/6071766cb43971672828/2aOboQecalYHI4KqMuO4gUpqOkctDEkiup5IOk3E.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/6131cfc10c94c9ca9085/2aOboQecamyzPnHxROc0Ib2nwq9WdyXEetfXoC2q.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 122]
+Instance ID / Session ID: 1781867299573
+Symbol: 9a
+Texts (1):
+  - text: '9a 1tr1\n\nH284\n\n📍 Địa chỉ: Số 3A ngõ 133 Bùi Xương Trạch- thanh xuân\n\n🏢 Phòng: 02\n💰 Giá thuê: 4tr1/tháng\n✅ Tình trạng: nhận phòng từ 01/07/2026\n\n💡 Chi phí:\nĐiện: 4tr2đ/kWh ⚡\nNước: 35trđ/khối🚿\nInternet: 100trđ/phòng🌐\nPhí dịch vụ: 200trđ/người/tháng 🧹\n\n🎁 Dịch vụ bao gồm:\nThang máy 🛗\nChiếu sáng & vệ sinh hành lang ✨\nĐổ rác 🗑️\nMáy giặt & máy sấy 👕🌀'
+    orig: '🌹1tr1\n\nH284\n\n📍 Địa chỉ: Số 3A ngõ 133 Bùi Xương Trạch- thanh xuân\n\n🏢 Phòng: 02\n💰 Giá thuê: 4.100.000đ/tháng\n✅ Tình trạng: nhận phòng từ 01/07/2026\n\n💡 Chi phí:\nĐiện: 4.200đ/kWh ⚡\nNước: 35.000đ/khối🚿\nInternet: 100.000đ/phòng🌐\nPhí dịch vụ: 200.000đ/người/tháng 🧹\n\n🎁 Dịch vụ bao gồm:\nThang máy 🛗\nChiếu sáng & vệ sinh hành lang ✨\nĐổ rác 🗑️\nMáy giặt & máy sấy 👕🌀'
+Photos count: 5
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/df00aaeb64bea1e0f8af/1WUpukaxGRHB50FnPomNS4oDKY0UifpsE80C05N2rfbTLnoNZahfK0Ht9ZmCBg1esXA.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/1ba0634bad1e6840310f/1WUpukaxGRHB50FnPomNS4pJ3QGG3sBrqZWT0Wfe6J05i5OucLnD1h8AwES0284OYJG.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/e6af9d445311964fcf00/1WUpukaxGRHCVrKil6Oi5YInYbwxxovqHlNhkStifefHv5ziVvgf7gHt0JkVTSCdyEM.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/75d20f39c16c04325d7d/1WUpukaxGRHB50FnPomNS4oSDScLM925MFHDGntUlcSUhpoOp4IynBbFfurecGLRwos.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/d3fcaa176442a11cf853/1WUpukaxGRHB50FnPomNS4pQy2vTDE8DCEdOdHZ816dGhK2Br3TNBSLRUBMmzlv4uRe.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 123]
+Instance ID / Session ID: 1781867111543
+Symbol: 6A
+Texts (1):
+  - text: '6A 12th Mã: tp428\n\n🏠 Địa chỉ: ngách 13 269 Ngõ Quỳnh - Quận: Hai Bà Trưng\n\n⏰ Trống ở lun\n💰 Giá: 4tr5\n\n👉Phòng : STUDIO\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ\n\n✅ Dịch vụ:\nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người\nMạng 100k/ phòng.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cửa 50m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+    orig: '🌹40% 12th                  Mã: tp428\n\n🏠 Địa chỉ: ngách 13 269 Ngõ Quỳnh - Quận: Hai Bà Trưng \n\n⏰ Trống ở lun\n💰 Giá: 4tr5\n\n👉Phòng : STUDIO \n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Full đồ \n\n✅ Dịch vụ:  \nĐiện 4k2/số\nNước 35k/khối\nDịch vụ chung : 150k/ người \nMạng 100k/ phòng. \n\n❌ Lưu ý\n- Thanh toán 1 cọc 1                                                                                                                  \n- Được nuôi Pet nhỏ\n- Ko giới hạn người ở và xe\n- Oto đỗ cửa 50m\n- Ko nhận xe điện\n- Khách qua gọi trước 30p'
+Photos count: 6
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/f6ac47ed04b8c1e698a9/2aOboQecHMZ8H5VfLUP69mGQR2BN0fPKb41d9Bsu.jpg
+  - Photo: https://photo-stal-22.zdn.vn/gr/jpg/1a1248520b07ce599716/2aOboQecHMX3LXbZfU4yPuhrEWgxsijWcBd5MBHs.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/48951ed85d8d98d3c19c/2aOboQecHMQLN2akaycJ4HA2N7Ayl4tsMvFoCno0.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/3a356479272ce272bb3d/2aOboQecHMOZu4DgwdHi56kOvuqvOMWolyCFyOps.jpg
+  - Photo: https://photo-stal-25.zdn.vn/gr/jpg/16097f593c0cf952a01d/2aOboQecHLvGkIqVwWN0VJxolEOK21TOGZScmSlE.jpg
+  - Photo: https://photo-stal-5.zdn.vn/gr/jpg/7d1417445411914fc800/2aOboQecHLvEJTu8RJUoez5Pat5dZaeApVsYu0PI.jpg
+Videos count: 1
+  - Video: https://video-stal-21.dlmd.me/gr/9febc7a684f341ad18e2/2aOboQecHMQE4bC4rNxVOHmYnQZ1xX1cZwXOUnaK
+----------------------------------------
+
+[Index 125]
+Instance ID / Session ID: 1781867381823
+Symbol: 9a
+Texts (1):
+  - text: '9a 1tr1\n\nH244\n\nĐịa chỉ: Số 4A Ngõ 160 Trịnh Đình Cửu\n\nP402 - 4tr- 1/7 trống\n\nChi phí:\nĐiện: 4tr2đ/số\nNước: 35trđ/khối\nInternet: 100trđ/tháng\nDịch vụ chung: 200trđ/người/tháng\n(thang máy, điện hành lang, vệ sinh, đổ rác, máy giặt)'
+    orig: '🌹1tr1\n\nH244\n\nĐịa chỉ: Số 4A Ngõ 160 Trịnh Đình Cửu\n\nP402 - 4tr- 1/7 trống\n\nChi phí:\nĐiện: 4.200đ/số\nNước: 35.000đ/khối\nInternet: 100.000đ/tháng\nDịch vụ chung: 200.000đ/người/tháng\n(thang máy, điện hành lang, vệ sinh, đổ rác, máy giặt)'
+Photos count: 6
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/6d6cffbb0ceec9b090ff/2aOboQecdM7v0fb2eaxm7ZZoKepgYs4PVgCbLi0e.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/4187af495c1c9942c00d/2aOboQecdMCEb3Ak1R6myeT0VfMXhHESugP2Ke24.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/149d5752a40761593816/2aOboQecdMECE8FhBooLBVR8JNY3axC8v4EKk4Dw.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/47f12c3cdf691a374378/2aOboQecdMPIeeiydaAP4tEpaI1Jo8bw9EEFq2cq.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/fbc2780d8b584e061749/2aOboQecdMFnxorEpKeAnKDQaFIL0W8DxH2bYYRk.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/f17989b97aecbfb2e6fd/2aOboQecdMQ7juUwCwWPny2kmctzlcTnh8MYnaTI.jpg
+Videos count: 1
+  - Video: https://video-stal-26.dlmd.me/gr/6c7da9ad5af89fa6c6e9/2aOboQecdLu4IeLzn7axQGms3pNuIl4wkm2F7peC
+----------------------------------------
+
+[Index 133]
+Instance ID / Session ID: 1781868255626
+Symbol: agp
+Texts (2):
+  - text: 'agp 12th: - 6th:\nMã : A119\n\n🏡Địa chỉ: Số 12B ngõ 26 Hồ Tùng Mậu\n\n💸Giá: 5tr\n\n📍P502, 305 - Đang trống\n📍Studio - VSKK, thang máy\n\n🚪Nội thất: Full nội thất như hình\n\n💵Phí dịch vụ\nĐiện: 3.8k/số\nNước: 35k/khối\nMạng: 90k/phòng\nDịch vụ chung (chiếu sáng, thang máy, rác, vệ sinh): 180k/người\n\n🛑Lưu ý:\n1 cọc 1, Alo trước khi qua\nNhận xe điện ( kh sạc), cho nuôi pet'
+    orig: '🌹 12th:40% - 6th:30%\nMã : A119\n\n🏡Địa chỉ: Số 12B ngõ 26 Hồ Tùng Mậu\n\n💸Giá: 5tr\n\n📍P502, 305 - Đang trống\n📍Studio - VSKK, thang máy\n\n🚪Nội thất: Full nội thất như hình\n\n💵Phí dịch vụ\nĐiện: 3.8k/số\nNước: 35k/khối\nMạng: 90k/phòng\nDịch vụ chung (chiếu sáng, thang máy, rác, vệ sinh): 180k/người\n\n🛑Lưu ý:\n1 cọc 1, Alo trước khi qua\nNhận xe điện ( kh sạc), cho nuôi pet'
+  - text: 'P502'
+    orig: 'P502'
+Photos count: 0
+Videos count: 0
+----------------------------------------
+
+[Index 138]
+Instance ID / Session ID: 1781868282266
+Symbol: agp
+Texts (3):
+  - text: 'agp 12th: - 6th:\nMã : A119\n\n🏡Địa chỉ: Số 12B ngõ 26 Hồ Tùng Mậu\n\n💸Giá: 5tr\n\n📍P502, 305 - Đang trống\n📍Studio - VSKK, thang máy\n\n🚪Nội thất: Full nội thất như hình\n\n💵Phí dịch vụ\nĐiện: 3.8k/số\nNước: 35k/khối\nMạng: 90k/phòng\nDịch vụ chung (chiếu sáng, thang máy, rác, vệ sinh): 180k/người\n\n🛑Lưu ý:\n1 cọc 1, Alo trước khi qua\nNhận xe điện cho nuôi pet'
+    orig: '🌹 12th:40% - 6th:30%\nMã : A119\n\n🏡Địa chỉ: Số 12B ngõ 26 Hồ Tùng Mậu\n\n💸Giá: 5tr\n\n📍P502, 305 - Đang trống\n📍Studio - VSKK, thang máy\n\n🚪Nội thất: Full nội thất như hình\n\n💵Phí dịch vụ\nĐiện: 3.8k/số\nNước: 35k/khối\nMạng: 90k/phòng\nDịch vụ chung (chiếu sáng, thang máy, rác, vệ sinh): 180k/người\n\n🛑Lưu ý:\n1 cọc 1, Alo trước khi qua\nNhận xe điện  cho nuôi pet'
+  - text: 'P502'
+    orig: 'P502'
+  - text: 'P305'
+    orig: 'P305'
+Photos count: 20
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/eb7ea28741d2848cddc3/1265329094734977768.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/9bde69188a4d4f13165c/1265329094734977768.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/1b60f7471512d04c8903/1265329094734977768.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/e784af7d4c288976d039/1265329094734977768.jpg
+  - Photo: https://photo-stal-8.zdn.vn/gr/jpg/6f875a5db9087c562519/1265329094734977768.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/7a72a3cb409e85c0dc8f/1265329094734977768.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/46daabfd49a88cf6d5b9/1265329094734977768.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/16ead5203675f32baa64/1265329094734977768.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/e9471381f0d4358a6cc5/1265329094734977768.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/jpg/4819057529176593470/4f1a4aad6b7aea24b36b.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/a49772679632536c0a23/1WUpukaxIWrn7REJuXm5KXqjk4hd3lJTgFliApCxc5mZBII14OxDzaoLemHw6MljznQ.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/fcd92d29c97c0c22556d/1WUpukaxIWrn7REJuXm5KXpm05kdEanrZbrtKJy7mrUKlyTJXuDCaipYn8gzMstMLFx.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/c7001af0fea53bfb62b4/1WUpukaxIWrn7REJuXm5KXsrca8vS80emMSE7CiEKhARITGlZj1JgYOKaEr7qb87XiG.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/5b0e89fe6daba8f5f1ba/1WUpukaxIWrn7REJuXm5KXPZl2ltFDiFTz2d9JeYEDNK6wfwWnuuYlrg0DSSDXr8Ydx.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/3e28ead80e8dcbd3929c/1WUpukaxIWrn7REJuXm5KXNlDEUktezry59JpgDhoaOuBFLzDnp5wE9X75I6ZKqaZtc.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/4b069bf67fa3bafde3b2/1WUpukaxIWrn7REJuXm5KXQQKAZ7OcFYlscCfGwTn2BR4oR56C34Keur0v8nzH26PTs.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/7a90af604b358e6bd724/1WUpukaxIWrn7REJuXm5KXS2AT8UGTiV7ShCFBHMfCrsORL93TUWm3JYZx9hsU1JHcq.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/fc3534c5d09015ce4c81/1WUpukaxIWroYIJFFpOPy0vP2oonCt7HDtYrFwnnIMUGKdm9YPNhd2bXBQXFuAlBRGK.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/64cabb3a5f6f9a31c37e/1WUpukaxIWrn7REJuXm5KXOMH1w97VCeecs9GIUeR7EieKQcFd6ftNo7gI0ET0T6Gso.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/8c105be0bfb57aeb23a4/1WUpukaxIWrn7REJuXm5KXPC4y0kL5nugtUWyJmZk35JeuNnpWcn4VYQgofnhyO0qoB.jpg
+Videos count: 2
+  - Video: https://f141-zvc.dlmd.me/gr/ab3307360b79e727be68/5407918925483386430
+  - Video: https://video-stal-19.dlmd.me/gr/f6d15521b174742a2d65/1WUpukaxIWt9fxaaEi2c0Cu57K8JBrMFloLd33Hc4tu2Z4nx80NY4JygSnZwBaAj6F5
+----------------------------------------
+
+[Index 140]
+Instance ID / Session ID: 1781868482435
+Symbol: 2A
+Texts (1):
+  - text: '2A 🌷 -12m Mã: 🏆 594\n\n🏢Địa chỉ : Nhà số 81, ngõ 345, Khương Trung, Thanh Xuân, Hà Nội\n\n⌛️Trống : P601\n\n☘Giá : 6tr\n\n☘Dạng phòng : 1n1k\n☘Thang : MÁY\n\n🏆Nội thất :Giường đệm, tủ quẩn áo, điều hòa, nóng lạnh, tủ bếp, hút mùi, tủ lạnh, sofa, tivi, bàn học, kệ đồ\n\n🏆Dịch vụ : Dv chung (Giặt sấy, để xe, thang máy, vệ sinh, đổ rác ...) 200k/người, Nước : 120k/người. điện 4k/kWh, mạng 50k/người\nLắp thêm tivi 100k/tháng.\n- Lắp thêm máy giặt riêng 200k/tháng.\n- Để xe điện 50k/tháng.\n- Nuôi pet 50k/tháng.\n\n⭐Lưu ý:\n- Đóng 1 cọc 1\n- Nguồn hàng cập nhật liên tục tại\n🏆TL21House🏆'
+    orig: '🌷40% -12m Mã: 🏆 594\n\n🏢Địa chỉ : Nhà số 81, ngõ 345, Khương Trung, Thanh Xuân, Hà Nội\n\n⌛️Trống : P601\n\n☘Giá : 6tr\n             \n☘Dạng phòng : 1n1k\n☘Thang : MÁY\n\n🏆Nội thất :Giường đệm, tủ quẩn áo, điều hòa, nóng lạnh, tủ bếp, hút mùi, tủ lạnh, sofa, tivi, bàn học, kệ đồ\n\n🏆Dịch vụ :  Dv chung (Giặt sấy, để xe, thang máy, vệ sinh, đổ rác ...) 200k/người, Nước : 120k/người. điện 4k/kWh, mạng 50k/người\nLắp thêm tivi 100k/tháng.\n- Lắp thêm máy giặt riêng 200k/tháng.\n- Để xe điện 50k/tháng.\n- Nuôi pet 50k/tháng.\n\n ⭐Lưu ý: \n- Đóng 1 cọc 1\n- Nguồn hàng cập nhật liên tục tại         \n                🏆TL21House🏆'
+Photos count: 4
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/6edd757e432a8674df3b/2aOboQecoajRdAEVoFv8V7VSPDOWblIEr1RVnyDY.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/0440e4e6d2b217ec4ea3/2aOboQecoalD68bZSbFjUHtH5osq9aY3nALENSGe.jpg
+  - Photo: https://photo-stal-32.zdn.vn/gr/jpg/89b41e2f287bed25b46a/2aOboQecoate6n34gFAnyky8HtLXsGshDRadYJZQ.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/d7b2252b137fd6218f6e/2aOboQecoaqLllxEOnkl4RWfb6uxvu6GSyyzvJXk.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 147]
+Instance ID / Session ID: 1781868849297
+Symbol: 1A
+Texts (1):
+  - text: '1A : 12th. Mã A97\n\n🏠 Địa chỉ: Ngõ 318 Đê La Thành, Đống Đa\n\n⏰ Trống 2P\n\n💰 Giá:\nP402 giá 5tr5 - Vào luôn\nP602 giá 5tr5 - 30/6 Vào\n\n👉 Loại phòng: Studio\n👉 THANG MÁY\n👉 Diện tich: 26m2\n\n✅ Nội thất:\nFULL NỘI THẤT NHƯ HÌNH MÁY GIẶT RIÊNG\n\n✅ Dịch vụ:\n"""Điện 4k/số\nNước 32k/1 khối\nmạng 80k/phòng\nDịch vụ khác: vệ sinh/điện chung, thang máy, rác 200k/phòng\nKhông nuôi pet, tối đa ở 4, không xe điện, không người nước ngoài"""\n\n❌ Lưu ý:\n- Đóng 1 cọc 1. Hđ 12th\n- Khách gọi trước 30p khi qua'
+    orig: '🌺40%: 12th.          Mã A97\n\n🏠 Địa chỉ: Ngõ 318 Đê La Thành, Đống Đa\n\n⏰ Trống 2P\n\n💰 Giá: \nP402 giá 5tr5 - Vào luôn\nP602 giá 5tr5 - 30/6 Vào \n\n👉 Loại phòng: Studio \n👉 THANG MÁY\n👉 Diện tich: 26m2\n\n✅ Nội thất:\nFULL NỘI THẤT NHƯ HÌNH MÁY GIẶT RIÊNG\n\n✅ Dịch vụ:\n"""Điện 4k/số\nNước 32k/1 khối\nmạng 80k/phòng\nDịch vụ khác: vệ sinh/điện chung, thang máy, rác 200k/phòng\nKhông nuôi pet, tối đa ở 4, không xe điện, không người nước ngoài"""\n\n❌ Lưu ý:\n- Đóng 1 cọc 1. Hđ 12th\n- Khách gọi trước 30p khi qua'
+Photos count: 4
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/53c545b117e5d2bb8bf4/2aOboQectLQugnJgS4HHYfEUIjg9QGkBELQvH13w.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/f6d9e0b5b2e177bf2ef0/2aOboQectLdfHpKt2YLMuD3ZUYsOpkNaR9FFOe9Y.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/32b16bd73983fcdda592/2aOboQectLrTZ2mKDe0c2r7YWLdEHXN9RSM83tSq.jpg
+  - Photo: https://photo-stal-17.zdn.vn/gr/jpg/4853930bc15f04015d4e/2aOboQectM2cQOBzAcErma8nddVnt6l0dLeZz6WW.jpg
+Videos count: 1
+  - Video: https://video-stal-46.dlmd.me/gr/b55f221b704fb511ec5e/2HGb6EsyVeQmETcTImDDDAtV85vMFaOVu5wm
+----------------------------------------
+
+[Index 150]
+Instance ID / Session ID: 1781869308901
+Symbol: 1A
+Texts (1):
+  - text: '1A : 12th. Mã A1024\n\n🏠 Địa chỉ: 214 THUỴ KHUÊ, TÂY HỒ\n\n⏰ Trống tầng 2\n\n💰 Giá: 6tr\n\n👉 Loại phòng: 1N1K\n👉 THANG BỘ\n👉 Diện tich: 55m2\n\n✅ Nội thất:\nFUll đồ cơ bản, k máy giặt\n\n✅ Dịch vụ:\nĐiện 4k - Nước 35k/m3, K CÓ MÁY GIẶT\n\n❌ Lưu ý:\n- Đóng 1 cọc 1. Hđ 12th\n- Khách gọi trước 30p khi qua'
+    orig: '🌺40%: 12th.          Mã A1024 \n\n🏠 Địa chỉ: 214 THUỴ KHUÊ, TÂY HỒ \n\n⏰ Trống tầng 2\n\n💰 Giá: 6tr\n\n👉 Loại phòng: 1N1K\n👉 THANG BỘ \n👉 Diện tich: 55m2\n\n✅ Nội thất:\nFUll đồ cơ bản, k máy giặt \n\n✅ Dịch vụ:\nĐiện 4k - Nước 35k/m3, K CÓ MÁY GIẶT \n\n❌ Lưu ý:\n- Đóng 1 cọc 1. Hđ 12th\n- Khách gọi trước 30p khi qua'
+Photos count: 6
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/64bb4ffa57ae92f0cbbf/2aOboQecjXVpBv1IBUsAPQCgVpjLbEUKqabQf9TU.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/307ed72bcf7f0a21536e/2aOboQecjXF9KiqBGFOyeAhkak16nJ8oYVNmGVPM.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/7b9633bb2befeeb1b7fe/2aOboQecjYwDr4RNEK6ZGpzHFZnC2rXSyreRP5aC.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/355662687a3cbf62e62d/2aOboQecjY2cqoCCz5Zs7DD65KYuD1qLqfGE0Jhg.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/f33efb0fe35b26057f4a/2aOboQecjYAd6QHXfRsqJy2hOWkaVjjClravrGVM.jpg
+  - Photo: https://photo-stal-16.zdn.vn/gr/jpg/0005e627fe733b2d6262/2aOboQecjYlacPGdp3EnVTiwmp9bnsu241KG2uA4.jpg
+Videos count: 1
+  - Video: https://video-stal-46.dlmd.me/gr/0c3fd5e5ccb109ef50a0/2aOboQecjbv8jTcTHzSgaW431W4ZBDUOidx9SqTQ
+----------------------------------------
+
+[Index 152]
+Instance ID / Session ID: 1781869736078
+Symbol: 1A
+Texts (3):
+  - text: '1A Hh 6th- 12th Mã: H220\n\n🏠 Địa chỉ: NGÕ 116/27 MIẾU ĐẦM, MỄ TRÌ, QUẬN: NAM TỪ LIÊM\n\n⏰ Trống 2P\n\n💰 Giá: 4tr-4tr5\n\n👉Phòng : Studio\n👉Thang Máy\n\n✅ Nội thất : Điều hòa, nóng lạnh, giường, đệm, tủ quần áo, quạt, máy giặt riêng\n- Bếp từ đơn, tủ bếp trên dưới, bồn rửa, hút mùi\n- Thang máy, khóa cửa vân tay\n- Không chung chủ, giờ giấc tự do\n- Nhà mới, sạch đẹp\n- Có cho nuôi pet\n\n✅ Dịch vụ : Điện 4k, nước 35k, wifi 100k/phòng, dịch vụ chung 180k/người.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Khách qua gọi trước 30p'
+    orig: '🌺 Hh40% 6th- 12th              Mã: H220 \n\n🏠 Địa chỉ: NGÕ 116/27 MIẾU ĐẦM, MỄ TRÌ, QUẬN: NAM TỪ LIÊM \n\n⏰ Trống 2P\n\n💰 Giá: 4tr-4tr5\n  \n👉Phòng : Studio \n👉Thang Máy\n\n✅ Nội thất :  Điều hòa, nóng lạnh, giường, đệm, tủ quần áo, quạt, máy giặt riêng \n- Bếp từ đơn, tủ bếp trên dưới, bồn rửa, hút mùi\n- Thang máy, khóa cửa vân tay\n- Không chung chủ, giờ giấc tự do \n- Nhà mới, sạch đẹp\n- Có cho nuôi pet\n\n✅ Dịch vụ :  Điện 4k, nước 35k, wifi 100k/phòng, dịch vụ chung 180k/người.\n\n❌ Lưu ý\n- Thanh toán 1 cọc 1\n- Khách qua gọi trước 30p'
+  - text: '4tr'
+    orig: '4TR'
+  - text: '4tr5'
+    orig: '4TR5'
+Photos count: 12
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/e2e2ee967ddeb880e1cf/1WUpukawEF0MZ2SB8bNDOV5nJ8BAvr8CBJWOWzCKdcRYQqkbz9ysunTCObBbZoqUySj.jpg
+  - Photo: https://photo-stal-11.zdn.vn/gr/jpg/13eb1e9f8dd7488911c6/1WUpukawEF0L8BNFnJksl1heeb1mRRcl6BGarsAEdA3taZ7nyK5yBcf8Tvxu6H96D57.jpg
+  - Photo: https://photo-stal-1.zdn.vn/gr/jpg/9d2b935f0017c5499c06/1WUpukawEF0L8BNFnJksl1oESC3atwiSc59Vu9yStrAMUIrYvIc3qc05l1Qmp0C1VgL.jpg
+  - Photo: https://photo-stal-9.zdn.vn/gr/jpg/61266e52fd1a3844610b/1WUpukawEF0L8BNFnJksl1gGNOq8X6CMPkiOdOfjfCK9TKzuhk0SVqNK5egtHDZBH43.jpg
+  - Photo: https://photo-stal-20.zdn.vn/gr/jpg/36023d76ae3e6b60322f/1WUpukawEF0MZ2SB8bNDOVLgCD0nCojPGZbcZPbJnvzLnWweZ6DBXiNGeBjcyyMpFya.jpg
+  - Photo: https://photo-stal-37.zdn.vn/gr/jpg/3ccd6285ebcd2e9377dc/2aOboQeau9dvaRdvcDcHWWr25Bo5NWGZWMD7QsqG.jpg
+  - Photo: https://photo-stal-12.zdn.vn/gr/jpg/286209398071452f1c60/2aOboQeau9wzplGAF8P7mKrR8FiGF0PIl5L40YwC.jpg
+  - Photo: https://photo-stal-21.zdn.vn/gr/jpg/1c8133daba927fcc2683/2aOboQeau9xGrVqolaWSghArsxDaX7znjly54sXw.jpg
+  - Photo: https://photo-stal-3.zdn.vn/gr/jpg/dbdd088581cd44931ddc/2aOboQeau9tcd6HYxHEhBLimenylJpuyuq4LEyVk.jpg
+  - Photo: https://photo-stal-13.zdn.vn/gr/jpg/0027be65372df273ab3c/2aOboQeau9LZ7uyW32YsSmNIRgh7aFH4IbgdBsbQ.jpg
+  - Photo: https://photo-stal-23.zdn.vn/gr/jpg/4672962a1f62da3c8373/2aOboQeau9tcd6HYxHEhBLfKRYtVWPIPCBwsN7a4.jpg
+  - Photo: https://photo-stal-2.zdn.vn/gr/jpg/7dc82180a8c86d9634d9/2aOboQeau9deYh3H5lUwcAFpSPqEHpBXh11YyQVs.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 156]
+Instance ID / Session ID: 1781869917758
+Symbol: 9a
+Texts (1):
+  - text: '9a P302 giá 6tr6'
+    orig: 'P302 giá 6.600.000'
+Photos count: 5
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/206f7e975ddd9883c1cc/1WUpukawhnxmS8ScJ9hmsCn2uoyeNQkpP20odpECWZ40DX8LdmdEP80oBpWPO9d6zv3.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/30176fef4ca589fbd0b4/1WUpukawhnxmS8ScJ9hmsCowHBD3PvjyuQ8RV75rFSWnvicTf7hjPpn47z0jB2DCR5d.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/310768ff4bb58eebd7a4/1WUpukawhnxv3GwAMrPmh3oV017JVAKLk74K2Z2uAWC9OSWogbUrcSmQPkTU9ZOW2W9.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/fc6b9c93bfd97a8723c8/1WUpukawhnxmS8ScJ9hmsCozheIe4Ex3Go70aIgJrt4PLxWcsZZJK7BLWe9maMP1qVS.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/478e1c763f3cfa62a32d/1WUpukawhnxqkhhOL0YmmdOJnMLZGMWN0o1MKk7nE0Sy9H0zPFmVkhAHp2CL2pofqC5.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 157]
+Instance ID / Session ID: 1781869869321
+Symbol: 1A
+Texts (1):
+  - text: '1A 🌻 KHAI TRƯƠNG NHÀ MỚI TẠI HOÀNG MAI HẠ GIÁ\n\n-9-12h Mã: A415\n\n🏠Địa chỉ: 63 ngõ 96 Đại Từ ( có thể đi từ Đại Kim vào Oto cách 20m ) - Hoàng Mai\nMột bên đông ,3km về NEU -Bách Khoa -xây dựng ,ĐH Thăng Long\n-100m ra bờ hồ Linh Đàm\n\n⏰ Trống 10P\n\n💰 Giá: 4tr5\n\n👉Loại phòng: Studio Gác xép\n👉Thang MÁY\n👉Diện tích: 25m2\n\n✅ Nội thất: Ful Nội thất ::Tủ lạnh ,Tủ bếp ,Bếp từ âm , Hút mùi ,Giường ,Tủ quần áo ,Đệm, bàn làm việc, sofa, PCCC đầy đủ .\n\n✅ Dịch vụ:\nĐiện :4k/số\nNc :35K/khối\nDVC :200k/người\nMạng:130k/phòng\n\n❌ Lưu ý\nĐóng 1 cọc 1( Ko pet,Khách nc ngoài )\nQua gọi trước 30p\n- Đóng 1 cọc 1\n- Khách gọi trước 30p trước khi qua'
+    orig: '🌻 KHAI TRƯƠNG NHÀ MỚI TẠI HOÀNG MAI HẠ GIÁ\n\n🌺Hh 40%-9-12h                  Mã: A415\n\n🏠Địa chỉ: 63 ngõ 96 Đại Từ ( có thể đi từ Đại Kim vào Oto cách 20m ) - Hoàng Mai\nMột bên  đông ,3km về NEU -Bách Khoa -xây dựng ,ĐH Thăng Long\n-100m ra bờ hồ Linh Đàm\n\n⏰ Trống 10P\n\n💰 Giá:  4tr5\n\n👉Loại phòng: Studio Gác xép\n👉Thang MÁY\n👉Diện tích: 25m2\n\n✅ Nội thất: Ful Nội thất ::Tủ lạnh ,Tủ bếp ,Bếp từ âm , Hút mùi ,Giường ,Tủ quần áo  ,Đệm, bàn làm việc, sofa, PCCC đầy đủ .\n\n✅  Dịch vụ:\nĐiện :4k/số\nNc     :35K/khối\nDVC  :200k/người\nMạng:130k/phòng\n\n❌ Lưu ý\nĐóng 1 cọc 1( Ko pet,Khách nc ngoài )\nQua gọi trước 30p\n- Đóng 1 cọc 1\n- Khách gọi trước 30p trước khi qua'
+Photos count: 8
+  - Photo: https://photo-stal-28.zdn.vn/gr/d513d5bd45e980b7d9f8/2aOboQed3vwd3Zulcx8xQGJTWR4Sr6KUOjj9NbGK.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/350e886e183add64842b/2aOboQed3yrJDDySYA8fiRH9Y24dRVcPfadtPCdM.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/ccc4b9c9299decc3b58c/2aOboQed42ugvSnGVYAdA0S1EXBKiF59yc4z5ii0.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/10786d9cfcc8399660d9/2aOboQed44YfGu0ViDp862Hlprr64DiuZv2WvPKC.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/515e00e591b154ef0da0/2aOboQed45upDJjeOcetn2Kum5S390mROlvamI5Y.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/d9a36a3efb6a3e34677b/2aOboQed47ZJBRBp8zfshRgoHjsesyIxNSN2i2Eq.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/ea22aea63ff2faaca3e3/2aOboQed48hNosss7qj4LRSeyjycGApTnk8fSMSm.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/7907e6577703b25deb12/2aOboQed4AaNr0jJ738jaZ754E2frI8mh5dYTKZU.jpg
+Videos count: 1
+  - Video: https://video-stal-45.dlmd.me/gr/d34ba159300df553ac1c/2HGb6EsyfCEZxK1xx5BXjrVzmc9JCGRuwOYK
+----------------------------------------
+
+[Index 159]
+Instance ID / Session ID: 1781870036722
+Symbol: 1A
+Texts (1):
+  - text: '1A -12th Mã: A415\n-9th\n\n🏠 Địa chỉ : Ngõ 497 Âu Cơ - Tây Hồ\n( 50m ra mặt phố Âu Cơ, Ngõ Thông Trịnh Công Sơn, Gần VinMart, 500m đến Lotte Mall Tây Hồ )\n\n⏰ Trống\n\n💰 Giá:\nP601 giá 7tr\nP302 giá 6tr6\nP301 giá 6tr5 nhận phòng ngay\n\n👉Phòng Studio ban công lớn\n👉Thang máy\n\n✅ Nội thất: Full nội thất, MÁY GIẶT CHUNG, K LẮP MGR\n\n✅ Dịch vụ : Điện 4k/1 số\nNước 150tr đ/ người\nMạng 100k/ 1 phòng\nDv chung: 300k/ người ( máy giặt, máy sấy, thang máy, buồng phòng dọn phòng 2 lần / tuần )\n\n❌ Lưu ý\n- Đóng 1 cọc 1\n- Có nhận khách nước ngoài\n- Không nuôi Pet\n- Khách gọi trước 30p trước khi qua'
+    orig: '🌺Hh 50%-12th             Mã: A415 \n           40%-9th\n\n🏠 Địa chỉ : Ngõ 497 Âu Cơ - Tây Hồ\n( 50m ra mặt phố Âu Cơ, Ngõ Thông Trịnh Công Sơn, Gần VinMart, 500m đến Lotte Mall Tây Hồ ) \n\n⏰ Trống \n\n💰 Giá: \nP601 giá 7.000.000\nP302 giá 6.600.000\nP301 giá 6.500.000 nhận phòng ngay\n\n👉Phòng Studio ban công lớn\n👉Thang máy\n\n✅ Nội thất:   Full nội thất, MÁY GIẶT CHUNG, K LẮP MGR \n\n✅  Dịch vụ : Điện 4k/1 số\nNước 150,000 đ/ người\nMạng 100k/ 1 phòng\nDv chung: 300k/ người  ( máy giặt, máy sấy, thang máy, buồng phòng dọn phòng 2 lần / tuần )\n\n❌ Lưu ý\n- Đóng 1 cọc 1\n- Có nhận khách nước ngoài\n- Không nuôi Pet\n- Khách gọi trước 30p trước khi qua'
+Photos count: 0
+Videos count: 0
+----------------------------------------
+
+[Index 160]
+Instance ID / Session ID: 1781870070207
+Symbol: 1A
+Texts (1):
+  - text: '1A P301 giá 6tr5 nhận phòng ngay'
+    orig: 'P301 giá 6.500.000 nhận phòng ngay'
+Photos count: 8
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/88e588b8e3ec26b27ffd/1WUpukaxW6Te7gysLvZIMwxmRCwQxDY4wYoKMsOHu1rdOgN44BH4Q3IOZJuZoSW4ByT.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/7c621c6e473b8265db2a/1WUpukax3IhalzncYHCSVhjtCEY50iYChtU1Na6CZG5t9VT4yWCMOyIYojEdEXL7SeU.jpg
+  - Photo: https://photo-stal-31.zdn.vn/gr/jpg/c670a97cf22937776e38/1WUpukax3IhalzncYHCSVhjds3CBoay6Q7cvT6LjK1F7mH4vaKuRBdz6KwxWMN4aNYD.jpg
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/4ac924c57f90bacee381/1WUpukax3IhalzncYHCSVhfdoSTVKKdMxJXxWMKJ44y8aqtq7QkppQ8ZHnvT548ll4t.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/b037d43b8f6e4a30137f/1WUpukax3IhalzncYHCSVhlEhVhtkAqraEt8c54umktTNagtBsGk0vMx50zxU9l8hOb.jpg
+  - Photo: https://photo-stal-27.zdn.vn/gr/jpg/0766616a3a3fff61a62e/1WUpukax3IhalzncYHCSVhjAtJJMkQT52SvQ5Ei4K10josIQlNgPacD8ogFhIo1gRDZ.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/9f79f275a9206c7e3531/1WUpukax3IhalzncYHCSVhmVQqdHmlp6SP2XPQYlVehaKLHlzOGqj8xl8sqDc45vHC5.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/2bf924a44ff08aaed3e1/1WUpukaxW6TfYY3nhDBd0QV2LIrpGD6gvZAau6fbaN3BfZxBnDxiULNZR7cruaOR0dT.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 161]
+Instance ID / Session ID: 1781870088803
+Symbol: 1A
+Texts (1):
+  - text: '1A P302 giá 6tr6'
+    orig: 'P302 giá 6.600.000'
+Photos count: 5
+  - Photo: https://photo-stal-36.zdn.vn/gr/jpg/fc6b9c93bfd97a8723c8/1WUpukawhnxmS8ScJ9hmsCozheIe4Ex3Go70aIgJrt4PLxWcsZZJK7BLWe9maMP1qVS.jpg
+  - Photo: https://photo-stal-35.zdn.vn/gr/jpg/30176fef4ca589fbd0b4/1WUpukawhnxmS8ScJ9hmsCowHBD3PvjyuQ8RV75rFSWnvicTf7hjPpn47z0jB2DCR5d.jpg
+  - Photo: https://photo-stal-15.zdn.vn/gr/jpg/310768ff4bb58eebd7a4/1WUpukawhnxv3GwAMrPmh3oV017JVAKLk74K2Z2uAWC9OSWogbUrcSmQPkTU9ZOW2W9.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/206f7e975ddd9883c1cc/1WUpukawhnxmS8ScJ9hmsCn2uoyeNQkpP20odpECWZ40DX8LdmdEP80oBpWPO9d6zv3.jpg
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/478e1c763f3cfa62a32d/1WUpukawhnxqkhhOL0YmmdOJnMLZGMWN0o1MKk7nE0Sy9H0zPFmVkhAHp2CL2pofqC5.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 164]
+Instance ID / Session ID: 1781870104902
+Symbol: 1A
+Texts (1):
+  - text: '1A P601 giá 7tr'
+    orig: 'P601 giá 7.000.000'
+Photos count: 7
+  - Photo: https://photo-stal-30.zdn.vn/gr/jpg/ab8ea1a180eb45b51cfa/1WUpukawhiEM8R5Tpp9srZairy0KwYs67sYrNV595f27biA6hUxAt29kiha5CnKtbmN.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/a836ac198d53480d1142/1WUpukawhiENZIAPB6mDV3289vciAeBuZikxSJOPIZWjTIFXFRuPe7l3hBXQfEg6HCL.jpg
+  - Photo: https://photo-stal-14.zdn.vn/gr/jpg/375c3e38526c9732ce7d/1WUpukaxWCeIhtvXE0RIQ7xvZkIjRYsViSoxZeuccfqecwpIfnftoQWN7jOuF8uqSk4.jpg
+  - Photo: https://photo-stal-29.zdn.vn/gr/jpg/9aa99186b0cc75922cdd/1WUpukawhiEKha0YUXXYE64bXPP9L4gadm6JDm8J62CJxiNWMVxguTERs3CyHOrNphZ.jpg
+  - Photo: https://photo-stal-28.zdn.vn/gr/jpg/53f253dd7297b7c9ee86/1WUpukawhiETIiU6YFFY2x3yXCdznBf0xQQTGsq3A422utXh32RhcZNAwMPKmIwCdZW.jpg
+  - Photo: https://photo-stal-7.zdn.vn/gr/jpg/c0aac685e7cf22917bde/1WUpukawhiEQR0KFrg0sm04STWXbBmf7rQ5vUREzFTk7tpbFYEbRKp6Her7gfy4GNhV.jpg
+  - Photo: https://photo-stal-6.zdn.vn/gr/jpg/bcf8c1d7e09d25c37c8c/1WUpukawhiEWAQdxEoUDJu2xJbgxNYAMuJdd8f6kwWoJMnViYCyzAsJ6c4HtniGKEkt.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 165]
+Instance ID / Session ID: 1781870354184
+Symbol: 1A
+Texts (1):
+  - text: '1A : 12th. Mã: H50\n\n🏠Địa chỉ: Ngõ 559 Vũ Tông Phan - Quận: Thanh Xuân\n\n⏰ Trống 6P\n\n💰 Giá:\nPhòng 204 giá 4tr5\nPhòng 403, 404- 4tr8\nPhòng 601tr5 giá 4tr8\n\n👉Loại phòng: Studio\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Nệm, tủ quần áo, điều hòa, nóng lạnh, tủ lạnh, tủ bếp, bếp từ, hút mùi, sofa, bàn trà, rèm cửa, bàn trà, dàn phơi... Máy giặt, sấy chung.\n\n✅ Dịch vụ: Điện 4k/ số, nước 30k / khối, dv chung 370k/ phòng ( bao gồm sd máy giặt, sấy 150k/p, vệ sinh, thang máy, internet tổng 230k/p 2 người từ người thứ 3 thu thêm 150k dv).\n\n❌ Lưu ý\n- Không XE ĐIỆN, PET, TÂY\n- Giới hạn 3 người/p 2 xe máy/ 100k xe thứ 3.\n- Cách mặt phố Vũ Tông Phan 30m.\n- Đóng 1 cọc 1\n- Khách gọi trước 30p trước khi qua'
+    orig: '🌺 40%: 12th.              Mã: H50\n\n🏠Địa chỉ:  Ngõ 559 Vũ Tông Phan - Quận: Thanh Xuân\n\n⏰  Trống 6P\n\n💰 Giá: \nPhòng 204 giá 4,5tr\nPhòng 403, 404- 4,8tr\nPhòng 601,501,401 giá 4,8tr\n\n👉Loại phòng: Studio\n👉Thang máy\n👉Diện tích: 25m2\n\n✅ Nội thất: Nệm, tủ quần áo, điều hòa, nóng lạnh, tủ lạnh, tủ bếp, bếp từ, hút mùi, sofa, bàn trà, rèm cửa, bàn trà, dàn phơi... Máy giặt, sấy chung.\n\n✅  Dịch vụ: Điện 4k/ số, nước 30k / khối, dv chung 370k/ phòng ( bao gồm sd máy giặt, sấy 150k/p, vệ sinh, thang máy, internet tổng 230k/p 2 người từ người thứ 3 thu thêm 150k dv).\n\n❌ Lưu ý     \n- Không XE ĐIỆN, PET, TÂY  \n- Giới hạn 3 người/p 2 xe máy/ 100k xe thứ 3.\n- Cách mặt phố Vũ Tông Phan 30m.\n- Đóng 1 cọc 1\n- Khách gọi trước 30p trước khi qua'
+Photos count: 0
+Videos count: 0
+----------------------------------------
+
+[Index 167]
+Instance ID / Session ID: 1781870395956
+Symbol: 1A
+Texts (3):
+  - text: '1A Phòng 204 giá 4tr5'
+    orig: 'Phòng 204 giá 4,5tr'
+  - text: 'Phòng 403- 4tr8'
+    orig: 'Phòng 403- 4,8tr'
+  - text: '404- 4tr8'
+    orig: '404- 4,8tr'
+Photos count: 19
+  - Photo: https://f65-zpg-r.zdn.vn/4232403876450384836/2fe6dc928e450f1b5654.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/5202201270211138335/8619906bc2bc43e21aad.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/3101733404487835048/470e007b52acd3f28abd.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/2676627369016223725/1435db46899108cf5180.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/7653785897116562476/db989967cbb04aee13a1.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/3260339960262070568/8a7f4d8e1f599e07c748.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/5137137635989333232/5fbaa353f28473da2a95.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/5318038699812292501/b86a5b830a548b0ad245.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/1112644142277711490/cb2bf2c1a31622487b07.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/7654919234843476946/94635e880f5f8e01d74e.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/5137137635989333232/5fbaa353f28473da2a95.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/5318038699812292501/b86a5b830a548b0ad245.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/7654919234843476946/94635e880f5f8e01d74e.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/1112644142277711490/cb2bf2c1a31622487b07.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/4272391810362226464/67cf5453048485dadc95.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/2057022507560935059/532391bdc16a4034197b.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/4139883352760680708/5ad4c54b959c14c24d8d.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/781114086476434230/f3d69649c69e47c01e8f.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/5206791282631996627/86b2d42284f505ab5ce4.jpg
+Videos count: 0
+----------------------------------------
+
+[Index 169]
+Instance ID / Session ID: 1781870508991
+Symbol: 1A
+Texts (1):
+  - text: '1A Phòng 601tr5 giá 4tr8'
+    orig: 'Phòng 601,501,401 giá 4,8tr'
+Photos count: 4
+  - Photo: https://f64-zpg-r.zdn.vn/904931220077343827/7e33092059f7d8a981e6.jpg
+  - Photo: https://f65-zpg-r.zdn.vn/7354694386614466690/e7bc23a9737ef220ab6f.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/8954593144809529108/3192b484e453650d3c42.jpg
+  - Photo: https://f64-zpg-r.zdn.vn/7071883964312175717/41968581d55654080d47.jpg
+Videos count: 0
+----------------------------------------

@@ -1,0 +1,14 @@
+--- Occurrence at line 936 ---
+931:       .catch(() => alert('Lỗi khi từ chối tin đăng!'));
+932:   };
+933: 
+934:   const handleDeleteListing = (id) => {
+935:     if (window.confirm('Bạn có chắc chắn muốn xóa tin đăng này?')) {
+936:       fetch(`/api/rooms/${id}`, { method: 'DELETE' })
+937:         .then(res => {
+938:           if (!res.ok) throw new Error();
+939:           alert('Đã xóa tin đăng thành công!');
+940:           fetchAdminRooms(listingsTab);
+941:           if (refreshRooms) refreshRooms();
+
+==================================================

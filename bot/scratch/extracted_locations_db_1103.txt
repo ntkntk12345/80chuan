@@ -1,0 +1,40 @@
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\full\bot\distance_app\locations_db.json from lines 547 to 578
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/distance_app/locations_db.json`
+Total Lines: 578
+Total Bytes: 19819
+Showing lines 547 to 578
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+547:     "name": "Ga Lê Đức Thọ",
+548:     "address": "Ngã tư Hồ Tùng Mậu - Nguyễn Cơ Thạch - Lê Đức Thọ, Mai Dịch, Cầu Giấy, Hà Nội, Việt Nam",
+549:     "search_query": "Ga Lê Đức Thọ, Hà Nội, Việt Nam",
+550:     "category": "Ga Metro",
+551:     "lat": 20.71667,
+552:     "lon": 105.75
+553:   },
+554:   {
+555:     "name": "Ga Đại học Quốc Gia",
+556:     "address": "Số 136 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam",
+557:     "search_query": "Ga Đại học Quốc Gia, Hà Nội, Việt Nam",
+558:     "category": "Ga Metro",
+559:     "lat": 21.0368208,
+560:     "lon": 105.7823582
+561:   },
+562:   {
+563:     "name": "Ga Chùa Hà",
+564:     "address": "Ngã ba Xuân Thủy - Chùa Hà, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Nam",
+565:     "search_query": "Ga Chùa Hà, Hà Nội, Việt Nam",
+566:     "category": "Ga Metro",
+567:     "lat": 21.0369628,
+568:     "lon": 105.7949248
+569:   },
+570:   {
+571:     "name": "Ga Cầu Giấy",
+572:     "address": "Số 12 Đường Cầu Giấy, Ngọc Khánh, Ba Đình, Hà Nội, Việt Nam",
+573:     "search_query": "Ga Cầu Giấy, Kim Mã, Ngọc Khánh, Hà Nội, Việt Nam",
+574:     "category": "Ga Metro",
+575:     "lat": 21.029976446195,
+576:     "lon": 105.802128890437
+577:   }
+578: ]
+

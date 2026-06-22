@@ -1,0 +1,597 @@
+Find by room_code = '909':
+ID: 6782, Room Code: 909, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 5350000-5300000, Type: studio, Text2: 11A -6 tháng
+Mã 909
+🏢Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm
+(ngõ 7m oto đỗ cửa thoải mái)
+
+⏰trống tầng 2
+
+💰Giá 5tr3
+
+👉Thang máy
+👉 Dạng studio
+👉 Diện tích 27m2
+
+✅Nội thất: Giường tủ, điều hoà, tủ lạnh, sofa, bế
+
+Find by room_code LIKE '%909%':
+(2328, 'P906/P909', 'Số 6 ngõ 402/51 Mỹ Đình, Nam Từ Liêm', 'approved', 6800000, 7200000)
+(2711, 'A3909', 'Tập thể Trần Quý Cáp, Đống Đa', 'approved', 9000000, 9000000)
+(6782, '909', 'Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm', 'approved', 5350000, 5300000)
+
+Find by address LIKE '%Ngõ 14 Mễ Trì Hạ%':
+ID: 2379, Room Code: 153, Address: Số 96 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4200000-6200000, Text2: 2A 🌷-6m Mã: 🏆 153
+-12m
+🏢Địa chỉ : Số 96 ngõ 14 Mễ Trì Hạ- Quận: Nam Từ Liêm
+
+⌛️ Trống :
+
+☘Giá : + 1 phòng 1k1n rộng hơn 40m2 giá 6tr2
++ 2 phòng studio 38m2 (có thể ngăn 1k1n) giá 5tr2
++ 1 phòng studio
+ID: 2391, Room Code: D93/P303, Address: Số 97 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4600000-4600000, Text2: 1A 6-12th Mã: D93
+
+🏠 Địa chỉ: Số 97 ngõ 14 Mễ Trì Hạ – Quận Nam Từ Liêm
+
+⏰ Trống: P303 – vào ở luôn
+
+💰 Giá phòng: 4tr6
+
+👉 Loại phòng: Studio
+👉 Thang: Thang máy
+👉 Diện tích:25m2
+
+✅ Dịch vụ: DVC 150k/ng
+ID: 2392, Room Code: None, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4600000-4600000, Text2: 4A 🏠 Địa chỉ : ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+Trống phòng tầng 3 ở luôn
+Giá thuê : 4tr6
+
+✨Phòng Studio-25m²- Có ban công
+✨Thang máy
+
+❣Nội thất : Giường đệm, tủ quẩn áo, điều hòa, nóng lạnh, tủ bếp, h
+ID: 2395, Room Code: P303, Address: Số 97 ngõ 14 Mễ Trì Hạ, quận Nam Từ Liêm, Status: approved, Price: 4600000-4600000, Text2: 11A . Mã 014.
+
+🏠Địa chỉ : Số 97 ngõ 14 Mễ Trì Hạ , quận Nam Từ Liêm
+
+⏰trống 303
+
+💵Giá 4tr6
+
+🔸Phòng Studio - 28m² , ban công
+🔹Thang máy
+✅Nhận khách nước ngoài
+
+🏝️Nội thất : Giường đệm , tủ quần áo , đi
+ID: 2679, Room Code: Mã 105, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 7550000-7550000, Text2: 11A Mã 105
+🔷Địa chỉ: ngõ 14 Mễ Trì Hạ, nam từ liêm
+🔹Giá: 7tr550
+
+🔹Ngày vào : Vào luôn
+🔹Mô tả : 2N1K
+🔹Diện tích : 40m2
+✨Nội thất:
+- Tủ quần áo
+- 2 điều hoà
+- Nóng lạnh
+- Tủ bếp
+- Tủ lạnh
+- 1 bàn 4 ghế
+
+ID: 3335, Room Code: 604, Address: ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4800000-4800000, Text2: 2A 🌷 6-12m Mã: 🏆 604
+
+🏢Địa chỉ : ngõ 14 Mễ Trì Hạ - NAM TỪ LIÊM
+
+⌛️Trống : tầng 2
+
+☘Giá : 4tr8
+☘Dạng phòng : đơn vskk
+☘Thang : BỘ
+
+🏆Nội thất : Có điều hoà, tủ lạnh, nl,máy giặt riêng, bếp riêng, vs ri
+ID: 3372, Room Code: None, Address: Ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 2900000-3700000, Text2: 4A Địa chỉ : ngách 128 ngõ 14 Mễ trì Hạ - Nam từ Liêm
+
+Trống 5 phòng ở luôn + cuối tháng
+Giá thuê : 2tr9 - 3tr4
+
+Nội thất : Giường - đệm . Điều hòa, nóng lạnh . Bàn bếp . Máy giặt chung …
+
+Dịch vụ : Đ
+ID: 3397, Room Code: S09/P03, Address: Số 128 ngõ 14 Mễ Trì Hạ, Status: approved, Price: 7500000-7500000, Text2: 13A Mã: S09 -10-12TH
+*******************
+🎯 Địa chỉ : Số 128 ngõ 14 Mễ Trì Hạ
+🔹Căn :
+
+- P03: 7tr5
+
+🔹Ngày vào : Vào luôn
+🔹Mô tả : 2N1K
+🔹Diện tích : 25m2
+✅ Nội thất: Giường, tủ quần áo, điều hoà, nóng lạ
+ID: 3401, Room Code: H99, Address: Số 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 7550000-7550000, Text2: 9a 30
+
+H99
+
+🔷Địa chỉ: Số 128 ngõ 14 Mễ Trì Hạ- nam từ liêm
+
+🔹Giá: 7tr550
+
+🔹Ngày vào : 01/07
+🔹Mô tả : 2N1K
+🔹Diện tích : 40m2
+✨Nội thất:
+- Tủ quần áo
+- 2 điều hoà
+- Nóng lạnh
+- Tủ bếp
+- Tủ lạnh
+- 1 bàn 
+ID: 3795, Room Code: Ts007, Address: Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3500000-3700000, Text2: 10A 12th
+3th
+Mã : Ts007
+
+🏡 Địa chỉ : SỐ NHÀ 4 - NGÁCH 128 - NGÕ 14 MỄ TRÌ HẠ - Nam Từ Liêm
+⏰ Trống : P702,P502
+P703 ( 1/7 )
+________________
+🎍 giá : 3tr5,3tr7
+( Ký HĐ 3th 3tr2,3tr4 )
+🎍 Phòng : Studio
+
+ID: 3796, Room Code: P706/P608, Address: Số nhà 4, ngách 128, ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3200000-3300000, Text2: 10A 12th
+3th
+Mã : Ts007
+
+🏡 Địa chỉ : SỐ NHÀ 4 - NGÁCH 128 - NGÕ 14 MỄ TRÌ HẠ - Nam Từ Liêm
+⏰ 1/7 Trống : P706,P608
+________________
+🎍 giá : 3tr2,3tr3
+( Ký HĐ 3th 2tr9tr3 )
+🎍 Phòng : Studio
+🎍 Thang Máy
+ID: 3978, Room Code: P706/P608, Address: Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3200000-3000, Text2: 1A Hh 12th Mã: A1026
+
+🏠 Địa chỉ : Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm
+
+⏰ 1/7 Trống : P706,P608
+
+💰 Giá: 3tr2,3tr3
+( Ký HĐ 3th 2tr9tr3 )
+👉Phòng : Studio ( 20m2 )
+👉Thang máy
+
+✅ Nội thất : Gi
+ID: 3986, Room Code: P702/P703, Address: Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3500000-3500000, Text2: 1A Hh 12th Mã: A1026
+
+🏠 Địa chỉ : Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm
+
+⏰ Trống : P702
+P703 ( 1/7 )
+
+💰 Giá: 3tr5
+( Ký HĐ 3th 3tr2 )
+👉Phòng : Studio
+👉Thang máy
+
+✅ Nội thất : Giường - đệm, Đ
+ID: 4782, Room Code: PHÒNG 303, Address: 12 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4700000-4700000, Text2: 9a 40 HĐ 12T
+
+H51
+
+🏠 PHÒNG 303 – 12 NGÕ 14 MỄ TRÌ HẠ- NAM TỪ LIÊM
+
+✨ Studio Full Nội Thất – 27m²
+💰 Giá thuê: 4tr7/tháng
+
+🛋️ Trang bị sẵn:
+🛏️ Giường ngủ
+👕 Tủ quần áo
+❄️ Điều hòa
+🧊 Tủ lạnh
+🍳 Bếp điện
+🛋️
+ID: 4789, Room Code: Mã 027, Address: Số 128 ngõ 14 Mễ Trì Hạ- Nam Từ Liêm, Status: approved, Price: 7550000-7550000, Text2: 12A . Mã 027
+
+🏢Địa chỉ: Số 128 ngõ 14 Mễ Trì Hạ- Nam Từ Liêm
+
+🍁 Đang trống
+
+💸Giá 7tr550
+
+👉Thang máy
+👉Mô tả 2N1K
+👉Diện tích 40m2
+
+🍀Nội thất:
+- Tủ quần áo
+- 2 điều hoà
+- Nóng lạnh
+- Tủ bếp
+- Tủ lạnh
+- 1
+ID: 4809, Room Code: None, Address: 18 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 5300000-5300000, Text2: 4A Địa chỉ : 18 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+Trống phòng 1n1k Tầng 3 ở luôn
+Giá thuê : 5tr3
+
+Nội thất : giường tủ, điều hoà, tủ lạnh, bếp điện, sofa, bàn trà ...
+
+Dịch vụ : Điện 4tr/số
+- Nước 30k/k
+ID: 4811, Room Code: None, Address: 12 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 4700000-5700000, Text2: 4A Địa chỉ : 12 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+Trống phòng studio + 2n1k ở luôn
+Giá thuê : 4tr7 - 5tr7
+
+Nội thất : giường tủ, điều hoà, tủ lạnh, bếp điện, sofa, bàn trà ...
+
+Dịch vụ : Điện 4tr/số
+- N
+ID: 5215, Room Code: A203/P302, Address: Nhà 18 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 5000000-5000000, Text2: 1A -12th Mã: A203
+
+🏠Địa chỉ: Nhà 18 ngõ 14 Mễ Trì Hạ - Quận: Nam Từ Liêm
+
+⏰ Đang trống P302
+
+💰 Giá: 5tr
+
+👉Phòng: 1N1K
+👉Thang máy
+👉Diện tích: 27m2
+
+✅ Nội thất: Giường tủ, điều hòa, tủ lạnh,sofa, bếp đi
+ID: 5219, Room Code: A203, Address: Nhà 12 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4700000-4700000, Text2: 1A -12th Mã: A203
+
+🏠Địa chỉ: Nhà 12 ngõ 14 Mễ Trì Hạ - Quận: Nam Từ Liêm
+
+⏰ Đang trống P303
+
+💰 Giá: 4tr7
+
+👉Phòng: STUDIO
+👉Thang máy
+👉Diện tích: 27m2
+
+✅ Nội thất: Giường tủ, điều hòa, tủ lạnh,sofa, bếp
+ID: 5326, Room Code: P702/P706/P608, Address: Số nhà 4, ngách 128, ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3200000-3500000, Text2: 13A Mã : S430 -6TH,-12TH
+*****************
+🎯Địa chỉ: "SỐ NHÀ 4 - NGÁCH 128 - NGÕ 14 MỄ TRÌ HẠ - Nam Từ Liêm
+⏰ Trống phòng ở luôn
+
+💠 P702 giá: 3tr5
+💠 P706 giá: 3tr3
+💠 P608 giá: 3tr2
+
+👉Phòng studio
+👉Tha
+ID: 5334, Room Code: 727, Address: Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3200000-3300000, Text2: 12A . HD 12 tháng. Mã 727
+
+🏢 SỐ NHÀ 4 - NGÁCH 128 - NGÕ 14 MỄ TRÌ HẠ - Nam Từ Liêm
+
+🍁1/7 trống
+
+💵Giá 3tr2 - 3tr3
+👉Tháng máy.
+👉 Đơn kk
+👉Diện tích 20m2
+
+🍀 Nội thất
+🛏️ Giường - đệm
+❄️ Điều hòa, nóng lạnh
+ID: 5374, Room Code: P702/P703/P706/P608, Address: Số nhà 4,ngách 128, ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 2900000-3200000, Text2: 2A 🌷-3m Mã: 🏆 430
+
+🏢Địa chỉ : SỐ NHÀ 4 - NGÁCH 128 - NGÕ 14 MỄ TRÌ HẠ- Quận: Nam Từ Liêm
+
+⌛️Trống :
+
+☘Giá : 3tr2-p702 sẵn, 703(1/7)
+3tr-p706(1/7)
+2tr9-p608(1/7)
+☘Dạng phòng : Studio
+☘Thang : bộ
+
+🏆Nội 
+ID: 6174, Room Code: Ts143/P701, Address: Số 10 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 5500000-5500000, Text2: 10A 6th
+3th
+Mã : Ts143
+
+🏡 Địa chỉ : Số 10 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+⏰ Trống : P701
+—————————
+🎍 giá : 5tr5
+( Ký HĐ 3th giá thuê 4tr5 )
+🎍 Phòng : Studio
+🎍 Thang Máy
+
+❣Nội thất : Full nội thất
+
+❣Dịc
+ID: 6189, Room Code: Mã 88, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 6500000-6500000, Text2: 11A Mã 88
+🏢Ngõ 14 mễ trì hạ - Nam Từ Liêm
+
+⏰1/7 Trống tầng 6
+💰giá - 6tr5
+👉 Phòng 1n1k
+👉Thang máy
+
+👉Nội thất: ( Điều hòa, nóng lạnh, giường, tủ, tủ bếp, hút mùi, sofa, tủ lạnh, máy giặt riêng từng phòn
+ID: 6700, Room Code: A28, Address: Số 128 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 7350000-7350000, Text2: 1A 🌻 NHÀ MỚI 2N1K TẠI MỄ TRÌ HẠ, NAM TỪ LIÊM CÒN 1P
+
+Hh 12th Mã: A28
+
+🏠 Địa chỉ: Số 128 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+⏰ 1/7 Trống
+
+💰 Giá : 7tr350
+👉Phòng: 2n1k - 40m2
+👉Thang máy
+
+✅ Nội thất: Tủ quần 
+ID: 6782, Room Code: 909, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 5350000-5300000, Text2: 11A -6 tháng
+Mã 909
+🏢Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm
+(ngõ 7m oto đỗ cửa thoải mái)
+
+⏰trống tầng 2
+
+💰Giá 5tr3
+
+👉Thang máy
+👉 Dạng studio
+👉 Diện tích 27m2
+
+✅Nội thất: Giường tủ, điều hoà, tủ lạnh, sofa, bế
+
+Find by text2 LIKE '%Ngõ 14 Mễ Trì Hạ%':
+ID: 1272, Room Code: P606, Address: Số 70 ngách 84/32 Đỗ Đức Dục, Status: approved, Price: 6500000-6500000, Text2: 1A Hh 6th-12th Mã: A498
+
+🏠 Địa chỉ: Số nhà 90 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm. Đc chính xác: Số 70 ngách 84/32 Đỗ Đức Dục
+Đi từ đường Phạm Hùng chỗ toà nhà GHTK vào ngõ 126 Mễ Trì Hạ ( cổng làng Anh Sớ
+ID: 2379, Room Code: 153, Address: Số 96 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4200000-6200000, Text2: 2A 🌷-6m Mã: 🏆 153
+-12m
+🏢Địa chỉ : Số 96 ngõ 14 Mễ Trì Hạ- Quận: Nam Từ Liêm
+
+⌛️ Trống :
+
+☘Giá : + 1 phòng 1k1n rộng hơn 40m2 giá 6tr2
++ 2 phòng studio 38m2 (có thể ngăn 1k1n) giá 5tr2
++ 1 phòng studio
+ID: 2391, Room Code: D93/P303, Address: Số 97 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4600000-4600000, Text2: 1A 6-12th Mã: D93
+
+🏠 Địa chỉ: Số 97 ngõ 14 Mễ Trì Hạ – Quận Nam Từ Liêm
+
+⏰ Trống: P303 – vào ở luôn
+
+💰 Giá phòng: 4tr6
+
+👉 Loại phòng: Studio
+👉 Thang: Thang máy
+👉 Diện tích:25m2
+
+✅ Dịch vụ: DVC 150k/ng
+ID: 2392, Room Code: None, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4600000-4600000, Text2: 4A 🏠 Địa chỉ : ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+Trống phòng tầng 3 ở luôn
+Giá thuê : 4tr6
+
+✨Phòng Studio-25m²- Có ban công
+✨Thang máy
+
+❣Nội thất : Giường đệm, tủ quẩn áo, điều hòa, nóng lạnh, tủ bếp, h
+ID: 2395, Room Code: P303, Address: Số 97 ngõ 14 Mễ Trì Hạ, quận Nam Từ Liêm, Status: approved, Price: 4600000-4600000, Text2: 11A . Mã 014.
+
+🏠Địa chỉ : Số 97 ngõ 14 Mễ Trì Hạ , quận Nam Từ Liêm
+
+⏰trống 303
+
+💵Giá 4tr6
+
+🔸Phòng Studio - 28m² , ban công
+🔹Thang máy
+✅Nhận khách nước ngoài
+
+🏝️Nội thất : Giường đệm , tủ quần áo , đi
+ID: 2679, Room Code: Mã 105, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 7550000-7550000, Text2: 11A Mã 105
+🔷Địa chỉ: ngõ 14 Mễ Trì Hạ, nam từ liêm
+🔹Giá: 7tr550
+
+🔹Ngày vào : Vào luôn
+🔹Mô tả : 2N1K
+🔹Diện tích : 40m2
+✨Nội thất:
+- Tủ quần áo
+- 2 điều hoà
+- Nóng lạnh
+- Tủ bếp
+- Tủ lạnh
+- 1 bàn 4 ghế
+
+ID: 3335, Room Code: 604, Address: ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4800000-4800000, Text2: 2A 🌷 6-12m Mã: 🏆 604
+
+🏢Địa chỉ : ngõ 14 Mễ Trì Hạ - NAM TỪ LIÊM
+
+⌛️Trống : tầng 2
+
+☘Giá : 4tr8
+☘Dạng phòng : đơn vskk
+☘Thang : BỘ
+
+🏆Nội thất : Có điều hoà, tủ lạnh, nl,máy giặt riêng, bếp riêng, vs ri
+ID: 3372, Room Code: None, Address: Ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 2900000-3700000, Text2: 4A Địa chỉ : ngách 128 ngõ 14 Mễ trì Hạ - Nam từ Liêm
+
+Trống 5 phòng ở luôn + cuối tháng
+Giá thuê : 2tr9 - 3tr4
+
+Nội thất : Giường - đệm . Điều hòa, nóng lạnh . Bàn bếp . Máy giặt chung …
+
+Dịch vụ : Đ
+ID: 3397, Room Code: S09/P03, Address: Số 128 ngõ 14 Mễ Trì Hạ, Status: approved, Price: 7500000-7500000, Text2: 13A Mã: S09 -10-12TH
+*******************
+🎯 Địa chỉ : Số 128 ngõ 14 Mễ Trì Hạ
+🔹Căn :
+
+- P03: 7tr5
+
+🔹Ngày vào : Vào luôn
+🔹Mô tả : 2N1K
+🔹Diện tích : 25m2
+✅ Nội thất: Giường, tủ quần áo, điều hoà, nóng lạ
+ID: 3401, Room Code: H99, Address: Số 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 7550000-7550000, Text2: 9a 30
+
+H99
+
+🔷Địa chỉ: Số 128 ngõ 14 Mễ Trì Hạ- nam từ liêm
+
+🔹Giá: 7tr550
+
+🔹Ngày vào : 01/07
+🔹Mô tả : 2N1K
+🔹Diện tích : 40m2
+✨Nội thất:
+- Tủ quần áo
+- 2 điều hoà
+- Nóng lạnh
+- Tủ bếp
+- Tủ lạnh
+- 1 bàn 
+ID: 3978, Room Code: P706/P608, Address: Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3200000-3000, Text2: 1A Hh 12th Mã: A1026
+
+🏠 Địa chỉ : Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm
+
+⏰ 1/7 Trống : P706,P608
+
+💰 Giá: 3tr2,3tr3
+( Ký HĐ 3th 2tr9tr3 )
+👉Phòng : Studio ( 20m2 )
+👉Thang máy
+
+✅ Nội thất : Gi
+ID: 3986, Room Code: P702/P703, Address: Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 3500000-3500000, Text2: 1A Hh 12th Mã: A1026
+
+🏠 Địa chỉ : Số nhà 4 ngách 128 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm
+
+⏰ Trống : P702
+P703 ( 1/7 )
+
+💰 Giá: 3tr5
+( Ký HĐ 3th 3tr2 )
+👉Phòng : Studio
+👉Thang máy
+
+✅ Nội thất : Giường - đệm, Đ
+ID: 4789, Room Code: Mã 027, Address: Số 128 ngõ 14 Mễ Trì Hạ- Nam Từ Liêm, Status: approved, Price: 7550000-7550000, Text2: 12A . Mã 027
+
+🏢Địa chỉ: Số 128 ngõ 14 Mễ Trì Hạ- Nam Từ Liêm
+
+🍁 Đang trống
+
+💸Giá 7tr550
+
+👉Thang máy
+👉Mô tả 2N1K
+👉Diện tích 40m2
+
+🍀Nội thất:
+- Tủ quần áo
+- 2 điều hoà
+- Nóng lạnh
+- Tủ bếp
+- Tủ lạnh
+- 1
+ID: 4809, Room Code: None, Address: 18 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 5300000-5300000, Text2: 4A Địa chỉ : 18 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+Trống phòng 1n1k Tầng 3 ở luôn
+Giá thuê : 5tr3
+
+Nội thất : giường tủ, điều hoà, tủ lạnh, bếp điện, sofa, bàn trà ...
+
+Dịch vụ : Điện 4tr/số
+- Nước 30k/k
+ID: 4811, Room Code: None, Address: 12 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 4700000-5700000, Text2: 4A Địa chỉ : 12 Ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+Trống phòng studio + 2n1k ở luôn
+Giá thuê : 4tr7 - 5tr7
+
+Nội thất : giường tủ, điều hoà, tủ lạnh, bếp điện, sofa, bàn trà ...
+
+Dịch vụ : Điện 4tr/số
+- N
+ID: 5215, Room Code: A203/P302, Address: Nhà 18 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 5000000-5000000, Text2: 1A -12th Mã: A203
+
+🏠Địa chỉ: Nhà 18 ngõ 14 Mễ Trì Hạ - Quận: Nam Từ Liêm
+
+⏰ Đang trống P302
+
+💰 Giá: 5tr
+
+👉Phòng: 1N1K
+👉Thang máy
+👉Diện tích: 27m2
+
+✅ Nội thất: Giường tủ, điều hòa, tủ lạnh,sofa, bếp đi
+ID: 5219, Room Code: A203, Address: Nhà 12 ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 4700000-4700000, Text2: 1A -12th Mã: A203
+
+🏠Địa chỉ: Nhà 12 ngõ 14 Mễ Trì Hạ - Quận: Nam Từ Liêm
+
+⏰ Đang trống P303
+
+💰 Giá: 4tr7
+
+👉Phòng: STUDIO
+👉Thang máy
+👉Diện tích: 27m2
+
+✅ Nội thất: Giường tủ, điều hòa, tủ lạnh,sofa, bếp
+ID: 6174, Room Code: Ts143/P701, Address: Số 10 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 5500000-5500000, Text2: 10A 6th
+3th
+Mã : Ts143
+
+🏡 Địa chỉ : Số 10 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+⏰ Trống : P701
+—————————
+🎍 giá : 5tr5
+( Ký HĐ 3th giá thuê 4tr5 )
+🎍 Phòng : Studio
+🎍 Thang Máy
+
+❣Nội thất : Full nội thất
+
+❣Dịc
+ID: 6189, Room Code: Mã 88, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 6500000-6500000, Text2: 11A Mã 88
+🏢Ngõ 14 mễ trì hạ - Nam Từ Liêm
+
+⏰1/7 Trống tầng 6
+💰giá - 6tr5
+👉 Phòng 1n1k
+👉Thang máy
+
+👉Nội thất: ( Điều hòa, nóng lạnh, giường, tủ, tủ bếp, hút mùi, sofa, tủ lạnh, máy giặt riêng từng phòn
+ID: 6700, Room Code: A28, Address: Số 128 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm, Status: approved, Price: 7350000-7350000, Text2: 1A 🌻 NHÀ MỚI 2N1K TẠI MỄ TRÌ HẠ, NAM TỪ LIÊM CÒN 1P
+
+Hh 12th Mã: A28
+
+🏠 Địa chỉ: Số 128 ngõ 14 Mễ Trì Hạ - Nam Từ Liêm
+
+⏰ 1/7 Trống
+
+💰 Giá : 7tr350
+👉Phòng: 2n1k - 40m2
+👉Thang máy
+
+✅ Nội thất: Tủ quần 
+ID: 6782, Room Code: 909, Address: Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm, Status: approved, Price: 5350000-5300000, Text2: 11A -6 tháng
+Mã 909
+🏢Ngõ 14 Mễ Trì Hạ, Nam Từ Liêm
+(ngõ 7m oto đỗ cửa thoải mái)
+
+⏰trống tầng 2
+
+💰Giá 5tr3
+
+👉Thang máy
+👉 Dạng studio
+👉 Diện tích 27m2
+
+✅Nội thất: Giường tủ, điều hoà, tủ lạnh, sofa, bế

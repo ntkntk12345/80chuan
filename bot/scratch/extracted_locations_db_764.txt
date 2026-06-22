@@ -1,0 +1,98 @@
+Created At: 2026-06-10T14:10:27Z
+Completed At: 2026-06-10T14:10:27Z
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/map1.py`
+Total Lines: 260
+Total Bytes: 10006
+Showing lines 1 to 260
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import os
+2: import json
+3: import math
+4: import sqlite3
+5: import urllib.request
+6: import urllib.parse
+7: import sys
+8: 
+9: # Configure console to support Vietnamese Unicode print out on Windows
+10: if sys.platform.startswith('win'):
+11:     try:
+12:         sys.stdout.reconfigure(encoding='utf-8')
+13:         sys.stderr.reconfigure(encoding='utf-8')
+14:     except Exception:
+15:         pass
+16: 
+17: # Paths
+18: SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+19: DATABASE_PATH = os.path.join(SCRIPT_DIR, 'distance_app', 'locations_db.json')
+20: DEFAULT_DB_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, '..', 'web-ha', 'database.sqlite'))
+21: 
+22: def load_locations():
+23:     if not os.path.exists(DATABASE_PATH):
+24:         print(f"[MAP1] Cảnh báo: Không tìm thấy tệp landmarks tại {DATABASE_PATH}")
+25:         return []
+26:     try:
+27:         with open(DATABASE_PATH, 'r', encoding='utf-8') as f:
+28:             return json.load(f)
+29:     except Exception as e:
+30:         print(f"[MAP1] Lỗi đọc landmarks: {e}")
+31:         return []
+32: 
+33: def geocode_address_esri(address):
+34:     """
+35:     Geocodes an address string using Esri Public Geocoding API,
+36:     optimized specifically for Hanoi, Vietnam.
+37:     """
+38:     search_query = address
+39:     if "hà nội" not in search_query.lower() and "ha noi" not in search_query.lower():
+40:         search_query += ", Hà Nội, Việt Nam"
+41:         
+42:     encoded_query = urllib.parse.quote(search_query)
+43:     url = (
+44:         f"https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/
+<truncated 7617 bytes>
+oom_id,))
+217:         
+218:         # Calculate distances if coordinates are available
+219:         if lat is not None and lon is not None:
+220:             landmarks = load_locations()
+221:             if landmarks:
+222:                 distances = []
+223:                 for loc in landmarks:
+224:                     l_lat = loc.get("lat")
+225:                     l_lon = loc.get("lon")
+226:                     if l_lat is not None and l_lon is not None:
+227:                         dist = haversine_distance(lat, lon, l_lat, l_lon)
+228:                         distances.append((loc, dist))
+229:                 
+230:                 # Sort by distance
+231:                 distances.sort(key=lambda x: x[1])
+232:                 
+233:                 # Filter <= 5km
+234:                 nearby = [item for item in distances if item[1] <= 5.0]
+235:                 if not nearby and distances:
+236:                     # Fallback to nearest 1 if none within 5km
+237:                     nearby = [distances[0]]
+238:                     
+239:                 # Insert nearby distances
+240:                 for loc, dist in nearby:
+241:                     cursor.execute("""
+242:                         INSERT INTO room_distances (room_id, landmark_name, landmark_category, distance)
+243:                         VALUES (?, ?, ?, ?)
+244:                     """, (room_id, loc["name"], loc["category"], dist))
+245:                 print(f"  [SQLITE] Đã lưu {len(nearby)} mốc khoảng cách landmarks cho phòng ID {room_id}")
+246:                 
+247:         conn.commit()
+248:         return True
+249:     except Exception as e:
+250:         conn.rollback()
+251:         print(f"[MAP1] Lỗi khi lưu phòng vào SQLite: {e}")
+252:         return False
+253:     finally:
+254:         conn.close()
+255: 
+256: if __name__ == '__main__':
+257:     # Initialize the database
+258:     init_db()
+259:     print("Khởi tạo database hoàn tất.")
+260: 
+The above content shows the entire, complete file contents of the requested file.

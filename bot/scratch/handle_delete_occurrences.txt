@@ -1,0 +1,39 @@
+--- Occurrence at line 934 ---
+929:         if (refreshRooms) refreshRooms();
+930:       })
+931:       .catch(() => alert('Lỗi khi từ chối tin đăng!'));
+932:   };
+933: 
+934:   const handleDeleteListing = (id) => {
+935:     if (window.confirm('Bạn có chắc chắn muốn xóa tin đăng này?')) {
+936:       fetch(`/api/rooms/${id}`, { method: 'DELETE' })
+937:         .then(res => {
+938:           if (!res.ok) throw new Error();
+939:           alert('Đã xóa tin đăng thành công!');
+940:           fetchAdminRooms(listingsTab);
+941:           if (refreshRooms) refreshRooms();
+942:         })
+943:         .catch(() => alert('Lỗi khi xóa tin đăng!'));
+944:     }
+
+==================================================
+
+--- Occurrence at line 2204 ---
+2199:                         </td>
+2200:                       )}
+2201:                       {(!user || user.role === 'admin') && (
+2202:                         <td style={{ padding: '16px 20px', textAlign: 'center' }}>
+2203:                           <button
+2204:                             onClick={() => handleDeleteListing(room.id)}
+2205:                             style={{
+2206:                               background: 'none',
+2207:                               border: 'none',
+2208:                               color: '#EF4444',
+2209:                               cursor: 'pointer',
+2210:                               padding: '6px',
+2211:                               borderRadius: '6px',
+2212:                               display: 'inline-flex',
+2213:                               alignItems: 'center',
+2214:                               justifyContent: 'center',
+
+==================================================

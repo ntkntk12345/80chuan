@@ -1,0 +1,174 @@
+--- Occurrence at line 780 ---
+770:       latitude: r.latitude,
+771:       longitude: r.longitude,
+772:       status: r.status || 'approved',
+773:       subCategory: isManual && manualData ? manualData.subCategory : undefined,
+774:       gender: isManual && manualData ? manualData.gender : undefined,
+775:       passIncentive: isManual && manualData ? manualData.passIncentive : undefined,
+776:       customLandmarks: isManual && manualData ? manualData.customLandmarks : undefined
+777:     };
+778:   };
+779: 
+780:   const refreshRooms = (shouldDeepLink = false) => {
+781:     setLoadingRooms(true);
+782:     // Fetch page 1 first for fast initial render (60 rooms)
+783:     fetch(`/api/rooms?t=${Date.now()}&limit=60&page=1`)
+784:       .then(res => res.json())
+785:       .then(response => {
+786:         const data = Array.isArray(response) ? response : (response.data || []);
+787:         const hasMore = response.hasMore;
+788:         const total = response.total || 0;
+789: 
+790:         if (data.length > 0) {
+791:           const mapped = data.map(mapRoomData);
+792:           setRooms(mapped);
+793: 
+794:           if (shouldDeepLink) {
+795:             const urlParams = new URLSearchParams(window.location.search);
+796:             const roomIdParam = urlParams.get('room');
+797:             if (roomIdParam) {
+798:               const targetRoom = mapped.find(r => String(r.session_id) === roomIdParam || String(r.id) === roomIdParam);
+799:               if (targetRoom) {
+800:                 setSelectedRoomId(roomIdParam);
+
+==================================================
+
+--- Occurrence at line 848 ---
+838:       })
+839:       .catch(err => {
+840:         console.error('Error fetching SQLite rooms:', err);
+841:         setRooms([]);
+842:       })
+843:       .finally(() => {
+844:         setLoadingRooms(false);
+845:       });
+846:   };
+847: 
+848:   const handleFiltersChange = (filters) => {
+849:     // If there is an active filter or search query, fetch matching rooms from the server immediately
+850:     if (filters.q || filters.district || filters.landmark || filters.roomType || filters.gender) {
+851:       const params = new URLSearchParams();
+852:       params.append('limit', '100');
+853:       params.append('page', '1');
+854:       if (filters.category && filters.category !== 'saved-rooms' && filters.category !== 'viewed-rooms') {
+855:         params.append('category', filters.category);
+856:         params.append('status', 'approved');
+857:       }
+858:       if (filters.q) params.append('q', filters.q);
+859:       if (filters.district) params.append('district', filters.district);
+860:       if (filters.landmark) params.append('landmark', filters.landmark);
+861:       if (filters.roomType) params.append('type', filters.roomType);
+862: 
+863:       fetch(`/api/rooms?${params.toString()}`)
+864:         .then(res => res.json())
+865:         .then(response => {
+866:           const data = Array.isArray(response) ? response : (response.data || []);
+867:           if (data.length > 0) {
+868:             const mapped = data.map(mapRoomData);
+
+==================================================
+
+--- Occurrence at line 881 ---
+871:               const newRooms = mapped.filter(r => !existingIds.has(r.id));
+872:               return newRooms.length > 0 ? [...newRooms, ...prev] : prev;
+873:             });
+874:           }
+875:         })
+876:         .catch(err => console.error('Error fetching filtered rooms:', err));
+877:     }
+878:   };
+879: 
+880:   useEffect(() => {
+881:     refreshRooms(true);
+882:   }, []);
+883: 
+884: 
+885:   // Selected property helper
+886:   const selectedRoom = rooms.find((r) =>
+887:     (r.session_id && String(r.session_id) === String(selectedRoomId)) ||
+888:     String(r.id) === String(selectedRoomId)
+889:   );
+890: 
+891:   const handleUserUpdate = (updatedUser) => {
+892:     setUser(updatedUser);
+893:     if (updatedUser) {
+894:       localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+895:     } else {
+896:       localStorage.removeItem('currentUser');
+897:     }
+898:   };
+899: 
+900:   const handleLogout = () => {
+901:     setUser(null);
+
+==================================================
+
+--- Occurrence at line 974 ---
+964:             toggleSaveRoom={handleToggleSave}
+965:             setSelectedRoomId={setSelectedRoomId}
+966:             setCurrentPage={setCurrentPage}
+967:             navigateToRoom={navigateToRoom}
+968:             isMobile={isMobile}
+969:             user={user}
+970:             settings={settings}
+971:             notifications={notifications}
+972:             unreadNotificationsCount={unreadNotificationsCount}
+973:             onOpenNotifications={() => setShowMobileNoti(true)}
+974:             onFiltersChange={handleFiltersChange}
+975:           />
+976:         );
+977: 
+978:       // Detail Views
+979:       case 'phong-tro-detail':
+980:       case 'chung-cu-detail':
+981:       case 'nha-nguyen-can-detail':
+982:         return <DetailView room={selectedRoom} setCurrentPage={setCurrentPage} isMobile={isMobile} user={user} />;
+983: 
+984:       // Admin Dashboard
+985:       case 'admin-dashboard':
+986:         if (!user || (user.role !== 'admin' && user.role !== 'ctv')) {
+987:           setCurrentPage('home');
+988:           return null;
+989:         }
+990:         return (
+991:           <AdminDashboardView
+992:             rooms={rooms}
+993:             setRooms={setRooms}
+994:             setCurrentPage={setCurrentPage}
+
+==================================================
+
+--- Occurrence at line 998 ---
+988:           return null;
+989:         }
+990:         return (
+991:           <AdminDashboardView
+992:             rooms={rooms}
+993:             setRooms={setRooms}
+994:             setCurrentPage={setCurrentPage}
+995:             isMobile={isMobile}
+996:             settings={settings}
+997:             fetchSettings={fetchSettings}
+998:             refreshRooms={refreshRooms}
+999:             user={user}
+1000:           />
+1001:         );
+1002: 
+1003:       // Affiliate Campaigns portal
+1004:       case 'kiem-tien':
+1005:         return (
+1006:           <EarnHubView
+1007:             setCurrentPage={setCurrentPage}
+1008:             isMobile={isMobile}
+1009:             settings={settings}
+1010:             notifications={notifications}
+1011:             unreadNotificationsCount={unreadNotificationsCount}
+1012:             onOpenNotifications={() => setShowMobileNoti(true)}
+1013:           />
+1014:         );
+1015:       case 'kiem-tien-tiktok':
+1016:         return <TikTokCampaignView setCurrentPage={setCurrentPage} isMobile={isMobile} settings={settings} />;
+1017:       case 'kiem-tien-referral':
+1018:         return <ClientReferralView setCurrentPage={setCurrentPage} isMobile={isMobile} />;
+
+==================================================

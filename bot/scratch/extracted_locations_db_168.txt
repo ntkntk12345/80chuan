@@ -1,0 +1,45 @@
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\full\bot\map.py from lines 1 to 37
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/map.py`
+Total Lines: 159
+Total Bytes: 5930
+Showing lines 1 to 37
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import os
+2: import json
+3: import math
+4: import urllib.request
+5: import urllib.parse
+6: import sys
+7: 
+8: # Configure console to support Vietnamese Unicode print out on Windows
+9: if sys.platform.startswith('win'):
+10:     try:
+11:         sys.stdout.reconfigure(encoding='utf-8')
+12:         sys.stderr.reconfigure(encoding='utf-8')
+13:     except Exception:
+14:         pass
+15: 
+16: # Path to the pre-populated Hanoi landmarks database
+17: DATABASE_PATH = os.path.join(os.path.dirname(__file__), 'distance_app', 'locations_db.json')
+18: 
+19: def load_locations():
+20:     if not os.path.exists(DATABASE_PATH):
+21:         print(f"Lỗi: Không tìm thấy tệp cơ sở dữ liệu tại {DATABASE_PATH}")
+22:         print("Vui lòng đảm bảo tệp tin 'distance_app/locations_db.json' đã được tạo.")
+23:         return []
+24:     try:
+25:         with open(DATABASE_PATH, 'r', encoding='utf-8') as f:
+26:             return json.load(f)
+27:     except Exception as e:
+28:         print(f"Lỗi đọc cơ sở dữ liệu: {e}")
+29:         return []
+30: 
+31: def geocode_address_esri(address):
+32:     """
+33:     Geocodes an address string using Esri Public Geocoding API,
+34:     optimized specifically for Hanoi, Vietnam.
+35:     """
+36:     # Append Hanoi, Vietnam if not present to prioritize Hanoi coordinates
+37:     search_query = address
+

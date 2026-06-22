@@ -1,0 +1,15 @@
+Searching for 'includes(normalizeString('tr'))' in c:/Users/Administrator/Downloads/80lankh/web-ha/src:
+c:/Users/Administrator/Downloads/80lankh/web-ha/src\views\ListingView.jsx:554: if (query.includes(normalizeString('triệu')) || query.includes(normalizeString('tr'))) {
+
+
+Searching for 'includes('tr')' in c:/Users/Administrator/Downloads/80lankh/web-ha/src:
+c:/Users/Administrator/Downloads/80lankh/web-ha/src\App.jsx:693: priceText = r.price.includes('triệu') || r.price.includes('tr') ? r.price : `${r.price}/tháng`;
+c:/Users/Administrator/Downloads/80lankh/web-ha/src\views\AdminDashboardView.jsx:489: priceText = r.price.includes('triệu') || r.price.includes('tr') ? r.price : `${r.price}/tháng`;
+c:/Users/Administrator/Downloads/80lankh/web-ha/src\views\AdminDashboardView.jsx:971: if (str.includes('triệu') || str.includes('tr')) {
+
+
+Searching for 'includes('triệu')' in c:/Users/Administrator/Downloads/80lankh/web-ha/src:
+c:/Users/Administrator/Downloads/80lankh/web-ha/src\App.jsx:693: priceText = r.price.includes('triệu') || r.price.includes('tr') ? r.price : `${r.price}/tháng`;
+c:/Users/Administrator/Downloads/80lankh/web-ha/src\views\AdminDashboardView.jsx:489: priceText = r.price.includes('triệu') || r.price.includes('tr') ? r.price : `${r.price}/tháng`;
+c:/Users/Administrator/Downloads/80lankh/web-ha/src\views\AdminDashboardView.jsx:971: if (str.includes('triệu') || str.includes('tr')) {
+

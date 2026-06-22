@@ -1,0 +1,100 @@
+Created At: 2026-06-10T15:00:41Z
+Completed At: 2026-06-10T15:00:41Z
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/distance_app/locations_db.json`
+Total Lines: 578
+Total Bytes: 20387
+Showing lines 1 to 578
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: [
+2:   {
+3:     "name": "Đại học Bách khoa Hà Nội",
+4:     "address": "Số 1 Đại Cồ Việt, Hai Bà Trưng",
+5:     "search_query": "Đại học Bách khoa Hà Nội, Hà Nội, Việt Nam",
+6:     "category": "Đại học",
+7:     "lat": 21.0070953,
+8:     "lon": 105.8431091
+9:   },
+10:   {
+11:     "name": "Đại học Kinh tế Quốc dân",
+12:     "address": "Số 207 Giải Phóng, Hai Bà Trưng",
+13:     "search_query": "Đại học Kinh tế Quốc dân, Hà Nội, Việt Nam",
+14:     "category": "Đại học",
+15:     "lat": 20.9989944,
+16:     "lon": 105.8457937
+17:   },
+18:   {
+19:     "name": "Đại học Ngoại thương",
+20:     "address": "Số 91 Chùa Láng, Đống Đa",
+21:     "search_query": "Đại học Ngoại thương, Hà Nội, Việt Nam",
+22:     "category": "Đại học",
+23:     "lat": 21.03956,
+24:     "lon": 105.78114
+25:   },
+26:   {
+27:     "name": "Đại học Xây dựng Hà Nội",
+28:     "address": "Số 55 Giải Phóng, Hai Bà Trưng",
+29:     "search_query": "Đại học Xây dựng Hà Nội, Hà Nội, Việt Nam",
+30:     "category": "Đại học",
+31:     "lat": 21.028279,
+32:     "lon": 105.853881
+33:   },
+34:   {
+35:     "name": "Đại học Y Hà Nội",
+36:     "address": "Số 1 Tôn Thất Tùng, Đống Đa",
+37:     "search_query": "Đại học Y Hà Nội, Hà Nội, Việt Nam",
+38:     "category": "Đại học",
+39:     "lat": 21.00342,
+40:     "lon": 105.830035
+41:   },
+42:   {
+43:     "name": "Đại học Thủy lợi",
+44:     "ad
+<truncated 19611 bytes>
+ường Cầu Diễn, Phú Diễn, Bắc Từ Liêm, Hà Nội, Việt Nam",
+533:     "search_query": "Ga Phú Diễn, Hà Nội, Việt Nam",
+534:     "category": "Ga Metro",
+535:     "lat": 21.051105,
+536:     "lon": 105.764933
+537:   },
+538:   {
+539:     "name": "Ga Cầu Diễn",
+540:     "address": "Cầu Diễn, Đường Hồ Tùng Mậu, Phú Diễn, Bắc Từ Liêm, Hà Nội, Việt Nam",
+541:     "search_query": "Ga Cầu Diễn, Hà Nội, Việt Nam",
+542:     "category": "Ga Metro",
+543:     "lat": 21.039687,
+544:     "lon": 105.764948
+545:   },
+546:   {
+547:     "name": "Ga Lê Đức Thọ",
+548:     "address": "Ngã tư Hồ Tùng Mậu - Nguyễn Cơ Thạch - Lê Đức Thọ, Mai Dịch, Cầu Giấy, Hà Nội, Việt Nam",
+549:     "search_query": "Ga Lê Đức Thọ, Hà Nội, Việt Nam",
+550:     "category": "Ga Metro",
+551:     "lat": 20.71667,
+552:     "lon": 105.75
+553:   },
+554:   {
+555:     "name": "Ga Đại học Quốc Gia",
+556:     "address": "Số 136 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam",
+557:     "search_query": "Ga Đại học Quốc Gia, Hà Nội, Việt Nam",
+558:     "category": "Ga Metro",
+559:     "lat": 21.0368208,
+560:     "lon": 105.7823582
+561:   },
+562:   {
+563:     "name": "Ga Chùa Hà",
+564:     "address": "Ngã ba Xuân Thủy - Chùa Hà, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Nam",
+565:     "search_query": "Ga Chùa Hà, Hà Nội, Việt Nam",
+566:     "category": "Ga Metro",
+567:     "lat": 21.035073,
+568:     "lon": 105.792252
+569:   },
+570:   {
+571:     "name": "Ga Cầu Giấy",
+572:     "address": "Số 12 Đường Cầu Giấy, Ngọc Khánh, Ba Đình, Hà Nội, Việt Nam",
+573:     "search_query": "Ga Cầu Giấy, Kim Mã, Ngọc Khánh, Hà Nội, Việt Nam",
+574:     "category": "Ga Metro",
+575:     "lat": 21.029252834979,
+576:     "lon": 105.803642961889
+577:   }
+578: ]
+The above content shows the entire, complete file contents of the requested file.

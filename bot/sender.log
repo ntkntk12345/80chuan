@@ -1,0 +1,33 @@
+
+[INIT] Initializing 3 sender accounts...
+[INIT] Setting up Sender-1...
+ DEBUG  Light Đang Loging Vào Acc None...
+ LOGIN  Login of 84879506246 successful.
+[INIT] ✓ Sender-1 ready. 54 groups mapped.
+[INIT] Setting up Sender-2...
+ DEBUG  Light Đang Loging Vào Acc None...
+[INIT] ✗ Failed: Login failed: The session key was improperly submitted or has reached its timeout. Direct the user to log in again to obtain another key (Check cookies?)
+[INIT] Setting up Sender-3...
+ DEBUG  Light Đang Loging Vào Acc None...
+[INIT] ✗ Failed: Login failed: The session key was improperly submitted or has reached its timeout. Direct the user to log in again to obtain another key (Check cookies?)
+[INIT] Creating district JSON files...
+[INIT] Created 0 new district files.
+[WATCHER] Started watching pending_queue.json
+[PAUSE] ⏸️ Tạm ngưng gửi từ 12h-13h VN time. Nghỉ 31 phút...
+[FEATURED] Detected admin featured feed update.[SENDER] Bot started with 1 accounts.
+
+[TEST] Startup test send disabled. Set SENDER_STARTUP_TEST=1 to enable.
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1
+[HEARTBEAT] Sender Bot running. Senders: 1

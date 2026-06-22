@@ -1,0 +1,1119 @@
+--- Occurrence at line 50 ---
+45:   'pass-phong': 'Pass phòng',
+46:   'o-ghep': 'Ở ghép'
+47: };
+48: 
+49: const AdminDashboardView = ({ rooms, setRooms, setCurrentPage, isMobile, settings, fetchSettings, refreshRooms, user }) => {
+50:   const [activeTab, setActiveTab] = useState('list'); // 'list' | 'add' | 'excel' | 'settings' | 'ctv' | 'transactions' | 'ref-friends' | 'commission' | 'traffic' | 'user-accounts' | 'ctv-accounts' | 'all-rooms'
+51:   const [addFlowStep, setAddFlowStep] = useState('choose'); // 'choose' | 'form'
+52:   const [logs, setLogs] = useState([]);
+53:   const [loadingLogs, setLoadingLogs] = useState(false);
+54: 
+55: 
+56:   const [adminRooms, setAdminRooms] = useState([]);
+57:   const [loadingRooms, setLoadingRooms] = useState(true);
+58:   const [listingsTab, setListingsTab] = useState('pending'); // 'pending' | 'approved' | 'rejected'
+59: 
+60:   const [referrals, setReferrals] = useState([]);
+
+==================================================
+
+--- Occurrence at line 279 ---
+274:     }
+275:   };
+276: 
+277:   React.useEffect(() => {
+278:     let interval = null;
+279:     if (activeTab === 'bot-management') {
+280:       fetchBotStatus();
+281:       fetchBotConfig();
+282:       fetchBotLogs(activeLogService);
+283: 
+284:       if (autoRefreshLogs) {
+285:         interval = setInterval(() => {
+286:           fetchBotStatus();
+287:           fetchBotLogs(activeLogService);
+288:         }, 3000);
+289:       }
+
+==================================================
+
+--- Occurrence at line 404 ---
+399:     }
+400:   }, [user]);
+401: 
+402:   // Tab-switch reset effect
+403:   React.useEffect(() => {
+404:     if (activeTab === 'add') {
+405:       setAddFlowStep('choose');
+406:       setUploadedFiles([]);
+407:     }
+408:   }, [activeTab]);
+409: 
+410:   // Sync settings prop when changes
+411:   React.useEffect(() => {
+412:     if (settings) {
+413:       setMinWithdrawal(settings.min_withdrawal);
+414:       setReferralCommission(settings.referral_commission);
+
+==================================================
+
+--- Occurrence at line 663 ---
+658:       .catch(err => console.error(err))
+659:       .finally(() => setLoadingLogs(false));
+660:   };
+661: 
+662:   React.useEffect(() => {
+663:     if (activeTab === 'list') {
+664:       fetchAdminRooms(listingsTab);
+665:     } else if (activeTab === 'ctv') {
+666:       fetchReferrals();
+667:     } else if (activeTab === 'transactions') {
+668:       fetchTransactions();
+669:     } else if (activeTab === 'ref-friends') {
+670:       fetchAllUsers();
+671:       fetchReferrals();
+672:     } else if (activeTab === 'traffic') {
+673:       fetchTraffic(trafficRange);
+
+==================================================
+
+--- Occurrence at line 665 ---
+660:   };
+661: 
+662:   React.useEffect(() => {
+663:     if (activeTab === 'list') {
+664:       fetchAdminRooms(listingsTab);
+665:     } else if (activeTab === 'ctv') {
+666:       fetchReferrals();
+667:     } else if (activeTab === 'transactions') {
+668:       fetchTransactions();
+669:     } else if (activeTab === 'ref-friends') {
+670:       fetchAllUsers();
+671:       fetchReferrals();
+672:     } else if (activeTab === 'traffic') {
+673:       fetchTraffic(trafficRange);
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+
+==================================================
+
+--- Occurrence at line 667 ---
+662:   React.useEffect(() => {
+663:     if (activeTab === 'list') {
+664:       fetchAdminRooms(listingsTab);
+665:     } else if (activeTab === 'ctv') {
+666:       fetchReferrals();
+667:     } else if (activeTab === 'transactions') {
+668:       fetchTransactions();
+669:     } else if (activeTab === 'ref-friends') {
+670:       fetchAllUsers();
+671:       fetchReferrals();
+672:     } else if (activeTab === 'traffic') {
+673:       fetchTraffic(trafficRange);
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+
+==================================================
+
+--- Occurrence at line 669 ---
+664:       fetchAdminRooms(listingsTab);
+665:     } else if (activeTab === 'ctv') {
+666:       fetchReferrals();
+667:     } else if (activeTab === 'transactions') {
+668:       fetchTransactions();
+669:     } else if (activeTab === 'ref-friends') {
+670:       fetchAllUsers();
+671:       fetchReferrals();
+672:     } else if (activeTab === 'traffic') {
+673:       fetchTraffic(trafficRange);
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+
+==================================================
+
+--- Occurrence at line 672 ---
+667:     } else if (activeTab === 'transactions') {
+668:       fetchTransactions();
+669:     } else if (activeTab === 'ref-friends') {
+670:       fetchAllUsers();
+671:       fetchReferrals();
+672:     } else if (activeTab === 'traffic') {
+673:       fetchTraffic(trafficRange);
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+680:     } else if (activeTab === 'activity-logs') {
+681:       fetchLogs();
+682:     }
+
+==================================================
+
+--- Occurrence at line 674 ---
+669:     } else if (activeTab === 'ref-friends') {
+670:       fetchAllUsers();
+671:       fetchReferrals();
+672:     } else if (activeTab === 'traffic') {
+673:       fetchTraffic(trafficRange);
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+680:     } else if (activeTab === 'activity-logs') {
+681:       fetchLogs();
+682:     }
+683:   }, [listingsTab, activeTab]);
+684: 
+
+==================================================
+
+--- Occurrence at line 676 ---
+671:       fetchReferrals();
+672:     } else if (activeTab === 'traffic') {
+673:       fetchTraffic(trafficRange);
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+680:     } else if (activeTab === 'activity-logs') {
+681:       fetchLogs();
+682:     }
+683:   }, [listingsTab, activeTab]);
+684: 
+685:   // ── NEW HANDLERS ────────────────────────────────────────────────
+686: 
+
+==================================================
+
+--- Occurrence at line 678 ---
+673:       fetchTraffic(trafficRange);
+674:     } else if (activeTab === 'user-accounts') {
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+680:     } else if (activeTab === 'activity-logs') {
+681:       fetchLogs();
+682:     }
+683:   }, [listingsTab, activeTab]);
+684: 
+685:   // ── NEW HANDLERS ────────────────────────────────────────────────
+686: 
+687:   const fetchAllUsers = () => {
+688:     setLoadingUsers(true);
+
+==================================================
+
+--- Occurrence at line 680 ---
+675:       fetchAllUsers();
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+680:     } else if (activeTab === 'activity-logs') {
+681:       fetchLogs();
+682:     }
+683:   }, [listingsTab, activeTab]);
+684: 
+685:   // ── NEW HANDLERS ────────────────────────────────────────────────
+686: 
+687:   const fetchAllUsers = () => {
+688:     setLoadingUsers(true);
+689:     fetch('/api/users')
+690:       .then(r => r.json())
+
+==================================================
+
+--- Occurrence at line 726 ---
+721:       .catch(() => setCommResults([]))
+722:       .finally(() => setCommLoading(false));
+723:   };
+724: 
+725:   React.useEffect(() => {
+726:     if (activeTab === 'commission') searchCommissions();
+727:   }, [activeTab]);
+728: 
+729:   const fetchTraffic = (range) => {
+730:     setTrafficLoading(true);
+731:     fetch(`/api/analytics?range=${range}`)
+732:       .then(r => r.json())
+733:       .then(d => setTrafficData(d))
+734:       .catch(() => setTrafficData(null))
+735:       .finally(() => setTrafficLoading(false));
+736:   };
+
+==================================================
+
+--- Occurrence at line 739 ---
+734:       .catch(() => setTrafficData(null))
+735:       .finally(() => setTrafficLoading(false));
+736:   };
+737: 
+738:   React.useEffect(() => {
+739:     if (activeTab === 'traffic') fetchTraffic(trafficRange);
+740:   }, [trafficRange]);
+741: 
+742:   const fetchUserTxs = (phone) => {
+743:     fetch(`/api/users/${phone}/transactions`)
+744:       .then(r => r.json())
+745:       .then(d => setUserTxs(Array.isArray(d) ? d : []))
+746:       .catch(() => setUserTxs([]));
+747:   };
+748: 
+749:   const handleSelectUser = (user) => {
+
+==================================================
+
+--- Occurrence at line 1844 ---
+1839:           </p>
+1840:         </div>
+1841: 
+1842:         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+1843:           <button
+1844:             className={`form-submit-btn ${activeTab === 'list' ? '' : 'form-submit-btn-outline'}`}
+1845:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'list' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'list' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1846:             onClick={() => setActiveTab('list')}
+1847:           >
+1848:             Danh sách tin đăng
+1849:           </button>
+1850:           <button
+1851:             className={`form-submit-btn ${activeTab === 'add' ? '' : 'form-submit-btn-outline'}`}
+1852:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'add' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'add' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1853:             onClick={() => {
+1854:               setActiveTab('add');
+
+==================================================
+
+--- Occurrence at line 1845 ---
+1840:         </div>
+1841: 
+1842:         <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+1843:           <button
+1844:             className={`form-submit-btn ${activeTab === 'list' ? '' : 'form-submit-btn-outline'}`}
+1845:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'list' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'list' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1846:             onClick={() => setActiveTab('list')}
+1847:           >
+1848:             Danh sách tin đăng
+1849:           </button>
+1850:           <button
+1851:             className={`form-submit-btn ${activeTab === 'add' ? '' : 'form-submit-btn-outline'}`}
+1852:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'add' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'add' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1853:             onClick={() => {
+1854:               setActiveTab('add');
+1855:               if (user && user.role === 'ctv') {
+
+==================================================
+
+--- Occurrence at line 1851 ---
+1846:             onClick={() => setActiveTab('list')}
+1847:           >
+1848:             Danh sách tin đăng
+1849:           </button>
+1850:           <button
+1851:             className={`form-submit-btn ${activeTab === 'add' ? '' : 'form-submit-btn-outline'}`}
+1852:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'add' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'add' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1853:             onClick={() => {
+1854:               setActiveTab('add');
+1855:               if (user && user.role === 'ctv') {
+1856:                 setCategory('o-ghep');
+1857:               }
+1858:             }}
+1859:           >
+1860:             <Plus size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1861:             Đăng tin mới
+
+==================================================
+
+--- Occurrence at line 1852 ---
+1847:           >
+1848:             Danh sách tin đăng
+1849:           </button>
+1850:           <button
+1851:             className={`form-submit-btn ${activeTab === 'add' ? '' : 'form-submit-btn-outline'}`}
+1852:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'add' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'add' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1853:             onClick={() => {
+1854:               setActiveTab('add');
+1855:               if (user && user.role === 'ctv') {
+1856:                 setCategory('o-ghep');
+1857:               }
+1858:             }}
+1859:           >
+1860:             <Plus size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1861:             Đăng tin mới
+1862:           </button>
+
+==================================================
+
+--- Occurrence at line 1867 ---
+1862:           </button>
+1863: 
+1864:           {(!user || user.role === 'admin') && (
+1865:             <>
+1866:               <button
+1867:                 className={`form-submit-btn ${activeTab === 'ctv' ? '' : 'form-submit-btn-outline'}`}
+1868:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ctv' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'ctv' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1869:                 onClick={() => setActiveTab('ctv')}
+1870:               >
+1871:                 <Users2 size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1872:                 Danh sách CTV
+1873:               </button>
+1874:               <button
+1875:                 className={`form-submit-btn ${activeTab === 'transactions' ? '' : 'form-submit-btn-outline'}`}
+1876:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'transactions' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'transactions' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1877:                 onClick={() => setActiveTab('transactions')}
+
+==================================================
+
+--- Occurrence at line 1868 ---
+1863: 
+1864:           {(!user || user.role === 'admin') && (
+1865:             <>
+1866:               <button
+1867:                 className={`form-submit-btn ${activeTab === 'ctv' ? '' : 'form-submit-btn-outline'}`}
+1868:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ctv' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'ctv' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1869:                 onClick={() => setActiveTab('ctv')}
+1870:               >
+1871:                 <Users2 size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1872:                 Danh sách CTV
+1873:               </button>
+1874:               <button
+1875:                 className={`form-submit-btn ${activeTab === 'transactions' ? '' : 'form-submit-btn-outline'}`}
+1876:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'transactions' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'transactions' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1877:                 onClick={() => setActiveTab('transactions')}
+1878:               >
+
+==================================================
+
+--- Occurrence at line 1875 ---
+1870:               >
+1871:                 <Users2 size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1872:                 Danh sách CTV
+1873:               </button>
+1874:               <button
+1875:                 className={`form-submit-btn ${activeTab === 'transactions' ? '' : 'form-submit-btn-outline'}`}
+1876:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'transactions' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'transactions' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1877:                 onClick={() => setActiveTab('transactions')}
+1878:               >
+1879:                 <DollarSign size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1880:                 Giao dịch & Rút tiền
+1881:               </button>
+1882:               <button
+1883:                 className={`form-submit-btn ${activeTab === 'settings' ? '' : 'form-submit-btn-outline'}`}
+1884:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'settings' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'settings' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1885:                 onClick={() => setActiveTab('settings')}
+
+==================================================
+
+--- Occurrence at line 1876 ---
+1871:                 <Users2 size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1872:                 Danh sách CTV
+1873:               </button>
+1874:               <button
+1875:                 className={`form-submit-btn ${activeTab === 'transactions' ? '' : 'form-submit-btn-outline'}`}
+1876:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'transactions' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'transactions' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1877:                 onClick={() => setActiveTab('transactions')}
+1878:               >
+1879:                 <DollarSign size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1880:                 Giao dịch & Rút tiền
+1881:               </button>
+1882:               <button
+1883:                 className={`form-submit-btn ${activeTab === 'settings' ? '' : 'form-submit-btn-outline'}`}
+1884:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'settings' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'settings' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1885:                 onClick={() => setActiveTab('settings')}
+1886:               >
+
+==================================================
+
+--- Occurrence at line 1883 ---
+1878:               >
+1879:                 <DollarSign size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1880:                 Giao dịch & Rút tiền
+1881:               </button>
+1882:               <button
+1883:                 className={`form-submit-btn ${activeTab === 'settings' ? '' : 'form-submit-btn-outline'}`}
+1884:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'settings' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'settings' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1885:                 onClick={() => setActiveTab('settings')}
+1886:               >
+1887:                 <Settings size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1888:                 Cấu hình hệ thống
+1889:               </button>
+1890:               <button
+1891:                 className={`form-submit-btn ${activeTab === 'ref-friends' ? '' : 'form-submit-btn-outline'}`}
+1892:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ref-friends' ? '#7C3AED' : 'transparent', color: activeTab === 'ref-friends' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1893:                 onClick={() => setActiveTab('ref-friends')}
+
+==================================================
+
+--- Occurrence at line 1884 ---
+1879:                 <DollarSign size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1880:                 Giao dịch & Rút tiền
+1881:               </button>
+1882:               <button
+1883:                 className={`form-submit-btn ${activeTab === 'settings' ? '' : 'form-submit-btn-outline'}`}
+1884:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'settings' ? 'var(--primary-red)' : 'transparent', color: activeTab === 'settings' ? '#FFFFFF' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1885:                 onClick={() => setActiveTab('settings')}
+1886:               >
+1887:                 <Settings size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1888:                 Cấu hình hệ thống
+1889:               </button>
+1890:               <button
+1891:                 className={`form-submit-btn ${activeTab === 'ref-friends' ? '' : 'form-submit-btn-outline'}`}
+1892:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ref-friends' ? '#7C3AED' : 'transparent', color: activeTab === 'ref-friends' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1893:                 onClick={() => setActiveTab('ref-friends')}
+1894:               >
+
+==================================================
+
+--- Occurrence at line 1891 ---
+1886:               >
+1887:                 <Settings size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1888:                 Cấu hình hệ thống
+1889:               </button>
+1890:               <button
+1891:                 className={`form-submit-btn ${activeTab === 'ref-friends' ? '' : 'form-submit-btn-outline'}`}
+1892:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ref-friends' ? '#7C3AED' : 'transparent', color: activeTab === 'ref-friends' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1893:                 onClick={() => setActiveTab('ref-friends')}
+1894:               >
+1895:                 👥 Ref / Bạn Bè
+1896:               </button>
+1897:               <button
+1898:                 className={`form-submit-btn ${activeTab === 'traffic' ? '' : 'form-submit-btn-outline'}`}
+1899:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'traffic' ? '#0284C7' : 'transparent', color: activeTab === 'traffic' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1900:                 onClick={() => setActiveTab('traffic')}
+1901:               >
+
+==================================================
+
+--- Occurrence at line 1892 ---
+1887:                 <Settings size={16} style={{ marginRight: '4px', verticalAlign: 'middle', display: 'inline' }} />
+1888:                 Cấu hình hệ thống
+1889:               </button>
+1890:               <button
+1891:                 className={`form-submit-btn ${activeTab === 'ref-friends' ? '' : 'form-submit-btn-outline'}`}
+1892:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ref-friends' ? '#7C3AED' : 'transparent', color: activeTab === 'ref-friends' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1893:                 onClick={() => setActiveTab('ref-friends')}
+1894:               >
+1895:                 👥 Ref / Bạn Bè
+1896:               </button>
+1897:               <button
+1898:                 className={`form-submit-btn ${activeTab === 'traffic' ? '' : 'form-submit-btn-outline'}`}
+1899:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'traffic' ? '#0284C7' : 'transparent', color: activeTab === 'traffic' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1900:                 onClick={() => setActiveTab('traffic')}
+1901:               >
+1902:                 📊 Traffic
+
+==================================================
+
+--- Occurrence at line 1898 ---
+1893:                 onClick={() => setActiveTab('ref-friends')}
+1894:               >
+1895:                 👥 Ref / Bạn Bè
+1896:               </button>
+1897:               <button
+1898:                 className={`form-submit-btn ${activeTab === 'traffic' ? '' : 'form-submit-btn-outline'}`}
+1899:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'traffic' ? '#0284C7' : 'transparent', color: activeTab === 'traffic' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1900:                 onClick={() => setActiveTab('traffic')}
+1901:               >
+1902:                 📊 Traffic
+1903:               </button>
+1904:               <button
+1905:                 className={`form-submit-btn ${activeTab === 'user-accounts' ? '' : 'form-submit-btn-outline'}`}
+1906:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'user-accounts' ? '#D97706' : 'transparent', color: activeTab === 'user-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1907:                 onClick={() => setActiveTab('user-accounts')}
+1908:               >
+
+==================================================
+
+--- Occurrence at line 1899 ---
+1894:               >
+1895:                 👥 Ref / Bạn Bè
+1896:               </button>
+1897:               <button
+1898:                 className={`form-submit-btn ${activeTab === 'traffic' ? '' : 'form-submit-btn-outline'}`}
+1899:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'traffic' ? '#0284C7' : 'transparent', color: activeTab === 'traffic' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1900:                 onClick={() => setActiveTab('traffic')}
+1901:               >
+1902:                 📊 Traffic
+1903:               </button>
+1904:               <button
+1905:                 className={`form-submit-btn ${activeTab === 'user-accounts' ? '' : 'form-submit-btn-outline'}`}
+1906:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'user-accounts' ? '#D97706' : 'transparent', color: activeTab === 'user-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1907:                 onClick={() => setActiveTab('user-accounts')}
+1908:               >
+1909:                 🏦 Tài Khoản User
+
+==================================================
+
+--- Occurrence at line 1905 ---
+1900:                 onClick={() => setActiveTab('traffic')}
+1901:               >
+1902:                 📊 Traffic
+1903:               </button>
+1904:               <button
+1905:                 className={`form-submit-btn ${activeTab === 'user-accounts' ? '' : 'form-submit-btn-outline'}`}
+1906:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'user-accounts' ? '#D97706' : 'transparent', color: activeTab === 'user-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1907:                 onClick={() => setActiveTab('user-accounts')}
+1908:               >
+1909:                 🏦 Tài Khoản User
+1910:               </button>
+1911:               <button
+1912:                 className={`form-submit-btn ${activeTab === 'ctv-accounts' ? '' : 'form-submit-btn-outline'}`}
+1913:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ctv-accounts' ? '#DB2777' : 'transparent', color: activeTab === 'ctv-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1914:                 onClick={() => setActiveTab('ctv-accounts')}
+1915:               >
+
+==================================================
+
+--- Occurrence at line 1906 ---
+1901:               >
+1902:                 📊 Traffic
+1903:               </button>
+1904:               <button
+1905:                 className={`form-submit-btn ${activeTab === 'user-accounts' ? '' : 'form-submit-btn-outline'}`}
+1906:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'user-accounts' ? '#D97706' : 'transparent', color: activeTab === 'user-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1907:                 onClick={() => setActiveTab('user-accounts')}
+1908:               >
+1909:                 🏦 Tài Khoản User
+1910:               </button>
+1911:               <button
+1912:                 className={`form-submit-btn ${activeTab === 'ctv-accounts' ? '' : 'form-submit-btn-outline'}`}
+1913:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ctv-accounts' ? '#DB2777' : 'transparent', color: activeTab === 'ctv-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1914:                 onClick={() => setActiveTab('ctv-accounts')}
+1915:               >
+1916:                 👔 Thêm CTV
+
+==================================================
+
+--- Occurrence at line 1912 ---
+1907:                 onClick={() => setActiveTab('user-accounts')}
+1908:               >
+1909:                 🏦 Tài Khoản User
+1910:               </button>
+1911:               <button
+1912:                 className={`form-submit-btn ${activeTab === 'ctv-accounts' ? '' : 'form-submit-btn-outline'}`}
+1913:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ctv-accounts' ? '#DB2777' : 'transparent', color: activeTab === 'ctv-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1914:                 onClick={() => setActiveTab('ctv-accounts')}
+1915:               >
+1916:                 👔 Thêm CTV
+1917:               </button>
+1918:               <button
+1919:                 className={`form-submit-btn ${activeTab === 'bot-management' ? '' : 'form-submit-btn-outline'}`}
+1920:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'bot-management' ? '#4F46E5' : 'transparent', color: activeTab === 'bot-management' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1921:                 onClick={() => setActiveTab('bot-management')}
+1922:               >
+
+==================================================
+
+--- Occurrence at line 1913 ---
+1908:               >
+1909:                 🏦 Tài Khoản User
+1910:               </button>
+1911:               <button
+1912:                 className={`form-submit-btn ${activeTab === 'ctv-accounts' ? '' : 'form-submit-btn-outline'}`}
+1913:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'ctv-accounts' ? '#DB2777' : 'transparent', color: activeTab === 'ctv-accounts' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1914:                 onClick={() => setActiveTab('ctv-accounts')}
+1915:               >
+1916:                 👔 Thêm CTV
+1917:               </button>
+1918:               <button
+1919:                 className={`form-submit-btn ${activeTab === 'bot-management' ? '' : 'form-submit-btn-outline'}`}
+1920:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'bot-management' ? '#4F46E5' : 'transparent', color: activeTab === 'bot-management' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1921:                 onClick={() => setActiveTab('bot-management')}
+1922:               >
+1923:                 🤖 Quản lý Bot
+
+==================================================
+
+--- Occurrence at line 1919 ---
+1914:                 onClick={() => setActiveTab('ctv-accounts')}
+1915:               >
+1916:                 👔 Thêm CTV
+1917:               </button>
+1918:               <button
+1919:                 className={`form-submit-btn ${activeTab === 'bot-management' ? '' : 'form-submit-btn-outline'}`}
+1920:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'bot-management' ? '#4F46E5' : 'transparent', color: activeTab === 'bot-management' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1921:                 onClick={() => setActiveTab('bot-management')}
+1922:               >
+1923:                 🤖 Quản lý Bot
+1924:               </button>
+1925:             </>
+1926:           )}
+1927: 
+1928:           <button
+1929:             className={`form-submit-btn ${activeTab === 'all-rooms' ? '' : 'form-submit-btn-outline'}`}
+
+==================================================
+
+--- Occurrence at line 1920 ---
+1915:               >
+1916:                 👔 Thêm CTV
+1917:               </button>
+1918:               <button
+1919:                 className={`form-submit-btn ${activeTab === 'bot-management' ? '' : 'form-submit-btn-outline'}`}
+1920:                 style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'bot-management' ? '#4F46E5' : 'transparent', color: activeTab === 'bot-management' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1921:                 onClick={() => setActiveTab('bot-management')}
+1922:               >
+1923:                 🤖 Quản lý Bot
+1924:               </button>
+1925:             </>
+1926:           )}
+1927: 
+1928:           <button
+1929:             className={`form-submit-btn ${activeTab === 'all-rooms' ? '' : 'form-submit-btn-outline'}`}
+1930:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'all-rooms' ? '#0F172A' : 'transparent', color: activeTab === 'all-rooms' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+
+==================================================
+
+--- Occurrence at line 1929 ---
+1924:               </button>
+1925:             </>
+1926:           )}
+1927: 
+1928:           <button
+1929:             className={`form-submit-btn ${activeTab === 'all-rooms' ? '' : 'form-submit-btn-outline'}`}
+1930:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'all-rooms' ? '#0F172A' : 'transparent', color: activeTab === 'all-rooms' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1931:             onClick={() => setActiveTab('all-rooms')}
+1932:           >
+1933:             🏘️ Tất Cả Phòng
+1934:           </button>
+1935:           <button
+1936:             className={`form-submit-btn ${activeTab === 'commission' ? '' : 'form-submit-btn-outline'}`}
+1937:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'commission' ? '#059669' : 'transparent', color: activeTab === 'commission' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1938:             onClick={() => setActiveTab('commission')}
+1939:           >
+
+==================================================
+
+--- Occurrence at line 1930 ---
+1925:             </>
+1926:           )}
+1927: 
+1928:           <button
+1929:             className={`form-submit-btn ${activeTab === 'all-rooms' ? '' : 'form-submit-btn-outline'}`}
+1930:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'all-rooms' ? '#0F172A' : 'transparent', color: activeTab === 'all-rooms' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1931:             onClick={() => setActiveTab('all-rooms')}
+1932:           >
+1933:             🏘️ Tất Cả Phòng
+1934:           </button>
+1935:           <button
+1936:             className={`form-submit-btn ${activeTab === 'commission' ? '' : 'form-submit-btn-outline'}`}
+1937:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'commission' ? '#059669' : 'transparent', color: activeTab === 'commission' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1938:             onClick={() => setActiveTab('commission')}
+1939:           >
+1940:             💰 Hoa Hồng
+
+==================================================
+
+--- Occurrence at line 1931 ---
+1926:           )}
+1927: 
+1928:           <button
+1929:             className={`form-submit-btn ${activeTab === 'all-rooms' ? '' : 'form-submit-btn-outline'}`}
+1930:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'all-rooms' ? '#0F172A' : 'transparent', color: activeTab === 'all-rooms' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1931:             onClick={() => setActiveTab('all-rooms')}
+1932:           >
+1933:             🏘️ Tất Cả Phòng
+1934:           </button>
+1935:           <button
+1936:             className={`form-submit-btn ${activeTab === 'commission' ? '' : 'form-submit-btn-outline'}`}
+1937:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'commission' ? '#059669' : 'transparent', color: activeTab === 'commission' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1938:             onClick={() => setActiveTab('commission')}
+1939:           >
+1940:             💰 Hoa Hồng
+1941:           </button>
+
+==================================================
+
+--- Occurrence at line 1936 ---
+1931:             onClick={() => setActiveTab('all-rooms')}
+1932:           >
+1933:             🏘️ Tất Cả Phòng
+1934:           </button>
+1935:           <button
+1936:             className={`form-submit-btn ${activeTab === 'commission' ? '' : 'form-submit-btn-outline'}`}
+1937:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'commission' ? '#059669' : 'transparent', color: activeTab === 'commission' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1938:             onClick={() => setActiveTab('commission')}
+1939:           >
+1940:             💰 Hoa Hồng
+1941:           </button>
+1942: 
+1943:           {(!user || user.role === 'admin') && (
+1944:             <button
+1945:               className={`form-submit-btn ${activeTab === 'activity-logs' ? '' : 'form-submit-btn-outline'}`}
+1946:               style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'activity-logs' ? '#0284C7' : 'transparent', color: activeTab === 'activity-logs' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+
+==================================================
+
+--- Occurrence at line 1937 ---
+1932:           >
+1933:             🏘️ Tất Cả Phòng
+1934:           </button>
+1935:           <button
+1936:             className={`form-submit-btn ${activeTab === 'commission' ? '' : 'form-submit-btn-outline'}`}
+1937:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'commission' ? '#059669' : 'transparent', color: activeTab === 'commission' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1938:             onClick={() => setActiveTab('commission')}
+1939:           >
+1940:             💰 Hoa Hồng
+1941:           </button>
+1942: 
+1943:           {(!user || user.role === 'admin') && (
+1944:             <button
+1945:               className={`form-submit-btn ${activeTab === 'activity-logs' ? '' : 'form-submit-btn-outline'}`}
+1946:               style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'activity-logs' ? '#0284C7' : 'transparent', color: activeTab === 'activity-logs' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1947:               onClick={() => setActiveTab('activity-logs')}
+
+==================================================
+
+--- Occurrence at line 1945 ---
+1940:             💰 Hoa Hồng
+1941:           </button>
+1942: 
+1943:           {(!user || user.role === 'admin') && (
+1944:             <button
+1945:               className={`form-submit-btn ${activeTab === 'activity-logs' ? '' : 'form-submit-btn-outline'}`}
+1946:               style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'activity-logs' ? '#0284C7' : 'transparent', color: activeTab === 'activity-logs' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1947:               onClick={() => setActiveTab('activity-logs')}
+1948:             >
+1949:               📜 Nhật ký CTV
+1950:             </button>
+1951:           )}
+1952:         </div>
+1953: 
+1954:       </div>
+1955: 
+
+==================================================
+
+--- Occurrence at line 1946 ---
+1941:           </button>
+1942: 
+1943:           {(!user || user.role === 'admin') && (
+1944:             <button
+1945:               className={`form-submit-btn ${activeTab === 'activity-logs' ? '' : 'form-submit-btn-outline'}`}
+1946:               style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'activity-logs' ? '#0284C7' : 'transparent', color: activeTab === 'activity-logs' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1947:               onClick={() => setActiveTab('activity-logs')}
+1948:             >
+1949:               📜 Nhật ký CTV
+1950:             </button>
+1951:           )}
+1952:         </div>
+1953: 
+1954:       </div>
+1955: 
+1956:       {/* Stats Counter Boxes */}
+
+==================================================
+
+--- Occurrence at line 1997 ---
+1992:           </div>
+1993:         </div>
+1994:       </div>
+1995: 
+1996:       {/* Tab: LIST OF LISTINGS */}
+1997:       {activeTab === 'list' && (
+1998:         <div style={{
+1999:           backgroundColor: '#FFFFFF',
+2000:           borderRadius: '16px',
+2001:           boxShadow: 'var(--shadow-sm)',
+2002:           border: '1px solid var(--border-color)',
+2003:           overflow: 'hidden'
+2004:         }}>
+2005:           {/* Sub-tabs for post approvals: Pending, Approved, Rejected */}
+2006:           <div style={{
+2007:             display: 'flex',
+
+==================================================
+
+--- Occurrence at line 2234 ---
+2229:           </div>
+2230:         </div>
+2231:       )}
+2232: 
+2233:       {/* Tab: CTV LIST */}
+2234:       {activeTab === 'ctv' && (!user || user.role === 'admin') && (
+2235:         <div style={{
+2236:           backgroundColor: '#FFFFFF',
+2237:           borderRadius: '16px',
+2238:           boxShadow: 'var(--shadow-sm)',
+2239:           border: '1px solid var(--border-color)',
+2240:           overflow: 'hidden'
+2241:         }}>
+2242:           <div style={{
+2243:             display: 'flex',
+2244:             justifyContent: 'space-between',
+
+==================================================
+
+--- Occurrence at line 2373 ---
+2368:           </div>
+2369:         </div>
+2370:       )}
+2371: 
+2372:       {/* Tab: TRANSACTIONS & WITHDRAWALS */}
+2373:       {activeTab === 'transactions' && (!user || user.role === 'admin') && (() => {
+2374:         // Pending withdrawals: chờ duyệt
+2375:         const pendingWithdrawals = transactions.filter(tx => tx.type === 'Rút tiền' && (tx.status === 'Đang xử lý' || tx.status === 'Yêu cầu'));
+2376: 
+2377:         // All withdrawals: tất cả đơn rút tiền (kể cả đã duyệt/từ chối)
+2378:         const allWithdrawals = transactions.filter(tx => tx.type === 'Rút tiền');
+2379: 
+2380:         // All history: tất cả giao dịch với search filter
+2381:         const filteredHistory = transactions.filter(tx => {
+2382:           const q = searchTransaction.toLowerCase();
+2383:           if (!q) return true;
+
+==================================================
+
+--- Occurrence at line 2662 ---
+2657:           </div>
+2658:         );
+2659:       })()}
+2660: 
+2661:       {/* Tab: ADD NEW LISTING */}
+2662:       {activeTab === 'add' && addFlowStep === 'choose' && (
+2663:         <div style={{
+2664:           backgroundColor: '#FFFFFF',
+2665:           borderRadius: '16px',
+2666:           boxShadow: 'var(--shadow-sm)',
+2667:           border: '1px solid var(--border-color)',
+2668:           padding: isMobile ? '20px' : '32px'
+2669:         }}>
+2670:           <h3 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px', textAlign: 'center' }}>
+2671:             BẠN MUỐN ĐĂNG TIN THỂ LOẠI NÀO?
+2672:           </h3>
+
+==================================================
+
+--- Occurrence at line 2842 ---
+2837:             )}
+2838:           </div>
+2839:         </div>
+2840:       )}
+2841: 
+2842:       {activeTab === 'add' && addFlowStep === 'form' && (
+2843:         <div style={{
+2844:           backgroundColor: '#FFFFFF',
+2845:           borderRadius: '16px',
+2846:           boxShadow: 'var(--shadow-sm)',
+2847:           border: '1px solid var(--border-color)',
+2848:           padding: isMobile ? '20px' : '32px'
+2849:         }}>
+2850:           {/* Back Button */}
+2851:           <button
+2852:             type="button"
+
+==================================================
+
+--- Occurrence at line 3386 ---
+3381:           </form>
+3382:         </div>
+3383:       )}
+3384: 
+3385: 
+3386:       {activeTab === 'settings' && (!user || user.role === 'admin') && (
+3387:         <div style={{
+3388:           backgroundColor: '#FFFFFF',
+3389:           borderRadius: '16px',
+3390:           boxShadow: 'var(--shadow-sm)',
+3391:           border: '1px solid var(--border-color)',
+3392:           padding: isMobile ? '20px' : '32px'
+3393:         }}>
+3394:           <div style={{ borderBottom: '1px solid var(--border-light)', paddingBottom: '12px', marginBottom: '20px' }}>
+3395:             <h3 style={{ fontSize: '18px', fontWeight: 800, color: 'var(--text-dark)' }}>
+3396:               Cấu hình thông số Hệ thống
+
+==================================================
+
+--- Occurrence at line 3650 ---
+3645:       )}
+3646: 
+3647:       {/* ════════════════════════════════════════════════════════════
+3648:           TAB: REF / BẠN BÈ
+3649:       ════════════════════════════════════════════════════════════ */}
+3650:       {activeTab === 'ref-friends' && (!user || user.role === 'admin') && (
+3651:         <div>
+3652:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '16px' }}>
+3653:             <div>
+3654:               <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '4px' }}>👥 Quản lý Ref / Bạn Bè</h2>
+3655:               <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>Duyệt ref để cộng tiền hoa hồng cho người mời. Ghi chú là <strong>bắt buộc</strong> khi duyệt.</p>
+3656:             </div>
+3657:             <button
+3658:               onClick={() => {
+3659:                 if (!window.confirm('Normalize toàn bộ status cũ (Đã kiếm được tiền → approved, Chưa đủ ĐK → pending)?\nHành động này sẽ cập nhật DB.')) return;
+3660:                 fetch('/api/referrals/normalize', { method: 'POST' })
+
+==================================================
+
+--- Occurrence at line 3774 ---
+3769:             </div>
+3770:           )}
+3771:         </div>
+3772:       )}
+3773: 
+3774:       {activeTab === 'commission' && (
+3775:         <div>
+3776:           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px' }}>💰 Hoa Hồng - Danh Sách Phòng</h2>
+3777:           <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '20px' }}>
+3778:             Tất cả phòng trên trang. Mỗi phòng hiển thị nội dung text gốc (text1 + text2). Tổng: <strong>{rooms.length}</strong> phòng.
+3779:           </p>
+3780: 
+3781:           <div style={{ marginBottom: '16px' }}>
+3782:             <input
+3783:               value={commQuery}
+3784:               onChange={e => setCommQuery(e.target.value)}
+
+==================================================
+
+--- Occurrence at line 3778 ---
+3773: 
+3774:       {activeTab === 'commission' && (
+3775:         <div>
+3776:           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px' }}>💰 Hoa Hồng - Danh Sách Phòng</h2>
+3777:           <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '20px' }}>
+3778:             Tất cả phòng trên trang. Mỗi phòng hiển thị nội dung text gốc (text1 + text2). Tổng: <strong>{rooms.length}</strong> phòng.
+3779:           </p>
+3780: 
+3781:           <div style={{ marginBottom: '16px' }}>
+3782:             <input
+3783:               value={commQuery}
+3784:               onChange={e => setCommQuery(e.target.value)}
+3785:               placeholder="Tìm theo địa chỉ, ID phòng, mã phòng, nội dung..."
+3786:               style={{ width: '100%', padding: '10px 14px', border: '1.5px solid #E2E8F0', borderRadius: '8px', fontSize: '14px', boxSizing: 'border-box' }}
+3787:             />
+3788:           </div>
+
+==================================================
+
+--- Occurrence at line 3896 ---
+3891:       )}
+3892: 
+3893:       {/* ════════════════════════════════════════════════════════════
+3894:           TAB: TRAFFIC
+3895:       ════════════════════════════════════════════════════════════ */}
+3896:       {activeTab === 'traffic' && (!user || user.role === 'admin') && (
+3897:         <div>
+3898:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+3899:             <h2 style={{ fontSize: '18px', fontWeight: 800 }}>📊 Lượt Truy Cập</h2>
+3900:             <div style={{ display: 'flex', gap: '8px' }}>
+3901:               {['today', '7d', '30d', 'all'].map(r => (
+3902:                 <button key={r} onClick={() => setTrafficRange(r)}
+3903:                   style={{ padding: '6px 14px', borderRadius: '6px', border: '1px solid #E2E8F0', background: trafficRange === r ? '#0284C7' : '#fff', color: trafficRange === r ? '#fff' : '#475569', fontWeight: 600, cursor: 'pointer', fontSize: '12px' }}>
+3904:                   {r === 'today' ? 'Hôm nay' : r === '7d' ? '7 ngày' : r === '30d' ? '30 ngày' : 'Tất cả'}
+3905:                 </button>
+3906:               ))}
+
+==================================================
+
+--- Occurrence at line 3997 ---
+3992:       )}
+3993: 
+3994:       {/* ════════════════════════════════════════════════════════════
+3995:           TAB: TÀI KHOẢN USER
+3996:       ════════════════════════════════════════════════════════════ */}
+3997:       {activeTab === 'user-accounts' && (!user || user.role === 'admin') && (
+3998:         <div style={{ display: 'grid', gridTemplateColumns: selectedUser ? '280px 1fr' : '1fr', gap: '20px' }}>
+3999:           {/* User list */}
+4000:           <div>
+4001:             <h2 style={{ fontSize: '16px', fontWeight: 800, marginBottom: '14px' }}>🏦 Danh sách User</h2>
+4002:             {loadingUsers ? <div>Đang tải...</div> : (
+4003:               <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+4004:                 {allUsers.filter(u => u.role !== 'ctv').map(u => (
+4005:                   <div key={u.phone} onClick={() => handleSelectUser(u)}
+4006:                     style={{ padding: '12px 14px', border: `2px solid ${selectedUser?.phone === u.phone ? '#D97706' : '#E2E8F0'}`, borderRadius: '10px', cursor: 'pointer', background: selectedUser?.phone === u.phone ? '#FFFBEB' : '#fff', transition: 'all 0.2s' }}>
+4007:                     <div style={{ fontWeight: 700, fontSize: '14px' }}>{u.name}</div>
+
+==================================================
+
+--- Occurrence at line 4078 ---
+4073:       )}
+4074: 
+4075:       {/* ════════════════════════════════════════════════════════════
+4076:           TAB: CTV ACCOUNTS
+4077:       ════════════════════════════════════════════════════════════ */}
+4078:       {activeTab === 'ctv-accounts' && (!user || user.role === 'admin') && (
+4079:         <div>
+4080:           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px' }}>👔 Quản lý CTV</h2>
+4081:           <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>CTV có thể đăng nhập và chỉ xem được tab Hoa Hồng.</p>
+4082: 
+4083:           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '360px 1fr', gap: '24px' }}>
+4084:             {/* Create form */}
+4085:             <div style={{ background: '#F8FAFC', border: '1px solid #E2E8F0', borderRadius: '12px', padding: '20px' }}>
+4086:               <h3 style={{ fontSize: '14px', fontWeight: 800, marginBottom: '16px' }}>➕ Tạo tài khoản CTV mới</h3>
+4087:               <label style={{ fontSize: '12px', fontWeight: 700, display: 'block', marginBottom: '4px' }}>Tên CTV</label>
+4088:               <input value={ctvName} onChange={e => setCtvName(e.target.value)} placeholder="Nguyễn Văn A" style={{ width: '100%', padding: '10px', border: '1.5px solid #E2E8F0', borderRadius: '8px', fontSize: '13px', marginBottom: '12px', boxSizing: 'border-box' }} />
+
+==================================================
+
+--- Occurrence at line 4123 ---
+4118:       )}
+4119: 
+4120:       {/* ════════════════════════════════════════════════════════════
+4121:           TAB: TẤT CẢ PHÒNG
+4122:       ════════════════════════════════════════════════════════════ */}
+4123:       {activeTab === 'all-rooms' && (
+4124:         <div>
+4125:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+4126:             <h2 style={{ fontSize: '18px', fontWeight: 800 }}>🏘️ Tất Cả Phòng ({allRooms.length})</h2>
+4127:           </div>
+4128: 
+4129:           <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+4130:             <input
+4131:               value={roomSearch}
+4132:               onChange={e => setRoomSearch(e.target.value)}
+4133:               onKeyDown={e => e.key === 'Enter' && fetchAllRooms(roomSearch)}
+
+==================================================
+
+--- Occurrence at line 4247 ---
+4242:       )}
+4243: 
+4244:       {/* ════════════════════════════════════════════════════════════
+4245:           TAB: BOT MANAGEMENT
+4246:       ════════════════════════════════════════════════════════════ */}
+4247:       {activeTab === 'bot-management' && (!user || user.role === 'admin') && (
+4248:         <div>
+4249:           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '4px' }}>🤖 Quản lý Zalo Bot & Tiến trình</h2>
+4250:           <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>Bật/Tắt tiến trình Listener, Sender, xem log trực tiếp và cấu hình tài khoản.</p>
+4251: 
+4252:           {/* Service Cards */}
+4253:           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
+4254:             {['listener', 'sender'].map(service => {
+4255:               const status = botStatus[service] || { running: false };
+4256:               const isRunning = status.running;
+4257:               const info = status.info || {};
+
+==================================================
+
+--- Occurrence at line 4520 ---
+4515:           )}
+4516:         </div>
+4517:       )}
+4518: 
+4519:       {/* Tab: ACTIVITY LOGS */}
+4520:       {activeTab === 'activity-logs' && (!user || user.role === 'admin') && (
+4521:         <div style={{
+4522:           backgroundColor: '#FFFFFF',
+4523:           borderRadius: '16px',
+4524:           boxShadow: 'var(--shadow-sm)',
+4525:           border: '1px solid var(--border-color)',
+4526:           overflow: 'hidden',
+4527:           padding: '24px'
+4528:         }}>
+4529:           <h2 style={{ fontSize: '18px', fontWeight: 800, marginBottom: '8px' }}>📜 Nhật Ký Hoạt Động CTV</h2>
+4530:           <p style={{ fontSize: '13px', color: 'var(--text-muted)', marginBottom: '24px' }}>Theo dõi thời gian, tài khoản CTV nào đã thêm phòng mới hoặc sửa đổi thông tin phòng.</p>
+
+==================================================

@@ -1,0 +1,94 @@
+Created At: 2026-06-10T13:46:31Z
+Completed At: 2026-06-10T13:46:31Z
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/map.py`
+Total Lines: 159
+Total Bytes: 5930
+Showing lines 1 to 159
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import os
+2: import json
+3: import math
+4: import urllib.request
+5: import urllib.parse
+6: import sys
+7: 
+8: # Configure console to support Vietnamese Unicode print out on Windows
+9: if sys.platform.startswith('win'):
+10:     try:
+11:         sys.stdout.reconfigure(encoding='utf-8')
+12:         sys.stderr.reconfigure(encoding='utf-8')
+13:     except Exception:
+14:         pass
+15: 
+16: # Path to the pre-populated Hanoi landmarks database
+17: DATABASE_PATH = os.path.join(os.path.dirname(__file__), 'distance_app', 'locations_db.json')
+18: 
+19: def load_locations():
+20:     if not os.path.exists(DATABASE_PATH):
+21:         print(f"Lỗi: Không tìm thấy tệp cơ sở dữ liệu tại {DATABASE_PATH}")
+22:         print("Vui lòng đảm bảo tệp tin 'distance_app/locations_db.json' đã được tạo.")
+23:         return []
+24:     try:
+25:         with open(DATABASE_PATH, 'r', encoding='utf-8') as f:
+26:             return json.load(f)
+27:     except Exception as e:
+28:         print(f"Lỗi đọc cơ sở dữ liệu: {e}")
+29:         return []
+30: 
+31: def geocode_address_esri(address):
+32:     """
+33:     Geocodes an address string using Esri Public Geocoding API,
+34:     optimized specifically for Hanoi, Vietnam.
+35:     """
+36:     # Append Hanoi, Vietnam if not present to prioritize Hanoi coordinates
+37:     search_query = address
+38:     if "hà nội" not in search_query.lower() and "ha noi" not in search_query.lower():
+39:         search_query += ", Hà Nội, Việt Nam"
+40:         
+41:     encoded_query = urllib.parse.quote(search_query)
+42:     # Esri ArcGIS Geocode
+<truncated 3034 bytes>
+ Vĩ độ {lat_a:.6f}, Kinh độ {lon_a:.6f}")
+118:     print("-" * 65)
+119:     print("Đang tính toán các địa điểm trong bán kính 5km...\n")
+120:     
+121:     results = []
+122:     for loc in locations:
+123:         lat_b = loc.get('lat')
+124:         lon_b = loc.get('lon')
+125:         
+126:         if lat_b is not None and lon_b is not None:
+127:             dist = haversine_distance(lat_a, lon_a, lat_b, lon_b)
+128:             # Filter strictly under 5.0 km
+129:             if dist <= 5.0:
+130:                 results.append({
+131:                     'name': loc.get('name'),
+132:                     'category': loc.get('category'),
+133:                     'address': loc.get('address'),
+134:                     'distance': dist
+135:                 })
+136:                 
+137:     # Sort nearest to farthest
+138:     results.sort(key=lambda x: x['distance'])
+139:     
+140:     # Output results
+141:     total_found = len(results)
+142:     if total_found == 0:
+143:         print("Không có địa điểm nào trong cơ sở dữ liệu nằm trong bán kính 5km từ vị trí của bạn.")
+144:     else:
+145:         print(f"Đã tìm thấy {total_found} địa điểm trong bán kính 5km (xếp theo gần nhất):")
+146:         print("-" * 65)
+147:         print(f"{'STT':<4} | {'Tên Địa Điểm':<32} | {'Danh Mục':<10} | {'Khoảng Cách':<10}")
+148:         print("-" * 65)
+149:         for idx, item in enumerate(results, 1):
+150:             name_truncated = item['name'][:30] + '..' if len(item['name']) > 32 else item['name']
+151:             print(f"{idx:<4} | {name_truncated:<32} | {item['category']:<10} | {item['distance']:>6} km")
+152:             print(f"     └─ Địa chỉ: {item['address']}")
+153:         print("-" * 65)
+154:         print(f"Tổng cộng: {total_found} địa điểm nằm dưới 5km.")
+155:     print("=" * 65)
+156: 
+157: if __name__ == "__main__":
+158:     main()
+159: 
+The above content shows the entire, complete file contents of the requested file.

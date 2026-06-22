@@ -1,0 +1,427 @@
+--- Render of all-rooms starts at line 678 ---
+676:     } else if (activeTab === 'ctv-accounts') {
+677:       fetchAllUsers();
+678:     } else if (activeTab === 'all-rooms') {
+679:       fetchAllRooms('');
+680:     } else if (activeTab === 'activity-logs') {
+681:       fetchLogs();
+682:     }
+683:   }, [listingsTab, activeTab]);
+684: 
+685:   // ── NEW HANDLERS ────────────────────────────────────────────────
+686: 
+687:   const fetchAllUsers = () => {
+688:     setLoadingUsers(true);
+689:     fetch('/api/users')
+690:       .then(r => r.json())
+691:       .then(data => { setAllUsers(Array.isArray(data) ? data : []); setCtvUsers((Array.isArray(data) ? data : []).filter(u => u.role === 'ctv')); })
+692:       .catch(() => setAllUsers([]))
+693:       .finally(() => setLoadingUsers(false));
+694:   };
+695: 
+696:   const handleApproveRef = () => {
+697:     if (!refApproveModal) return;
+698:     if (!refNote.trim()) { alert('Vui lòng nhập ghi chú!'); return; }
+699:     fetch(`/api/referrals/${refApproveModal.id}/approve`, {
+700:       method: 'POST',
+701:       headers: { 'Content-Type': 'application/json' },
+702:       body: JSON.stringify({ note: refNote, commission: refCommission })
+703:     })
+704:       .then(r => r.json())
+705:       .then(d => {
+706:         if (d.error) { alert(d.error); return; }
+707:         alert('Đã duyệt thành công! Tiền đã được cộng vào ví người mời.');
+708:         setRefApproveModal(null);
+709:         setRefNote('');
+710:         fetchReferrals();
+711:         fetchAllUsers();
+712:       })
+713:       .catch(() => alert('Lỗi khi duyệt!'));
+714:   };
+715: 
+716:   const searchCommissions = () => {
+717:     setCommLoading(true);
+718:     fetch(`/api/commissions?q=${encodeURIComponent(commQuery)}`)
+719:       .then(r => r.json())
+720:       .then(d => setCommResults(d.results || []))
+721:       .catch(() => setCommResults([]))
+722:       .finally(() => setCommLoading(false));
+723:   };
+724: 
+725:   React.useEffect(() => {
+726:     if (activeTab === 'commission') searchCommissions();
+727:   }, [activeTab]);
+728: 
+729:   const fetchTraffic = (range) => {
+730:     setTrafficLoading(true);
+731:     fetch(`/api/analytics?range=${range}`)
+732:       .then(r => r.json())
+733:       .then(d => setTrafficData(d))
+734:       .catch(() => setTrafficData(null))
+735:       .finally(() => setTrafficLoading(false));
+736:   };
+737: 
+738:   React.useEffect(() => {
+739:     if (activeTab === 'traffic') fetchTraffic(trafficRange);
+740:   }, [trafficRange]);
+741: 
+742:   const fetchUserTxs = (phone) => {
+743:     fetch(`/api/users/${phone}/transactions`)
+744:       .then(r => r.json())
+745:       .then(d => setUserTxs(Array.isArray(d) ? d : []))
+746:       .catch(() => setUserTxs([]));
+747:   };
+748: 
+749:   const handleSelectUser = (user) => {
+750:     setSelectedUser(user);
+751:     setUserTxs([]);
+752:     setAdjustAmount('');
+753:     setAdjustNote('');
+754:     fetchUserTxs(user.phone);
+755:   };
+756: 
+757:   const handleAdjustBalance = () => {
+758:     if (!selectedUser) return;
+759:     if (!adjustNote.trim()) { alert('Vui lòng nhập ghi chú!'); return; }
+760:     const rawAmt = parseInt(adjustAmount);
+761:     if (isNaN(rawAmt) || rawAmt <= 0) { alert('Nhập số tiền hợp lệ!'); return; }
+762:     const signedAmt = adjustType === 'subtract' ? -rawAmt : rawAmt;
+763:     setAdjustLoading(true);
+764:     fetch(`/api/users/${selectedUser.phone}/adjust`, {
+765:       method: 'POST',
+766:       headers: { 'Content-Type': 'application/json' },
+767:       body: JSON.stringify({ amount: signedAmt, note: adjustNote, type: adjustType === 'subtract' ? 'Admin trừ tiền' : 'Admin cộng tiền' })
+768:     })
+769:       .then(r => r.json())
+770:       .then(d => {
+771:         if (d.error) { alert(d.error); return; }
+772:         alert('Đã cập nhật số dư thành công!');
+773:         setSelectedUser(d.user);
+774:         fetchUserTxs(selectedUser.phone);
+775:         setAdjustAmount('');
+776:         setAdjustNote('');
+777:         fetchAllUsers();
+778:       })
+
+==================================================
+
+--- Render of all-rooms starts at line 1929 ---
+1927: 
+1928:           <button
+1929:             className={`form-submit-btn ${activeTab === 'all-rooms' ? '' : 'form-submit-btn-outline'}`}
+1930:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'all-rooms' ? '#0F172A' : 'transparent', color: activeTab === 'all-rooms' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1931:             onClick={() => setActiveTab('all-rooms')}
+1932:           >
+1933:             🏘️ Tất Cả Phòng
+1934:           </button>
+1935:           <button
+1936:             className={`form-submit-btn ${activeTab === 'commission' ? '' : 'form-submit-btn-outline'}`}
+1937:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'commission' ? '#059669' : 'transparent', color: activeTab === 'commission' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1938:             onClick={() => setActiveTab('commission')}
+1939:           >
+1940:             💰 Hoa Hồng
+1941:           </button>
+1942: 
+1943:           {(!user || user.role === 'admin') && (
+1944:             <button
+1945:               className={`form-submit-btn ${activeTab === 'activity-logs' ? '' : 'form-submit-btn-outline'}`}
+1946:               style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'activity-logs' ? '#0284C7' : 'transparent', color: activeTab === 'activity-logs' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1947:               onClick={() => setActiveTab('activity-logs')}
+1948:             >
+1949:               📜 Nhật ký CTV
+1950:             </button>
+1951:           )}
+1952:         </div>
+1953: 
+1954:       </div>
+1955: 
+1956:       {/* Stats Counter Boxes */}
+1957:       <div style={{
+1958:         display: 'grid',
+1959:         gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+1960:         gap: '16px',
+1961:         marginBottom: '32px'
+1962:       }}>
+1963:         <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', padding: '16px', borderRadius: '12px' }}>
+1964:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#1E40AF', letterSpacing: '0.5px' }}>Tổng tin đăng</span>
+1965:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1966:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#1E3A8A' }}>{totalCount}</span>
+1967:             <Building2 size={24} style={{ color: '#3B82F6', opacity: 0.8 }} />
+1968:           </div>
+1969:         </div>
+1970: 
+1971:         <div style={{ background: '#FAF5FF', border: '1px solid #E9D5FF', padding: '16px', borderRadius: '12px' }}>
+1972:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#6B21A8', letterSpacing: '0.5px' }}>Tìm Ở Ghép</span>
+1973:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1974:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#581C87' }}>{oghepCount}</span>
+1975:             <Users2 size={24} style={{ color: '#A855F7', opacity: 0.8 }} />
+1976:           </div>
+1977:         </div>
+1978: 
+1979:         <div style={{ background: '#FFF7ED', border: '1px solid #FFEDD5', padding: '16px', borderRadius: '12px' }}>
+1980:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#9A3412', letterSpacing: '0.5px' }}>Pass Phòng</span>
+1981:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1982:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#7C2D12' }}>{passCount}</span>
+1983:             <KeyRound size={24} style={{ color: '#F97316', opacity: 0.8 }} />
+1984:           </div>
+1985:         </div>
+1986: 
+1987:         <div style={{ background: '#F0FDF4', border: '1px solid #DCFCE7', padding: '16px', borderRadius: '12px' }}>
+1988:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#166534', letterSpacing: '0.5px' }}>Các mục khác</span>
+1989:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1990:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#14532D' }}>{otherCount}</span>
+1991:             <TrendingUp size={24} style={{ color: '#22C55E', opacity: 0.8 }} />
+1992:           </div>
+1993:         </div>
+1994:       </div>
+1995: 
+1996:       {/* Tab: LIST OF LISTINGS */}
+1997:       {activeTab === 'list' && (
+1998:         <div style={{
+1999:           backgroundColor: '#FFFFFF',
+2000:           borderRadius: '16px',
+2001:           boxShadow: 'var(--shadow-sm)',
+2002:           border: '1px solid var(--border-color)',
+2003:           overflow: 'hidden'
+2004:         }}>
+2005:           {/* Sub-tabs for post approvals: Pending, Approved, Rejected */}
+2006:           <div style={{
+2007:             display: 'flex',
+2008:             alignItems: 'center',
+2009:             justifyContent: 'space-between',
+2010:             padding: '18px 24px',
+2011:             borderBottom: '1px solid var(--border-light)',
+2012:             flexWrap: 'wrap',
+2013:             gap: '16px'
+2014:           }}>
+2015:             <div style={{
+2016:               display: 'flex',
+2017:               gap: '4px',
+2018:               backgroundColor: '#F1F5F9',
+2019:               padding: '4px',
+2020:               borderRadius: '8px'
+2021:             }}>
+2022:               {[
+2023:                 { key: 'pending', label: 'Chờ duyệt', color: '#D97706', bgColor: '#FEF3C7' },
+2024:                 { key: 'approved', label: 'Đã duyệt', color: '#16A34A', bgColor: '#DCFCE7' },
+2025:                 { key: 'rejected', label: 'Từ chối', color: '#DC2626', bgColor: '#FEE2E2' }
+2026:               ].map(tab => (
+2027:                 <button
+2028:                   key={tab.key}
+2029:                   onClick={() => setListingsTab(tab.key)}
+
+==================================================
+
+--- Render of all-rooms starts at line 1930 ---
+1928:           <button
+1929:             className={`form-submit-btn ${activeTab === 'all-rooms' ? '' : 'form-submit-btn-outline'}`}
+1930:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'all-rooms' ? '#0F172A' : 'transparent', color: activeTab === 'all-rooms' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1931:             onClick={() => setActiveTab('all-rooms')}
+1932:           >
+1933:             🏘️ Tất Cả Phòng
+1934:           </button>
+1935:           <button
+1936:             className={`form-submit-btn ${activeTab === 'commission' ? '' : 'form-submit-btn-outline'}`}
+1937:             style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'commission' ? '#059669' : 'transparent', color: activeTab === 'commission' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1938:             onClick={() => setActiveTab('commission')}
+1939:           >
+1940:             💰 Hoa Hồng
+1941:           </button>
+1942: 
+1943:           {(!user || user.role === 'admin') && (
+1944:             <button
+1945:               className={`form-submit-btn ${activeTab === 'activity-logs' ? '' : 'form-submit-btn-outline'}`}
+1946:               style={{ width: 'auto', padding: '8px 16px', fontSize: '13px', backgroundColor: activeTab === 'activity-logs' ? '#0284C7' : 'transparent', color: activeTab === 'activity-logs' ? '#fff' : 'var(--text-dark)', borderColor: '#CBD5E1' }}
+1947:               onClick={() => setActiveTab('activity-logs')}
+1948:             >
+1949:               📜 Nhật ký CTV
+1950:             </button>
+1951:           )}
+1952:         </div>
+1953: 
+1954:       </div>
+1955: 
+1956:       {/* Stats Counter Boxes */}
+1957:       <div style={{
+1958:         display: 'grid',
+1959:         gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)',
+1960:         gap: '16px',
+1961:         marginBottom: '32px'
+1962:       }}>
+1963:         <div style={{ background: '#EFF6FF', border: '1px solid #BFDBFE', padding: '16px', borderRadius: '12px' }}>
+1964:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#1E40AF', letterSpacing: '0.5px' }}>Tổng tin đăng</span>
+1965:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1966:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#1E3A8A' }}>{totalCount}</span>
+1967:             <Building2 size={24} style={{ color: '#3B82F6', opacity: 0.8 }} />
+1968:           </div>
+1969:         </div>
+1970: 
+1971:         <div style={{ background: '#FAF5FF', border: '1px solid #E9D5FF', padding: '16px', borderRadius: '12px' }}>
+1972:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#6B21A8', letterSpacing: '0.5px' }}>Tìm Ở Ghép</span>
+1973:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1974:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#581C87' }}>{oghepCount}</span>
+1975:             <Users2 size={24} style={{ color: '#A855F7', opacity: 0.8 }} />
+1976:           </div>
+1977:         </div>
+1978: 
+1979:         <div style={{ background: '#FFF7ED', border: '1px solid #FFEDD5', padding: '16px', borderRadius: '12px' }}>
+1980:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#9A3412', letterSpacing: '0.5px' }}>Pass Phòng</span>
+1981:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1982:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#7C2D12' }}>{passCount}</span>
+1983:             <KeyRound size={24} style={{ color: '#F97316', opacity: 0.8 }} />
+1984:           </div>
+1985:         </div>
+1986: 
+1987:         <div style={{ background: '#F0FDF4', border: '1px solid #DCFCE7', padding: '16px', borderRadius: '12px' }}>
+1988:           <span style={{ fontSize: '11px', fontWeight: 800, textTransform: 'uppercase', color: '#166534', letterSpacing: '0.5px' }}>Các mục khác</span>
+1989:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginTop: '8px' }}>
+1990:             <span style={{ fontSize: '28px', fontWeight: 900, color: '#14532D' }}>{otherCount}</span>
+1991:             <TrendingUp size={24} style={{ color: '#22C55E', opacity: 0.8 }} />
+1992:           </div>
+1993:         </div>
+1994:       </div>
+1995: 
+1996:       {/* Tab: LIST OF LISTINGS */}
+1997:       {activeTab === 'list' && (
+1998:         <div style={{
+1999:           backgroundColor: '#FFFFFF',
+2000:           borderRadius: '16px',
+2001:           boxShadow: 'var(--shadow-sm)',
+2002:           border: '1px solid var(--border-color)',
+2003:           overflow: 'hidden'
+2004:         }}>
+2005:           {/* Sub-tabs for post approvals: Pending, Approved, Rejected */}
+2006:           <div style={{
+2007:             display: 'flex',
+2008:             alignItems: 'center',
+2009:             justifyContent: 'space-between',
+2010:             padding: '18px 24px',
+2011:             borderBottom: '1px solid var(--border-light)',
+2012:             flexWrap: 'wrap',
+2013:             gap: '16px'
+2014:           }}>
+2015:             <div style={{
+2016:               display: 'flex',
+2017:               gap: '4px',
+2018:               backgroundColor: '#F1F5F9',
+2019:               padding: '4px',
+2020:               borderRadius: '8px'
+2021:             }}>
+2022:               {[
+2023:                 { key: 'pending', label: 'Chờ duyệt', color: '#D97706', bgColor: '#FEF3C7' },
+2024:                 { key: 'approved', label: 'Đã duyệt', color: '#16A34A', bgColor: '#DCFCE7' },
+2025:                 { key: 'rejected', label: 'Từ chối', color: '#DC2626', bgColor: '#FEE2E2' }
+2026:               ].map(tab => (
+2027:                 <button
+2028:                   key={tab.key}
+2029:                   onClick={() => setListingsTab(tab.key)}
+2030:                   style={{
+
+==================================================
+
+--- Render of all-rooms starts at line 4123 ---
+4121:           TAB: TẤT CẢ PHÒNG
+4122:       ════════════════════════════════════════════════════════════ */}
+4123:       {activeTab === 'all-rooms' && (
+4124:         <div>
+4125:           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+4126:             <h2 style={{ fontSize: '18px', fontWeight: 800 }}>🏘️ Tất Cả Phòng ({allRooms.length})</h2>
+4127:           </div>
+4128: 
+4129:           <div style={{ display: 'flex', gap: '10px', marginBottom: '20px' }}>
+4130:             <input
+4131:               value={roomSearch}
+4132:               onChange={e => setRoomSearch(e.target.value)}
+4133:               onKeyDown={e => e.key === 'Enter' && fetchAllRooms(roomSearch)}
+4134:               placeholder="Tìm theo địa chỉ, loại phòng... (Enter)"
+4135:               style={{ flex: 1, padding: '10px 14px', border: '1.5px solid #E2E8F0', borderRadius: '8px', fontSize: '14px' }}
+4136:             />
+4137:             <button onClick={() => fetchAllRooms(roomSearch)} disabled={loadingAllRooms}
+4138:               style={{ padding: '10px 20px', background: '#0F172A', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 700, cursor: 'pointer' }}>
+4139:               🔍 Tìm
+4140:             </button>
+4141:             <button onClick={() => { setRoomSearch(''); fetchAllRooms(''); }}
+4142:               style={{ padding: '10px 16px', background: '#F1F5F9', border: '1px solid #E2E8F0', borderRadius: '8px', cursor: 'pointer', fontSize: '13px' }}>
+4143:               Xem tất cả
+4144:             </button>
+4145:             <button onClick={() => {
+4146:                 if (window.confirm('Bạn có chắc chắn muốn cập nhật lại tọa độ và khoảng cách cho TẤT CẢ các phòng?\nQuá trình này sẽ chạy ngầm trên server và có thể mất vài phút. Vui lòng không bấm liên tục.')) {
+4147:                   fetch('/api/admin/recalculate-all', { method: 'POST' })
+4148:                     .then(res => res.json())
+4149:                     .then(data => alert(data.message || 'Đã gửi yêu cầu cập nhật!'))
+4150:                     .catch(err => alert('Có lỗi xảy ra: ' + err.message));
+4151:                 }
+4152:               }}
+4153:               style={{ padding: '10px 16px', background: '#DB2777', color: '#fff', border: 'none', borderRadius: '8px', cursor: 'pointer', fontSize: '13px', fontWeight: 700 }}>
+4154:               🔄 Cập nhật tọa độ
+4155:             </button>
+4156:           </div>
+4157: 
+4158:           {loadingAllRooms ? <div style={{ textAlign: 'center', padding: '40px', color: '#94A3B8' }}>Đang tải...</div> : (
+4159:             <div style={{ overflowX: 'auto' }}>
+4160:               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '13px' }}>
+4161:                 <thead>
+4162:                   <tr style={{ background: '#F8FAFC', borderBottom: '2px solid #E2E8F0' }}>
+4163:                     <th style={{ padding: '10px 12px', textAlign: 'left' }}>ID</th>
+4164:                     <th style={{ padding: '10px 12px', textAlign: 'left' }}>Địa chỉ</th>
+4165:                     <th style={{ padding: '10px 12px', textAlign: 'left' }}>Giá</th>
+4166:                     <th style={{ padding: '10px 12px', textAlign: 'left' }}>Loại phòng</th>
+4167:                     <th style={{ padding: '10px 12px', textAlign: 'left' }}>Trạng thái</th>
+4168:                     <th style={{ padding: '10px 12px', textAlign: 'left' }}>Ngày tạo</th>
+4169:                     <th style={{ padding: '10px 12px', textAlign: 'left' }}>Hành động</th>
+4170:                   </tr>
+4171:                 </thead>
+4172:                 <tbody>
+4173:                   {allRooms.map(room => (
+4174:                     <tr key={room.id} style={{ borderBottom: '1px solid #F1F5F9' }}>
+4175:                       <td style={{ padding: '10px 12px', color: '#94A3B8', fontSize: '11px' }}>#{room.id}</td>
+4176:                       <td style={{ padding: '10px 12px', maxWidth: '200px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{room.address}</td>
+4177:                       <td style={{ padding: '10px 12px', fontWeight: 700, color: '#059669' }}>{room.price}</td>
+4178:                       <td style={{ padding: '10px 12px', color: '#475569' }}>{room.room_type || '—'}</td>
+4179:                       <td style={{ padding: '10px 12px' }}>
+4180:                         <span style={{
+4181:                           padding: '2px 8px', borderRadius: '20px', fontSize: '11px', fontWeight: 700,
+4182:                           background: room.status === 'approved' ? '#D1FAE5' : room.status === 'rejected' ? '#FEE2E2' : '#FEF3C7',
+4183:                           color: room.status === 'approved' ? '#065F46' : room.status === 'rejected' ? '#991B1B' : '#92400E'
+4184:                         }}>
+4185:                           {room.status}
+4186:                         </span>
+4187:                       </td>
+4188:                       <td style={{ padding: '10px 12px', color: '#94A3B8', fontSize: '11px' }}>{room.created_at?.split('T')[0] || '—'}</td>
+4189:                       <td style={{ padding: '10px 12px' }}>
+4190:                         <button onClick={() => openEditRoom(room)}
+4191:                           style={{ background: '#EFF6FF', color: '#1D4ED8', border: '1px solid #BFDBFE', padding: '5px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '12px', fontWeight: 600 }}>
+4192:                           ✏️ Sửa
+4193:                         </button>
+4194:                       </td>
+4195:                     </tr>
+4196:                   ))}
+4197:                   {allRooms.length === 0 && (
+4198:                     <tr><td colSpan={7} style={{ padding: '32px', textAlign: 'center', color: '#94A3B8' }}>Không tìm thấy phòng nào</td></tr>
+4199:                   )}
+4200:                 </tbody>
+4201:               </table>
+4202:             </div>
+4203:           )}
+4204: 
+4205:           {/* Edit Room Modal */}
+4206:           {editRoomModal && (
+4207:             <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 9999 }}>
+4208:               <div style={{ background: '#fff', borderRadius: '16px', padding: '28px', width: '540px', maxWidth: '90vw', boxShadow: '0 20px 60px rgba(0,0,0,0.2)', maxHeight: '90vh', overflowY: 'auto' }}>
+4209:                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
+4210:                   <h3 style={{ fontWeight: 800, fontSize: '16px' }}>✏️ Sửa phòng #{editRoomModal.id}</h3>
+4211:                   <button onClick={() => setEditRoomModal(null)} style={{ border: 'none', background: 'none', cursor: 'pointer', fontSize: '20px' }}>✕</button>
+4212:                 </div>
+4213: 
+4214:                 {[
+4215:                   { label: 'Địa chỉ', val: editAddress, set: setEditAddress, placeholder: 'Số nhà, ngõ, đường, quận...' },
+4216:                   { label: 'Giá (số, VNĐ)', val: editPrice, set: setEditPrice, placeholder: 'VD: 5000000' },
+4217:                   { label: 'Loại phòng / Dạng phòng', val: editRoomType, set: setEditRoomType, placeholder: 'VD: Trọ thường, Studio, 1N1K...' },
+4218:                 ].map((f, i) => (
+4219:                   <div key={i} style={{ marginBottom: '14px' }}>
+4220:                     <label style={{ fontSize: '12px', fontWeight: 700, display: 'block', marginBottom: '4px' }}>{f.label}</label>
+4221:                     <input value={f.val} onChange={e => f.set(e.target.value)} placeholder={f.placeholder}
+4222:                       style={{ width: '100%', padding: '10px 12px', border: '1.5px solid #E2E8F0', borderRadius: '8px', fontSize: '13px', boxSizing: 'border-box' }} />
+4223:                   </div>
+
+==================================================

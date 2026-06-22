@@ -1,0 +1,84 @@
+Created At: 2026-06-10T15:00:54Z
+Completed At: 2026-06-10T15:00:54Z
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/scratch/fix_landmarks.py`
+Total Lines: 76
+Total Bytes: 2728
+Showing lines 1 to 76
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import os
+2: import json
+3: import urllib.request
+4: import urllib.parse
+5: import time
+6: import sys
+7: 
+8: # Configure UTF-8 console output
+9: if sys.platform.startswith('win'):
+10:     try:
+11:         sys.stdout.reconfigure(encoding='utf-8')
+12:         sys.stderr.reconfigure(encoding='utf-8')
+13:     except Exception:
+14:         pass
+15: 
+16: db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'distance_app', 'locations_db.json'))
+17: print("Landmarks DB Path:", db_path)
+18: 
+19: if not os.path.exists(db_path):
+20:     print("Error: locations_db.json not found!")
+21:     exit(1)
+22: 
+23: with open(db_path, 'r', encoding='utf-8') as f:
+24:     landmarks = json.load(f)
+25: 
+26: def geocode(query):
+27:     encoded = urllib.parse.quote(query)
+28:     url = f"https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?f=json&singleLine={encoded}&maxLocations=1"
+29:     req = urllib.request.Request(
+30:         url,
+31:         headers={'User-Agent': 'Mozilla/5.0'}
+32:     )
+33:     try:
+34:         with urllib.request.urlopen(req, timeout=10) as res:
+35:             data = json.loads(res.read().decode('utf-8'))
+36:             candidates = data.get('candidates', [])
+37:             if candidates:
+38:                 cand = candidates[0]
+39:                 location = cand.get('location', {})
+40:                 return float(location.get('y')), float(location.get('x')), cand.get('address')
+41:     except Exception as e:
+42:         print(f"  Error geocoding {query}: {e}")
+43:     return None
+44: 
+45: updated_count = 0
+46: for idx, lm in enumerate(landmarks):
+47:     name = lm.get("name")
+48:     search_q = lm.get("search_query") or f"{name}, Hà Nội, Việt Nam"
+49:     old_lat, old_lon = lm.get("lat"), lm.get("lon")
+50:     
+51:     print(f"[{idx+1}/{len(landmarks)}] Geocoding '{name}'...")
+52:     res = geocode(search_q)
+53:     if res:
+54:         new_lat, new_lon, full_addr = res
+55:         # Check if coordinates are close to Hanoi (lat ~ 21, lon ~ 105.8)
+56:         if 20.5 <= new_lat <= 21.5 and 105.0 <= new_lon <= 106.5:
+57:             if abs(new_lat - old_lat) > 0.001 or abs(new_lon - old_lon) > 0.001:
+58:                 print(f"  -> UPDATED: Old ({old_lat}, {old_lon}) -> New ({new_lat}, {new_lon})")
+59:                 lm["lat"] = new_lat
+60:                 lm["lon"] = new_lon
+61:                 updated_count += 1
+62:             else:
+63:                 print("  -> Keep current coords (already correct)")
+64:         else:
+65:             print(f"  -> Ignored: Coordinates {new_lat}, {new_lon} are outside Hanoi region.")
+66:     else:
+67:         print("  -> Geocoding failed.")
+68:     time.sleep(0.2)
+69: 
+70: if updated_count > 0:
+71:     with open(db_path, 'w', encoding='utf-8') as f:
+72:         json.dump(landmarks, f, ensure_ascii=False, indent=2)
+73:     print(f"\nSuccessfully updated {updated_count} landmarks in locations_db.json!")
+74: else:
+75:     print("\nNo landmarks needed updating.")
+76: 
+The above content shows the entire, complete file contents of the requested file.

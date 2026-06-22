@@ -1,0 +1,125 @@
+Created At: 2026-06-10T13:46:36Z
+Completed At: 2026-06-10T13:46:36Z
+File Path: `file:///c:/Users/Admin/Downloads/full/bot/distance_app/locations_db.json`
+Total Lines: 143
+Total Bytes: 3889
+Showing lines 1 to 143
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: [
+2:   {
+3:     "name": "Đại học Bách Khoa Hà Nội",
+4:     "lat": 21.0074,
+5:     "lon": 105.8431,
+6:     "category": "Trường học",
+7:     "address": "Số 1 Đại Cồ Việt, Bách Khoa, Hai Bà Trưng, Hà Nội"
+8:   },
+9:   {
+10:     "name": "Đại học Quốc gia Hà Nội",
+11:     "lat": 21.0378,
+12:     "lon": 105.7825,
+13:     "category": "Trường học",
+14:     "address": "144 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội"
+15:   },
+16:   {
+17:     "name": "Đại học Ngoại thương",
+18:     "lat": 21.0225,
+19:     "lon": 105.8033,
+20:     "category": "Trường học",
+21:     "address": "91 Chùa Láng, Láng Thượng, Đống Đa, Hà Nội"
+22:   },
+23:   {
+24:     "name": "Đại học Thương mại",
+25:     "lat": 21.0368,
+26:     "lon": 105.7744,
+27:     "category": "Trường học",
+28:     "address": "79 Hồ Tùng Mậu, Mai Dịch, Cầu Giấy, Hà Nội"
+29:   },
+30:   {
+31:     "name": "Đại học Kinh tế Quốc dân",
+32:     "lat": 21.0028,
+33:     "lon": 105.8423,
+34:     "category": "Trường học",
+35:     "address": "207 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội"
+36:   },
+37:   {
+38:     "name": "Đại học Xây dựng Hà Nội",
+39:     "lat": 21.0039,
+40:     "lon": 105.8428,
+41:     "category": "Trường học",
+42:     "address": "55 Giải Phóng, Đồng Tâm, Hai Bà Trưng, Hà Nội"
+43:   },
+44:   {
+45:     "name": "Đại học Điện lực",
+46:     "lat": 21.0483,
+47:     "lon": 105.7839,
+48:     "category": "Trường học",
+49:     "address": "235 Hoàng 
+<truncated 937 bytes>
+Phạm Hùng, Mễ Trì, Nam Từ Liêm, Hà Nội"
+78:   },
+79:   {
+80:     "name": "Lotte Center Hà Nội",
+81:     "lat": 21.0319,
+82:     "lon": 105.8122,
+83:     "category": "Địa danh",
+84:     "address": "54 Liễu Giai, Cống Vị, Ba Đình, Hà Nội"
+85:   },
+86:   {
+87:     "name": "Aeon Mall Hà Đông",
+88:     "lat": 20.9796,
+89:     "lon": 105.7601,
+90:     "category": "Mua sắm",
+91:     "address": "Khu đô thị Dương Nội, Hà Đông, Hà Nội"
+92:   },
+93:   {
+94:     "name": "Aeon Mall Long Biên",
+95:     "lat": 21.026,
+96:     "lon": 105.897,
+97:     "category": "Mua sắm",
+98:     "address": "Số 27 Đường Cổ Linh, Long Biên, Hà Nội"
+99:   },
+100:   {
+101:     "name": "Vincom Mega Mall Royal City",
+102:     "lat": 21.0029,
+103:     "lon": 105.815,
+104:     "category": "Mua sắm",
+105:     "address": "72A Nguyễn Trãi, Thượng Đình, Thanh Xuân, Hà Nội"
+106:   },
+107:   {
+108:     "name": "Vincom Mega Mall Times City",
+109:     "lat": 20.9963,
+110:     "lon": 105.8689,
+111:     "category": "Mua sắm",
+112:     "address": "458 Minh Khai, Vĩnh Tuy, Hai Bà Trưng, Hà Nội"
+113:   },
+114:   {
+115:     "name": "Ga Cát Linh",
+116:     "lat": 21.0294,
+117:     "lon": 105.8276,
+118:     "category": "Ga tàu",
+119:     "address": "Cát Linh, Chợ Dừa, Đống Đa, Hà Nội"
+120:   },
+121:   {
+122:     "name": "Ga La Thành",
+123:     "lat": 21.0199,
+124:     "lon": 105.8202,
+125:     "category": "Ga tàu",
+126:     "address": "Đê La Thành, Ô Chợ Dừa, Đống Đa, Hà Nội"
+127:   },
+128:   {
+129:     "name": "Ga Hà Đông",
+130:     "lat": 20.9702,
+131:     "lon": 105.7745,
+132:     "category": "Ga tàu",
+133:     "address": "Phú La, Hà Đông, Hà Nội"
+134:   },
+135:   {
+136:     "name": "Ga Nhổn",
+137:     "lat": 21.0463,
+138:     "lon": 105.7352,
+139:     "category": "Ga tàu",
+140:     "address": "Minh Khai, Bắc Từ Liêm, Hà Nội"
+141:   }
+142: ]
+143: 
+The above content shows the entire, complete file contents of the requested file.
