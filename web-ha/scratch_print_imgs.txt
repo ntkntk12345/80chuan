@@ -1,0 +1,5 @@
+Line 94: <img
+Line 409: <img src="/invite-illustration.png" alt="Mời bạn bè" />
+Line 521: <img
+Line 591: <img src="/invite-gift.png" alt="Quà tặng giới thiệu" className="gift-illus-img" />
+Line 638: <img src="/invite-cta-characters.png" alt="Mời bạn bè tham gia" className="cta-characters-img" />

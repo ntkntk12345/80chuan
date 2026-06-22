@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanoi Routes - Quản lý Phòng trọ & Khoảng cách</title>
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent: #6366f1;
+      --accent-hover: #4f46e5;
+      --accent-glow: rgba(99, 102, 241, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --glass-blur: blur(12px);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(99, 102, 241, 0.3) rgba(15, 23, 42, 0.5);
+    }
+
+    /* Scrollbars custom for Chrome */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.5);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(99, 102, 241, 0.3);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(99, 102, 241, 0.6);
+    }
+
+    body {
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 2rem 1.5rem;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      background: rgba(15, 23, 42, 0.4);
+      padding: 1.5rem 2rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--card-border);
+      backdrop-filter: var(--glass-blur);
+    }
+
+    .brand-section {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-badge {
+      background: var(--accent);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      background: linear-gradient(to right, #ffffff, #c7d2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .stats-container {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--card-border);
+      text-align: right;
+    }
+
+    .stat-num {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* Search & Filter section */
+    .filter-panel {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      backdrop-filter: var(--glass-blur);
+      border-radius: 1.25rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      align-items: end;
+    }
+
+    .filter-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .filter-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .filter-control {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      padding: 0.75rem;
+      color: white;
+      outline: none;
+      font-size: 0.9rem;
+      width: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .filter-control:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.25);
+    }
+
+    .filter-price-range {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .filter-price-range span {
+      color: var(--text-muted);
+    }
+
+    .btn-clear {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      color: var(--danger);
+      padding: 0.75rem;
+      border-radius: 0.75rem;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-clear:hover {
+      background: rgba(239, 68, 68, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Content Grid */
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .room-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 1.25rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      backdrop-filter: var(--glass-blur);
+    }
+
+    .room-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(99, 102, 241, 0.4);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px var(--accent-glow);
+    }
+
+    /* Room Media Header */
+    .room-media-header {
+      position: relative;
+      height: 220px;
+      background: #0f172a;
+      overflow: hidden;
+    }
+
+    .room-media-header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .room-card:hover .room-media-header img {
+      transform: scale(1.05);
+    }
+
+    .no-media-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0.8) 100%);
+    }
+
+    .badge-price {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 0.75rem;
+      background: rgba(16, 185, 129, 0.95);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+    }
+
+    .badge-district {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: rgba(99, 102, 241, 0.9);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .media-counter {
+      position: absolute;
+      top: 0.75rem;
+      left: 0.75rem;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      color: white;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.4rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    /* Room Body */
+    .room-body {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      flex-grow: 1;
+    }
+
+    .room-title-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .room-code {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .room-type-tag {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-main);
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.35rem;
+      text-transform: capitalize;
+    }
+
+    .room-address {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.4rem;
+    }
+
+    .room-address i, .room-address svg {
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      color: var(--danger);
+    }
+
+    /* Distances Landmark Section */
+    .distances-box {
+      background: rgba(15, 23, 42, 0.35);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      padding: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .distances-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .distance-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+    }
+
+    .distance-name {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 70%;
+    }
+
+    .distance-name svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+    }
+
+    .distance-val {
+      font-weight: 600;
+      color: var(--success);
+    }
+
+    .distance-val.far {
+      color: var(--warning);
+    }
+
+    /* Room Card Footer */
+    .room-footer {
+      border-top: 1px solid var(--card-border);
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    .session-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .btn-action {
+      background: transparent;
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      box-shadow: 0 0 10px var(--accent-glow);
+    }
+
+    /* Modal / Lightbox Carousel */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .modal-container {
+      background: #1e293b;
+      border: 1px solid var(--card-border);
+      border-radius: 1.5rem;
+      width: 100%;
+      max-width: 900px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1010;
+      transition: background 0.2s;
+    }
+
+    .modal-close:hover {
+      background: var(--danger);
+    }
+
+    .modal-content-split {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      height: 600px;
+      max-height: 80vh;
+    }
+
+    @media (max-width: 768px) {
+      .modal-content-split {
+        grid-template-columns: 1fr;
+        height: auto;
+        max-height: 80vh;
+        overflow-y: auto;
+      }
+    }
+
+    /* Carousel Panel */
+    .carousel-panel {
+      position: relative;
+      background: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 300px;
+    }
+
+    .carousel-slide {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .carousel-slide img, .carousel-slide video {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .carousel-btn:hover {
+      background: var(--accent);
+    }
+
+    .carousel-btn-prev {
+      left: 1rem;
+    }
+
+    .carousel-btn-next {
+      right: 1rem;
+    }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: var(--accent);
+      width: 16px;
+      border-radius: 4px;
+    }
+
+    /* Info Panel */
+    .info-panel {
+      padding: 2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      border-left: 1px solid var(--card-border);
+    }
+
+    .info-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .info-price {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+
+    .original-text-box {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 0.75rem;
+      padding: 1rem;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      color: #e2e8f0;
+      max-height: 250px;
+      overflow-y: auto;
+    }
+
+    /* Empty state */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 5rem 2rem;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 1.5rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .empty-state svg {
+      width: 64px;
+      height: 64px;
+      color: var(--accent);
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand-section">
+        <div class="logo-badge">
+          <i data-lucide="map-pin"></i>
+        </div>
+        <div>
+          <h1>Hanoi Routes Dashboard</h1>
+          <div class="subtitle">Quản lý định vị & đối soát phòng trọ thông minh</div>
+        </div>
+      </div>
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-num" id="totalRoomsCount">0</div>
+          <div class="stat-label">Tổng số phòng</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Filters Section -->
+    <div class="filter-panel">
+      <div class="filter-group">
+        <label for="districtSelect"><i data-lucide="map"></i> Quận Huyện</label>
+        <select id="districtSelect" class="filter-control">
+          <option value="">Tất cả quận</option>
+          <option value="caugiay">Cầu Giấy</option>
+          <option value="hadong">Hà Đông</option>
+          <option value="hoangmai">Hoàng Mai</option>
+          <option value="badinh">Ba Đình</option>
+          <option value="dongda">Đống Đa</option>
+          <option value="haibatrung">Hai Bà Trưng</option>
+          <option value="namtuliem">Nam Từ Liêm</option>
+          <option value="bactuliem">Bắc Từ Liêm</option>
+          <option value="tayho">Tây Hồ</option>
+          <option value="longbien">Long Biên</option>
+          <option value="hoankiem">Hoàn Kiếm</option>
+          <option value="thanhtri">Thanh Trì</option>
+          <option value="hoaiduc">Hoài Đức</option>
+          <option value="mydinh">Mỹ Đình</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="typeSelect"><i data-lucide="tag"></i> Loại Phòng</label>
+        <select id="typeSelect" class="filter-control">
+          <option value="">Tất cả loại phòng</option>
+          <option value="studio">Studio</option>
+          <option value="2n1k">2N1K / 2 Ngủ 1 Khách</option>
+          <option value="2 ngủ">2 Phòng ngủ</option>
+          <option value="gác xép">Có gác xép</option>
+          <option value="giường tầng">Giường tầng</option>
+          <option value="vskk">Vệ sinh khép kín (VSKK)</option>
+          <option value="vsc">Vệ sinh chung (VSC)</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="nearLandmarkSelect"><i data-lucide="navigation"></i> Gần Địa Điểm</label>
+        <select id="nearLandmarkSelect" class="filter-control">
+          <option value="">Tất cả địa điểm</option>
+          <option value="Đại học Bách Khoa Hà Nội">ĐH Bách Khoa Hà Nội</option>
+          <option value="Đại học Quốc gia Hà Nội">ĐH Quốc gia Hà Nội</option>
+          <option value="Đại học Ngoại thương">ĐH Ngoại thương</option>
+          <option value="Đại học Thương mại">ĐH Thương mại</option>
+          <option value="Đại học Kinh tế Quốc dân">ĐH Kinh tế Quốc dân</option>
+          <option value="Đại học Xây dựng Hà Nội">ĐH Xây dựng Hà Nội</option>
+          <option value="Đại học Điện lực">ĐH Điện lực</option>
+          <option value="Đại học Phenikaa">ĐH Phenikaa</option>
+          <option value="Đại học Đại Nam">ĐH Đại Nam</option>
+          <option value="Đại học FPT Hà Nội">ĐH FPT Hà Nội</option>
+          <option value="Keangnam Landmark 72">Keangnam Landmark 72</option>
+          <option value="Lotte Center Hà Nội">Lotte Center Hà Nội</option>
+          <option value="Aeon Mall Hà Đông">Aeon Mall Hà Đông</option>
+          <option value="Aeon Mall Long Biên">Aeon Mall Long Biên</option>
+          <option value="Vincom Mega Mall Royal City">Vincom Mega Mall Royal City</option>
+          <option value="Vincom Mega Mall Times City">Vincom Mega Mall Times City</option>
+          <option value="Ga Cát Linh">Ga Cát Linh</option>
+          <option value="Ga La Thành">Ga La Thành</option>
+          <option value="Ga Hà Đông">Ga Hà Đông</option>
+          <option value="Ga Nhổn">Ga Nhổn</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label><i data-lucide="dollar-sign"></i> Khoảng Giá (VND)</label>
+        <div class="filter-price-range">
+          <input type="number" id="priceMinInput" placeholder="Min" class="filter-control">
+          <span>-</span>
+          <input type="number" id="priceMaxInput" placeholder="Max" class="filter-control">
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <button id="btnClearFilters" class="btn-clear">
+          <i data-lucide="rotate-ccw"></i> Reset bộ lọc
+        </button>
+      </div>
+    </div>
+
+    <!-- Rooms Display Grid -->
+    <div class="rooms-grid" id="roomsGrid">
+      <!-- Loaded dynamically via JS -->
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal-overlay" id="mediaModal">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose"><i data-lucide="x"></i></button>
+      <div class="modal-content-split">
+        <!-- Media Slideshow -->
+        <div class="carousel-panel">
+          <button class="carousel-btn carousel-btn-prev" id="carouselPrev"><i data-lucide="chevron-left"></i></button>
+          <div class="carousel-slide" id="carouselSlide">
+            <!-- Renders img or video element -->
+          </div>
+          <button class="carousel-btn carousel-btn-next" id="carouselNext"><i data-lucide="chevron-right"></i></button>
+          <div class="carousel-dots" id="carouselDots"></div>
+        </div>
+
+        <!-- Room detail info -->
+        <div class="info-panel">
+          <div>
+            <div id="modalRoomType" style="font-size: 1.35rem; font-weight: 700; color: white;">Dạng phòng: Studio</div>
+            <div class="subtitle" id="modalRoomCode" style="margin-top: 0.25rem;">Mã phòng: P301</div>
+          </div>
+          <div class="room-address" style="margin-top: 0.25rem; font-size: 0.95rem; color: var(--text-muted);">
+            <span id="modalRoomAddress">Số 8 Ngõ 76 Trần Thái Tông</span>
+          </div>
+
+          <div class="distances-box" style="margin-top: 0.5rem;">
+            <div id="modalLandmarksList" style="display: flex; flex-direction: column; gap: 0.35rem;">
+              <!-- Landmarks -->
+            </div>
+          </div>
+
+          <div class="info-price" id="modalRoomPrice" style="font-size: 1.25rem; font-weight: 700; color: var(--success); margin-top: 0.5rem;">7.500.000 đ</div>
+
+          <div>
+            <div class="distances-title" style="margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.05em;"><i data-lucide="file-text"></i> Mô tả chi tiết</div>
+            <div class="original-text-box" id="modalOriginalText" style="max-height: 250px; overflow-y: auto;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Configuration
+    const API_BASE = 'http://localhost:3001/api';
+
+    // Global state
+    let allRooms = [];
+    let currentModalPhotos = [];
+    let currentModalVideos = [];
+    let currentMediaIndex = 0;
+
+    // Elements
+    const roomsGrid = document.getElementById('roomsGrid');
+    const totalRoomsCount = document.getElementById('totalRoomsCount');
+    const districtSelect = document.getElementById('districtSelect');
+    const typeSelect = document.getElementById('typeSelect');
+    const nearLandmarkSelect = document.getElementById('nearLandmarkSelect');
+    const priceMinInput = document.getElementById('priceMinInput');
+    const priceMaxInput = document.getElementById('priceMaxInput');
+    const btnClearFilters = document.getElementById('btnClearFilters');
+
+    // Modal elements
+    const mediaModal = document.getElementById('mediaModal');
+    const modalClose = document.getElementById('modalClose');
+    const carouselSlide = document.getElementById('carouselSlide');
+    const carouselPrev = document.getElementById('carouselPrev');
+    const carouselNext = document.getElementById('carouselNext');
+    const carouselDots = document.getElementById('carouselDots');
+    const modalRoomCode = document.getElementById('modalRoomCode');
+    const modalRoomType = document.getElementById('modalRoomType');
+    const modalRoomPrice = document.getElementById('modalRoomPrice');
+    const modalRoomAddress = document.getElementById('modalRoomAddress');
+    const modalLandmarksList = document.getElementById('modalLandmarksList');
+    const modalOriginalText = document.getElementById('modalOriginalText');
+
+    // Fetch rooms from database
+    async function fetchRooms() {
+      try {
+        const queryParams = new URLSearchParams();
+        if (districtSelect.value) queryParams.append('district', districtSelect.value);
+        if (typeSelect.value) queryParams.append('type', typeSelect.value);
+        if (priceMinInput.value) queryParams.append('price_min', priceMinInput.value);
+        if (priceMaxInput.value) queryParams.append('price_max', priceMaxInput.value);
+        queryParams.append('t', Date.now());
+
+        const response = await fetch(`${API_BASE}/rooms?${queryParams.toString()}`);
+        if (!response.ok) throw new Error('Không thể tải dữ liệu phòng trọ');
+        allRooms = await response.json();
+        
+        renderRooms(allRooms);
+      } catch (err) {
+        console.error('Lỗi API:', err);
+        roomsGrid.innerHTML = `
+          <div class="empty-state">
+            <i data-lucide="wifi-off"></i>
+            <h3>Lỗi kết nối đến API server</h3>
+            <p>Vui lòng đảm bảo server Node.js đang hoạt động tại cổng 3001.</p>
+          </div>
+        `;
+        lucide.createIcons();
+      }
+    }
+
+    // Format money (e.g. 5000000 -> 5 triệu/tháng)
+    function formatPrice(val) {
+      if (!val) return 'Liên hệ';
+      const num = parseInt(val);
+      if (isNaN(num)) return val;
+      if (num >= 1000000) {
+        const tr = num / 1000000;
+        return `${tr} triệu/tháng`;
+      }
+      return num.toLocaleString('vi-VN') + ' đ/tháng';
+    }
+
+    // Format distance values (e.g. 0.8 -> 800m, 1.2 -> 1.2 km)
+    function formatDistanceValue(dist) {
+      if (dist === undefined || dist === null) return '';
+      const num = parseFloat(dist);
+      if (num < 1.0) {
+        return `${Math.round(num * 1000)}m`;
+      }
+      return `${num} km`;
+    }
+
+    // Get categories icons
+    function getLandmarkIcon(category) {
+      if (category === 'Trường học') return 'book-open';
+      if (category === 'Ga tàu') return 'train';
+      if (category === 'Mua sắm') return 'shopping-bag';
+      return 'map-pin';
+    }
+
+    // Render rooms
+    function renderRooms(rooms) {
+      roomsGrid.innerHTML = '';
+      
+      // Filter by selected landmark client-side
+      const selectedLandmark = nearLandmarkSelect.value;
+      let displayRooms = rooms;
+      
+      if (selectedLandmark) {
+        displayRooms = rooms.filter(room => 
+          room.distances.some(d => d.landmark_name === selectedLandmark)
+        );
+      }
+      
+      totalRoomsCount.textContent = displayRooms.length;
+
+      if (displayRooms.length === 0) {
+        roomsGrid.innerHTML = `
+          <div class="empty-state">
+            <i data-lucide="search-code"></i>
+            <h3>Không tìm thấy phòng trọ phù hợp</h3>
+            <p>Vui lòng thử thay đổi bộ lọc tìm kiếm.</p>
+          </div>
+        `;
+        lucide.createIcons();
+        return;
+      }
+
+      displayRooms.forEach(room => {
+        const card = document.createElement('div');
+        card.className = 'room-card';
+
+        // Select cover photo
+        let coverHtml = '';
+        const totalPhotos = room.photos ? room.photos.length : 0;
+        const totalVideos = room.videos ? room.videos.length : 0;
+        const totalMedia = totalPhotos + totalVideos;
+
+        if (totalPhotos > 0) {
+          coverHtml = `<img src="${room.photos[0].url}" alt="Room image">`;
+        } else if (totalVideos > 0 && room.videos[0].thumb) {
+          coverHtml = `<img src="${room.videos[0].thumb}" alt="Video thumb">`;
+        } else {
+          coverHtml = `
+            <div class="no-media-placeholder">
+              <i data-lucide="image-off"></i>
+              <span>Không có ảnh & video</span>
+            </div>
+          `;
+        }
+
+        // Distance text display logic
+        let landmarkDisplay = 'Không có dữ liệu khoảng cách';
+        if (selectedLandmark) {
+          const match = room.distances.find(d => d.landmark_name === selectedLandmark);
+          if (match) {
+            landmarkDisplay = `Cách ${match.landmark_name} • ${formatDistanceValue(match.distance)}`;
+          } else if (room.distances.length > 0) {
+            landmarkDisplay = `Cách ${room.distances[0].landmark_name} • ${formatDistanceValue(room.distances[0].distance)}`;
+          }
+        } else if (room.distances && room.distances.length > 0) {
+          landmarkDisplay = `Cách ${room.distances[0].landmark_name} • ${formatDistanceValue(room.distances[0].distance)}`;
+        }
+
+        card.innerHTML = `
+          <div class="room-media-header">
+            ${coverHtml}
+            <span class="badge-price">${formatPrice(room.price1)}</span>
+            <span class="badge-district">${room.district || 'Hà Nội'}</span>
+            ${totalMedia > 0 ? `
+              <span class="media-counter">
+                <i data-lucide="camera" style="width:12px; height:12px;"></i> ${totalMedia}
+              </span>
+            ` : ''}
+          </div>
+          <div class="room-body">
+            <div style="font-size: 0.95rem; font-weight: 600; color: white;">
+              Dạng phòng: <span style="color: var(--text-main); font-weight: 400;">${room.room_type || 'Trọ thường'}</span>
+            </div>
+            <div style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.4; display: flex; align-items: flex-start; gap: 0.4rem; margin-top: 0.25rem;">
+              <span style="font-weight: 600; color: white; flex-shrink: 0;">Địa chỉ:</span>
+              <span>${room.address}</span>
+            </div>
+            <div style="font-size: 0.95rem; font-weight: 600; color: var(--success); margin-top: 0.25rem;">
+              Giá: ${formatPrice(room.price1)}
+            </div>
+            <div class="distances-box" style="margin-top: 0.5rem; background: rgba(99, 102, 241, 0.1); border: 1px solid rgba(99, 102, 241, 0.2); padding: 0.5rem 0.75rem; border-radius: 0.5rem; font-size: 0.85rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between;">
+              <span style="display: flex; align-items: center; gap: 0.35rem; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+                <i data-lucide="navigation" style="width: 14px; height: 14px; color: var(--accent); flex-shrink: 0;"></i>
+                ${landmarkDisplay}
+              </span>
+            </div>
+          </div>
+          <div class="room-footer">
+            <div class="session-meta">
+              <i data-lucide="calendar" style="width:12px; height:12px;"></i>
+              <span>${new Date(room.created_at).toLocaleDateString('vi-VN')}</span>
+            </div>
+            <button class="btn-action" onclick="openRoomDetails(${room.id})">
+              <i data-lucide="eye"></i> Xem Chi Tiết
+            </button>
+          </div>
+        `;
+        roomsGrid.appendChild(card);
+      });
+      lucide.createIcons();
+    }
+
+    // Modal media navigation
+    function displayMedia() {
+      carouselSlide.innerHTML = '';
+      const totalPhotos = currentModalPhotos.length;
+      const totalVideos = currentModalVideos.length;
+      const totalMedia = totalPhotos + totalVideos;
+
+      if (totalMedia === 0) {
+        carouselSlide.innerHTML = `
+          <div class="no-media-placeholder">
+            <i data-lucide="image-off" style="width:48px; height:48px;"></i>
+            <span>Không có media để hiển thị</span>
+          </div>
+        `;
+        carouselPrev.style.display = 'none';
+        carouselNext.style.display = 'none';
+        lucide.createIcons();
+        return;
+      }
+
+      carouselPrev.style.display = totalMedia > 1 ? 'flex' : 'none';
+      carouselNext.style.display = totalMedia > 1 ? 'flex' : 'none';
+
+      if (currentMediaIndex < totalPhotos) {
+        const photo = currentModalPhotos[currentMediaIndex];
+        carouselSlide.innerHTML = `<img src="${photo.url}" alt="Slideshow Image">`;
+      } else {
+        const videoIndex = currentMediaIndex - totalPhotos;
+        const video = currentModalVideos[videoIndex];
+        carouselSlide.innerHTML = `
+          <video controls autoplay muted src="${video.url}" poster="${video.thumb || ''}" style="width: 100%; height: 100%;">
+            Trình duyệt của bạn không hỗ trợ phát video.
+          </video>
+        `;
+      }
+
+      carouselDots.innerHTML = '';
+      for (let i = 0; i < totalMedia; i++) {
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${i === currentMediaIndex ? 'active' : ''}`;
+        dot.addEventListener('click', () => {
+          currentMediaIndex = i;
+          displayMedia();
+        });
+        carouselDots.appendChild(dot);
+      }
+    }
+
+    // Open detail popup
+    window.openRoomDetails = function(roomId) {
+      const room = allRooms.find(r => r.id === roomId);
+      if (!room) return;
+
+      modalRoomCode.textContent = room.room_code ? `Mã phòng: ${room.room_code}` : 'Mã phòng: Chưa cập nhật';
+      modalRoomType.innerHTML = `Dạng phòng: <span style="font-weight: 500; color: var(--accent);">${room.room_type || 'Trọ thường'}</span>`;
+      modalRoomPrice.textContent = formatPrice(room.price1);
+      modalRoomAddress.textContent = room.address;
+      let desc = room.text2 || room.original_text || 'Không có tin nhắn gốc';
+      if (desc && desc.trim().startsWith('{')) {
+        try {
+          const parsed = JSON.parse(desc);
+          if (parsed) {
+            desc = parsed.text2 || parsed.description || desc;
+          }
+        } catch (e) {}
+      }
+      modalOriginalText.textContent = desc;
+
+      // Render landmarks list (top 3 by default + toggle expand)
+      modalLandmarksList.innerHTML = '';
+      if (room.distances && room.distances.length > 0) {
+        const top3 = room.distances.slice(0, 3);
+        const remaining = room.distances.slice(3);
+
+        let html = top3.map(d => `
+          <div style="font-size: 0.9rem; color: var(--text-main); display: flex; align-items: center; gap: 0.35rem;">
+            <i data-lucide="${getLandmarkIcon(d.landmark_category)}" style="width: 14px; height: 14px; color: var(--accent); flex-shrink: 0;"></i>
+            Gần ${d.landmark_name} • Cách khoảng ${formatDistanceValue(d.distance)}
+          </div>
+        `).join('');
+
+        if (remaining.length > 0) {
+          html += `
+            <div id="extraLandmarks" style="display: none; flex-direction: column; gap: 0.35rem; margin-top: 0.35rem;">
+              ${remaining.map(d => `
+                <div style="font-size: 0.9rem; color: var(--text-main); display: flex; align-items: center; gap: 0.35rem;">
+                  <i data-lucide="${getLandmarkIcon(d.landmark_category)}" style="width: 14px; height: 14px; color: var(--accent); flex-shrink: 0;"></i>
+                  Gần ${d.landmark_name} • Cách khoảng ${formatDistanceValue(d.distance)}
+                </div>
+              `).join('')}
+            </div>
+            <button id="btnToggleLandmarks" class="btn-action" style="margin-top: 0.5rem; width: fit-content; padding: 0.25rem 0.6rem; font-size: 0.75rem;">
+              <span id="toggleText">Xem thêm</span> <i data-lucide="chevron-down" id="toggleIcon" style="width: 12px; height: 12px; margin-left: 2px;"></i>
+            </button>
+          `;
+        }
+        modalLandmarksList.innerHTML = html;
+
+        const btnToggle = document.getElementById('btnToggleLandmarks');
+        if (btnToggle) {
+          btnToggle.addEventListener('click', () => {
+            const extra = document.getElementById('extraLandmarks');
+            if (extra.style.display === 'none') {
+              extra.style.display = 'flex';
+              btnToggle.innerHTML = `<span>Thu gọn</span> <i data-lucide="chevron-up" style="width: 12px; height: 12px; margin-left: 2px;"></i>`;
+            } else {
+              extra.style.display = 'none';
+              btnToggle.innerHTML = `<span>Xem thêm</span> <i data-lucide="chevron-down" style="width: 12px; height: 12px; margin-left: 2px;"></i>`;
+            }
+            lucide.createIcons();
+          });
+        }
+      } else {
+        modalLandmarksList.innerHTML = `<div style="color:var(--text-muted); font-size: 0.9rem;">Không có dữ liệu khoảng cách</div>`;
+      }
+
+      currentModalPhotos = room.photos || [];
+      currentModalVideos = room.videos || [];
+      currentMediaIndex = 0;
+      displayMedia();
+
+      mediaModal.style.display = 'flex';
+      lucide.createIcons();
+    };
+
+    // Close details modal
+    function closeModal() {
+      mediaModal.style.display = 'none';
+      carouselSlide.innerHTML = '';
+    }
+
+    // Prev/Next handlers
+    carouselPrev.addEventListener('click', () => {
+      const total = currentModalPhotos.length + currentModalVideos.length;
+      if (total <= 1) return;
+      currentMediaIndex = (currentMediaIndex - 1 + total) % total;
+      displayMedia();
+    });
+
+    carouselNext.addEventListener('click', () => {
+      const total = currentModalPhotos.length + currentModalVideos.length;
+      if (total <= 1) return;
+      currentMediaIndex = (currentMediaIndex + 1) % total;
+      displayMedia();
+    });
+
+    // Close on click outside
+    mediaModal.addEventListener('click', (e) => {
+      if (e.target === mediaModal) closeModal();
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    // Event listeners for filters
+    districtSelect.addEventListener('change', fetchRooms);
+    typeSelect.addEventListener('change', fetchRooms);
+    nearLandmarkSelect.addEventListener('change', () => renderRooms(allRooms));
+    priceMinInput.addEventListener('input', fetchRooms);
+    priceMaxInput.addEventListener('input', fetchRooms);
+
+    btnClearFilters.addEventListener('click', () => {
+      districtSelect.value = '';
+      typeSelect.value = '';
+      nearLandmarkSelect.value = '';
+      priceMinInput.value = '';
+      priceMaxInput.value = '';
+      fetchRooms();
+    });
+
+    // Initialize
+    fetchRooms();
+  </script>
+</body>
+</html>

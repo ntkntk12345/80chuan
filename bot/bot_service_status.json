@@ -1,0 +1,21 @@
+{
+  "listener": {
+    "running": true,
+    "state": "running",
+    "lastHeartbeatAt": "2026-06-22T05:42:38Z",
+    "lastWorkAt": "2026-06-22T05:42:48Z",
+    "restartCount": 1,
+    "lastError": null,
+    "updatedAt": "2026-06-22T05:42:48Z"
+  },
+  "sender": {
+    "running": true,
+    "state": "running",
+    "lastHeartbeatAt": "2026-06-22T05:42:36Z",
+    "lastWorkAt": null,
+    "restartCount": 1,
+    "lastError": null,
+    "updatedAt": "2026-06-22T05:42:36Z"
+  },
+  "updatedAt": "2026-06-22T05:42:48Z"
+}

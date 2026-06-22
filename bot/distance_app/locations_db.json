@@ -1,0 +1,578 @@
+[
+  {
+    "name": "Đại học Bách khoa Hà Nội",
+    "address": "Số 1 Đại Cồ Việt, Hai Bà Trưng",
+    "search_query": "Đại học Bách khoa Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0070953,
+    "lon": 105.8431091
+  },
+  {
+    "name": "Đại học Kinh tế Quốc dân",
+    "address": "Số 207 Giải Phóng, Hai Bà Trưng",
+    "search_query": "Đại học Kinh tế Quốc dân, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.9989944,
+    "lon": 105.8457937
+  },
+  {
+    "name": "Đại học Ngoại thương",
+    "address": "Số 91 Chùa Láng, Đống Đa",
+    "search_query": "Đại học Ngoại thương, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.02259,
+    "lon": 105.80518
+  },
+  {
+    "name": "Đại học Xây dựng Hà Nội",
+    "address": "Số 55 Giải Phóng, Hai Bà Trưng",
+    "search_query": "Đại học Xây dựng Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0039,
+    "lon": 105.8428
+  },
+  {
+    "name": "Đại học Y Hà Nội",
+    "address": "Số 1 Tôn Thất Tùng, Đống Đa",
+    "search_query": "Đại học Y Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.00342,
+    "lon": 105.830035
+  },
+  {
+    "name": "Đại học Thủy lợi",
+    "address": "Số 175 Tây Sơn, Đống Đa",
+    "search_query": "Đại học Thủy lợi, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0073969,
+    "lon": 105.8247334
+  },
+  {
+    "name": "Đại học Giao thông Vận tải",
+    "address": "Số 3 Cầu Giấy, Đống Đa",
+    "search_query": "Đại học Giao thông Vận tải, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0186492,
+    "lon": 105.8077566
+  },
+  {
+    "name": "Đại học Mỏ - Địa chất",
+    "address": "Phố Đức Thắng, Phường Đức Thắng, Bắc Từ Liêm",
+    "search_query": "Đại học Mỏ - Địa chất, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0689895,
+    "lon": 105.7614533
+  },
+  {
+    "name": "Đại học Hà Nội",
+    "address": "Ngõ 9 Nguyễn Trãi (Km9), Thanh Xuân",
+    "search_query": "Trường Đại học Hà Nội, Nguyễn Trãi, Thanh Xuân, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.985552,
+    "lon": 105.790518
+  },
+  {
+    "name": "Đại học Sư phạm Hà Nội",
+    "address": "Số 136 Xuân Thủy, Cầu Giấy",
+    "search_query": "Đại học Sư phạm Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.037465,
+    "lon": 105.7833582
+  },
+  {
+    "name": "Đại học Luật Hà Nội",
+    "address": "Số 87 Nguyễn Chí Thanh, Đống Đa",
+    "search_query": "Đại học Luật Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0214091,
+    "lon": 105.8096566
+  },
+  {
+    "name": "Đại học Công nghiệp Hà Nội",
+    "address": "Đường Cầu Diễn (Nhổn), Bắc Từ Liêm",
+    "search_query": "Đại học Công nghiệp Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0529763,
+    "lon": 105.734914
+  },
+  {
+    "name": "Đại học Điện lực",
+    "address": "Số 235 Hoàng Quốc Việt, Cầu Giấy",
+    "search_query": "Đại học Điện lực, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0463117,
+    "lon": 105.7851818
+  },
+  {
+    "name": "Đại học Thăng Long",
+    "address": "Đường Nghiêm Xuân Yêm, Hoàng Mai",
+    "search_query": "Trường Đại học Thăng Long, Nghiêm Xuân Yêm, Đại Kim, Hoàng Mai, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.9761268,
+    "lon": 105.8149638
+  },
+  {
+    "name": "Đại học Phenikaa",
+    "address": "Đường Nguyễn Văn Trác, Yên Nghĩa, Hà Đông",
+    "search_query": "Đại học Phenikaa, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.959502,
+    "lon": 105.747841
+  },
+  {
+    "name": "Đại học Đại Nam",
+    "address": "Số 56 Vũ Trọng Phụng, Thanh Xuân",
+    "search_query": "Đại học Đại Nam, Vũ Trọng Phụng, Thanh Xuân, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.9991485,
+    "lon": 105.8086218
+  },
+  {
+    "name": "Đại học Đại Nam (Cơ sở chính)",
+    "address": "Phố Xốm, Phú Lãm, Hà Đông",
+    "search_query": "Đại học Đại Nam, Phú Lãm, Hà Đông, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.971193,
+    "lon": 105.779022
+  },
+  {
+    "name": "Đại học Kinh doanh & Công nghệ Hà Nội",
+    "address": "Số 29A Ngõ Vĩnh Tuy, Hai Bà Trưng",
+    "search_query": "Đại học Kinh doanh & Công nghệ Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0000449,
+    "lon": 105.8771174
+  },
+  {
+    "name": "Đại học Công đoàn",
+    "address": "Số 169 Tây Sơn, Đống Đa",
+    "search_query": "Đại học Công đoàn, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0102594,
+    "lon": 105.8257014
+  },
+  {
+    "name": "Đại học Tài nguyên & Môi trường Hà Nội",
+    "address": "Số 41A Phú Diễn, Bắc Từ Liêm",
+    "search_query": "Đại học Tài nguyên & Môi trường Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0471005,
+    "lon": 105.7624725
+  },
+  {
+    "name": "Học viện Hành chính Quốc gia",
+    "address": "Số 36 Xuân La, Tây Hồ",
+    "search_query": "Học viện Hành chính Quốc gia, Xuân La, Tây Hồ, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0667,
+    "lon": 105.8033
+  },
+  {
+    "name": "Đại học Mở Hà Nội",
+    "address": "Phố Nguyễn Hiền, Hai Bà Trưng",
+    "search_query": "Đại học Mở Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0262566,
+    "lon": 105.8034751
+  },
+  {
+    "name": "Đại học Mỹ thuật Công nghiệp",
+    "address": "Số 360 Đê La Thành, Đống Đa",
+    "search_query": "Đại học Mỹ thuật Công nghiệp, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0225148,
+    "lon": 105.8234285
+  },
+  {
+    "name": "Đại học Sân khấu - Điện ảnh",
+    "address": "Khu văn hóa nghệ thuật Mai Dịch, Cầu Giấy",
+    "search_query": "Đại học Sân khấu - Điện ảnh, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0399732,
+    "lon": 105.7755081
+  },
+  {
+    "name": "Đại học Văn hóa Hà Nội",
+    "address": "Số 418 Đê La Thành, Đống Đa",
+    "search_query": "Đại học Văn hóa Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.022821,
+    "lon": 105.8223227
+  },
+  {
+    "name": "Đại học Kiến trúc Hà Nội",
+    "address": "Đường Nguyễn Trãi, Văn Quán, Thanh Xuân",
+    "search_query": "Đại học Kiến trúc Hà Nội, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.98108,
+    "lon": 105.789432
+  },
+  {
+    "name": "Học viện Ngân hàng",
+    "address": "Số 12 Chùa Bộc, Đống Đa",
+    "search_query": "Học viện Ngân hàng, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0078544,
+    "lon": 105.8280082
+  },
+  {
+    "name": "Học viện Tài chính",
+    "address": "Số 58 Lê Văn Hiến, Đức Thắng, Bắc Từ Liêm",
+    "search_query": "Học viện Tài chính, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.074128,
+    "lon": 105.774404
+  },
+  {
+    "name": "Học viện Ngoại giao",
+    "address": "Số 69 Chùa Láng, Đống Đa",
+    "search_query": "Học viện Ngoại giao, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.023285,
+    "lon": 105.806484
+  },
+  {
+    "name": "Học viện Báo chí & Tuyên truyền",
+    "address": "Số 36 Xuân Thủy, Cầu Giấy",
+    "search_query": "Học viện Báo chí & Tuyên truyền, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 21.0365658,
+    "lon": 105.7887276
+  },
+  {
+    "name": "Học viện Công nghệ Bưu chính Viễn thông",
+    "address": "Km10 Đường Nguyễn Trãi, Hà Đông",
+    "search_query": "Học viện Công nghệ Bưu chính Viễn thông, Hà Nội, Việt Nam",
+    "category": "Đại học",
+    "lat": 20.9806,
+    "lon": 105.7898
+  },
+  {
+    "name": "Cao đẳng Y tế Hà Đông",
+    "address": "Số 439-441 Quang Trung, Hà Đông",
+    "search_query": "Cao đẳng Y tế Hà Đông, Hà Nội, Việt Nam",
+    "category": "Cao đẳng",
+    "lat": 20.971011,
+    "lon": 105.7730687
+  },
+  {
+    "name": "Cao đẳng Du lịch Hà Nội",
+    "address": "Số 236 Hoàng Quốc Việt, Cầu Giấy",
+    "search_query": "Cao đẳng Du lịch Hà Nội, Hà Nội, Việt Nam",
+    "category": "Cao đẳng",
+    "lat": 21.0463097,
+    "lon": 105.7839405
+  },
+  {
+    "name": "Cao đẳng Công nghệ cao Hà Nội",
+    "address": "Phố Nhuệ Giang, Tây Mỗ, Nam Từ Liêm",
+    "search_query": "Cao đẳng Công nghệ cao Hà Nội, Hà Nội, Việt Nam",
+    "category": "Cao đẳng",
+    "lat": 21.0211723,
+    "lon": 105.7490571
+  },
+  {
+    "name": "Cao đẳng FPT Polytechnic",
+    "address": "Phố Trịnh Văn Bô, Phương Canh, Nam Từ Liêm",
+    "search_query": "Cao đẳng FPT Polytechnic, Hà Nội, Việt Nam",
+    "category": "Cao đẳng",
+    "lat": 21.030874,
+    "lon": 105.758677
+  },
+  {
+    "name": "Cao đẳng Thương mại & Du lịch Hà Nội",
+    "address": "Số 1 Phạm Văn Đồng, Cầu Giấy",
+    "search_query": "Cao đẳng Thương mại & Du lịch Hà Nội, Hà Nội, Việt Nam",
+    "category": "Cao đẳng",
+    "lat": 21.039948,
+    "lon": 105.780757
+  },
+  {
+    "name": "Cao đẳng Y Dược Pasteur",
+    "address": "Số 212 Hoàng Quốc Việt, Cầu Giấy",
+    "search_query": "Cao đẳng Y Dược Pasteur, Hà Nội, Việt Nam",
+    "category": "Cao đẳng",
+    "lat": 21.0471,
+    "lon": 105.7845
+  },
+  {
+    "name": "Bệnh viện Bạch Mai",
+    "address": "Số 78 Giải Phóng, Phương Mai, Hai Bà Trưng",
+    "search_query": "Bệnh viện Bạch Mai, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.0020829,
+    "lon": 105.8410194
+  },
+  {
+    "name": "Bệnh viện Việt Đức",
+    "address": "Số 40 Tràng Thi, Hoàn Kiếm",
+    "search_query": "Bệnh viện Việt Đức, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.0290711,
+    "lon": 105.8476655
+  },
+  {
+    "name": "Bệnh viện K (Cơ sở 1)",
+    "address": "Số 43 Quán Sứ, Hoàn Kiếm",
+    "search_query": "Bệnh viện K, Quán Sứ, Hoàn Kiếm, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.02949649842,
+    "lon": 105.846469996426
+  },
+  {
+    "name": "Bệnh viện Nhi Trung ương",
+    "address": "Số 879 Đê La Thành, Đống Đa",
+    "search_query": "Bệnh viện Nhi Trung ương, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.0247713,
+    "lon": 105.8078132
+  },
+  {
+    "name": "Bệnh viện Phụ sản Trung ương",
+    "address": "Số 43 Tràng Thi, Hoàn Kiếm",
+    "search_query": "Bệnh viện Phụ sản Trung ương, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.0270976,
+    "lon": 105.847265
+  },
+  {
+    "name": "Bệnh viện Trung ương Quân đội 108",
+    "address": "Số 1 Trần Hưng Đạo, Hai Bà Trưng",
+    "search_query": "Bệnh viện Trung ương Quân đội 108, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.018577,
+    "lon": 105.860321
+  },
+  {
+    "name": "Bệnh viện E",
+    "address": "Số 89 Trần Cung, Nghĩa Tân, Cầu Giấy",
+    "search_query": "Bệnh viện E, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.0509745,
+    "lon": 105.7897151
+  },
+  {
+    "name": "Bệnh viện Đại học Y Hà Nội",
+    "address": "Số 1 Tôn Thất Tùng, Đống Đa",
+    "search_query": "Bệnh viện Đại học Y Hà Nội, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.0020373,
+    "lon": 105.8296799
+  },
+  {
+    "name": "Bệnh viện Hữu nghị",
+    "address": "Số 1 Trần Khánh Dư, Hai Bà Trưng",
+    "search_query": "Bệnh viện Hữu nghị, Hà Nội, Việt Nam",
+    "category": "Bệnh viện",
+    "lat": 21.0158719,
+    "lon": 105.8623497
+  },
+  {
+    "name": "Bến xe Mỹ Đình",
+    "address": "Số 20 Phạm Hùng, Mỹ Đình 2, Nam Từ Liêm, Hà Nội, Việt Nam",
+    "search_query": "Bến xe Mỹ Đình, Hà Nội, Việt Nam",
+    "category": "Bến xe",
+    "lat": 21.0284,
+    "lon": 105.7779
+  },
+  {
+    "name": "Bến xe Giáp Bát",
+    "address": "Số 887 Giải Phóng, Giáp Bát, Hoàng Mai, Hà Nội, Việt Nam",
+    "search_query": "Bến xe Giáp Bát, Hà Nội, Việt Nam",
+    "category": "Bến xe",
+    "lat": 20.98524,
+    "lon": 105.844037
+  },
+  {
+    "name": "Bến xe Nước Ngầm",
+    "address": "Số 1 Ngọc Hồi, Hoàng Liệt, Hoàng Mai, Hà Nội, Việt Nam",
+    "search_query": "Bến xe Nước Ngầm, Hà Nội, Việt Nam",
+    "category": "Bến xe",
+    "lat": 20.974549,
+    "lon": 105.844357
+  },
+  {
+    "name": "Bến xe Gia Lâm",
+    "address": "Số 9 Ngô Gia Khảm, Gia Thụy, Long Biên, Hà Nội, Việt Nam",
+    "search_query": "Bến xe Gia Lâm, Hà Nội, Việt Nam",
+    "category": "Bến xe",
+    "lat": 21.019545,
+    "lon": 105.93714
+  },
+  {
+    "name": "Bến xe Yên Nghĩa",
+    "address": "Quốc lộ 6, Yên Nghĩa, Hà Đông, Hà Nội, Việt Nam",
+    "search_query": "Bến xe Yên Nghĩa, Hà Nội, Việt Nam",
+    "category": "Bến xe",
+    "lat": 20.954925,
+    "lon": 105.733581
+  },
+  {
+    "name": "Bến xe Sơn Tây",
+    "address": "Số 1 Trần Hưng Đạo, Lê Lợi, Sơn Tây, Hà Nội, Việt Nam",
+    "search_query": "Bến xe Sơn Tây, Hà Nội, Việt Nam",
+    "category": "Bến xe",
+    "lat": 21.140785,
+    "lon": 105.507244
+  },
+  {
+    "name": "Ga Cát Linh",
+    "address": "Ngã tư Hào Nam - Cát Linh, Cát Linh, Đống Đa, Hà Nội, Việt Nam",
+    "search_query": "Ga Cát Linh, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.030755,
+    "lon": 105.831855
+  },
+  {
+    "name": "Ga La Thành",
+    "address": "Số 249 Hoàng Cầu, Ô Chợ Dừa, Đống Đa, Hà Nội, Việt Nam",
+    "search_query": "Ga La Thành, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.0199,
+    "lon": 105.8202
+  },
+  {
+    "name": "Ga Thái Hà",
+    "address": "Ngã tư Hoàng Cầu - Thái Hà, Trung Liệt, Đống Đa, Hà Nội, Việt Nam",
+    "search_query": "Ga Thái Hà, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.0156,
+    "lon": 105.8186
+  },
+  {
+    "name": "Ga Láng",
+    "address": "Số 220 Đường Láng, Thịnh Quang, Đống Đa, Hà Nội, Việt Nam",
+    "search_query": "Ga Láng, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.0209373,
+    "lon": 105.8059541
+  },
+  {
+    "name": "Ga Thượng Đình",
+    "address": "Số 108 Nguyễn Trãi, Thượng Đình, Thanh Xuân, Hà Nội, Việt Nam",
+    "search_query": "Ga Thượng Đình, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.001047,
+    "lon": 105.817724
+  },
+  {
+    "name": "Ga Vành Đai 3",
+    "address": "Ngã tư Khuất Duy Tiến - Nguyễn Xiển - Nguyễn Trãi, Thanh Xuân Trung, Thanh Xuân, Hà Nội, Việt Nam",
+    "search_query": "Ga Vành Đai 3, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 20.991462,
+    "lon": 105.803101
+  },
+  {
+    "name": "Ga Phùng Khoang",
+    "address": "Số 12 Trần Phú, Mộ Lao, Hà Đông, Hà Nội, Việt Nam",
+    "search_query": "Ga Phùng Khoang, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 20.98333,
+    "lon": 105.8
+  },
+  {
+    "name": "Ga Văn Quán",
+    "address": "Số 142 Trần Phú, Mộ Lao, Hà Đông, Hà Nội, Việt Nam",
+    "search_query": "Ga Văn Quán, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 20.974536,
+    "lon": 105.787311
+  },
+  {
+    "name": "Ga Hà Đông",
+    "address": "Số 4 Quang Trung, Nguyễn Trãi, Hà Đông, Hà Nội, Việt Nam",
+    "search_query": "Ga Hà Đông, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 20.953121,
+    "lon": 105.759776
+  },
+  {
+    "name": "Ga La Khê",
+    "address": "Ngã tư Quang Trung - Lê Trọng Tấn, Phú La, Hà Đông, Hà Nội, Việt Nam",
+    "search_query": "Ga La Khê, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 20.968755,
+    "lon": 105.763758
+  },
+  {
+    "name": "Ga Văn Khê",
+    "address": "Số 533 Quang Trung, Phú La, Hà Đông, Hà Nội, Việt Nam",
+    "search_query": "Ga Văn Khê, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 20.9602,
+    "lon": 105.7505
+  },
+  {
+    "name": "Ga Yên Nghĩa",
+    "address": "Bến xe Yên Nghĩa, Quốc lộ 6, Yên Nghĩa, Hà Đông, Hà Nội, Việt Nam",
+    "search_query": "Ga Yên Nghĩa, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 20.954925,
+    "lon": 105.733581
+  },
+  {
+    "name": "Ga Nhổn",
+    "address": "Đường Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội, Việt Nam",
+    "search_query": "Ga Nhổn, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.04995,
+    "lon": 105.73173
+  },
+  {
+    "name": "Ga Minh Khai",
+    "address": "Ngã ba Cầu Diễn - Văn Tiến Dũng, Phúc Diễn, Bắc Từ Liêm, Hà Nội, Việt Nam",
+    "search_query": "Ga Minh Khai, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.048,
+    "lon": 105.738
+  },
+  {
+    "name": "Ga Phú Diễn",
+    "address": "Đường Cầu Diễn, Phú Diễn, Bắc Từ Liêm, Hà Nội, Việt Nam",
+    "search_query": "Ga Phú Diễn, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.051105,
+    "lon": 105.764933
+  },
+  {
+    "name": "Ga Cầu Diễn",
+    "address": "Cầu Diễn, Đường Hồ Tùng Mậu, Phú Diễn, Bắc Từ Liêm, Hà Nội, Việt Nam",
+    "search_query": "Ga Cầu Diễn, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.039687,
+    "lon": 105.764948
+  },
+  {
+    "name": "Ga Lê Đức Thọ",
+    "address": "Ngã tư Hồ Tùng Mậu - Nguyễn Cơ Thạch - Lê Đức Thọ, Mai Dịch, Cầu Giấy, Hà Nội, Việt Nam",
+    "search_query": "Ga Lê Đức Thọ, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.038,
+    "lon": 105.778
+  },
+  {
+    "name": "Ga Đại học Quốc Gia",
+    "address": "Số 136 Xuân Thủy, Dịch Vọng Hậu, Cầu Giấy, Hà Nội, Việt Nam",
+    "search_query": "Ga Đại học Quốc Gia, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.0368208,
+    "lon": 105.7823582
+  },
+  {
+    "name": "Ga Chùa Hà",
+    "address": "Ngã ba Xuân Thủy - Chùa Hà, Dịch Vọng, Cầu Giấy, Hà Nội, Việt Nam",
+    "search_query": "Ga Chùa Hà, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.035073,
+    "lon": 105.792252
+  },
+  {
+    "name": "Ga Cầu Giấy",
+    "address": "Số 12 Đường Cầu Giấy, Ngọc Khánh, Ba Đình, Hà Nội, Việt Nam",
+    "search_query": "Ga Cầu Giấy, Kim Mã, Ngọc Khánh, Hà Nội, Việt Nam",
+    "category": "Ga Metro",
+    "lat": 21.029252834979,
+    "lon": 105.803642961889
+  }
+]
