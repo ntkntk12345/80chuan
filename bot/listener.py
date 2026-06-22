@@ -835,7 +835,8 @@ class ZaloListener(ZaloAPI):
                 try: params = json.loads(content["params"])
                 except: pass
             
-            is_special = symbol.lower() in SPECIAL_GROUPS
+            symbol_lower = symbol.lower().strip()
+            is_special = symbol_lower in SPECIAL_GROUPS or any(symbol_lower.startswith(x) for x in ["11a", "12a"])
             
             if msg_type == "chat.photo":
                 photo_url = content.get("hd") or content.get("href")

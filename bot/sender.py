@@ -10,12 +10,13 @@ SERVICE_NAME = os.path.splitext(os.path.basename(__file__))[0]
 # được khởi tạo, cả 2 process đều đã ghi vào cùng 1 file log rồi.
 _SINGLETON_LOCK_PATH = os.path.join(BOT_DIR, f"{SERVICE_NAME}.lock")
 _singleton_fd = None
-try:
-    _singleton_fd = open(_SINGLETON_LOCK_PATH, "w")
-    _msvcrt.locking(_singleton_fd.fileno(), _msvcrt.LK_NBLCK, 1)
-except (IOError, OSError):
-    sys.stderr.write(f"[GUARD] {SERVICE_NAME}.py đang chạy rồi. Thoát.\n")
-    sys.exit(0)
+if __name__ == "__main__":
+    try:
+        _singleton_fd = open(_SINGLETON_LOCK_PATH, "w")
+        _msvcrt.locking(_singleton_fd.fileno(), _msvcrt.LK_NBLCK, 1)
+    except (IOError, OSError):
+        sys.stderr.write(f"[GUARD] {SERVICE_NAME}.py đang chạy rồi. Thoát.\n")
+        sys.exit(0)
 # ──────────────────────────────────────────────────────────────────────
 
 class LoggerTee(object):
@@ -683,14 +684,29 @@ class SenderBot:
                 
                 # Special Category Groups Detection
                 name_lower = name.lower()
-                if "nhóm nhà nguyên căn và chung cư" in name_lower:
+                
+                # Nhóm chung cư
+                if "nhóm chung cư" in name_lower or name_lower == "nhóm chung cư":
+                    output_groups_map.setdefault("chung_cu_ids", []).append(gid_str)
+                elif "nhóm nhà nguyên căn và chung cư" in name_lower:
+                    output_groups_map.setdefault("nguyen_can_ids", []).append(gid_str)
+                
+                # Fallback for chung cư
+                if "chung cư" in name_lower or "căn hộ" in name_lower:
+                    output_groups_map.setdefault("chung_cu_fallback_ids", []).append(gid_str)
+                
+                # Nhóm nhà nguyên căn
+                if "nhóm nhà nguyên căn" in name_lower or name_lower == "nhóm nhà nguyên căn":
                     output_groups_map.setdefault("nguyen_can_ids", []).append(gid_str)
                     
+                # Nhóm Văn phòng , mặt bằng kinh doanh
                 if "nhóm văn phòng , mặt bằng kinh doanh" in name_lower or ("nhóm văn phòng" in name_lower and "mặt bằng kinh doanh" in name_lower):
                     output_groups_map.setdefault("mbkd_ids", []).append(gid_str)
                 
-                # CHDV group detection
-                if "nhóm chdv" in name_lower or ("chdv" in name_lower and ("homestay" in name_lower or "nhà nghỉ" in name_lower or "khách sạn" in name_lower)):
+                # NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ / CHDV
+                if "nguồn căn hộ dịch vụ cho nhà đầu tư" in name_lower or name_lower == "nguồn căn hộ dịch vụ cho nhà đầu tư":
+                    output_groups_map.setdefault("chdv_ids", []).append(gid_str)
+                elif "nhóm chdv" in name_lower or ("chdv" in name_lower and ("homestay" in name_lower or "nhà nghỉ" in name_lower or "khách sạn" in name_lower)):
                     output_groups_map.setdefault("chdv_ids", []).append(gid_str)
             
             return output_groups_map, group_id_to_name, count_mapped
@@ -1068,10 +1084,53 @@ class SenderBot:
                             for parent in parent_set:
                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
 
+            # Direct routing symbols
+            chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+            nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+            mbkd_symbols = ["1a", "1a1", "1a2", "1a3", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+            chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+            
+            tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+            vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+
             if explicit_routing_keywords:
                 keywords = resolve_routing_keywords(explicit_routing_keywords)
                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
                 add_target_groups_from_keywords(keywords)
+
+            elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+                if symbol_lower in chung_cu_symbols:
+                    print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+                    target_ids = sender["output_groups_map"].get("chung_cu_ids", [])
+                    if not target_ids:
+                        target_ids = sender["output_groups_map"].get("chung_cu_fallback_ids", [])
+                        print(f"[ROUTING] Fallback to chung_cu_fallback_ids: {target_ids}")
+                    target_groups.update(target_ids)
+                elif symbol_lower in nguyen_can_symbols:
+                    print(f"[ROUTING] {symbol} routes directly to Nhóm nhà nguyên căn")
+                    target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+                elif symbol_lower in mbkd_symbols:
+                    print(f"[ROUTING] {symbol} routes directly to Nhóm Văn phòng , mặt bằng kinh doanh")
+                    target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+                elif symbol_lower in chdv_symbols:
+                    print(f"[ROUTING] {symbol} routes directly to NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ")
+                    target_groups.update(sender["output_groups_map"].get("chdv_ids", []))
+                elif symbol_lower in tai_land_symbols:
+                    price1, price2 = self._extract_price_bounds(full_text)
+                    price_val = max(price1, price2)
+                    if price_val >= 25000000:
+                        print(f"[ROUTING] {symbol} with price {price_val} >= 25M routes to Nhóm Văn phòng , mặt bằng kinh doanh")
+                        target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+                    else:
+                        print(f"[ROUTING] {symbol} with price {price_val} < 25M (or not found) routes to Nhóm nhà nguyên căn")
+                        target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+                elif symbol_lower in vietquoc_1_symbols:
+                    if any(k in full_text_lower for k in ["mbkd", "mặt bằng", "văn phòng"]):
+                        print(f"[ROUTING] {symbol} with mbkd keywords routes to Nhóm Văn phòng , mặt bằng kinh doanh")
+                        target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+                    else:
+                        print(f"[ROUTING] {symbol} without mbkd keywords routes to Nhóm nhà nguyên căn")
+                        target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
 
             elif symbol_lower in special_symbols:
                 print(f"[ROUTING] {symbol} is SPECIAL GROUP")
@@ -1202,7 +1261,7 @@ class SenderBot:
                         # Nếu listener đã gửi kèm timeline (thứ tự thực tế), dùng trực tiếp
                         # Điều này đảm bảo ảnh xen kẽ mô tả được giữ nguyên cho 11A/12A
                         raw_timeline = item.get("timeline", [])
-                        is_special_group = symbol.lower().strip() in ["11a", "12a", "alophongtro", "3h", "td le phuong thao"]
+                        is_special_group = symbol.lower().strip() in ["11a", "12a", "alophongtro", "3h", "td le phuong thao"] or any(symbol.lower().strip().startswith(x) for x in ["11a", "12a"])
                         
                         if raw_timeline and is_special_group:
                             # Dùng timeline từ listener (đã reorder: reply text ở đầu, còn lại giữ nguyên)
@@ -1255,7 +1314,17 @@ class SenderBot:
                                 all_items.extend(t_in_b)
                                 all_items.extend(o_in_b)
                         
-                        timeline = all_items
+                        # Check photo_first setting from bot_utils.RULES
+                        rule = bot_utils.RULES.get(symbol_lower, {})
+                        if rule.get("photo_first"):
+                            media_items = [x for x in all_items if x["type"] in ("photo", "video")]
+                            text_items = [x for x in all_items if x["type"] == "text"]
+                            media_items.sort(key=lambda x: x["ts"])
+                            text_items.sort(key=lambda x: x["ts"])
+                            timeline = media_items + text_items
+                            print(f"[TIMELINE] photo_first ordering applied for {symbol}: {len(media_items)} media first, then {len(text_items)} texts")
+                        else:
+                            timeline = all_items
                         photo_batch = []
                         
                         for idx, content in enumerate(timeline):

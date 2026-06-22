@@ -1,0 +1,71 @@
+1a1 | Xóa hoa hồng + Thêm ký hiệu đầu dòng 1a | Không chuyển tin nhắn dưới 200 ký tự
+1a2 | Xóa hoa hồng + Thêm ký hiệu đầu dòng 1a | Không chuyển tin nhắn dưới 200 ký tự
+1a3 | Xóa hoa hồng + Thêm ký hiệu đầu dòng 1a | Không chuyển tin nhắn dưới 200 ký tự
+11a1 | Xóa thưởng sale/ctv + Xóa hoa hồng + Thêm ký hiệu đầu dòng + Chỉnh giá về dạng Xtr | Đổi lại thứ tự: Đăng thông tin trước, ảnh sau
+11a2 | Xóa hoa hồng + Thêm ký hiệu đầu dòng | Đổi lại thứ tự: Đăng thông tin trước, ảnh sau
+9a | Thêm ký hiệu đầu dòng + Chỉnh giá về dạng Xtr | Đổi lại thứ tự: Đăng thông tin trước, ảnh sau
+avhome | Xóa số điện thoại + Thêm ký hiệu mã đầu dòng + Chỉnh giá về dạng Xtr | Kiểm tra kỹ để xóa sạch SĐT trong nội dung
+phongtot1 | Xóa hoa hồng + Thêm mã | Không gửi link FB, link Docs sang nhóm đầu ra Zalo
+phongtot2 | Xóa hoa hồng + Thêm mã | Không gửi link FB, link Docs sang nhóm đầu ra Zalo
+phongtot3 | Xóa hoa hồng + Thêm mã | Không gửi link FB, link Docs sang nhóm đầu ra Zalo
+phongtot4 | Xóa hoa hồng + Thêm mã | Không gửi link FB, link Docs sang nhóm đầu ra Zalo
+phongtot5 | Xóa hoa hồng + Xóa dòng liên lạc / lh + Thêm mã | Không gửi link FB, link Docs sang nhóm đầu ra Zalo
+npland | Xóa hoa hồng + Thêm mã | Nhóm này đăng ảnh trước, thông tin sau
+1a | Xóa hoa hồng + Thêm ký hiệu đầu dòng + Chỉnh giá về dạng Xtr | Gửi vào nhóm mặt bằng kinh doanh
+Tài land 1 | Xóa full dòng "liên hệ:.../lh/icon điện thoại" + Xóa hoa hồng + Thêm ký hiệu mã đầu dòng + Chỉnh giá về dạng Xtr | Giá dưới 25tr đăng vào nhóm nhà nguyên căn, trên 25tr vào mặt bằng kinh doanh
+Tài land 2 | Xóa full dòng "liên hệ:..." + Xóa hoa hồng + Thêm ký hiệu mã đầu dòng + Chỉnh giá về dạng Xtr | (Dữ liệu gồm 2 khu vực): Giá dưới 25tr đăng vào nhà nguyên căn, trên 25tr vào mặt bằng kinh doanh
+việt quốc 1 | Xóa full chữ dòng "hh...%" + Xóa hoa hồng + Thêm ký hiệu mã đầu dòng + Chỉnh giá về dạng Xtr | Mặc định vào nhà nguyên căn. Nếu có chữ "mbkd, mặt bằng, mặt bằng kinh doanh, văn phòng" thì vào mặt bằng kinh doanh
+việt quốc 2 | Thêm mã đầu dòng + Xóa hoa hồng + Chỉnh giá về dạng Xtr | Đăng vào nhóm chung cư (nhóm mới lập)
+việt quốc 3 | Thêm mã đầu dòng + Xóa hoa hồng + Chỉnh giá về dạng Xtr | Đăng vào nhóm chung cư (nhóm mới lập)
+Tc 1 | Xóa dòng chữ "lh ..." + Thêm mã đầu dòng | Đăng vào nhóm nhà nguyên căn
+tc 2 | Xóa dòng chữ "lh ..." + Thêm mã đầu dòng | Nhóm đăng ảnh trước ảnh sau, chú ý icon phân tách giữa các căn. Đăng vào nhóm chung cư (nhóm mới lập)
+tc 3 | Xóa dòng chữ "lh ..." + Thêm mã đầu dòng | Nhóm đăng ảnh trước ảnh sau, chú ý icon phân tách giữa các căn. Đăng vào nhóm nhà nguyên căn
+tc 4 | Xóa dòng chữ "lh ..." + Thêm mã đầu dòng | Nhóm đăng ảnh trước ảnh sau, chú ý icon phân tách giữa các căn. Đăng vào nhóm mặt bằng kinh doanh
+đăng bài hn | Xóa hoa hồng + Thêm mã | Đăng vào nhóm nhà nguyên căn
+kingland | Thêm mã + Chỉnh giá về dạng Xtr | Kiểm tra định dạng giá cẩn thận
+Vinsmartcity | Thêm mã + Xóa hoa hồng sale | Đăng vào nhóm chung cư (Link: https://zalo.me/g/7frirf8fcq4nl4pcxxos)
+Tuananh CHDV 1 | Thêm mã + Chỉnh giá về dạng Xtr + Xóa số liên lạc dòng cuối | Đăng ảnh trước, thông tin sau. Đăng vào nhóm NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ (Link: https://zalo.me/g/olaknp431)
+CHDV chọn lọc | Thêm mã + Chỉnh giá về dạng Xtr + Xóa số liên lạc dòng cuối | Đăng vào nhóm NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ (Link: https://zalo.me/g/olaknp431)
+Dũng CHDV | Thêm mã + Chỉnh giá về dạng Xtr + Xóa số liên lạc dòng cuối | Đăng vào nhóm NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ (Link: https://zalo.me/g/olaknp431)
+Tuananh CHDV 2 | Thêm mã + Chỉnh giá về dạng Xtr + Xóa số liên lạc dòng cuối | Đăng ảnh trước, thông tin sau. Đăng vào nhóm NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ (Link: https://zalo.me/g/olaknp431)
+N34 CHDV | Thêm mã + Chỉnh giá về dạng Xtr + Xóa số liên lạc dòng cuối | Đăng vào nhóm NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ (Link: https://zalo.me/g/olaknp431)
+Đại lộc land 1 | Thêm mã | Đăng vào nguồn nhà nguyên căn
+Chinh trần CHDV | Thêm mã + Chỉnh giá về dạng Xtr + Xóa số liên lạc dòng cuối | Đăng vào nhóm NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ (Link: https://zalo.me/g/olaknp431)
+Đại lộc land 2 | Thêm mã | Đăng vào nhóm mặt bằng kinh doanh
+phương thảo | Xóa hoa hồng + Thêm mã |
+invest | Thêm mã | Đăng ảnh trước, thông tin sau
+agp | Xóa hoa hồng + Thêm ký hiệu đầu dòng |
+Nova | Thêm mã + Xóa hoa hồng | (Dữ liệu gồm 2 nhóm): Áp dụng chung quy tắc xóa hoa hồng và thêm mã
+KT | Thêm mã + Xóa hoa hồng |
+AE LAND 1 | Thêm mã + Xóa hoa hồng |
+7a | Thêm mã + Xóa hoa hồng |
+NT HOME | Thêm mã + Xóa hoa hồng |
+kingland | Thêm mã + Chỉnh giá về dạng Xtr | Kiểm tra kỹ để đưa giá về định dạng Xtr (ví dụ: 8.500k -> 8tr5)
+5a | Thêm mã + Xóa hoa hồng |
+havenhouse | Thêm mã + Xóa hoa hồng |
+nvhome 1 | Thêm mã + Xóa hoa hồng |
+hhouse2 | Thêm mã + Xóa hoa hồng |
+hhouse1 | Thêm mã + Xóa hoa hồng |
+nk | Thêm mã + Xóa liên hệ + Xóa hoa hồng |
+tdland | Xóa SĐT ở cuối dòng + Thêm ký hiệu đầu dòng + Chỉnh giá về dạng Xtr | Đổi lại thứ tự: Đăng thông tin trước, ảnh sau (gốc bị ngược)
+dragon | Thêm mã + Xóa hoa hồng |
+family | Thêm mã + Xóa hoa hồng | Đăng ảnh trước, thông tin sau
+tphomes | Thêm mã + Xóa hoa hồng |
+ctv | Xóa hoa hồng + Thêm mã |
+Tài phát | Thêm mã |
+Alophongtro | Thêm mã + Xóa số điện thoại | Đăng ảnh trước, thông tin sau
+3M | Xóa hoa hồng + Thêm mã |
+BEE HOME | Xóa hoa hồng + Thêm mã |
+Timehouse | Xóa liên hệ + Thêm mã |
+Bluehomes | Quản lý theo link Docs (8% - 55%) | Nhóm lấy nguồn từ link Google Sheets công khai
+nguontinchinhchu | Quản lý theo website/link Docs + Có số điện thoại | Nhóm lấy nguồn từ link Google Sheets công khai
+Chinhtran | Thêm mã + Chỉnh giá về dạng Xtr | Kiểm tra định dạng giá cẩn thận (ví dụ: 8.500k -> 8tr5)
+dspt | Quản lý theo link Docs (Hoa hồng 40%) | Nhóm lấy nguồn từ link Google Sheets công khai
+sh27 | Quản lý theo link Docs | Nhóm lấy nguồn từ link Google Sheets công khai
+ndthich | Quản lý theo link Docs + Có số điện thoại (Hoa hồng 50%) | Nhóm lấy nguồn từ link Google Sheets công khai
+hm | Thêm mã + Thêm nội dung dịch vụ cố định vào dưới phần thông tin | Đăng ảnh trước, thông tin sau. LƯU Ý: Nếu cuối bài có dòng cập nhật trạng thái phòng trống kèm số dẫn "0366968234" thì bỏ qua, không đăng vào nhóm.
+lily 1 | Thêm mã | Mức hoa hồng 20-50%. Chú ý: Nếu thông tin trùng với nhóm khác thì ưu tiên bắn ở nhóm khác.
+lily 2 | Thêm mã | Mức hoa hồng 20-50%. Chú ý: Nếu thông tin trùng với nhóm khác thì ưu tiên bắn ở nhóm khác.
+suri | Quản lý theo link Docs (Hoa hồng 50%) | Nhóm lấy nguồn từ link Google Sheets công khai
+smind | Quản lý theo link Docs (Hoa hồng 50%) | Nhóm lấy nguồn từ link Google Sheets công khai
+sh48 | Xóa liên hệ + Thêm mã | Chú ý: Nếu thông tin bị trùng với nhóm khác, ưu tiên bắn bài ở bên nhóm này.

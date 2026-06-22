@@ -2,20 +2,20 @@
   "listener": {
     "running": true,
     "state": "running",
-    "lastHeartbeatAt": "2026-06-22T05:42:38Z",
-    "lastWorkAt": "2026-06-22T05:43:34Z",
-    "restartCount": 1,
+    "lastHeartbeatAt": "2026-06-22T08:37:32Z",
+    "lastWorkAt": "2026-06-22T08:38:10Z",
+    "restartCount": 0,
     "lastError": null,
-    "updatedAt": "2026-06-22T05:43:34Z"
+    "updatedAt": "2026-06-22T08:38:10Z"
   },
   "sender": {
     "running": true,
     "state": "running",
-    "lastHeartbeatAt": "2026-06-22T05:42:36Z",
-    "lastWorkAt": null,
-    "restartCount": 1,
+    "lastHeartbeatAt": "2026-06-22T08:37:40Z",
+    "lastWorkAt": "2026-06-22T08:38:12Z",
+    "restartCount": 2,
     "lastError": null,
-    "updatedAt": "2026-06-22T05:42:36Z"
+    "updatedAt": "2026-06-22T08:38:12Z"
   },
-  "updatedAt": "2026-06-22T05:43:34Z"
+  "updatedAt": "2026-06-22T08:38:12Z"
 }

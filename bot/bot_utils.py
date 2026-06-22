@@ -213,6 +213,7 @@ def load_daura_keywords():
     return keywords, keyword_levels, keyword_parents
 
 # ==================== RULES ====================
+# ==================== RULES ====================
 def _generate_rules():
     """Tự động tạo rules từ dauvao.txt + custom rules"""
     # Load all symbols from dauvao.txt
@@ -227,25 +228,31 @@ def _generate_rules():
     
     # Custom rules for specific groups (override defaults)
     custom_rules = {
-        "1a": {"remove_commission": True, "add_prefix": True, "format_price": True},  # Changed from "mbkd_only"
+        "1a": {"remove_commission": True, "add_prefix": True, "format_price": True},
+        "1a1": {"remove_commission": True, "add_prefix": "1a", "min_length": 200, "format_price": True},
+        "1a2": {"remove_commission": True, "add_prefix": "1a", "min_length": 200, "format_price": True},
+        "1a3": {"remove_commission": True, "add_prefix": "1a", "min_length": 200, "format_price": True},
         "2a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "3a": {"add_prefix": True, "format_price": True},
         "4a": {"remove_commission": True, "add_prefix": True, "keep_contract_duration": True, "format_price": True},
         "5a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "6a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "8a": {"remove_commission": True, "add_prefix": True, "format_price": True},
-        "9a": {"remove_commission": True, "add_prefix": True, "format_price": True},
+        "9a": {"remove_commission": True, "add_prefix": "9a", "format_price": True},
         "10a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "11a": {"remove_commission": True, "remove_bonus": True, "add_prefix": True, "format_price": True},
+        "11a1": {"remove_commission": True, "remove_bonus": True, "add_prefix": "11a", "format_price": True},
+        "11a2": {"remove_commission": True, "add_prefix": "11a", "format_price": True},
+        "11a3": {"remove_commission": True, "add_prefix": "11a", "format_price": True},
         "12a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "13a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "14a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "111a": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "sleepbox": {"add_prefix": True, "format_price": True},
         "tdland": {"remove_phone": True, "add_prefix": True, "format_price": True},
-        "alophongtro": {"remove_phone": True, "add_prefix": True, "format_price": True},
+        "alophongtro": {"remove_phone": True, "add_prefix": True, "format_price": True, "photo_first": True},
         "3h": {"add_prefix": True, "format_price": True},
-        "avhome": {"add_prefix": True, "format_price": True},
+        "avhome": {"add_prefix": True, "format_price": True, "remove_phone": True},
         "td le phuong thao": {"remove_commission": True, "remove_bonus": True, "add_prefix": True, "format_price": True},
         "agp": {"remove_commission": True, "add_prefix": True, "format_price": True},
         "hdhome": {"remove_phone": True, "add_prefix": True, "format_price": True, "remove_links": True},
@@ -257,7 +264,6 @@ def _generate_rules():
         "vietquoc": {"add_prefix": True, "format_price": True},
         "vietquoc1": {"add_prefix": True, "format_price": True},
         "tc home": {"add_prefix": True, "format_price": True, "remove_phone": True},
-        # dauvao.txt ~50–63: căn hộ / mặt bằng TC (ký hiệu ngắn "tc")
         "tc": {"add_prefix": True, "format_price": True, "remove_phone": True},
         "tài land": {"add_prefix": True, "format_price": True, "remove_phone": True},
         "tài phát": {"add_prefix": True, "format_price": True, "remove_phone": True},
@@ -265,12 +271,54 @@ def _generate_rules():
         "phongtot": {"add_prefix": True, "format_price": True, "remove_phone": True},
         "dl homes": {"add_prefix": True, "format_price": True},
         "phương thảo": {"add_prefix": True, "format_price": True},
-        "npland": {"add_prefix": True, "format_price": True, "remove_phone": True},
-        "9a": {"remove_commission": True, "add_prefix": True, "format_price": True},
+        "npland": {"add_prefix": True, "format_price": True, "remove_phone": True, "photo_first": True},
         "chdv": {"remove_phone": True, "add_prefix": True, "format_price": True},
         "chdv hưng phát": {"add_prefix": True},
-        "chdv chọn lọc": {"add_prefix": True},
+        "chdv chọn lọc": {"add_prefix": True, "format_price": True, "remove_phone": True},
+        "chdv chon loc": {"add_prefix": True, "format_price": True, "remove_phone": True},
         "chdv chinh trần": {"add_prefix": True},
+        "tài land 1": {"add_prefix": True, "format_price": True, "remove_phone": True, "remove_commission": True},
+        "tai land 1": {"add_prefix": True, "format_price": True, "remove_phone": True, "remove_commission": True},
+        "tài land 2": {"add_prefix": True, "format_price": True, "remove_phone": True, "remove_commission": True},
+        "tai land 2": {"add_prefix": True, "format_price": True, "remove_phone": True, "remove_commission": True},
+        "tài land 3": {"add_prefix": True, "format_price": True, "remove_phone": True, "remove_commission": True},
+        "tai land 3": {"add_prefix": True, "format_price": True, "remove_phone": True, "remove_commission": True},
+        "việt quốc 1": {"add_prefix": True, "format_price": True, "remove_commission": True},
+        "vietquoc 1": {"add_prefix": True, "format_price": True, "remove_commission": True},
+        "việt quốc 2": {"add_prefix": True, "format_price": True, "remove_commission": True},
+        "vietquoc 2": {"add_prefix": True, "format_price": True, "remove_commission": True},
+        "việt quốc 3": {"add_prefix": True, "format_price": True, "remove_commission": True},
+        "vietquoc 3": {"add_prefix": True, "format_price": True, "remove_commission": True},
+        "tc 1": {"add_prefix": True, "remove_phone": True},
+        "tc1": {"add_prefix": True, "remove_phone": True},
+        "tc 2": {"add_prefix": True, "remove_phone": True, "photo_first": True},
+        "tc2": {"add_prefix": True, "remove_phone": True, "photo_first": True},
+        "tc 3": {"add_prefix": True, "remove_phone": True, "photo_first": True},
+        "tc3": {"add_prefix": True, "remove_phone": True, "photo_first": True},
+        "tc 4": {"add_prefix": True, "remove_phone": True, "photo_first": True},
+        "tc4": {"add_prefix": True, "remove_phone": True, "photo_first": True},
+        "đăng bài hn": {"add_prefix": True, "remove_commission": True},
+        "dang bai hn": {"add_prefix": True, "remove_commission": True},
+        "vinsmartcity": {"add_prefix": True, "remove_commission": True},
+        "tuananh chdv 1": {"add_prefix": True, "format_price": True, "remove_phone": True, "photo_first": True},
+        "dũng chdv": {"add_prefix": True, "format_price": True, "remove_phone": True},
+        "dung chdv": {"add_prefix": True, "format_price": True, "remove_phone": True},
+        "tuananh chdv 2": {"add_prefix": True, "format_price": True, "remove_phone": True, "photo_first": True},
+        "n34 chdv": {"add_prefix": True, "format_price": True, "remove_phone": True},
+        "chinh trần chdv": {"add_prefix": True, "format_price": True, "remove_phone": True},
+        "chinh tran chdv": {"add_prefix": True, "format_price": True, "remove_phone": True},
+        "đại lộc land 1": {"add_prefix": True},
+        "dai loc land 1": {"add_prefix": True},
+        "đại lộc land 2": {"add_prefix": True},
+        "dai loc land 2": {"add_prefix": True},
+        "invest": {"add_prefix": True, "photo_first": True},
+        "family": {"add_prefix": True, "remove_commission": True, "photo_first": True},
+        "hm": {"add_prefix": True, "photo_first": True},
+        "phongtot1": {"remove_commission": True, "add_prefix": True, "remove_links": True},
+        "phongtot2": {"remove_commission": True, "add_prefix": True, "remove_links": True},
+        "phongtot3": {"remove_commission": True, "add_prefix": True, "remove_links": True},
+        "phongtot4": {"remove_commission": True, "add_prefix": True, "remove_links": True},
+        "phongtot5": {"remove_commission": True, "add_prefix": True, "remove_links": True},
     }
     
     # Merge custom rules
@@ -435,7 +483,20 @@ def process_message(text, symbol, add_prefix_override=True):
     if is_sold_message(text):
         return None
 
-    rules = RULES.get(symbol.lower(), {})
+    symbol_lower = symbol.lower().strip()
+    rules = RULES.get(symbol_lower, {})
+    
+    # Check minimum length (e.g. for 1a1, 1a2, 1a3)
+    min_len = rules.get("min_length", 0)
+    if len(text) < min_len:
+        print(f"[FILTER] Text length {len(text)} < min_length {min_len} for {symbol}. Skip.")
+        return None
+        
+    # Check HM specific rule
+    if symbol_lower == "hm" and "0366968234" in text:
+        print(f"[FILTER] HM message containing 0366968234. Skip.")
+        return None
+
     processed = remove_bonus(text)
     processed = remove_commission(processed, rules.get("keep_contract_duration", False))
     processed = remove_phone(processed) # Always remove phone
@@ -450,10 +511,12 @@ def process_message(text, symbol, add_prefix_override=True):
     
     # Add prefix only if requested AND override is True
     if rules.get("add_prefix") and add_prefix_override: 
-        processed = add_prefix(processed, symbol)
+        prefix_val = rules.get("add_prefix")
+        prefix = prefix_val if isinstance(prefix_val, str) else symbol
+        processed = add_prefix(processed, prefix)
         
         # Special handling for vietquoc1 (KIM VĂN KIM LŨ): Add "Địa điểm: Hoàng Mai" after symbol
-        if symbol.lower() == "vietquoc1":
+        if symbol_lower == "vietquoc1":
             processed = f"{processed}\nĐịa điểm: Hoàng Mai"
     
     # Clean up empty lines
