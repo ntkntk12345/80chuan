@@ -3,10 +3,10 @@
     "running": true,
     "state": "running",
     "lastHeartbeatAt": "2026-06-22T05:42:38Z",
-    "lastWorkAt": "2026-06-22T05:42:48Z",
+    "lastWorkAt": "2026-06-22T05:43:34Z",
     "restartCount": 1,
     "lastError": null,
-    "updatedAt": "2026-06-22T05:42:48Z"
+    "updatedAt": "2026-06-22T05:43:34Z"
   },
   "sender": {
     "running": true,
@@ -17,5 +17,5 @@
     "lastError": null,
     "updatedAt": "2026-06-22T05:42:36Z"
   },
-  "updatedAt": "2026-06-22T05:42:48Z"
+  "updatedAt": "2026-06-22T05:43:34Z"
 }
