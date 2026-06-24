@@ -4,7 +4,7 @@ import { Search, Building2, Users2, DollarSign, User } from 'lucide-react';
 const MobileBottomNav = ({ currentPage, setCurrentPage }) => {
   const navItems = [
     { id: 'home', label: 'Tìm phòng', icon: Search },
-    { id: 'can-ho-dich-vu', label: 'Hộ kinh doanh', icon: Building2 },
+    { id: 'can-ho-dich-vu', label: 'Căn hộ dịch vụ', icon: Building2 },
     { id: 'pass-phong', label: 'Pass phòng', icon: Users2 },
     { id: 'kiem-tien', label: 'Kiếm tiền', icon: DollarSign },
     { id: 'profile', label: 'Cá nhân', icon: User }
@@ -45,7 +45,7 @@ const MobileBottomNav = ({ currentPage, setCurrentPage }) => {
         // Tinh chỉnh nhãn ngắn cho vừa màn hình mobile
         let shortLabel = item.label;
         if (item.id === 'can-ho-dich-vu') {
-          shortLabel = 'Hộ kinh doanh';
+          shortLabel = 'Căn hộ dịch vụ';
         } else if (item.id === 'pass-phong') {
           shortLabel = 'Pass phòng';
         }

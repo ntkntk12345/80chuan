@@ -1,0 +1,45 @@
+Line 671:                 name = data.get("name", "") if isinstance(data, dict) else getattr(data, "name", "")
+Line 672:                 if not name: continue
+Line 673:                 
+Line 674:                 group_id_to_name[gid_str] = name
+Line 675:                 
+Line 676:                 # Match Keywords using shared logic
+Line 677:                 matched = bot_utils.extract_keywords_from_text(name, self.all_keywords, self.keyword_levels)
+Line 678:                 if matched:
+Line 679:                     count_mapped += 1
+Line 680:                     for kw in matched:
+Line 681:                         kw_low = kw.lower()
+Line 682:                         if kw_low not in output_groups_map: output_groups_map[kw_low] = []
+Line 683:                         if gid_str not in output_groups_map[kw_low]: output_groups_map[kw_low].append(gid_str)
+Line 684:                 
+Line 685:                 # Special Category Groups Detection
+Line 686:                 name_lower = name.lower()
+Line 687:                 
+Line 688:                 # Nhóm chung cư
+Line 689:                 if "nhóm chung cư" in name_lower or name_lower == "nhóm chung cư":
+Line 690:                     output_groups_map.setdefault("chung_cu_ids", []).append(gid_str)
+Line 691:                 elif "nhóm nhà nguyên căn và chung cư" in name_lower:
+Line 692:                     output_groups_map.setdefault("nguyen_can_ids", []).append(gid_str)
+Line 693:                 
+Line 694:                 # Fallback for chung cư
+Line 695:                 if "chung cư" in name_lower or "căn hộ" in name_lower:
+Line 696:                     output_groups_map.setdefault("chung_cu_fallback_ids", []).append(gid_str)
+Line 697:                 
+Line 698:                 # Nhóm nhà nguyên căn
+Line 699:                 if "nhóm nhà nguyên căn" in name_lower or name_lower == "nhóm nhà nguyên căn":
+Line 700:                     output_groups_map.setdefault("nguyen_can_ids", []).append(gid_str)
+Line 701:                     
+Line 702:                 # Nhóm Văn phòng , mặt bằng kinh doanh
+Line 703:                 if "nhóm văn phòng , mặt bằng kinh doanh" in name_lower or ("nhóm văn phòng" in name_lower and "mặt bằng kinh doanh" in name_lower):
+Line 704:                     output_groups_map.setdefault("mbkd_ids", []).append(gid_str)
+Line 705:                 
+Line 706:                 # NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ / CHDV
+Line 707:                 if "nguồn căn hộ dịch vụ cho nhà đầu tư" in name_lower or name_lower == "nguồn căn hộ dịch vụ cho nhà đầu tư":
+Line 708:                     output_groups_map.setdefault("chdv_ids", []).append(gid_str)
+Line 709:                 elif "nhóm chdv" in name_lower or ("chdv" in name_lower and ("homestay" in name_lower or "nhà nghỉ" in name_lower or "khách sạn" in name_lower)):
+Line 710:                     output_groups_map.setdefault("chdv_ids", []).append(gid_str)
+Line 711:             
+Line 712:             return output_groups_map, group_id_to_name, count_mapped
+Line 713:         except Exception as e:
+Line 714:             print(f"[MAP] Error mapping groups: {e}")
+Line 715:             return {}, {}, 0

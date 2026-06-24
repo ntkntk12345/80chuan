@@ -1,0 +1,858 @@
+Found 19 user messages.
+--- Msg #0 (Step 0): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+1	1a
+2	Tài land 1
+3	Tài land 2
+4	Tài land 2
+5	việt quốc 1
+6	việt quốc 2
+7	việt quốc 3
+8	Tc 1
+9	tc 2
+10	tc 3
+11	tc 4
+12	đăng bài hn
+13	kingland
+14	Vinsmartcity
+	
+	
+	
+	
+	Tuananh CHDV 1
+	CHDV chọn lọc 
+	Dũng CHDV 
+	Tuananh CHDV 2
+	N34 CHDV 
+	Đại lộc land 1
+	Chinh trần  CHDV 
+	Đại lộc land 2
+	
+	
+	
+mấy nhóm ký hiệu này mới gửi vào nhóm hung cư ,.. mà?
+sao 1a1 1a2 vẫn vào là sao?
+trong @[bot/yeucau.txt] tao có để nhóm nào vào chung cư hay mbkd rồi mà?
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-23T11:31:54+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\web-audio\vite.config.js (LANGUAGE_JAVASCRIPT)
+Cursor is on line: 1
+Other open documents:
+- c:\Users\Admin\Downloads\web-audio\src\main.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\web-audio\src\pages\Admin.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\web-audio\index.html (LANGUAGE_HTML)
+- c:\Users\Admin\Downloads\web-audio\src\utils\mockData.js (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\web-audio\src\components\EpisodeCard.jsx (LANGUAGE_JAVASCRIPT)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[bot/yeucau.txt] is a [File]:
+c:\Users\Admin\Downloads\80chuan\bot\yeucau.txt
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.5 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+============================================================
+--- Msg #1 (Step 74): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+@[web-ha/images/image5.png] là giao diện trang mặt bằng kinh doanh có dchi giá mét vuông 
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-23T23:04:20+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+Cursor is on line: 1089
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[web-ha/images/image5.png] is a [File]:
+c:\Users\Admin\Downloads\80chuan\web-ha\images\image5.png
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #2 (Step 75): USER_EXPLICIT / VIEW_FILE ---
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\80chuan\bot\sender.py from lines 1075 to 1111
+File Path: `file:///c:/Users/Admin/Downloads/80chuan/bot/sender.py`
+Total Lines: 2094
+Total Bytes: 97366
+Showing lines 1075 to 1111
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1075:                                 target_groups.update(sender["output_groups_map"].get(str(nam_tu_liem_keyword).lower(), []))
+1076:                         if district == "Má»¹ ÄÃ¬nh":
+1077:                             target_groups.update(sender["output_groups_map"].get("nam tá»« liÃªm", []))
+1078:                     return
+1079: 
+1080:                 for matched_keyword in matched_keywords:
+1081:                     if self.keyword_levels.get(matched_keyword) in ["street", "ward"]:
+1082:                         parent_set = self.keyword_parents.get(matched_keyword)
+1083:                         if parent_set:
+1084:                             for parent in parent_set:
+1085:                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+1086: 
+1087:             # Direct routing symbols
+1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+1092:             
+1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+1095: 
+1096:             if explicit_routing_keywords:
+1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+1099:                 add_target_groups_from_keywords(keywords)
+1100: 
+1101:             elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+1102:                 if symbol_lower in chung_cu_symbols:
+1103:                     print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+1104:                     target_ids = sender["output_groups_map"].get("chung_cu_ids", [])
+1105:                     if not target_ids:
+1106:                         target_ids = sender["output_groups_map"].get("chung_cu_fallback_ids", [])
+1107:                         print(f"[ROUTING] Fallback to chung_cu_fallback_ids: {target_ids}")
+1108:                     target_groups.update(target_ids)
+1109:                 elif symbol_lower in nguyen_can_symbols:
+1110:                     print(f"[ROUTING] {symbol} routes directly to Nhóm nhà nguyên căn")
+1111:                     target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+
+
+============================================================
+--- Msg #3 (Step 191): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+@[web-ha/images/image5.png] là giao diện trang mặt bằng kinh doanh có dchi giá mét vuông 
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-23T23:04:20+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+Cursor is on line: 1089
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[web-ha/images/image5.png] is a [File]:
+c:\Users\Admin\Downloads\80chuan\web-ha\images\image5.png
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #4 (Step 192): USER_EXPLICIT / VIEW_FILE ---
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\80chuan\bot\sender.py from lines 1075 to 1111
+File Path: `file:///c:/Users/Admin/Downloads/80chuan/bot/sender.py`
+Total Lines: 2094
+Total Bytes: 97366
+Showing lines 1075 to 1111
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1075:                                 target_groups.update(sender["output_groups_map"].get(str(nam_tu_liem_keyword).lower(), []))
+1076:                         if district == "Má»¹ ÄÃ¬nh":
+1077:                             target_groups.update(sender["output_groups_map"].get("nam tá»« liÃªm", []))
+1078:                     return
+1079: 
+1080:                 for matched_keyword in matched_keywords:
+1081:                     if self.keyword_levels.get(matched_keyword) in ["street", "ward"]:
+1082:                         parent_set = self.keyword_parents.get(matched_keyword)
+1083:                         if parent_set:
+1084:                             for parent in parent_set:
+1085:                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+1086: 
+1087:             # Direct routing symbols
+1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+1092:             
+1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+1095: 
+1096:             if explicit_routing_keywords:
+1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+1099:                 add_target_groups_from_keywords(keywords)
+1100: 
+1101:             elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+1102:                 if symbol_lower in chung_cu_symbols:
+1103:                     print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+1104:                     target_ids = sender["output_groups_map"].get("chung_cu_ids", [])
+1105:                     if not target_ids:
+1106:                         target_ids = sender["output_groups_map"].get("chung_cu_fallback_ids", [])
+1107:                         print(f"[ROUTING] Fallback to chung_cu_fallback_ids: {target_ids}")
+1108:                     target_groups.update(target_ids)
+1109:                 elif symbol_lower in nguyen_can_symbols:
+1110:                     print(f"[ROUTING] {symbol} routes directly to Nhóm nhà nguyên căn")
+1111:                     target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+
+
+============================================================
+--- Msg #5 (Step 311): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+sửa hộ kinh doanh thành căn hộ dịch vụ
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-23T23:09:11+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+Cursor is on line: 1089
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #6 (Step 339): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+dạng phòng ở phần mặt bằng ijinh doanh thì là số m2 mà?
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-24T00:36:16+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\web-ha\src\views\ListingView.jsx (LANGUAGE_JAVASCRIPT)
+Cursor is on line: 1
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\web-ha\src\views\ListingView.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #7 (Step 357): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+sẽ như sau dựa vào @[bot/v2.py] hiện tại nó dag get alll các phần có trong districts nhưng giwof hãy code @[bot/v3.py] nó sẽ phân biệt như sau
+         chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+            nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+            mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+            chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+            
+            tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+            vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+hiện tại web t có các mục 
+phòng trọ (cái này sẽ lấy cac nhóm bình thường)
+chung cư (này sẽ lấy các phòng ở các nhóm chung_cu_symbols)
+nhà nguyên văn (nguyen_can)
+căn hộ dịch vụ (chdv)
+mặt bằng kinh doanh (mbkd)
+nghĩa là ở các tad đó chỉ lấy các tin nhắn từ nguồn đó thôi hiểu chưa
+và v3 sẽ lọc các tn nhóm          chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+            nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+            mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+            chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+            
+            tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+            vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+vì json nó sẽ khác
+vẫn có giá ,...
+nhưng sẽ lấ thêm cả diện tích
+Copy thông tin phòng
+2A 🌷-12m Mã: 🏆
+
+🏢Địa chỉ : Toà số 18 ngõ 26 Nguyên Hồng, Đống Đa- Quận:
+
+⌛️Trống :
+
+☘Giá : - MBKD1: 6tr5 (Mặt tiền)
+- MBKD2: 6tr (Mặt ngõ)
+☘Dạng phòng : Mbkd
+☘Thang :
+
+🏆Nội thất : - Diện tích mặt bằng 40-42m2
+- Mặt bằng lô góc 2 mặt tiền 2 cửa cuốn, lối đi chung cùng toà nhà
+- Ưu tiên caphe, Không hàng ăn
+
+🏆Dịch vụ : • Điện: 3.8k/số
+• Dịch vụ chung: 350k/người
+(Bao gồm: Nước + Mạng + Thang máy + Giặt chung + Rác + Điện chung…)
+• Gửi xe: FREE 1 xe trong nhà, Không Tây, Không PET.
+
+⭐Lưu ý:
+- Đóng 1 cọc 1
+- Nguồn hàng cập nhật liên tục tại
+🏆TL21House🏆 MBKD1 Nguyên Hồng (Mặt trước) MBKD2 Nguyên Hồng (Mặt ngõ) ví dụ đây nói chung promt làm sao ai phản hôi và nhận biết được diện tích
+chứ không phải hiện tại là data lấy từ phòng trọ hết fix lại làm sao chia rõ ra
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-24T03:39:07+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+Cursor is on line: 1088
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\v3.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\web-ha\src\views\ListingView.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[bot/v2.py] is a [File]:
+c:\Users\Admin\Downloads\80chuan\bot\v2.py
+@[bot/v3.py] is a [File]:
+c:\Users\Admin\Downloads\80chuan\bot\v3.py
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #8 (Step 358): USER_EXPLICIT / CODE_ACTION ---
+The following changes were made by the USER to: c:\Users\Admin\Downloads\80chuan\bot\v3.py. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -1,1855 +1,1 @@
+-"""
+-Bot2 - Forward tin nhắn từ các nhóm đầu vào → nhiều nhóm đầu ra (theo keyword)
+-- ACC1 (IMEI1): CHỈ DÙNG ĐỂ LISTEN (nghe tin nhắn)
+-- ACC2 (IMEI2): DÙNG CHO TẤT CẢ thao tác khác (gửi, fetch, upload...)
+-- Đọc nhóm đầu vào từ dauvao.txt (format: tên_nhóm|ký_hiệu)
+-- Đọc keywords từ daura.json để match với nhóm đầu ra
+-- Xử lý tin nhắn theo quy tắc (xóa hoa hồng, thêm ký hiệu, chỉnh giá...)
+-- Gửi đến NHIỀU nhóm dựa trên keyword matching
+-"""
+-
+-import os
+-import sys
+-import re
+-import time
+-import json
+-import queue
+-import threading
+-import requests
+-import random
+-from datetime import datetime
+-from concurrent.futures import ThreadPoolExecutor, as_completed
+-
+-# Fix encoding cho Windows console
+-sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+-sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+-
+-from config import API_KEY, SECRET_KEY, IMEI1, SESSION_COOKIES1
+-from zlapi import ZaloAPI
+-from zlapi.models import Message, ThreadType
+-from colorama import Fore, Style, init
+-
+-init(autoreset=True)
+-
+-# ==================== CONFIG FILES ====================
+-DAUVAO_FILE = "dauvao.txt"
+-DAURA_FILE = "daura.json"  # Keyword mapping for output groups (hierarchical structure)
+-
+-# ==================== LOAD CONFIG ====================
+-def load_dauvao():
+-    """Load mapping từ dauvao.txt: {group_id: ký hiệu}"""
+-    mapping = {}  # {group_id: symbol}
+-    group_names = {}  # {group_id: group_name} - để tìm ID sau
+-    
+-    if not os.path.exists(DAUVAO_FILE):
+-        print(f"[CONFIG] Không tìm thấy {DAUVAO_FILE}")
+-        return mapping, group_names
+-    
+-    with open(DAUVAO_FILE, "r", encoding="utf-8-sig") as f:
+-        for line in f:
+-            line =
+<truncated 45215 bytes>
+ else t for t in texts])
+-            
+-            # Find district keywords
+-            districts = []
+-            text_lower = full_text.lower()
+-            
+-            for district_name, info in self.district_data.items():
+-                if info.get("type") in ["district", "area"]:
+-                    if district_name.lower() in text_lower:
+-                        districts.append(district_name)
+-            
+-            if not districts:
+-                return  # No district found, skip saving
+-            
+-            # Save to each district's file
+-            for district in districts:
+-                filename = f"{self._normalize_district_name(district)}.json"
+-                self._append_to_area_file(filename, {
+-                    "text": full_text,
+-                    "photos": item.get("photos", []),
+-                    "videos": item.get("videos", []),
+-                    "stickers": item.get("stickers", []),
+-                    "symbol": item.get("symbol", ""),
+-                    "timestamp": time.time(),
+-                    "source_info": item.get("source_info", ""),
+-                    "keywords": item.get("keywords", [])
+-                })
+-                print(f"[AREA-SAVE] ✓ Saved to {filename}")
+-                
+-        except Exception as e:
+-            print(f"[AREA-SAVE] Error saving to area files: {e}")
+-    
+-    def _handle_send_error(self, sender, error):
+-        """Mark sender as limited if 221 error detected."""
+-        if "221" in str(error):
+-            sender["is_limited"] = True
+-            print(f"[LIMIT] 🚫 {sender['name']} hit upload limit (221). Marking as unavailable.")
+-            
+-            # Check if all senders are limited
+-            if all(s["is_limited"] for s in self.senders):
+-                print(f"[LIMIT] ⚠️ ALL SENDERS LIMITED. Pausing sends but listening continu
+<truncated 36000 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
+============================================================
+--- Msg #9 (Step 359): USER_EXPLICIT / VIEW_FILE ---
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\80chuan\bot\sender.py from lines 1075 to 1104
+File Path: `file:///c:/Users/Admin/Downloads/80chuan/bot/sender.py`
+Total Lines: 2094
+Total Bytes: 97366
+Showing lines 1075 to 1104
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1075:                                 target_groups.update(sender["output_groups_map"].get(str(nam_tu_liem_keyword).lower(), []))
+1076:                         if district == "Má»¹ ÄÃ¬nh":
+1077:                             target_groups.update(sender["output_groups_map"].get("nam tá»« liÃªm", []))
+1078:                     return
+1079: 
+1080:                 for matched_keyword in matched_keywords:
+1081:                     if self.keyword_levels.get(matched_keyword) in ["street", "ward"]:
+1082:                         parent_set = self.keyword_parents.get(matched_keyword)
+1083:                         if parent_set:
+1084:                             for parent in parent_set:
+1085:                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+1086: 
+1087:             # Direct routing symbols
+1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+1092:             
+1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+1095: 
+1096:             if explicit_routing_keywords:
+1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+1099:                 add_target_groups_from_keywords(keywords)
+1100: 
+1101:             elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+1102:                 if symbol_lower in chung_cu_symbols:
+1103:                     print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+1104:                     target_ids = sender["output_groups_map"].get("chung_cu_ids", [])
+
+
+============================================================
+--- Msg #10 (Step 449): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+sẽ như sau dựa vào @[bot/v2.py] hiện tại nó dag get alll các phần có trong districts nhưng giwof hãy code @[bot/v3.py] nó sẽ phân biệt như sau
+         chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+            nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+            mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+            chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+            
+            tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+            vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+hiện tại web t có các mục 
+phòng trọ (cái này sẽ lấy cac nhóm bình thường)
+chung cư (này sẽ lấy các phòng ở các nhóm chung_cu_symbols)
+nhà nguyên văn (nguyen_can)
+căn hộ dịch vụ (chdv)
+mặt bằng kinh doanh (mbkd)
+nghĩa là ở các tad đó chỉ lấy các tin nhắn từ nguồn đó thôi hiểu chưa
+và v3 sẽ lọc các tn nhóm          chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+            nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+            mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+            chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+            
+            tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+            vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+vì json nó sẽ khác
+vẫn có giá ,...
+nhưng sẽ lấ thêm cả diện tích
+Copy thông tin phòng
+2A 🌷-12m Mã: 🏆
+
+🏢Địa chỉ : Toà số 18 ngõ 26 Nguyên Hồng, Đống Đa- Quận:
+
+⌛️Trống :
+
+☘Giá : - MBKD1: 6tr5 (Mặt tiền)
+- MBKD2: 6tr (Mặt ngõ)
+☘Dạng phòng : Mbkd
+☘Thang :
+
+🏆Nội thất : - Diện tích mặt bằng 40-42m2
+- Mặt bằng lô góc 2 mặt tiền 2 cửa cuốn, lối đi chung cùng toà nhà
+- Ưu tiên caphe, Không hàng ăn
+
+🏆Dịch vụ : • Điện: 3.8k/số
+• Dịch vụ chung: 350k/người
+(Bao gồm: Nước + Mạng + Thang máy + Giặt chung + Rác + Điện chung…)
+• Gửi xe: FREE 1 xe trong nhà, Không Tây, Không PET.
+
+⭐Lưu ý:
+- Đóng 1 cọc 1
+- Nguồn hàng cập nhật liên tục tại
+🏆TL21House🏆 MBKD1 Nguyên Hồng (Mặt trước) MBKD2 Nguyên Hồng (Mặt ngõ) ví dụ đây nói chung promt làm sao ai phản hôi và nhận biết được diện tích
+chứ không phải hiện tại là data lấy từ phòng trọ hết fix lại làm sao chia rõ ra
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-24T03:39:07+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+Cursor is on line: 1088
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\v3.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\web-ha\src\views\ListingView.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[bot/v2.py] is a [File]:
+c:\Users\Admin\Downloads\80chuan\bot\v2.py
+@[bot/v3.py] is a [File]:
+c:\Users\Admin\Downloads\80chuan\bot\v3.py
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #11 (Step 450): USER_EXPLICIT / CODE_ACTION ---
+The following changes were made by the USER to: c:\Users\Admin\Downloads\80chuan\bot\v3.py. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -1,1855 +1,1 @@
+-"""
+-Bot2 - Forward tin nhắn từ các nhóm đầu vào → nhiều nhóm đầu ra (theo keyword)
+-- ACC1 (IMEI1): CHỈ DÙNG ĐỂ LISTEN (nghe tin nhắn)
+-- ACC2 (IMEI2): DÙNG CHO TẤT CẢ thao tác khác (gửi, fetch, upload...)
+-- Đọc nhóm đầu vào từ dauvao.txt (format: tên_nhóm|ký_hiệu)
+-- Đọc keywords từ daura.json để match với nhóm đầu ra
+-- Xử lý tin nhắn theo quy tắc (xóa hoa hồng, thêm ký hiệu, chỉnh giá...)
+-- Gửi đến NHIỀU nhóm dựa trên keyword matching
+-"""
+-
+-import os
+-import sys
+-import re
+-import time
+-import json
+-import queue
+-import threading
+-import requests
+-import random
+-from datetime import datetime
+-from concurrent.futures import ThreadPoolExecutor, as_completed
+-
+-# Fix encoding cho Windows console
+-sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+-sys.stderr.reconfigure(encoding='utf-8', errors='replace')
+-
+-from config import API_KEY, SECRET_KEY, IMEI1, SESSION_COOKIES1
+-from zlapi import ZaloAPI
+-from zlapi.models import Message, ThreadType
+-from colorama import Fore, Style, init
+-
+-init(autoreset=True)
+-
+-# ==================== CONFIG FILES ====================
+-DAUVAO_FILE = "dauvao.txt"
+-DAURA_FILE = "daura.json"  # Keyword mapping for output groups (hierarchical structure)
+-
+-# ==================== LOAD CONFIG ====================
+-def load_dauvao():
+-    """Load mapping từ dauvao.txt: {group_id: ký hiệu}"""
+-    mapping = {}  # {group_id: symbol}
+-    group_names = {}  # {group_id: group_name} - để tìm ID sau
+-    
+-    if not os.path.exists(DAUVAO_FILE):
+-        print(f"[CONFIG] Không tìm thấy {DAUVAO_FILE}")
+-        return mapping, group_names
+-    
+-    with open(DAUVAO_FILE, "r", encoding="utf-8-sig") as f:
+-        for line in f:
+-            line =
+<truncated 45215 bytes>
+ else t for t in texts])
+-            
+-            # Find district keywords
+-            districts = []
+-            text_lower = full_text.lower()
+-            
+-            for district_name, info in self.district_data.items():
+-                if info.get("type") in ["district", "area"]:
+-                    if district_name.lower() in text_lower:
+-                        districts.append(district_name)
+-            
+-            if not districts:
+-                return  # No district found, skip saving
+-            
+-            # Save to each district's file
+-            for district in districts:
+-                filename = f"{self._normalize_district_name(district)}.json"
+-                self._append_to_area_file(filename, {
+-                    "text": full_text,
+-                    "photos": item.get("photos", []),
+-                    "videos": item.get("videos", []),
+-                    "stickers": item.get("stickers", []),
+-                    "symbol": item.get("symbol", ""),
+-                    "timestamp": time.time(),
+-                    "source_info": item.get("source_info", ""),
+-                    "keywords": item.get("keywords", [])
+-                })
+-                print(f"[AREA-SAVE] ✓ Saved to {filename}")
+-                
+-        except Exception as e:
+-            print(f"[AREA-SAVE] Error saving to area files: {e}")
+-    
+-    def _handle_send_error(self, sender, error):
+-        """Mark sender as limited if 221 error detected."""
+-        if "221" in str(error):
+-            sender["is_limited"] = True
+-            print(f"[LIMIT] 🚫 {sender['name']} hit upload limit (221). Marking as unavailable.")
+-            
+-            # Check if all senders are limited
+-            if all(s["is_limited"] for s in self.senders):
+-                print(f"[LIMIT] ⚠️ ALL SENDERS LIMITED. Pausing sends but listening continu
+<truncated 36000 bytes>
+
+NOTE: The output was truncated because it was too long. Use a more targeted query or a smaller range to get the information you need.
+============================================================
+--- Msg #12 (Step 451): USER_EXPLICIT / VIEW_FILE ---
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\80chuan\bot\sender.py from lines 1075 to 1104
+File Path: `file:///c:/Users/Admin/Downloads/80chuan/bot/sender.py`
+Total Lines: 2094
+Total Bytes: 97366
+Showing lines 1075 to 1104
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1075:                                 target_groups.update(sender["output_groups_map"].get(str(nam_tu_liem_keyword).lower(), []))
+1076:                         if district == "Má»¹ ÄÃ¬nh":
+1077:                             target_groups.update(sender["output_groups_map"].get("nam tá»« liÃªm", []))
+1078:                     return
+1079: 
+1080:                 for matched_keyword in matched_keywords:
+1081:                     if self.keyword_levels.get(matched_keyword) in ["street", "ward"]:
+1082:                         parent_set = self.keyword_parents.get(matched_keyword)
+1083:                         if parent_set:
+1084:                             for parent in parent_set:
+1085:                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+1086: 
+1087:             # Direct routing symbols
+1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+1092:             
+1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+1095: 
+1096:             if explicit_routing_keywords:
+1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+1099:                 add_target_groups_from_keywords(keywords)
+1100: 
+1101:             elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+1102:                 if symbol_lower in chung_cu_symbols:
+1103:                     print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+1104:                     target_ids = sender["output_groups_map"].get("chung_cu_ids", [])
+
+
+============================================================
+--- Msg #13 (Step 602): USER_EXPLICIT / VIEW_FILE ---
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\80chuan\bot\v3.py from lines 4 to 39
+File Path: `file:///c:/Users/Admin/Downloads/80chuan/bot/v3.py`
+Total Lines: 1176
+Total Bytes: 43291
+Showing lines 4 to 39
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4: import random
+5: import time
+6: from typing import Any
+7: 
+8: import re
+9: import requests
+10: import sys
+11: import unicodedata
+12: sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+13: from map1 import save_room_to_sqlite, init_db
+14: 
+15: 
+16: API_BASE_URL = os.getenv("API_BASE_URL", "https://api.vietapi.tech/v1")
+17: API_MODEL = os.getenv("API_MODEL", "sonnet")
+18: API_TIMEOUT_CONNECT = float(os.getenv("API_TIMEOUT_CONNECT", "15"))
+19: API_TIMEOUT_READ = float(os.getenv("API_TIMEOUT_READ", "240"))
+20: API_RETRY_DELAY = float(os.getenv("API_RETRY_DELAY", "2"))
+21: API_DEBUG_ERRORS = os.getenv("API_DEBUG_ERRORS", "true").lower() in {"1", "true", "yes"}
+22: API_LOCAL_ONLY = os.getenv("API_LOCAL_ONLY", "false").lower() in {"1", "true", "yes"}
+23: 
+24: # Nhap key truc tiep trong code neu muon (uu tien cao hon env)
+25: HARDCODED_API_KEYS: list[str] = []
+26: HARDCODED_API_KEY = "sk-lWIIAQLc58sZOoRUZIFjcG7kpgN9eYVMK9DUwQyL9qbTYhyR"
+27: 
+28: 
+29: def load_api_tokens() -> list[str]:
+30:     if HARDCODED_API_KEYS:
+31:         return [token.strip() for token in HARDCODED_API_KEYS if str(token).strip()]
+32: 
+33:     if HARDCODED_API_KEY.strip():
+34:         return [HARDCODED_API_KEY.strip()]
+35: 
+36:     for env_name in ("API_KEYS", "CLOUDFLARE_API_KEYS"):
+37:         raw_multi = os.getenv(env_name, "").strip()
+38:         if raw_multi:
+39:             return [token.strip() for token in raw_multi.split(",") if token.strip()]
+
+
+============================================================
+--- Msg #14 (Step 645): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+fix website chưa?
+chia rõ ràng laasyu từng mục vào
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-24T03:46:09+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\v3.py (LANGUAGE_PYTHON)
+Cursor is on line: 28
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\web-ha\src\views\ListingView.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\districts_summary\test_district.json (LANGUAGE_JSON)
+- c:\Users\Admin\Downloads\80chuan\bot\v3.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\map1.py (LANGUAGE_PYTHON)
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #15 (Step 646): USER_EXPLICIT / VIEW_FILE ---
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\80chuan\bot\v3.py from lines 4 to 39
+File Path: `file:///c:/Users/Admin/Downloads/80chuan/bot/v3.py`
+Total Lines: 1176
+Total Bytes: 43291
+Showing lines 4 to 39
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+4: import random
+5: import time
+6: from typing import Any
+7: 
+8: import re
+9: import requests
+10: import sys
+11: import unicodedata
+12: sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+13: from map1 import save_room_to_sqlite, init_db
+14: 
+15: 
+16: API_BASE_URL = os.getenv("API_BASE_URL", "https://api.vietapi.tech/v1")
+17: API_MODEL = os.getenv("API_MODEL", "sonnet")
+18: API_TIMEOUT_CONNECT = float(os.getenv("API_TIMEOUT_CONNECT", "15"))
+19: API_TIMEOUT_READ = float(os.getenv("API_TIMEOUT_READ", "240"))
+20: API_RETRY_DELAY = float(os.getenv("API_RETRY_DELAY", "2"))
+21: API_DEBUG_ERRORS = os.getenv("API_DEBUG_ERRORS", "true").lower() in {"1", "true", "yes"}
+22: API_LOCAL_ONLY = os.getenv("API_LOCAL_ONLY", "false").lower() in {"1", "true", "yes"}
+23: 
+24: # Nhap key truc tiep trong code neu muon (uu tien cao hon env)
+25: HARDCODED_API_KEYS: list[str] = []
+26: HARDCODED_API_KEY = "sk-lWIIAQLc58sZOoRUZIFjcG7kpgN9eYVMK9DUwQyL9qbTYhyR"
+27: 
+28: 
+29: def load_api_tokens() -> list[str]:
+30:     if HARDCODED_API_KEYS:
+31:         return [token.strip() for token in HARDCODED_API_KEYS if str(token).strip()]
+32: 
+33:     if HARDCODED_API_KEY.strip():
+34:         return [HARDCODED_API_KEY.strip()]
+35: 
+36:     for env_name in ("API_KEYS", "CLOUDFLARE_API_KEYS"):
+37:         raw_multi = os.getenv(env_name, "").strip()
+38:         if raw_multi:
+39:             return [token.strip() for token in raw_multi.split(",") if token.strip()]
+
+
+============================================================
+--- Msg #16 (Step 712): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+fix @[web-ha] mà ơ
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-24T03:48:06+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\v3.py (LANGUAGE_PYTHON)
+Cursor is on line: 28
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\bot\v3.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\web-ha\src\App.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\80chuan\bot\map1.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\sender.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\web-ha\src\views\ListingView.jsx (LANGUAGE_JAVASCRIPT)
+
+The user has mentioned some items in the form @[ITEM]. Here is extra information about the items that were mentioned by the user, in the order that they appear:
+
+@[web-ha] is a [Directory]:
+c:\Users\Admin\Downloads\80chuan\web-ha
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #17 (Step 737): USER_EXPLICIT / USER_INPUT ---
+<USER_REQUEST>
+rồi sao chung cư với nhà nguyên căn nó trùng nhau vậy? đều tài land1?
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-24T03:53:13+07:00.
+
+The user's current state is as follows:
+Active Document: c:\Users\Admin\Downloads\80chuan\bot\scratch\test_v3_routing.py (LANGUAGE_PYTHON)
+Cursor is on line: 1
+Other open documents:
+- c:\Users\Admin\Downloads\80chuan\web-ha\src\views\ListingView.jsx (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\80chuan\bot\bot_utils.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\web-ha\server.js (LANGUAGE_JAVASCRIPT)
+- c:\Users\Admin\Downloads\80chuan\bot\scratch\test_v3_routing.py (LANGUAGE_PYTHON)
+- c:\Users\Admin\Downloads\80chuan\bot\v3.py (LANGUAGE_PYTHON)
+</ADDITIONAL_METADATA>
+============================================================
+--- Msg #18 (Step 738): USER_EXPLICIT / VIEW_FILE ---
+The USER performed the following action:
+Show the contents of file c:\Users\Admin\Downloads\80chuan\bot\scratch\test_v3_routing.py from lines 12 to 47
+File Path: `file:///c:/Users/Admin/Downloads/80chuan/bot/scratch/test_v3_routing.py`
+Total Lines: 57
+Total Bytes: 2435
+Showing lines 12 to 47
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+12:     test_cases = [
+13:         # format: (text2, expected_category)
+14:         ("việt quốc 2 🏢Địa chỉ: Kim Giang...", "chung-cu"),
+15:         ("vietquoc 3 🏠 Chung cư mini...", "chung-cu"),
+16:         ("tc 1 🏠 Nhà riêng...", "nha-nguyen-can"),
+17:         ("đăng bài hn 🏠 Nhà ngõ rộng...", "nha-nguyen-can"),
+18:         ("1a ☘Giá : - MBKD1: 6tr5 (Mặt tiền)", "mat-bang-kinh-doanh"),
+19:         ("tc 4 🏢 Cho thuê cửa hàng mặt phố...", "mat-bang-kinh-doanh"),
+20:         ("tuananh chdv 1 🏠 Cho thuê căn hộ dịch vụ...", "can-ho-dich-vu"),
+21:         ("dũng chdv 🚪 Phòng full đồ...", "can-ho-dich-vu"),
+22:         
+23:         # tai_land routing test (depends on price >= 25M)
+24:         ("tài land 1 🏢 Cho thuê nhà mặt phố giá 30 triệu/tháng", "mat-bang-kinh-doanh"),
+25:         ("tài land 2 🏠 Cho thuê nhà ngõ giá 15tr", "nha-nguyen-can"),
+26:         
+27:         # vietquoc_1 routing test (depends on mbkd keywords)
+28:         ("việt quốc 1 🏢 Cho thuê mặt bằng kinh doanh nguyên căn...", "mat-bang-kinh-doanh"),
+29:         ("việt quốc 1 🏠 Cho thuê nhà riêng ngõ rộng...", "nha-nguyen-can"),
+30:         
+31:         # Normal room fallback
+32:         ("Địa chỉ: 123 Cầu Giấy...", "phong-tro")
+33:     ]
+34: 
+35:     passed = 0
+36:     for idx, (text, expected) in enumerate(test_cases):
+37:         actual = get_category_from_text2(text)
+38:         if actual == expected:
+39:             print(f"[PASS] Case {idx + 1}: '{text[:30]}...' -> {actual}")
+40:             passed += 1
+41:         else:
+42:             print(f"[FAIL] Case {idx + 1}: '{text[:30]}...' -> Expected: {expected}, Actual: {actual}")
+43: 
+44:     # Also test price bounds helper
+45:     text_25m = "tài land 1 🏢 Cho thuê nhà mặt phố giá 30 triệu/tháng"
+46:     price1, price2 = _extract_price_bounds(text_25m)
+47:     if price2 == 30000000:
+
+
+============================================================

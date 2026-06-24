@@ -1,0 +1,102 @@
+--- Around Line 10 ---
+Line 5: import MobileBottomNav from './components/MobileBottomNav';
+Line 6: import { getNearestLandmarks, formatTimeText, isUsefulLandmarkName, NO_IMAGE_PLACEHOLDER } from './utils/helpers';
+Line 7: 
+Line 8: // Import Views
+Line 9: import HomeView from './views/HomeView';
+Line 10: import ListingView from './views/ListingView';
+Line 11: import DetailView from './views/DetailView';
+Line 12: import EarnHubView from './views/EarnHubView';
+Line 13: import TikTokCampaignView from './views/TikTokCampaignView';
+Line 14: import ClientReferralView from './views/ClientReferralView';
+Line 15: import FriendInviteView from './views/FriendInviteView';
+Line 16: import WalletView from './views/WalletView';
+Line 17: import ProfileView from './views/ProfileView';
+Line 18: import AdminDashboardView from './views/AdminDashboardView';
+Line 19: import PolicyView from './views/PolicyView';
+============================================================
+--- Around Line 1037 ---
+Line 1032:   const renderView = () => {
+Line 1033:     switch (currentPage) {
+Line 1034:       case 'home':
+Line 1035:         return (
+Line 1036:           <HomeView
+Line 1037:             rooms={rooms}
+Line 1038:             loadingRooms={loadingRooms}
+Line 1039:             setCurrentPage={setCurrentPage}
+Line 1040:             user={user}
+Line 1041:             savedRoomIds={savedRoomIds}
+Line 1042:             toggleSaveRoom={handleToggleSave}
+Line 1043:             setSelectedRoomId={setSelectedRoomId}
+Line 1044:             navigateToRoom={navigateToRoom}
+Line 1045:             onOpenLogin={handleOpenLogin}
+Line 1046:             isMobile={isMobile}
+============================================================
+--- Around Line 1085 ---
+Line 1080:         const listingRooms =
+Line 1081:           currentPage === 'saved-rooms' ? rooms.filter(r => savedRoomIds.includes(r.id)) :
+Line 1082:             currentPage === 'viewed-rooms' ? rooms.slice(0, 3) :
+Line 1083:               rooms;
+Line 1084:         return (
+Line 1085:           <ListingView
+Line 1086:             category={currentPage}
+Line 1087:             rooms={listingRooms}
+Line 1088:             loadingRooms={loadingRooms}
+Line 1089:             savedRoomIds={savedRoomIds}
+Line 1090:             toggleSaveRoom={handleToggleSave}
+Line 1091:             setSelectedRoomId={setSelectedRoomId}
+Line 1092:             setCurrentPage={setCurrentPage}
+Line 1093:             navigateToRoom={navigateToRoom}
+Line 1094:             isMobile={isMobile}
+============================================================
+--- Around Line 1086 ---
+Line 1081:           currentPage === 'saved-rooms' ? rooms.filter(r => savedRoomIds.includes(r.id)) :
+Line 1082:             currentPage === 'viewed-rooms' ? rooms.slice(0, 3) :
+Line 1083:               rooms;
+Line 1084:         return (
+Line 1085:           <ListingView
+Line 1086:             category={currentPage}
+Line 1087:             rooms={listingRooms}
+Line 1088:             loadingRooms={loadingRooms}
+Line 1089:             savedRoomIds={savedRoomIds}
+Line 1090:             toggleSaveRoom={handleToggleSave}
+Line 1091:             setSelectedRoomId={setSelectedRoomId}
+Line 1092:             setCurrentPage={setCurrentPage}
+Line 1093:             navigateToRoom={navigateToRoom}
+Line 1094:             isMobile={isMobile}
+Line 1095:             user={user}
+============================================================
+--- Around Line 1087 ---
+Line 1082:             currentPage === 'viewed-rooms' ? rooms.slice(0, 3) :
+Line 1083:               rooms;
+Line 1084:         return (
+Line 1085:           <ListingView
+Line 1086:             category={currentPage}
+Line 1087:             rooms={listingRooms}
+Line 1088:             loadingRooms={loadingRooms}
+Line 1089:             savedRoomIds={savedRoomIds}
+Line 1090:             toggleSaveRoom={handleToggleSave}
+Line 1091:             setSelectedRoomId={setSelectedRoomId}
+Line 1092:             setCurrentPage={setCurrentPage}
+Line 1093:             navigateToRoom={navigateToRoom}
+Line 1094:             isMobile={isMobile}
+Line 1095:             user={user}
+Line 1096:             settings={settings}
+============================================================
+--- Around Line 1118 ---
+Line 1113:           setCurrentPage('home');
+Line 1114:           return null;
+Line 1115:         }
+Line 1116:         return (
+Line 1117:           <AdminDashboardView
+Line 1118:             rooms={rooms}
+Line 1119:             setRooms={setRooms}
+Line 1120:             setCurrentPage={setCurrentPage}
+Line 1121:             isMobile={isMobile}
+Line 1122:             settings={settings}
+Line 1123:             fetchSettings={fetchSettings}
+Line 1124:             refreshRooms={refreshRooms}
+Line 1125:             user={user}
+Line 1126:           />
+Line 1127:         );
+============================================================

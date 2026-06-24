@@ -1,1854 +1,1181 @@
-"""
-Bot2 - Forward tin nhắn từ các nhóm đầu vào → nhiều nhóm đầu ra (theo keyword)
-- ACC1 (IMEI1): CHỈ DÙNG ĐỂ LISTEN (nghe tin nhắn)
-- ACC2 (IMEI2): DÙNG CHO TẤT CẢ thao tác khác (gửi, fetch, upload...)
-- Đọc nhóm đầu vào từ dauvao.txt (format: tên_nhóm|ký_hiệu)
-- Đọc keywords từ daura.json để match với nhóm đầu ra
-- Xử lý tin nhắn theo quy tắc (xóa hoa hồng, thêm ký hiệu, chỉnh giá...)
-- Gửi đến NHIỀU nhóm dựa trên keyword matching
-"""
-
-import os
-import sys
-import re
-import time
+import argparse
 import json
-import queue
-import threading
-import requests
+import os
 import random
-from datetime import datetime
-from concurrent.futures import ThreadPoolExecutor, as_completed
+import time
+from typing import Any
 
-# Fix encoding cho Windows console
-sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-sys.stderr.reconfigure(encoding='utf-8', errors='replace')
-
-from config import API_KEY, SECRET_KEY, IMEI1, SESSION_COOKIES1
-from zlapi import ZaloAPI
-from zlapi.models import Message, ThreadType
-from colorama import Fore, Style, init
-
-init(autoreset=True)
-
-# ==================== CONFIG FILES ====================
-DAUVAO_FILE = "dauvao.txt"
-DAURA_FILE = "daura.json"  # Keyword mapping for output groups (hierarchical structure)
-
-# ==================== LOAD CONFIG ====================
-def load_dauvao():
-    """Load mapping từ dauvao.txt: {group_id: ký hiệu}"""
-    mapping = {}  # {group_id: symbol}
-    group_names = {}  # {group_id: group_name} - để tìm ID sau
-    
-    if not os.path.exists(DAUVAO_FILE):
-        print(f"[CONFIG] Không tìm thấy {DAUVAO_FILE}")
-        return mapping, group_names
-    
-    with open(DAUVAO_FILE, "r", encoding="utf-8-sig") as f:
-        for line in f:
-            line = line.strip()
-            if not line or "|" not in line:
-                continue
-            parts = line.split("|", 1)
-            if len(parts) == 2:
-                group_name = parts[0].strip()
-                symbol = parts[1].strip()
-                # Giả sử group_name chính là group_id hoặc sẽ được map sau
-                group_names[group_name] = symbol
-                print(f"[DAUVAO] {group_name} → {symbol}")
-    
-    print(f"[DAUVAO] Đã load {len(group_names)} nhóm đầu vào")
-    return group_names
+import re
+import requests
+import sys
+import unicodedata
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+from map1 import save_room_to_sqlite, init_db
 
 
-def load_daura_keywords():
-    """Load keywords từ daura.json với cấu trúc phân cấp
-    Format JSON: {
-        "District": {
-            "type": "district",
-            "wards": ["Ward1", "Ward2"],
-            "streets": ["Street1", "Street2"]
-        }
-    }
-    Returns: 
-        - set of all unique keywords (district + ward + street names)
-        - dict mapping keyword to its level (district/ward/street)
-    """
-    keywords = set()
-    keyword_levels = {}  # {keyword: level} - để biết keyword thuộc cấp nào
-    
-    if not os.path.exists(DAURA_FILE):
-        print(f"[CONFIG] Không tìm thấy {DAURA_FILE}")
-        return keywords, keyword_levels
-    
+API_BASE_URL = os.getenv("API_BASE_URL", "https://api.vietapi.tech/v1")
+API_MODEL = os.getenv("API_MODEL", "sonnet")
+API_TIMEOUT_CONNECT = float(os.getenv("API_TIMEOUT_CONNECT", "15"))
+API_TIMEOUT_READ = float(os.getenv("API_TIMEOUT_READ", "240"))
+API_RETRY_DELAY = float(os.getenv("API_RETRY_DELAY", "2"))
+API_DEBUG_ERRORS = os.getenv("API_DEBUG_ERRORS", "true").lower() in {"1", "true", "yes"}
+API_LOCAL_ONLY = os.getenv("API_LOCAL_ONLY", "false").lower() in {"1", "true", "yes"}
+
+# Nhap key truc tiep trong code neu muon (uu tien cao hon env)
+HARDCODED_API_KEYS: list[str] = []
+HARDCODED_API_KEY = "sk-lWIIAQLc58sZOoRUZIFjcG7kpgN9eYVMK9DUwQyL9qbTYhyR"
+
+
+def load_api_tokens() -> list[str]:
+    if HARDCODED_API_KEYS:
+        return [token.strip() for token in HARDCODED_API_KEYS if str(token).strip()]
+
+    if HARDCODED_API_KEY.strip():
+        return [HARDCODED_API_KEY.strip()]
+
+    for env_name in ("API_KEYS", "CLOUDFLARE_API_KEYS"):
+        raw_multi = os.getenv(env_name, "").strip()
+        if raw_multi:
+            return [token.strip() for token in raw_multi.split(",") if token.strip()]
+
+    for env_name in ("API_KEY", "CLOUDFLARE_API_KEY"):
+        raw_single = os.getenv(env_name, "").strip()
+        if raw_single:
+            return [raw_single.strip()]
+
+    return []
+
+
+API_TOKENS = load_api_tokens()
+
+# Symbols for routing
+chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+
+
+SYSTEM_PROMPT = """Bạn là chuyên gia bóc tách dữ liệu bất động sản. Chỉ trả về JSON hợp lệ, không markdown, không giải thích.
+
+== NHIỆM VỤ ==
+Từ raw_text, trích xuất thông tin phòng trọ thành mảng JSON gồm ĐÚNG 1 OBJECT duy nhất.
+
+== QUY TẮC CỨNG BẮT BUỘC ==
+1. OUTPUT PHẢI LÀ MẢNG CHỈ CÓ 1 OBJECT. Tuyệt đối không được tạo nhiều object dù tin đăng có bao nhiêu phòng, bao nhiêu trục.
+2. Object bắt buộc có: "id", "address", "price", "price1", "price2", "type".
+3. "id": Lấy mã phòng hoặc mã trục. Nếu có NHIỀU mã thì GHÉP thành 1 chuỗi duy nhất (VD: "Trục 01/02/03", "P301/P302"). Null nếu không có.
+4. "address": Lấy địa chỉ NGẮN GỌN NHẤT, chuẩn xác nhất. Loại bỏ các phần mô tả phụ như "(cách chợ 50m, ngõ rộng...)".
+5. "price": Khoảng giá hoặc giá cố định (VD: "5.2-6.5tr", "4.3tr").
+6. "price1": Giá thấp nhất CHUYỂN SANG SỐ NGUYÊN HOÀN CHỈNH (thêm đủ 6 số 0 cho hàng triệu). VÍ DỤ CHUẨN: "5tr" => "5000000", "5.2tr" => "5200000", "4tr3" => "4300000", "4500k" => "4500000". TUYỆT ĐỐI KHÔNG trả về thiếu số 0 (không được trả "500000" cho 5 triệu, phải là "5000000").
+7. "price2": Giá cao nhất chuyển sang số nguyên (tương tự quy tắc 6 số 0 của price1). Nếu chỉ 1 mức giá, price2 = price1.
+8. "type": Dạng phòng. Tag hợp lệ: "studio", "1pn", "2n1k", "2n1b", "duplex", "gác xép". trong text có nhắc đến thì mới có không thì là null. Null nếu không có.
+9. Không tự suy luận. Nếu thiếu địa chỉ hoặc thiếu giá, trả về mảng rỗng [].
+
+== VÍ DỤ SAI (TUYỆT ĐỐI TRÁNH) ==
+Input: "Trục 01: 4tr3, địa chỉ: Số 163 ngõ 90 Hoàng Ngân (cách chợ 50m)"
+Output SAI 1: [{"id":"Trục 01",...},{"id":"Trục 02",...}]
+Output SAI 2: [{"id":"Trục 01","address":"Số 163 ngõ 90 Hoàng Ngân (cách chợ 50m)","price":"4tr3","price1":"43000","price2":"43000","type":null}] // SAI VÌ địa chỉ dính mô tả phụ và giá thiếu số 0.
+
+== VÍ DỤ ĐÚNG ==
+Input: "Trục 01: 4tr3, địa chỉ: Số 163 ngõ 90 Hoàng Ngân (cách chợ 50m)"
+Output ĐÚNG: [{"id":"Trục 01","address":"Số 163 ngõ 90 Hoàng Ngân","price":"4.3tr","price1":"4300000","price2":"4300000","type":null}]
+
+Chỉ trả về JSON hợp lệ."""
+
+
+SYSTEM_PROMPT_MBKD = """Bạn là chuyên gia bóc tách dữ liệu bất động sản (mặt bằng kinh doanh, văn phòng, cửa hàng). Chỉ trả về JSON hợp lệ, không markdown, không giải thích.
+
+== NHIỆM VỤ ==
+Từ raw_text, trích xuất thông tin mặt bằng kinh doanh thành mảng JSON gồm ĐÚNG 1 OBJECT duy nhất.
+
+== QUY TẮC CỨNG BẮT BUỘC ==
+1. OUTPUT PHẢI LÀ MẢNG CHỈ CÓ 1 OBJECT. Tuyệt đối không được tạo nhiều object dù tin đăng có bao nhiêu phòng, bao nhiêu trục.
+2. Object bắt buộc có: "id", "address", "price", "price1", "price2", "type".
+3. "id": Lấy mã mặt bằng hoặc mã trục. Nếu có NHIỀU mã thì GHÉP thành 1 chuỗi duy nhất (VD: "MBKD1/MBKD2"). Null nếu không có.
+4. "address": Lấy địa chỉ NGẮN GỌN NHẤT, chuẩn xác nhất. Loại bỏ các phần mô tả phụ như "(cách chợ 50m, ngõ rộng...)".
+5. "price": Khoảng giá hoặc giá cố định (VD: "5.2-6.5tr", "4.3tr").
+6. "price1": Giá thấp nhất CHUYỂN SANG SỐ NGUYÊN HOÀN CHỈNH (thêm đủ 6 số 0 cho hàng triệu). VÍ DỤ CHUẨN: "5tr" => "5000000", "5.2tr" => "5200000", "4tr3" => "4300000", "4500k" => "4500000". TUYỆT ĐỐI KHÔNG trả về thiếu số 0.
+7. "price2": Giá cao nhất chuyển sang số nguyên (tương tự quy tắc 6 số 0 của price1). Nếu chỉ 1 mức giá, price2 = price1.
+8. "type": DIỆN TÍCH (số m2) của mặt bằng/văn phòng. Hãy tìm thông tin diện tích trong văn bản (VD: "Diện tích mặt bằng 40-42m2", "Diện tích 100m²", "35m2") và lưu vào trường này dưới dạng chuỗi (VD: "40-42m2", "100m2", "35m2"). TUYỆT ĐỐI KHÔNG dùng các tag dạng phòng như "studio", "1pn" hay "trọ thường" cho mặt bằng kinh doanh. Nếu hoàn toàn không tìm thấy diện tích thì để null.
+9. Không tự suy luận. Nếu thiếu địa chỉ hoặc thiếu giá, trả về mảng rỗng [].
+
+Chỉ trả về JSON hợp lệ."""
+
+
+def _extract_price_tokens(value: str) -> list[str]:
+    normalized = unicodedata.normalize("NFD", str(value or ""))
+    normalized = "".join(ch for ch in normalized if unicodedata.category(ch) != "Mn")
+    normalized = normalized.lower().replace("trieu", "tr")
+    normalized = re.sub(r"[^a-z0-9.,]+", "", normalized)
+    return re.findall(r"\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?(?:tr\d+|tr|k|ty\d+|ty)", normalized)
+
+
+def _parse_price_token_to_vnd(value: str) -> int:
+    raw = str(value or "").strip().lower().replace(" ", "")
+    if not raw:
+        return 0
+
+    if re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", raw):
+        digits = re.sub(r"[^\d]", "", raw)
+        try:
+            return int(digits)
+        except Exception:
+            return 0
+
+    normalized = raw.replace(",", ".")
+
+    if "ty" in normalized:
+        major, _, minor = normalized.partition("ty")
+        try:
+            base = float(major or "0")
+            fraction = float(f"0.{re.sub(r'[^\\d]', '', minor)}") if re.search(r"\d", minor) else 0.0
+            return int(round((base + fraction) * 1_000_000_000))
+        except Exception:
+            return 0
+
+    if "tr" in normalized:
+        major, _, minor = normalized.partition("tr")
+        try:
+            base = float(major or "0")
+            if not re.search(r"\d", minor):
+                return int(round(base * 1_000_000))
+
+            digits = re.sub(r"[^\d]", "", minor)
+            decimal_places = len(digits)
+            fraction = int(digits) / (10 ** decimal_places) if decimal_places > 0 else 0
+            return int(round((base + fraction) * 1_000_000))
+        except Exception:
+            return 0
+
+    if normalized.endswith("k"):
+        try:
+            return int(round(float(normalized[:-1] or "0") * 1_000))
+        except Exception:
+            return 0
+
     try:
-        with open(DAURA_FILE, "r", encoding="utf-8-sig") as f:  # Fix BOM error
-            data = json.load(f)
-        
-        for district, info in data.items():
-            # Add district name
-            keywords.add(district)
-            keyword_levels[district] = info.get("type", "district")
-            
-            # Add wards
-            for ward in info.get("wards", []):
-                keywords.add(ward)
-                keyword_levels[ward] = "ward"
-            
-            # Add streets
-            for street in info.get("streets", []):
-                keywords.add(street)
-                keyword_levels[street] = "street"
-        
-        print(f"[DAURA] Đã load {len(keywords)} keywords từ {DAURA_FILE}")
-        print(f"[DAURA] Phân cấp: {len([k for k,v in keyword_levels.items() if v in ['district','area']])} quận/khu vực, "
-              f"{len([k for k,v in keyword_levels.items() if v=='ward'])} phường/xã, "
-              f"{len([k for k,v in keyword_levels.items() if v=='street'])} đường")
-        
-    except Exception as e:
-        print(f"[DAURA] Lỗi load JSON: {e}")
-    
-    return keywords, keyword_levels
+        numeric = float(normalized)
+    except Exception:
+        return 0
+
+    if numeric <= 0:
+        return 0
+    if numeric < 1000:
+        return int(round(numeric * 1_000_000))
+    return int(round(numeric))
 
 
-# ==================== QUY TẮC XỬ LÝ ====================
-RULES = {
-    "1a": {"remove_commission": True, "add_prefix": True, "format_price": "mbkd_only"},
-    "2a": {"remove_commission": True, "add_prefix": True},
-    "3a": {"add_prefix": True},
-    "4a": {"remove_commission": True, "add_prefix": True, "keep_contract_duration": True},
-    "5a": {"remove_commission": True, "add_prefix": True},
-    "6a": {"remove_commission": True, "add_prefix": True},
-    "8a": {"remove_commission": True, "add_prefix": True},
-    "9a": {"remove_commission": True, "add_prefix": True},
-    "10a": {"remove_commission": True, "add_prefix": True},
-    "11a": {"remove_commission": True, "remove_bonus": True, "add_prefix": True, "format_price": True},
-    "12a": {"remove_commission": True, "add_prefix": True},
-    "13a": {"remove_commission": True, "add_prefix": True},
-    "14a": {"remove_commission": True, "add_prefix": True},
-    "111a": {"remove_commission": True, "add_prefix": True},  # Khaicute
-    "sleepbox": {"add_prefix": True},
-    "tdland": {"remove_phone": True, "add_prefix": True, "format_price": True},
-    "alophongtro": {"remove_phone": True, "add_prefix": True, "format_price": True},
-    "3h": {"add_prefix": True, "format_price": True},
-    "avhome": {"add_prefix": True},
-    "nv home": {"remove_commission": True, "remove_bonus": True, "add_prefix": True, "format_price": True},
-    "agp": {"remove_commission": True, "add_prefix": True},
-    "hdhome": {"remove_phone": True, "add_prefix": True, "format_price": True, "remove_links": True},
-    "mkland": {"remove_phone": True, "remove_commission": True, "add_prefix": True},
-    "tm1": {"remove_commission": True, "add_prefix": True, "format_price": True},
-    "tm2": {"remove_commission": True, "add_prefix": True, "format_price": True},
-    # Newly added symbols
-    "tc home": {"add_prefix": True},  # Routes to MBKD or Nguyên căn based on content
-    "tài phát": {"add_prefix": True, "remove_phone": True},  # Routes to MBKD or Nguyên căn
-    "tai phát": {"add_prefix": True, "remove_phone": True},  # Typo variant
-    "việt quốc": {"add_prefix": True},  # Routes to Nguyên căn
-}
+def _extract_price_bounds(text: str) -> tuple[int, int]:
+    candidates = []
+    for token in _extract_price_tokens(text):
+        value = _parse_price_token_to_vnd(token)
+        if value > 0:
+            candidates.append(value)
+
+    if not candidates:
+        return 0, 0
+
+    return min(candidates), max(candidates)
 
 
+def get_message_symbol(text2: str) -> str | None:
+    if not text2:
+        return None
+    text2_lower = text2.strip().lower()
 
-# ==================== HÀM XỬ LÝ TIN NHẮN ====================
-# ==================== CONSTANTS ====================
-# Regex Patterns (Compiled Global)
-PHONE_REGEX = re.compile(r'\b0(?:[\.\s]*\d){9,}\b')
-CONTACT_KEYWORD_REGEX = re.compile(r'\b(liên\s*hệ|lh|l\.h|sđt|sdt|zalo|call)\b', re.IGNORECASE)
-SPECIAL_PATTERNS = [
-    re.compile(r'📞\s*SĐT\s*dẫn\s*:?\s*\d+', re.IGNORECASE),
-    re.compile(r'SĐT\s*dẫn\s*:?\s*\d+', re.IGNORECASE),
-    re.compile(r'❣\s*QUẢN\s*LÝ\s*:', re.IGNORECASE),
-    re.compile(r'QUẢN\s*LÝ\s*:.*\d{9,}', re.IGNORECASE),
-]
+    all_symbols = (
+        chung_cu_symbols +
+        nguyen_can_symbols +
+        mbkd_symbols +
+        chdv_symbols +
+        tai_land_symbols +
+        vietquoc_1_symbols
+    )
+    # Sort length descending
+    all_symbols = sorted(all_symbols, key=len, reverse=True)
 
-# ==================== HÀM XỬ LÝ TIN NHẮN ====================
-def format_price_to_xtr(text):
-    """Chuyển giá về dạng Xtr (8.500.000 → 8tr5, 4.3 → 4tr3)"""
-    
-    # 1. Chuyển full số (8.000.000 -> 8tr)
-    def convert_price(match):
-        price_str = match.group(0)
-        num = price_str.replace('.', '').replace(',', '')
-        try:
-            value = int(num) / 1000000
-            whole = int(value)
-            decimal = round((value - whole) * 10)
-            if decimal > 0:
-                return f"{whole}tr{decimal}"
-            return f"{whole}tr"
-        except:
-            return price_str
-    
-    text = re.sub(r'\d{1,2}[.,]\d{3}[.,]\d{3}', convert_price, text)
-    
-    # 2. Chuyển Xtr (8,5tr -> 8tr, 8tr -> 8tr)
-    # User Request: "8,5tr thành 8tr" (Truncate decimal)
-    def convert_xtr(match):
-        price_str = match.group(0).lower()
-        num_part = price_str.replace('tr', '').replace(',', '.').strip()
-        try:
-            value = float(num_part)
-            whole = int(value)
-            # Yêu cầu xóa số lẻ cho trường hợp Xtr: 8,5tr -> 8tr
-            return f"{whole}tr"
-        except:
-            return price_str
-    
-    text = re.sub(r'\d+[.,]?\d*\s*tr', convert_xtr, text, flags=re.IGNORECASE)
-    
-    # 3. Chuyển Xk (8000k -> 8tr)
-    def convert_k(match):
-        price_str = match.group(0).lower()
-        num_part = price_str.replace('k', '').strip()
-        try:
-            value = int(num_part) / 1000
-            whole = int(value)
-            decimal = round((value - whole) * 10)
-            if decimal > 0:
-                return f"{whole}tr{decimal}"
-            return f"{whole}tr"
-        except:
-            return price_str
-    
-    text = re.sub(r'\d{4,}k', convert_k, text, flags=re.IGNORECASE)
+    for sym in all_symbols:
+        sym_lower = sym.lower()
+        if text2_lower.startswith(sym_lower):
+            sym_len = len(sym_lower)
+            if len(text2_lower) > sym_len:
+                next_char = text2_lower[sym_len]
+                if next_char.isalnum():
+                    continue
+            return sym_lower
 
-    # 4. Chuyển float trần (4.3 -> 4tr3)
-    # Context: "giá 4.3", "4.3", "tài chính 4.3"
-    # Tránh nhầm lẫn với ngày tháng, version, kích thước nếu có thể.
-    # Tuy nhiên user yêu cầu "ví dụ giá 4.3 -> 4tr3", nên ta sẽ convert các số format X.Y hoặc X,Y
-    # Giới hạn value < 100 để tránh số lạ? 4.3 triệu là hợp lý.
-    
-    def convert_bare_float(match):
-        s = match.group(0)
-        try:
-            val_s = s.replace(',', '.')
-            val = float(val_s)
-            
-            # Chỉ convert nếu giá trị < 100 (giả sử giá thuê < 100tr) để an toàn
-            # Và > 1 (1.5tr)
-            if 0 < val < 200: 
-                whole = int(val)
-                decimal = round((val - whole) * 10)
-                if decimal > 0:
-                    return f"{whole}tr{decimal}"
-                return f"{whole}tr"
-        except:
-            pass
-        return s
-
-    # Regex bắt số float: \d+[.,]\d+ 
-    # Lookbehind/ahead để tránh dính liền text khác?
-    # Pattern: \b\d+[.,]\d{1,2}\b (1-2 số thập phân)
-    text = re.sub(r'\b\d+[.,]\d{1,2}\b', convert_bare_float, text)
-
-    return text
+    return None
 
 
-def remove_commission(text, keep_contract_duration=False):
-    """XÓA CẢ DÒNG có chứa hoa hồng, sale, %.
-    KHÔNG chỉ xóa từ khóa mà XÓA TOÀN BỘ DÒNG."""
-    lines = text.split('\n')
-    result_lines = []
-    
-    # 1. Nếu cần giữ HD (hợp đồng), extract nó từ text gốc
-    hd_info = ""
-    if keep_contract_duration:
-        hd_match = re.search(r'\(\s*hd\s*\d+\s*th\s*\)', text, re.IGNORECASE)
-        if hd_match:
-            hd_info = hd_match.group(0)
+def get_category_from_text2(text2: str, text1: str = "") -> str:
+    symbol = get_message_symbol(text2)
+    if not symbol:
+        return "phong-tro"
 
-    # Patterns để CHECK và XÓA CẢ DÒNG
-    line_delete_patterns = [
-        r'\bsale\b',                    # 'sale'
-        r'\bctv\b',                     # 'ctv' - cộng tác viên
-        r'[Hh][Hh]',                    # 'HH' hoặc 'hh'
-        r'[Hh]oa\s*[Hh]ồng',           # 'Hoa hồng'
-        r'\d+\s*%',                     # Số + %
-        r'%',                           # % đơn lẻ
-        r'🌺', r'🌹',                   # Icons hoa hồng
-        r'Mã\s*này\s*chủ\s*đánh\s*thuế',  # Mã này chủ đánh thuế
-    ]
-
-    for line in lines:
-        stripped_line = line.strip()
-        if not stripped_line:
-            result_lines.append("")
-            continue
-        
-        # CHECK: Nếu dòng chứa BẤT KỲ pattern nào → XÓA CẢ DÒNG
-        should_delete = False
-        for pattern in line_delete_patterns:
-            if re.search(pattern, stripped_line, re.IGNORECASE):
-                should_delete = True
-                break
-        
-        if should_delete:
-            continue  # SKIP dòng này
-        
-        # Giữ lại dòng
-        result_lines.append(stripped_line)
-    
-    processed = '\n'.join(result_lines)
-    
-    # 3. Trả về text đã clean + hd_info nếu có
-    if hd_info and hd_info not in processed:
-        processed += f"\n{hd_info}"
-        
-    return processed.strip()
-
-
-def remove_bonus(text):
-    """XÓA CẢ DÒNG có chứa 'thưởng' hoặc icons thưởng."""
-    lines = text.split('\n')
-    result_lines = []
-    
-    # Patterns để CHECK và XÓA CẢ DÒNG
-    bonus_patterns = [
-        r'[Tt]hưởng',       # 'Thưởng' hoặc 'thưởng'
-        r'🎉',              # Icon thưởng
-    ]
-    
-    for line in lines:
-        stripped_line = line.strip()
-        if not stripped_line:
-            result_lines.append("")
-            continue
-        
-        # CHECK: Nếu dòng chứa BẤT KỲ pattern nào → XÓA CẢ DÒNG
-        should_delete = False
-        for pattern in bonus_patterns:
-            if re.search(pattern, stripped_line, re.IGNORECASE):
-                should_delete = True
-                break
-        
-        if should_delete:
-            continue  # SKIP dòng này
-        
-        # Giữ lại dòng
-        result_lines.append(stripped_line)
-    
-    return '\n'.join(result_lines).strip()
-
-
-def remove_phone(text):
-    """XÓA CẢ DÒNG có chứa số điện thoại hoặc từ khóa liên hệ."""
-    lines = text.split('\n')
-    result_lines = []
-    
-    # Patterns để CHECK và XÓA CẢ DÒNG
-    phone_delete_patterns = [
-        r'\b0(?:[\.\s]*\d){9,}\b',          # Phone number: 0 + 9+ digits
-        r'\b(liên\s*hệ|lh|l\.h)\b',        # 'liên hệ', 'lh', 'l.h'
-        r'\b(sđt|sdt)\b',                   # 'sđt', 'sdt'
-        r'\bzalo\b',                        # 'zalo'
-        r'\bcall\b',                        # 'call'
-        r'📞',                              # Phone icon
-        r'SĐT\s*dẫn',                       # 'SĐT dẫn'
-        r'QUẢN\s*LÝ\s*:',                   # 'QUẢN LÝ:'
-    ]
-    
-    for line in lines:
-        stripped_line = line.strip()
-        if not stripped_line:
-            result_lines.append("")
-            continue
-        
-        # CHECK: Nếu dòng chứa BẤT KỲ pattern nào → XÓA CẢ DÒNG
-        should_delete = False
-        for pattern in phone_delete_patterns:
-            if re.search(pattern, stripped_line, re.IGNORECASE):
-                should_delete = True
-                break
-        
-        if should_delete:
-            continue  # SKIP dòng này
-        
-        # Giữ lại dòng
-        result_lines.append(stripped_line)
-    
-    return '\n'.join(result_lines).strip()
-
-
-def remove_links(text):
-    """Xóa link FB/Docs"""
-    return re.sub(r'https?://(www\.)?(facebook\.com|fb\.com|docs\.google\.com)[^\s]*', '', text)
-
-
-def add_prefix(text, symbol):
-    """Thêm ký hiệu đầu dòng"""
-    text = text.strip()
-    if text:
-        return f"{symbol} {text}"
-    return text
-
-
-def process_message(text, symbol):
-    """Xử lý tin nhắn theo quy tắc của ký hiệu"""
-    if not text or not text.strip():
-        return text
-    
-    rules = RULES.get(symbol.lower(), {})
-    
-    processed = text
-    
-    # LUÔN LUÔN xóa hoa hồng và thưởng theo yêu cầu mới
-    processed = remove_bonus(processed)
-    
-    keep_contract = rules.get("keep_contract_duration", False)
-    processed = remove_commission(processed, keep_contract)
-    
-    if True: # User: "Tóm lại ở đâu có sdt cũng xóa đi" -> Always remove phone
-        processed = remove_phone(processed)
-    
-    if rules.get("remove_links"):
-        processed = remove_links(processed)
-    
-    format_price_rule = rules.get("format_price")
-    if format_price_rule:
-        if format_price_rule == "mbkd_only":
-            if "mbkd" in text.lower() or "mặt bằng" in text.lower():
-                processed = format_price_to_xtr(processed)
+    if symbol in chung_cu_symbols:
+        return "chung-cu"
+    elif symbol in nguyen_can_symbols:
+        return "nha-nguyen-can"
+    elif symbol in mbkd_symbols:
+        return "mat-bang-kinh-doanh"
+    elif symbol in chdv_symbols:
+        return "can-ho-dich-vu"
+    elif symbol in tai_land_symbols:
+        full_text = text1 if text1 else text2
+        price1, price2 = _extract_price_bounds(full_text)
+        price_val = max(price1, price2)
+        if price_val >= 25000000:
+            return "mat-bang-kinh-doanh"
         else:
-            processed = format_price_to_xtr(processed)
-    
-    if rules.get("add_prefix"):
-        processed = add_prefix(processed, symbol)
-    
-    # Clean up lines
-    lines = processed.split('\n')
-    cleaned = []
-    prev_empty = False
-    for line in lines:
-        if line.strip():
-            cleaned.append(line)
-            prev_empty = False
-        elif not prev_empty:
-            cleaned.append(line)
-            prev_empty = True
-    
-    return '\n'.join(cleaned).strip()
+            return "nha-nguyen-can"
+    elif symbol in vietquoc_1_symbols:
+        text2_lower = text2.lower()
+        if any(k in text2_lower for k in ["mbkd", "mặt bằng", "văn phòng"]):
+            return "mat-bang-kinh-doanh"
+        else:
+            return "nha-nguyen-can"
+
+    return "phong-tro"
 
 
-# ==================== BOT CLASS ====================
-class Bot1(ZaloAPI):
-    def __init__(self, api_key, secret_key, accounts):
-        """
-        accounts: List of dict [{"imei":..., "session_cookies":...}, ...]
-        ACC1 (accounts[0]): Listener Only
-        ACC2..N (accounts[1:]): All Senders (Multi-threaded, Session-based)
-        """
-        if len(accounts) < 2:
-            raise ValueError("Cần ít nhất 2 tài khoản (1 Listen, 1+ Send)")
-            
-        listener_acc = accounts[0]
-        self.sender_accounts_config = accounts[1:] # A list of configs
-        
-        # Save credentials for re-init
-        self.api_key = api_key
-        self.secret_key = secret_key
-        
-        # Bot chính để listen (ACC1)
-        super().__init__(api_key, secret_key, imei=listener_acc["imei"], session_cookies=listener_acc["session_cookies"])
-        
-        self.is_running = True
-        self.send_lock = threading.Lock() # Lock for sender operations
-        
-        # Multi-Sender Architecture: Initialize ALL senders at once
-        self.senders = []  # List of sender objects
-        self.current_sender_index = 0  # For round-robin distribution
-        
-        # Load config Static
-        self.group_symbols = load_dauvao()
-        self.all_keywords, self.keyword_levels = load_daura_keywords()
-        self.input_groups = {}
-        
-        # Load district data for area-specific saving
-        self.district_data = {}
-        try:
-            with open(DAURA_FILE, 'r', encoding='utf-8') as f:
-                self.district_data = json.load(f)
-        except Exception as e:
-            print(f"[INIT] Error loading district data: {e}")
-        
-        # Session buffer
-        self.session_buffers = {}
-        self.session_lock = threading.RLock() # SỬ DỤNG RLOCK để tránh deadlock khi flush_immediate
-        
-        # Photo cache for reply detection (11A, 12A)
-        self.photo_cache = {}
-        self.photo_cache_lock = threading.RLock()
-        
-        # Duplication prevention
-        self.mid_cache_file = "processed_mids.txt"
-        self.processed_mids = self._load_mid_cache()
-        self.mid_lock = threading.Lock()
-        
-        # Deduplication toàn cục cho nội dung
-        self.sent_content_cache = {} # {content_hash: timestamp}
-        self.sent_content_lock = threading.Lock()
-        
-        # Session counter and rest period
-        self.session_count = 0
-        self.session_count_lock = threading.Lock()
-        self.sessions_before_rest = 30
-        self.rest_duration_min = 300  # 5 minutes
-        self.rest_duration_max = 600  # 10 minutes
-        
-        # Workers
-        self.cleanup_thread = threading.Thread(target=self._mid_cleanup_worker, daemon=True)
-        self.cleanup_thread.start()
-        
-        self.heartbeat_thread = threading.Thread(target=self._heartbeat_worker, daemon=True)
-        self.heartbeat_thread.start()
-        
-        # Initialize ALL sender accounts
-        self._init_all_senders()
-        
-        # Timeout settings
-        self.session_check_interval = 15.0
-        self.session_max_timeout = 90.0
-        
-        # Queue gửi tin & Worker session-based
-        self.send_queue = queue.Queue()
-        self.pending_queue_file = "pending_queue.json"
-        
-        # Load pending items from disk
-        self._load_pending_queue()
-        
-        # NEW: Session-based sending worker
-        self.send_thread = threading.Thread(target=self._send_worker_session_based, daemon=True)
-        self.send_thread.start()
-        
-        self.executor = ThreadPoolExecutor(max_workers=5) # Download pool
-        
-        # Scan Input Groups for Listener
-        self._scan_input_groups()
-        
-        print(f"[BOT1] ACC1 = Listener")
-        print(f"[BOT1] Initialized {len(self.senders)} sender accounts")
-        print(f"[BOT1] Session-based sending: Round-robin across senders")
+def extract_completion_content(result: dict[str, Any]) -> str:
+    choices = result.get("choices") or []
+    if not choices:
+        return ""
 
-    def _init_all_senders(self):
-        """Initialize ALL sender accounts at startup with isolated group maps"""
-        print(f"\n[INIT] Initializing {len(self.sender_accounts_config)} sender accounts...")
-        
-        for idx, acc_cfg in enumerate(self.sender_accounts_config):
-            try:
-                print(f"\n[INIT] Setting up Sender-{idx+1}...")
-                
-                # Create ZaloAPI instance for this sender
-                sender_api = ZaloAPI(self.api_key, self.secret_key,
-                                    imei=acc_cfg["imei"],
-                                    session_cookies=acc_cfg["session_cookies"])
-                
-                # Get sender UID
-                try:
-                    sender_uid = str(sender_api._state.user_id)
-                except:
-                    sender_uid = f"Sender-{idx+1}"
-                
-                # Scan groups for THIS sender
-                output_groups_map = {}  # {keyword: [group_ids]}
-                group_id_to_name = {}   # {group_id: name}
-                
-                print(f"[INIT] Scanning groups for Sender-{idx+1}...")
-                all_groups = sender_api.fetchAllGroups()
-                group_ids = []
-                grid_map = {}
-                
-                if all_groups and hasattr(all_groups, "gridVerMap"):
-                    group_ids = list(all_groups.gridVerMap.keys())
-                    grid_map = getattr(all_groups, "gridInfoMap", {}) or {}
-                
-                # Fetch missing group info
-                if len(grid_map) < len(group_ids):
-                    missing = [g for g in group_ids if str(g) not in grid_map]
-                    if missing:
-                        print(f"   -> Fetching info for {len(missing)} groups...")
-                        chunk_size = 50
-                        for i in range(0, min(len(missing), 200), chunk_size):
-                            chunk = missing[i:i+chunk_size]
-                            try:
-                                batch = {str(gid): 0 for gid in chunk}
-                                res = sender_api.fetchGroupInfo(batch)
-                                if hasattr(res, "gridInfoMap"):
-                                    grid_map.update(res.gridInfoMap)
-                            except:
-                                pass
-                
-                # Process groups and map keywords
-                count_avail = 0
-                for gid_str, data in grid_map.items():
-                    name = data.get("name", "") if isinstance(data, dict) else getattr(data, "name", "")
-                    if not name:
-                        continue
-                    
-                    group_id_to_name[gid_str] = name
-                    
-                    # Match keywords
-                    matched = self._extract_keywords_from_name(name)
-                    if matched:
-                        count_avail += 1
-                        for kw in matched:
-                            kw = kw.lower()
-                            if kw not in output_groups_map:
-                                output_groups_map[kw] = []
-                            if gid_str not in output_groups_map[kw]:
-                                output_groups_map[kw].append(gid_str)
-                
-                # Create sender object
-                sender_obj = {
-                    "api": sender_api,
-                    "index": idx,
-                    "name": f"Sender-{idx+1}",
-                    "uid": sender_uid,
-                    "output_groups_map": output_groups_map,
-                    "group_id_to_name": group_id_to_name,
-                    "is_limited": False
-                }
-                
-                self.senders.append(sender_obj)
-                print(f"[INIT] ✓ Sender-{idx+1} ready with {count_avail} output groups mapped")
-                
-            except Exception as e:
-                print(f"[INIT] ✗ Failed to initialize Sender-{idx+1}: {e}")
-        
-        print(f"\n[INIT] ✓ Successfully initialized {len(self.senders)}/{len(self.sender_accounts_config)} senders\n")
+    message = choices[0].get("message") or {}
+    content = message.get("content", "")
 
-    def _safe_int(self, value, default):
-        try:
-            return int(value)
-        except:
-            return default
-        
-    def _load_pending_queue(self):
-        """Load các item chưa gửi từ file json"""
-        try:
-            if os.path.exists(self.pending_queue_file):
-                with open(self.pending_queue_file, "r", encoding="utf-8") as f:
-                    items = json.load(f)
-                    if isinstance(items, list):
-                        count = 0
-                        for item in items:
-                            self.send_queue.put(item)
-                            count += 1
-                        print(f"[PERSISTENCE] Đã khôi phục {count} tin nhắn từ {self.pending_queue_file}")
-        except Exception as e:
-            print(f"[PERSISTENCE] Lỗi load pending queue: {e}")
+    # Log reasoning_content from one-shot if present
+    reasoning_content = message.get("reasoning_content") or message.get("reasoning")
+    if isinstance(reasoning_content, str) and reasoning_content.strip():
+        print(f"  [AI Thinking] {reasoning_content.strip()}")
 
-    def _generate_content_hash(self, item):
-        """Tạo mã hash cho nội dung để deduplication"""
-        try:
-            texts = item.get("texts", [])
-            text_str = "".join([t.get("text", "") if isinstance(t, dict) else t for t in texts])
-            # Hash dựa trên nội dung text (đã xóa khoảng trắng) + số lượng media
-            clean_text = re.sub(r'\s+', '', text_str)[:300]
-            media_count = len(item.get("photos", [])) + len(item.get("videos", []))
-            
-            import hashlib
-            raw_key = f"{clean_text}_{media_count}"
-            return hashlib.md5(raw_key.encode()).hexdigest()
-        except:
-            return str(time.time())
+    if isinstance(content, str):
+        return content
 
-    def _enqueue_task(self, item):
-        """Thêm task vào queue VÀ lưu vào file"""
-        # 1. Deduplication toàn cục (Hash-based)
-        content_hash = self._generate_content_hash(item)
-        now = time.time()
-        
-        with self.sent_content_lock:
-            # Dọn dẹp cache cũ (> 15 phút)
-            self.sent_content_cache = {k: v for k, v in self.sent_content_cache.items() if now - v < 900}
-            
-            if content_hash in self.sent_content_cache:
-                print(f"[DEDUPE] 🚫 Bỏ qua nội dung trùng lặp (Hash: {content_hash})")
-                return
-            
-            self.sent_content_cache[content_hash] = now
-            
-        # 2. Merge all text parts into ONE (Nếu có nhiều text rời rạc)
-        texts = item.get("texts", [])
-        if len(texts) > 1:
-            merged_text = "\n".join([t.get("text", "") if isinstance(t, dict) else t for t in texts])
-            # Cập nhật lại item với text đã gộp
-            item["texts"] = [{"text": merged_text, "timestamp": texts[0].get("timestamp", now) if isinstance(texts[0], dict) else now}]
-            print(f"[SESSION] 📝 Đã gộp {len(texts)} đoạn text thành 1.")
-
-        # 3. Add to memory queue
-        self.send_queue.put(item)
-        
-        # 4. Persistence: Lưu vào file
-        self._save_task_to_file(item)
-
-    def _save_task_to_file(self, item):
-        """Lưu một task đơn lẻ vào file persistence (Append)"""
-        try:
-            current_items = []
-            if os.path.exists(self.pending_queue_file):
-                try:
-                    with open(self.pending_queue_file, "r", encoding="utf-8") as f:
-                        current_items = json.load(f)
-                except: pass
-            
-            if not isinstance(current_items, list): current_items = []
-            current_items.append(item)
-            
-            with open(self.pending_queue_file, "w", encoding="utf-8") as f:
-                json.dump(current_items, f, ensure_ascii=False, indent=2)
-        except Exception as e:
-            print(f"[PERSISTENCE] Lỗi save task: {e}")
-
-    def _save_queue_snapshot(self, items_list):
-        """Lưu snapshot danh sách task vào file"""
-        try:
-            with open(self.pending_queue_file, "w", encoding="utf-8") as f:
-                json.dump(items_list, f, ensure_ascii=False, indent=2)
-        except Exception as e:
-            print(f"[PERSISTENCE] Lỗi save snapshot: {e}")
-
-    def _update_current_task(self, updated_task):
-        """Cập nhật task đầu tiên trong file persistence (để lưu tiến độ - sent_groups)"""
-        try:
-            if os.path.exists(self.pending_queue_file):
-                current_items = []
-                with open(self.pending_queue_file, "r", encoding="utf-8") as f:
-                    current_items = json.load(f)
-                
-                if isinstance(current_items, list) and current_items:
-                    current_items[0] = updated_task # Update first item
-                    
-                    with open(self.pending_queue_file, "w", encoding="utf-8") as f:
-                        json.dump(current_items, f, ensure_ascii=False, indent=2)
-                    # print(f"[PERSISTENCE] ✓ Progress saved") # Verbose logging
-        except Exception as e:
-            print(f"[PERSISTENCE] Error saving progress: {e}")
-
-    def _finish_current_task(self):
-        """Xóa task đầu tiên khỏi file (FIFO) sau khi gửi thành công"""
-        try:
-            if os.path.exists(self.pending_queue_file):
-                current_items = []
-                with open(self.pending_queue_file, "r", encoding="utf-8") as f:
-                    current_items = json.load(f)
-                
-                if isinstance(current_items, list) and current_items:
-                    removed = current_items.pop(0) # Remove first item
-                    print(f"[PERSISTENCE] ✓ Xóa task: {removed.get('source_info', 'Unknown')}")
-                    
-                    with open(self.pending_queue_file, "w", encoding="utf-8") as f:
-                        json.dump(current_items, f, ensure_ascii=False, indent=2)
-                    
-                    print(f"[PERSISTENCE] ✓ Còn lại {len(current_items)} task trong queue")
-                else:
-                    print(f"[PERSISTENCE] ⚠️ Queue file trống hoặc không hợp lệ")
-        except Exception as e:
-            print(f"[PERSISTENCE] Lỗi remove task: {e}")
-    
-    def _scan_input_groups(self):
-        """Quét nhóm đầu vào cho Listener (Acc1)"""
-        print("[BOT1] Quét nhóm Input (Listener)...")
-        try:
-            all_groups = self.fetchAllGroups()
-            if not all_groups or not hasattr(all_groups, "gridVerMap"):
-                return
-            
-            grid_map = getattr(all_groups, "gridInfoMap", {}) or {}
-            
-            # Fetch missing info for ALL groups
-            group_ids = list(all_groups.gridVerMap.keys())
-            print(f"[BOT1] Tổng số nhóm từ Listener: {len(group_ids)}")
-            
-            # If grid_map is empty or incomplete, fetch in batches
-            if len(grid_map) < len(group_ids):
-                missing = [g for g in group_ids if str(g) not in grid_map]
-                print(f"[BOT1] Đang fetch thông tin cho {len(missing)} nhóm...")
-                
-                chunk_size = 50
-                for i in range(0, len(missing), chunk_size):
-                    chunk = missing[i:i+chunk_size]
-                    try:
-                        batch = {str(gid): 0 for gid in chunk}
-                        info = self.fetchGroupInfo(batch)
-                        if hasattr(info, "gridInfoMap"):
-                            grid_map.update(info.gridInfoMap)
-                    except Exception as e:
-                        print(f"[BOT1] Lỗi fetch batch {i//chunk_size + 1}: {e}")
-            
-            # Now scan all groups
-            for gid_str, data in grid_map.items():
-                name = data.get("name", "") if isinstance(data, dict) else getattr(data, "name", "")
-                if name:
-                    symbol = self._find_symbol_for_group(name)
-                    if symbol:
-                         self.input_groups[gid_str] = symbol
-                         print(f"[Input] ✓ Found: {name} → {symbol}")
-            
-            print(f"[BOT1] ✓ Đã quét xong: {len(self.input_groups)}/{len(group_ids)} nhóm là Input")
-        except Exception as e:
-            print(f"[Input] Error scanning input: {e}")
-    
-    def _find_symbol_for_group(self, group_name):
-        """Tìm ký hiệu cho nhóm dựa trên tên"""
-        group_name_lower = group_name.lower()
-        for name, symbol in self.group_symbols.items():
-            name_lower = name.lower()
-            # Match nếu tên trong dauvao chứa trong tên nhóm hoặc ngược lại
-            if name_lower in group_name_lower or group_name_lower in name_lower:
-                return symbol
-        return None
-    
-    def _extract_keywords_from_name(self, group_name):
-        """Extract keywords from group name that match daura.txt keywords"""
-        matched = []
-        name_lower = group_name.lower()
-        for keyword in self.all_keywords:
-            if keyword.lower() in name_lower:
-                matched.append(keyword)
-        return matched
-    
-    def _extract_keywords(self, text):
-        """Extract all matching keywords from message text"""
-        found = []
-        text_lower = text.lower()
-        for keyword in self.all_keywords:
-            if keyword.lower() in text_lower:
-                found.append(keyword)
-        return found
-    
-    def _find_matching_groups(self, keywords):
-        """Find all groups matching any of the keywords"""
-        target_groups = set()
-        for keyword in keywords:
-            groups = self.output_groups_map.get(keyword.lower(), [])
-            target_groups.update(groups)
-        return list(target_groups)
-    
-    def _send_photos_multisender(self, sender_obj, photos, target_group):
-        """Gửi ảnh với group layout sử dụng SENDER cụ thể"""
-        def download_one(idx, photo):
-            url = photo.get("url")
-            if not url:
-                return None
-            try:
-                resp = requests.get(url, stream=True, timeout=15)
-                resp.raise_for_status()
-                # Use unique filename per thread/sender to avoid collision
-                path = f"temp_{sender_obj.name}_{int(time.time()*1000)}_{idx}.jpg"
-                with open(path, "wb") as f:
-                    for chunk in resp.iter_content(8192):
-                        f.write(chunk)
-                return {"idx": idx, "path": path, "width": photo.get("width", 2560), "height": photo.get("height", 2560)}
-            except:
-                return None
-        
-        # Download parallel
-        results = []
-        futures = [self.executor.submit(download_one, i, p) for i, p in enumerate(photos)]
-        for f in as_completed(futures):
-            res = f.result()
-            if res:
-                results.append(res)
-        results.sort(key=lambda x: x["idx"])
-        
-        if not results:
-            return
-        
-        # Upload và gửi với group layout (Dùng sender_obj)
-        group_layout_id = str(int(time.time() * 1000))
-        total = len(results)
-        
-        for idx, item in enumerate(results):
-            try:
-                # Delay ngẫu nhiên giữa các ảnh
-                if idx > 0:
-                    time.sleep(random.uniform(3.0, 5.0))
-                    
-                upload_result = sender_obj._uploadImage(item["path"], target_group, ThreadType.GROUP)
-                if not upload_result or not upload_result.get("normalUrl"):
-                    continue
-                
-                payload = {"params": {
-                    "photoId": upload_result.get("photoId", int(time.time()*2000)),
-                    "clientId": upload_result.get("clientFileId", int(time.time()*1000)),
-                    "desc": "", "width": item["width"], "height": item["height"],
-                    "groupLayoutId": group_layout_id, "totalItemInGroup": total,
-                    "isGroupLayout": 1, "idInGroup": idx,
-                    "rawUrl": upload_result["normalUrl"],
-                    "thumbUrl": upload_result.get("thumbUrl", upload_result["normalUrl"]),
-                    "hdUrl": upload_result.get("hdUrl", upload_result["normalUrl"]),
-                    "imei": getattr(sender_obj, "_imei", ""), "grid": str(target_group),
-                    "oriUrl": upload_result["normalUrl"],
-                    "jcp": json.dumps({"sendSource": 1, "convertible": "jxl"})
-                }}
-                sender_obj.sendLocalImage(item["path"], target_group, ThreadType.GROUP, 
-                                   width=item["width"], height=item["height"], custom_payload=payload)
-                
-            except Exception as e:
-                print(f"[BOT1] Lỗi gửi ảnh: {e}")
-            finally:
-                # Đảm bảo LUÔN LUÔN xóa file tạm
-                try:
-                    if os.path.exists(item["path"]):
-                        os.remove(item["path"])
-                except: pass
-        
-        group_name = self.group_id_to_name.get(target_group, target_group)
-        print(f"[BOT1] {total} ảnh → {group_name}")
-
-    def _send_photos_multisender(self, sender_obj, photos, target_group):
-        """Gửi ảnh với group layout đến một nhóm cụ thể (multi-sender version)"""
-        def download_one(idx, photo):
-            url = photo.get("url")
-            if not url:
-                return None
-            try:
-                resp = requests.get(url, stream=True, timeout=15)
-                resp.raise_for_status()
-                path = f"temp_bot1_{int(time.time()*1000)}_{idx}.jpg"
-                with open(path, "wb") as f:
-                    for chunk in resp.iter_content(8192):
-                        f.write(chunk)
-                return {"idx": idx, "path": path, "width": photo.get("width", 2560), "height": photo.get("height", 2560)}
-            except:
-                return None
-        
-        # Download parallel
-        results = []
-        futures = [self.executor.submit(download_one, i, p) for i, p in enumerate(photos)]
-        for f in as_completed(futures):
-            res = f.result()
-            if res:
-                results.append(res)
-        results.sort(key=lambda x: x["idx"])
-        
-        if not results:
-            return
-        
-        # Upload và gửi với group layout
-        group_layout_id = str(int(time.time() * 1000))
-        total = len(results)
-        
-        for idx, item in enumerate(results):
-            try:
-                # Delay ngẫu nhiên giữa các ảnh
-                if idx > 0:
-                    time.sleep(random.uniform(3.0, 5.0))
-                    
-                upload_result = sender_obj._uploadImage(item["path"], target_group, ThreadType.GROUP)
-                if not upload_result.get("normalUrl"):
-                    continue
-                
-                payload = {"params": {
-                    "photoId": upload_result.get("photoId", int(time.time()*2000)),
-                    "clientId": upload_result.get("clientFileId", int(time.time()*1000)),
-                    "desc": "", "width": item["width"], "height": item["height"],
-                    "groupLayoutId": group_layout_id, "totalItemInGroup": total,
-                    "isGroupLayout": 1, "idInGroup": idx,
-                    "rawUrl": upload_result["normalUrl"],
-                    "thumbUrl": upload_result.get("thumbUrl", upload_result["normalUrl"]),
-                    "hdUrl": upload_result.get("hdUrl", upload_result["normalUrl"]),
-                    "imei": getattr(sender_obj, "_imei", ""), "grid": str(target_group),
-                    "oriUrl": upload_result["normalUrl"],
-                    "jcp": json.dumps({"sendSource": 1, "convertible": "jxl"})
-                }}
-                sender_obj.sendLocalImage(item["path"], target_group, ThreadType.GROUP, 
-                                   width=item["width"], height=item["height"], custom_payload=payload)
-                
-            except Exception as e:
-                print(f"[BOT1] Lỗi gửi ảnh: {e}")
-            finally:
-                # Đảm bảo LUÔN LUÔN xóa file tạm
-                try:
-                    if os.path.exists(item["path"]):
-                        os.remove(item["path"])
-                except: pass
-        
-        print(f"[SEND] ✓ Sent {total} photos")
-    
-    def _send_photos_to_group(self, photos, target_group):
-        """Gửi ảnh với group layout đến một nhóm cụ thể"""
-        def download_one(idx, photo):
-            url = photo.get("url")
-            if not url:
-                return None
-            try:
-                resp = requests.get(url, stream=True, timeout=15)
-                resp.raise_for_status()
-                path = f"temp_bot1_{int(time.time()*1000)}_{idx}.jpg"
-                with open(path, "wb") as f:
-                    for chunk in resp.iter_content(8192):
-                        f.write(chunk)
-                return {"idx": idx, "path": path, "width": photo.get("width", 2560), "height": photo.get("height", 2560)}
-            except:
-                return None
-        
-        # Download parallel
-        results = []
-        futures = [self.executor.submit(download_one, i, p) for i, p in enumerate(photos)]
-        for f in as_completed(futures):
-            res = f.result()
-            if res:
-                results.append(res)
-        results.sort(key=lambda x: x["idx"])
-        
-        if not results:
-            return
-        
-        # Upload và gửi với group layout (Dùng ACC2 - sender)
-        group_layout_id = str(int(time.time() * 1000))
-        total = len(results)
-        
-        for idx, item in enumerate(results):
-            try:
-                # Delay ngẫu nhiên giữa các ảnh
-                if idx > 0:
-                    time.sleep(random.uniform(3.0, 5.0))
-                    
-                upload_result = self.current_sender._uploadImage(item["path"], target_group, ThreadType.GROUP)
-                if not upload_result.get("normalUrl"):
-                    continue
-                
-                payload = {"params": {
-                    "photoId": upload_result.get("photoId", int(time.time()*2000)),
-                    "clientId": upload_result.get("clientFileId", int(time.time()*1000)),
-                    "desc": "", "width": item["width"], "height": item["height"],
-                    "groupLayoutId": group_layout_id, "totalItemInGroup": total,
-                    "isGroupLayout": 1, "idInGroup": idx,
-                    "rawUrl": upload_result["normalUrl"],
-                    "thumbUrl": upload_result.get("thumbUrl", upload_result["normalUrl"]),
-                    "hdUrl": upload_result.get("hdUrl", upload_result["normalUrl"]),
-                    "imei": getattr(self.current_sender, "_imei", ""), "grid": str(target_group),
-                    "oriUrl": upload_result["normalUrl"],
-                    "jcp": json.dumps({"sendSource": 1, "convertible": "jxl"})
-                }}
-                self.current_sender.sendLocalImage(item["path"], target_group, ThreadType.GROUP, 
-                                   width=item["width"], height=item["height"], custom_payload=payload)
-                os.remove(item["path"])
-            except Exception as e:
-                print(f"[BOT1] Lỗi gửi ảnh: {e}")
-        
-        group_name = self.group_id_to_name.get(target_group, target_group)
-        print(f"[BOT1] {total} ảnh → {group_name}")
-
-    def _get_next_available_sender(self, start_index):
-        """Get next sender that isn't limited by upload restrictions."""
-        for i in range(len(self.senders)):
-            idx = (start_index + i) % len(self.senders)
-            if not self.senders[idx]["is_limited"]:
-                return self.senders[idx]
-        return None
-    
-    def _take_rest_period(self):
-        """Rest for 5-10 minutes after 30 sessions. Senders rest, listener keeps running."""
-        rest_duration = random.randint(self.rest_duration_min, self.rest_duration_max)
-        print(f"\n[REST] 💤 Completed 30 sessions. Resting for {rest_duration//60} minutes...")
-        print(f"[REST] 👂 Listener still active, checking for new messages.\n")
-        
-        start_time = time.time()
-        while time.time() - start_time < rest_duration:
-            if not self.is_running:
-                return
-            time.sleep(1)
-        
-        print(f"[REST] ✅ Rest period complete. Resuming sending...\n")
-    
-    def _normalize_district_name(self, district):
-        """Convert 'Hà Đông' -> 'hadong' for filename."""
-        import unicodedata
-        # Remove Vietnamese accents and convert to lowercase
-        text = unicodedata.normalize('NFD', district)
-        text = text.encode('ascii', 'ignore').decode('utf-8')
-        text = text.lower().replace(' ', '')
-        return text
-    
-    def _append_to_area_file(self, filename, data):
-        """Append data to area-specific JSON file."""
-        try:
-            filepath = os.path.join(os.path.dirname(__file__), filename)
-            existing_data = []
-            
-            if os.path.exists(filepath):
-                with open(filepath, 'r', encoding='utf-8') as f:
-                    existing_data = json.load(f)
-            
-            existing_data.append(data)
-            
-            with open(filepath, 'w', encoding='utf-8') as f:
-                json.dump(existing_data, f, ensure_ascii=False, indent=2)
-                
-        except Exception as e:
-            print(f"[AREA-SAVE] Error writing to {filename}: {e}")
-    
-    def _save_to_area_files(self, item):
-        """
-        Save sent message data to district-specific JSON files.
-        Extracts district keywords and saves to files like hadong.json, caugiay.json, etc.
-        """
-        try:
-            # Extract text from item
-            texts = item.get("texts", [])
-            full_text = " ".join([t.get("text", "") if isinstance(t, dict) else t for t in texts])
-            
-            # Find district keywords
-            districts = []
-            text_lower = full_text.lower()
-            
-            for district_name, info in self.district_data.items():
-                if info.get("type") in ["district", "area"]:
-                    if district_name.lower() in text_lower:
-                        districts.append(district_name)
-            
-            if not districts:
-                return  # No district found, skip saving
-            
-            # Save to each district's file
-            for district in districts:
-                filename = f"{self._normalize_district_name(district)}.json"
-                self._append_to_area_file(filename, {
-                    "text": full_text,
-                    "photos": item.get("photos", []),
-                    "videos": item.get("videos", []),
-                    "stickers": item.get("stickers", []),
-                    "symbol": item.get("symbol", ""),
-                    "timestamp": time.time(),
-                    "source_info": item.get("source_info", ""),
-                    "keywords": item.get("keywords", [])
-                })
-                print(f"[AREA-SAVE] ✓ Saved to {filename}")
-                
-        except Exception as e:
-            print(f"[AREA-SAVE] Error saving to area files: {e}")
-    
-    def _handle_send_error(self, sender, error):
-        """Mark sender as limited if 221 error detected."""
-        if "221" in str(error):
-            sender["is_limited"] = True
-            print(f"[LIMIT] 🚫 {sender['name']} hit upload limit (221). Marking as unavailable.")
-            
-            # Check if all senders are limited
-            if all(s["is_limited"] for s in self.senders):
-                print(f"[LIMIT] ⚠️ ALL SENDERS LIMITED. Pausing sends but listening continues.")
-            return True
-        return False
-
-    def _send_worker_session_based(self):
-        """
-        Worker gửi tin theo session, phân phối round-robin qua các sender.
-        Mỗi session chạy xong mới chạy session tiếp theo.
-        """
-        print("[SENDER] 🚀 Session-based Worker started.")
-        
-        while self.is_running:
-            try:
-                # Check if rest period needed
-                with self.session_count_lock:
-                    if self.session_count >= self.sessions_before_rest:
-                        self._take_rest_period()
-                        self.session_count = 0
-                
-                # Get next session from queue
-                item = self.send_queue.get(timeout=1)
-                if item is None:
-                    self.send_queue.task_done()
-                    continue
-                
-                # Get next available sender (round-robin, skip limited ones)
-                sender = self._get_next_available_sender(self.current_sender_index)
-                
-                if not sender:
-                    # All senders limited - wait and retry
-                    print(f"[SENDER] ⏸️ All senders limited. Waiting 60s before retry...")
-                    self.send_queue.put(item)  # Put item back
-                    self.send_queue.task_done()
-                    time.sleep(60)
-                    continue
-                
-                # Process session with this sender
-                self._process_session(sender, item)
-                
-                # Save data to area-specific files
-                self._save_to_area_files(item)
-                
-                # Update session counter
-                with self.session_count_lock:
-                    self.session_count += 1
-                
-                # Move to next sender for next session (round-robin)
-                self.current_sender_index = (self.current_sender_index + 1) % len(self.senders)
-                
-                # Mark task complete
-                self._finish_current_task()
-                self.send_queue.task_done()
-                
-                # Small delay between sessions
-                time.sleep(random.uniform(2.0, 4.0))
-                
-            except queue.Empty:
+    if isinstance(content, list):
+        text_chunks: list[str] = []
+        for part in content:
+            if not isinstance(part, dict):
                 continue
-            except Exception as e:
-                print(f"[SENDER] Error: {e}")
-                import traceback
-                traceback.print_exc()
-                try:
-                    self._finish_current_task()
-                    self.send_queue.task_done()
-                except:
-                    pass
-    
-    def _process_session(self, sender, item):
-        """Process a single session: send messages to all matching groups for this sender."""
-        try:
-            texts = item.get("texts", [])
-            photos = item.get("photos", [])
-            videos = item.get("videos", [])
-            stickers = item.get("stickers", [])
-            symbol = item.get("symbol", "")
-            source_info = item.get("source_info", "")
-            
-            # Handle both dict (with timestamp) and string formats
-            text_parts = [txt.get("text", "") if isinstance(txt, dict) else txt for txt in texts]
-            full_text = " ".join(text_parts)
-            keywords = self._extract_keywords(full_text)
-            
-            # Store keywords in item for area saving
-            item["keywords"] = keywords
-            
-            # Resolve Keywords -> Group IDs (For THIS sender)
-            target_groups = set()
-            for kw in keywords:
-                gids = sender["output_groups_map"].get(kw.lower(), [])
-                target_groups.update(gids)
-            
-            target_groups = list(target_groups)
-            
-            if not target_groups:
-                print(f"[SENDER] ⚠️ {sender['name']}: No matching groups for {source_info}")
-                return
-            
-            print(f"[SENDER] 🎯 {sender['name']}: Matched {len(keywords)} keywords -> {len(target_groups)} groups")
-            print(f"[SENDER] 📤 {sender['name']}: Sending {source_info}")
-            
-            # Get already sent groups for this session
-            already_sent = set(item.get("sent_groups", []))
-            
-            # Send to each target group
-            for group_id in target_groups:
-                if group_id in already_sent:
-                    continue
-                
-                group_name = sender["group_id_to_name"].get(group_id, group_id)
-                sender_api = sender["api"]
-                
-                try:
-                    # 0. Send OPENING STICKER
-                    try:
-                        sender_api.sendSticker(3, 50625, 12658, group_id, ThreadType.GROUP)
-                        time.sleep(random.uniform(0.5, 1.0))
-                    except:
-                        pass
-                    
-                    # 1. Build chronological timeline
-                    timeline = []
-                    
-                    for txt in texts:
-                        timeline.append({
-                            "type": "text",
-                            "timestamp": txt.get("timestamp", 0) if isinstance(txt, dict) else 0,
-                            "data": txt.get("text") if isinstance(txt, dict) else txt
-                        })
-                    
-                    for photo in photos:
-                        timeline.append({"type": "photo", "timestamp": photo.get("timestamp", 0), "data": photo})
-                    
-                    for video in videos:
-                        timeline.append({"type": "video", "timestamp": video.get("timestamp", 0), "data": video})
-                    
-                    for stk in stickers:
-                        timeline.append({"type": "sticker", "timestamp": float('inf'), "data": stk})
-                    
-                    # Sort by timestamp (text first for 11A/12A)
-                    def sort_key(x):
-                        if "11a" in symbol.lower() or "12a" in symbol.lower():
-                            priority = 0 if x["type"] == "text" else 1
-                            return (priority, x["timestamp"])
-                        return (0, x["timestamp"])
-                    
-                    timeline.sort(key=sort_key)
-                    
-                    # 2. Send in order, batching consecutive photos
-                    photo_batch = []
-                    
-                    for content in timeline:
-                        if content["type"] == "text":
-                            # Flush photos first
-                            if photo_batch:
-                                self._send_photos_multisender(sender_api, photo_batch, group_id)
-                                photo_batch = []
-                                time.sleep(random.uniform(1.0, 2.0))
-                            
-                            # Send text
-                            sender_api.send(Message(text=content["data"]), group_id, ThreadType.GROUP)
-                            print(f"[SEND] ✓ Text ({symbol}) → {group_name}")
-                            time.sleep(random.uniform(1.0, 2.0))
-                        
-                        elif content["type"] == "photo":
-                            photo_batch.append(content["data"])
-                        
-                        elif content["type"] == "video":
-                            # Flush photos first
-                            if photo_batch:
-                                self._send_photos_multisender(sender_api, photo_batch, group_id)
-                                photo_batch = []
-                                time.sleep(random.uniform(1.0, 2.0))
-                            
-                            v = content["data"]
-                            sender_api.sendRemoteVideo(
-                                v["url"], v.get("thumb") or v["url"],
-                                v.get("duration", 1000), group_id, ThreadType.GROUP,
-                                width=v.get("width", 1280), height=v.get("height", 720)
-                            )
-                            print(f"[SEND] ✓ Video → {group_name}")
-                            time.sleep(random.uniform(1.5, 3.0))
-                        
-                        elif content["type"] == "sticker":
-                            # Flush photos first
-                            if photo_batch:
-                                self._send_photos_multisender(sender_api, photo_batch, group_id)
-                                photo_batch = []
-                                time.sleep(random.uniform(1.0, 2.0))
-                            
-                            stk = content["data"]
-                            try:
-                                sender_api.sendSticker(stk.get("type", 3), stk.get("id"), stk.get("catId"), group_id, ThreadType.GROUP)
-                                print(f"[SEND] ✓ Sticker → {group_name}")
-                            except:
-                                pass
-                    
-                    # Flush remaining photos
-                    if photo_batch:
-                        self._send_photos_multisender(sender_api, photo_batch, group_id)
-                    
-                    print(f"[SEND] ✅ DONE → {group_name}")
-                    
-                    # Update progress
-                    if "sent_groups" not in item:
-                        item["sent_groups"] = []
-                    item["sent_groups"].append(group_id)
-                    self._update_current_task(item)
-                    
-                except Exception as e:
-                    err_str = str(e)
-                    print(f"[SEND] ✗ Error {group_name}: {err_str}")
-                    
-                    # Handle 221 error
-                    if self._handle_send_error(sender, e):
-                        print(f"[SENDER] Stopping session for {sender['name']} due to limit.")
-                        break  # Stop sending for this session
-                        
-        except Exception as e:
-            print(f"[SESSION] Error processing session: {e}")
-            import traceback
-            traceback.print_exc()
+            if isinstance(part.get("text"), str):
+                text_chunks.append(part["text"])
+            elif isinstance(part.get("content"), str):
+                text_chunks.append(part["content"])
+        return "".join(text_chunks)
 
-    
-    def _heartbeat_worker(self):
-        """Monitor bot health"""
-        print("[HEARTBEAT] Started. Pulse every 60s.")
-        while self.is_running:
-            for _ in range(60):
-                if not self.is_running:
-                    return
-                time.sleep(1)
-            
-            try:
-                q_size = self.send_queue.qsize()
-                active_threads = threading.active_count()
-                print(f"[HEARTBEAT] Alive. Queue: {q_size} | Threads: {active_threads}")
-            except Exception:
-                pass
+    return str(content)
 
 
-        
-    def _mid_cleanup_worker(self):
-        """Xóa processed_mids định kỳ mỗi 10 phút để tránh tốn bộ nhớ"""
-        while self.is_running:
-            # Sleep 600s but check is_running every 1s for fast shutdown
-            for _ in range(600):
-                if not self.is_running:
-                    return
-                time.sleep(1)
-                
-            if not self.is_running:
-                break
-            with self.mid_lock:
-                # Chỉ giữ lại 1000 MID gần nhất trong RAM
-                if len(self.processed_mids) > 1000:
-                    current_mids = list(self.processed_mids)
-                    self.processed_mids = set(current_mids[-1000:])
-                    print(f"[BOT1] Đã dọn dẹp MID cache (còn lại {len(self.processed_mids)})")
-    
-    def _load_mid_cache(self):
-        """Load MID cache từ file"""
-        mids = set()
-        if os.path.exists(self.mid_cache_file):
-            try:
-                with open(self.mid_cache_file, "r", encoding="utf-8") as f:
-                    for line in f:
-                        mid = line.strip()
-                        if mid:
-                            mids.add(mid)
-                print(f"[BOT1] Đã load {len(mids)} MID từ cache file")
-            except Exception as e:
-                print(f"[BOT1] Lỗi load MID cache: {e}")
-        return mids
+def extract_stream_content(response: requests.Response) -> str:
+    chunks: list[str] = []
+    raw_lines: list[str] = []
+    printed_thinking_header = False
 
-    def _save_mid(self, mid):
-        """Lưu MID vào cache file"""
-        try:
-            with open(self.mid_cache_file, "a", encoding="utf-8") as f:
-                f.write(f"{mid}\n")
-        except Exception as e:
-            print(f"[BOT1] Lỗi save MID: {e}")
-    
-    def _add_to_session(self, source_id, author_id, content_type, content_data, symbol):
-        """
-        Thêm content vào session buffer
-        LOGIC:
-        - TEXT >= 30 ký tự → TẠO SESSION MỚI (giữ media cũ nếu có)
-        - Ảnh/Video → THÊM vào session hiện tại
-        - Nếu session ĐỦ (có text + media) → reset timer về 3s để gửi nhanh
-        - Max timeout 40s TỪ LẦN NHẬN CONTENT CUỐI CÙNG → đóng session
-        """
-        if not self.is_running:
-            return
-        
-        session_key = (source_id, author_id)
-        now = time.time()
-        
-        with self.session_lock:
-            # Nếu chưa có session -> tạo mới
-            if session_key not in self.session_buffers:
-                self.session_buffers[session_key] = {
-                    "instance_id": str(int(time.time() * 1000)), # Unique ID for this specific buffer
-                    "texts": [],
-                    "photos": [],
-                    "videos": [],
-                    "stickers": [],
-                    "symbol": symbol,
-                    "timer": None,
-                    "last_activity": now,
-                }
-                print(f"[SESSION] {now} ({author_id}) -> Start new session (ID: {self.session_buffers[session_key]['instance_id']})")
-            
-            buffer = self.session_buffers[session_key]
-            buffer["last_activity"] = now  # Cập nhật thời gian hoạt động
-            
-            # Phân loại và thêm vào buffer
-            if content_type == "text":
-                # LOGIC MỚI: Nếu Text dài (>30 ký tự) -> NEW POST -> Flush Session Cũ (bất kể có gì)
-                # User Rule: "mọi nhóm bắt đầu bằng text dài" -> Text arrives -> New Session.
-                # Avoids merging orphaned photos from previous session.
-                is_long_text = len(content_data) > 30
-                has_content = len(buffer["texts"]) > 0 or len(buffer["photos"]) > 0 or len(buffer["videos"]) > 0
-                
-                if is_long_text and has_content:
-                    print(f"[SESSION] ⚠️ Phát hiện TEXT dài ({len(content_data)} chars) -> FLUSH session cũ (Gồm {len(buffer['photos'])} ảnh)")
-                    # 1. Hủy timer cũ
-                    if buffer.get("timer"):
-                        buffer["timer"].cancel()
-                    
-                    # 2. Flush session cũ (gửi ngay lập tức)
-                    self._flush_immediate(session_key)
-                    
-                    # 3. Tạo session mới cho text này
-                    now = time.time() # Update time
-                    self.session_buffers[session_key] = {
-                        "instance_id": str(int(time.time() * 1000)),
-                        "texts": [], "photos": [], "videos": [], "stickers": [],
-                        "symbol": symbol, "timer": None, "last_activity": now,
-                    }
-                    buffer = self.session_buffers[session_key] # Point to new buffer
-                    print(f"[SESSION] {now} ({author_id}) -> Re-created session due to LONG TEXT (ID: {buffer['instance_id']})")
-                
-                buffer["texts"].append({"text": content_data, "timestamp": now})
-                print(f"[SESSION] 📝 TEXT mới từ {author_id}")
-            elif content_type == "photo":
-                content_data["timestamp"] = now
-                buffer["photos"].append(content_data)
-            elif content_type == "video":
-                content_data["timestamp"] = now
-                buffer["videos"].append(content_data)
-            elif content_type == "sticker":
-                buffer["stickers"].append(content_data)
-            
-            buffer = self.session_buffers[session_key]
-            has_text = len(buffer["texts"]) > 0
-            has_media = len(buffer["photos"]) > 0 or len(buffer["videos"]) > 0
-            
-            # Log trạng thái
-            type_counts = f"T:{len(buffer['texts'])} P:{len(buffer['photos'])} V:{len(buffer['videos'])}"
-            print(f"[SESSION] Gom {content_type} từ {author_id} ({type_counts})")
-            
-            # Tính timeout
-            if has_text and has_media:
-                # Đủ điều kiện → chờ 8s để user có thể gửi thêm text/media
-                timeout = 8.0
-                print(f"[SESSION] ✓ Đủ text + media → Gửi sau {timeout}s nếu không có thêm")
-            else:
-                # Chưa đủ → chờ max 40s TỪ LẦN HOẠT ĐỘNG CUỐI
-                timeout = self.session_max_timeout
-            
-            # Reset timer
-            if buffer.get("timer"):
-                buffer["timer"].cancel()
-            
-            # CRITICAL FIX: Pass instance_id to timer so it only flushes the buffer it belongs to
-            timer = threading.Timer(timeout, self._check_and_flush, args=(session_key, buffer["instance_id"]))
-            timer.start()
-            buffer["timer"] = timer
-            
-    def _flush_immediate(self, session_key):
-        """Flush session ngay lập tức (dùng khi ngắt quãng)"""
-        with self.session_lock:
-            buffer = self.session_buffers.get(session_key)
-            if not buffer: return
-            
-            if buffer.get("timer"):
-                buffer["timer"].cancel()
-            
-            # session_key is a tuple (source_id, author_id), so session_key[1] is author_id
-            author_id = session_key[1]
-            
-            # Đẩy vào queue (Sử dụng _enqueue_task để lưu)
-            self._enqueue_task({
-                "texts": buffer.get("texts", []),
-                "photos": buffer.get("photos", []),
-                "videos": buffer.get("videos", []),
-                "stickers": buffer.get("stickers", []),
-                "symbol": buffer.get("symbol", ""),
-                "source_info": f"Session {author_id} (FLUSH)"
-            })
-            
-            self.session_buffers.pop(session_key)
-            print(f"[SESSION] ⚡ Flushed immediate: {author_id}")
+    # Get lines from iter_lines or fallback to splitlines
+    lines: list[str] = []
+    try:
+        for line in response.iter_lines():
+            if line:
+                lines.append(line.decode("utf-8", errors="replace"))
+    except Exception:
+        pass
 
-    def _check_and_flush(self, session_key, instance_id):
-        """Kiểm tra điều kiện và flush session"""
-        if not self.is_running:
-            return
-        
-        with self.session_lock:
-            buffer = self.session_buffers.get(session_key)
-            if not buffer: return
-            
-            # CRITICAL FIX: Ensure we are flushing the SAME buffer instance that triggered this timer
-            if buffer.get("instance_id") != instance_id:
-                print(f"[CHECK] Session {session_key[1]} skipped: Instance mismatch ({buffer.get('instance_id')} vs {instance_id}). REASON: Stale timer.")
-                return
-            
-            has_text = len(buffer.get("texts", [])) > 0
-            has_media = len(buffer.get("photos", [])) > 0 or len(buffer.get("videos", [])) > 0
-            
-            current_time = time.time()
-            idle_time = current_time - buffer["last_activity"]
-            is_expired = idle_time >= self.session_max_timeout
-            
-            # session_key is a tuple (source_id, author_id), so session_key[1] is author_id
-            author_id = session_key[1]
-            print(f"[CHECK] Session {author_id}: text={has_text}, media={has_media}, idle={idle_time:.1f}s, expired={is_expired}")
-            
-            if has_text and has_media:
-                # Đủ điều kiện -> Gửi
-                self._enqueue_task({
-                    "texts": buffer.get("texts", []),
-                    "photos": buffer.get("photos", []),
-                    "videos": buffer.get("videos", []),
-                    "stickers": buffer.get("stickers", []),
-                    "symbol": buffer.get("symbol", ""),
-                    "source_info": f"Session {author_id}"
-                })
-                # XÓA SESSION để tránh gửi trùng lặp
-                self.session_buffers.pop(session_key)
-                print(f"[CHECK] ✅ Đã enqueue và xóa session {author_id}")
-            elif is_expired:
-                # Timeout nhưng XỬ LÝ KHÁC NHAU:
-                if has_media and not has_text:
-                    # Có ảnh/video NHƯNG CHƯA CÓ TEXT → GIỮ LẠI, KHÔNG HỦY
-                    # Reset timer, chờ thêm 30s nữa
-                    timeout = 30.0
-                    if buffer.get("timer"):
-                        buffer["timer"].cancel()
-                    timer = threading.Timer(timeout, self._check_and_flush, args=(session_key,))
-                    timer.start()
-                    buffer["timer"] = timer
-                    buffer["last_activity"] = time.time()  # Reset để không bị timeout liên tục
-                    print(f"[CHECK] 📷 Giữ lại media, chờ TEXT thêm 30s (có {len(buffer.get('photos', []))} ảnh, {len(buffer.get('videos', []))} video)")
-                elif has_text and not has_media:
-                    # Có text KHÔNG CÓ MEDIA → HỦY (text đơn lẻ không có giá trị)
-                    self.session_buffers.pop(session_key)
-                    print(f"[CHECK] ❌ Idle {idle_time:.0f}s: Có text KHÔNG CÓ MEDIA → Hủy")
-                else:
-                    # Không có gì → Hủy
-                    self.session_buffers.pop(session_key)
-                    print(f"[CHECK] ❌ Idle {idle_time:.0f}s: Không có nội dung → Hủy")
-            else:
-                # Chưa đủ và chưa timeout → chờ thêm
-                remaining = self.session_max_timeout - idle_time
-                timeout = min(5.0, max(1.0, remaining))  # Check lại sau 1-5s
-                
-                if buffer.get("timer"):
-                    buffer["timer"].cancel()
-                
-                timer = threading.Timer(timeout, self._check_and_flush, args=(session_key,))
-                timer.start()
-                buffer["timer"] = timer
-                print(f"[CHECK] ⏳ Chưa đủ → Chờ thêm {timeout:.1f}s")
-    
-    def _forward_message(self, message, message_object, source_id, author_id, symbol):
-        """Phân loại tin nhắn và thêm vào session buffer"""
-        try:
-            msg_type = getattr(message_object, "msgType", None)
-            content = getattr(message_object, "content", {}) or {}
-            quote = getattr(message_object, "quote", None)  # Detect reply
-            
-            if not isinstance(content, dict):
-                content = {}
-            
-            params = {}
-            params_raw = content.get("params")
-            if params_raw:
-                try:
-                    params = json.loads(params_raw)
-                except:
-                    pass
-            
-            # SPECIAL HANDLING for 11A and 12A: Only care about text replying to photos
-            is_special_group = symbol.lower() in ["11a", "12a"]
-            
-            # Photo
-            if msg_type == "chat.photo":
-                photo_url = content.get("hd") or content.get("href")
-                if photo_url:
-                    width = self._safe_int(params.get("width"), 2560)
-                    height = self._safe_int(params.get("height"), 2560)
-                    photo_data = {"url": photo_url, "width": width, "height": height}
-                    
-                    # For 11A/12A: Cache photos by group_layout_id
-                    if is_special_group:
-                        group_layout_id = params.get("group_layout_id")
-                        if group_layout_id:
-                            with self.photo_cache_lock:
-                                if group_layout_id not in self.photo_cache:
-                                    self.photo_cache[group_layout_id] = {
-                                        "photos": [],
-                                        "symbol": symbol,
-                                        "source_id": source_id,
-                                        "author_id": author_id,
-                                        "timestamp": time.time()
-                                    }
-                                self.photo_cache[group_layout_id]["photos"].append(photo_data)
-                                print(f"[CACHE] {symbol}: Cached photo {len(self.photo_cache[group_layout_id]['photos'])} for layout {group_layout_id}")
-                        else:
-                            # No group_layout_id, treat normally
-                            self._add_to_session(source_id, author_id, "photo", photo_data, symbol)
-                    else:
-                        # Other groups: Normal handling
-                        self._add_to_session(source_id, author_id, "photo", photo_data, symbol)
-            
-            # Text message (REPLY DETECTION)
-            elif msg_type == "webchat" or (isinstance(message, str) and message and msg_type not in ["chat.photo", "chat.video", "chat.video.msg", "chat.sticker"]):
-                text = message if isinstance(message, str) else ""
-                if not text:
-                    if isinstance(content, str):
-                        text = content
-                    elif isinstance(content, dict):
-                        text = content.get("text", "") or content.get("title", "")
-                
-                if text:
-                    # Process text
-                    processed_text = process_message(text, symbol)
-                    if not processed_text or not processed_text.strip():
-                        return
-                    
-                    # For 11A/12A: Only forward if text REPLIES to photo
-                    if is_special_group:
-                        if quote:
-                            # Extract group_layout_id from quote
-                            group_layout_id = None
-                            try:
-                                quote_attach = getattr(quote, "attach", None)
-                                if quote_attach:
-                                    if isinstance(quote_attach, str):
-                                        quote_data = json.loads(quote_attach)
-                                    else:
-                                        quote_data = quote_attach
-                                    
-                                    if isinstance(quote_data, dict):
-                                        quote_params = quote_data.get("params")
-                                        if isinstance(quote_params, str):
-                                            quote_params = json.loads(quote_params)
-                                        if isinstance(quote_params, dict):
-                                            group_layout_id = quote_params.get("group_layout_id")
-                            except:
-                                pass
-                            
-                            if group_layout_id:
-                                # Try to fetch cached photos
-                                with self.photo_cache_lock:
-                                    cached = self.photo_cache.get(group_layout_id)
-                                    if cached:
-                                        print(f"[REPLY] {symbol}: Text replies to {len(cached['photos'])} cached photos (layout {group_layout_id})")
-                                        # Add text to session
-                                        self._add_to_session(source_id, author_id, "text", processed_text, symbol)
-                                        # Add all cached photos to session
-                                        for photo in cached["photos"]:
-                                            self._add_to_session(source_id, author_id, "photo", photo, symbol)
-                                        # Remove from cache
-                                        del self.photo_cache[group_layout_id]
-                                    else:
-                                        print(f"[REPLY] {symbol}: Text replies but no cached photos found for layout {group_layout_id}")
-                            else:
-                                print(f"[REPLY] {symbol}: Text has quote but no group_layout_id found")
-                        else:
-                            # Text without reply → SKIP for 11A/12A
-                            print(f"[FILTER] {symbol}: Text without reply → SKIP")
-                            return
-                    else:
-                        # Other groups: Normal handling
-                        self._add_to_session(source_id, author_id, "text", processed_text, symbol)
-            
-            # Video
-            elif msg_type in ["chat.video", "chat.video.msg"]:
-                video_url = content.get("href")
-                if video_url:
-                    self._add_to_session(source_id, author_id, "video", {
-                        "url": video_url,
-                        "thumb": content.get("thumb") or content.get("hd"),
-                        "duration": self._safe_int(params.get("duration"), 1000),
-                        "width": self._safe_int(params.get("width"), 1280),
-                        "height": self._safe_int(params.get("height"), 720)
-                    }, symbol)
-            
-            # Sticker
-            elif msg_type == "chat.sticker":
-                if content.get("id") and content.get("catId"):
-                    self._add_to_session(source_id, author_id, "sticker", {
-                        "type": content.get("type", 3),
-                        "id": content.get("id"),
-                        "catId": content.get("catId")
-                    }, symbol)
-        
-        except Exception as e:
-            print(f"[BOT1] Lỗi forward: {e}")
-            import traceback
-            traceback.print_exc()
-    
-    def onMessage(self, mid, author_id, message, message_object, thread_id, thread_type):
-        """Xử lý tin nhắn"""
-        try:
-            thread_id_str = str(thread_id)
-            author_id_str = str(author_id)
-            mid_str = str(mid)
-            
-            # 1. Bỏ qua tin nhắn từ chính bot (bất kỳ sender nào)
-            sender_uids = [s["uid"] for s in self.senders]
-            if author_id_str in sender_uids:
-                return
-            
-            # 2. Bỏ qua nếu MID đã được xử lý (tránh duplicate)
-            with self.mid_lock:
-                if mid_str in self.processed_mids:
-                    return
-                self.processed_mids.add(mid_str)
-                self._save_mid(mid_str)
-            
-            # 3. Bỏ qua nếu tin nhắn đến từ một trong các nhóm ĐẦU RA (tránh feedback loop)
-            # Check across all senders' output groups
-            for sender in self.senders:
-                if thread_id_str in sender["group_id_to_name"]:
-                    return
-            
-            # Xử lý lệnh !sticker (từ bất kỳ nhóm nào)
-            if isinstance(message, str) and message.strip().lower() == "!sticker":
-                # Gửi 1 sticker test vào nhóm hiện tại (dùng sender đầu tiên)
-                if self.senders:
-                    first_sender = self.senders[0]["api"]
-                    first_sender.sendSticker(3, 50625, 12658, thread_id_str, ThreadType.GROUP)
-                    print(f"[BOT1] !sticker → {self.senders[0]['name']} đã gửi sticker test vào {thread_id_str}")
-                return
-            
-            # Xử lý lệnh !help
-            if isinstance(message, str) and message.strip().lower() == "!help":
-                help_text = "👋 Bạn cần hỗ trợ gì?\n\n📌 Bot đang hoạt động và sẵn sàng forward tin nhắn!"
-                if self.senders:
-                    first_sender = self.senders[0]["api"]
-                    first_sender.send(Message(text=help_text), thread_id_str, ThreadType.GROUP)
-                    print(f"[BOT1] !help → {self.senders[0]['name']} trả lời trong {thread_id_str}")
-                return
-            
-            # Chỉ xử lý tin nhắn từ group
-            if thread_type != ThreadType.GROUP:
-                return
-            
-            # 4. Chỉ xử lý tin nhắn từ nhóm ĐẦU VÀO đã đăng ký (dauvao.txt)
-            symbol = self.input_groups.get(thread_id_str)
-            if not symbol:
-                return
-            
-            # Get group name from any sender that has it
-            group_name = thread_id_str
-            for sender in self.senders:
-                if thread_id_str in sender["group_id_to_name"]:
-                    group_name = sender["group_id_to_name"][thread_id_str]
-                    break
-            
-            msg_preview = str(message)[:50] if message else ""
-            print(f"{Fore.CYAN}[MSG] {group_name} ({symbol}): {msg_preview}...{Style.RESET_ALL}")
-            
-            # Forward tin nhắn
-            self._forward_message(message, message_object, thread_id_str, author_id_str, symbol)
-        
-        except Exception as e:
-            print(f"[BOT1] Error: {e}")
+    if not lines and response.text:
+        lines = response.text.splitlines()
 
+    for line_str in lines:
+        decoded_line = line_str.strip()
+        if not decoded_line:
+            continue
 
-# ==================== MAIN ====================
-if __name__ == "__main__":
-    print("🚀 Khởi động Bot2 - Forward đến NHIỀU nhóm (Multi-Account Parallel)...")
-    from config import ACCOUNTS
-    
-    print(f"📌 Chế độ: 1 Listener + {len(ACCOUNTS)-1} Senders")
-    
-    bot = None
-    
-    while True:  # Auto-restart loop
-        try:
-            if bot is None:
-                print(f"\n[MAIN] 🔄Khởi tạo bot... ({datetime.now().strftime('%H:%M:%S')})")
-                bot = Bot1(API_KEY, SECRET_KEY, ACCOUNTS)
-            
-            print(f"[MAIN] 🎧 Bắt đầu listen... ({datetime.now().strftime('%H:%M:%S')})")
-            bot.listen(thread=False, delay=0)  # Blocking mode để catch lỗi
-            
-        except KeyboardInterrupt:
-            print("\n[MAIN] Dừng bot (Ctrl+C)")
-            if bot:
-                bot.is_running = False
+        raw_lines.append(decoded_line)
+        if not decoded_line.startswith("data:"):
+            continue
+
+        data = decoded_line[5:].strip()
+        if data == "[DONE]":
             break
-        
-        except Exception as e:
-            print(f"\n{Fore.RED}[MAIN] ✗ Lỗi: {e}{Style.RESET_ALL}")
-            import traceback
-            traceback.print_exc()
-            
-            # Cleanup bot cũ
-            if bot:
+
+        try:
+            event = json.loads(data)
+        except json.JSONDecodeError:
+            continue
+
+        choices = event.get("choices") or []
+        if not choices:
+            continue
+
+        choice = choices[0]
+        delta = choice.get("delta") or {}
+
+        # Extract and print reasoning chunks in real-time
+        reasoning_content = delta.get("reasoning_content") or delta.get("reasoning")
+        if isinstance(reasoning_content, str) and reasoning_content:
+            if not printed_thinking_header:
+                print("  [AI Thinking] ", end="", flush=True)
+                printed_thinking_header = True
+            sys.stdout.write(reasoning_content)
+            sys.stdout.flush()
+
+        delta_content = delta.get("content")
+        if isinstance(delta_content, str):
+            chunks.append(delta_content)
+            continue
+
+        if isinstance(delta_content, list):
+            for part in delta_content:
+                if isinstance(part, dict) and isinstance(part.get("text"), str):
+                    chunks.append(part["text"])
+            continue
+
+        message = choice.get("message") or {}
+        message_content = message.get("content")
+        if isinstance(message_content, str):
+            chunks.append(message_content)
+
+    if printed_thinking_header:
+        print() # End of thinking log
+
+    content = "".join(chunks).strip()
+    if content:
+        return content
+
+    # Some gateways ignore SSE and return one-shot JSON even when stream=True.
+    if len(raw_lines) == 1 and raw_lines[0].startswith("{"):
+        try:
+            event = json.loads(raw_lines[0])
+        except json.JSONDecodeError:
+            return raw_lines[0]
+
+        if isinstance(event, dict):
+            completion_content = extract_completion_content(event)
+            return completion_content if completion_content else raw_lines[0]
+
+    return "\n".join(raw_lines).strip()
+
+
+def clean_json_block(content: str) -> str:
+    content = content.strip()
+    content = re.sub(r'<think>.*?</think>', '', content, flags=re.DOTALL).strip()
+    content = re.sub(r'<think>.*$', '', content, flags=re.DOTALL).strip()
+    if "```json" in content:
+        content = content.split("```json", 1)[1].split("```", 1)[0].strip()
+    elif "```" in content:
+        content = content.split("```", 1)[1].split("```", 1)[0].strip()
+    return content
+
+
+def truncate_for_log(text: str, limit: int = 400) -> str:
+    clean = " ".join(str(text).split())
+    if len(clean) <= limit:
+        return clean
+    return clean[:limit] + "...(truncated)"
+
+
+def extract_json_candidate(text: str) -> str:
+    start = -1
+    stack: list[str] = []
+    in_string = False
+    escaped = False
+
+    for i, ch in enumerate(text):
+        if start == -1:
+            if ch in "{[":
+                start = i
+                stack.append(ch)
+            continue
+
+        if in_string:
+            if escaped:
+                escaped = False
+                continue
+            if ch == "\\":
+                escaped = True
+                continue
+            if ch == '"':
+                in_string = False
+            continue
+
+        if ch == '"':
+            in_string = True
+            continue
+
+        if ch in "{[":
+            stack.append(ch)
+            continue
+
+        if ch in "}]":
+            if not stack:
+                continue
+
+            top = stack[-1]
+            if (top == "{" and ch == "}") or (top == "[" and ch == "]"):
+                stack.pop()
+                if not stack:
+                    return text[start : i + 1]
+            else:
+                return ""
+
+    return ""
+
+
+def parse_ai_json(content: str) -> Any:
+    cleaned = clean_json_block(content)
+    if not cleaned:
+        raise ValueError("AI returned empty content.")
+
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError as err:
+        candidate = extract_json_candidate(cleaned)
+        if candidate:
+            return json.loads(candidate)
+        raise ValueError(f"AI returned non-JSON content: {truncate_for_log(cleaned)}") from err
+
+
+def error_payload_snippet(response: requests.Response, limit: int = 400) -> str:
+    try:
+        return truncate_for_log(response.text, limit=limit)
+    except Exception:
+        return "<unavailable>"
+
+
+def normalize_ai_rows(rows: list[dict[str, Any]], session_id: str, category: str) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    seen_ids: set[str] = set()
+
+    for row in rows:
+        room_id = row.get("id")
+        room_id_str = str(room_id).strip() if room_id is not None and str(room_id).lower() not in ("null", "none", "") else None
+
+        if room_id_str and room_id_str in seen_ids:
+            continue
+        if room_id_str:
+            seen_ids.add(room_id_str)
+
+        address = row.get("address")
+        price = row.get("price")
+        price1 = row.get("price1")
+        price2 = row.get("price2")
+        type_value = row.get("type")
+
+        if address is None or price is None or price1 is None or price2 is None:
+            continue
+
+        address_str = str(address).strip()
+        price_str = str(price).strip()
+        price1_str = str(price1).strip()
+        price2_str = str(price2).strip()
+
+        if not address_str or not price_str or not price1_str or not price2_str:
+            continue
+
+        if isinstance(type_value, list):
+            tags = [str(tag).strip() for tag in type_value if str(tag).strip()]
+            normalized_type: str | None = ", ".join(tags) if tags else None
+        elif type_value is None or str(type_value).lower() in ("null", "none", ""):
+            normalized_type = None
+        else:
+            type_str = str(type_value).strip()
+            normalized_type = type_str if type_str else None
+
+        normalized.append(
+            {
+                "session_id": session_id,
+                "id": room_id_str,
+                "address": address_str,
+                "price": price_str,
+                "price1": price1_str,
+                "price2": price2_str,
+                "type": normalized_type,
+                "category": category,
+            }
+        )
+
+    # SAFEGUARD: AI trả về nhiều object cho 1 tin đăng → gộp thành 1 object duy nhất
+    if len(normalized) > 1:
+        ids = "/".join(r["id"] for r in normalized if r["id"]) or None
+        # Lấy địa chỉ ngắn nhất
+        best_address = min((r["address"] for r in normalized), key=len)
+        # price1 = giá thấp nhất, price2 = giá cao nhất
+        try:
+            p1 = min(int(r["price1"]) for r in normalized if r["price1"].isdigit())
+            p2 = max(int(r["price2"]) for r in normalized if r["price2"].isdigit())
+        except (ValueError, AttributeError):
+            p1 = int(normalized[0]["price1"]) if normalized[0]["price1"].isdigit() else 0
+            p2 = int(normalized[-1]["price2"]) if normalized[-1]["price2"].isdigit() else p1
+        p1_str = str(p1)
+        p2_str = str(p2)
+        # price text
+        if p1 == p2:
+            price_merged = f"{p1 // 1_000_000}tr" if p1 >= 1_000_000 else str(p1)
+        else:
+            lo = f"{p1 / 1_000_000:.1f}".rstrip("0").rstrip(".")
+            hi = f"{p2 / 1_000_000:.1f}".rstrip("0").rstrip(".")
+            price_merged = f"{lo}-{hi}tr"
+        # type: ghép các type khác nhau
+        types = list(dict.fromkeys(r["type"] for r in normalized if r["type"]))
+        merged_type = ", ".join(types) if types else None
+
+        print(f"  [SAFEGUARD] AI trả {len(normalized)} objects -> gộp thành 1: id={ids}, price={price_merged}")
+        return [{
+            "session_id": session_id,
+            "id": ids,
+            "address": best_address,
+            "price": price_merged,
+            "price1": p1_str,
+            "price2": p2_str,
+            "type": merged_type,
+            "category": category,
+        }]
+
+    return normalized
+
+
+def process_single_item(session_id: str, raw_text: str, category: str, max_retries: int = 5) -> list[dict[str, Any]] | None:
+    if API_LOCAL_ONLY:
+        # Mock local output
+        return [{
+            "session_id": session_id,
+            "id": None,
+            "address": "Mock Address",
+            "price": "1tr",
+            "price1": "1000000",
+            "price2": "1000000",
+            "type": "40-42m2" if category == "mat-bang-kinh-doanh" else None,
+            "category": category
+        }]
+
+    system_prompt = SYSTEM_PROMPT_MBKD if category == "mat-bang-kinh-doanh" else SYSTEM_PROMPT
+
+    payload = {
+        "model": API_MODEL,
+        "messages": [
+            {
+                "role": "system",
+                "content": system_prompt
+            },
+            {
+                "role": "user",
+                "content": raw_text
+            }
+        ],
+        "stream": True
+    }
+
+    headers = {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+    }
+
+    last_error = ""
+    attempt = 0
+    attempt_429 = 0
+    while attempt < max_retries:
+        try:
+            current_headers = dict(headers)
+            if API_TOKENS:
+                token = random.choice(API_TOKENS)
+                current_headers["Authorization"] = f"Bearer {token}"
+
+            api_url = f"{API_BASE_URL.rstrip('/')}/chat/completions"
+            response = requests.post(
+                api_url,
+                headers=current_headers,
+                json=payload,
+                timeout=(API_TIMEOUT_CONNECT, API_TIMEOUT_READ)
+            )
+
+            if response.status_code == 429:
+                attempt_429 += 1
+                if attempt_429 > 3:
+                    last_error = f"HTTP 429: Too Many Requests (exceeded max 429 retries)"
+                    break
+                sleep_time = min(15 * attempt_429, 120)
+                last_error = f"HTTP 429: {response.text}"
+                print(f"  [AI] HTTP 429: Too Many Requests. Sleeping for {sleep_time}s before retry (attempt {attempt_429})...")
+                time.sleep(sleep_time)
+                continue
+
+            if response.status_code >= 400:
+                last_error = f"HTTP {response.status_code}: {response.text}"
+                attempt += 1
+                if attempt < max_retries:
+                    time.sleep(API_RETRY_DELAY)
+                continue
+
+            res_json = None
+            content_type = response.headers.get("Content-Type", "")
+            is_stream = "text/event-stream" in content_type or response.text.strip().startswith("data:")
+            if is_stream:
+                content = extract_stream_content(response)
+            else:
                 try:
-                    bot.is_running = False
-                except:
-                    pass
-            bot = None
-            
-            # Chờ 5s rồi reconnect
-            print(f"{Fore.YELLOW}[MAIN] ⏳ Chờ 5s rồi reconnect...{Style.RESET_ALL}")
-            time.sleep(5)
+                    res_json = response.json()
+                    content = extract_completion_content(res_json)
+                except Exception as json_err:
+                    if response.text.strip().startswith("data:"):
+                        content = extract_stream_content(response)
+                    else:
+                        raise json_err
+
+            if not content:
+                last_error = f"Empty response or parsing failure from AI. Response: {res_json or response.text}"
+                attempt += 1
+                if attempt < max_retries:
+                    time.sleep(API_RETRY_DELAY)
+                continue
+
+            parsed = parse_ai_json(content)
+            if isinstance(parsed, dict):
+                parsed = [parsed]
+
+            if isinstance(parsed, list):
+                dict_rows = [row for row in parsed if isinstance(row, dict)]
+                normalized = normalize_ai_rows(dict_rows, session_id, category)
+                return normalized
+            else:
+                last_error = f"AI returned non-list JSON: {type(parsed).__name__}"
+
+        except Exception as e:
+            last_error = f"{type(e).__name__}: {e}"
+
+        attempt += 1
+        if attempt < max_retries:
+            time.sleep(API_RETRY_DELAY)
+
+    if API_DEBUG_ERRORS and last_error:
+        print(f"  [AI] Extraction failed for session {session_id}. Last error: {last_error}")
+
+    return None
+
+
+def has_json_files(directory: str) -> bool:
+    if not os.path.isdir(directory):
+        return False
+    return any(name.lower().endswith(".json") for name in os.listdir(directory))
+
+
+def find_summary_candidates(base_dir: str) -> list[str]:
+    if not os.path.isdir(base_dir):
+        return []
+
+    name_options = (
+        "districts_summary",
+        "districts_sumary",
+        "district_summary",
+        "district_sumary",
+        "summary",
+        "sumary",
+    )
+
+    candidates: list[str] = []
+    for name in name_options:
+        candidates.append(os.path.join(base_dir, name))
+
+    try:
+        child_dirs = [entry.path for entry in os.scandir(base_dir) if entry.is_dir()]
+    except OSError:
+        child_dirs = []
+
+    # Extra fallback: pick dirs that look like summary/sumary naming.
+    for child in child_dirs:
+        child_name = os.path.basename(child).lower()
+        if "sum" in child_name:
+            candidates.append(child)
+
+    return candidates
+
+
+def find_full_candidates(base_dir: str) -> list[str]:
+    if not os.path.isdir(base_dir):
+        return []
+
+    name_options = (
+        "districts_full",
+        "district_full",
+        "full",
+    )
+
+    candidates: list[str] = []
+    for name in name_options:
+        candidates.append(os.path.join(base_dir, name))
+
+    try:
+        child_dirs = [entry.path for entry in os.scandir(base_dir) if entry.is_dir()]
+    except OSError:
+        child_dirs = []
+
+    # Extra fallback: pick dirs that look like full naming.
+    for child in child_dirs:
+        child_name = os.path.basename(child).lower()
+        if "full" in child_name:
+            candidates.append(child)
+
+    return candidates
+
+
+def first_existing_json_dir(candidates: list[str]) -> str | None:
+    seen: set[str] = set()
+    for candidate in candidates:
+        abs_candidate = os.path.abspath(candidate)
+        if abs_candidate in seen:
+            continue
+        seen.add(abs_candidate)
+        if has_json_files(abs_candidate):
+            return abs_candidate
+    return None
+
+
+def resolve_input_dirs(
+    cli_summary_dir: str | None,
+    cli_full_dir: str | None,
+) -> tuple[str | None, str | None]:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    cwd = os.getcwd()
+    search_roots = [script_dir, cwd, os.path.join(cwd, "bot"), os.path.join(cwd, "batdongsan")]
+
+    summary_candidates: list[str] = []
+    if cli_summary_dir:
+        cli_path = os.path.abspath(cli_summary_dir)
+        summary_candidates.append(cli_path)
+        summary_candidates.extend(find_summary_candidates(cli_path))
+    for root in search_roots:
+        summary_candidates.extend(find_summary_candidates(root))
+
+    full_candidates: list[str] = []
+    if cli_full_dir:
+        cli_path = os.path.abspath(cli_full_dir)
+        full_candidates.append(cli_path)
+        full_candidates.extend(find_full_candidates(cli_path))
+    for root in search_roots:
+        full_candidates.extend(find_full_candidates(root))
+
+    summary_dir = first_existing_json_dir(summary_candidates)
+    full_dir = first_existing_json_dir(full_candidates)
+
+    if summary_dir is None and full_dir is None:
+        raise FileNotFoundError(
+            "Cannot find input directory with JSON files. "
+            "Supported names include districts_summary / summary / sumary "
+            "and districts_full / full. Use --summary-dir or --full-dir."
+        )
+
+    return summary_dir, full_dir
+
+
+def resolve_ok_dir(cli_ok_dir: str | None, source_dir: str) -> str:
+    if cli_ok_dir:
+        return os.path.abspath(cli_ok_dir)
+    return os.path.join(os.path.dirname(source_dir), "district_ai")
+
+
+def load_json_array(path: str) -> list[dict[str, Any]]:
+    with open(path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    if isinstance(data, list):
+        return [row for row in data if isinstance(row, dict)]
+    return []
+
+
+def save_json_array(path: str, data: list[dict[str, Any]]) -> None:
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+def normalize_input_rows(rows: list[dict[str, Any]]) -> list[dict[str, str]]:
+    normalized: list[dict[str, str]] = []
+    seen_ids: set[str] = set()
+
+    for row in rows:
+        room_id = str(row.get("id", "")).strip()
+        if not room_id or room_id in seen_ids:
+            continue
+
+        text1 = str(row.get("text1") or "").strip()
+        text2 = str(row.get("text2") or "").strip()
+
+        # Fallback cho du lieu cu chi co 1 truong text
+        if not text1 and not text2:
+            for key in ("original_text", "raw_text", "text", "content", "message"):
+                value = row.get(key)
+                if isinstance(value, str) and value.strip():
+                    text2 = value.strip()
+                    break
+
+        if not text1 and not text2:
+            continue
+
+        raw_text_for_ai = text1 if text1 else text2
+
+        normalized.append({"id": room_id, "raw_text": raw_text_for_ai, "text1": text1, "text2": text2})
+        seen_ids.add(room_id)
+
+    return normalized
+
+
+def merge_summary_full_rows(
+    summary_rows: list[dict[str, str]],
+    full_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    by_id: dict[str, dict[str, str]] = {}
+    order: list[str] = []
+
+    # Keep summary order/values as primary source.
+    for row in summary_rows:
+        room_id = row["id"]
+        if room_id not in by_id:
+            order.append(room_id)
+        by_id[room_id] = row
+
+    # Fill missing IDs from full; also merge text1/text2 if one source has it.
+    for row in full_rows:
+        room_id = row["id"]
+        if room_id in by_id:
+            existing = by_id[room_id]
+            if not existing.get("text1") and row.get("text1"):
+                existing["text1"] = row["text1"]
+            if not existing.get("text2") and row.get("text2"):
+                existing["text2"] = row["text2"]
+            continue
+        by_id[room_id] = row
+        order.append(room_id)
+
+    return [by_id[room_id] for room_id in order]
+
+
+def dedupe_by_id(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    seen = set()
+    deduped = []
+    for item in items:
+        session_id = item.get("session_id", "")
+        room_id = item.get("id") or ""
+        address = item.get("address", "")
+        price = item.get("price", "")
+        key = (session_id, room_id, address, price)
+        if key not in seen:
+            seen.add(key)
+            deduped.append(item)
+    return deduped
+
+
+def estimate_output_tokens(batch: list[dict[str, str]]) -> int:
+    estimated_chars = 2  # [] wrapper
+    for item in batch:
+        estimated_chars += len(item["id"]) + len(item["raw_text"]) + 32
+    return max(1, estimated_chars // 4)
+
+
+def filter_district_files(file_names: list[str], districts: list[str]) -> list[str]:
+    if not districts:
+        return file_names
+
+    wanted = {name.lower().replace(".json", "") for name in districts}
+    return [name for name in file_names if name.lower().replace(".json", "") in wanted]
+
+
+def archive_processed_sessions(district_file: str, session_ids: list[str]) -> None:
+    if not session_ids:
+        return
+
+    bot_dir = os.path.dirname(os.path.abspath(__file__))
+    target_dirs = [
+        os.path.join(bot_dir, "districts_summary"),
+        os.path.join(bot_dir, "districts_full"),
+        os.path.join(bot_dir, "districts"),
+        os.path.join(bot_dir, "districts_ok"),
+    ]
+
+    session_ids_set = set(str(sid).strip() for sid in session_ids)
+
+    for directory in target_dirs:
+        if not os.path.isdir(directory):
+            continue
+
+        files_to_check = []
+        if os.path.basename(directory) == "districts":
+            files_to_check.append(os.path.join(directory, district_file))
+            files_to_check.append(os.path.join(directory, district_file.replace(".json", "1.json")))
+        else:
+            files_to_check.append(os.path.join(directory, district_file))
+
+        for file_path in files_to_check:
+            if not os.path.isfile(file_path):
+                continue
+
+            try:
+                rows = load_json_array(file_path)
+            except Exception as e:
+                print(f"  [ARCHIVE] Error loading {file_path}: {e}")
+                continue
+
+            to_keep = []
+            to_archive = []
+
+            for row in rows:
+                row_id = str(row.get("id", "")).strip()
+                if row_id in session_ids_set:
+                    to_archive.append(row)
+                else:
+                    to_keep.append(row)
+
+            if to_archive:
+                try:
+                    save_json_array(file_path, to_keep)
+                    print(f"  [ARCHIVE] Removed {len(to_archive)} sessions from {file_path}")
+                except Exception as e:
+                    print(f"  [ARCHIVE] Error saving kept records to {file_path}: {e}")
+                    continue
+
+                archive_dir = os.path.join(bot_dir, "processed", os.path.basename(directory))
+                os.makedirs(archive_dir, exist_ok=True)
+                archive_file_path = os.path.join(archive_dir, os.path.basename(file_path))
+
+                try:
+                    existing_archived = load_json_array(archive_file_path) if os.path.isfile(archive_file_path) else []
+                    existing_ids = {str(item.get("id", "")).strip() for item in existing_archived if item.get("id")}
+                    for item in to_archive:
+                           item_id = str(item.get("id", "")).strip()
+                           if item_id not in existing_ids:
+                               existing_archived.append(item)
+                               existing_ids.add(item_id)
+                    save_json_array(archive_file_path, existing_archived)
+                    print(f"  [ARCHIVE] Saved {len(to_archive)} sessions to archive: {archive_file_path}")
+                except Exception as e:
+                    print(f"  [ARCHIVE] Error saving archived records to {archive_file_path}: {e}")
+
+
+def process_one_district(
+    district_file: str,
+    summary_dir: str | None,
+    full_dir: str | None,
+    ok_path: str,
+    batch_size: int,
+    sleep_seconds: float,
+    max_retries: int,
+) -> tuple[int, int]:
+    summary_path = os.path.join(summary_dir, district_file) if summary_dir else None
+    full_path = os.path.join(full_dir, district_file) if full_dir else None
+
+    summary_rows = (
+        normalize_input_rows(load_json_array(summary_path))
+        if summary_path and os.path.isfile(summary_path)
+        else []
+    )
+    full_rows = (
+        normalize_input_rows(load_json_array(full_path))
+        if full_path and os.path.isfile(full_path)
+        else []
+    )
+    input_rows = merge_summary_full_rows(summary_rows, full_rows)
+    total_input = len(input_rows)
+
+    if total_input == 0:
+        save_json_array(ok_path, [])
+        return 0, 0
+
+    print(
+        f"Processing {district_file}: {total_input} sessions "
+        f"(summary={len(summary_rows)}, full={len(full_rows)})."
+    )
+
+    session_lookup = {}
+    if summary_path and os.path.isfile(summary_path):
+        for item in load_json_array(summary_path):
+            if item.get("id"):
+                session_lookup[str(item["id"])] = item
+    if full_path and os.path.isfile(full_path):
+        for item in load_json_array(full_path):
+            if item.get("id"):
+                session_lookup[str(item["id"])] = item
+
+    district_name = os.path.basename(district_file).lower().replace(".json", "")
+    rebuilt: list[dict[str, Any]] = []
+    successfully_processed_ids = []
+
+    for idx, item in enumerate(input_rows):
+        session_id = item["id"]
+        raw_text = item["raw_text"]  # text1 neu co, else text2
+        text1 = item.get("text1", "")
+        text2 = item.get("text2", "")
+
+        # Route category based on symbol prefix
+        category = get_category_from_text2(text2, text1)
+        print(f"  [{idx + 1}/{total_input}] Processing session_id={session_id} in category={category}...")
+
+        parsed_rooms = process_single_item(session_id, raw_text, category, max_retries=max_retries)
+        if parsed_rooms is not None:
+            if parsed_rooms:
+                rebuilt.extend(parsed_rooms)
+                rebuilt = dedupe_by_id(rebuilt)
+                successfully_processed_ids.append(session_id)
+
+                session_info = session_lookup.get(str(session_id), {})
+                merged_session_info = dict(session_info)
+                if item.get("text1"):
+                    merged_session_info["text1"] = item["text1"]
+                if item.get("text2"):
+                    merged_session_info["text2"] = item["text2"]
+
+                for r in parsed_rooms:
+                    save_room_to_sqlite(r, merged_session_info, district_name)
+            else:
+                print(f"  [AI] Succeeded with 0 rooms (not a valid listing or missing price/address) for session_id={session_id}")
+
+            # Archive processed session immediately
+            archive_processed_sessions(district_file, [session_id])
+        else:
+            print(f"  [WARNING] Failed to extract rooms for session_id={session_id}")
+
+        if sleep_seconds > 0:
+            time.sleep(sleep_seconds)
+
+    return total_input, len(rebuilt)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description=(
+            "Rebuild districts_ok from available source folders using custom category routing. "
+        )
+    )
+    parser.add_argument("--summary-dir", help="Path to summary/sumary folder.")
+    parser.add_argument("--full-dir", help="Path to full folder.")
+    parser.add_argument("--ok-dir", help="Path to districts_ok output.")
+    parser.add_argument(
+        "--district",
+        action="append",
+        default=[],
+        help="District name to process (can be repeated). Example: --district badinh --district caugiay",
+    )
+    parser.add_argument("--batch-size", type=int, default=30, help="Items per AI batch. Default: 30.")
+    parser.add_argument("--sleep", type=float, default=1.0, help="Sleep seconds between batches. Default: 1.")
+    parser.add_argument("--max-retries", type=int, default=5, help="Max retry attempts per batch. Default: 5.")
+    parser.add_argument("--no-watch", action="store_true", help="Run once and exit instead of watching continuously.")
+    parser.add_argument("--watch-interval", type=float, default=10.0, help="Interval (seconds) to scan for new rooms in watch mode. Default: 10.")
+    args = parser.parse_args()
+
+    if args.batch_size <= 0:
+        raise ValueError("--batch-size must be > 0")
+    if args.max_retries <= 0:
+        raise ValueError("--max-retries must be > 0")
+
+    if not API_LOCAL_ONLY and not API_TOKENS:
+        raise RuntimeError("Missing API key. Set API_KEY or CLOUDFLARE_API_KEY.")
+
+    summary_dir, full_dir = resolve_input_dirs(args.summary_dir, args.full_dir)
+    source_dir = summary_dir or full_dir
+    if source_dir is None:
+        raise RuntimeError("Cannot resolve source directory.")
+
+    init_db()
+
+    ok_dir = resolve_ok_dir(args.ok_dir, source_dir)
+    os.makedirs(ok_dir, exist_ok=True)
+
+    watch_mode = not args.no_watch
+    watch_interval = args.watch_interval
+
+    print(f"Summary dir: {summary_dir or '<none>'}")
+    print(f"Full dir   : {full_dir or '<none>'}")
+    print(f"Output dir : {ok_dir}")
+    mode_text = "rebuild local id+raw_text (no AI call)" if API_LOCAL_ONLY else "rebuild via AI"
+    print(f"Mode       : {mode_text} (source inputs are read-only)")
+    if watch_mode:
+        print(f"Watch Mode : Active (scanning every {watch_interval}s)")
+    else:
+        print("Watch Mode : Disabled (running once)")
+
+    while True:
+        all_source_files_set: set[str] = set()
+        if summary_dir:
+            all_source_files_set.update(
+                name for name in os.listdir(summary_dir) if name.lower().endswith(".json")
+            )
+        if full_dir:
+            all_source_files_set.update(
+                name for name in os.listdir(full_dir) if name.lower().endswith(".json")
+            )
+
+        all_source_files = sorted(all_source_files_set)
+        selected_files = filter_district_files(all_source_files, args.district)
+
+        if not selected_files:
+            if not watch_mode:
+                print("No district files matched.")
+                return
+            time.sleep(watch_interval)
+            continue
+
+        total_input = 0
+        total_output = 0
+        any_processed = False
+        started_at = time.time()
+
+        for file_name in selected_files:
+            ok_path = os.path.join(ok_dir, file_name)
+
+            summary_path = os.path.join(summary_dir, file_name) if summary_dir else None
+            full_path = os.path.join(full_dir, file_name) if full_dir else None
+
+            summary_rows = (
+                normalize_input_rows(load_json_array(summary_path))
+                if summary_path and os.path.isfile(summary_path)
+                else []
+            )
+            full_rows = (
+                normalize_input_rows(load_json_array(full_path))
+                if full_path and os.path.isfile(full_path)
+                else []
+            )
+            input_rows = merge_summary_full_rows(summary_rows, full_rows)
+
+            if len(input_rows) == 0:
+                if not watch_mode:
+                    input_count, output_count = process_one_district(
+                        district_file=file_name,
+                        summary_dir=summary_dir,
+                        full_dir=full_dir,
+                        ok_path=ok_path,
+                        batch_size=args.batch_size,
+                        sleep_seconds=args.sleep,
+                        max_retries=args.max_retries,
+                    )
+                    total_input += input_count
+                    total_output += output_count
+                continue
+
+            any_processed = True
+            input_count, output_count = process_one_district(
+                district_file=file_name,
+                summary_dir=summary_dir,
+                full_dir=full_dir,
+                ok_path=ok_path,
+                batch_size=args.batch_size,
+                sleep_seconds=args.sleep,
+                max_retries=args.max_retries,
+            )
+            total_input += input_count
+            total_output += output_count
+            print(f"Finished {file_name}: input={input_count}, rebuilt_ok={output_count}")
+
+        if any_processed:
+            elapsed = time.time() - started_at
+            print(
+                f"Batch completed. total_input={total_input}, "
+                f"total_rebuilt_ok={total_output}, elapsed={elapsed:.1f}s"
+            )
+
+        if not watch_mode:
+            break
+
+        time.sleep(watch_interval)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,61 @@
+Line 1150:                 if should_add_chdv: target_groups.update(sender["output_groups_map"].get("chdv_ids", []))
+Line 1151:             
+Line 1152:             else:
+Line 1153:                 print(f"[ROUTING] {symbol} is NORMAL GROUP")
+Line 1154:                 
+Line 1155:                 # Check for "Mỹ Đình" everywhere first (Aggressive check)
+Line 1156:                 if "mỹ đình" in full_text.lower():
+Line 1157:                     print("[ROUTING] Found 'Mỹ Đình' in text. Adding Mỹ Đình & Nam Từ Liêm groups.")
+Line 1158:                     target_groups.update(sender["output_groups_map"].get("mỹ đình", []))
+Line 1159:                     target_groups.update(sender["output_groups_map"].get("nam từ liêm", []))
+Line 1160:                 
+Line 1161:                 # Normal address-based routing
+Line 1162:                 address_line = ""
+Line 1163:                 for pat in [r'Địa chỉ\s*:?\s*([^\n]+)', r'🏢\s*Địa chỉ\s*:?\s*([^\n]+)', r'DC\s*:?\s*([^\n]+)']:
+Line 1164:                     match = re.search(pat, full_text, re.IGNORECASE)
+Line 1165:                     if match: 
+Line 1166:                         address_line = match.group(1).strip()
+Line 1167:                         break
+Line 1168:                 
+Line 1169:                 keywords = []
+Line 1170:                 if address_line: 
+Line 1171:                     keywords = bot_utils.extract_keywords_from_text(address_line, self.all_keywords, self.keyword_levels)
+Line 1172:                 
+Line 1173:                 if not keywords: 
+Line 1174:                     # If address not found, check top lines
+Line 1175:                     lines = full_text.split('\n')
+Line 1176:                     top_lines = "\n".join(lines[:5])
+Line 1177:                     keywords = bot_utils.extract_keywords_from_text(top_lines, self.all_keywords, self.keyword_levels)
+Line 1178:                 
+Line 1179:                 print(f"[ROUTING] Extracted Keywords: {keywords}")
+Line 1180: 
+Line 1181:                 found_districts = {kw for kw in keywords if self.keyword_levels.get(kw) in ["district", "area"]}
+Line 1182:                 if found_districts:
+Line 1183:                     for d in found_districts: 
+Line 1184:                         target_groups.update(sender["output_groups_map"].get(d.lower(), []))
+Line 1185:                         # Special map: Mỹ Đình also targets Nam Từ Liêm groups
+Line 1186:                         if d == "Mỹ Đình":
+Line 1187:                             target_groups.update(sender["output_groups_map"].get("nam từ liêm", []))
+Line 1188:                 else:
+Line 1189:                     for kw in keywords:
+Line 1190:                         if self.keyword_levels.get(kw) in ["street", "ward"]:
+Line 1191:                             parent_set = self.keyword_parents.get(kw)
+Line 1192:                             if parent_set:
+Line 1193:                                 for parent in parent_set:
+Line 1194:                                     target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+Line 1195: 
+Line 1196:             target_groups = list(target_groups)
+Line 1197:             if not target_groups:
+Line 1198:                 print(f"[SENDER] ⚠️ No groups found. Keywords: {keywords}")
+Line 1199:                 return True # Done
+Line 1200:             
+Line 1201:             # --- CRASH RECOVERY CHECK ---
+Line 1202:             session_hash = self._generate_session_hash(item)
+Line 1203:             status = self._load_sent_status()
+Line 1204:             
+Line 1205:             completed_gids = []
+Line 1206:             current_grp_info = None
+Line 1207:             
+Line 1208:             if status.get("session_hash") == session_hash:
+Line 1209:                 completed_gids = status.get("completed_groups", [])
+Line 1210:                 current_grp_info = status.get("current_group")

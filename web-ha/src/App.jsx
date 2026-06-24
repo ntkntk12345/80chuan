@@ -517,6 +517,7 @@ const App = () => {
       image: ''
     },
     // Mặt bằng kinh doanh (image4)
+    // Mặt bằng kinh doanh (image5.png)
     {
       id: 14,
       category: 'mat-bang-kinh-doanh',
@@ -536,7 +537,7 @@ const App = () => {
     {
       id: 15,
       category: 'mat-bang-kinh-doanh',
-      title: 'MBKD phố Chùa Láng ngã tư sầm uất',
+      title: 'MBKD phố Chùa Láng',
       address: '58 Chùa Láng, Đống Đa, Hà Nội',
       nearPlace: 'ĐH Ngoại Thương',
       priceText: '30 triệu/tháng',
@@ -549,9 +550,105 @@ const App = () => {
       zaloNumber: '0876480130',
       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600'
     },
+    {
+      id: 21,
+      category: 'mat-bang-kinh-doanh',
+      title: 'MBKD đường Nguyễn Khang',
+      address: '99 Nguyễn Khang, Cầu Giấy, Hà Nội',
+      nearPlace: 'ĐH Giao Thông Vận Tải',
+      priceText: '22 triệu/tháng',
+      priceRaw: 22000000,
+      areaText: '70m²',
+      badgeText: 'Mới',
+      badgeColor: 'red',
+      timeText: 'Đăng 3 giờ trước',
+      imageCount: 8,
+      zaloNumber: '0876480130',
+      image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+      id: 22,
+      category: 'mat-bang-kinh-doanh',
+      title: 'MBKD phố Trần Đại Nghĩa',
+      address: '28 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội',
+      nearPlace: 'ĐH Bách Khoa',
+      priceText: '35 triệu/tháng',
+      priceRaw: 35000000,
+      areaText: '100m²',
+      badgeText: 'Mới',
+      badgeColor: 'red',
+      timeText: 'Đăng 5 giờ trước',
+      imageCount: 11,
+      zaloNumber: '0876480130',
+      image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+      id: 23,
+      category: 'mat-bang-kinh-doanh',
+      title: 'MBKD ngõ 208 Nguyễn Trãi',
+      address: '208 Nguyễn Trãi, Thanh Xuân, Hà Nội',
+      nearPlace: 'ĐH Khoa Học Tự Nhiên',
+      priceText: '18 triệu/tháng',
+      priceRaw: 18000000,
+      areaText: '50m²',
+      badgeText: 'Mới',
+      badgeColor: 'red',
+      timeText: 'Đăng 6 giờ trước',
+      imageCount: 5,
+      zaloNumber: '0876480130',
+      image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+      id: 24,
+      category: 'mat-bang-kinh-doanh',
+      title: 'MBKD phố Duy Tân',
+      address: '68 Duy Tân, Cầu Giấy, Hà Nội',
+      nearPlace: 'ĐH Sư Phạm',
+      priceText: '28 triệu/tháng',
+      priceRaw: 28000000,
+      areaText: '75m²',
+      badgeText: 'Mới',
+      badgeColor: 'red',
+      timeText: 'Đăng 8 giờ trước',
+      imageCount: 12,
+      zaloNumber: '0876480130',
+      image: 'https://images.unsplash.com/photo-1497366858526-07559250c06b?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+      id: 25,
+      category: 'mat-bang-kinh-doanh',
+      title: 'MBKD phố Vọng',
+      address: '120 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội',
+      nearPlace: 'ĐH Kinh Tế Quốc Dân',
+      priceText: '20 triệu/tháng',
+      priceRaw: 20000000,
+      areaText: '55m²',
+      badgeText: 'Mới',
+      badgeColor: 'red',
+      timeText: 'Đăng 10 giờ trước',
+      imageCount: 7,
+      zaloNumber: '0876480130',
+      image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=600'
+    },
+    {
+      id: 26,
+      category: 'mat-bang-kinh-doanh',
+      title: 'MBKD ngõ 102 Trần Phú',
+      address: '102 Trần Phú, Hà Đông, Hà Nội',
+      nearPlace: 'ĐH Phenikaa',
+      priceText: '15 triệu/tháng',
+      priceRaw: 15000000,
+      areaText: '40m²',
+      badgeText: 'Mới',
+      badgeColor: 'red',
+      timeText: 'Đăng 12 giờ trước',
+      imageCount: 6,
+      zaloNumber: '0876480130',
+      image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=600'
+    },
     // Pass phòng (image27)
     {
-      id: 16,
+      id: 27,
       category: 'pass-phong',
       title: 'Studio pass phòng tặng ngay 200k',
       address: 'Ngõ 120 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội',
@@ -568,7 +665,7 @@ const App = () => {
     },
     // Ở ghép - Chung cư (image8)
     {
-      id: 17,
+      id: 28,
       category: 'o-ghep',
       subCategory: 'chung-cu',
       title: 'Studio chung cư Vinhomes Ocean Park',
@@ -586,7 +683,7 @@ const App = () => {
     },
     // Ở ghép - Phòng trọ (image20)
     {
-      id: 18,
+      id: 29,
       category: 'o-ghep',
       subCategory: 'phong-tro',
       title: 'Dạng phòng: Studio Cầu Giấy',
@@ -603,7 +700,7 @@ const App = () => {
       image: 'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=600'
     },
     {
-      id: 19,
+      id: 30,
       category: 'o-ghep',
       subCategory: 'phong-tro',
       title: 'Dạng phòng: Các xép, giường tầng Đống Đa',
@@ -621,7 +718,7 @@ const App = () => {
     },
     // Ở ghép - Nhà nguyên căn (image26)
     {
-      id: 20,
+      id: 31,
       category: 'o-ghep',
       subCategory: 'nha-nguyen-can',
       title: 'Nhà nguyên căn 3 tầng Tây Hồ',

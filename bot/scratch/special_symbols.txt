@@ -1,0 +1,26 @@
+Line 990:             full_text = " ".join([t.get("text", "") if isinstance(t, dict) else t for t in texts])
+Line 991:             full_text_lower = full_text.lower()
+Line 992:             
+Line 993:             # --- ROUTING LOGIC ---
+Line 994:             symbol_lower = symbol.lower().strip() if symbol else ""
+Line 995:             mbkd_keywords = ["mbkd", "mặt bằng", "văn phòng", "sang nhượng", "kho xưởng", "cửa hàng"]
+Line 996:             special_symbols = [
+Line 997:                 "taiphat",
+Line 998:                 "taiphat1",
+Line 999:                 "tài phát",
+Line 1000:                 "vietquoc",
+Line 1001:                 "vietquoc1",
+Line 1002:                 "tc home",
+Line 1003:                 "tc",
+Line 1004:                 "tài land",
+Line 1005:                 "chdv",
+Line 1006:                 "chdv hưng phát",
+Line 1007:                 "chdv chọn lọc",
+Line 1008:                 "chdv chinh trần",
+Line 1009:             ]
+Line 1010:             target_groups = set()
+Line 1011:             keywords = []
+Line 1012:             
+Line 1013:             def has_keyword(txt, kws): return any(k in txt.lower() for k in kws)
+Line 1014: 
+Line 1015:             def normalize_keyword_key(value):

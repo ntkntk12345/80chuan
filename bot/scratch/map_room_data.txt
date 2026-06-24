@@ -1,0 +1,160 @@
+--- Around Line 747 ---
+Line 742:   // Xóa cache rooms_db cũ nếu còn tồn tại
+Line 743:   useEffect(() => {
+Line 744:     localStorage.removeItem('rooms_db');
+Line 745:   }, []);
+Line 746: 
+Line 747:   const mapRoomData = (r) => {
+Line 748:     let isManual = false;
+Line 749:     let manualData = null;
+Line 750:     const textSource = (r.original_text && String(r.original_text).trim().startsWith('{')) ? r.original_text : (r.text2 || r.original_text || '');
+Line 751:     if (textSource && textSource.trim().startsWith('{')) {
+Line 752:       try {
+Line 753:         const parsed = JSON.parse(textSource);
+Line 754:         if (parsed && parsed.isManual) {
+Line 755:           isManual = true;
+Line 756:           manualData = parsed;
+Line 757:         }
+Line 758:       } catch (e) {}
+Line 759:     }
+Line 760: 
+Line 761:     // Determine category
+Line 762:     const category = r.category || (isManual && manualData && manualData.category) || 'phong-tro';
+Line 763:     
+Line 764:     // Format priceText
+Line 765:     let priceText = 'Liên hệ';
+Line 766:     const num = parseInt(r.price1 || r.price);
+Line 767:     if (isManual && manualData && manualData.priceText) {
+Line 768:       priceText = manualData.priceText;
+Line 769:     } else if (!isNaN(num)) {
+Line 770:       if (num >= 1000000) {
+Line 771:         priceText = `${num / 1000000} triệu/tháng`;
+============================================================
+--- Around Line 874 ---
+Line 869:         const data = Array.isArray(response) ? response : (response.data || []);
+Line 870:         const hasMore = response.hasMore;
+Line 871:         const total = response.total || 0;
+Line 872: 
+Line 873:         if (data.length > 0) {
+Line 874:           const mapped = data.map(mapRoomData);
+Line 875:           setRooms(mapped);
+Line 876: 
+Line 877:           if (shouldDeepLink) {
+Line 878:             const urlParams = new URLSearchParams(window.location.search);
+Line 879:             const roomIdParam = urlParams.get('room');
+Line 880:             if (roomIdParam) {
+Line 881:               const targetRoom = mapped.find(r => String(r.session_id) === roomIdParam || String(r.id) === roomIdParam);
+Line 882:               if (targetRoom) {
+Line 883:                 setSelectedRoomId(roomIdParam);
+Line 884:                 const detailPage = targetRoom.category === 'chung-cu' ? 'chung-cu-detail'
+Line 885:                   : targetRoom.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 886:                   : 'phong-tro-detail';
+Line 887:                 setCurrentPage(detailPage);
+Line 888:               } else {
+Line 889:                 // Specific direct fetch for the deep-linked room since it's not in the first page
+Line 890:                 const isNumericId = /^\d+$/.test(roomIdParam);
+Line 891:                 const queryParam = isNumericId ? `id=${roomIdParam}` : `session_id=${roomIdParam}`;
+Line 892:                 fetch(`/api/rooms?${queryParam}`)
+Line 893:                   .then(r => r.json())
+Line 894:                   .then(resp => {
+Line 895:                     const respData = Array.isArray(resp) ? resp : (resp.data || []);
+Line 896:                     if (respData.length > 0) {
+Line 897:                       const roomObj = mapRoomData(respData[0]);
+Line 898:                       setRooms(prev => {
+============================================================
+--- Around Line 897 ---
+Line 892:                 fetch(`/api/rooms?${queryParam}`)
+Line 893:                   .then(r => r.json())
+Line 894:                   .then(resp => {
+Line 895:                     const respData = Array.isArray(resp) ? resp : (resp.data || []);
+Line 896:                     if (respData.length > 0) {
+Line 897:                       const roomObj = mapRoomData(respData[0]);
+Line 898:                       setRooms(prev => {
+Line 899:                         if (prev.some(r => r.id === roomObj.id)) return prev;
+Line 900:                         return [roomObj, ...prev];
+Line 901:                       });
+Line 902:                       setSelectedRoomId(roomIdParam);
+Line 903:                       const detailPage = roomObj.category === 'chung-cu' ? 'chung-cu-detail'
+Line 904:                         : roomObj.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 905:                         : 'phong-tro-detail';
+Line 906:                       setCurrentPage(detailPage);
+Line 907:                     }
+Line 908:                   })
+Line 909:                   .catch(err => console.error('Error fetching deep linked room:', err));
+Line 910:               }
+Line 911:             }
+Line 912:           }
+Line 913: 
+Line 914:           // Background: fetch remaining pages in parallel batches
+Line 915:           if (hasMore && total > 300) {
+Line 916:             const totalPages = Math.ceil(total / 300);
+Line 917:             const pagesToFetch = [];
+Line 918:             for (let p = 2; p <= totalPages; p++) {
+Line 919:               pagesToFetch.push(p);
+Line 920:             }
+Line 921: 
+============================================================
+--- Around Line 936 ---
+Line 931:                 promises.push(
+Line 932:                   fetch(`/api/rooms?limit=300&page=${pageNum}`)
+Line 933:                     .then(r => r.json())
+Line 934:                     .then(resp => {
+Line 935:                       const pageData = Array.isArray(resp) ? resp : (resp.data || []);
+Line 936:                       return pageData.map(mapRoomData);
+Line 937:                     })
+Line 938:                     .catch(err => {
+Line 939:                       console.error(`Error loading page ${pageNum}:`, err);
+Line 940:                       return [];
+Line 941:                     })
+Line 942:                 );
+Line 943:               }
+Line 944: 
+Line 945:               Promise.all(promises).then(results => {
+Line 946:                 const allNewRooms = results.flat();
+Line 947:                 if (allNewRooms.length > 0) {
+Line 948:                   setRooms(prev => {
+Line 949:                     const existingIds = new Set(prev.map(r => r.id));
+Line 950:                     const newRooms = allNewRooms.filter(r => !existingIds.has(r.id));
+Line 951:                     return newRooms.length > 0 ? [...prev, ...newRooms] : prev;
+Line 952:                   });
+Line 953:                 }
+Line 954:                 // Continue fetching next batch
+Line 955:                 fetchNextBatch();
+Line 956:               });
+Line 957:             };
+Line 958: 
+Line 959:             setTimeout(fetchNextBatch, 300);
+Line 960:           }
+============================================================
+--- Around Line 994 ---
+Line 989:       fetch(`/api/rooms?${params.toString()}`)
+Line 990:         .then(res => res.json())
+Line 991:         .then(response => {
+Line 992:           const data = Array.isArray(response) ? response : (response.data || []);
+Line 993:           if (data.length > 0) {
+Line 994:             const mapped = data.map(mapRoomData);
+Line 995:             setRooms(prev => {
+Line 996:               const existingIds = new Set(prev.map(r => r.id));
+Line 997:               const newRooms = mapped.filter(r => !existingIds.has(r.id));
+Line 998:               return newRooms.length > 0 ? [...newRooms, ...prev] : prev;
+Line 999:             });
+Line 1000:           }
+Line 1001:         })
+Line 1002:         .catch(err => console.error('Error fetching filtered rooms:', err));
+Line 1003:     }
+Line 1004:   };
+Line 1005: 
+Line 1006:   useEffect(() => {
+Line 1007:     refreshRooms(true);
+Line 1008:   }, []);
+Line 1009: 
+Line 1010: 
+Line 1011:   // Selected property helper
+Line 1012:   const selectedRoom = rooms.find((r) => 
+Line 1013:     (r.session_id && String(r.session_id) === String(selectedRoomId)) || 
+Line 1014:     String(r.id) === String(selectedRoomId)
+Line 1015:   );
+Line 1016: 
+Line 1017:   const handleUserUpdate = (updatedUser) => {
+Line 1018:     setUser(updatedUser);
+============================================================

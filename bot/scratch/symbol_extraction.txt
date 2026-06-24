@@ -1,0 +1,340 @@
+--- Around Line 237 ---
+Line 232:         
+Line 233:         # Load config/keywords
+Line 234:         self.all_keywords, self.keyword_levels, self.keyword_parents = bot_utils.load_daura_keywords()
+Line 235:         self.keyword_lookup = {str(keyword).lower(): keyword for keyword in self.all_keywords}
+Line 236: 
+Line 237:         self.group_symbols = bot_utils.load_dauvao()
+Line 238:         
+Line 239:         # Stats/Rest period
+Line 240:         self.session_count = 0
+Line 241:         self.session_count_lock = threading.Lock()
+Line 242:         self.sessions_before_rest = 30  # Chuyển lại về 30 sessions mới nghỉ
+Line 243:         self.rest_duration_range = (180, 240)  # Nghỉ 3-4 phút (3p theo yêu cầu)
+Line 244:         
+Line 245:         # Delay config (giây) - RÚT NGẮN ĐỂ GỬI NHANH HƠN
+Line 246:         self.delay_between_texts = (0.2, 0.6)        
+============================================================
+--- Around Line 319 ---
+Line 314:             videos = item.get("videos", [])
+Line 315:             media_str = f"P{len(photos)}V{len(videos)}"
+Line 316:             # Include timestamp to differentiate identical content sent at different times
+Line 317:             # However, pending_queue items usually don't change once queued. 
+Line 318:             # Using content hash is safer for "restart on same queue item" scenario.
+Line 319:             raw = f"{text_str[:50]}_{media_str}_{item.get('symbol','')}"
+Line 320:             return hashlib.md5(raw.encode()).hexdigest()
+Line 321:         except:
+Line 322:             return str(time.time())
+Line 323: 
+Line 324:     def _load_sent_status(self):
+Line 325:         if os.path.exists(self.sent_status_file):
+Line 326:             try:
+Line 327:                 with open(self.sent_status_file, "r") as f: return json.load(f)
+Line 328:             except: pass
+============================================================
+--- Around Line 807 ---
+Line 802:                                     self.is_running = False
+Line 803:                                     os._exit(0)
+Line 804:                                     break
+Line 805:                                 
+Line 806:                                 session_num = idx + 1
+Line 807:                                 symbol = item.get('symbol', '?')
+Line 808:                                 print(f"\n{Fore.CYAN}{'='*50}")
+Line 809:                                 print(f"[QUEUE] 📋 Session {session_num}/{total_sessions} (symbol: {symbol})")
+Line 810:                                 print(f"{'='*50}{Style.RESET_ALL}")
+Line 811:                                 
+Line 812:                                 try:
+Line 813:                                     session_done = self._process_session_round_robin(item, session_num, total_sessions)
+Line 814:                                     if not session_done:
+Line 815:                                         print(f"{Fore.YELLOW}[QUEUE] Session {session_num}/{total_sessions} chưa xong, giữ nguyên trong pending để retry sau.{Style.RESET_ALL}")
+Line 816:                                         break
+============================================================
+--- Around Line 849 ---
+Line 844:                 )
+Line 845:                 time.sleep(5)
+Line 846: 
+Line 847:     def _enforce_symbol_prefix(self, item):
+Line 848:         """Ensure the text starts with the group symbol"""
+Line 849:         symbol = item.get("symbol", "")
+Line 850:         if not symbol: return
+Line 851:         texts = item.get("texts", [])
+Line 852:         if not texts: return
+Line 853:         
+Line 854:         first_text_obj = texts[0]
+Line 855:         original_text = first_text_obj.get("text", "") if isinstance(first_text_obj, dict) else first_text_obj
+Line 856:         
+Line 857:         if not original_text.lower().strip().startswith(symbol.lower()):
+Line 858:             new_text = f"{symbol} {original_text.lstrip()}"
+============================================================
+--- Around Line 858 ---
+Line 853:         
+Line 854:         first_text_obj = texts[0]
+Line 855:         original_text = first_text_obj.get("text", "") if isinstance(first_text_obj, dict) else first_text_obj
+Line 856:         
+Line 857:         if not original_text.lower().strip().startswith(symbol.lower()):
+Line 858:             new_text = f"{symbol} {original_text.lstrip()}"
+Line 859:             if isinstance(first_text_obj, dict): texts[0]["text"] = new_text
+Line 860:             else: texts[0] = new_text
+Line 861: 
+Line 862:     def _all_senders_limited(self):
+Line 863:         if not self.senders: return True
+Line 864:         return all(sender["is_limited"] for sender in self.senders)
+Line 865:     
+Line 866:     def _get_next_available_sender(self):
+Line 867:         for i in range(len(self.senders)):
+============================================================
+--- Around Line 896 ---
+Line 891:             if self._all_senders_limited():
+Line 892:                 self.is_running = False
+Line 893:                 os._exit(0)
+Line 894:             return False
+Line 895:         
+Line 896:         symbol = item.get('symbol', '?')
+Line 897:         print(f"{Fore.GREEN}[ROUND-ROBIN] 🔄 Session {session_num}/{total_sessions} ({symbol}) → {sender['name']} phụ trách{Style.RESET_ALL}")
+Line 898:         success = self._send_session(sender, item)
+Line 899:         
+Line 900:         # Nếu acc bị limit giữa chừng → chuyển sang acc tiếp theo gửi nốt
+Line 901:         if not success and sender["is_limited"]:
+Line 902:             while not self._all_senders_limited():
+Line 903:                 fallback = self._get_next_available_sender()
+Line 904:                 if not fallback:
+Line 905:                     break
+============================================================
+--- Around Line 956 ---
+Line 951:                 return False
+Line 952:             
+Line 953:             texts = item.get("texts", [])
+Line 954:             photos = item.get("photos", [])
+Line 955:             videos = item.get("videos", [])
+Line 956:             symbol = item.get("symbol", "")
+Line 957:             source_info = item.get("source_info", "")
+Line 958:             session_type = str(item.get("session_type", "")).strip()
+Line 959:             featured_post_id = str(item.get("featured_post_id", "")).strip()
+Line 960:             allow_text_only = bool(item.get("allow_text_only"))
+Line 961:             raw_routing_keywords = item.get("routing_keywords", [])
+Line 962:             explicit_routing_keywords = raw_routing_keywords if isinstance(raw_routing_keywords, list) else []
+Line 963: 
+Line 964:             if session_type == "featured_post" and featured_post_id and not self._is_featured_post_active(featured_post_id):
+Line 965:                 print(f"[FEATURED] Skipping deleted featured post {featured_post_id}.")
+============================================================
+--- Around Line 994 ---
+Line 989: 
+Line 990:             full_text = " ".join([t.get("text", "") if isinstance(t, dict) else t for t in texts])
+Line 991:             full_text_lower = full_text.lower()
+Line 992:             
+Line 993:             # --- ROUTING LOGIC ---
+Line 994:             symbol_lower = symbol.lower().strip() if symbol else ""
+Line 995:             mbkd_keywords = ["mbkd", "mặt bằng", "văn phòng", "sang nhượng", "kho xưởng", "cửa hàng"]
+Line 996:             special_symbols = [
+Line 997:                 "taiphat",
+Line 998:                 "taiphat1",
+Line 999:                 "tài phát",
+Line 1000:                 "vietquoc",
+Line 1001:                 "vietquoc1",
+Line 1002:                 "tc home",
+Line 1003:                 "tc",
+============================================================
+--- Around Line 996 ---
+Line 991:             full_text_lower = full_text.lower()
+Line 992:             
+Line 993:             # --- ROUTING LOGIC ---
+Line 994:             symbol_lower = symbol.lower().strip() if symbol else ""
+Line 995:             mbkd_keywords = ["mbkd", "mặt bằng", "văn phòng", "sang nhượng", "kho xưởng", "cửa hàng"]
+Line 996:             special_symbols = [
+Line 997:                 "taiphat",
+Line 998:                 "taiphat1",
+Line 999:                 "tài phát",
+Line 1000:                 "vietquoc",
+Line 1001:                 "vietquoc1",
+Line 1002:                 "tc home",
+Line 1003:                 "tc",
+Line 1004:                 "tài land",
+Line 1005:                 "chdv",
+============================================================
+--- Around Line 1088 ---
+Line 1083:                         if parent_set:
+Line 1084:                             for parent in parent_set:
+Line 1085:                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+Line 1086: 
+Line 1087:             # Direct routing symbols
+Line 1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+Line 1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+Line 1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+Line 1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+Line 1092:             
+Line 1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+Line 1095: 
+Line 1096:             if explicit_routing_keywords:
+Line 1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+============================================================
+--- Around Line 1089 ---
+Line 1084:                             for parent in parent_set:
+Line 1085:                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+Line 1086: 
+Line 1087:             # Direct routing symbols
+Line 1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+Line 1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+Line 1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+Line 1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+Line 1092:             
+Line 1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+Line 1095: 
+Line 1096:             if explicit_routing_keywords:
+Line 1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+Line 1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+============================================================
+--- Around Line 1090 ---
+Line 1085:                                 target_groups.update(sender["output_groups_map"].get(parent.lower(), []))
+Line 1086: 
+Line 1087:             # Direct routing symbols
+Line 1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+Line 1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+Line 1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+Line 1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+Line 1092:             
+Line 1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+Line 1095: 
+Line 1096:             if explicit_routing_keywords:
+Line 1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+Line 1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+Line 1099:                 add_target_groups_from_keywords(keywords)
+============================================================
+--- Around Line 1091 ---
+Line 1086: 
+Line 1087:             # Direct routing symbols
+Line 1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+Line 1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+Line 1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+Line 1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+Line 1092:             
+Line 1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+Line 1095: 
+Line 1096:             if explicit_routing_keywords:
+Line 1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+Line 1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+Line 1099:                 add_target_groups_from_keywords(keywords)
+Line 1100: 
+============================================================
+--- Around Line 1093 ---
+Line 1088:             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+Line 1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+Line 1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+Line 1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+Line 1092:             
+Line 1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+Line 1095: 
+Line 1096:             if explicit_routing_keywords:
+Line 1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+Line 1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+Line 1099:                 add_target_groups_from_keywords(keywords)
+Line 1100: 
+Line 1101:             elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+Line 1102:                 if symbol_lower in chung_cu_symbols:
+============================================================
+--- Around Line 1094 ---
+Line 1089:             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+Line 1090:             mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+Line 1091:             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+Line 1092:             
+Line 1093:             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1094:             vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+Line 1095: 
+Line 1096:             if explicit_routing_keywords:
+Line 1097:                 keywords = resolve_routing_keywords(explicit_routing_keywords)
+Line 1098:                 print(f"[ROUTING] Using explicit routing keywords: {keywords}")
+Line 1099:                 add_target_groups_from_keywords(keywords)
+Line 1100: 
+Line 1101:             elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+Line 1102:                 if symbol_lower in chung_cu_symbols:
+Line 1103:                     print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+============================================================
+--- Around Line 1122 ---
+Line 1117:                     target_groups.update(sender["output_groups_map"].get("chdv_ids", []))
+Line 1118:                 elif symbol_lower in tai_land_symbols:
+Line 1119:                     price1, price2 = self._extract_price_bounds(full_text)
+Line 1120:                     price_val = max(price1, price2)
+Line 1121:                     if price_val >= 25000000:
+Line 1122:                         print(f"[ROUTING] {symbol} with price {price_val} >= 25M routes to Nhóm Văn phòng , mặt bằng kinh doanh")
+Line 1123:                         target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+Line 1124:                     else:
+Line 1125:                         print(f"[ROUTING] {symbol} with price {price_val} < 25M (or not found) routes to Nhóm nhà nguyên căn")
+Line 1126:                         target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1127:                 elif symbol_lower in vietquoc_1_symbols:
+Line 1128:                     if any(k in full_text_lower for k in ["mbkd", "mặt bằng", "văn phòng"]):
+Line 1129:                         print(f"[ROUTING] {symbol} with mbkd keywords routes to Nhóm Văn phòng , mặt bằng kinh doanh")
+Line 1130:                         target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+Line 1131:                     else:
+============================================================
+--- Around Line 1141 ---
+Line 1136:                 print(f"[ROUTING] {symbol} is SPECIAL GROUP")
+Line 1137:                 should_add_mbkd = False
+Line 1138:                 should_add_nguyencan = False
+Line 1139:                 should_add_chdv = False
+Line 1140:                 
+Line 1141:                 if symbol_lower in ["vietquoc", "vietquoc1"]: should_add_nguyencan = True
+Line 1142:                 elif symbol_lower in ["chdv", "chdv hưng phát", "chdv chọn lọc", "chdv chinh trần"]:
+Line 1143:                     should_add_chdv = True
+Line 1144:                 elif symbol_lower in ["tc home", "tc", "taiphat", "taiphat1", "tài phát", "tài land"]:
+Line 1145:                     if has_keyword(full_text, mbkd_keywords): should_add_mbkd = True
+Line 1146:                     else: should_add_nguyencan = True
+Line 1147:                 
+Line 1148:                 if should_add_mbkd: target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+Line 1149:                 if should_add_nguyencan: target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1150:                 if should_add_chdv: target_groups.update(sender["output_groups_map"].get("chdv_ids", []))
+============================================================
+--- Around Line 1264 ---
+Line 1259:                         
+Line 1260:                         # Build Timeline
+Line 1261:                         # Nếu listener đã gửi kèm timeline (thứ tự thực tế), dùng trực tiếp
+Line 1262:                         # Điều này đảm bảo ảnh xen kẽ mô tả được giữ nguyên cho 11A/12A
+Line 1263:                         raw_timeline = item.get("timeline", [])
+Line 1264:                         is_special_group = symbol.lower().strip() in ["11a", "12a", "alophongtro", "3h", "td le phuong thao"] or any(symbol.lower().strip().startswith(x) for x in ["11a", "12a"])
+Line 1265:                         
+Line 1266:                         if raw_timeline and is_special_group:
+Line 1267:                             # Dùng timeline từ listener (đã reorder: reply text ở đầu, còn lại giữ nguyên)
+Line 1268:                             all_items = []
+Line 1269:                             for entry in raw_timeline:
+Line 1270:                                 entry_type = entry.get("type", "text")
+Line 1271:                                 entry_data = entry.get("data", {})
+Line 1272:                                 entry_ts   = entry.get("timestamp", 0)
+Line 1273:                                 if entry_type == "text":
+============================================================
+--- Around Line 1649 ---
+Line 1644:                 "id": session_id,
+Line 1645:                 "text": full_text,
+Line 1646:                 "photos": item.get("photos", []),
+Line 1647:                 "videos": item.get("videos", []),
+Line 1648:                 "timestamp": time.time(),
+Line 1649:                 "symbol": item.get("symbol", ""),
+Line 1650:                 "keywords": keywords
+Line 1651:             }
+Line 1652:             
+Line 1653:             # Save summary file
+Line 1654:             try:
+Line 1655:                 current_summary = []
+Line 1656:                 if os.path.exists(summary_file):
+Line 1657:                     with open(summary_file, 'r', encoding='utf-8') as f:
+Line 1658:                         current_summary = json.load(f)
+============================================================
+--- Around Line 1909 ---
+Line 1904:             "texts": texts,
+Line 1905:             "photos": item.get("photos", []),
+Line 1906:             "videos": item.get("videos", []),
+Line 1907:             "timeline": item.get("timeline", []),
+Line 1908:             "timestamp": session_timestamp,
+Line 1909:             "symbol": item.get("symbol", ""),
+Line 1910:             "keywords": keywords,
+Line 1911:             "source_info": item.get("source_info", ""),
+Line 1912:             "source_thread_id": str(item.get("source_thread_id", "")).strip(),
+Line 1913:             "source_author_id": str(item.get("source_author_id", "")).strip(),
+Line 1914:             "type": room_type,
+Line 1915:         }
+Line 1916: 
+Line 1917:         for district_name in districts:
+Line 1918:             district_key = bot_utils.normalize_district_name(district_name)
+============================================================

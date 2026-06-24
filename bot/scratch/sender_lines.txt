@@ -1,0 +1,66 @@
+Line 1100: 
+Line 1101:             elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+Line 1102:                 if symbol_lower in chung_cu_symbols:
+Line 1103:                     print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+Line 1104:                     target_ids = sender["output_groups_map"].get("chung_cu_ids", [])
+Line 1105:                     if not target_ids:
+Line 1106:                         target_ids = sender["output_groups_map"].get("chung_cu_fallback_ids", [])
+Line 1107:                         print(f"[ROUTING] Fallback to chung_cu_fallback_ids: {target_ids}")
+Line 1108:                     target_groups.update(target_ids)
+Line 1109:                 elif symbol_lower in nguyen_can_symbols:
+Line 1110:                     print(f"[ROUTING] {symbol} routes directly to Nhóm nhà nguyên căn")
+Line 1111:                     target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1112:                 elif symbol_lower in mbkd_symbols:
+Line 1113:                     print(f"[ROUTING] {symbol} routes directly to Nhóm Văn phòng , mặt bằng kinh doanh")
+Line 1114:                     target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+Line 1115:                 elif symbol_lower in chdv_symbols:
+Line 1116:                     print(f"[ROUTING] {symbol} routes directly to NGUỒN CĂN HỘ DỊCH VỤ CHO NHÀ ĐẦU TƯ")
+Line 1117:                     target_groups.update(sender["output_groups_map"].get("chdv_ids", []))
+Line 1118:                 elif symbol_lower in tai_land_symbols:
+Line 1119:                     price1, price2 = self._extract_price_bounds(full_text)
+Line 1120:                     price_val = max(price1, price2)
+Line 1121:                     if price_val >= 25000000:
+Line 1122:                         print(f"[ROUTING] {symbol} with price {price_val} >= 25M routes to Nhóm Văn phòng , mặt bằng kinh doanh")
+Line 1123:                         target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+Line 1124:                     else:
+Line 1125:                         print(f"[ROUTING] {symbol} with price {price_val} < 25M (or not found) routes to Nhóm nhà nguyên căn")
+Line 1126:                         target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1127:                 elif symbol_lower in vietquoc_1_symbols:
+Line 1128:                     if any(k in full_text_lower for k in ["mbkd", "mặt bằng", "văn phòng"]):
+Line 1129:                         print(f"[ROUTING] {symbol} with mbkd keywords routes to Nhóm Văn phòng , mặt bằng kinh doanh")
+Line 1130:                         target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+Line 1131:                     else:
+Line 1132:                         print(f"[ROUTING] {symbol} without mbkd keywords routes to Nhóm nhà nguyên căn")
+Line 1133:                         target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1134: 
+Line 1135:             elif symbol_lower in special_symbols:
+Line 1136:                 print(f"[ROUTING] {symbol} is SPECIAL GROUP")
+Line 1137:                 should_add_mbkd = False
+Line 1138:                 should_add_nguyencan = False
+Line 1139:                 should_add_chdv = False
+Line 1140:                 
+Line 1141:                 if symbol_lower in ["vietquoc", "vietquoc1"]: should_add_nguyencan = True
+Line 1142:                 elif symbol_lower in ["chdv", "chdv hưng phát", "chdv chọn lọc", "chdv chinh trần"]:
+Line 1143:                     should_add_chdv = True
+Line 1144:                 elif symbol_lower in ["tc home", "tc", "taiphat", "taiphat1", "tài phát", "tài land"]:
+Line 1145:                     if has_keyword(full_text, mbkd_keywords): should_add_mbkd = True
+Line 1146:                     else: should_add_nguyencan = True
+Line 1147:                 
+Line 1148:                 if should_add_mbkd: target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
+Line 1149:                 if should_add_nguyencan: target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1150:                 if should_add_chdv: target_groups.update(sender["output_groups_map"].get("chdv_ids", []))
+Line 1151:             
+Line 1152:             else:
+Line 1153:                 print(f"[ROUTING] {symbol} is NORMAL GROUP")
+Line 1154:                 
+Line 1155:                 # Check for "Mỹ Đình" everywhere first (Aggressive check)
+Line 1156:                 if "mỹ đình" in full_text.lower():
+Line 1157:                     print("[ROUTING] Found 'Mỹ Đình' in text. Adding Mỹ Đình & Nam Từ Liêm groups.")
+Line 1158:                     target_groups.update(sender["output_groups_map"].get("mỹ đình", []))
+Line 1159:                     target_groups.update(sender["output_groups_map"].get("nam từ liêm", []))
+Line 1160:                 
+Line 1161:                 # Normal address-based routing
+Line 1162:                 address_line = ""
+Line 1163:                 for pat in [r'Địa chỉ\s*:?\s*([^\n]+)', r'🏢\s*Địa chỉ\s*:?\s*([^\n]+)', r'DC\s*:?\s*([^\n]+)']:
+Line 1164:                     match = re.search(pat, full_text, re.IGNORECASE)
+Line 1165:                     if match: 

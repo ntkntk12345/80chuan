@@ -1,0 +1,24 @@
+Searching for tai_land in bot/sender.py:
+Line 1004: "tài land",
+Line 1093: tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1101: elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+Line 1118: elif symbol_lower in tai_land_symbols:
+Line 1144: elif symbol_lower in ["tc home", "tc", "taiphat", "taiphat1", "tài phát", "tài land"]:
+
+Searching for chung_cu/chung cư around line 1070-1170 in bot/sender.py:
+Line 1088: chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+Line 1089: nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+Line 1093: tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+Line 1101: elif symbol_lower in (chung_cu_symbols + nguyen_can_symbols + mbkd_symbols + chdv_symbols + tai_land_symbols + vietquoc_1_symbols):
+Line 1102: if symbol_lower in chung_cu_symbols:
+Line 1103: print(f"[ROUTING] {symbol} routes directly to Nhóm chung cư")
+Line 1104: target_ids = sender["output_groups_map"].get("chung_cu_ids", [])
+Line 1106: target_ids = sender["output_groups_map"].get("chung_cu_fallback_ids", [])
+Line 1107: print(f"[ROUTING] Fallback to chung_cu_fallback_ids: {target_ids}")
+Line 1109: elif symbol_lower in nguyen_can_symbols:
+Line 1111: target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1118: elif symbol_lower in tai_land_symbols:
+Line 1126: target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1133: target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
+Line 1144: elif symbol_lower in ["tc home", "tc", "taiphat", "taiphat1", "tài phát", "tài land"]:
+Line 1149: if should_add_nguyencan: target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))

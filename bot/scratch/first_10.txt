@@ -1,0 +1,40 @@
+ID: 1, Category: phong-tro, Room Code: TS359
+  Text1: '🌹8th 30% \nMã : Ts359 \n\n🏡 Địa chỉ : Số 8 Ngõ 76 Trần Thái Tông - Cầu Giấy \n⏰ 1/7 Trống : P301 \n______'
+  Text2: '10A 8th\nMã : Ts359\n\n🏡 Địa chỉ : Số 8 Ngõ 76 Trần Thái Tông - Cầu Giấy\n⏰ 1/7 Trống : P301\n___________'
+--------------------------------------------------
+ID: 2, Category: phong-tro, Room Code: P303
+  Text1: '🌹8th 40% \nMã : Ts359 \n\n🏡 Địa chỉ : Số nhà 21 Ngách 63 \nNgõ 5 Hoàng Quốc Việt - Cầu Giấy \n⏰ 1/7 Trống'
+  Text2: '10A 8th\nMã : Ts359\n\n🏡 Địa chỉ : Số nhà 21 Ngách 63\nNgõ 5 Hoàng Quốc Việt - Cầu Giấy\n⏰ 1/7 Trống : P3'
+--------------------------------------------------
+ID: 3, Category: phong-tro, Room Code: Trục 01/02/03
+  Text1: '🌷40%-15m Mã: 🏆 366\n( hh áp dụng tới 30/6)\n\n🏢Địa chỉ : 156 Hoàng Mai - Hoàng Mai\n\n⌛️Trống : toà mới\n\n'
+  Text2: '2A 🌷-15m Mã: 🏆 366\n( áp dụng tới 30/6)\n\n🏢Địa chỉ : 156 Hoàng Mai - Hoàng Mai\n\n⌛️Trống : toà mới\n\n☘Gi'
+--------------------------------------------------
+ID: 4, Category: phong-tro, Room Code: Ts359
+  Text1: '🌹8th 30% \nMã : Ts359 \n\n🏡 Địa chỉ : Số 8 Ngõ 76 Trần Thái Tông - Cầu Giấy \n⏰ 1/7 Trống : P301 \n______'
+  Text2: '10A 8th\nMã : Ts359\n\n🏡 Địa chỉ : Số 8 Ngõ 76 Trần Thái Tông - Cầu Giấy\n⏰ 1/7 Trống : P301\n___________'
+--------------------------------------------------
+ID: 5, Category: phong-tro, Room Code: Ts359
+  Text1: '🌹8th 40% \nMã : Ts359 \n\n🏡 Địa chỉ : Số nhà 21 Ngách 63 \nNgõ 5 Hoàng Quốc Việt - Cầu Giấy \n⏰ 1/7 Trống'
+  Text2: '10A 8th\nMã : Ts359\n\n🏡 Địa chỉ : Số nhà 21 Ngách 63\nNgõ 5 Hoàng Quốc Việt - Cầu Giấy\n⏰ 1/7 Trống : P3'
+--------------------------------------------------
+ID: 6, Category: phong-tro, Room Code: Trục 01/02/03
+  Text1: 'Trục 03 Trục 02 Trục 01 🎉 Khai trương toà mới\n🎉 Thưởng 150k cho sale\n🌹40% \nMã 195 \nNhà 156 Hoàng Mai'
+  Text2: '11A Trục 03 Trục 02 Trục 01 11A Mã 195\nNhà 156 Hoàng Mai\nTrục 01: 5tr8 ( hỗ trợ t6,7,8 giá 5tr3)\nTrụ'
+--------------------------------------------------
+ID: 7, Category: mat-bang-kinh-doanh, Room Code: H11/P304/P504
+  Text1: 'Thưởng 500k khách chốt phòng ở luôn\n\n🌺 Hh30% 12th               Mã: H11\n\n🏠 Địa chỉ: Số 26 ngách 51 n'
+  Text2: '1A Hh 12th Mã: H11\n\n🏠 Địa chỉ: Số 26 ngách 51 ngõ 136 Cầu Diễn, Bắc Từ Liêm\n\n⏰ Trống : P304,P504\n\n💰 '
+--------------------------------------------------
+ID: 8, Category: phong-tro, Room Code: Ts359
+  Text1: '🌹8th 30% \nMã : Ts359 \n\n🏡 Địa chỉ : 63 Xuân Thuỷ - Cầu Giấy\n( Cách mặt đường Xuân Thuỷ 80m )  \n⏰ 1/7 '
+  Text2: '10A 8th\nMã : Ts359\n\n🏡 Địa chỉ : 63 Xuân Thuỷ - Cầu Giấy\n( Cách mặt đường Xuân Thuỷ 80m )\n⏰ 1/7 Trống'
+--------------------------------------------------
+ID: 9, Category: phong-tro, Room Code: 194
+  Text1: '❌ Tặng 500k cho khách hoặc sale vào trong tháng 6\n🎉Thưởng 150k cho sale chốt \n🌹40% -6 tháng \n🌹50% -1'
+  Text2: '11A ❌ Tặng 500k cho khách hoặc vào trong tháng 6\n-6 tháng\n-12 thăng\nMã 194\n🏠 Địa chỉ : ngõ 250 Khươn'
+--------------------------------------------------
+ID: 10, Category: phong-tro, Room Code: P504
+  Text1: '🌹8th 30%\nMã : Ts359 \n\n🏡 Địa chỉ : 74 TRÚC KHÊ - ĐỐNG ĐA\n( PHỐ OTO ĐỖ CỬA. CẠNH BAN CƠ YẾU CHÍNH PHỦ '
+  Text2: '10A 8th\nMã : Ts359\n\n🏡 Địa chỉ : 74 TRÚC KHÊ - ĐỐNG ĐA\n( PHỐ OTO ĐỖ CỬA. CẠNH BAN CƠ YẾU CHÍNH PHỦ )\n'
+--------------------------------------------------

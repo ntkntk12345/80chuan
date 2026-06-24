@@ -1087,7 +1087,7 @@ class SenderBot:
             # Direct routing symbols
             chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
             nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
-            mbkd_symbols = ["1a", "1a1", "1a2", "1a3", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+            mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
             chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
             
             tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
@@ -1314,17 +1314,7 @@ class SenderBot:
                                 all_items.extend(t_in_b)
                                 all_items.extend(o_in_b)
                         
-                        # Check photo_first setting from bot_utils.RULES
-                        rule = bot_utils.RULES.get(symbol_lower, {})
-                        if rule.get("photo_first"):
-                            media_items = [x for x in all_items if x["type"] in ("photo", "video")]
-                            text_items = [x for x in all_items if x["type"] == "text"]
-                            media_items.sort(key=lambda x: x["ts"])
-                            text_items.sort(key=lambda x: x["ts"])
-                            timeline = media_items + text_items
-                            print(f"[TIMELINE] photo_first ordering applied for {symbol}: {len(media_items)} media first, then {len(text_items)} texts")
-                        else:
-                            timeline = all_items
+                        timeline = all_items
                         photo_batch = []
                         
                         for idx, content in enumerate(timeline):

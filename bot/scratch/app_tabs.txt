@@ -1,0 +1,527 @@
+--- Around Line 71 ---
+Line 66:   const [currentPage, _setCurrentPage] = useState('home');
+Line 67:   const [selectedRoomId, setSelectedRoomId] = useState(null);
+Line 68: 
+Line 69:   const setCurrentPage = (page) => {
+Line 70:     _setCurrentPage(page);
+Line 71:     const isDetailView = ['phong-tro-detail', 'chung-cu-detail', 'nha-nguyen-can-detail'].includes(page);
+Line 72:     if (!isDetailView) {
+Line 73:       const url = new URL(window.location.href);
+Line 74:       if (url.searchParams.has('room')) {
+Line 75:         url.searchParams.delete('room');
+Line 76:         window.history.pushState({}, '', url.toString());
+Line 77:       }
+Line 78:     }
+Line 79:   };
+Line 80: 
+============================================================
+--- Around Line 91 ---
+Line 86: 
+Line 87:     // Use session_id as the primary stable identifier if available, otherwise fallback to id
+Line 88:     const urlParamId = (room.session_id && room.session_id !== 'manual') ? room.session_id : String(room.id);
+Line 89:     setSelectedRoomId(urlParamId);
+Line 90: 
+Line 91:     const detailPage = category === 'chung-cu' ? 'chung-cu-detail'
+Line 92:       : category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 93:       : 'phong-tro-detail';
+Line 94:     setCurrentPage(detailPage);
+Line 95:     
+Line 96:     const url = new URL(window.location.href);
+Line 97:     url.searchParams.set('room', urlParamId);
+Line 98:     window.history.pushState({}, '', url.toString());
+Line 99:   };
+Line 100: 
+============================================================
+--- Around Line 92 ---
+Line 87:     // Use session_id as the primary stable identifier if available, otherwise fallback to id
+Line 88:     const urlParamId = (room.session_id && room.session_id !== 'manual') ? room.session_id : String(room.id);
+Line 89:     setSelectedRoomId(urlParamId);
+Line 90: 
+Line 91:     const detailPage = category === 'chung-cu' ? 'chung-cu-detail'
+Line 92:       : category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 93:       : 'phong-tro-detail';
+Line 94:     setCurrentPage(detailPage);
+Line 95:     
+Line 96:     const url = new URL(window.location.href);
+Line 97:     url.searchParams.set('room', urlParamId);
+Line 98:     window.history.pushState({}, '', url.toString());
+Line 99:   };
+Line 100: 
+Line 101:   // Helper: clear room param from URL
+============================================================
+--- Around Line 387 ---
+Line 382:       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=600'
+Line 383:     },
+Line 384:     // Chung Cư (image25)
+Line 385:     {
+Line 386:       id: 6,
+Line 387:       category: 'chung-cu',
+Line 388:       title: 'Vinhomes Ocean Park Studio view hồ',
+Line 389:       address: 'Huyện Gia Lâm, Hà Nội',
+Line 390:       nearPlace: 'ĐH Bách Khoa',
+Line 391:       distanceText: 'Cách ĐH Bách Khoa • 13km',
+Line 392:       priceText: '6.5 triệu/tháng',
+Line 393:       priceRaw: 6500000,
+Line 394:       areaText: 'Studio',
+Line 395:       badgeText: 'Nổi bật',
+Line 396:       badgeColor: 'blue',
+============================================================
+--- Around Line 404 ---
+Line 399:       zaloNumber: '0876480130',
+Line 400:       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600'
+Line 401:     },
+Line 402:     {
+Line 403:       id: 7,
+Line 404:       category: 'chung-cu',
+Line 405:       title: 'Masteri Waterfront căn hộ 2PN',
+Line 406:       address: 'Quận Gia Lâm, Hà Nội',
+Line 407:       nearPlace: 'ĐH Ngoại Thương',
+Line 408:       distanceText: 'Cách ĐH Ngoại Thương • 12km',
+Line 409:       priceText: '7.5 triệu/tháng',
+Line 410:       priceRaw: 7500000,
+Line 411:       areaText: '2PN',
+Line 412:       badgeText: 'Giá tốt',
+Line 413:       badgeColor: 'green',
+============================================================
+--- Around Line 421 ---
+Line 416:       zaloNumber: '0876480130',
+Line 417:       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600'
+Line 418:     },
+Line 419:     {
+Line 420:       id: 8,
+Line 421:       category: 'chung-cu',
+Line 422:       title: 'Vinhomes Smart City căn hộ 2PN',
+Line 423:       address: 'Quận Nam Từ Liêm, Hà Nội',
+Line 424:       nearPlace: 'ĐH Quốc Gia',
+Line 425:       distanceText: 'Cách ĐH Quốc Gia • 10km',
+Line 426:       priceText: '5.8 triệu/tháng',
+Line 427:       priceRaw: 5800000,
+Line 428:       areaText: '2PN',
+Line 429:       badgeText: 'Được quan tâm',
+Line 430:       badgeColor: 'purple',
+============================================================
+--- Around Line 438 ---
+Line 433:       zaloNumber: '0876480130',
+Line 434:       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600'
+Line 435:     },
+Line 436:     {
+Line 437:       id: 9,
+Line 438:       category: 'chung-cu',
+Line 439:       title: 'Sunshine Riverside Căn hộ 3PN',
+Line 440:       address: 'Quận Tây Hồ, Hà Nội',
+Line 441:       nearPlace: 'ĐH Mỏ Địa Chất',
+Line 442:       distanceText: 'Cách ĐH Mỏ Địa Chất • 11km',
+Line 443:       priceText: '8.2 triệu/tháng',
+Line 444:       priceRaw: 8200000,
+Line 445:       areaText: '3PN',
+Line 446:       badgeText: 'Mới đăng',
+Line 447:       badgeColor: 'orange',
+============================================================
+--- Around Line 456 ---
+Line 451:       image: 'https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=600'
+Line 452:     },
+Line 453:     // Nhà nguyên căn (image15)
+Line 454:     {
+Line 455:       id: 10,
+Line 456:       category: 'nha-nguyen-can',
+Line 457:       title: 'Nhà nguyên căn 3 tầng, ngõ 120 Trần Đại Nghĩa',
+Line 458:       address: 'Hai Bà Trưng, Hà Nội',
+Line 459:       nearPlace: 'ĐH Bách Khoa Hà Nội',
+Line 460:       priceText: '18 triệu/tháng',
+Line 461:       priceRaw: 18000000,
+Line 462:       areaText: '3 tầng • 3 PN',
+Line 463:       badgeText: 'Mới đăng',
+Line 464:       badgeColor: 'red',
+Line 465:       timeText: 'Đăng 1 ngày trước',
+============================================================
+--- Around Line 472 ---
+Line 467:       zaloNumber: '0876480130',
+Line 468:       image: 'https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=600'
+Line 469:     },
+Line 470:     {
+Line 471:       id: 11,
+Line 472:       category: 'nha-nguyen-can',
+Line 473:       title: 'Nhà 2 tầng, ngõ 245 Lạc Nghiệp',
+Line 474:       address: 'Hai Bà Trưng, Hà Nội',
+Line 475:       nearPlace: 'Bạch Mai',
+Line 476:       priceText: '12 triệu/tháng',
+Line 477:       priceRaw: 12000000,
+Line 478:       areaText: '2 tầng • 2 PN',
+Line 479:       badgeText: 'Giá tốt',
+Line 480:       badgeColor: 'green',
+Line 481:       timeText: 'Đăng 2 giờ trước',
+============================================================
+--- Around Line 489 ---
+Line 484:       image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=600'
+Line 485:     },
+Line 486:     // Căn hộ dịch vụ (image2)
+Line 487:     {
+Line 488:       id: 12,
+Line 489:       category: 'can-ho-dich-vu',
+Line 490:       title: 'CHDV Tây Hồ đầy đủ tiện ích',
+Line 491:       address: '299 Đường Âu Cơ, Tây Hồ, Hà Nội',
+Line 492:       nearPlace: 'ĐH Nội Vụ',
+Line 493:       priceText: '23tr/tháng',
+Line 494:       priceRaw: 23000000,
+Line 495:       areaText: '100m²',
+Line 496:       badgeText: 'Mới',
+Line 497:       badgeColor: 'red',
+Line 498:       timeText: 'Đăng 2 giờ trước',
+============================================================
+--- Around Line 505 ---
+Line 500:       zaloNumber: '0876480130',
+Line 501:       image: '' // Testing fallback placeholder layout (image2)
+Line 502:     },
+Line 503:     {
+Line 504:       id: 13,
+Line 505:       category: 'can-ho-dich-vu',
+Line 506:       title: 'CHDV Cầu Giấy tiện nghi cao cấp',
+Line 507:       address: '18 Ngõ 165 Cầu Giấy, Hà Nội',
+Line 508:       nearPlace: 'ĐH Giao Thông Vận Tải',
+Line 509:       priceText: '22tr/tháng',
+Line 510:       priceRaw: 22000000,
+Line 511:       areaText: '90m²',
+Line 512:       badgeText: 'Mới',
+Line 513:       badgeColor: 'red',
+Line 514:       timeText: 'Đăng 3 giờ trước',
+============================================================
+--- Around Line 523 ---
+Line 518:     },
+Line 519:     // Mặt bằng kinh doanh (image4)
+Line 520:     // Mặt bằng kinh doanh (image5.png)
+Line 521:     {
+Line 522:       id: 14,
+Line 523:       category: 'mat-bang-kinh-doanh',
+Line 524:       title: 'MBKD số 12 phố Thái Hà',
+Line 525:       address: '12 Thái Hà, Đống Đa, Hà Nội',
+Line 526:       nearPlace: 'ĐH Thủy Lợi',
+Line 527:       priceText: '25 triệu/tháng',
+Line 528:       priceRaw: 25000000,
+Line 529:       areaText: '80m²',
+Line 530:       badgeText: 'Mới',
+Line 531:       badgeColor: 'red',
+Line 532:       timeText: 'Đăng 1 giờ trước',
+============================================================
+--- Around Line 539 ---
+Line 534:       zaloNumber: '0876480130',
+Line 535:       image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=600'
+Line 536:     },
+Line 537:     {
+Line 538:       id: 15,
+Line 539:       category: 'mat-bang-kinh-doanh',
+Line 540:       title: 'MBKD phố Chùa Láng',
+Line 541:       address: '58 Chùa Láng, Đống Đa, Hà Nội',
+Line 542:       nearPlace: 'ĐH Ngoại Thương',
+Line 543:       priceText: '30 triệu/tháng',
+Line 544:       priceRaw: 30000000,
+Line 545:       areaText: '60m²',
+Line 546:       badgeText: 'Mới',
+Line 547:       badgeColor: 'red',
+Line 548:       timeText: 'Đăng 2 giờ trước',
+============================================================
+--- Around Line 555 ---
+Line 550:       zaloNumber: '0876480130',
+Line 551:       image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600'
+Line 552:     },
+Line 553:     {
+Line 554:       id: 21,
+Line 555:       category: 'mat-bang-kinh-doanh',
+Line 556:       title: 'MBKD đường Nguyễn Khang',
+Line 557:       address: '99 Nguyễn Khang, Cầu Giấy, Hà Nội',
+Line 558:       nearPlace: 'ĐH Giao Thông Vận Tải',
+Line 559:       priceText: '22 triệu/tháng',
+Line 560:       priceRaw: 22000000,
+Line 561:       areaText: '70m²',
+Line 562:       badgeText: 'Mới',
+Line 563:       badgeColor: 'red',
+Line 564:       timeText: 'Đăng 3 giờ trước',
+============================================================
+--- Around Line 571 ---
+Line 566:       zaloNumber: '0876480130',
+Line 567:       image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=600'
+Line 568:     },
+Line 569:     {
+Line 570:       id: 22,
+Line 571:       category: 'mat-bang-kinh-doanh',
+Line 572:       title: 'MBKD phố Trần Đại Nghĩa',
+Line 573:       address: '28 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội',
+Line 574:       nearPlace: 'ĐH Bách Khoa',
+Line 575:       priceText: '35 triệu/tháng',
+Line 576:       priceRaw: 35000000,
+Line 577:       areaText: '100m²',
+Line 578:       badgeText: 'Mới',
+Line 579:       badgeColor: 'red',
+Line 580:       timeText: 'Đăng 5 giờ trước',
+============================================================
+--- Around Line 587 ---
+Line 582:       zaloNumber: '0876480130',
+Line 583:       image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600'
+Line 584:     },
+Line 585:     {
+Line 586:       id: 23,
+Line 587:       category: 'mat-bang-kinh-doanh',
+Line 588:       title: 'MBKD ngõ 208 Nguyễn Trãi',
+Line 589:       address: '208 Nguyễn Trãi, Thanh Xuân, Hà Nội',
+Line 590:       nearPlace: 'ĐH Khoa Học Tự Nhiên',
+Line 591:       priceText: '18 triệu/tháng',
+Line 592:       priceRaw: 18000000,
+Line 593:       areaText: '50m²',
+Line 594:       badgeText: 'Mới',
+Line 595:       badgeColor: 'red',
+Line 596:       timeText: 'Đăng 6 giờ trước',
+============================================================
+--- Around Line 603 ---
+Line 598:       zaloNumber: '0876480130',
+Line 599:       image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?auto=format&fit=crop&q=80&w=600'
+Line 600:     },
+Line 601:     {
+Line 602:       id: 24,
+Line 603:       category: 'mat-bang-kinh-doanh',
+Line 604:       title: 'MBKD phố Duy Tân',
+Line 605:       address: '68 Duy Tân, Cầu Giấy, Hà Nội',
+Line 606:       nearPlace: 'ĐH Sư Phạm',
+Line 607:       priceText: '28 triệu/tháng',
+Line 608:       priceRaw: 28000000,
+Line 609:       areaText: '75m²',
+Line 610:       badgeText: 'Mới',
+Line 611:       badgeColor: 'red',
+Line 612:       timeText: 'Đăng 8 giờ trước',
+============================================================
+--- Around Line 619 ---
+Line 614:       zaloNumber: '0876480130',
+Line 615:       image: 'https://images.unsplash.com/photo-1497366858526-07559250c06b?auto=format&fit=crop&q=80&w=600'
+Line 616:     },
+Line 617:     {
+Line 618:       id: 25,
+Line 619:       category: 'mat-bang-kinh-doanh',
+Line 620:       title: 'MBKD phố Vọng',
+Line 621:       address: '120 Trần Đại Nghĩa, Hai Bà Trưng, Hà Nội',
+Line 622:       nearPlace: 'ĐH Kinh Tế Quốc Dân',
+Line 623:       priceText: '20 triệu/tháng',
+Line 624:       priceRaw: 20000000,
+Line 625:       areaText: '55m²',
+Line 626:       badgeText: 'Mới',
+Line 627:       badgeColor: 'red',
+Line 628:       timeText: 'Đăng 10 giờ trước',
+============================================================
+--- Around Line 635 ---
+Line 630:       zaloNumber: '0876480130',
+Line 631:       image: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=600'
+Line 632:     },
+Line 633:     {
+Line 634:       id: 26,
+Line 635:       category: 'mat-bang-kinh-doanh',
+Line 636:       title: 'MBKD ngõ 102 Trần Phú',
+Line 637:       address: '102 Trần Phú, Hà Đông, Hà Nội',
+Line 638:       nearPlace: 'ĐH Phenikaa',
+Line 639:       priceText: '15 triệu/tháng',
+Line 640:       priceRaw: 15000000,
+Line 641:       areaText: '40m²',
+Line 642:       badgeText: 'Mới',
+Line 643:       badgeColor: 'red',
+Line 644:       timeText: 'Đăng 12 giờ trước',
+============================================================
+--- Around Line 670 ---
+Line 665:     },
+Line 666:     // Ở ghép - Chung cư (image8)
+Line 667:     {
+Line 668:       id: 28,
+Line 669:       category: 'o-ghep',
+Line 670:       subCategory: 'chung-cu',
+Line 671:       title: 'Studio chung cư Vinhomes Ocean Park',
+Line 672:       address: 'Vinhomes Ocean Park, Gia Lâm, Hà Nội',
+Line 673:       priceText: '3.5 triệu/tháng',
+Line 674:       priceRaw: 3500000,
+Line 675:       areaText: '25 m²',
+Line 676:       gender: 'Nữ',
+Line 677:       badgeText: '1 bạn nữ ở ghép',
+Line 678:       badgeColor: 'purple',
+Line 679:       timeText: 'Đăng 2 giờ trước',
+============================================================
+--- Around Line 723 ---
+Line 718:     },
+Line 719:     // Ở ghép - Nhà nguyên căn (image26)
+Line 720:     {
+Line 721:       id: 31,
+Line 722:       category: 'o-ghep',
+Line 723:       subCategory: 'nha-nguyen-can',
+Line 724:       title: 'Nhà nguyên căn 3 tầng Tây Hồ',
+Line 725:       address: 'Đặng Thai Mai, Tây Hồ, Hà Nội',
+Line 726:       priceText: '6.5 triệu/tháng',
+Line 727:       priceRaw: 6500000,
+Line 728:       areaText: '120 m²',
+Line 729:       gender: 'Nam/Nữ',
+Line 730:       badgeText: '2 bạn ở ghép',
+Line 731:       badgeColor: 'blue',
+Line 732:       timeText: 'Đăng 2 giờ trước',
+============================================================
+--- Around Line 884 ---
+Line 879:             const roomIdParam = urlParams.get('room');
+Line 880:             if (roomIdParam) {
+Line 881:               const targetRoom = mapped.find(r => String(r.session_id) === roomIdParam || String(r.id) === roomIdParam);
+Line 882:               if (targetRoom) {
+Line 883:                 setSelectedRoomId(roomIdParam);
+Line 884:                 const detailPage = targetRoom.category === 'chung-cu' ? 'chung-cu-detail'
+Line 885:                   : targetRoom.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 886:                   : 'phong-tro-detail';
+Line 887:                 setCurrentPage(detailPage);
+Line 888:               } else {
+Line 889:                 // Specific direct fetch for the deep-linked room since it's not in the first page
+Line 890:                 const isNumericId = /^\d+$/.test(roomIdParam);
+Line 891:                 const queryParam = isNumericId ? `id=${roomIdParam}` : `session_id=${roomIdParam}`;
+Line 892:                 fetch(`/api/rooms?${queryParam}`)
+Line 893:                   .then(r => r.json())
+============================================================
+--- Around Line 885 ---
+Line 880:             if (roomIdParam) {
+Line 881:               const targetRoom = mapped.find(r => String(r.session_id) === roomIdParam || String(r.id) === roomIdParam);
+Line 882:               if (targetRoom) {
+Line 883:                 setSelectedRoomId(roomIdParam);
+Line 884:                 const detailPage = targetRoom.category === 'chung-cu' ? 'chung-cu-detail'
+Line 885:                   : targetRoom.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 886:                   : 'phong-tro-detail';
+Line 887:                 setCurrentPage(detailPage);
+Line 888:               } else {
+Line 889:                 // Specific direct fetch for the deep-linked room since it's not in the first page
+Line 890:                 const isNumericId = /^\d+$/.test(roomIdParam);
+Line 891:                 const queryParam = isNumericId ? `id=${roomIdParam}` : `session_id=${roomIdParam}`;
+Line 892:                 fetch(`/api/rooms?${queryParam}`)
+Line 893:                   .then(r => r.json())
+Line 894:                   .then(resp => {
+============================================================
+--- Around Line 903 ---
+Line 898:                       setRooms(prev => {
+Line 899:                         if (prev.some(r => r.id === roomObj.id)) return prev;
+Line 900:                         return [roomObj, ...prev];
+Line 901:                       });
+Line 902:                       setSelectedRoomId(roomIdParam);
+Line 903:                       const detailPage = roomObj.category === 'chung-cu' ? 'chung-cu-detail'
+Line 904:                         : roomObj.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 905:                         : 'phong-tro-detail';
+Line 906:                       setCurrentPage(detailPage);
+Line 907:                     }
+Line 908:                   })
+Line 909:                   .catch(err => console.error('Error fetching deep linked room:', err));
+Line 910:               }
+Line 911:             }
+Line 912:           }
+============================================================
+--- Around Line 904 ---
+Line 899:                         if (prev.some(r => r.id === roomObj.id)) return prev;
+Line 900:                         return [roomObj, ...prev];
+Line 901:                       });
+Line 902:                       setSelectedRoomId(roomIdParam);
+Line 903:                       const detailPage = roomObj.category === 'chung-cu' ? 'chung-cu-detail'
+Line 904:                         : roomObj.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 905:                         : 'phong-tro-detail';
+Line 906:                       setCurrentPage(detailPage);
+Line 907:                     }
+Line 908:                   })
+Line 909:                   .catch(err => console.error('Error fetching deep linked room:', err));
+Line 910:               }
+Line 911:             }
+Line 912:           }
+Line 913: 
+============================================================
+--- Around Line 1072 ---
+Line 1067:           />
+Line 1068:         );
+Line 1069: 
+Line 1070:       // Categories listings
+Line 1071:       case 'phong-tro':
+Line 1072:       case 'chung-cu':
+Line 1073:       case 'nha-nguyen-can':
+Line 1074:       case 'can-ho-dich-vu':
+Line 1075:       case 'mat-bang-kinh-doanh':
+Line 1076:       case 'pass-phong':
+Line 1077:       case 'o-ghep':
+Line 1078:       case 'saved-rooms':
+Line 1079:       case 'viewed-rooms':
+Line 1080:         const listingRooms =
+Line 1081:           currentPage === 'saved-rooms' ? rooms.filter(r => savedRoomIds.includes(r.id)) :
+============================================================
+--- Around Line 1073 ---
+Line 1068:         );
+Line 1069: 
+Line 1070:       // Categories listings
+Line 1071:       case 'phong-tro':
+Line 1072:       case 'chung-cu':
+Line 1073:       case 'nha-nguyen-can':
+Line 1074:       case 'can-ho-dich-vu':
+Line 1075:       case 'mat-bang-kinh-doanh':
+Line 1076:       case 'pass-phong':
+Line 1077:       case 'o-ghep':
+Line 1078:       case 'saved-rooms':
+Line 1079:       case 'viewed-rooms':
+Line 1080:         const listingRooms =
+Line 1081:           currentPage === 'saved-rooms' ? rooms.filter(r => savedRoomIds.includes(r.id)) :
+Line 1082:             currentPage === 'viewed-rooms' ? rooms.slice(0, 3) :
+============================================================
+--- Around Line 1074 ---
+Line 1069: 
+Line 1070:       // Categories listings
+Line 1071:       case 'phong-tro':
+Line 1072:       case 'chung-cu':
+Line 1073:       case 'nha-nguyen-can':
+Line 1074:       case 'can-ho-dich-vu':
+Line 1075:       case 'mat-bang-kinh-doanh':
+Line 1076:       case 'pass-phong':
+Line 1077:       case 'o-ghep':
+Line 1078:       case 'saved-rooms':
+Line 1079:       case 'viewed-rooms':
+Line 1080:         const listingRooms =
+Line 1081:           currentPage === 'saved-rooms' ? rooms.filter(r => savedRoomIds.includes(r.id)) :
+Line 1082:             currentPage === 'viewed-rooms' ? rooms.slice(0, 3) :
+Line 1083:               rooms;
+============================================================
+--- Around Line 1075 ---
+Line 1070:       // Categories listings
+Line 1071:       case 'phong-tro':
+Line 1072:       case 'chung-cu':
+Line 1073:       case 'nha-nguyen-can':
+Line 1074:       case 'can-ho-dich-vu':
+Line 1075:       case 'mat-bang-kinh-doanh':
+Line 1076:       case 'pass-phong':
+Line 1077:       case 'o-ghep':
+Line 1078:       case 'saved-rooms':
+Line 1079:       case 'viewed-rooms':
+Line 1080:         const listingRooms =
+Line 1081:           currentPage === 'saved-rooms' ? rooms.filter(r => savedRoomIds.includes(r.id)) :
+Line 1082:             currentPage === 'viewed-rooms' ? rooms.slice(0, 3) :
+Line 1083:               rooms;
+Line 1084:         return (
+============================================================
+--- Around Line 1106 ---
+Line 1101:           />
+Line 1102:         );
+Line 1103: 
+Line 1104:       // Detail Views
+Line 1105:       case 'phong-tro-detail':
+Line 1106:       case 'chung-cu-detail':
+Line 1107:       case 'nha-nguyen-can-detail':
+Line 1108:         return <DetailView room={selectedRoom} setCurrentPage={setCurrentPage} isMobile={isMobile} user={user} />;
+Line 1109: 
+Line 1110:       // Admin Dashboard
+Line 1111:       case 'admin-dashboard':
+Line 1112:         if (!user || (user.role !== 'admin' && user.role !== 'ctv')) {
+Line 1113:           setCurrentPage('home');
+Line 1114:           return null;
+Line 1115:         }
+============================================================
+--- Around Line 1107 ---
+Line 1102:         );
+Line 1103: 
+Line 1104:       // Detail Views
+Line 1105:       case 'phong-tro-detail':
+Line 1106:       case 'chung-cu-detail':
+Line 1107:       case 'nha-nguyen-can-detail':
+Line 1108:         return <DetailView room={selectedRoom} setCurrentPage={setCurrentPage} isMobile={isMobile} user={user} />;
+Line 1109: 
+Line 1110:       // Admin Dashboard
+Line 1111:       case 'admin-dashboard':
+Line 1112:         if (!user || (user.role !== 'admin' && user.role !== 'ctv')) {
+Line 1113:           setCurrentPage('home');
+Line 1114:           return null;
+Line 1115:         }
+Line 1116:         return (
+============================================================

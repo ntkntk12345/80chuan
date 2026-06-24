@@ -1,0 +1,51 @@
+Line 1590:     if (type) {
+Line 1591:       whereClause += ' AND rooms.room_type LIKE ?';
+Line 1592:       params.push(`%${type}%`);
+Line 1593:     }
+Line 1594:     if (price_min) {
+Line 1595:       whereClause += ' AND rooms.price1 >= ?';
+Line 1596:       params.push(parseInt(price_min));
+Line 1597:     }
+Line 1598:     if (price_max) {
+Line 1599:       whereClause += ' AND rooms.price2 <= ?';
+Line 1600:       params.push(parseInt(price_max));
+Line 1601:     }
+Line 1602:     if (q) {
+Line 1603:       const tokens = q.split(/[\s,.-]+/).map(t => t.trim()).filter(t => t.length > 0).slice(0, 6);
+Line 1604:       if (tokens.length > 0) {
+Line 1605:         tokens.forEach(token => {
+Line 1606:           whereClause += " AND (COALESCE(rooms.address, '') || ', Hà Nội' LIKE ? OR rooms.room_type LIKE ? OR rooms.text2 LIKE ? OR rooms.district LIKE ?)";
+Line 1607:           params.push(`%${token}%`, `%${token}%`, `%${token}%`, `%${token}%`);
+Line 1608:         });
+Line 1609:       }
+Line 1610:     }
+Line 1611:     if (landmark) {
+Line 1612:       joinClause = 'INNER JOIN room_distances ON rooms.id = room_distances.room_id';
+Line 1613:       whereClause += ' AND room_distances.landmark_name = ?';
+Line 1614:       params.push(landmark);
+Line 1615:     }
+Line 1616:     if (category && category !== 'saved-rooms' && category !== 'viewed-rooms') {
+Line 1617:       if (category === 'pass-phong') {
+Line 1618:         // Pass phong is a sub-filter within phong-tro: search phong-tro rooms with pass/nhượng keywords
+Line 1619:         whereClause += " AND rooms.category = 'phong-tro' AND (rooms.text2 LIKE '%pass%' OR rooms.text2 LIKE '%nh\u01b0\u1ee3ng%' OR rooms.text1 LIKE '%pass%' OR rooms.text1 LIKE '%nh\u01b0\u1ee3ng%')";
+Line 1620:       } else if (category === 'o-ghep') {
+Line 1621:         // O ghep is a sub-filter within phong-tro: search phong-tro rooms with ghep/roommate keywords
+Line 1622:         whereClause += " AND rooms.category = 'phong-tro' AND (rooms.text2 LIKE '%gh\u00e9p%' OR rooms.text2 LIKE '%\u1edf gh\u00e9p%' OR rooms.text2 LIKE '%roommate%' OR rooms.text1 LIKE '%gh\u00e9p%' OR rooms.text1 LIKE '%\u1edf gh\u00e9p%')";
+Line 1623:       } else {
+Line 1624:         whereClause += ' AND rooms.category = ?';
+Line 1625:         params.push(category);
+Line 1626:       }
+Line 1627:     }
+Line 1628: 
+Line 1629:     // Get total count for pagination metadata
+Line 1630:     const countRow = await dbGet(`SELECT COUNT(DISTINCT rooms.id) as total FROM rooms ${joinClause} ${whereClause}`, params);
+Line 1631:     const total = countRow ? countRow.total : 0;
+Line 1632: 
+Line 1633:     const query = `SELECT DISTINCT rooms.* FROM rooms ${joinClause} ${whereClause} ORDER BY rooms.created_at DESC LIMIT ? OFFSET ?`;
+Line 1634:     const rooms = await dbAll(query, [...params, limitNum, offset]);
+Line 1635:     const uniqueRooms = deduplicateRooms(rooms);
+Line 1636: 
+Line 1637:     const roomIds = uniqueRooms.map(r => r.id);
+Line 1638:     let distances = [];
+Line 1639:     if (roomIds.length > 0) {
+Line 1640:       const placeholders = roomIds.map(() => '?').join(',');

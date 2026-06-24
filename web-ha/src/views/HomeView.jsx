@@ -484,7 +484,7 @@ const HomeView = ({
     { id: 'phong-tro', label: 'Phòng trọ', iconUrl: '/icon-phong-tro.png' },
     { id: 'chung-cu', label: 'Chung cư', iconUrl: '/icon-chung-cu.png' },
     { id: 'nha-nguyen-can', label: 'Nhà nguyên căn', iconUrl: '/icon-nha-nguyen-can.png' },
-    { id: 'can-ho-dich-vu', label: 'Hộ kinh doanh', iconUrl: '/icon-can-ho-dich-vu.png' },
+    { id: 'can-ho-dich-vu', label: 'Căn hộ dịch vụ', iconUrl: '/icon-can-ho-dich-vu.png' },
     { id: 'mat-bang-kinh-doanh', label: 'Mặt bằng KD', iconUrl: '/icon-mat-bang-kd.png' },
     { id: 'pass-phong', label: 'Pass phòng', iconUrl: '/icon-pass-phong.png' },
     { id: 'o-ghep', label: 'Ở ghép', iconUrl: '/icon-o-ghep.png' }
@@ -539,9 +539,13 @@ const HomeView = ({
         <div className="room-card-content" style={{ userSelect: 'text' }}>
           <h3 className="room-card-title" style={{ fontWeight: 400 }}>
             <strong style={{ fontWeight: 700 }}>
-              {room.category === 'chung-cu' ? 'Tên chung cư' : 'Dạng phòng'}:
+              {room.category === 'chung-cu' ? 'Tên chung cư' : room.category === 'mat-bang-kinh-doanh' ? 'Diện tích' : 'Dạng phòng'}:
             </strong>{' '}
-            {room.category === 'chung-cu' ? (room.buildingName || room.title) : (room.roomType || 'Studio')}
+            {room.category === 'chung-cu' 
+              ? (room.buildingName || room.title) 
+              : room.category === 'mat-bang-kinh-doanh' 
+                ? (room.roomType || room.areaText || 'Chưa xác định') 
+                : (room.roomType || 'Studio')}
           </h3>
 
           <div className="room-card-address">

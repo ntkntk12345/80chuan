@@ -20,7 +20,7 @@ const Sidebar = ({ currentPage, setCurrentPage, onContactSupport, user }) => {
     { id: 'phong-tro', label: 'Phòng trọ', icon: Building2 },
     { id: 'chung-cu', label: 'Chung cư', icon: Building },
     { id: 'nha-nguyen-can', label: 'Nhà nguyên căn', icon: Warehouse },
-    { id: 'can-ho-dich-vu', label: 'Hộ kinh doanh', icon: Building2 },
+    { id: 'can-ho-dich-vu', label: 'Căn hộ dịch vụ', icon: Building2 },
     { id: 'mat-bang-kinh-doanh', label: 'Mặt bằng kinh doanh', icon: Store },
     { id: 'pass-phong', label: 'Pass phòng', icon: KeyRound },
     { id: 'o-ghep', label: 'Ở ghép', icon: Users2 }

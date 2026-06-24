@@ -24,16 +24,16 @@ Mỗi tin nhắn khi đi qua bot sẽ được lọc và chuyển đổi dựa t
 
 | Ký hiệu (Symbol) | Quy tắc lọc tin nhắn (Filters) | Chỉnh sửa nội dung (Transformations) | Thứ tự truyền thông (Timeline Order) |
 | :--- | :--- | :--- | :--- |
-| **`1a1`, `1a2`, `1a3`** | ❌ Bỏ qua nếu tin nhắn **dưới 200 ký tự** | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `1a`<br>💵 Định dạng giá thành `Xtr` | Mặc định (Thông tin trước, ảnh sau) |
-| **`11a1`** | - | 🧹 Xóa thưởng sale/ctv, xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `11a`<br>💵 Định dạng giá thành `Xtr` | 🔄 Đăng thông tin trước, ảnh sau |
-| **`11a2`, `11a3`** | - | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `11a`<br>💵 Định dạng giá thành `Xtr` | 🔄 Đăng thông tin trước, ảnh sau |
-| **`9a`** | - | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `9a`<br>💵 Định dạng giá thành `Xtr` | 🔄 Đăng thông tin trước, ảnh sau |
-| **`phongtot1` ➔ `5`** | - | 🧹 Xóa hoa hồng<br>🔗 Xóa link Facebook, Google Docs | Mặc định |
-| **`npland`** | - | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã | 📸 **Đăng ảnh trước, thông tin sau** |
-| **`Tuananh CHDV 1/2`, `CHDV chọn lọc`, `Dũng CHDV`, `N34 CHDV`, `Chinh trần CHDV`** | - | 🧹 Xóa số liên lạc dòng cuối<br>🏷️ Thêm mã<br>💵 Định dạng giá thành `Xtr` | 📸 **Đăng ảnh trước, thông tin sau** |
-| **`hm`** | 🚫 **Bỏ qua hoàn toàn** nếu nội dung chứa SĐT `"0366968234"` | 🏷️ Thêm mã đầu dòng | 📸 **Đăng ảnh trước, thông tin sau** |
-| **`invest`, `family`** | - | 🧹 Xóa hoa hồng (chỉ family)<br>🏷️ Thêm mã | 📸 **Đăng ảnh trước, thông tin sau** |
-| **`tc 2`, `tc 3`, `tc 4`** | - | 🧹 Xóa dòng liên hệ `lh...`<br>🏷️ Thêm mã đầu dòng | 📸 **Đăng ảnh trước, thông tin sau** |
+| **`1a1`, `1a2`, `1a3`** | ❌ Bỏ qua nếu tin nhắn **dưới 200 ký tự** | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `1a`<br>💵 Định dạng giá thành `Xtr` | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`11a1`** | - | 🧹 Xóa thưởng sale/ctv, xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `11a`<br>💵 Định dạng giá thành `Xtr` | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`11a2`, `11a3`** | - | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `11a`<br>💵 Định dạng giá thành `Xtr` | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`9a`** | - | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã đầu dòng `9a`<br>💵 Định dạng giá thành `Xtr` | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`phongtot1` ➔ `5`** | - | 🧹 Xóa hoa hồng<br>🔗 Xóa link Facebook, Google Docs | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`npland`** | - | 🧹 Xóa hoa hồng<br>🏷️ Thêm mã | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`Tuananh CHDV 1/2`, `CHDV chọn lọc`, `Dũng CHDV`, `N34 CHDV`, `Chinh trần CHDV`** | - | 🧹 Xóa số liên lạc dòng cuối<br>🏷️ Thêm mã<br>💵 Định dạng giá thành `Xtr` | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`hm`** | 🚫 **Bỏ qua hoàn toàn** nếu nội dung chứa SĐT `"0366968234"` | 🏷️ Thêm mã đầu dòng | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`invest`, `family`** | - | 🧹 Xóa hoa hồng (chỉ family)<br>🏷️ Thêm mã | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
+| **`tc 2`, `tc 3`, `tc 4`** | - | 🧹 Xóa dòng liên hệ `lh...`<br>🏷️ Thêm mã đầu dòng | 🔄 **Đăng thông tin trước, ảnh sau (Cố định 1 form)** |
 
 ### Các bộ lọc chung:
 1. **Duyệt giá (`format_price`):** Chuyển đổi định dạng giá (ví dụ: `4.700.000` hoặc `3600k` ➔ `4tr7` hoặc `3tr6`).

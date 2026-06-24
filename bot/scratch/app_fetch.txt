@@ -1,0 +1,459 @@
+--- Around Line 56 ---
+Line 51:       let vid = localStorage.getItem('_visitor_id');
+Line 52:       if (!vid) {
+Line 53:         vid = `v_${Date.now()}_${Math.random().toString(36).slice(2)}`;
+Line 54:         localStorage.setItem('_visitor_id', vid);
+Line 55:       }
+Line 56:       fetch('/api/track', {
+Line 57:         method: 'POST',
+Line 58:         headers: { 'Content-Type': 'application/json' },
+Line 59:         body: JSON.stringify({ path: window.location.pathname + window.location.search, visitor_id: vid, referrer: document.referrer })
+Line 60:       }).catch(() => {});
+Line 61:     } catch(e) {}
+Line 62:   }, []);
+Line 63: 
+Line 64: 
+Line 65:   // Navigation State
+============================================================
+--- Around Line 120 ---
+Line 115:     admin_fb_link: 'https://facebook.com/admin',
+Line 116:     admin_zalo_link: 'https://zalo.me/0876480130',
+Line 117:     zalo_monetization_link: 'https://zalo.me/0876480130'
+Line 118:   });
+Line 119: 
+Line 120:   const fetchSettings = () => {
+Line 121:     fetch('/api/settings')
+Line 122:       .then(res => res.json())
+Line 123:       .then(data => {
+Line 124:         if (data) {
+Line 125:           setSettings({
+Line 126:             min_withdrawal: parseInt(data.min_withdrawal) || 50000,
+Line 127:             referral_commission: parseInt(data.referral_commission) || 300000,
+Line 128:             tiktok_base_reward: parseInt(data.tiktok_base_reward) || 30000,
+Line 129:             tiktok_max_reward: parseInt(data.tiktok_max_reward) || 800000,
+============================================================
+--- Around Line 121 ---
+Line 116:     admin_zalo_link: 'https://zalo.me/0876480130',
+Line 117:     zalo_monetization_link: 'https://zalo.me/0876480130'
+Line 118:   });
+Line 119: 
+Line 120:   const fetchSettings = () => {
+Line 121:     fetch('/api/settings')
+Line 122:       .then(res => res.json())
+Line 123:       .then(data => {
+Line 124:         if (data) {
+Line 125:           setSettings({
+Line 126:             min_withdrawal: parseInt(data.min_withdrawal) || 50000,
+Line 127:             referral_commission: parseInt(data.referral_commission) || 300000,
+Line 128:             tiktok_base_reward: parseInt(data.tiktok_base_reward) || 30000,
+Line 129:             tiktok_max_reward: parseInt(data.tiktok_max_reward) || 800000,
+Line 130:             tiktok_reward_tiers: typeof data.tiktok_reward_tiers === 'string' 
+============================================================
+--- Around Line 139 ---
+Line 134:             admin_zalo_link: data.admin_zalo_link || 'https://zalo.me/0876480130',
+Line 135:             zalo_monetization_link: data.zalo_monetization_link || 'https://zalo.me/0876480130'
+Line 136:           });
+Line 137:         }
+Line 138:       })
+Line 139:       .catch(err => console.error('Error fetching settings:', err));
+Line 140:   };
+Line 141: 
+Line 142:   useEffect(() => {
+Line 143:     fetchSettings();
+Line 144:   }, []);
+Line 145: 
+Line 146:   // Initialize users database in localStorage if not exists
+Line 147:   useEffect(() => {
+Line 148:     if (!localStorage.getItem('users_db')) {
+============================================================
+--- Around Line 143 ---
+Line 138:       })
+Line 139:       .catch(err => console.error('Error fetching settings:', err));
+Line 140:   };
+Line 141: 
+Line 142:   useEffect(() => {
+Line 143:     fetchSettings();
+Line 144:   }, []);
+Line 145: 
+Line 146:   // Initialize users database in localStorage if not exists
+Line 147:   useEffect(() => {
+Line 148:     if (!localStorage.getItem('users_db')) {
+Line 149:       localStorage.setItem('users_db', JSON.stringify(DEFAULT_USERS));
+Line 150:     }
+Line 151:     // Clear stale mock transaction data — real data comes from SQLite
+Line 152:     localStorage.removeItem('transactions_db');
+============================================================
+--- Around Line 205 ---
+Line 200:     const saved = localStorage.getItem('currentUser');
+Line 201:     if (saved) {
+Line 202:       try {
+Line 203:         const parsed = JSON.parse(saved);
+Line 204:         if (parsed && parsed.phone) {
+Line 205:           fetch(`/api/users/${parsed.phone}`)
+Line 206:             .then(res => {
+Line 207:               if (res.ok) return res.json();
+Line 208:               if (res.status === 404) {
+Line 209:                 localStorage.removeItem('currentUser');
+Line 210:                 setUser(null);
+Line 211:                 throw new Error('User session invalid or database reset. User not found in database.');
+Line 212:               }
+Line 213:               throw new Error('Sync failed');
+Line 214:             })
+============================================================
+--- Around Line 230 ---
+Line 225:   // Notifications State & Logic
+Line 226:   const [notifications, setNotifications] = useState([]);
+Line 227:   const [showMobileNoti, setShowMobileNoti] = useState(false);
+Line 228:   const unreadNotificationsCount = notifications.filter(n => !n.read).length;
+Line 229: 
+Line 230:   const fetchNotifications = () => {
+Line 231:     if (!user) {
+Line 232:       setNotifications([]);
+Line 233:       return;
+Line 234:     }
+Line 235:     fetch(`/api/users/${user.phone}/notifications`)
+Line 236:       .then(res => res.json())
+Line 237:       .then(data => {
+Line 238:         setNotifications(Array.isArray(data) ? data : []);
+Line 239:       })
+============================================================
+--- Around Line 235 ---
+Line 230:   const fetchNotifications = () => {
+Line 231:     if (!user) {
+Line 232:       setNotifications([]);
+Line 233:       return;
+Line 234:     }
+Line 235:     fetch(`/api/users/${user.phone}/notifications`)
+Line 236:       .then(res => res.json())
+Line 237:       .then(data => {
+Line 238:         setNotifications(Array.isArray(data) ? data : []);
+Line 239:       })
+Line 240:       .catch(err => console.error('Error fetching notifications:', err));
+Line 241:   };
+Line 242: 
+Line 243:   const handleMarkAllAsRead = () => {
+Line 244:     if (!user) return;
+============================================================
+--- Around Line 240 ---
+Line 235:     fetch(`/api/users/${user.phone}/notifications`)
+Line 236:       .then(res => res.json())
+Line 237:       .then(data => {
+Line 238:         setNotifications(Array.isArray(data) ? data : []);
+Line 239:       })
+Line 240:       .catch(err => console.error('Error fetching notifications:', err));
+Line 241:   };
+Line 242: 
+Line 243:   const handleMarkAllAsRead = () => {
+Line 244:     if (!user) return;
+Line 245:     fetch(`/api/users/${user.phone}/notifications/read`, { method: 'POST' })
+Line 246:       .then(res => {
+Line 247:         if (res.ok) {
+Line 248:           setNotifications(prev => prev.map(n => ({ ...n, read: 1 })));
+Line 249:         }
+============================================================
+--- Around Line 245 ---
+Line 240:       .catch(err => console.error('Error fetching notifications:', err));
+Line 241:   };
+Line 242: 
+Line 243:   const handleMarkAllAsRead = () => {
+Line 244:     if (!user) return;
+Line 245:     fetch(`/api/users/${user.phone}/notifications/read`, { method: 'POST' })
+Line 246:       .then(res => {
+Line 247:         if (res.ok) {
+Line 248:           setNotifications(prev => prev.map(n => ({ ...n, read: 1 })));
+Line 249:         }
+Line 250:       })
+Line 251:       .catch(err => console.error('Error marking notifications as read:', err));
+Line 252:   };
+Line 253: 
+Line 254:   useEffect(() => {
+============================================================
+--- Around Line 255 ---
+Line 250:       })
+Line 251:       .catch(err => console.error('Error marking notifications as read:', err));
+Line 252:   };
+Line 253: 
+Line 254:   useEffect(() => {
+Line 255:     fetchNotifications();
+Line 256:     const interval = setInterval(fetchNotifications, 15000);
+Line 257:     return () => clearInterval(interval);
+Line 258:   }, [user]);
+Line 259: 
+Line 260:   // Bookmark State - load from localStorage, default empty
+Line 261:   const [savedRoomIds, setSavedRoomIds] = useState(() => {
+Line 262:     try {
+Line 263:       const saved = localStorage.getItem('savedRoomIds');
+Line 264:       return saved ? JSON.parse(saved) : [];
+============================================================
+--- Around Line 256 ---
+Line 251:       .catch(err => console.error('Error marking notifications as read:', err));
+Line 252:   };
+Line 253: 
+Line 254:   useEffect(() => {
+Line 255:     fetchNotifications();
+Line 256:     const interval = setInterval(fetchNotifications, 15000);
+Line 257:     return () => clearInterval(interval);
+Line 258:   }, [user]);
+Line 259: 
+Line 260:   // Bookmark State - load from localStorage, default empty
+Line 261:   const [savedRoomIds, setSavedRoomIds] = useState(() => {
+Line 262:     try {
+Line 263:       const saved = localStorage.getItem('savedRoomIds');
+Line 264:       return saved ? JSON.parse(saved) : [];
+Line 265:     } catch (e) {
+============================================================
+--- Around Line 866 ---
+Line 861:   };
+Line 862: 
+Line 863:   const refreshRooms = (shouldDeepLink = false) => {
+Line 864:     setLoadingRooms(true);
+Line 865:     // Fetch page 1 first for fast initial render (300 rooms)
+Line 866:     fetch(`/api/rooms?t=${Date.now()}&limit=300&page=1`)
+Line 867:       .then(res => res.json())
+Line 868:       .then(response => {
+Line 869:         const data = Array.isArray(response) ? response : (response.data || []);
+Line 870:         const hasMore = response.hasMore;
+Line 871:         const total = response.total || 0;
+Line 872: 
+Line 873:         if (data.length > 0) {
+Line 874:           const mapped = data.map(mapRoomData);
+Line 875:           setRooms(mapped);
+============================================================
+--- Around Line 889 ---
+Line 884:                 const detailPage = targetRoom.category === 'chung-cu' ? 'chung-cu-detail'
+Line 885:                   : targetRoom.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 886:                   : 'phong-tro-detail';
+Line 887:                 setCurrentPage(detailPage);
+Line 888:               } else {
+Line 889:                 // Specific direct fetch for the deep-linked room since it's not in the first page
+Line 890:                 const isNumericId = /^\d+$/.test(roomIdParam);
+Line 891:                 const queryParam = isNumericId ? `id=${roomIdParam}` : `session_id=${roomIdParam}`;
+Line 892:                 fetch(`/api/rooms?${queryParam}`)
+Line 893:                   .then(r => r.json())
+Line 894:                   .then(resp => {
+Line 895:                     const respData = Array.isArray(resp) ? resp : (resp.data || []);
+Line 896:                     if (respData.length > 0) {
+Line 897:                       const roomObj = mapRoomData(respData[0]);
+Line 898:                       setRooms(prev => {
+============================================================
+--- Around Line 892 ---
+Line 887:                 setCurrentPage(detailPage);
+Line 888:               } else {
+Line 889:                 // Specific direct fetch for the deep-linked room since it's not in the first page
+Line 890:                 const isNumericId = /^\d+$/.test(roomIdParam);
+Line 891:                 const queryParam = isNumericId ? `id=${roomIdParam}` : `session_id=${roomIdParam}`;
+Line 892:                 fetch(`/api/rooms?${queryParam}`)
+Line 893:                   .then(r => r.json())
+Line 894:                   .then(resp => {
+Line 895:                     const respData = Array.isArray(resp) ? resp : (resp.data || []);
+Line 896:                     if (respData.length > 0) {
+Line 897:                       const roomObj = mapRoomData(respData[0]);
+Line 898:                       setRooms(prev => {
+Line 899:                         if (prev.some(r => r.id === roomObj.id)) return prev;
+Line 900:                         return [roomObj, ...prev];
+Line 901:                       });
+============================================================
+--- Around Line 909 ---
+Line 904:                         : roomObj.category === 'nha-nguyen-can' ? 'nha-nguyen-can-detail'
+Line 905:                         : 'phong-tro-detail';
+Line 906:                       setCurrentPage(detailPage);
+Line 907:                     }
+Line 908:                   })
+Line 909:                   .catch(err => console.error('Error fetching deep linked room:', err));
+Line 910:               }
+Line 911:             }
+Line 912:           }
+Line 913: 
+Line 914:           // Background: fetch remaining pages in parallel batches
+Line 915:           if (hasMore && total > 300) {
+Line 916:             const totalPages = Math.ceil(total / 300);
+Line 917:             const pagesToFetch = [];
+Line 918:             for (let p = 2; p <= totalPages; p++) {
+============================================================
+--- Around Line 914 ---
+Line 909:                   .catch(err => console.error('Error fetching deep linked room:', err));
+Line 910:               }
+Line 911:             }
+Line 912:           }
+Line 913: 
+Line 914:           // Background: fetch remaining pages in parallel batches
+Line 915:           if (hasMore && total > 300) {
+Line 916:             const totalPages = Math.ceil(total / 300);
+Line 917:             const pagesToFetch = [];
+Line 918:             for (let p = 2; p <= totalPages; p++) {
+Line 919:               pagesToFetch.push(p);
+Line 920:             }
+Line 921: 
+Line 922:             const concurrency = 6;
+Line 923:             let index = 0;
+============================================================
+--- Around Line 925 ---
+Line 920:             }
+Line 921: 
+Line 922:             const concurrency = 6;
+Line 923:             let index = 0;
+Line 924: 
+Line 925:             const fetchNextBatch = () => {
+Line 926:               if (index >= pagesToFetch.length) return;
+Line 927: 
+Line 928:               const promises = [];
+Line 929:               for (let i = 0; i < concurrency && index < pagesToFetch.length; i++) {
+Line 930:                 const pageNum = pagesToFetch[index++];
+Line 931:                 promises.push(
+Line 932:                   fetch(`/api/rooms?limit=300&page=${pageNum}`)
+Line 933:                     .then(r => r.json())
+Line 934:                     .then(resp => {
+============================================================
+--- Around Line 932 ---
+Line 927: 
+Line 928:               const promises = [];
+Line 929:               for (let i = 0; i < concurrency && index < pagesToFetch.length; i++) {
+Line 930:                 const pageNum = pagesToFetch[index++];
+Line 931:                 promises.push(
+Line 932:                   fetch(`/api/rooms?limit=300&page=${pageNum}`)
+Line 933:                     .then(r => r.json())
+Line 934:                     .then(resp => {
+Line 935:                       const pageData = Array.isArray(resp) ? resp : (resp.data || []);
+Line 936:                       return pageData.map(mapRoomData);
+Line 937:                     })
+Line 938:                     .catch(err => {
+Line 939:                       console.error(`Error loading page ${pageNum}:`, err);
+Line 940:                       return [];
+Line 941:                     })
+============================================================
+--- Around Line 954 ---
+Line 949:                     const existingIds = new Set(prev.map(r => r.id));
+Line 950:                     const newRooms = allNewRooms.filter(r => !existingIds.has(r.id));
+Line 951:                     return newRooms.length > 0 ? [...prev, ...newRooms] : prev;
+Line 952:                   });
+Line 953:                 }
+Line 954:                 // Continue fetching next batch
+Line 955:                 fetchNextBatch();
+Line 956:               });
+Line 957:             };
+Line 958: 
+Line 959:             setTimeout(fetchNextBatch, 300);
+Line 960:           }
+Line 961:         } else {
+Line 962:           setRooms([]);
+Line 963:         }
+============================================================
+--- Around Line 955 ---
+Line 950:                     const newRooms = allNewRooms.filter(r => !existingIds.has(r.id));
+Line 951:                     return newRooms.length > 0 ? [...prev, ...newRooms] : prev;
+Line 952:                   });
+Line 953:                 }
+Line 954:                 // Continue fetching next batch
+Line 955:                 fetchNextBatch();
+Line 956:               });
+Line 957:             };
+Line 958: 
+Line 959:             setTimeout(fetchNextBatch, 300);
+Line 960:           }
+Line 961:         } else {
+Line 962:           setRooms([]);
+Line 963:         }
+Line 964:       })
+============================================================
+--- Around Line 959 ---
+Line 954:                 // Continue fetching next batch
+Line 955:                 fetchNextBatch();
+Line 956:               });
+Line 957:             };
+Line 958: 
+Line 959:             setTimeout(fetchNextBatch, 300);
+Line 960:           }
+Line 961:         } else {
+Line 962:           setRooms([]);
+Line 963:         }
+Line 964:       })
+Line 965:       .catch(err => {
+Line 966:         console.error('Error fetching SQLite rooms:', err);
+Line 967:         setRooms([]);
+Line 968:       })
+============================================================
+--- Around Line 966 ---
+Line 961:         } else {
+Line 962:           setRooms([]);
+Line 963:         }
+Line 964:       })
+Line 965:       .catch(err => {
+Line 966:         console.error('Error fetching SQLite rooms:', err);
+Line 967:         setRooms([]);
+Line 968:       })
+Line 969:       .finally(() => {
+Line 970:         setLoadingRooms(false);
+Line 971:       });
+Line 972:   };
+Line 973: 
+Line 974:   const handleFiltersChange = (filters) => {
+Line 975:     // If there is an active filter or search query, fetch matching rooms from the server immediately
+============================================================
+--- Around Line 975 ---
+Line 970:         setLoadingRooms(false);
+Line 971:       });
+Line 972:   };
+Line 973: 
+Line 974:   const handleFiltersChange = (filters) => {
+Line 975:     // If there is an active filter or search query, fetch matching rooms from the server immediately
+Line 976:     if (filters.q || filters.district || filters.landmark || filters.roomType || filters.gender) {
+Line 977:       const params = new URLSearchParams();
+Line 978:       params.append('limit', '100');
+Line 979:       params.append('page', '1');
+Line 980:       if (filters.category && filters.category !== 'saved-rooms' && filters.category !== 'viewed-rooms') {
+Line 981:         params.append('category', filters.category);
+Line 982:         params.append('status', 'approved');
+Line 983:       }
+Line 984:       if (filters.q) params.append('q', filters.q);
+============================================================
+--- Around Line 989 ---
+Line 984:       if (filters.q) params.append('q', filters.q);
+Line 985:       if (filters.district) params.append('district', filters.district);
+Line 986:       if (filters.landmark) params.append('landmark', filters.landmark);
+Line 987:       if (filters.roomType) params.append('type', filters.roomType);
+Line 988: 
+Line 989:       fetch(`/api/rooms?${params.toString()}`)
+Line 990:         .then(res => res.json())
+Line 991:         .then(response => {
+Line 992:           const data = Array.isArray(response) ? response : (response.data || []);
+Line 993:           if (data.length > 0) {
+Line 994:             const mapped = data.map(mapRoomData);
+Line 995:             setRooms(prev => {
+Line 996:               const existingIds = new Set(prev.map(r => r.id));
+Line 997:               const newRooms = mapped.filter(r => !existingIds.has(r.id));
+Line 998:               return newRooms.length > 0 ? [...newRooms, ...prev] : prev;
+============================================================
+--- Around Line 1002 ---
+Line 997:               const newRooms = mapped.filter(r => !existingIds.has(r.id));
+Line 998:               return newRooms.length > 0 ? [...newRooms, ...prev] : prev;
+Line 999:             });
+Line 1000:           }
+Line 1001:         })
+Line 1002:         .catch(err => console.error('Error fetching filtered rooms:', err));
+Line 1003:     }
+Line 1004:   };
+Line 1005: 
+Line 1006:   useEffect(() => {
+Line 1007:     refreshRooms(true);
+Line 1008:   }, []);
+Line 1009: 
+Line 1010: 
+Line 1011:   // Selected property helper
+============================================================
+--- Around Line 1123 ---
+Line 1118:             rooms={rooms}
+Line 1119:             setRooms={setRooms}
+Line 1120:             setCurrentPage={setCurrentPage}
+Line 1121:             isMobile={isMobile}
+Line 1122:             settings={settings}
+Line 1123:             fetchSettings={fetchSettings}
+Line 1124:             refreshRooms={refreshRooms}
+Line 1125:             user={user}
+Line 1126:           />
+Line 1127:         );
+Line 1128: 
+Line 1129:       // Affiliate Campaigns portal
+Line 1130:       case 'kiem-tien':
+Line 1131:         return (
+Line 1132:           <EarnHubView 
+============================================================

@@ -346,7 +346,93 @@ async function initializeDatabase() {
       const nonPhongTro = await dbGet("SELECT COUNT(*) as count FROM rooms WHERE category != 'phong-tro'");
       if (nonPhongTro && nonPhongTro.count === 0) {
         console.log('[MIGRATION] Migrating existing rooms to correct categories...');
-        const allRooms = await dbAll("SELECT id, text2 FROM rooms");
+        
+        function extractMaxPriceVnd(text) {
+          if (!text) return 0;
+          let normalized = text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/trieu/g, 'tr');
+          let regex = /\d+(?:\.\d+)?\s*(?:tr|k|ty)/g;
+          let matches = normalized.match(regex);
+          if (!matches) {
+            let rawRegex = /\d{1,3}(?:[.,]\d{3})+/g;
+            let rawMatches = normalized.match(rawRegex);
+            if (rawMatches) {
+              let prices = rawMatches.map(m => parseInt(m.replace(/[.,]/g, ''), 10) || 0);
+              return Math.max(...prices);
+            }
+            return 0;
+          }
+          let maxVal = 0;
+          for (let match of matches) {
+            let num = parseFloat(match);
+            if (isNaN(num)) continue;
+            let val = 0;
+            if (match.includes('tr')) {
+              val = num * 1000000;
+            } else if (match.includes('k')) {
+              val = num * 1000;
+            } else if (match.includes('ty')) {
+              val = num * 1000000000;
+            }
+            if (val > maxVal) {
+              maxVal = val;
+            }
+          }
+          return maxVal;
+        }
+
+        function getCategoryFromText2(text2, text1 = '') {
+          if (!text2) return 'phong-tro';
+          const t2Lower = text2.trim().toLowerCase();
+          
+          const chungCuSymbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"];
+          const nguyenCanSymbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"];
+          const mbkdSymbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"];
+          const chdvSymbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"];
+          const taiLandSymbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"];
+          const vietquoc1Symbols = ["việt quốc 1", "vietquoc 1"];
+          
+          const allSymbols = [
+            ...chungCuSymbols,
+            ...nguyenCanSymbols,
+            ...mbkdSymbols,
+            ...chdvSymbols,
+            ...taiLandSymbols,
+            ...vietquoc1Symbols
+          ].sort((a, b) => b.length - a.length);
+          
+          let matchedSymbol = null;
+          for (const sym of allSymbols) {
+            if (t2Lower.startsWith(sym)) {
+              const symLen = sym.length;
+              if (t2Lower.length > symLen) {
+                const nextChar = t2Lower[symLen];
+                if (/[a-z0-9]/.test(nextChar)) {
+                  continue;
+                }
+              }
+              matchedSymbol = sym;
+              break;
+            }
+          }
+          
+          if (!matchedSymbol) return 'phong-tro';
+          
+          if (chungCuSymbols.includes(matchedSymbol)) return 'chung-cu';
+          if (nguyenCanSymbols.includes(matchedSymbol)) return 'nha-nguyen-can';
+          if (mbkdSymbols.includes(matchedSymbol)) return 'mat-bang-kinh-doanh';
+          if (chdvSymbols.includes(matchedSymbol)) return 'can-ho-dich-vu';
+          if (taiLandSymbols.includes(matchedSymbol)) {
+            const maxPrice = extractMaxPriceVnd(text1 || text2);
+            return maxPrice >= 25000000 ? 'mat-bang-kinh-doanh' : 'nha-nguyen-can';
+          }
+          if (vietquoc1Symbols.includes(matchedSymbol)) {
+            return (t2Lower.includes('mbkd') || t2Lower.includes('mặt bằng') || t2Lower.includes('văn phòng')) 
+              ? 'mat-bang-kinh-doanh' : 'nha-nguyen-can';
+          }
+          return 'phong-tro';
+        }
+
+        const allRooms = await dbAll("SELECT id, text2, text1 FROM rooms");
         let migratedCount = 0;
         for (const r of allRooms) {
           let roomCategory = 'phong-tro';
@@ -360,20 +446,7 @@ async function initializeDatabase() {
                 }
               } catch (e) { }
             } else {
-              const textLower = text2Str.toLowerCase();
-              if (textLower.includes('mặt bằng') || textLower.includes('mbkd') || textLower.includes('kinh doanh') || textLower.includes('cửa hàng')) {
-                roomCategory = 'mat-bang-kinh-doanh';
-              } else if (textLower.includes('nhà nguyên căn') || textLower.includes('nhà riêng')) {
-                roomCategory = 'nha-nguyen-can';
-              } else if (textLower.includes('chdv') || textLower.includes('căn hộ dịch vụ') || textLower.includes('studio') || textLower.includes('căn hộ mini') || textLower.includes('chung cư mini')) {
-                roomCategory = 'can-ho-dich-vu';
-              } else if (
-                (textLower.includes('chung cư') || textLower.includes('căn hộ') || textLower.includes('masteri') || textLower.includes('waterfront') || textLower.includes('vinhomes')) &&
-                !textLower.includes('gác xép') && !textLower.includes('phòng trọ') && !textLower.includes('nhà trọ') &&
-                !textLower.includes('gần chung cư') && !textLower.includes('cạnh chung cư') && !textLower.includes('sau chung cư') && !textLower.includes('đối diện chung cư')
-              ) {
-                roomCategory = 'chung-cu';
-              }
+              roomCategory = getCategoryFromText2(r.text2, r.text1);
             }
           }
 

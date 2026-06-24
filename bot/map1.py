@@ -431,7 +431,7 @@ def save_room_to_sqlite(room_data, session_info, district_name, db_path=DEFAULT_
         dt_vn = datetime.now(tz=tz_vn)
         created_at_str = dt_vn.strftime("%Y-%m-%d %H:%M:%S")
     
-    category = determine_category(text2)
+    category = room_data.get("category") or determine_category(text2)
 
     # Geocode address
     geo = geocode_address_esri(address)

@@ -7107,3 +7107,147 @@ CHO THUÊ NHÀ NGUYÊN CĂN
 [PHOTOS] ✓ Ảnh 7/7 OK
 [PACE] ✓ Xong group Nhóm Hai Bà Trưng 2. Nghỉ trước khi gửi group tiếp...
 [PACE] 💤 Nghỉ 5s trước khi gửi group tiếp (5/5)...
+
+[INIT] Initializing 3 sender accounts...
+[INIT] Setting up Sender-1...
+ DEBUG  Light Đang Loging Vào Acc None...
+ LOGIN  Login of 84879506246 successful.
+[INIT] ✓ Sender-1 ready. 54 groups mapped.
+[INIT] Setting up Sender-2...
+ DEBUG  Light Đang Loging Vào Acc None...
+[INIT] ✗ Failed: Login failed: The session key was improperly submitted or has reached its timeout. Direct the user to log in again to obtain another key (Check cookies?)
+[INIT] Setting up Sender-3...
+ DEBUG  Light Đang Loging Vào Acc None...
+[INIT] ✗ Failed: Login failed: The session key was improperly submitted or has reached its timeout. Direct the user to log in again to obtain another key (Check cookies?)
+[INIT] Creating district JSON files...
+[INIT] Created 0 new district files.
+[WATCHER] Started watching pending_queue.json
+[FEATURED] Detected admin featured feed update.
+[SENDER] Bot started with 1 accounts.[WATCHER] ═══ Tìm thấy 46 session trong queue ═══
+
+
+[TEST] Startup test send disabled. Set SENDER_STARTUP_TEST=1 to enable.==================================================
+
+[QUEUE] 📋 Session 1/46 (symbol: 11a1)
+==================================================
+[ROUND-ROBIN] 🔄 Session 1/46 (11a1) → Sender-1 phụ trách
+[ROUTING] 11a1 is NORMAL GROUP
+[ROUTING] Extracted Keywords: ['Hai Bà Trưng', 'Bạch Mai']
+[RECOVERY] 🔄 Resuming session 9e125e0a. Completed: 4, Current: None
+[SENDER] 🎯 Sender-1 -> 5 groups (Pending: 1)
+[DEBUG_STICKER] Sending sticker to 4327767287644103068
+[KEEPALIVE] Sender-1 -> Trọ Ahihu Ahihu (8638078387543082355)
+[TIMELINE] Using listener timeline for 11a1: 8 items
+[SEND] Text: 11a1 11a Mã 484
+🏠 Địa chỉ: ngá...
+[PHOTOS] Gửi 7 ảnh → group 4327767287644103068
+[PHOTOS] ✓ Ảnh 1/7 OK
+[PHOTOS] ✓ Ảnh 2/7 OK
+[PHOTOS] ✓ Ảnh 3/7 OK
+[PHOTOS] ✓ Ảnh 4/7 OK
+[PHOTOS] ✓ Ảnh 5/7 OK
+[PHOTOS] ✓ Ảnh 6/7 OK
+[PHOTOS] ✓ Ảnh 7/7 OK
+[PACE] ✓ Xong group Nhóm Hai Bà Trưng 3. Nghỉ trước khi gửi group tiếp...
+[SAVE] Full text: 11a1 11a Mã 484
+🏠 Địa chỉ: ngách 55 Chùa Liên Phái, Bạch Mai, Hai bà trưng
+📍 Trống: 202, 301, 302, 4...
+[SAVE] Found keywords: ['Hai Bà Trưng', 'Bạch Mai']
+[SAVE] Districts from keywords: {'Hai Bà Trưng'}
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts\haibatrung.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts\haibatrung1.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts_ok\haibatrung.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts_summary\haibatrung.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts_full\haibatrung.json
+[DONE] ✅ Session 1 hoàn thành bởi Sender-1
+[QUEUE] ✅ Session 1/46 xong → đã xóa khỏi pending
+
+==================================================
+[QUEUE] 📋 Session 2/46 (symbol: dragon)
+==================================================
+[ROUND-ROBIN] 🔄 Session 2/46 (dragon) → Sender-1 phụ trách
+[ROUTING] dragon is NORMAL GROUP
+[ROUTING] Extracted Keywords: ['Thanh Xuân']
+[SENDER] 🎯 Sender-1 -> 5 groups (Pending: 5)
+[DEBUG_STICKER] Sending sticker to 8723215770176873628
+[SEND] Text: dragon 📰 Mã Toà Nhà: DG-133
+📰 ...
+[PHOTOS] Gửi 5 ảnh → group 8723215770176873628
+[PHOTOS] ✓ Ảnh 1/5 OK
+[PHOTOS] ✓ Ảnh 2/5 OK
+[PHOTOS] ✓ Ảnh 3/5 OK
+[PHOTOS] ✓ Ảnh 4/5 OK
+[PHOTOS] ✓ Ảnh 5/5 OK
+[PACE] ✓ Xong group Trọ Thanh Xuân. Nghỉ trước khi gửi group tiếp...
+[PACE] 💤 Nghỉ 3s trước khi gửi group tiếp (2/5)...
+[DEBUG_STICKER] Sending sticker to 987520156129766183
+[SEND] Text: dragon 📰 Mã Toà Nhà: DG-133
+📰 ...
+[PHOTOS] Gửi 5 ảnh → group 987520156129766183
+[PHOTOS] ✓ Ảnh 1/5 OK
+[PHOTOS] ✓ Ảnh 2/5 OK
+[PHOTOS] ✓ Ảnh 3/5 OK
+[PHOTOS] ✓ Ảnh 4/5 OK
+[PHOTOS] ✓ Ảnh 5/5 OK
+[PACE] ✓ Xong group Trọ Thanh Xuân 3. Nghỉ trước khi gửi group tiếp...
+[PACE] 💤 Nghỉ 4s trước khi gửi group tiếp (3/5)...
+[DEBUG_STICKER] Sending sticker to 3625786155725517250
+[SEND] Text: dragon 📰 Mã Toà Nhà: DG-133
+📰 ...
+[PHOTOS] Gửi 5 ảnh → group 3625786155725517250
+[PHOTOS] ✓ Ảnh 1/5 OK
+[PHOTOS] ✓ Ảnh 2/5 OK
+[PHOTOS] ✓ Ảnh 3/5 OK
+[PHOTOS] ✓ Ảnh 4/5 OK
+[PHOTOS] ✓ Ảnh 5/5 OK
+[PACE] ✓ Xong group Thanh Xuân 2. Nghỉ trước khi gửi group tiếp...
+[PACE] 💤 Nghỉ 3s trước khi gửi group tiếp (4/5)...
+[DEBUG_STICKER] Sending sticker to 6798800140364224201
+[SEND] Text: dragon 📰 Mã Toà Nhà: DG-133
+📰 ...
+[PHOTOS] Gửi 5 ảnh → group 6798800140364224201
+[PHOTOS] ✓ Ảnh 1/5 OK
+[PHOTOS] ✓ Ảnh 2/5 OK
+[PHOTOS] ✓ Ảnh 3/5 OK
+[PHOTOS] ✓ Ảnh 4/5 OK
+[PHOTOS] ✓ Ảnh 5/5 OK
+[PACE] ✓ Xong group Thanh Xuân 4. Nghỉ trước khi gửi group tiếp...
+[PACE] 💤 Nghỉ 3s trước khi gửi group tiếp (5/5)...
+[DEBUG_STICKER] Sending sticker to 2109737310556997844
+[SEND] Text: dragon 📰 Mã Toà Nhà: DG-133
+📰 ...
+[PHOTOS] Gửi 5 ảnh → group 2109737310556997844
+[PHOTOS] ✓ Ảnh 1/5 OK
+[PHOTOS] ✓ Ảnh 2/5 OK
+[PHOTOS] ✓ Ảnh 3/5 OK
+[PHOTOS] ✓ Ảnh 4/5 OK
+[PHOTOS] ✓ Ảnh 5/5 OK
+[PACE] ✓ Xong group Trọ Thanh Xuân. Nghỉ trước khi gửi group tiếp...
+[SAVE] Full text: dragon 📰 Mã Toà Nhà: DG-133
+📰 Địa Chỉ: Ngõ 429 Thuỵ Khê
+📰 Quận: Thanh Xuân
+
+📰 Giá Phòng: 5tr
+📰 Số Ph...
+[SAVE] Found keywords: ['Thanh Xuân']
+[SAVE] Districts from keywords: {'Thanh Xuân'}
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts\thanhxuan.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts\thanhxuan1.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts_ok\thanhxuan.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts_summary\thanhxuan.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts_full\thanhxuan.json
+[DONE] ✅ Session 2 hoàn thành bởi Sender-1
+[QUEUE] ✅ Session 2/46 xong → đã xóa khỏi pending
+
+==================================================
+[QUEUE] 📋 Session 3/46 (symbol: Chinhtran)
+==================================================
+[ROUND-ROBIN] 🔄 Session 3/46 (Chinhtran) → Sender-1 phụ trách
+[SENDER] 🗑️ Bỏ qua session không hợp lệ từ Manual Flush 6193970882133064122
+[SAVE] Full text: Chinhtran "#caugiay
+Cho thuê nhà riêng ngõ 91 Dương Quảng Hàm, Phường Quan Hoa, Cầu Giấy, Hà Nội
+Diệ...
+[SAVE] Found keywords: ['Cầu Giấy', 'Quan Hoa']
+[SAVE] Districts from keywords: {'Cầu Giấy'}
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts\caugiay.json
+[SAVE] Saved data to C:\Users\Admin\Downloads\80chuan\bot\districts\caugiay1.json

@@ -26,7 +26,9 @@ import {
   KeyRound,
   Camera,
   Play,
-  Clock
+  Clock,
+  Store,
+  Ruler
 } from 'lucide-react';
 import {
   UNIVERSITIES,
@@ -1169,7 +1171,7 @@ const ListingView = ({
               { id: 'phong-tro', label: 'Phòng trọ' },
               { id: 'chung-cu', label: 'Chung cư' },
               { id: 'nha-nguyen-can', label: 'Nhà nguyên căn' },
-              { id: 'can-ho-dich-vu', label: 'Hộ kinh doanh' },
+              { id: 'can-ho-dich-vu', label: 'Căn hộ dịch vụ' },
               { id: 'mat-bang-kinh-doanh', label: 'Mặt bằng kinh doanh' }
             ].map(tab => (
 
@@ -1203,7 +1205,7 @@ const ListingView = ({
                 'phong-tro': 'Phòng trọ',
                 'chung-cu': 'Chung cư',
                 'nha-nguyen-can': 'Nhà nguyên căn',
-                'can-ho-dich-vu': 'Hộ kinh doanh',
+                'can-ho-dich-vu': 'Căn hộ dịch vụ',
                 'mat-bang-kinh-doanh': 'Mặt bằng KD',
                 'pass-phong': 'Pass phòng',
                 'o-ghep': 'Ở ghép'
@@ -1622,6 +1624,200 @@ const ListingView = ({
             <>
               {currentRooms.map((room) => {
                 const isSaved = savedRoomIds.includes(room.id);
+                const hasImg = room.image && !room.image.includes('placeholder');
+
+                if (category === 'mat-bang-kinh-doanh') {
+                  const isTopRow = [14, 15, 21, 22].includes(Number(room.id));
+                  const suitable = getSuitableForMBKD(room);
+                  const landmarkText = getLandmarkTextMBKD(room);
+
+                  return (
+                    <div
+                      key={room.id}
+                      className="mobile-card-vertical"
+                      style={{ display: 'flex', flexDirection: 'column' }}
+                      onClick={() => {
+                        if (navigateToRoom) {
+                          navigateToRoom(room.id, room.category);
+                        } else {
+                          setSelectedRoomId(room.id);
+                          setCurrentPage('phong-tro-detail');
+                        }
+                      }}
+                    >
+                      <div className="mobile-card-img-wrapper">
+                        {hasImg ? (
+                          <img src={room.image} alt={room.title} className="mobile-card-img" />
+                        ) : (
+                          <div className="mobile-card-image-placeholder" style={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            backgroundColor: '#F8FAFC',
+                            color: 'var(--text-muted)'
+                          }}>
+                            <Building2 size={32} strokeWidth={1} style={{ opacity: 0.3 }} />
+                          </div>
+                        )}
+
+                        {room.badgeText && (
+                          <span className="mobile-card-badge red">
+                            {room.badgeText}
+                          </span>
+                        )}
+
+                        <button
+                          type="button"
+                          className="mobile-card-favorite-circle"
+                          style={{
+                            position: 'absolute',
+                            top: '8px',
+                            right: '8px',
+                            backgroundColor: '#FFFFFF',
+                            borderRadius: '50%',
+                            border: '1px solid #E2E8F0',
+                            width: '28px',
+                            height: '28px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+                            cursor: 'pointer',
+                            zIndex: 10,
+                            padding: 0,
+                            outline: 'none'
+                          }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleSaveRoom(room.id);
+                          }}
+                        >
+                          <Heart size={14} fill={isSaved ? "var(--primary-red)" : "none"} color={isSaved ? "var(--primary-red)" : "#64748B"} />
+                        </button>
+                      </div>
+
+                      <div className="mobile-card-content" style={{ padding: '8px', display: 'flex', flexDirection: 'column', gap: '4px', flex: 1, userSelect: 'text' }}>
+                        <h3 style={{ 
+                          fontWeight: 800, 
+                          fontSize: '12px', 
+                          color: '#1E293B', 
+                          lineHeight: '1.4', 
+                          overflow: 'hidden', 
+                          textOverflow: 'ellipsis', 
+                          display: '-webkit-box', 
+                          WebkitLineClamp: 2, 
+                          WebkitBoxOrient: 'vertical', 
+                          minHeight: '34px',
+                          margin: 0 
+                        }}>
+                          {room.title}
+                        </h3>
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '3px', color: '#64748B', fontSize: '10px' }}>
+                          <MapPin size={10} style={{ color: '#94A3B8', flexShrink: 0 }} />
+                          <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                            {room.address}
+                          </span>
+                        </div>
+
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', margin: '2px 0', flexWrap: 'wrap' }}>
+                          <span style={{ color: 'var(--primary-red)', fontWeight: 800, fontSize: '12px' }}>
+                            {formatPrice(room.price1 || room.priceRaw || room.priceText)}
+                          </span>
+                          <span style={{ 
+                            display: 'inline-flex', 
+                            alignItems: 'center', 
+                            gap: '2px', 
+                            backgroundColor: '#EFF6FF', 
+                            color: '#2563EB', 
+                            padding: '1px 6px', 
+                            borderRadius: '3px', 
+                            fontSize: '9px', 
+                            fontWeight: 700 
+                          }}>
+                            <Ruler size={9} />
+                            {room.areaText}
+                          </span>
+                        </div>
+
+                        {/* Business Suitability Block */}
+                        {isTopRow ? (
+                          <div style={{
+                            backgroundColor: '#F5F3FF',
+                            border: '1px solid #F3E8FF',
+                            borderRadius: '6px',
+                            padding: '6px 8px',
+                            margin: '2px 0',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '1px'
+                          }}>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                              <Store size={12} style={{ color: '#7C3AED', flexShrink: 0 }} />
+                              <span style={{ fontWeight: 800, color: '#4C1D95', fontSize: '10px' }}>
+                                {suitable.title}
+                              </span>
+                            </div>
+                            {suitable.desc && (
+                              <div style={{ color: '#6B21A8', fontSize: '9px', paddingLeft: '16px', fontWeight: 500 }}>
+                                {suitable.desc}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', margin: '2px 0', fontSize: '10px' }}>
+                            <Briefcase size={12} style={{ color: '#64748B', flexShrink: 0 }} />
+                            <span style={{ color: '#334155', fontWeight: 700, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                              {suitable.title}
+                            </span>
+                          </div>
+                        )}
+
+                        {landmarkText && (
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#475569', fontSize: '10px', margin: '2px 0' }}>
+                            <GraduationCap size={12} style={{ color: '#64748B', flexShrink: 0 }} />
+                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                              {landmarkText}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      <div className="mobile-card-footer" style={{ padding: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #F1F5F9', marginTop: 'auto' }}>
+                        <span style={{ fontSize: '10px', color: '#94A3B8' }}>{room.timeText || 'Vừa đăng'}</span>
+                        <button
+                          type="button"
+                          className="mobile-card-btn"
+                          style={{
+                            backgroundColor: '#EFF6FF',
+                            color: '#0068FF',
+                            border: 'none',
+                            borderRadius: '4px',
+                            padding: '4px 8px',
+                            fontSize: '11px',
+                            fontWeight: 700,
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '2px',
+                            cursor: 'pointer',
+                            transition: 'all 0.2s ease',
+                            outline: 'none'
+                          }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            window.open(`https://zalo.me/${room.zaloNumber || '0876480130'}`, '_blank');
+                          }}
+                        >
+                          <ZaloIconCard size={11} />
+                          <span>Nhắn Zalo</span>
+                        </button>
+                      </div>
+                    </div>
+                  );
+                }
+
                 return (
                   <div
                     key={room.id}
@@ -1654,9 +1850,13 @@ const ListingView = ({
                     <div className="mobile-card-content" style={{ userSelect: 'text' }}>
                       <h3 className="mobile-card-title" style={{ fontSize: '13px', fontWeight: 700, margin: '4px 0' }}>
                         <strong style={{ fontWeight: 800 }}>
-                          {room.category === 'chung-cu' ? 'Tên chung cư' : 'Dạng phòng'}:
+                          {room.category === 'chung-cu' ? 'Tên chung cư' : room.category === 'mat-bang-kinh-doanh' ? 'Diện tích' : 'Dạng phòng'}:
                         </strong>{' '}
-                        {room.category === 'chung-cu' ? (room.buildingName || room.title) : (room.roomType || 'Studio')}
+                        {room.category === 'chung-cu' 
+                          ? (room.buildingName || room.title) 
+                          : room.category === 'mat-bang-kinh-doanh' 
+                            ? (room.roomType || room.areaText || 'Chưa xác định') 
+                            : (room.roomType || 'Studio')}
                       </h3>
                       <div className="mobile-card-address" style={{ fontSize: '11px', color: '#64748B', display: 'flex', alignItems: 'center', gap: '3px' }}>
                         <MapPin size={12} style={{ color: 'var(--primary-red)', flexShrink: 0 }} />
@@ -2319,6 +2519,198 @@ const ListingView = ({
                   const isSaved = savedRoomIds.includes(room.id);
                   const hasImg = room.image && !room.image.includes('placeholder');
 
+                  if (category === 'mat-bang-kinh-doanh') {
+                    const isTopRow = [14, 15, 21, 22].includes(Number(room.id));
+                    const suitable = getSuitableForMBKD(room);
+                    const landmarkText = getLandmarkTextMBKD(room);
+
+                    return (
+                      <div
+                        key={room.id}
+                        className="room-card"
+                        style={{ display: 'flex', flexDirection: 'column' }}
+                        onClick={() => {
+                          if (navigateToRoom) {
+                            navigateToRoom(room.id, room.category);
+                          } else {
+                            setSelectedRoomId(room.id);
+                            setCurrentPage('phong-tro-detail');
+                          }
+                        }}
+                      >
+                        <div className="room-card-image-wrapper">
+                          {hasImg ? (
+                            <img src={room.image} alt={room.title} className="room-card-image" />
+                          ) : (
+                            <div className="room-card-image-placeholder" style={{
+                              width: '100%',
+                              height: '100%',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              backgroundColor: '#F8FAFC',
+                              color: 'var(--text-muted)'
+                            }}>
+                              <Building2 size={48} strokeWidth={1} style={{ opacity: 0.3 }} />
+                            </div>
+                          )}
+
+                          {room.badgeText && (
+                            <span className="room-card-badge red">
+                              {room.badgeText}
+                            </span>
+                          )}
+
+                          <button
+                            type="button"
+                            className="room-card-favorite-circle"
+                            style={{
+                              position: 'absolute',
+                              top: '12px',
+                              right: '12px',
+                              backgroundColor: '#FFFFFF',
+                              borderRadius: '50%',
+                              border: '1px solid #E2E8F0',
+                              width: '32px',
+                              height: '32px',
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                              boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
+                              cursor: 'pointer',
+                              zIndex: 10,
+                              padding: 0,
+                              outline: 'none'
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleSaveRoom(room.id);
+                            }}
+                          >
+                            <Heart size={16} fill={isSaved ? "var(--primary-red)" : "none"} color={isSaved ? "var(--primary-red)" : "#64748B"} />
+                          </button>
+                        </div>
+
+                        <div className="room-card-content" style={{ display: 'flex', flexDirection: 'column', gap: '6px', flex: 1 }}>
+                          <h3 style={{ 
+                            fontWeight: 800, 
+                            fontSize: '14px', 
+                            color: '#1E293B', 
+                            lineHeight: '1.4', 
+                            overflow: 'hidden', 
+                            textOverflow: 'ellipsis', 
+                            display: '-webkit-box', 
+                            WebkitLineClamp: 2, 
+                            WebkitBoxOrient: 'vertical', 
+                            minHeight: '40px',
+                            margin: 0 
+                          }}>
+                            {room.title}
+                          </h3>
+
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#64748B', fontSize: '12px' }}>
+                            <MapPin size={13} style={{ color: '#94A3B8', flexShrink: 0 }} />
+                            <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                              {room.address}
+                            </span>
+                          </div>
+
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', margin: '2px 0' }}>
+                            <span style={{ color: 'var(--primary-red)', fontWeight: 800, fontSize: '15px' }}>
+                              {formatPrice(room.price1 || room.priceRaw || room.priceText)}
+                            </span>
+                            <span style={{ 
+                              display: 'inline-flex', 
+                              alignItems: 'center', 
+                              gap: '4px', 
+                              backgroundColor: '#EFF6FF', 
+                              color: '#2563EB', 
+                              padding: '2px 8px', 
+                              borderRadius: '4px', 
+                              fontSize: '11px', 
+                              fontWeight: 700 
+                            }}>
+                              <Ruler size={11} />
+                              {room.areaText}
+                            </span>
+                          </div>
+
+                          {/* Business Suitability Block */}
+                          {isTopRow ? (
+                            <div style={{
+                              backgroundColor: '#F5F3FF',
+                              border: '1px solid #F3E8FF',
+                              borderRadius: '8px',
+                              padding: '8px 12px',
+                              margin: '2px 0',
+                              display: 'flex',
+                              flexDirection: 'column',
+                              gap: '2px'
+                            }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                <Store size={14} style={{ color: '#7C3AED', flexShrink: 0 }} />
+                                <span style={{ fontWeight: 800, color: '#4C1D95', fontSize: '12px' }}>
+                                  {suitable.title}
+                                </span>
+                              </div>
+                              {suitable.desc && (
+                                <div style={{ color: '#6B21A8', fontSize: '11px', paddingLeft: '20px', fontWeight: 500 }}>
+                                  {suitable.desc}
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', margin: '4px 0', fontSize: '12px' }}>
+                              <Briefcase size={13} style={{ color: '#64748B', flexShrink: 0 }} />
+                              <span style={{ color: '#334155', fontWeight: 700 }}>
+                                {suitable.title}
+                              </span>
+                            </div>
+                          )}
+
+                          {landmarkText && (
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: '#475569', fontSize: '12px', margin: '2px 0' }}>
+                              <GraduationCap size={13} style={{ color: '#64748B', flexShrink: 0 }} />
+                              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                                {landmarkText}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="room-card-footer" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderTop: '1px solid #F1F5F9', paddingTop: '10px', marginTop: 'auto' }}>
+                          <span style={{ fontSize: '11px', color: '#94A3B8' }}>{room.timeText || 'Đăng 2 giờ trước'}</span>
+                          <button
+                            type="button"
+                            className="room-card-zalo-btn"
+                            style={{
+                              backgroundColor: '#EFF6FF',
+                              color: '#0068FF',
+                              border: 'none',
+                              borderRadius: '6px',
+                              padding: '6px 12px',
+                              fontSize: '12px',
+                              fontWeight: 700,
+                              display: 'flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              cursor: 'pointer',
+                              transition: 'all 0.2s ease',
+                              outline: 'none'
+                            }}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              window.open(`https://zalo.me/${room.zaloNumber || '0876480130'}`, '_blank');
+                            }}
+                          >
+                            <ZaloIconCard size={13} />
+                            <span>Nhắn Zalo</span>
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  }
+
                   return (
                     <div
                       key={room.id}
@@ -2373,7 +2765,12 @@ const ListingView = ({
                       <div className="room-card-content">
 
                         <h3 className="room-card-title" style={{ fontWeight: 400 }}>
-                          <strong style={{ fontWeight: 700 }}>Dạng phòng:</strong> {room.roomType || (room.title.toLowerCase().includes('studio') ? 'Studio' : room.title.toLowerCase().includes('duplex') ? 'Duplex' : room.title.toLowerCase().includes('chung cư') ? 'Chung cư' : room.title.toLowerCase().includes('nhà nguyên căn') ? 'Nhà nguyên căn' : 'Phòng khép kín')}
+                          <strong style={{ fontWeight: 700 }}>
+                            {room.category === 'mat-bang-kinh-doanh' ? 'Diện tích' : 'Dạng phòng'}:
+                          </strong>{' '}
+                          {room.category === 'mat-bang-kinh-doanh' 
+                            ? (room.roomType || room.areaText || 'Chưa xác định') 
+                            : (room.roomType || (room.title.toLowerCase().includes('studio') ? 'Studio' : room.title.toLowerCase().includes('duplex') ? 'Duplex' : room.title.toLowerCase().includes('chung cư') ? 'Chung cư' : room.title.toLowerCase().includes('nhà nguyên căn') ? 'Nhà nguyên căn' : 'Phòng khép kín'))}
                         </h3>
 
                         <div className="room-card-address">
@@ -2559,5 +2956,107 @@ const ZaloIconCard = ({ size = 14 }) => (
     </text>
   </svg>
 );
+// Helper to get suitable text for MBKD
+const getSuitableForMBKD = (room) => {
+  const text = (room.original_text || room.text2 || room.title || "").toLowerCase();
+  
+  if (room.id === 14 || room.id === '14') {
+    return {
+      title: "Tự do",
+      desc: "Phù hợp showroom, spa, văn phòng, cửa hàng..."
+    };
+  }
+  if (room.id === 15 || room.id === '15') {
+    return {
+      title: "Shop thời trang, Salon, Văn phòng",
+      desc: "Phù hợp nhiều mô hình kinh doanh sầm uất"
+    };
+  }
+  if (room.id === 21 || room.id === '21') {
+    return {
+      title: "Café, Spa, Văn phòng, VP công ty",
+      desc: "Phù hợp nhiều loại hình kinh doanh & văn phòng"
+    };
+  }
+  if (room.id === 22 || room.id === '22') {
+    return {
+      title: "Nhà hàng, Showroom, Văn phòng",
+      desc: "Mặt tiền lớn rộng rãi, kinh doanh đỉnh cao"
+    };
+  }
+  if (room.id === 23 || room.id === '23') {
+    return {
+      title: "Shop, Văn phòng, Kho vận",
+      desc: "Phù hợp làm showroom trưng bày kết hợp văn phòng"
+    };
+  }
+  if (room.id === 24 || room.id === '24') {
+    return {
+      title: "Văn phòng, Trung tâm đào tạo, Shop",
+      desc: "Khu vực văn phòng đông đúc, dân trí cao"
+    };
+  }
+  if (room.id === 25 || room.id === '25') {
+    return {
+      title: "Café, Trà sữa, Văn phòng, Cửa hàng",
+      desc: "Khu học sinh sinh viên đông đúc, tấp nập"
+    };
+  }
+  if (room.id === 26 || room.id === '26') {
+    return {
+      title: "Shop, Kho online, Văn phòng nhỏ",
+      desc: "Chi phí tối ưu, phù hợp khởi nghiệp"
+    };
+  }
+
+  if (text.includes("showroom") || text.includes("spa") || text.includes("cửa hàng")) {
+    return {
+      title: "Tự do",
+      desc: "Phù hợp showroom, spa, văn phòng, cửa hàng..."
+    };
+  }
+  
+  if (text.includes("cafe") || text.includes("cà phê")) {
+    return {
+      title: "Café, Spa, Văn phòng, VP công ty",
+      desc: "Mặt bằng kinh doanh có vị trí đắc địa"
+    };
+  }
+  
+  if (text.includes("nhà hàng") || text.includes("ăn uống")) {
+    return {
+      title: "Nhà hàng, Showroom, Văn phòng",
+      desc: "Khu vực ẩm thực, kinh doanh nhộn nhịp"
+    };
+  }
+
+  return {
+    title: "Kinh doanh tự do",
+    desc: "Mặt bằng đẹp, phù hợp nhiều ngành nghề"
+  };
+};
+
+// Helper to get landmark text for MBKD
+const getLandmarkTextMBKD = (room) => {
+  if (room.id === 14 || room.id === '14') return "Gần ĐH Thủy Lợi, ĐH Công Đoàn";
+  if (room.id === 15 || room.id === '15') return "Gần ĐH Ngoại Thương, HV Ngoại Giao";
+  if (room.id === 21 || room.id === '21') return "Gần ĐH Giao Thông Vận Tải";
+  if (room.id === 22 || room.id === '22') return "Gần ĐH Bách Khoa, KTX Xây Dựng";
+  if (room.id === 23 || room.id === '23') return "Gần ĐH Khoa Học Tự Nhiên, HV Ngân Hàng";
+  if (room.id === 24 || room.id === '24') return "Gần ĐH Sư Phạm, ĐH Quốc Gia Hà Nội";
+  if (room.id === 25 || room.id === '25') return "Gần ĐH Kinh Tế Quốc Dân";
+  if (room.id === 26 || room.id === '26') return "Gần ĐH Phenikaa, HV An Ninh";
+  
+  if (room.distances && room.distances.length > 0) {
+    const names = room.distances.slice(0, 2).map(d => d.landmark_name.replace('Đại học', 'ĐH').replace('Học viện', 'HV'));
+    return `Gần ${names.join(', ')}`;
+  }
+  
+  if (room.nearPlace) {
+    return `Gần ${room.nearPlace}`;
+  }
+  
+  return "";
+};
 
 export default ListingView;
