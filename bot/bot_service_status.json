@@ -1,21 +1,21 @@
 {
   "listener": {
     "running": true,
-    "state": "running",
-    "lastHeartbeatAt": "2026-06-22T08:37:32Z",
-    "lastWorkAt": "2026-06-22T08:38:10Z",
+    "state": "error",
+    "lastHeartbeatAt": null,
+    "lastWorkAt": "2026-06-29T13:01:06Z",
     "restartCount": 0,
-    "lastError": null,
-    "updatedAt": "2026-06-22T08:38:10Z"
+    "lastError": "[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\Users\\\\Administrator\\\\Downloads\\\\80lankh\\\\bot\\\\bot_service_status.json.tmp' -> 'C:\\\\Users\\\\Administrator\\\\Downloads\\\\80lankh\\\\bot\\\\bot_service_status.json'",
+    "updatedAt": "2026-06-29T13:01:06Z"
   },
   "sender": {
-    "running": true,
-    "state": "running",
-    "lastHeartbeatAt": "2026-06-22T08:37:40Z",
-    "lastWorkAt": "2026-06-22T09:05:40Z",
-    "restartCount": 3,
+    "running": false,
+    "state": "stopped",
+    "lastHeartbeatAt": null,
+    "lastWorkAt": "2026-06-29T13:01:30Z",
+    "restartCount": 0,
     "lastError": null,
-    "updatedAt": "2026-06-22T09:05:40Z"
+    "updatedAt": "2026-06-29T13:01:30Z"
   },
-  "updatedAt": "2026-06-22T09:05:40Z"
+  "updatedAt": "2026-06-29T13:01:30Z"
 }

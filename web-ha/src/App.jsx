@@ -81,8 +81,13 @@ const App = () => {
   // Helper: navigate to room detail + update URL
   const navigateToRoom = (roomId, category) => {
     // Look up the room first using id or session_id
-    const room = rooms.find(r => String(r.id) === String(roomId) || (r.session_id && String(r.session_id) === String(roomId)));
+    const room = rooms.find(r => String(r.id) === String(roomId) || (r.session_id && r.session_id !== 'manual' && String(r.session_id) === String(roomId)));
     if (!room) return;
+
+    // Save scroll position for the current category before navigating
+    if (category) {
+      sessionStorage.setItem(`scroll_pos_${category}`, window.scrollY.toString());
+    }
 
     // Use session_id as the primary stable identifier if available, otherwise fallback to id
     const urlParamId = (room.session_id && room.session_id !== 'manual') ? room.session_id : String(room.id);
@@ -825,7 +830,42 @@ const App = () => {
       id: r.id,
       session_id: r.session_id,
       category,
-      title: isManual && manualData ? manualData.title : (r.room_code ? `Phòng trọ mã ${r.room_code}` : (r.room_type ? `Dạng phòng: ${r.room_type}` : 'Phòng trọ khép kín')),
+      title: (() => {
+        if (isManual && manualData) return manualData.title;
+        let prefix = 'Phòng trọ';
+        let defaultSuffix = 'khép kín';
+        
+        if (category === 'chung-cu') {
+          prefix = 'Chung cư';
+          defaultSuffix = 'cao cấp';
+        } else if (category === 'nha-nguyen-can') {
+          prefix = 'Nhà nguyên căn';
+          defaultSuffix = 'giá tốt';
+        } else if (category === 'can-ho-dich-vu') {
+          prefix = 'Căn hộ dịch vụ';
+          defaultSuffix = 'full đồ';
+        } else if (category === 'mat-bang-kinh-doanh') {
+          prefix = 'Mặt bằng kinh doanh';
+          defaultSuffix = 'tiện nghi';
+        } else if (category === 'pass-phong') {
+          prefix = 'Pass phòng';
+          defaultSuffix = 'nhanh';
+        } else if (category === 'o-ghep') {
+          prefix = 'Ở ghép';
+          defaultSuffix = 'tìm bạn';
+        }
+
+        if (r.room_code) {
+          return `${prefix} mã ${r.room_code}`;
+        }
+        if (r.room_type) {
+          if (category === 'mat-bang-kinh-doanh' && r.room_type.toLowerCase().includes('m2')) {
+            return `${prefix} diện tích ${r.room_type}`;
+          }
+          return `${prefix} ${r.room_type}`;
+        }
+        return defaultSuffix ? `${prefix} ${defaultSuffix}` : prefix;
+      })(),
       address,
       nearPlace,
       distanceText,
@@ -878,7 +918,7 @@ const App = () => {
             const urlParams = new URLSearchParams(window.location.search);
             const roomIdParam = urlParams.get('room');
             if (roomIdParam) {
-              const targetRoom = mapped.find(r => String(r.session_id) === roomIdParam || String(r.id) === roomIdParam);
+              const targetRoom = mapped.find(r => (r.session_id && r.session_id !== 'manual' && String(r.session_id) === roomIdParam) || String(r.id) === roomIdParam);
               if (targetRoom) {
                 setSelectedRoomId(roomIdParam);
                 const detailPage = targetRoom.category === 'chung-cu' ? 'chung-cu-detail'
@@ -1010,7 +1050,7 @@ const App = () => {
 
   // Selected property helper
   const selectedRoom = rooms.find((r) => 
-    (r.session_id && String(r.session_id) === String(selectedRoomId)) || 
+    (r.session_id && r.session_id !== 'manual' && String(r.session_id) === String(selectedRoomId)) || 
     String(r.id) === String(selectedRoomId)
   );
 

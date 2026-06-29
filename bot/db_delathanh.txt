@@ -1,0 +1,1108 @@
+=== Room ID: 302 ===
+Session ID: 1781139756656
+Address: Ngõ 766 Đê La thành, Ngách 31 số nhà 22, Đống Đa
+Price: 4.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-14.zdn.vn/gr/03a8163cbe047c5a2515/1LE6KqmhSjuYmQSKOh4B60bGZAJ6Bjie38gUxuuinkIuVCDel77LEk7MYY5nCoE.jpg", "width": 1024, "height": 768, "timestamp": 1781139735.7356539, "mid": "7923171968806"}, {"url": "https://photo-stal-30.zdn.vn/gr/e833f3a75b9f99c1c08e/1LE6KqmhSjuYmQSKOh4B60YrsjBBwFbCj4DQKTi7S1usSSboagLxxjnwdOzpplE.jpg", "width": 1024, "height": 768, "timestamp": 1781139735.8304267, "mid": "7923171970820"}, {"url": "https://photo-stal-8.zdn.vn/gr/692e79bad18213dc4a93/1LE6KqmhSjuXWAOnBsvY1cKApKR5oFbesCxujnu0VNnPUrZy1GWw6wkGFF4elAh.jpg", "width": 1024, "height": 768, "timestamp": 1781139735.934101, "mid": "7923171978649"}, {"url": "https://photo-stal-36.zdn.vn/gr/b6f2a166095ecb00924f/1LE6KqmhSjuXWAOnBsvY1cJ9YHrOOn9YjGSKjvbhgJlE0A9nLFelc30vFJednMb.jpg", "width": 1024, "height": 768, "timestamp": 1781139736.0680583, "mid": "7923171981938"}, {"url": "https://photo-stal-17.zdn.vn/gr/a7b2be26161ed4408d0f/1LE6KqmhSjuYmQSKOh4B60ZIRii3WjLerkL4KqMM2I0fEtoWeWGefPRcXBHvJSc.jpg", "width": 1024, "height": 768, "timestamp": 1781139736.136953, "mid": "7923171986307"}, {"url": "https://photo-stal-16.zdn.vn/gr/8b8d9d193521f77fae30/1LE6KqmhSjuXWAOnBsvY1cQOb3hJTKgf9d4VjY7yudSRNMXNinavvDIPSSG46Tt.jpg", "width": 768, "height": 1024, "timestamp": 1781139736.2146537, "mid": "7923171991271"}, {"url": "https://photo-stal-27.zdn.vn/gr/515e45caedf22fac76e3/1LE6KqmhSjuYmQSKOh4B60YpkwXkBrXF9z4I0XbbaRBVcKU3HBLICJB1TkuhYZ9.jpg", "width": 768, "height": 1024, "timestamp": 1781139736.3120904, "mid": "7923171995264"}, {"url": "https://photo-stal-35.zdn.vn/gr/df68c5fc6dc4af9af6d5/1LE6KqmhSjuYmQSKOh4B60ZfD85uXe2TEwKdnM59aIlMb1l2NO7sQUag741WUA0.jpg", "width": 1024, "height": 768, "timestamp": 1781139736.4650242, "mid": "7923172004414"}]
+Videos: []
+Text2 preview: 11A . Mã 239
+🏢Địa chỉ : Ngõ 766 Đê La thành, Ngách 31 số nhà 22, Đống Đa
+🍄 cuối tháng phòng 301
+—————————
+💰 Giá 4tr6
+
+👉Studio full đồ cơ bản
+👉Diện tích 30m
+👉Thang máy
+☘️Nội thất : Điều hòa, nóng lạnh, bàn bêp, tủ bếp, bàn ăn, tủ 3 cánh, tủ lạnh.
+☘️Dịch vụ :
++ DV chung 150k/ người. Nét 100k/ phòng.
+
+
+=== Room ID: 315 ===
+Session ID: 1781143202458
+Address: Ngõ 766 Đê La thành, Ngách 31 - Đống Đa
+Price: 4.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-14.zdn.vn/gr/03a8163cbe047c5a2515/1LE6KqmhSjuYmQSKOh4B60bGZAJ6Bjie38gUxuuinkIuVCDel77LEk7MYY5nCoE.jpg", "width": 1024, "height": 768, "timestamp": 1781143209.604185, "mid": "7923378701084"}, {"url": "https://photo-stal-30.zdn.vn/gr/e833f3a75b9f99c1c08e/1LE6KqmhSjuYmQSKOh4B60YrsjBBwFbCj4DQKTi7S1usSSboagLxxjnwdOzpplE.jpg", "width": 1024, "height": 768, "timestamp": 1781143209.7782454, "mid": "7923378707554"}, {"url": "https://photo-stal-36.zdn.vn/gr/b6f2a166095ecb00924f/1LE6KqmhSjuXWAOnBsvY1cJ9YHrOOn9YjGSKjvbhgJlE0A9nLFelc30vFJednMb.jpg", "width": 1024, "height": 768, "timestamp": 1781143209.826863, "mid": "7923378715901"}, {"url": "https://photo-stal-8.zdn.vn/gr/692e79bad18213dc4a93/1LE6KqmhSjuXWAOnBsvY1cKApKR5oFbesCxujnu0VNnPUrZy1GWw6wkGFF4elAh.jpg", "width": 1024, "height": 768, "timestamp": 1781143209.9296126, "mid": "7923378723512"}, {"url": "https://photo-stal-17.zdn.vn/gr/a7b2be26161ed4408d0f/1LE6KqmhSjuYmQSKOh4B60ZIRii3WjLerkL4KqMM2I0fEtoWeWGefPRcXBHvJSc.jpg", "width": 1024, "height": 768, "timestamp": 1781143210.0857596, "mid": "7923378733658"}, {"url": "https://photo-stal-35.zdn.vn/gr/df68c5fc6dc4af9af6d5/1LE6KqmhSjuYmQSKOh4B60ZfD85uXe2TEwKdnM59aIlMb1l2NO7sQUag741WUA0.jpg", "width": 1024, "height": 768, "timestamp": 1781143210.2315226, "mid": "7923378739074"}, {"url": "https://photo-stal-27.zdn.vn/gr/515e45caedf22fac76e3/1LE6KqmhSjuYmQSKOh4B60YpkwXkBrXF9z4I0XbbaRBVcKU3HBLICJB1TkuhYZ9.jpg", "width": 768, "height": 1024, "timestamp": 1781143210.4519813, "mid": "7923378746560"}, {"url": "https://photo-stal-16.zdn.vn/gr/8b8d9d193521f77fae30/1LE6KqmhSjuXWAOnBsvY1cQOb3hJTKgf9d4VjY7yudSRNMXNinavvDIPSSG46Tt.jpg", "width": 768, "height": 1024, "timestamp": 1781143210.5300622, "mid": "7923378755970"}]
+Videos: []
+Text2 preview: 4A Địa chỉ : Ngõ 766 Đê La thành, Ngách 31 - Đống Đa
+
+Trống phòng tầng 3 . 1/7! vào
+Giá thuê : 4tr6
+
+👉Studio full đồ cơ bản
+👉Diện tích 30m
+👉Thang máy
+
+Nội thất : Điều hòa, nóng lạnh, bàn bêp, tủ bếp, bàn ăn, tủ 3 cánh, tủ lạnh.
+
+Dịch vụ : Điện 4k/ số
+Nước 35k/m3 ( nếu ko có đồng hồ tính 120k/ người
+
+=== Room ID: 329 ===
+Session ID: 1781826060161
+Address: Số 7 ngõ 278 Đê La Thành nhỏ - Đống Đa
+Price: 4.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-36.zdn.vn/gr/jpg/1a7651258b644e3a1775/1WUpukatGRtnxrmEWfgflKivR4Z1TvCKl9WewM3CTPeT7iJMiv6puwPLcFvvy2UF3Zs.jpg", "width": 3024, "height": 4032, "timestamp": 1781826066.1805015, "mid": "7951891167806"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/20226d71b730726e2b21/1WUpukatGRtmX0hJBO4L7rCkiPtYJpkRRqhiszGwZXwEgL12zDtmCeISMrFnsRBWm8u.jpg", "width": 3024, "height": 4032, "timestamp": 1781826066.3519375, "mid": "7951891171160"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/c36389305371962fcf60/1WUpukatGRtmX0hJBO4L7rDMNuyL6e6XFGv1NMVi5ugd4Z6mUDjl2Mp9WGQjvBjKnmy.jpg", "width": 4032, "height": 3024, "timestamp": 1781826066.431566, "mid": "7951891171162"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/b082f8d12290e7cebe81/1WUpukatGRtsGR10YWXfflDsB42j76z73FKALSMdOGfGL3fXSmumlxVDm5H6YPDj8ga.jpg", "width": 3024, "height": 4032, "timestamp": 1781826066.5119324, "mid": "7951891171161"}]
+Videos: []
+Text2 preview: 13A Mã : S27 -12TH
+**********************
+🎯 Địa chỉ: Số 7 ngõ 278 Đê La Thành nhỏ - Đống Đa
+
+Gía 4tr5
+
+⏰ Ngày ở: ở luôn
+
+✅ Nội thất : Điều hòa , nóng lạnh, tủ lạnh, tủ quần áo, khoá từ,..
+
+✅ Dịch vụ:
+Điện 3,8k/số
+Nước: 35k/khối
+Mạng 100k/phòng
+Dvc 150k/ người ( vệ sinh+ tháng máy+ máy giặt)
+Máy sấy 
+
+=== Room ID: 370 ===
+Session ID: 1781164671951
+Address: ngõ 466 Đê La Thành - Đống Đa
+Price: 3.8tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-32.zdn.vn/gr/jpg/ca5c40e50b24c97a9035/1WUpukZqbifxnuVAcSideo9vSuz6yzuLVxeNis1PLTrD5MXGUxr2inTqd0dvTHK9CMK.jpg", "width": 3024, "height": 4032, "timestamp": 1781164678.3440359, "mid": "7924739165548"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/81bc080543c4819ad8d5/1WUpukZqbifxnuVAcSideo37IBQZiiu1dqwSVlFwAIogkuPk4JNkkFgc7SvSbFakfEf.jpg", "width": 3024, "height": 4032, "timestamp": 1781164678.437799, "mid": "7924739173695"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/4eb4c20d89cc4b9212dd/1WUpukZqbifzEla5xkKyIHXyNWGmkiRCqsAhXM3nX3wE24MK8QWYRqRa2Jvv65ge7pl.jpg", "width": 3024, "height": 4032, "timestamp": 1781164678.5414917, "mid": "7924739180170"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/fed875613ea0fcfea5b1/1WUpukZqbifzEla5xkKyIHbb8z8wAJK8KaDn5UybaoWxP0xmdIN1uOnsl6BFcJZDg8s.jpg", "width": 4032, "height": 3024, "timestamp": 1781164678.6404264, "mid": "7924739186592"}]
+Videos: [{"url": "https://video-stal-13.dlmd.me/gr/76dcfe65b5a477fa2eb5/1WUpukZqbifxnvLHxShkX9WhKcq5KYOi7p7K4sKhSOvNEVWzGIrauZEGYdygMV5zbaD", "thumb": "https://photo-stal-6.zdn.vn/gr/34b51d0656c79499cdd6/1WUpukZqbij2PljKk3YSmzC1a9KPmB3ZPsEzqxtziqTo8V6ViqfZv13ZSvtXz1ysztz.jpg", "duration": 20000, "width": 1280, "height": 720, "timestamp": 1781164678.7290366, "mid": "7924739195448"}]
+Text2 preview: 4A Địa chỉ : ngõ 466 Đê La Thành - Đống Đa
+
+Trống phòng tầng 4 . 1/7 vào
+Giá thuê : 3tr8
+
+- diện tích 25-35m2 có cửa sổ thoáng mát , ban công . Ngõ 2 ô tô tránh nhau .
+- Vị trí đắc địa gần trường ĐH Văn Hoá , ĐH Mỹ Thuật Công Nghiệp ,....
+-
+Phòng được trang bị đầy đủ nội thất như điều hoà , nóng lạn
+
+=== Room ID: 757 ===
+Session ID: 1781186221103
+Address: Ngõ 766 Đê La Thành, ngách 31 số nhà 22 - Đống Đa
+Price: 4.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-30.zdn.vn/gr/1bdf0694f75835066c49/1LE6KqmkkPJbxmTq4vUxrT7sn8IhcD0Fnb1RxIAVBxaLA05RXYZYVxjNMT9PdUi.jpg", "width": 1024, "height": 768, "timestamp": 1781186223.125102, "mid": "7926096051255"}, {"url": "https://photo-stal-17.zdn.vn/gr/a20ab441458d87d3de9c/1LE6KqmkkPJfkYeRhLur4dxt9EdJ1kFDuOcWwlMSuPW2PZPN29116D3WYXBe4Qs.jpg", "width": 1024, "height": 768, "timestamp": 1781186223.2374847, "mid": "7926096058057"}, {"url": "https://photo-stal-8.zdn.vn/gr/4caf5de4ac286e763739/1LE6KqmkkPJfkYeRhLur4dzxSXxaaHfOZZ4WLQQ1ktukpFDDXo7YVGuzMgt5ptD.jpg", "width": 1024, "height": 768, "timestamp": 1781186223.3175364, "mid": "7926096063832"}, {"url": "https://photo-stal-14.zdn.vn/gr/68777b3c8af048ae11e1/1LE6KqmkkPJdE2XNHjdavrRTPH1r8iHrmNJfaQt0v4aLMRjgquBBkUbcNiA5KHy.jpg", "width": 1024, "height": 768, "timestamp": 1781186223.4265196, "mid": "7926096070146"}, {"url": "https://photo-stal-36.zdn.vn/gr/f510e25b1397d1c98886/1LE6KqmkkPJh0ohyuA3U92G87Cz8RqNT5KO5LFddJEUXUFpS0i5dxtkTSrNnBpN.jpg", "width": 1024, "height": 768, "timestamp": 1781186223.5392938, "mid": "7926096077297"}, {"url": "https://photo-stal-35.zdn.vn/gr/adabb9e0482c8a72d33d/1LE6KqmkkPJiH4lW6yC7DQWdm3DeahGNb0GOOg75DDUg57Qh2qYkmLKEKbkfscm.jpg", "width": 1024, "height": 768, "timestamp": 1781186223.6361086, "mid": "7926096082173"}, {"url": "https://photo-stal-27.zdn.vn/gr/279432dfc313014d5802/1LE6KqmkkPJjXKp3JmKkHon0FZGjVvvKAkpBbZ9RakWnG8C75YcQVgTOnOYZGmB.jpg", "width": 768, "height": 1024, "timestamp": 1781186223.7958107, "mid": "7926096087692"}, {"url": "https://photo-stal-16.zdn.vn/gr/76ad9ce66d2aaf74f63b/1LE6KqmkkPJjXKp3JmKkHovl1O1Y4QEup6eYKHBjILPhAsHqg5iKC79bsBoe8RB.jpg", "width": 768, "height": 1024, "timestamp": 1781186223.835971, "mid": "7926096093885"}]
+Videos: []
+Text2 preview: 10A 9th
+Mã : Ts615
+
+🏡 Địa chỉ : Ngõ 766 Đê La Thành, ngách 31 số nhà 22 - Đống Đa
+⏰ 30/6 Trống : P301
+—————————
+🎍 giá : 4tr6
+🎍 Phòng : Studio ( 30m2 )
+🎍 Thang Máy
+
+❣Nội thất : Điều hòa, nóng lạnh, bàn bếp, tủ bếp, bàn ăn, tủ 3 cánh, tủ lạnh
+
+❣Dịch vụ : Điện 4K/số, nước 35k/kh, DVC 150k/ng, mạng 100k
+
+=== Room ID: 957 ===
+Session ID: 1781194630306
+Address: Ngõ 766 Đê La Thành, ngách 31 số nhà 22 - Đống Đa
+Price: 4.6tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-17.zdn.vn/gr/a20ab441458d87d3de9c/1LE6KqmkkPJfkYeRhLur4dxt9EdJ1kFDuOcWwlMSuPW2PZPN29116D3WYXBe4Qs.jpg", "width": 1024, "height": 768, "timestamp": 1781194650.1658242, "mid": "7926503113799"}, {"url": "https://photo-stal-14.zdn.vn/gr/68777b3c8af048ae11e1/1LE6KqmkkPJdE2XNHjdavrRTPH1r8iHrmNJfaQt0v4aLMRjgquBBkUbcNiA5KHy.jpg", "width": 1024, "height": 768, "timestamp": 1781194650.4063258, "mid": "7926503118845"}, {"url": "https://photo-stal-30.zdn.vn/gr/1bdf0694f75835066c49/1LE6KqmkkPJbxmTq4vUxrT7sn8IhcD0Fnb1RxIAVBxaLA05RXYZYVxjNMT9PdUi.jpg", "width": 1024, "height": 768, "timestamp": 1781194650.4401038, "mid": "7926503121845"}, {"url": "https://photo-stal-8.zdn.vn/gr/4caf5de4ac286e763739/1LE6KqmkkPJfkYeRhLur4dzxSXxaaHfOZZ4WLQQ1ktukpFDDXo7YVGuzMgt5ptD.jpg", "width": 1024, "height": 768, "timestamp": 1781194650.550703, "mid": "7926503123093"}, {"url": "https://photo-stal-36.zdn.vn/gr/f510e25b1397d1c98886/1LE6KqmkkPJh0ohyuA3U92G87Cz8RqNT5KO5LFddJEUXUFpS0i5dxtkTSrNnBpN.jpg", "width": 1024, "height": 768, "timestamp": 1781194650.7179646, "mid": "7926503128758"}, {"url": "https://photo-stal-35.zdn.vn/gr/adabb9e0482c8a72d33d/1LE6KqmkkPJiH4lW6yC7DQWdm3DeahGNb0GOOg75DDUg57Qh2qYkmLKEKbkfscm.jpg", "width": 1024, "height": 768, "timestamp": 1781194650.753303, "mid": "7926503128762"}, {"url": "https://photo-stal-27.zdn.vn/gr/279432dfc313014d5802/1LE6KqmkkPJjXKp3JmKkHon0FZGjVvvKAkpBbZ9RakWnG8C75YcQVgTOnOYZGmB.jpg", "width": 768, "height": 1024, "timestamp": 1781194650.915985, "mid": "7926503137423"}, {"url": "https://photo-stal-16.zdn.vn/gr/76ad9ce66d2aaf74f63b/1LE6KqmkkPJjXKp3JmKkHovl1O1Y4QEup6eYKHBjILPhAsHqg5iKC79bsBoe8RB.jpg", "width": 768, "height": 1024, "timestamp": 1781194650.9920716, "mid": "7926503138616"}]
+Videos: []
+Text2 preview: 1A Hh 12th Mã: A23
+
+🏠 Địa chỉ: Ngõ 766 Đê La Thành, ngách 31 số nhà 22 - Đống Đa
+
+⏰ 30/6 Trống : P301
+
+💰 Giá: 4tr6
+👉Phòng : Studio ( 30m2 )
+👉Thang máy
+
+✅ Nội thất: Điều hòa, nóng lạnh, bàn bếp, tủ bếp, bàn ăn, tủ 3 cánh, tủ lạnh
+
+✅ Dịch vụ: Điện 4K/số, nước 35k/kh, DVC 150k/ng, mạng 100k/ph
+
+❌ Lưu ý
+
+=== Room ID: 1486 ===
+Session ID: 1781404846200
+Address: 51/612 Đê La Thành, Đống Đa
+Price: 7.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-35.zdn.vn/gr/jpg/e940830ed9f91ba742e8/1150312980331111722.jpg", "width": 956, "height": 1276, "timestamp": 1781404853.0848, "mid": "7934361628441"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/5011e763bd947fca2685/1150312980331111722.jpg", "width": 956, "height": 1276, "timestamp": 1781404853.336455, "mid": "7934361643746"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/df89b2c7e8302a6e7321/1150312980331111722.jpg", "width": 960, "height": 551, "timestamp": 1781404853.6314878, "mid": "7934361659952"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/440b5a7b008cc2d29b9d/1150312980331111722.jpg", "width": 956, "height": 1276, "timestamp": 1781404853.9050972, "mid": "7934361676484"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/b194e0fdba0a7854211b/1150312980331111722.jpg", "width": 956, "height": 1276, "timestamp": 1781404854.2387562, "mid": "7934361691107"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/b6dbe6b2bc457e1b2754/1150312980331111722.jpg", "width": 956, "height": 1276, "timestamp": 1781404854.5344584, "mid": "7934361708479"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/e46ef320a9d76b8932c6/1150312980331111722.jpg", "width": 956, "height": 1276, "timestamp": 1781404854.8481946, "mid": "7934361728609"}]
+Videos: []
+Text2 preview: 2A 🌷-6m Mã: 🏆 118
+-12m
+
+🏢Địa chỉ : 51/612 Đê La Thành- Quận: Đống Đa
+
+⌛️Trống :
+
+☘Giá : 7tr5-p603, 302
+☘Dạng phòng : 1n1k 50m2
+☘Thang : Máy
+
+🏆Nội thất : Y Hình, Máy giặt riêng
+
+🏆Dịch vụ : Dịch vụ: Điện 4k/số, nước 35k/khối, thang máy + vệ sinh cc + đổ rác: 100k/người/tháng, bảo vệ trông xe: 100k/xe/
+
+=== Room ID: 1524 ===
+Session ID: 1781407332832
+Address: Số nhà 1 Ngõ 164/39 Đê La Thành Nhỏ, Đống Đa
+Price: 4.7tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-17.zdn.vn/gr/jpg/d44788e6f511374f6e00/2aOboQdOYxAal9sLQ9NMp0NN84TLyP6ZWz0SBPnM.jpg", "width": 1920, "height": 2560, "timestamp": 1781407335.7558784, "mid": "7934486080058"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/19f63d5940ae82f0dbbf/2aOboQdOYwsrDmGzuIJ1GeUaSFc3IIdg1RLBlvY8.jpg", "width": 1920, "height": 2560, "timestamp": 1781407335.8358371, "mid": "7934486088194"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/dff4745009a7cbf992b6/2aOboQdOYx3gcY9cpbXkFgHFHj2zT4eZfHkpqfNw.jpg", "width": 1920, "height": 2560, "timestamp": 1781407335.9058628, "mid": "7934486091544"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/7b16405e3ca9fef7a7b8/2aOboQdOYy1nNIgNxiaPU3rzBt8WfIdsSAtnuEim.jpg", "width": 960, "height": 1280, "timestamp": 1781407336.0195382, "mid": "7934486094526"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/5a45fee0831741491806/2aOboQdOYx93t79Yn3HutrK2aBOHZ3lBkNgCN95U.jpg", "width": 1920, "height": 2560, "timestamp": 1781407336.1235538, "mid": "7934486102966"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/e086c821b5d677882ec7/2aOboQdOYxJXOUYmBUevHr2zn9GWqwCKT4WGZVCq.jpg", "width": 960, "height": 1280, "timestamp": 1781407336.2388818, "mid": "7934486108811"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/473ea068dc9f1ec1478e/2aOboQdOYxp0LRins1e8IBA2liZXT8XAPQz1E6vQ.jpg", "width": 960, "height": 1280, "timestamp": 1781407336.4272292, "mid": "7934486114332"}]
+Videos: [{"url": "https://video-stal-19.dlmd.me/gr/babf6b88177fd5218c6e/2aOboQdOZ1ZR6pJyHJK5fNXs8I0fhnr8ydRNOioa", "thumb": "https://photo-stal-29.zdn.vn/gr/a31c37914b668938d077/2aOboQdOZ5TktH3kOXdeSe4jld9T2iUvimP9ZuBU.jpg", "duration": 69000, "width": 1280, "height": 720, "timestamp": 1781407336.5140867, "mid": "7934486116217"}]
+Text2 preview: 10A 8th
+Mã : Ts359
+
+🏡 Địa chỉ : Số nhà 1 Ngõ 164/39 Đê La Thành Nhỏ - Đống Đa
+( gần Vincom Nguyễn Chí Thanh, BV Nhi TW, GTVT, Đại học Văn hoá, Nhạc viện… )
+⏰ Trống : P202
+________________
+🎍 giá : 4tr7
+🎍 Phòng : Studio
+🎍 Thang Máy
+
+❣Nội thất : Giường, tủ, điều hoà, máy giặt riêng, tủ lạnh, bếp từ,
+
+=== Room ID: 1750 ===
+Session ID: 1781422309728
+Address: Ngõ 612 Đê La Thành, Đống Đa
+Price: 9.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-35.zdn.vn/gr/jpg/14ae24741887dad98396/1WUpukaG6OCB1JRXYEGcmfCmCaT50qY5xjYUMLkEWYWlLYPf1Et6q2X0PrOkS5xc09h.jpg", "width": 720, "height": 432, "timestamp": 1781422306.685343, "mid": "7935136204127"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/59c4681e54ed96b3cffc/1WUpukaG6OC9aSMcCweI9BjEhUKEI7zvxSDVQ7d0P7EoVWb8qC7lEzAR8gfSfR4SL2d.jpg", "width": 956, "height": 1276, "timestamp": 1781422306.830099, "mid": "7935136209500"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/dfdaf500c9f30bad52e2/1WUpukaG6OBo5cAk3gNIb3C0dPBwK8mT14Wcivuce3Y4M8LuP9j9tfH04QV2E5iTGTq.jpg", "width": 956, "height": 1276, "timestamp": 1781422306.9528594, "mid": "7935136216073"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/600f40d57c26be78e737/1WUpukaG6OBgvKm7LGHdPffhzm1IQd5QowHxj97Y6O5Uu35jKZEiK9DO9ZzET1vnnMY.jpg", "width": 956, "height": 1276, "timestamp": 1781422307.0722446, "mid": "7935136215902"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/846eabb4974755190c56/1WUpukaG6OBjn2vy1pWIgcgQbqLSDctRXRvPAg8iCC3etUTHO0BGFyjPETAIsfPudIz.jpg", "width": 956, "height": 1276, "timestamp": 1781422307.4668598, "mid": "7935136223769"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/04b332690e9accc4958b/1WUpukaG6OBy7bjDSfhd3NiRxjlzoxUIwR43Z6gYuVoQzWptOCXtkW98K0ZkVmzFuHZ.jpg", "width": 956, "height": 1276, "timestamp": 1781422307.593678, "mid": "7935136226135"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/0fcf27151be6d9b880f7/1WUpukaG6OBsOBPW5XEIVTh4pZ5A0B9MEa2tWG0zlVlmbXBfnqDbl6mGQebZHprKMqp.jpg", "width": 956, "height": 1276, "timestamp": 1781422307.7220209, "mid": "7935136230061"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/5ea06b7a578995d7cc98/1WUpukaG6OC0zJt49EwIKKhz49YIdc1iqr6j87IZ50jpmusltutRB1Wk2qQopiYatDa.jpg", "width": 956, "height": 1276, "timestamp": 1781422307.85819, "mid": "7935136238815"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/968ca2569ea55cfb05b4/1WUpukaG6OC6ikClWNPcsEjLp5R7M2t974gv9QjUGzJRAtm0e7SapRtflnqZxtxvA37.jpg", "width": 956, "height": 1276, "timestamp": 1781422307.983565, "mid": "7935136239321"}]
+Videos: []
+Text2 preview: 11A Mã 335
+-6 tháng
+- 12 tháng
+🏢Ngõ 612 Đê La Thành - Đống Đa
+
+⏰ 15/6 trống
+
+💰 Giá 9tr5
+
+👉 Phòng 2N1K
+👉 Thang máy - Tầng 7
+👉 Diện tích 65m2
+
+✅ Nội thất : giường , tủ , điều hòa , nóng lạnh , bàn bếp , tủ bếp , sofa , bàn trà , tủ lạnh , bàn ăn ...
+
+✅ Dịch vụ :
+Dịch vụ: Điện 4k/số, nước 35k/khối, tha
+
+=== Room ID: 1853 ===
+Session ID: 1781427776645
+Address: Số 4 ngõ 810 Đê La Thành
+Price: 3.3tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-21.zdn.vn/gr/jpg/f6d8f3f5ba0778592116/1WUpukaGdMWsV10CO3jLjdypNLojGwLDK843MXX2LIxYdpFrYzTYwXbZX7fu1wHZfz3.jpg", "width": 1276, "height": 956, "timestamp": 1781427790.265691, "mid": "7935387480184"}, {"url": "https://photo-stal-13.zdn.vn/gr/jpg/ca99c5b48c464e181757/1WUpukaGdMWvMjA34cy10azW8eJz0QjcXAhAC7QPACB6IaPwmYxsa8efvGye7OZpMQx.jpg", "width": 1276, "height": 956, "timestamp": 1781427791.1541147, "mid": "7935387484049"}, {"url": "https://photo-stal-2.zdn.vn/gr/jpg/ee92e6bfaf4d6d13345c/1WUpukaGdMWtvs57jLLgN7VP5tTT16r6tUBJWBrKm49Pzf4lrO5pYFzmjOzvhaooJ2V.jpg", "width": 956, "height": 1276, "timestamp": 1781427791.35202, "mid": "7935387491360"}, {"url": "https://photo-stal-9.zdn.vn/gr/jpg/16c41ce9551b9745ce0a/1WUpukaGdMWsV10CO3jLjdyu1haArvqEoVkOP9Ox9Uh4TK444LaVh6wZslAi0ammWFE.jpg", "width": 1276, "height": 956, "timestamp": 1781427791.5203016, "mid": "7935387491524"}, {"url": "https://photo-stal-20.zdn.vn/gr/jpg/1de313ce5a3c9862c12d/1WUpukaGdMWtvs57jLLgN7TP0QEOgEGsdF2Lo1cbNMuQEPVWTKbzPxTwpcctu2ymuOs.jpg", "width": 956, "height": 1276, "timestamp": 1781427791.7856708, "mid": "7935387500010"}, {"url": "https://photo-stal-9.zdn.vn/gr/jpg/506563482abae8e4b1ab/1WUpukaGdMWyERJtlCCgHXzSDWsMwwN1yvreLgX1EY6TUpoi6vDN2ogS4qaXcpaRiVf.jpg", "width": 956, "height": 1276, "timestamp": 1781427791.9457393, "mid": "7935387503260"}, {"url": "https://photo-stal-4.zdn.vn/gr/jpg/6d22640f2dfdefa3b6ec/1WUpukaGdMWtvs57jLLgN7TzLAGw9bUd9E3khITgZa9FnRsZG699EIKqOmuYLnDTyTs.jpg", "width": 1276, "height": 956, "timestamp": 1781427792.1156056, "mid": "7935387511954"}]
+Videos: []
+Text2 preview: 4A Địa chỉ : số 4 Ngõ 810 ĐÊ LA THÀNH ( cạnh VTV )
+
+Trống phòng tầng 4 ở luôn
+Giá thuê : 3tr3
+
+Ngay sát VTV, Nguyễn Chí Thanh. Thuận tiện đi ĐH Luật, Ngoại Thương, Giao Thông...
+
+Full nội thất: Điều hòa, Tủ lạnh, Bếp từ, Giường tủ, Đệm.... ( wc chung 1p )
+
+🧺 Có máy giặt chung. Ra vào khóa vân tay, c
+
+=== Room ID: 1886 ===
+Session ID: 1781489741912
+Address: Số 4 ngõ 612/50 Đê La Thành
+Price: 5.6-5.8tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-17.zdn.vn/gr/jpg/21257eba5f3f9d61c42e/2aOboQdcSmRqAxuNVsifC3abtvLl9dcESDpuVzm4.jpg", "width": 2560, "height": 1920, "timestamp": 1781489760.457242, "mid": "7937357629613"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/2fdc9b4fbaca789421db/2aOboQdcSmVFoRpMIwlHdNfFo3YUVkwcdSEw7s48.jpg", "width": 2560, "height": 1920, "timestamp": 1781489760.7822187, "mid": "7937357640704"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/066bbffb9e7e5c20056f/2aOboQdcSmaEknPVEJlXqBh8IA62hYOQkjtvHQXo.jpg", "width": 2560, "height": 1920, "timestamp": 1781489762.435114, "mid": "7937357655854"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/bab3545b75deb780eecf/2aOboQdcSmiF0PUpug4W2wn9iOWmM4lukVus5WdM.jpg", "width": 2560, "height": 1920, "timestamp": 1781489763.0905643, "mid": "7937357659806"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/d52d84baa53f67613e2e/2aOboQdcSmfDh8ze9glo2zjnToM1ApMPoyWbPwdU.jpg", "width": 1920, "height": 2560, "timestamp": 1781489764.1936002, "mid": "7937357664097"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/3af828120997cbc99286/2aOboQdcSmnIoOxjqSp9wQhbo0mxONVfyGPgSwMa.jpg", "width": 2560, "height": 1920, "timestamp": 1781489765.1127279, "mid": "7937357702198"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/a2f40f092e8cecd2b59d/2aOboQdcSnG6LU5zIsNNXpkIC8Vuc6CzDK3KrYmW.jpg", "width": 2560, "height": 1920, "timestamp": 1781489766.5768182, "mid": "7937357729438"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/730b37f01675d42b8d64/2aOboQdcSnCss6su1qhiKC0noIMxK9vs7Xg4Gm00.jpg", "width": 2560, "height": 1920, "timestamp": 1781489766.9943342, "mid": "7937357735705"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/9632dcc9fd4c3f12665d/2aOboQdcSnCB5Jw4y6yH87mRiets2ZYxAUnNJIpc.jpg", "width": 2560, "height": 1920, "timestamp": 1781489767.3862267, "mid": "7937357746480"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/58a3e65bc7de05805ccf/2aOboQdcSnDJd9F4Z8JobtsLXMHHlKiwhM1jn5iS.jpg", "width": 2560, "height": 1920, "timestamp": 1781489767.7260036, "mid": "7937357751082"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/4ccb4d356cb0aeeef7a1/2aOboQdcSnAvF1nwrT0A7LCmIQ1eXRpks237lAa8.jpg", "width": 1920, "height": 2560, "timestamp": 1781489768.0166957, "mid": "7937357760385"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/c866dc90fd153f4b6604/2aOboQdcSnRTnl9vH5qmLa5tIbRAXiqI9jGWpX1M.jpg", "width": 1920, "height": 2560, "timestamp": 1781489768.421296, "mid": "7937357767991"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/d122c6d4e751250f7c40/2aOboQdcSnRTnl9vH5qmLaA5ZyXulnWCCX8ovzQe.jpg", "width": 2560, "height": 1920, "timestamp": 1781489768.7493324, "mid": "7937357775142"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/31503ba61a23d87d8132/2aOboQdcSnRfxrron8DjZGWwqA8opCzYyy95in5s.jpg", "width": 2560, "height": 1920, "timestamp": 1781489769.1020186, "mid": "7937357785867"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/11bfbe439fc65d9804d7/2aOboQdcSnEqVBxrCEPGX2zoxi647GfNGarZNh20.jpg", "width": 2560, "height": 1920, "timestamp": 1781489769.432946, "mid": "7937357790924"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/e45792e2b26770392976/2aOboQdcSsZYwmhAvTlUq9PqqlUJjDmKyeRWXQ48.jpg", "width": 2560, "height": 1920, "timestamp": 1781489770.066037, "mid": "7937358382576"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/d4f5de75fef03cae65e1/2aOboQdcSsqkQf7DOQbAZmZ7uZnzBV3OvIS0aHku.jpg", "width": 1920, "height": 2560, "timestamp": 1781489770.4593973, "mid": "7937358405991"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/5a659fe6bf637d3d2472/2aOboQdcSsfUGqsPvpkLJ39ITOnrq3mliXrpBHgO.jpg", "width": 1920, "height": 2560, "timestamp": 1781489770.6531823, "mid": "7937358395011"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/2d5f92dcb25970072948/2aOboQdcSslPav3ewBjBlwN10ARZDHemMosjxmQy.jpg", "width": 2560, "height": 1920, "timestamp": 1781489770.8380787, "mid": "7937358420171"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/ded8fd5dddd81f8646c9/2aOboQdcSsxZhcxAyYgPSQzktR8owvyEdwkEf9Sy.jpg", "width": 2560, "height": 1920, "timestamp": 1781489771.1593783, "mid": "7937358428184"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/ffcee752c7d705895cc6/2aOboQdcSt9vyRYaWy0aMbq9awkgN8F2cjZirMe0.jpg", "width": 2560, "height": 1920, "timestamp": 1781489771.586726, "mid": "7937358449215"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/cd6bdcf8fc7d3e23676c/2aOboQdcStBBojgidbyhNOVOlS5qM2ddt1WI9PjU.jpg", "width": 2560, "height": 1920, "timestamp": 1781489771.8450835, "mid": "7937358455704"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/b0ee7c055c809edec791/2aOboQdcStN7KVvxejglzrPX6sNl6pvShJKARdBo.jpg", "width": 1920, "height": 2560, "timestamp": 1781489772.024746, "mid": "7937358474221"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/aebf8d54add16f8f36c0/2aOboQdcStOj4CXVIFWbbgLyJOcO9P97d2o1whQ8.jpg", "width": 2560, "height": 1920, "timestamp": 1781489772.284078, "mid": "7937358485322"}]
+Videos: []
+Text2 preview: 9a 30-40 HĐ 6-12T
+
+H162
+
+🏠TÒA SỐ 4 NGÕ 612/50 ĐÊ LA THÀNH (Cạnh UBND phường Giảng Võ)
+
+📦 Vào ở luôn
+
+💰 Giá thuê:
+P501 - 5tr6
+P602 - 5tr8
+
+📐 Diện tích: 30m2 - có thể kê thêm sofa, cửa sổ to, có ban công.
+Nhà xây mới, có thang máy, nội thất mới
+Giường, tủ âm tường, bàn ghế, đệm chăn gối, bếp từ, hút m
+
+=== Room ID: 2065 ===
+Session ID: 1781425932170
+Address: Số nhà 1 Ngõ 164/39 Đê La Thành Nhỏ, Đống Đa
+Price: 4.6tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-27.zdn.vn/gr/jpg/19f63d5940ae82f0dbbf/2aOboQdOYwsrDmGzuIJ1GeUaSFc3IIdg1RLBlvY8.jpg", "width": 1920, "height": 2560, "timestamp": 1781425964.8726141, "mid": "7935300231525"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/5a45fee0831741491806/2aOboQdOYx93t79Yn3HutrK2aBOHZ3lBkNgCN95U.jpg", "width": 1920, "height": 2560, "timestamp": 1781425965.194977, "mid": "7935300279056"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/dff4745009a7cbf992b6/2aOboQdOYx3gcY9cpbXkFgHFHj2zT4eZfHkpqfNw.jpg", "width": 1920, "height": 2560, "timestamp": 1781425965.8187418, "mid": "7935300279060"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/d44788e6f511374f6e00/2aOboQdOYxAal9sLQ9NMp0NN84TLyP6ZWz0SBPnM.jpg", "width": 1920, "height": 2560, "timestamp": 1781425966.891994, "mid": "7935300279068"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/e086c821b5d677882ec7/2aOboQdOYxJXOUYmBUevHr2zn9GWqwCKT4WGZVCq.jpg", "width": 960, "height": 1280, "timestamp": 1781425967.076213, "mid": "7935300279072"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/473ea068dc9f1ec1478e/2aOboQdOYxp0LRins1e8IBA2liZXT8XAPQz1E6vQ.jpg", "width": 960, "height": 1280, "timestamp": 1781425967.2803752, "mid": "7935300279076"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/7b16405e3ca9fef7a7b8/2aOboQdOYy1nNIgNxiaPU3rzBt8WfIdsSAtnuEim.jpg", "width": 960, "height": 1280, "timestamp": 1781425967.4313958, "mid": "7935300279083"}]
+Videos: [{"url": "https://video-stal-19.dlmd.me/gr/babf6b88177fd5218c6e/2aOboQdOZ1ZR6pJyHJK5fNXs8I0fhnr8ydRNOioa", "thumb": "https://photo-stal-29.zdn.vn/gr/a31c37914b668938d077/2aOboQdOZ5TktH3kOXdeSe4jld9T2iUvimP9ZuBU.jpg", "duration": 69000, "width": 1280, "height": 720, "timestamp": 1781425967.7295153, "mid": "7935300279087"}]
+Text2 preview: 1A Hh 8th Mã: H83
+
+🏠 Địa chỉ: Số nhà 1 Ngõ 164/39 Đê La Thành Nhỏ - Đống Đa
+( gần Vincom Nguyễn Chí Thanh, BV Nhi TW, GTVT, Đại học Văn hoá, Nhạc viện… )
+
+⏰ Trống : P202
+
+💰 Giá: 4tr6
+👉Phòng: Studio
+👉Thang máy
+
+✅ Nội thất: Giường, tủ, điều hoà, máy giặt riêng, tủ lạnh, bếp từ, hút mùi, bàn ghế ăn
+
+
+=== Room ID: 2071 ===
+Session ID: 1781428064322
+Address: Ngõ 216 Ngách 8 Đê La Thành Nhỏ, Đống Đa
+Price: 7.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-24.zdn.vn/gr/jpg/7cdf8069f89b3ac5638a/1WUpukaGf8hXfIkeoIetM40kGs7Rrqypy5Qx6JMZuWPgqesodRsFuc518WTqNVX6rZa.jpg", "width": 960, "height": 1280, "timestamp": 1781428085.2757459, "mid": "7935401436315"}, {"url": "https://photo-stal-25.zdn.vn/gr/jpg/5df09e46e6b424ea7da5/1WUpukaGf8hZ69pa9aHDzXVh40VbRCXZqG8uhwa0anYe4WiMz1gGLUJvnxzy8pb9uaa.jpg", "width": 960, "height": 1280, "timestamp": 1781428085.6400857, "mid": "7935401441816"}, {"url": "https://photo-stal-22.zdn.vn/gr/jpg/833242843a76f828a167/1WUpukaGf8hbxrzQq9VtGUYlrgrky231J48leS4IwyRL1p37LKZaQI2KFpSskxIKq85.jpg", "width": 960, "height": 1280, "timestamp": 1781428085.8084004, "mid": "7935401447767"}, {"url": "https://photo-stal-26.zdn.vn/gr/jpg/4a1e8aa8f25a3004694b/1WUpukaGf8hgGRECs0MtAv1Uo62UkjPcRFWd5gcFUhuxY5WVs8aJWdxn6a9e8X2sXR3.jpg", "width": 960, "height": 1280, "timestamp": 1781428086.675471, "mid": "7935401451382"}, {"url": "https://photo-stal-33.zdn.vn/gr/jpg/ae666ad01222d07c8933/1WUpukaGf8hlzrXuF8qDip2o29sOGqCv5sMyE2iHm3LA1lT1BuLAxebxqaTej7KYFyG.jpg", "width": 960, "height": 1280, "timestamp": 1781428086.962388, "mid": "7935401454386"}, {"url": "https://photo-stal-19.zdn.vn/gr/jpg/bef277440fb6cde894a7/1WUpukaGf8horZhkvi4szm3fB1uDau5vBAKeBzwYxrQxmJxS743nH8heXRerOpANZaN.jpg", "width": 960, "height": 1280, "timestamp": 1781428087.128471, "mid": "7935401461939"}]
+Videos: [{"url": "https://video-stal-22.dlmd.me/gr/e0d6887af08832d66b99/1WUpukaGf8j2oxaTCAdPqKPkTd9Fh1qXXFjZLPISyhsKC2ofoRHprecuaPtEkDgj20N", "thumb": "https://photo-stal-34.zdn.vn/gr/88c245743d86ffd8a697/1WUpukaGf8i3C8PnEFf6TVNkURY4vhSSi3iynyZ0Gt5IQVsaa7yVp6ouxWghKfmMoeF.jpg", "duration": 48000, "width": 1280, "height": 720, "timestamp": 1781428087.3146443, "mid": "7935401467676"}]
+Text2 preview: 4A Địa chỉ : NGÕ 216 NGÁCH 8 ĐÊ LA THÀNH NHỎ - ĐỐNG ĐA ( Ngõ 216 đi bộ thẳng ra ngõ 436 Xã Đàn )
+
+TRỐNG phòng tầng 8 ở luôn
+Giá thuê : 7tr6
+
+🌲🌲 Tiện ích : Gần chợ, cánh trường ĐH Bách Kinh Xây 1,3km... Ngõ rộng xe ba gác vào tận cửa. Nhà cách chỗ gửi Bãi xe ô tô 250m.
+
+🌲🌲 Mô tả: Tầng chia 2p chia 1k
+
+=== Room ID: 2097 ===
+Session ID: 1781443866857
+Address: Ngõ 164/39 Đê La Thành Nhỏ, Đống Đa
+Price: 4.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-11.zdn.vn/gr/jpg/16225bc846368468dd27/2aOboQdUuXv4sL4mC8zrCgIcw8Q7sBvgFsF9M8em.jpg", "width": 1280, "height": 971, "timestamp": 1781443886.6300042, "mid": "7936191031597"}, {"url": "https://photo-stal-19.zdn.vn/gr/jpg/54ff1e1503ebc1b598fa/2aOboQdUuXv4sL4mC8zrCgJfcd7SY53MJvJhpleS.jpg", "width": 960, "height": 1280, "timestamp": 1781443887.454148, "mid": "7936191040878"}, {"url": "https://photo-stal-4.zdn.vn/gr/jpg/6d99fd01e0ff22a17bee/2aOboQdUuYPnbgLbJjNRAbPbB3iKdg6IZEs7pOy0.jpg", "width": 1280, "height": 1179, "timestamp": 1781443887.641357, "mid": "7936191074609"}]
+Videos: []
+Text2 preview: 4A Địa chỉ : Ngõ 164/39 Đê La Thành Nhỏ - Đống Đa
+
+Trống phòng tầng 2 ở luôn
+Giá thuê : 4tr6
+
+Nội thất : full như ảnh . Giường, tủ, điều hoà, máy giặt riêng, tủ lạnh, bếp từ, hút mùi, bàn ghế ăn
+
+Dịch vụ : Điện 4k/số
+nước 35k/khối
+dvc 300k/ph
+mạng 100k/ph
+
+✅ Nhà ở tối đa 3 người 2 xe
+✅ Nhận nuôi pet
+
+=== Room ID: 2100 ===
+Session ID: 1781447098938
+Address: Số 3 Lô 1 Ngõ 217 Đê La Thành, Đống Đa
+Price: 6.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-12.zdn.vn/gr/jpg/b39eaf8d6d73af2df662/689027556762971715.jpg", "width": 1920, "height": 2560, "timestamp": 1781447105.80021, "mid": "7936371167574"}, {"url": "https://photo-stal-24.zdn.vn/gr/jpg/0838983b5ac5989bc1d4/689027556762971715.jpg", "width": 1920, "height": 2560, "timestamp": 1781447106.0372148, "mid": "7936371190754"}, {"url": "https://photo-stal-13.zdn.vn/gr/jpg/33d97cf6be087c562519/689027556762971715.jpg", "width": 461, "height": 332, "timestamp": 1781447106.5421214, "mid": "7936371204760"}, {"url": "https://photo-stal-34.zdn.vn/gr/jpg/4d58524b90b552eb0ba4/689027556762971715.jpg", "width": 2560, "height": 1920, "timestamp": 1781447107.4734957, "mid": "7936371223096"}, {"url": "https://photo-stal-9.zdn.vn/gr/jpg/70356e04acfa6ea437eb/689027556762971715.jpg", "width": 1920, "height": 2560, "timestamp": 1781447107.6856012, "mid": "7936371241685"}, {"url": "https://photo-stal-4.zdn.vn/gr/jpg/464259739b8d59d3009c/689027556762971715.jpg", "width": 1920, "height": 2560, "timestamp": 1781447107.9300644, "mid": "7936371257339"}, {"url": "https://photo-stal-12.zdn.vn/gr/jpg/ac130f26cdd80f8656c9/689027556762971715.jpg", "width": 1920, "height": 2560, "timestamp": 1781447109.171025, "mid": "7936371276136"}]
+Videos: []
+Text2 preview: 2A 🌷-12m Mã: 🏆 167
+-6m
+
+🏢Địa chỉ : Số 3 Lô 1 NGÕ 217 ĐÊ LA THÀNH- Quận: Đống Đa
+
+⌛️Trống : ở luôn
+
+☘Giá : 6tr5-p601
+☘Dạng phòng : Studio
+☘Thang : Máy
+
+🏆Nội thất : ĐIỀU HÒA, NÓNG LẠNH , GIƯỜNG TỦ, KỆ Bếp
+- Máy giặt : miễn phí
+- Internet : miễn phí
+- Thang máy: miễn phí
+- Giờ giấc thoải mái
+
+🏆Dịch vụ 
+
+=== Room ID: 2104 ===
+Session ID: 1781448892839
+Address: Số nhà 33 Ngõ 491 Đê La Thành, Đống Đa
+Price: 5.3-5.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-15.zdn.vn/gr/jpg/4460490361faa3a4faeb/569493381498921578.jpg", "width": 960, "height": 1280, "timestamp": 1781448908.492694, "mid": "7936466491114"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/3121128760881537222/d38f4192d45d55030c4c.jpg", "width": 1280, "height": 960, "timestamp": 1781448908.6808763, "mid": "7936466500969"}, {"url": "https://f64-zpg-r.zdn.vn/jpg/2448813396523157775/251e5000c5cf44911dde.jpg", "width": 1280, "height": 960, "timestamp": 1781448908.847492, "mid": "7936466515013"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/f6639828cfd10d8f54c0/3066998139006069615.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.120635, "mid": "7936467213482"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/4dd6229d7564b73aee75/3066998139006069615.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.298017, "mid": "7936467217070"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/6313568473969000622/80c6b9292ce6adb8f4f7.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.4673083, "mid": "7936467231296"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/4888986828967003992/927ea8913d5ebc00e54f.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.7012954, "mid": "7936467232846"}]
+Videos: []
+Text2 preview: 4A Địa chỉ: Số nhà 33 Ngõ 491 Đê La Thành - Đống Đa
+
+Trống 2 phòng tầng 6 ở luôn
+Giá thuê : 5tr3 - 5tr6
+
+👉Loại phòng : Studio
+👉Thang máy
+
+✅ Nội thất : Điều hòa, nóng lạnh, giường tủ quần áo, tủ lạnh, đệm...
+
+Dịch vụ : Điện : 4k/1 số
+Nước : 30k/1 khối
+Wifi : 100k/1 phòng
+Dịch vụ : 150k/ 1 người( bao 
+
+=== Room ID: 2822 ===
+Session ID: 1781527399817
+Address: 200 Đê La Thành, Ô Chợ Dừa, Đống Đa
+Price: 4.2tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-10.zdn.vn/gr/jpg/736eda52e4db26857fca/2aOboQdif5lfhqLSyGM8Zy2LmmZgi38oGcmc4GX2.jpg", "width": 3024, "height": 4032, "timestamp": 1781527412.4311388, "mid": "7939800126161"}, {"url": "https://photo-stal-10.zdn.vn/gr/jpg/52688853b6da74842dcb/2aOboQdif6022YyDCGG3XKrcS7e62ncDfoo2T1nc.jpg", "width": 3024, "height": 4032, "timestamp": 1781527412.5854082, "mid": "7939800138816"}, {"url": "https://photo-stal-34.zdn.vn/gr/jpg/2b65f05eced70c8955c6/2aOboQdif6022YyDCGG3XKuPZx7XCqAXCEhgqm4e.jpg", "width": 4032, "height": 3024, "timestamp": 1781527412.7256477, "mid": "7939800149221"}]
+Videos: [{"url": "https://video-stal-38.dlmd.me/gr/32994ab5743cb662ef2d/1WUpukaQIQ8fBUTQc42I9IBw0huHfF8TmO0pHnYyLbnORdv5OKD8u7Bjd4N60JCMvqB", "thumb": "https://photo-stal-7.zdn.vn/gr/c0e55714689daac3f38c/1443818799320315707.jpg", "duration": 26000, "width": 1280, "height": 720, "timestamp": 1781527410.765573, "mid": "7939800050758"}]
+Text2 preview: 4A Địa chỉ : 200 Đê La Thành - Ô Chợ Dừa - Đống Đa ( nhà mặt phố )
+
+Trống phòng studio ở luôn
+Giá thuê : 4tr2
+
+Đủ đồ : điều hòa , nóng lạnh , giường , tủ quần áo , tủ lạnh , bàn ghế , đệm ... ( như ảnh )
+
+Dv : điện 3k5 , nước 35k/m3
+dvc 350k/ph 2ng
+( gồm : mạng , thang máy. Máy giặt , vệ sinh , ... 
+
+=== Room ID: 3140 ===
+Session ID: 1781536770963
+Address: Nhà số 33 ngõ 491 Đê La Thành
+Price: 5.3-5.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-15.zdn.vn/gr/jpg/caf4caa6aa2d6873313c/2624172007208492585.jpg", "width": 960, "height": 1280, "timestamp": 1781536803.7556925, "mid": "7940350653351"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/3932506099453019091/0cb83153039a82c4db8b.jpg", "width": 1280, "height": 960, "timestamp": 1781536804.271286, "mid": "7940350667872"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/8094211187090115729/0f893c620eab8ff5d6ba.jpg", "width": 1280, "height": 960, "timestamp": 1781536804.6162434, "mid": "7940350683947"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/9aaaa07ec0f502ab5be4/853563335274140311.jpg", "width": 1280, "height": 960, "timestamp": 1781536816.1233764, "mid": "7940351328088"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/0da9a577c5fc07a25eed/853563335274140311.jpg", "width": 1280, "height": 960, "timestamp": 1781536819.0743182, "mid": "7940351344302"}, {"url": "https://f64-zpg-r.zdn.vn/jpg/5867633564659327932/1f998b62b9ab38f561ba.jpg", "width": 1280, "height": 960, "timestamp": 1781536819.648314, "mid": "7940351364603"}, {"url": "https://f64-zpg-r.zdn.vn/jpg/6101041630668455595/447fd184e34d62133b5c.jpg", "width": 1280, "height": 960, "timestamp": 1781536820.1063507, "mid": "7940351380278"}]
+Videos: []
+Text2 preview: 2A 🌷 - 12m Mã: 🏆 213
+- 6m
+
+🏢Địa chỉ : Nhà số 33 ngõ 491 Đê La Thành - ĐỐNG ĐA
+
+⌛️Trống :
+
+☘Giá : Phòng 602 giá 5tr6 có ban công
+- Phòng 603 giá 5tr3
+☘Dạng phòng : Studio
+☘Thang : MÁY
+
+🏆Nội thất : Full đồ như ảnh
+
+🏆Dịch vụ : Điện : 4k/1 số
+Nước : 30k/1 khối
+Wifi : 100k/1 phòng
+Dịch vụ : 150k/ 1 người
+
+=== Room ID: 3154 ===
+Session ID: 1781547923929
+Address: 290 Đê La Thành nhỏ, Đống Đa
+Price: 4.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-35.zdn.vn/no/jpg/4677c223b2a970f729b8/1WUpukaSIZ5JBUsJ9GtG0ToK8Iqy2j4wUvc2dFZ4VdkDRCl0oYgAvGdHT3rwUbUhBdm.jpg", "width": 4032, "height": 3024, "timestamp": 1781548055.9447117, "mid": "7940599521943"}, {"url": "https://photo-stal-36.zdn.vn/no/jpg/67a6fef28e784c261569/1WUpukaSIZ5KcLxEUYVadxKEjvXCiI30605lXWMWSKqhxSFcrCmlG5YJnuoLIKqVE4x.jpg", "width": 4032, "height": 3024, "timestamp": 1781548056.115894, "mid": "7940599522735"}, {"url": "https://photo-stal-14.zdn.vn/no/jpg/00a386f7f67d34236d6c/1WUpukaSIZ5JBUsJ9GtG0TnaASttBTJdzy80efqN3GBinVZDTMn7frnZgx7d70L6Dhw.jpg", "width": 3024, "height": 4032, "timestamp": 1781548056.3033133, "mid": "7940599523245"}, {"url": "https://photo-stal-28.zdn.vn/no/jpg/3743ac17dc9d1ec3478c/1WUpukaSIZ5JBUsJ9GtG0TnX6zumj8aQd6Dzg4JeC65BzO2F8AL5W1qwfQPQ2ClBwWb.jpg", "width": 3024, "height": 4032, "timestamp": 1781548056.4162095, "mid": "7940599523637"}, {"url": "https://photo-stal-6.zdn.vn/no/jpg/5144c910b99a7bc4228b/1WUpukaSIZ5KcLxEUYVadxIdV5thV1jhPB8p6PoYK1It9PhBvpq7ulplCqcLwTrijMD.jpg", "width": 3024, "height": 4032, "timestamp": 1781548056.5185914, "mid": "7940599524441"}, {"url": "https://photo-stal-6.zdn.vn/no/jpg/1ad58081f00b32556b1a/1WUpukaSIZ5KcLxEUYVadxJOUU121g4BRxWtGmffdmEQWtgmTFu6nS8j7FrhfIckHMn.jpg", "width": 3024, "height": 4032, "timestamp": 1781548056.6274278, "mid": "7940599524821"}]
+Videos: [{"url": "https://video-stal-29.dlmd.me/gr/04319965e9ef2bb172fe/1WUpukaSIZ7BGqTeDtARM66cyPIqRDWLUAGcuzS4fTvChXYZbISxw3qMoBfBe9Y2akJ", "thumb": "https://photo-stal-28.zdn.vn/no/93d8168c6606a458fd17/1WUpukaSIZ5JBUsJ9GtG0TrnyJ0FMgRLQ2H12Bl7wJFMRV2HQTCsG0i8zMLlGmlbyOk.jpg", "duration": 9000, "width": 1280, "height": 720, "timestamp": 1781548057.0298576, "mid": "7940599525739"}, {"url": "https://video-stal-41.dlmd.me/gr/e2377c630ce9ceb797f8/1WUpukaSIZ746Z51VT4mAjpEhZJBrwwab6P2z6YZhXKsaBv9fbjuBeuILPLmnKYsOAq", "thumb": "https://photo-stal-28.zdn.vn/no/f29a75ce0544c71a9e55/1WUpukaSIZ5EsvdX7Q2G63LgnWyN9jsWDKqcnidbzkj5IMzeGBIlylmdWhaB84j6bX7.jpg", "duration": 16000, "width": 1280, "height": 720, "timestamp": 1781548057.2499154, "mid": "7940599526019"}]
+Text2 preview: 9a Nhà Riêng Nguyên Căn Siêu Rẻ
+
+290 Đê La Thành nhỏ , Đống Đa
+
+nhà riêng 4 tầng 2 phòng ngủ t1 bếp độc lập
+
+4tr5
+Chỉ tính điện nước ( mai mình câp nhât)
+k phí dịch vụ
+
+=== Room ID: 3161 ===
+Session ID: 1781555118641
+Address: Ngõ 491 Đê La Thành, Đống Đa
+Price: 5.3-5.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-15.zdn.vn/gr/jpg/4460490361faa3a4faeb/569493381498921578.jpg", "width": 960, "height": 1280, "timestamp": 1781448908.492694, "mid": "7936466491114"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/3121128760881537222/d38f4192d45d55030c4c.jpg", "width": 1280, "height": 960, "timestamp": 1781448908.6808763, "mid": "7936466500969"}, {"url": "https://f64-zpg-r.zdn.vn/jpg/2448813396523157775/251e5000c5cf44911dde.jpg", "width": 1280, "height": 960, "timestamp": 1781448908.847492, "mid": "7936466515013"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/f6639828cfd10d8f54c0/3066998139006069615.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.120635, "mid": "7936467213482"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/4dd6229d7564b73aee75/3066998139006069615.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.298017, "mid": "7936467217070"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/6313568473969000622/80c6b9292ce6adb8f4f7.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.4673083, "mid": "7936467231296"}, {"url": "https://f65-zpg-r.zdn.vn/jpg/4888986828967003992/927ea8913d5ebc00e54f.jpg", "width": 1280, "height": 960, "timestamp": 1781448923.7012954, "mid": "7936467232846"}]
+Videos: []
+Text2 preview: 11A -6 tháng
+Mã 302
+5/ Địa chỉ: Ngõ 491 Đê La Thành, đống đa
+Phòng 602 giá 5tr6 có ban công
+- Phòng 603 giá 5tr3
+👉Loại phòng : Studio
+👉Thang máy
+
+✅ Nội thất:
+- Điều hòa, nóng lạnh, giường tủ quần áo, tủ lạnh, đệm...
+⛔️ Dịch vụ 491 Đê La Thành
+Điện : 4k/1 số
+Nước : 30k/1 khối
+Wifi : 100k/1 phòng
+Dịch
+
+=== Room ID: 3193 ===
+Session ID: 1781593925600
+Address: Ngõ 612 Đê La Thành, Đống Đa
+Price: 5.3tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-14.zdn.vn/gr/jpg/7e7671c7d9551b0b4244/1WUpukaWk0lNInXRQjSJreUuylPasYlQq1Uw6VN3DYBUmQNvLAXB8Ah2A32In2OrlBb.jpg", "width": 2568, "height": 1926, "timestamp": 1781593860.8403356, "mid": "7942274717630"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/0d3a038bab1969473008/1WUpukaWk0lOjecMm14eV82qsJnZNSdf6cetAddG2OZ1LUxJYhdWZmvIbXQ1ao8xVqq.jpg", "width": 2568, "height": 1926, "timestamp": 1781593861.1943047, "mid": "7942274721220"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/40af301e988c5ad2039d/1WUpukaWk0lQAVhI7Igz8bblXPInMvah1gchH4GiQzqLBaGNGuFlvakLJLf4qLUt7aA.jpg", "width": 1926, "height": 2568, "timestamp": 1781593861.8532736, "mid": "7942274730080"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/66506ae1c273002d5962/1WUpukaWk0lOjecMm14eV83dFY532N2BKNwHsW9oWKaSGr7X4TefQOdj2sO0OMpdp1V.jpg", "width": 2568, "height": 1926, "timestamp": 1781593862.3215501, "mid": "7942274734726"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/2ecb267a8ee84cb615f9/1WUpukaWk0lNInXRQjSJreZYpEB7r6UfM26nSO4LqUtlmiBM4k1MiwGPszbQDUokxka.jpg", "width": 1926, "height": 2568, "timestamp": 1781593862.7445595, "mid": "7942274740966"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/5ba85619fe8b3cd5659a/1WUpukaWk0lOjecMm14eV86WMrHB3UiIwzW2hIwzjpJyMtsWpJVLhgZlID2IgD4Aoib.jpg", "width": 2568, "height": 1926, "timestamp": 1781593863.0157952, "mid": "7942274747091"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/99e6ea5742c5809bd9d4/1WUpukaWk0lOjecMm14eV85H8TZrQHe9rN6W06Piqbs4vVObIRgqoPG7eK6vlEdeAtt.jpg", "width": 1926, "height": 2568, "timestamp": 1781593863.1962242, "mid": "7942274755255"}]
+Videos: []
+Text2 preview: 11A -6 tháng
+-12 tháng
+Mã h434
+🏢 ngõ 612 đê la thành, đống đa
+FULL ĐỒ y hình
+
+⏰trống- gia 5tr3
+
+❌ Dich vụ
+Điện 4k/s, nước 35k/m3
+Dịch vụ chung 200k/người
+Đóng 1:1
+
+=== Room ID: 3638 ===
+Session ID: 1781671377634
+Address: Số 3 ngách 83 ngõ 678 Đê La Thành, Ba Đình
+Price: 5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-30.zdn.vn/gr/jpg/709bf3057fa6bdf8e4b7/1WUpukae6glHGeGQujiAPC5gHBGVQEejX5nmKoOoTuPQMrhnYDsu0Soji2klmLYyMuh.jpg", "width": 2568, "height": 1926, "timestamp": 1781671380.6617682, "mid": "7945530721663"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/7c0ffe917232b06ce923/1WUpukae6glHGeGQujiAPC8uRtZed3uWpKsr9qPSP4FctN0Su1OUGAD2vatPgYcFVGk.jpg", "width": 1926, "height": 2568, "timestamp": 1781671380.7655485, "mid": "7945530730077"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/1b4b9bd51776d5288c67/1WUpukae6glHGeGQujiAPC6AkAGoAg4qKw9u3xSL3KScwlld6VofQtazxP3wk2VeqZd.jpg", "width": 2568, "height": 1926, "timestamp": 1781671380.876292, "mid": "7945530736979"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/b9543ccab06972372b78/1WUpukae6glHGeGQujiAPC5u6snO1iK4wYdpz3YVxegXxxM2WUNSJYvfGZiN58UGTyS.jpg", "width": 2568, "height": 1926, "timestamp": 1781671380.984377, "mid": "7945530744850"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/a6dd2743abe069be30f1/1WUpukae6glHGeGQujiAPC54twFadyt7eoQfZvhhDbibxw3DALyYMQbqmalCdwWLlNI.jpg", "width": 2568, "height": 1926, "timestamp": 1781671381.088746, "mid": "7945530751886"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/1d0d97931b30d96e8021/1WUpukae6glUALyl0IHA8TcO5FSCZqUK1YBXFaQ9lPYucYTe9zcvAAB904A4Cto5zfy.jpg", "width": 2568, "height": 1926, "timestamp": 1781671381.2055123, "mid": "7945530755840"}]
+Videos: [{"url": "https://video-stal-48.dlmd.me/gr/f49e2704aba769f930b6/1WUpukae6go0NfNw1Ms6sQNMWdTsaLvmNCO7uSKulTDpphFtBBlGqZk28QdT02amXdx", "thumb": "https://photo-stal-27.zdn.vn/gr/643fe0a16c02ae5cf713/1WUpukae6glHGeGQujiAPC7sWxv1wtEnRYg85YtIzKL1iVwiPh5zPL4Ho04TEOsJwmK.jpg", "duration": 37000, "width": 1280, "height": 720, "timestamp": 1781671381.3119109, "mid": "7945530763514"}]
+Text2 preview: 10A 12th
+Mã : Ts699
+
+🏡 Địa chỉ : số 3 ngách 83 ngõ 678 đê la thành - Ba Đình
+⏰ Trống : P502
+P302 ( 30/6 )
+—————————
+🎍 giá : 5tr
+🎍 Phòng : Studio
+🎍 Thang Máy
+
+❣Nội thất : Thang máy, điều hoà, nóng lạnh, giường, tủ quần áo, tủ lạnh,…
+
+❣Dịch vụ : Điện 4k/số, nước 35k/khối, internet 100k/phòng, Dịch vụ 
+
+=== Room ID: 3729 ===
+Session ID: 1781675196049
+Address: 238 Đê La Thành Nhỏ, Đống Đa
+Price: 5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-35.zdn.vn/gr/jpg/b2851dfe1453d60d8f42/1WUpukaedB7yWI6QKuhqM3PmZav3LWORm1JstQUZSoubYLcP4Tqi0gIeCwKbpDOgjJJ.jpg", "width": 1536, "height": 2048, "timestamp": 1781675193.6625905, "mid": "7945740055520"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/6bbfb8c4b16973372a78/1WUpukaedB84FiQ7i3BAtxQX5Dhvz8hokt5eiF88zXSmr1wrO8hNGJDV8V5kGWIx0j8.jpg", "width": 1536, "height": 2048, "timestamp": 1781675193.764897, "mid": "7945740062827"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/a0cc75b77c1abe44e70b/1WUpukaedB85gZV33KnVXQu2QoYwp3GYQJrHT7E7V2Y5WOz6pvnpaO9gV7faFt0LzKr.jpg", "width": 1536, "height": 2048, "timestamp": 1781675193.9322846, "mid": "7945740067608"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/87d651ad58009a5ec311/1WUpukaedB85gZV33KnVXQvVn9r14IaWqXx3Y3SkDZvCSnmvYQYyVoftHMQxIm5LQt2.jpg", "width": 1536, "height": 2048, "timestamp": 1781675194.0153449, "mid": "7945740072101"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/0bf2da89d324117a4835/1WUpukaedB85gZV33KnVXQu2QoYwp3GYQJrHT7E7VBOwYrruz4bl80zXdoYv9qw8UCq.jpg", "width": 1536, "height": 2048, "timestamp": 1781675194.1894882, "mid": "7945740074929"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/7dfdaf86a62b64753d3a/1WUpukaedB84FiQ7i3BAtxQX5Dhvz8hokt5eiF88zXSoV5sPUYDUpvbxHwbZmGYlcUo.jpg", "width": 1536, "height": 2048, "timestamp": 1781675194.272764, "mid": "7945740081406"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/15debba5b20870562919/1WUpukaedB7yWI6QKuhqM3PSSHp4ugVaDTOyx1MiPWsGz9WsM6FYkT9KMM2d7do2LuH.jpg", "width": 1536, "height": 2048, "timestamp": 1781675194.445441, "mid": "7945740082108"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/4ad59eae9703555d0c12/1WUpukaedB85gZV33KnVXQtnsX2HHqbVkX2d7R0MevsqCF4BhZwYOp08nC2VN8dEuL0.jpg", "width": 1536, "height": 2048, "timestamp": 1781675194.529736, "mid": "7945740088953"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/1ae0cd9bc43606685f27/1WUpukaedB85gZV33KnVXQwbolZiEnWLIN2M7tenrAoAYCRnCJN896BCJDHrCOGma7Z.jpg", "width": 1536, "height": 2048, "timestamp": 1781675194.6161387, "mid": "7945740092812"}]
+Videos: []
+Text2 preview: 11A Mã 98
+🏢 tại sn 238 Đê la thành nhỏ, đống đa
+1k1n tầng 6 (603)
+💰giá 5tr
+
+Full đồ: đh, nl, giường tủ qao, tủ bàn bếp full gỗ rộng, sofà, tủ lạnh, sàn gỗ…. P rộng 36m2
+❌Dịch vụ:
+Điện 4k/s nc 100k/ng
+Mạng 100k/p
+Dịch vụ chung 150k/ng( thang máy, vệ sinh+ rác, điện chung hành lang, cầu thang sân thượ
+
+=== Room ID: 3731 ===
+Session ID: 1781675210544
+Address: 238 Đê La Thành Nhỏ, Đống Đa
+Price: 5.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-35.zdn.vn/gr/jpg/cb6ebc51b4fc76a22fed/1WUpukaedGWcQL45BmQVxtmwEalQOru9fUtEQr3nxtBQFCwv6B1RXO6HL10QqYVtw1Q.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.193536, "mid": "7945740681103"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/56fc23c32b6ee930b07f/1WUpukaedGWcQL45BmQVxtliB0c3tWCGoKU2kfWDsdNC21Xn16yiYbJFnOdhGlBEeyn.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.2911122, "mid": "7945740686199"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/7b983ca7340af654af1b/1WUpukaedGWGvUsD2W9WPlE95egWvAM9HNXbJpAVulUnsW0lDAuzisKLaYhFtGg9GVA.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.3772926, "mid": "7945740691152"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/25f961c6696bab35f27a/1WUpukaedGWO5mGpkwFBb8jw2BTUDBLS5YLwi5RhqckgXd3glDHN694FArDmU1pITqj.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.4662569, "mid": "7945740695766"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/0ebe44814c2c8e72d73d/1WUpukaedGWTpCaX84iW92koIwqLdJoQHKlvPTwaGnuXXm2lGj0BQXQm1AYipimtZ5R.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.587875, "mid": "7945740699151"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/af5fe660eecd2c9375dc/1WUpukaedGWTpCaX84iW92jWEcBBMuiAfc4D64u8wAU1Aq5Jm7lseDre54nrmNma2uR.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.6769571, "mid": "7945740704146"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/133b5d0455a997f7ceb8/1WUpukaedGWVG3fSTMKqmWGUoGqY3RUKid6KMhH0xdsMTTBKGcAKpR4Az0FqJqwBy7B.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.762146, "mid": "7945740708142"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/5e0c2f33279ee5c0bc8f/1WUpukaedGWcQL45BmQVxtnJOQ2NeYXYmRGTg30lK5WNt1rAL7DP4nLwhmWCFP0D4KL.jpg", "width": 1536, "height": 2048, "timestamp": 1781675208.849724, "mid": "7945740713891"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/e92c9d1395be57e00eaf/1WUpukaedGWcQL45BmQVxtkz4HvshLEjtxzeXtC8Tm1pBoSJz4Ci5LId4MQFe1Adk76.jpg", "width": 1536, "height": 2048, "timestamp": 1781675209.0232675, "mid": "7945740717255"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/b294c0abc8060a585317/1WUpukaedGWcQL45BmQVxtmSapPm2XKSpIdP7rzeoJtkukUXX6ucEIqkff5tskj7QPK.jpg", "width": 1536, "height": 2048, "timestamp": 1781675209.1150086, "mid": "7945740723937"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/e9de9fe1974c55120c5d/1WUpukaedGWcQL45BmQVxtlGyluaWBCom0HLRZq4hQDaNAVBLsXcAb59zO5k5PVM1vm.jpg", "width": 1536, "height": 2048, "timestamp": 1781675209.1994224, "mid": "7945740728049"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/1f3c53035bae99f0c0bf/1WUpukaedGWcQL45BmQVxtn5AWtMJFQ16rXmKRunZSzzTR7e04mtzWh92ujqN7kilwy.jpg", "width": 1536, "height": 2048, "timestamp": 1781675209.2841313, "mid": "7945740732211"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/cb02833d8b9049ce1081/1WUpukaedGWTpCaX84iW92k2Kqz8Liqm89oq4m3uA0BuXoNp4pCwt4aC7s92RnKkQDq.jpg", "width": 1536, "height": 2048, "timestamp": 1781675209.375822, "mid": "7945740737717"}]
+Videos: []
+Text2 preview: 11A Mã 98
+🏢 tại sn 238 Đê la thành nhỏ, đống đa
+Full đồ: đh, nl, giường tủ qao, tủ bàn bếp full gỗ rộng, sofà, tủ lạnh, sàn gỗ….
+P rộng 37m2
+1k1n tầng 5 (504)
+💰giá 5tr6
+
+Dịch vụ:
+Điện 4k/s nc 100k/ng
+Mạng 100k/p
+Dịch vụ chung 150k/ng( thang máy, vệ sinh+ rác, điện chung hành lang, cầu thang sân thượ
+
+=== Room ID: 3767 ===
+Session ID: 1781677773956
+Address: 164/39 Số nhà 1 Đê La Thành Nhỏ
+Price: 4.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-34.zdn.vn/gr/jpg/18d693e1364cf412ad5d/2aOboQe7PkXEw5KuxdsMKUpfSWg4IMUMPfP2TLv6.jpg", "width": 1280, "height": 971, "timestamp": 1781677776.924739, "mid": "7945856387957"}, {"url": "https://photo-stal-34.zdn.vn/gr/jpg/1addd6e7734ab114e85b/2aOboQe7Pkh35UjgnYO7MlKJvUk6sYs8iaGOhZom.jpg", "width": 1276, "height": 956, "timestamp": 1781677777.161084, "mid": "7945856399974"}, {"url": "https://photo-stal-21.zdn.vn/gr/jpg/18fad5c0706db233eb7c/2aOboQe7Pkh7x8cRny8V3RC3cd1P6NC91hgxmUca.jpg", "width": 1920, "height": 2560, "timestamp": 1781677777.3182395, "mid": "7945856411410"}, {"url": "https://photo-stal-22.zdn.vn/gr/jpg/0f58826127cce592bcdd/2aOboQe7Pki1u2HANkEtTBmfB6c8mup95WEVhtuy.jpg", "width": 960, "height": 1280, "timestamp": 1781677777.554397, "mid": "7945856421178"}, {"url": "https://photo-stal-10.zdn.vn/gr/jpg/2a84a6bd0310c14e9801/2aOboQe7Pki1u2HANkEtTBo5cLJtSJuJM0Uj6lcm.jpg", "width": 1280, "height": 1179, "timestamp": 1781677777.7486267, "mid": "7945856431147"}]
+Videos: [{"url": "https://video-stal-14.dlmd.me/gr/8cbd7e83db2e1970403f/2aOboQe7PkrZ1hMyePQTAgXWPOanr1jUsNnh1CMq", "thumb": "https://photo-stal-34.zdn.vn/gr/2bad8e9a2b37e969b026/2aOboQe7PkVpMVRGqAPTwMZ4eQjxW1zWD2T64Ac4.jpg", "duration": 49000, "width": 1280, "height": 720, "timestamp": 1781677777.9213543, "mid": "7945856441592"}]
+Text2 preview: 2A 🌷 - 8m Mã: 🏆 106
+
+🏢Địa chỉ : 164/39 Số nhà 1 Đê La Thành Nhỏ
+
+⌛️Trống : P202
+
+☘Giá : 4tr6 STUDIO
+☘Thang : Máy
+
+🏆Nội thất : Nội thất: Giường, tủ, điều hoà, máy giặt riêng, tủ lạnh, bếp từ, hút mùi, bàn ghế ăn
+
+🏆Dịch vụ : "💡 Điện 4tr/kwh
+💧 Nước 35tr/m3
+☘ Dv chung 300k/phòng
+⚡ Internet 100tr/phòng"
+
+
+=== Room ID: 3863 ===
+Session ID: 1781680623624
+Address: 612 Đê La Thành, Đống Đa
+Price: 4.9-5.5tr
+Category: phong-tro
+Photos: [{"url": "https://b-f64-zpg-r.zdn.vn/5668447578755426620/4bf17a0af6c1779f2ed0.jpg", "width": 900, "height": 1200, "timestamp": 1781680620.4329998, "mid": "7946021601595"}, {"url": "https://b-f64-zpg-r.zdn.vn/1939860027275670282/903004ca8801095f5010.jpg", "width": 900, "height": 1200, "timestamp": 1781680620.538297, "mid": "7946021608263"}]
+Videos: []
+Text2 preview: 11A Gác xép giá 4tr9 11A Mã H203
+🏢địa chỉ: 612 đê la thành, đống đa
+🚘Ngõ ô tô đỗ: 100m
+💰giá: 4tr9-5tr2-5tr5
+⏰. Trống
+👉 Diện tích:28m2
+👉 thang: máy
+👉 dạng:
+⚡️ Tầng:
+💎 nội thất như hình:
+❌ Dịch vụ: điện 4k
+Dịch vụ chung 200k/ người, nước 110k/ người,
+3 máy giặt chung trên sân thượng tầng 7
+
+📌 Lưu ý
+Xe
+
+=== Room ID: 4370 ===
+Session ID: 1781747784052
+Address: Đê La Thành
+Price: 9.5tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-35.zdn.vn/no/jpg/8198444a59fa9ba4c2eb/1WUpukalfhr29GDaHbRx0rC989fdM5lOvJEDXuVGWuFQMOQO0yZZMj5IWBOJFQ5xwGa.jpg", "width": 960, "height": 1280, "timestamp": 1781747784.2541645, "mid": "7948524277622"}, {"url": "https://photo-stal-29.zdn.vn/no/jpg/99115dc34073822ddb62/1WUpukalfhr29GDaHbRx0rBlA3Y9LmGFfCCLYNGXyFUwn006H8GOATSu1LdgJMKw5dy.jpg", "width": 1280, "height": 960, "timestamp": 1781747784.4668846, "mid": "7948524302977"}, {"url": "https://photo-stal-29.zdn.vn/no/jpg/625fa58db83d7a63232c/1WUpukalfhqzHY3jb2DHjuA9J6ejs8eZdnF7Tj1BZtITjq5YdlOZi0JhAIFsvZRWjSa.jpg", "width": 1280, "height": 960, "timestamp": 1781747784.8941863, "mid": "7948524332402"}, {"url": "https://photo-stal-17.zdn.vn/no/jpg/f10e32dc2f6ced32b47d/1WUpukalfhr29GDaHbRx0rBJTwNnPhwYTuQyV1QQShs8Skic5tokPddXwAff4EQHCMA.jpg", "width": 960, "height": 1280, "timestamp": 1781747785.372532, "mid": "7948524362291"}, {"url": "https://photo-stal-32.zdn.vn/no/jpg/ed332fe13251f00fa940/1WUpukalfhr29GDaHbRx0rC215kMEFhnMSgeudMpZROE3hK6c1wvBAtrMUnklZpNLTn.jpg", "width": 1280, "height": 960, "timestamp": 1781747785.7221591, "mid": "7948524383659"}]
+Videos: [{"url": "https://video-stal-49.dlmd.me/gr/fb0c0cde116ed3308a7f/1WUpukalfhtCrjqwoulSdsAjrG3Z5mJJr9SwU3SSWV0mGfS80SFzbav4M4DELd8n0Bl", "thumb": "https://photo-stal-14.zdn.vn/no/36c6f014eda42ffa76b5/1WUpukalfhqzHY3jb2DHjuEhuE81PpiTtQJ1OaBtmjNZyhYWmxEdWvwAaTXhoKbD435.jpg", "duration": 90000, "width": 1280, "height": 720, "timestamp": 1781747786.1505246, "mid": "7948524411519"}]
+Text2 preview: tc 🏡 CHO THUÊ TẬP THỂ TẦNG 1 – ĐÊ LA THÀNH - OTO ĐỖ CỬA
+
+📐 DIỆN TÍCH: 50M²
+
+🛏 THIẾT KẾ: 1 NGỦ - 1 WC - KHÁCH BẾP
+
+📍 CÁCH MẶT ĐƯỜNG ĐÊ LA THÀNH MỚI CHỈ 20M
+
+✨ TẦNG 1 RIÊNG BIỆT – VỪA Ở VỪA KINH DOANH
+
+👨‍👩‍👧‍👦 PHÙ HỢP GIA ĐÌNH 3–4 NGƯỜI
+
+💰 GIÁ THUÊ: 9tr5/THÁNG
+👉 Mã A4100
+
+=== Room ID: 4618 ===
+Session ID: 1781758453413
+Address: nhà 4 ngõ 612/50 Đê La Thành - Đống Đa
+Price: 5.6-5.8tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-17.zdn.vn/gr/jpg/21257eba5f3f9d61c42e/2aOboQdcSmRqAxuNVsifC3abtvLl9dcESDpuVzm4.jpg", "width": 2560, "height": 1920, "timestamp": 1781489760.457242, "mid": "7937357629613"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/2fdc9b4fbaca789421db/2aOboQdcSmVFoRpMIwlHdNfFo3YUVkwcdSEw7s48.jpg", "width": 2560, "height": 1920, "timestamp": 1781489760.7822187, "mid": "7937357640704"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/066bbffb9e7e5c20056f/2aOboQdcSmaEknPVEJlXqBh8IA62hYOQkjtvHQXo.jpg", "width": 2560, "height": 1920, "timestamp": 1781489762.435114, "mid": "7937357655854"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/bab3545b75deb780eecf/2aOboQdcSmiF0PUpug4W2wn9iOWmM4lukVus5WdM.jpg", "width": 2560, "height": 1920, "timestamp": 1781489763.0905643, "mid": "7937357659806"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/d52d84baa53f67613e2e/2aOboQdcSmfDh8ze9glo2zjnToM1ApMPoyWbPwdU.jpg", "width": 1920, "height": 2560, "timestamp": 1781489764.1936002, "mid": "7937357664097"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/3af828120997cbc99286/2aOboQdcSmnIoOxjqSp9wQhbo0mxONVfyGPgSwMa.jpg", "width": 2560, "height": 1920, "timestamp": 1781489765.1127279, "mid": "7937357702198"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/a2f40f092e8cecd2b59d/2aOboQdcSnG6LU5zIsNNXpkIC8Vuc6CzDK3KrYmW.jpg", "width": 2560, "height": 1920, "timestamp": 1781489766.5768182, "mid": "7937357729438"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/730b37f01675d42b8d64/2aOboQdcSnCss6su1qhiKC0noIMxK9vs7Xg4Gm00.jpg", "width": 2560, "height": 1920, "timestamp": 1781489766.9943342, "mid": "7937357735705"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/9632dcc9fd4c3f12665d/2aOboQdcSnCB5Jw4y6yH87mRiets2ZYxAUnNJIpc.jpg", "width": 2560, "height": 1920, "timestamp": 1781489767.3862267, "mid": "7937357746480"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/58a3e65bc7de05805ccf/2aOboQdcSnDJd9F4Z8JobtsLXMHHlKiwhM1jn5iS.jpg", "width": 2560, "height": 1920, "timestamp": 1781489767.7260036, "mid": "7937357751082"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/4ccb4d356cb0aeeef7a1/2aOboQdcSnAvF1nwrT0A7LCmIQ1eXRpks237lAa8.jpg", "width": 1920, "height": 2560, "timestamp": 1781489768.0166957, "mid": "7937357760385"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/c866dc90fd153f4b6604/2aOboQdcSnRTnl9vH5qmLa5tIbRAXiqI9jGWpX1M.jpg", "width": 1920, "height": 2560, "timestamp": 1781489768.421296, "mid": "7937357767991"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/d122c6d4e751250f7c40/2aOboQdcSnRTnl9vH5qmLaA5ZyXulnWCCX8ovzQe.jpg", "width": 2560, "height": 1920, "timestamp": 1781489768.7493324, "mid": "7937357775142"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/31503ba61a23d87d8132/2aOboQdcSnRfxrron8DjZGWwqA8opCzYyy95in5s.jpg", "width": 2560, "height": 1920, "timestamp": 1781489769.1020186, "mid": "7937357785867"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/11bfbe439fc65d9804d7/2aOboQdcSnEqVBxrCEPGX2zoxi647GfNGarZNh20.jpg", "width": 2560, "height": 1920, "timestamp": 1781489769.432946, "mid": "7937357790924"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/e45792e2b26770392976/2aOboQdcSsZYwmhAvTlUq9PqqlUJjDmKyeRWXQ48.jpg", "width": 2560, "height": 1920, "timestamp": 1781489770.066037, "mid": "7937358382576"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/d4f5de75fef03cae65e1/2aOboQdcSsqkQf7DOQbAZmZ7uZnzBV3OvIS0aHku.jpg", "width": 1920, "height": 2560, "timestamp": 1781489770.4593973, "mid": "7937358405991"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/5a659fe6bf637d3d2472/2aOboQdcSsfUGqsPvpkLJ39ITOnrq3mliXrpBHgO.jpg", "width": 1920, "height": 2560, "timestamp": 1781489770.6531823, "mid": "7937358395011"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/2d5f92dcb25970072948/2aOboQdcSslPav3ewBjBlwN10ARZDHemMosjxmQy.jpg", "width": 2560, "height": 1920, "timestamp": 1781489770.8380787, "mid": "7937358420171"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/ded8fd5dddd81f8646c9/2aOboQdcSsxZhcxAyYgPSQzktR8owvyEdwkEf9Sy.jpg", "width": 2560, "height": 1920, "timestamp": 1781489771.1593783, "mid": "7937358428184"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/ffcee752c7d705895cc6/2aOboQdcSt9vyRYaWy0aMbq9awkgN8F2cjZirMe0.jpg", "width": 2560, "height": 1920, "timestamp": 1781489771.586726, "mid": "7937358449215"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/cd6bdcf8fc7d3e23676c/2aOboQdcStBBojgidbyhNOVOlS5qM2ddt1WI9PjU.jpg", "width": 2560, "height": 1920, "timestamp": 1781489771.8450835, "mid": "7937358455704"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/b0ee7c055c809edec791/2aOboQdcStN7KVvxejglzrPX6sNl6pvShJKARdBo.jpg", "width": 1920, "height": 2560, "timestamp": 1781489772.024746, "mid": "7937358474221"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/aebf8d54add16f8f36c0/2aOboQdcStOj4CXVIFWbbgLyJOcO9P97d2o1whQ8.jpg", "width": 2560, "height": 1920, "timestamp": 1781489772.284078, "mid": "7937358485322"}]
+Videos: [{"url": "https://video-stal-48.dlmd.me/gr/a6f23cd99d645f3a0675/2aOboQeKZ643EkaGizqWbvGn8vE0lstKLa1fzro8", "thumb": "https://photo-stal-31.zdn.vn/gr/1a62385499e95bb702f8/2aOboQeKZ5JdSifxZuIRyxmhlglWEkbSWJSp79uK.jpg", "duration": 83000, "width": 1280, "height": 720, "timestamp": 1781758456.481969, "mid": "7949303335816"}]
+Text2 preview: 2A 🌷 - 12m Mã: 🏆 331
+- 6m
+
+🏢Địa chỉ : nhà 4 ngõ 612/50 Đê La Thành - Đống Đa
+
+⌛️Trống :
+
+☘Giá : 5tr6-p501
+5tr8-p602
+🍀Dạng phòng : STUDIO
+☘Thang : MÁY
+
+🏆Nội thất : Đồ như ảnh ( thang máy tầng 6 đi bộ lên tầng 7 )
+
+🏆Dịch vụ : "Điện 4k/số, Nước 120k/người
+Điện chung, thang máy, vệ sinh, rác, bảo trì 12
+
+=== Room ID: 4624 ===
+Session ID: 1781763645899
+Address: Ngõ 164/39 Đê La Thành - Đống Đa
+Price: 4.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-35.zdn.vn/gr/jpg/5b1f5fe3645ca602ff4d/1WUpukanD3SpdFWpcK0xHTsl7k9ZEqnJDPpT0HuPvEJCZpnQNrCQrGVnfFMaV8qmWQN.jpg", "width": 1920, "height": 2560, "timestamp": 1781763639.6124306, "mid": "7949558181397"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/fb67fd9bc624047a5d35/1WUpukanD3SvMfqWzSUHpNtvr8bZPESdaKbKsoNU38VLrk12JZ4Ozf61oXxXvsT1QSw.jpg", "width": 960, "height": 1280, "timestamp": 1781763639.7096405, "mid": "7949558185670"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/975797abac146e4a3705/1WUpukanD3SiSy8CttvI66NA9Qxzlh4jwslatS8Q9uj4suZd5Fegjm6ofmGpRuTXk1s.jpg", "width": 960, "height": 1280, "timestamp": 1781763639.8050683, "mid": "7949558192672"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/ee9be567ded81c8645c9/1WUpukanD3T3xoK53ACHeEvjNglrY84MP2gO4CB0hmVSl6t0KSVPHm8VG36HL3Gxdnn.jpg", "width": 1920, "height": 2560, "timestamp": 1781763639.8986158, "mid": "7949558194657"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/251e2be2105dd2038b4c/1WUpukanD3T9hEdmQIfcC8xPPzzPaAzDtnzvqtDhAzCFrflbMbkhfXxGVg9EUL598LP.jpg", "width": 1920, "height": 2560, "timestamp": 1781763640.028116, "mid": "7949558201786"}]
+Videos: []
+Text2 preview: 12A HD 8 tháng. Mã 689
+
+🏢Địa chỉ : Ngõ 164/39 Đê La Thành - Đống Đa
+
+🍁 trống P202
+
+💸Giá 4tr6
+
+👉Phòng Studio - 20m2
+👉Thang máy
+
+🍀Nội thất : Full đồ cơ bản, tủ bếp, Máy giặt chung,…tủ lạnh...
+
+🍀Dịch vụ :
+Điện 4k/số,
+Nước 35k/m3,
+Dịch vụ chung 300k/p
+Internet 100tr/phòng
+
+⛔️ Lưu ý :
+- Không giới hạn 3 
+
+=== Room ID: 5009 ===
+Session ID: 1781784357754
+Address: 612 Đê La Thành
+Price: 4.2tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-28.zdn.vn/gr/jpg/f1ccaf56da131f4d4602/2aOboQeOrJ1WlfToqYsRWL2MQlXi2dtLCDCj76VE.jpg", "width": 3024, "height": 4032, "timestamp": 1781784384.8778677, "mid": "7950855310459"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/c9458c4df9083c566519/2aOboQeOrNdA9CJZEDxAu9s8jS1ODcJEZo5zsGsi.jpg", "width": 4032, "height": 3024, "timestamp": 1781784385.0700905, "mid": "7950855321914"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/0010399f4cda8984d0cb/2aOboQeOrIgqmfG2a8FlehqSIZ5EkmhbEy46LkXI.jpg", "width": 4032, "height": 3024, "timestamp": 1781784385.2763, "mid": "7950855333377"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/433ed59ca0d965873cc8/2aOboQeOrHXx3xn21uqZHdP94kmObVlMdC3yP2rA.jpg", "width": 4032, "height": 3024, "timestamp": 1781784385.4723177, "mid": "7950855345978"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/9ff6dbfeaebb6be532aa/2aOboQeOrNdA9CJZEDxAuA2ibTNSBj8YyabhWr8i.jpg", "width": 4032, "height": 3024, "timestamp": 1781784386.0953639, "mid": "7950855378475"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/54b813b066f5a3abfae4/2aOboQeOrNdA9CJZEDxAu9tGKdaM2fsHdC3qiLi4.jpg", "width": 3024, "height": 4032, "timestamp": 1781784391.3018909, "mid": "7950855664067"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/dc30e4bf91fa54a40deb/2aOboQeOrIgqmfG2a8FlehnD1u5IHz3A9MTap6iu.jpg", "width": 3024, "height": 4032, "timestamp": 1781784393.3504853, "mid": "7950855773244"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/7909269353d69688cfc7/2aOboQeOrJ1WlfToqYsRWKqvbxxd6POvmd2J6nyq.jpg", "width": 4032, "height": 3024, "timestamp": 1781784395.1773674, "mid": "7950855878881"}]
+Videos: [{"url": "https://video-stal-40.dlmd.me/gr/86c9de12ab576e093746/2aOboQeOrGYY27KX6m8DTtgqOmvtAmDNg2jSbFYG", "thumb": "https://photo-stal-28.zdn.vn/gr/ebea7419015cc4029d4d/2aOboQeOrFbGMbI7FasMu8GZo1J8dntXuH3qoXOS.jpg", "duration": 38000, "width": 1280, "height": 720, "timestamp": 1781784386.4455197, "mid": "7950855398257"}]
+Text2 preview: 9a 1tr1 🤟🙌
+
+Trống 1P 4tr2
+
+💥💥💥 Khai Trương Toà CĂN HỘ MỚI TINH 612 ĐÊ LA THÀNH tổng 24 Phòng Khép Kín
+
+👉Điện 4k, nước 35k / 1 khối, internet 100k/phòng, vệ sinh khép kín để xe free.
+👉Dịch vụ chung 200k /1 người, có thang máy, máy giặt, máy sấy
+
+👉Nội Thất: Giường, tủ, điều hoà, nóng lạnh, tủ lạnh, cử
+
+=== Room ID: 5018 ===
+Session ID: 1781790158865
+Address: 612/116/15 Đê La Thành - Đống Đa
+Price: 4.2tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-6.zdn.vn/gr/jpg/7909269353d69688cfc7/2aOboQeOrJ1WlfToqYsRWKqvbxxd6POvmd2J6nyq.jpg", "width": 4032, "height": 3024, "timestamp": 1781790166.369594, "mid": "7951191746519"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/f1ccaf56da131f4d4602/2aOboQeOrJ1WlfToqYsRWL2MQlXi2dtLCDCj76VE.jpg", "width": 3024, "height": 4032, "timestamp": 1781790166.505493, "mid": "7951191750807"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/0010399f4cda8984d0cb/2aOboQeOrIgqmfG2a8FlehqSIZ5EkmhbEy46LkXI.jpg", "width": 4032, "height": 3024, "timestamp": 1781790166.6023345, "mid": "7951191753892"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/c9458c4df9083c566519/2aOboQeOrNdA9CJZEDxAu9s8jS1ODcJEZo5zsGsi.jpg", "width": 4032, "height": 3024, "timestamp": 1781790166.6975904, "mid": "7951191762508"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/9ff6dbfeaebb6be532aa/2aOboQeOrNdA9CJZEDxAuA2ibTNSBj8YyabhWr8i.jpg", "width": 4032, "height": 3024, "timestamp": 1781790166.7960105, "mid": "7951191767119"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/dc30e4bf91fa54a40deb/2aOboQeOrIgqmfG2a8FlehnD1u5IHz3A9MTap6iu.jpg", "width": 3024, "height": 4032, "timestamp": 1781790166.8905437, "mid": "7951191775807"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/54b813b066f5a3abfae4/2aOboQeOrNdA9CJZEDxAu9tGKdaM2fsHdC3qiLi4.jpg", "width": 3024, "height": 4032, "timestamp": 1781790166.9861188, "mid": "7951191780047"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/433ed59ca0d965873cc8/2aOboQeOrHXx3xn21uqZHdP94kmObVlMdC3yP2rA.jpg", "width": 4032, "height": 3024, "timestamp": 1781790167.087557, "mid": "7951191786994"}]
+Videos: [{"url": "https://video-stal-40.dlmd.me/gr/86c9de12ab576e093746/2aOboQeOrGYY27KX6m8DTtgqOmvtAmDNg2jSbFYG", "thumb": "https://photo-stal-28.zdn.vn/gr/ebea7419015cc4029d4d/2aOboQeOrFbGMbI7FasMu8GZo1J8dntXuH3qoXOS.jpg", "duration": 38000, "width": 1280, "height": 720, "timestamp": 1781790167.19416, "mid": "7951191792196"}]
+Text2 preview: 4A Địa chỉ : 612/116/15 ĐÊ LA THÀNH - Đống Đa
+
+Trống Phòng ở luôn
+Giá thuê : 4tr2
+
+Nội Thất: Giường, tủ, điều hoà, nóng lạnh, tủ lạnh, cửa sổ, ban công, rèm cửa, tủ bếp bàn bếp chậu rửa, bếp từ, hút mùi, chăn ga gối đệm, máy giặt máy sấy, thang máy, camera, khoá vân tay.
+
+Dịch vụ : Điện 4k/ số
+nước 
+
+=== Room ID: 5019 ===
+Session ID: 1781790546726
+Address: Ngõ 612/116/15 Đê La Thành, Đống Đa
+Price: 4.2tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-28.zdn.vn/gr/jpg/f1ccaf56da131f4d4602/2aOboQeOrJ1WlfToqYsRWL2MQlXi2dtLCDCj76VE.jpg", "width": 3024, "height": 4032, "timestamp": 1781790316.8138273, "mid": "7951200804355"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/7909269353d69688cfc7/2aOboQeOrJ1WlfToqYsRWKqvbxxd6POvmd2J6nyq.jpg", "width": 4032, "height": 3024, "timestamp": 1781790316.9740658, "mid": "7951200810085"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/dc30e4bf91fa54a40deb/2aOboQeOrIgqmfG2a8FlehnD1u5IHz3A9MTap6iu.jpg", "width": 3024, "height": 4032, "timestamp": 1781790317.1216993, "mid": "7951200816092"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/eeefbf78cb3d0e63572c/2aOboQeOr9DUejX7RfjymsIafpoAJ8HnM4q6H0RU.jpg", "width": 4032, "height": 3024, "timestamp": 1781790317.2744808, "mid": "7951200822725"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/433ed59ca0d965873cc8/2aOboQeOrHXx3xn21uqZHdP94kmObVlMdC3yP2rA.jpg", "width": 4032, "height": 3024, "timestamp": 1781790317.4187582, "mid": "7951200828406"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/0010399f4cda8984d0cb/2aOboQeOrIgqmfG2a8FlehqSIZ5EkmhbEy46LkXI.jpg", "width": 4032, "height": 3024, "timestamp": 1781790317.534811, "mid": "7951200833131"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/9ff6dbfeaebb6be532aa/2aOboQeOrNdA9CJZEDxAuA2ibTNSBj8YyabhWr8i.jpg", "width": 4032, "height": 3024, "timestamp": 1781790317.6435676, "mid": "7951200841359"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/c9458c4df9083c566519/2aOboQeOrNdA9CJZEDxAu9s8jS1ODcJEZo5zsGsi.jpg", "width": 4032, "height": 3024, "timestamp": 1781790317.753235, "mid": "7951200847164"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/54b813b066f5a3abfae4/2aOboQeOrNdA9CJZEDxAu9tGKdaM2fsHdC3qiLi4.jpg", "width": 3024, "height": 4032, "timestamp": 1781790317.861477, "mid": "7951200853550"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/a82cf1c5848041de1891/2aOboQeOrEnTNwXtyh6WT6rD4rg4AANYkVlVSX2G.jpg", "width": 3024, "height": 4032, "timestamp": 1781790317.96986, "mid": "7951200860126"}]
+Videos: []
+Text2 preview: 12A . HD 6 tháng. Mã 730
+
+🏢Ngõ 612/116/15 ĐÊ LA THÀNH - Đống Đa
+
+🍁 Trống p604
+
+💸Giá 4tr2
+
+👉Thang máy
+👉 Dạng studio
+
+🍀Nội thất
+- Full đồ Giường, tủ, điều hoà, nóng lạnh, tủ lạnh, cửa sổ, ban công, rèm cửa, tủ bếp bàn bếp chậu rửa, bếp từ, hút mùi, chăn ga gối đệm, máy giặt máy sấy, thang máy, camera,
+
+=== Room ID: 5020 ===
+Session ID: 1781791045660
+Address: Ngõ 96 Đê La Thành, Đống Đa
+Price: 5tr-5.2tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-14.zdn.vn/gr/jpg/8e6ae793c6d4038a5ac5/1WUpukaproneRzzH4MjEXiAgtWOex5N7kEEsoIz7toS1SJ434TL020asIdcBhQYqO9Y.jpg", "width": 1920, "height": 2560, "timestamp": 1781791048.7203047, "mid": "7951244784540"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/dffbb7029645531b0a54/1WUpukapronhJi97kvxtof8EhYGlddDiGyz7oildTTsC2NCeKKi8ikJNR2fCcHpNfBJ.jpg", "width": 1920, "height": 2560, "timestamp": 1781791048.870631, "mid": "7951244798270"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/e4828f7bae3c6b62322d/1WUpukapronhJi97kvxtof7iMNENNSPzExS9xtWt0l41GUGRYYi6ZY16S7Uw7oWy9IG.jpg", "width": 1920, "height": 2560, "timestamp": 1781791049.0672705, "mid": "7951244811212"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/0a916f684e2f8b71d23e/1WUpukapronikZE36DaES8aI22H1MTa9hrZhvfMTQMdszzaffSMSHGGrUJtiP5Idv3E.jpg", "width": 1920, "height": 2560, "timestamp": 1781791049.315876, "mid": "7951244824010"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/2963439a62dda783fecc/1WUpukapronhJi97kvxtofBwkG3Pl2jJcY1740OhQnV4ZCjW1xoPtg0kQZrW8nuSNp0.jpg", "width": 1920, "height": 2560, "timestamp": 1781791049.4871912, "mid": "7951244835850"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/fa879d7ebc3979672028/1WUpukapronn38Sp84REMZ6aLZY65nZd2RHr6RotvA7XXY1QNCjGV4nt9D5vk1gIDno.jpg", "width": 1920, "height": 2560, "timestamp": 1781791049.6874769, "mid": "7951244847656"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/b827dcdefd9938c76188/1WUpukapronikZE36DaES8eITobqaZN5QmXJZlK9xlxwozKonsMpjNd6iCwvke83c5j.jpg", "width": 1920, "height": 2560, "timestamp": 1781791049.8986158, "mid": "7951244860807"}]
+Videos: []
+Text2 preview: 2A 🌷 6-12m Mã: 🏆 787
+
+🏢Địa chỉ : Ngõ 96 Đê La Thành (Đi hướng Trung Phụng) - 100m ra đường XÃ ĐÀN - ĐỐNG ĐA
+
+⌛️Trống : P501-601-302
+
+☘Giá : 5tr-5tr2
+☘Dạng phòng : GIƯỜNG TẦNG STUDIO
+☘Thang : MÁY
+
+🏆Nội thất : thang máy, giường , tủ quần áo. điều hoà , bếp từ, bình bóng lạnh, tủ lạnh , máy hút mùi,PCC
+
+=== Room ID: 5148 ===
+Session ID: 1781796003430
+Address: Số 4 ngõ 612/50 Đê La Thành, Giảng Võ,Ba Đình
+Price: 5.6-5.8tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-32.zdn.vn/gr/jpg/4924f812bf547a0a2345/1WUpukaqMG86GTxxlKuRo70AwlaFZUaauRKYDuJ8TgU7QRKrph9d0mDPsbKRLjCUCKw.jpg", "width": 2560, "height": 1920, "timestamp": 1781796107.6003923, "mid": "7951529975400"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/26337f053843fd1da452/1WUpukaqMG8nGALi3rSQuO7uLxZS54wYtk2QRNO7qnV082kPdxtn2rAH7ZDVfAnDvwV.jpg", "width": 2560, "height": 1920, "timestamp": 1781796107.7168179, "mid": "7951529975395"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/c8a19497d3d1168f4fc0/1WUpukaqMG909s429Q1QdffjkcdwGsWQKaOSeMXTy2SAikFWIZl9GCQcNMztdFJFhUk.jpg", "width": 2560, "height": 1920, "timestamp": 1781796107.8251116, "mid": "7951529975397"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/6809df3f98795d270468/1WUpukaqMG86GTxxlKuRo74RA010YMLW4mjKQFFJZJjis96qcdL8Zqki7H3kA1SQu98.jpg", "width": 2560, "height": 1920, "timestamp": 1781796107.9383597, "mid": "7951529981719"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/bb8e0bb84cfe89a0d0ef/1WUpukaqMG86GTxxlKuRo727IKACheOvcYqfWcXEaaqOsQ4t9rU507voBi76W4CkmRQ.jpg", "width": 1920, "height": 2560, "timestamp": 1781796108.0414803, "mid": "7951529981722"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/21dc8aeacdac08f251bd/1WUpukaqMG8BzuHf8TNmM15DlKrEWqjc8bHlj95fbIWTJzsiKi40Lno2JKoZx4egV3y.jpg", "width": 2560, "height": 1920, "timestamp": 1781796108.1536033, "mid": "7951529981726"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/5e44eb72ac34696a3025/1WUpukaqMG86GTxxlKuRo71eGjr0j1xsnTo97ImibwCYkXH1Fj5PLVE1j72s2d2ZEpi.jpg", "width": 2560, "height": 1920, "timestamp": 1781796108.7911856, "mid": "7951530049282"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/ae2f18195f5f9a01c34e/1WUpukaqMG86GTxxlKuRo76ASSztT4OZLmX5ONN8dGPo1XpfKcmgtsu89E1sLKk8A3Z.jpg", "width": 2560, "height": 1920, "timestamp": 1781796108.8936393, "mid": "7951530049285"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/fcd853ee14a8d1f688b9/1WUpukaqMG8M1tq8XSi6oLbKJZa1D2TaUziOckUB4EITxJvoa7f3Vxj4vhEeYx1bRFQ.jpg", "width": 2560, "height": 1920, "timestamp": 1781796109.56545, "mid": "7951530099974"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/ccf96bcf2c89e9d7b098/1WUpukaqMG8g5sx5LRMlj0dh7syk8iOSH8GdsLetm08sGcNPWI5M0f7ZVEmIUaMpZfZ.jpg", "width": 1920, "height": 2560, "timestamp": 1781796110.621198, "mid": "7951530140594"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/6edfcee989af4cf115be/1WUpukaqMG8g5sx5LRMlj0cieNDpkKuT5gwYeaeOLzI5KLW4ZEzqqV6878xhJ3eAaiS.jpg", "width": 2560, "height": 1920, "timestamp": 1781796110.7321088, "mid": "7951530140597"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/9f3cd20a954c5012095d/1WUpukaqMG9k1Gbd8Vo50tfeTaiIDXNmkkrKO1pwouCWJJkME2AktCo9qzIpM0lE9mY.jpg", "width": 2560, "height": 1920, "timestamp": 1781796110.8355348, "mid": "7951530153785"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/a56ff759b01f75412c0e/1WUpukaqMG98l0XaD7jQSWfGyk1er6CMpqwt0cirGa6whV6rZNwiS83Tv6rGCacsE3F.jpg", "width": 1920, "height": 2560, "timestamp": 1781796111.7569404, "mid": "7951530208563"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/704227746032a56cfc23/1WUpukaqMG9In063c73kur88oM2OJQRw31aeihxMyrZkMfFEhqCTzd0gBGdnr4oAmtI.jpg", "width": 2560, "height": 1920, "timestamp": 1781796111.8668325, "mid": "7951530208566"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/2fbf648923cfe691bfde/1WUpukaqMG9X7YtJ2xF5Hc7C0sIHNYOmz9JPOIFfg536CPkQL0KaKEGacSmXcnIoJm8.jpg", "width": 2560, "height": 1920, "timestamp": 1781796112.0622282, "mid": "7951530221116"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/c6274f5c041ac144980b/1WUpukaqMjfJSIhtQwOpkkmmrJJC1CV2zQU1zAxbbJHfYmKseIWwgAxZ9ktRspLnvGD.jpg", "width": 2560, "height": 1920, "timestamp": 1781796181.4357219, "mid": "7951533651263"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/afca27b16cf7a9a9f0e6/1WUpukaqMjfKt9momE1AOEDRkOvyjkfLElyRMbV3CdRHhmrgNU2Vr0wcbk4GJAeYjy5.jpg", "width": 1920, "height": 2560, "timestamp": 1781796181.745395, "mid": "7951533660957"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/5b36e84da30b66553f1a/1WUpukaqMjfMK0rk7VdV1hd8EiqTFLF1N3N7tMY4uWBVmHPdzPq4g4xXxfsCaeNYfXs.jpg", "width": 2560, "height": 1920, "timestamp": 1781796181.8888292, "mid": "7951533660954"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/0473b308f84e3d10645f/1WUpukaqMjfKt9momE1AOEFbOhS25pt5Jr4VctR7VOHzxq2RfIr7QscmRjLOsXUSVV5.jpg", "width": 2560, "height": 1920, "timestamp": 1781796182.034308, "mid": "7951533668436"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/80d534ae7fe8bab6e3f9/1WUpukaqMjfMK0rk7VdV1hnI3HvnOm3vHIKYzXoks1CDD9XGER11CkjXnyn224XZUiO.jpg", "width": 2560, "height": 1920, "timestamp": 1781796182.5819335, "mid": "7951533709152"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/f7b342c8098eccd0959f/1WUpukaqMjfKt9momE1AOELEbgrcOnrQEqtRJxwmGtHflRHvdUusSRVOVFWjREMXbFa.jpg", "width": 1920, "height": 2560, "timestamp": 1781796182.7280955, "mid": "7951533709156"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/4b83f9f8b2be77e02eaf/1WUpukaqMjfMK0rk7VdV1hkxeB59Lls3sKSxZLJ8KzuiR3X9DjQa4CMrzANvV7vH6e6.jpg", "width": 2560, "height": 1920, "timestamp": 1781796182.8687959, "mid": "7951533713028"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/30c0f6b2bdf478aa21e5/1WUpukaqMjftHhh112r9feEfqZWAYGBMDAvEmg6Rlq5oyYw3eVgngZ5A6FmbsrGU1eD.jpg", "width": 1920, "height": 2560, "timestamp": 1781796184.148708, "mid": "7951533788980"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/6109b97bf23d37636e2c/1WUpukaqMjfrqqc5flEp2AqiDgY3J6GVeM6eVF87lQPV5DBlhGL7z12fwaInOhcJqti.jpg", "width": 2560, "height": 1920, "timestamp": 1781796184.2957594, "mid": "7951533788983"}]
+Videos: []
+Text2 preview: 1A 12th Mã: H997
+6th
+
+🏠TÒA SỐ 4 NGÕ 612/50 ĐÊ LA THÀNH (Cạnh UBND phường Giảng Võ), Quận: Ba Đình
+
+⏰ Trống 2P
+
+💰 Giá thuê:
+P501 - 5tr6
+P602 - 5tr8
+
+👉Diện tích: 30m2 - có thể kê thêm sofa, cửa sổ to, có ban công.
+Nhà xây mới, có thang máy, nội thất mới
+Giường, tủ âm tường, bàn ghế, đệm chăn gối, bếp 
+
+=== Room ID: 5225 ===
+Session ID: 1781798720311
+Address: 150 Đê La Thành nhỏ, Đống Đa
+Price: 8tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-35.zdn.vn/gr/jpg/e5925ff7fbb13eef67a0/1WUpukaqa2ymtYPQXRXAJrY6SwfXbk5ALwZ19eXEP68jIsfbrBEXqA1dTwBErQW70q2.jpg", "width": 960, "height": 1280, "timestamp": 1781798731.2460241, "mid": "7951640152694"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/cbef708ad4cc119248dd/1WUpukaqa2ymtYPQXRXAJrWT5nFr3Wkmarqo7xqXBNI1oRCcxFyrhvPvIyzoSncScMQ.jpg", "width": 960, "height": 1280, "timestamp": 1781798731.359584, "mid": "7951640157537"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/fe2a474fe30926577f18/1WUpukaqa2ymtYPQXRXAJrVLtcgjfXSNMi7aS3pgiBxY9oBEYJrYWolBCatqnaTJkqR.jpg", "width": 960, "height": 1280, "timestamp": 1781798731.4564738, "mid": "7951640160663"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/248b63eec7a802f65bb9/1WUpukaqa2ylShKVC9upgO1XGPnSbdqX0cGC0qx2wy1qqPMiUO6c0HkjaXFNBIdwSPM.jpg", "width": 960, "height": 1280, "timestamp": 1781798731.545097, "mid": "7951640164981"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/3d0585602126e478bd37/1WUpukaqa2ylShKVC9upgO0qWx7u1mZCjzJPGmqg4TSFGT2JuUMxNfguRFX2ZTOUqG5.jpg", "width": 960, "height": 1280, "timestamp": 1781798731.9577544, "mid": "7951640180646"}]
+Videos: [{"url": "https://video-stal-29.dlmd.me/gr/66d6cfb36bf5aeabf7e4/1WUpukaqa30QeLimz1Dgcw12E1oDGgEHQeF3ScyFfDxQ398IhYK93T1BAaJM5OZOk8C", "thumb": "https://photo-stal-17.zdn.vn/gr/546be80e4c488916d059/1WUpukaqa2ymtYKDP8w3QpuQ6jipwWLpbgxMss6H1LucEZEuJniLSE3C9KBVVxVBXY0.jpg", "duration": 18000, "width": 1280, "height": 720, "timestamp": 1781798732.0407467, "mid": "7951640183309"}]
+Text2 preview: 1A -12th Mã: B13
+
+🏠Địa chỉ: 150 Đê La Thành nhỏ - Quận: Đống Đa
+
+⏰ Đang trống P401
+
+💰 Giá: 8tr
+
+👉Phòng: 2N1K
+👉Thang máy
+👉Diện tích: 50m2
+
+✅ Nội thất: giường tủ, điều hoà, tủ lạnh, bếp điện,.... máy giặt riêng
+
+✅ Dịch vụ:
+"- Điện 4tr2/số
+- Nước 35k/khối
+- DVC 200k/người (thang
+máy, giặt sấy, vệ sinh
+
+
+=== Room ID: 5227 ===
+Session ID: 1781798737405
+Address: 150 Đê La Thành nhỏ, Đống Đa
+Price: 5.5-6.5tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-29.zdn.vn/gr/jpg/77321cc4b68273dc2a93/1WUpukaqb0qF11Mz0MrufPtoxtIj9ejCSXp9UUhz6sBdB25Lh0dpBh2dySKneEhL5Hx.jpg", "width": 960, "height": 1280, "timestamp": 1781798763.2160964, "mid": "7951641309204"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/78c21134bb727e2c2763/1WUpukaqb0qHsjWpgw6ZwMtOBukca9Ih4rXptDw06nWzMzjzZX96RbESt6ssDO8oskr.jpg", "width": 960, "height": 1280, "timestamp": 1781798763.4559777, "mid": "7951641315730"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/e5beb248180edd50841f/1WUpukaqb0qKkRggNVLFDJuW6bWymWkWso2d0ROfDco1NrRpye3B2VIqIVlmCBOcBCi.jpg", "width": 960, "height": 1280, "timestamp": 1781798763.670622, "mid": "7951641322539"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/fb0dadfb07bdc2e39bac/1WUpukaqb0qKkRggNVLFDJvAdTmnel6jv2icckC1LleBcbZJ8ZtnBBSxe87C92YtroA.jpg", "width": 960, "height": 1280, "timestamp": 1781798763.8575885, "mid": "7951641329501"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/40f00675ac33696d3022/1WUpukaqb40QGuWXX58oOw6NA75RyY2NUbILMXmhvkSeFh28XFFhK5NwSEZw22kX54L.jpg", "width": 1920, "height": 2560, "timestamp": 1781798770.923782, "mid": "7951641584567"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/3b98601dca5b0f05564a/1WUpukaqb40Hfm2zTNQoa574vmfyOYP2GtV3ugE0zwcuOepxCgX1LWVm8zYDTcbFI4S.jpg", "width": 1920, "height": 2560, "timestamp": 1781798771.0213864, "mid": "7951641588135"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/a473e3f649b08ceed5a1/1WUpukaqb40QGuWXX58oOw7vGyOlSQilCITKMuSlaESxAd2zMDEsqBKSrVddsUcgZp0.jpg", "width": 1920, "height": 2560, "timestamp": 1781798771.118931, "mid": "7951641589127"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/8666462aec6c2932707d/1WUpukaqb6cHHSidGoHQcopvp7hAN38cn2x0ttTuW65YCL1CyaGo2FD5SSywyGo6ISt.jpg", "width": 960, "height": 1280, "timestamp": 1781798778.8567636, "mid": "7951641868926"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/a511665dcc1b0945500a/1WUpukaqb6cFqbdhvWf5zLKJGHZDLIx2wAPc2iU3Pw4jiEzy9lxrqL5MJALZqqLLuB2.jpg", "width": 960, "height": 1280, "timestamp": 1781798779.1179116, "mid": "7951641876582"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/9d8babc40182c4dc9d93/1WUpukaqb6cbLRpa4mw5XTsMpKbdnDCHdJnQxZQ04eGxoK7pii7C7I5oqr37CBBpGvU.jpg", "width": 960, "height": 1280, "timestamp": 1781798779.2784956, "mid": "7951641881167"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/abe563a9c9ef0cb155fe/1WUpukaqb6cbLRpa4mw5XU03ELNIiDPl4yMmHoysLVI7wYfMtVj4SQiy0lrCKW1YZRV.jpg", "width": 1920, "height": 2560, "timestamp": 1781798779.4696243, "mid": "7951641889121"}]
+Videos: [{"url": "https://video-stal-13.dlmd.me/gr/c5847c01d64713194a56/1WUpukaqb42tcWhCKt5Jd81DAZlRHtzai4SrxvNgqoM0tYrp8DAd9515mnulzkGfcK8", "thumb": "https://photo-stal-27.zdn.vn/gr/5b920217a8516d0f3440/1WUpukaqb40QGuRKOmXhVuPfe96t8brVoA4DKirEcPms1UwXq25ogOQ2ijN9TGzIBCa.jpg", "duration": 16000, "width": 1280, "height": 720, "timestamp": 1781798771.865712, "mid": "7951641616550"}, {"url": "https://video-stal-30.dlmd.me/gr/7974563bfc7d3923606c/1WUpukaqb6eAnfuAUVlbw9Q7xJjOfxdzYTuRIRe3kX2vQr6zsd6gnD7zugFLlJD47V8", "thumb": "https://photo-stal-7.zdn.vn/gr/7259b9151353d60d8f42/1WUpukaqb6cbLRkMwUKyeSHIQttSLi7NR94cUrxNs9BcjHxDl6YumbSeSzem4o9OfCM.jpg", "duration": 24000, "width": 1280, "height": 720, "timestamp": 1781798780.1087046, "mid": "7951641911220"}, {"url": "https://video-stal-47.dlmd.me/gr/aff782b828feeda0b4ef/1WUpukaqb6eDfO41B50HD4rYD8IoL2mi853MFdj88RvW8svDL3WMVJHZAOhIMuD8Ozk", "thumb": "https://photo-stal-29.zdn.vn/gr/27eceea044e681b8d8f7/1WUpukaqb6cbLRkMwUKyeSG5skNE4UIvGl88kjiBlEwNGvyQvY8qNs0p6F4zIO3vckC.jpg", "duration": 18000, "width": 1280, "height": 720, "timestamp": 1781798780.4319685, "mid": "7951641921829"}]
+Text2 preview: 1A -12th Mã: B13
+
+🏠Địa chỉ: 150 Đê La Thành nhỏ - Quận: Đống Đa
+
+⏰ Đang trống
+
+💰 Giá: P202 - 5tr7
+P802 - 5tr5
+P701 - 6tr5 ban công
+
+👉Phòng: STUDIO
+👉Thang máy
+👉Diện tích: 30m2
+
+✅ Nội thất: giường tủ, điều hoà, tủ lạnh, bếp điện,.... máy giặt riêng
+
+✅ Dịch vụ:
+"- Điện 4tr2/số
+- Nước 35k/khối
+- DVC 200
+
+=== Room ID: 5552 ===
+Session ID: 1781841047662
+Address: Số nhà 31 ngõ 216 ngách 8 Đê La Thành Nhỏ - Đống Đa
+Price: 7.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-17.zdn.vn/gr/jpg/bcd63fb45ef99ba7c2e8/1WUpukauZKu5hcxUBLgkAV9WKeQor4CsD3GV6uObyTXHgmCweikEpbPnI7FRPnpo5zR.jpg", "width": 960, "height": 1280, "timestamp": 1781841050.5239358, "mid": "7952743766969"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/41e2c380a2cd67933edc/1WUpukauZKu78U2PWdJ4nyeT7moyQPlc5DySiXc2XlEZn4GjK9XZzy8z6lOn5bXErFk.jpg", "width": 960, "height": 1280, "timestamp": 1781841050.7083073, "mid": "7952743776276"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/bc1fc17da030656e3c21/1WUpukauZKu78U2PWdJ4nyf6JQdUAT08vmjitpfuBGHiMYibh1oOJnqApKDe88uX2FF.jpg", "width": 960, "height": 1280, "timestamp": 1781841050.784838, "mid": "7952743785102"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/c7deb8bcd9f11caf45e0/1WUpukauZKu8ZL7KruvPRS93Yeg6laZgdGsY4SdYdBms4cBye3CZm26ls9YKQJDZ6Li.jpg", "width": 960, "height": 1280, "timestamp": 1781841050.8746922, "mid": "7952743791638"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/d66fad0dcc40091e5051/1WUpukauZKuA0CCGDCXk4vg18enT3gk0lPtyUvHFL66LTXBcAsIJsEVrBTV8B7jqKBf.jpg", "width": 960, "height": 1280, "timestamp": 1781841050.9639359, "mid": "7952743799303"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/22985afa3bb7fee9a7a6/1WUpukauZKuA0CCGDCXk4vfTZb5DqpeKbOfEgfl37kbypAegLbDAwB1wJBCdDmgcmDS.jpg", "width": 960, "height": 1280, "timestamp": 1781841051.066877, "mid": "7952743805893"}, {"url": "https://photo-stal-8.zdn.vn/gr/jpg/60fe1c9c7dd1b88fe1c0/1WUpukauZKu8ZL7KruvPRSCO8Z1KtdsOaObqaCFIWHSTZ8V3VYg1VEq0qJSEXjCRjfC.jpg", "width": 960, "height": 1280, "timestamp": 1781841051.1558015, "mid": "7952743811781"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/60d019b278ffbda1e4ee/1WUpukauZKu8ZL7KruvPRS9diFihVX30pfuImsE7mdYD8SOb8DAMLl4QKXKjjc40ap9.jpg", "width": 960, "height": 1280, "timestamp": 1781841051.307712, "mid": "7952743823526"}]
+Videos: [{"url": "https://video-stal-44.dlmd.me/gr/8017a97cc8310d6f5420/1WUpukauZKyOGrTsdItJw3O3WLhTruUlBAPqwerbCXggi6QFnfofsdOdnlMK1rs1aVe", "thumb": "https://photo-stal-6.zdn.vn/gr/8a37f055911854460d09/1WUpukauZKuBR3HBYUA4iP6wvOLIenICfrOtFadMaMKIWmQUwjskcLd8leDgtfsgNXk.jpg", "duration": 48000, "width": 1280, "height": 720, "timestamp": 1781841051.4138925, "mid": "7952743829879"}]
+Text2 preview: 10A 6th
+Mã : Ts043
+
+🏠 Địa chỉ : Số nhà 31 ngõ 216 ngách 8 Đê La Thành Nhỏ - Đống Đa
+( Đi bộ thẳng ra ngõ 436 Xã Đàn )
+⏰ Trống : P802
+—————————
+🎍giá : 7tr6
+🎍Phòng : 1n1k ( 35m2 )
+🎍Thang máy
+
+❣Nội thất : Điều hoà, nóng lạnh, giường, tủ, tủ bếp, hút mùi, bếp từ, soffa, tủ lạnh, đệm, máy giặt riêng
+
+❣Dị
+
+=== Room ID: 5963 ===
+Session ID: 1781860187450
+Address: Số nhà 31 ngõ 216 ngách 8 Đê La Thành Nhỏ - Đống Đa
+Price: 7.6tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-8.zdn.vn/gr/jpg/60fe1c9c7dd1b88fe1c0/1WUpukauZKu8ZL7KruvPRSCO8Z1KtdsOaObqaCFIWHSTZ8V3VYg1VEq0qJSEXjCRjfC.jpg", "width": 960, "height": 1280, "timestamp": 1781860218.2304313, "mid": "7953911709569"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/bc1fc17da030656e3c21/1WUpukauZKu78U2PWdJ4nyf6JQdUAT08vmjitpfuBGHiMYibh1oOJnqApKDe88uX2FF.jpg", "width": 960, "height": 1280, "timestamp": 1781860218.3971732, "mid": "7953911709641"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/41e2c380a2cd67933edc/1WUpukauZKu78U2PWdJ4nyeT7moyQPlc5DySiXc2XlEZn4GjK9XZzy8z6lOn5bXErFk.jpg", "width": 960, "height": 1280, "timestamp": 1781860218.530915, "mid": "7953911709658"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/bcd63fb45ef99ba7c2e8/1WUpukauZKu5hcxUBLgkAV9WKeQor4CsD3GV6uObyTXHgmCweikEpbPnI7FRPnpo5zR.jpg", "width": 960, "height": 1280, "timestamp": 1781860218.653056, "mid": "7953911724881"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/60d019b278ffbda1e4ee/1WUpukauZKu8ZL7KruvPRS9diFihVX30pfuImsE7mdYD8SOb8DAMLl4QKXKjjc40ap9.jpg", "width": 960, "height": 1280, "timestamp": 1781860218.7843351, "mid": "7953911724928"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/c7deb8bcd9f11caf45e0/1WUpukauZKu8ZL7KruvPRS93Yeg6laZgdGsY4SdYdBms4cBye3CZm26ls9YKQJDZ6Li.jpg", "width": 960, "height": 1280, "timestamp": 1781860218.904568, "mid": "7953911724932"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/d66fad0dcc40091e5051/1WUpukauZKuA0CCGDCXk4vg18enT3gk0lPtyUvHFL66LTXBcAsIJsEVrBTV8B7jqKBf.jpg", "width": 960, "height": 1280, "timestamp": 1781860219.0238216, "mid": "7953911736188"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/22985afa3bb7fee9a7a6/1WUpukauZKuA0CCGDCXk4vfTZb5DqpeKbOfEgfl37kbypAegLbDAwB1wJBCdDmgcmDS.jpg", "width": 960, "height": 1280, "timestamp": 1781860219.1485038, "mid": "7953911736210"}]
+Videos: [{"url": "https://video-stal-44.dlmd.me/gr/8017a97cc8310d6f5420/1WUpukauZKyOGrTsdItJw3O3WLhTruUlBAPqwerbCXggi6QFnfofsdOdnlMK1rs1aVe", "thumb": "https://photo-stal-6.zdn.vn/gr/8a37f055911854460d09/1WUpukauZKuBR3HBYUA4iP6wvOLIenICfrOtFadMaMKIWmQUwjskcLd8leDgtfsgNXk.jpg", "duration": 48000, "width": 1280, "height": 720, "timestamp": 1781860219.2454994, "mid": "7953911736241"}]
+Text2 preview: 1A Hh 12th Mã: A206
+
+🏠 Địa chỉ: Số nhà 31 ngõ 216 ngách 8 Đê La Thành Nhỏ - Đống Đa
+( Đi bộ thẳng ra ngõ 436 Xã Đàn )
+
+⏰ Trống : P802
+
+💰 Giá : 7tr6
+👉Phòng : 1n1k ( 35m2 )
+👉Thang Máy
+
+✅ Nội thất: Điều hoà, nóng lạnh, giường, tủ, tủ bếp, hút mùi, bếp từ, soffa, tủ lạnh, đệm, máy giặt riêng
+
+✅ Dịch vụ:
+
+=== Room ID: 6009 ===
+Session ID: 1781868849297
+Address: Ngõ 318 Đê La Thành, Đống Đa
+Price: 5.5tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-14.zdn.vn/gr/jpg/53c545b117e5d2bb8bf4/2aOboQectLQugnJgS4HHYfEUIjg9QGkBELQvH13w.jpg", "width": 1280, "height": 960, "timestamp": 1781868955.461096, "mid": "7954437814400"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/f6d9e0b5b2e177bf2ef0/2aOboQectLdfHpKt2YLMuD3ZUYsOpkNaR9FFOe9Y.jpg", "width": 1280, "height": 960, "timestamp": 1781868955.574177, "mid": "7954437838317"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/32b16bd73983fcdda592/2aOboQectLrTZ2mKDe0c2r7YWLdEHXN9RSM83tSq.jpg", "width": 1280, "height": 960, "timestamp": 1781868955.9065373, "mid": "7954437863817"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/4853930bc15f04015d4e/2aOboQectM2cQOBzAcErma8nddVnt6l0dLeZz6WW.jpg", "width": 960, "height": 1280, "timestamp": 1781868956.2454717, "mid": "7954437880333"}]
+Videos: [{"url": "https://video-stal-46.dlmd.me/gr/b55f221b704fb511ec5e/2HGb6EsyVeQmETcTImDDDAtV85vMFaOVu5wm", "thumb": "https://photo-stal-29.zdn.vn/gr/3e8674bd26e9e3b7baf8/2aOboQectNAUtjB8dQv6CtD8e3m7abvYHPyK0AxE.jpg", "duration": 27000, "width": 1280, "height": 720, "timestamp": 1781868956.13785, "mid": "7954437876129"}]
+Text2 preview: 1A : 12th. Mã A97
+
+🏠 Địa chỉ: Ngõ 318 Đê La Thành, Đống Đa
+
+⏰ Trống 2P
+
+💰 Giá:
+P402 giá 5tr5 - Vào luôn
+P602 giá 5tr5 - 30/6 Vào
+
+👉 Loại phòng: Studio
+👉 THANG MÁY
+👉 Diện tich: 26m2
+
+✅ Nội thất:
+FULL NỘI THẤT NHƯ HÌNH MÁY GIẶT RIÊNG
+
+✅ Dịch vụ:
+"""Điện 4k/số
+Nước 32k/1 khối
+mạng 80k/phòng
+Dịch vụ khá
+
+=== Room ID: 6010 ===
+Session ID: 1781869736864
+Address: Ngõ 318 Đê La Thành, Đống Đa
+Price: 5.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-28.zdn.vn/gr/jpg/f6d9e0b5b2e177bf2ef0/2aOboQectLdfHpKt2YLMuD3ZUYsOpkNaR9FFOe9Y.jpg", "width": 1280, "height": 960, "timestamp": 1781869739.3505147, "mid": "7954481045604"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/53c545b117e5d2bb8bf4/2aOboQectLQugnJgS4HHYfEUIjg9QGkBELQvH13w.jpg", "width": 1280, "height": 960, "timestamp": 1781869739.4937034, "mid": "7954481052985"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/32b16bd73983fcdda592/2aOboQectLrTZ2mKDe0c2r7YWLdEHXN9RSM83tSq.jpg", "width": 1280, "height": 960, "timestamp": 1781869739.6055033, "mid": "7954481057654"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/4853930bc15f04015d4e/2aOboQectM2cQOBzAcErma8nddVnt6l0dLeZz6WW.jpg", "width": 960, "height": 1280, "timestamp": 1781869739.73814, "mid": "7954481063033"}]
+Videos: [{"url": "https://video-stal-46.dlmd.me/gr/b55f221b704fb511ec5e/2HGb6EsyVeQmETcTImDDDAtV85vMFaOVu5wm", "thumb": "https://photo-stal-29.zdn.vn/gr/3e8674bd26e9e3b7baf8/2aOboQectNAUtjB8dQv6CtD8e3m7abvYHPyK0AxE.jpg", "duration": 27000, "width": 1280, "height": 720, "timestamp": 1781869739.8537545, "mid": "7954481069163"}]
+Text2 preview: 9a H194
+
+📍 Địa chỉ: Ngõ 318 Đê La Thành, Đống Đa
+
+⏰ Hiện trống 2 phòng
+
+💰 Phòng trống:
+• P402: 5tr5 – vào luôn
+• P602: 5tr5 – vào 30/6
+
+✨ Thông tin phòng:
+• Loại phòng: Studio
+• Diện tích: 26m²
+• Thang máy
+
+🛋 Nội thất:
+Full nội thất như hình
+Có máy giặt riêng
+
+💸 Chi phí:
+• Điện: 4k/số
+• Nước: 32k/kh
+
+=== Room ID: 6382 ===
+Session ID: 1781882236080
+Address: 318 Đê La Thành - Ba Đình
+Price: 5.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-30.zdn.vn/gr/jpg/dd08ee3da46c6132387d/2aOboQef3uxJu8ITFSIw5pPp5w0EfxTNxpN4NF3Y.jpg", "width": 2568, "height": 1926, "timestamp": 1781882139.6601927, "mid": "7955200562422"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/16bf288a62dba785feca/2aOboQef3uxfnWlsmKAegrV8JAnc7DhdxOrGHyJU.jpg", "width": 2568, "height": 1926, "timestamp": 1781882139.7672932, "mid": "7955200570467"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/6aca7af930a8f5f6acb9/2aOboQef3v5x4tRrz8axnyxVO8BpUDX63Tk316iO.jpg", "width": 2568, "height": 1926, "timestamp": 1781882139.8611765, "mid": "7955200575351"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/8ad965f52fa4eafab3b5/2aOboQef3vFKTGUTHlUcYXa3d9y3cvif9L35bnZw.jpg", "width": 3000, "height": 4000, "timestamp": 1781882139.9728045, "mid": "7955200579934"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/f250c27888294d771438/2aOboQef3vRX0nKMpLK25Mobs156Ree4RINeGvfE.jpg", "width": 1920, "height": 2560, "timestamp": 1781882140.0639243, "mid": "7955200585900"}]
+Videos: []
+Text2 preview: 12A . HD 12 tháng. Mã 033.
+
+🏢318 Đê La Thành - Ba Đình
+
+🍁 Trống P402 và 30/6 trống P602
+
+💸 Giá 5tr5
+
+👉 Thang máy
+👉 Dạng studio
+👉 Diện tích 26m2
+
+☘ Nội thất:
+- Full như ảnh
+
+🍀Phí dvu
+"Điện 4k/số
+Nước 32k/1 khối
+mạng 80k/phòng
+Dịch vụ khác: vệ sinh/điện chung, thang máy, rác 200k/p
+
+❌ Lưu ý
+- Không nu
+
+=== Room ID: 6490 ===
+Session ID: 1781885266038
+Address: số 1 ngõ 268 Đê La Thành Nhỏ, Đống Đa
+Price: 4-6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-7.zdn.vn/no/jpg/04bfe8b722e6e7b8bef7/1WUpukaz0XKV733xsIAgZSLYPsySX21RI3lFKa6JTeugmHpqegld23yzZwoycFWmsMN.jpg", "width": 1280, "height": 960, "timestamp": 1781885281.5055206, "mid": "7955336795323"}, {"url": "https://photo-stal-31.zdn.vn/no/jpg/63a089a843f986a7dfe8/1WUpukaz0XKV733xsIAgZSKpTMU6QnpesnopcqL7mZWT8H0WSQ1st86T1ev4Af1BhJ4.jpg", "width": 869, "height": 1884, "timestamp": 1781885281.8208368, "mid": "7955336806862"}, {"url": "https://photo-stal-36.zdn.vn/no/jpg/b7c11d51d600135e4a11/1WUpukaz0d3Frv8HONmw7Hy122gU13u6yo2mrG9RNCiGIhUoGguHpslfiQngHSfQojt.jpg", "width": 1280, "height": 960, "timestamp": 1781885296.794956, "mid": "7955337336086"}, {"url": "https://photo-stal-32.zdn.vn/no/jpg/490ae19a2acbef95b6da/1WUpukaz0d3HImDCjfPGklTOfpsoDzwScV3PB82hde8sazdeddKVIz2qgY9ONnwZXZG.jpg", "width": 1280, "height": 960, "timestamp": 1781885297.060495, "mid": "7955337345511"}, {"url": "https://photo-stal-15.zdn.vn/no/jpg/394f90df5b8e9ed0c79f/1WUpukaz0d3Frv8HONmw7HwMERNoKVZL3RSeBYrLlrwuCEMTbqKgIYR9rnpljFQHvko.jpg", "width": 960, "height": 1280, "timestamp": 1781885297.3930042, "mid": "7955337358534"}, {"url": "https://photo-stal-32.zdn.vn/no/jpg/8004760cbd5d7803214c/1WUpukaz0jP7XLbVlHWMyFrav92qBS0QZO9cbbxDdrKbRTQmfN3ncDISrxs2CeXe9h3.jpg", "width": 1280, "height": 853, "timestamp": 1781885313.906021, "mid": "7955337932245"}, {"url": "https://photo-stal-36.zdn.vn/no/jpg/a1e455ec9ebd5be302ac/1WUpukaz0jP7XLbVlHWMyFqAt6aYws28iSdXj2jXQABWZlD5uSlazZlG93pZoLsV3dS.jpg", "width": 1280, "height": 853, "timestamp": 1781885314.194367, "mid": "7955337945265"}, {"url": "https://photo-stal-31.zdn.vn/no/jpg/0712f21a394bfc15a55a/1WUpukaz0jP7XLbVlHWMyFqp9r6Hzsksucj6sRZNunvcUnE2c3AZNWx2Q4hqWJGaKhi.jpg", "width": 1280, "height": 853, "timestamp": 1781885314.5008278, "mid": "7955337954690"}, {"url": "https://photo-stal-8.zdn.vn/no/jpg/98166b1ea04f65113c5e/1WUpukaz0jP7XLbVlHWMyFnxUtPOO42V5Fud3Impcm637UTh9UgbxYKy6Obd4qPFby2.jpg", "width": 853, "height": 1280, "timestamp": 1781885314.8941162, "mid": "7955337967292"}]
+Videos: [{"url": "https://video-stal-44.dlmd.me/gr/4aafcda707f6c2a89be7/1WUpukaz0XNsM2pQGNdVJ35CwV5lKPc8H0fHGqx5W6mq9gDhBshzLZ0ULvJF6vZmD6h", "thumb": "https://photo-stal-31.zdn.vn/no/876d6a65a034656a3c25/1WUpukaz0XKV733xsIAgZSJLXDAstYJixAfWkGKLdF8II44sFbgJsdiYHLVzbP6DL1y.jpg", "duration": 22000, "width": 1280, "height": 720, "timestamp": 1781885282.1007187, "mid": "7955336816044"}]
+Text2 preview: 2A 🌷 - 6m-12m Mã: 🏆 528
+
+🏢Địa chỉ : số 1 ngõ 268 Đê La Thành Nhỏ - Đống Đa
+
+⌛️Trống : 602: vsc vào luôn
+402: 5tr6 vào luôn
+302: gác xép 30/6 vào. ☘Giá : 602: 4tr, 402: 5tr6, 302: 6tr
+☘Dạng phòng : STUDIO, vsc
+☘Thang : MÁY
+
+🏆Nội thất : giường, tủ, điều hòa , hút mùi, tủ lạnh
+602 vsc với 1p bên cạnh. 
+
+=== Room ID: 6501 ===
+Session ID: 1781890672475
+Address: ngách 8 ngõ 216 Đê La Thành nhỏ
+Price: 7.6tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-30.zdn.vn/gr/jpg/f09bf3e0a5b060ee39a1/1162635587475344610.jpg", "width": 960, "height": 1280, "timestamp": 1781890670.7902787, "mid": "7955445150344"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/7ccd888fdedf1b8142ce/3366775182918419592.jpg", "width": 1280, "height": 960, "timestamp": 1781890670.8977473, "mid": "7955445151838"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/ce62ad19fb493e176758/3366775182918419592.jpg", "width": 1280, "height": 960, "timestamp": 1781890670.989857, "mid": "7955445156580"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/7abf8ffdd9ad1cf345bc/3366775182918419592.jpg", "width": 960, "height": 1280, "timestamp": 1781890671.0766995, "mid": "7955445157648"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/f83e9845ce150b4b5204/3366775182918419592.jpg", "width": 960, "height": 1280, "timestamp": 1781890671.1783192, "mid": "7955445157852"}]
+Videos: []
+Text2 preview: 11A -6 tháng
+Mã 138
+🏢 ngách 8 ngõ 216 Đê La Thành nhỏ - đống đa
+
+thông ra 436 Xã Đàn 150m
+
+👉 Gần chợ , cách trường ĐH Bách Kinh Xây 1,3km...ngõ rộng xe 3 gác vào tận cửa, nhà cách bãi gửi xe ô tô 250m
+
+👉 Trống 1k1n - 37m2
+💰giá 7tr6 tầng 6
+⏰1/6 trống
+
+👉 thang máy, nhà 3 mặt thoáng
+👉 Giờ giấc tự do,hệ
+
+=== Room ID: 6766 ===
+Session ID: 1781977698165
+Address: Số nhà 31 ngách 8 ngõ 216 Đê La Thành nhỏ
+Price: 7.6tr
+Category: mat-bang-kinh-doanh
+Photos: [{"url": "https://photo-stal-16.zdn.vn/gr/jpg/5a9e5ac8b0a975f72cb8/4120389031052390466.jpg", "width": 1280, "height": 960, "timestamp": 1781977742.0757835, "mid": "7958755967221"}, {"url": "https://photo-stal-27.zdn.vn/gr/jpg/cfc6c4902ef1ebafb2e0/4120389031052390466.jpg", "width": 960, "height": 1280, "timestamp": 1781977742.6184144, "mid": "7958755972517"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/9f44d82f324ef710ae5f/4120389031052390466.jpg", "width": 960, "height": 1280, "timestamp": 1781977742.709152, "mid": "7958755972521"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/37e17b8a91eb54b50dfa/4120389031052390466.jpg", "width": 1280, "height": 960, "timestamp": 1781977743.2974331, "mid": "7958755979229"}]
+Videos: []
+Text2 preview: 1A : 6th-12th Mã: A206
+
+🏠 Địa chỉ: Số nhà 31 ngách 8 ngõ 216 Đê La Thành nhỏ , thông ra 436 Xã Đàn 150m - Đống Đa
+
+⏰ Trống P802
+
+💰 Giá: 7tr6
+
+👉 Phòng 1N1K
+👉 thang máy, nhà 3 mặt thoáng
+👉 Giờ giấc tự do,hệ thống PCCC trang bị đủ cả, không chung chủ, khóa vân tay, camera, cho nuôi thú cưng...
+
+✅ Nội t
+
+=== Room ID: 6868 ===
+Session ID: 1782011059065
+Address: 318 Đê La Thành - Đống Đa
+Price: 5.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-14.zdn.vn/gr/jpg/64f708efda8d1fd3469c/2aOboQf0I81195rovRgyX3Bs1KRjOhWpUoTLJtVA.jpg", "width": 2568, "height": 1926, "timestamp": 1782011088.6297226, "mid": "7959363998288"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/0e69f5462724e27abb35/2aOboQf0I8LlzjyMCI425MCHxKcrLri5bhQnrLPs.jpg", "width": 2568, "height": 1926, "timestamp": 1782011088.9971437, "mid": "7959364038463"}, {"url": "https://photo-stal-14.zdn.vn/gr/jpg/cdeb0ecddcaf19f140be/2aOboQf0I8j4xnHXBdFVVZXfgQpYRuQyzrxYw0x6.jpg", "width": 2568, "height": 1926, "timestamp": 1782011089.600522, "mid": "7959364060184"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/3a7fd85d0a3fcf61962e/2aOboQf0I93x6uDCy6F8atDZTU11jg6Azcb3h3BI.jpg", "width": 1920, "height": 2560, "timestamp": 1782011090.2957113, "mid": "7959364060261"}]
+Videos: []
+Text2 preview: 13A Mã :S06 -12TH
+****************
+🎯 Địa chỉ: 318 Đê La Thành - Đống Đa
+⏰ Trống ở luôn
+
+💠 P402,602 giá: 5tr5
+
+👉Phòng studio
+👉Thang máy
+👉Diện tích: 25m2 + 6m
+
+✅ Nội thất: Full đồ như hình
+☑ Dịch vụ :
+"""Điện 4k/số
+Nước 32k/1 khối
+mạng 80k/phòng
+Dịch vụ khác: vệ sinh/điện chung, thang máy, rác 200k/ph
+
+=== Room ID: 7142 ===
+Session ID: 1782018234949
+Address: Ngõ 612 Đê La Thành - Đống Đa
+Price: 9.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-35.zdn.vn/gr/jpg/d13fb360250ce052b91d/1WUpukbBu0ov9vZl5sysLEO5XPelzTmREiE7UVU8EMdOrKU1IcHm7EscrkxDYK4ocA5.jpg", "width": 720, "height": 432, "timestamp": 1782018229.960039, "mid": "7959709428243"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/2cfd4ca2dace1f9046df/1WUpukbBu0owamegRAbCyhurc7pVNy1b9hc4hz4ysnhUjhK6ENycIEZaGf1F09wrHRH.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.0427039, "mid": "7959709433403"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/bc7bd72441488416dd59/1WUpukbBu0onzeB8NStD9qtXx5jeKugLU4l66wY3zD2U90OsUSGtnk1E25uBRE8b2V0.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.2045236, "mid": "7959709436619"}, {"url": "https://photo-stal-30.zdn.vn/gr/jpg/3f00565fc033056d5c22/1WUpukbBu0opQVG3ikVXnKPDR6H800mjpfXsnJuyz7myAILrLPqxp9xmampMjIOrqpm.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.284962, "mid": "7959709440279"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/da03b55c2330e66ebf21/1WUpukbBu0opQVG3ikVXnKPYF5ke5bhx1aY25WheY0oBIIXkRc52Sq8ZT67UhG0SLGb.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.367849, "mid": "7959709448018"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/46dd2882beee7bb022ff/1WUpukbBu0opQVG3ikVXnKOoGXgyVExeAGykM5SEwlTcL6Cj4sf81WskvtjvwIOvScN.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.4509947, "mid": "7959709451003"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/295f4a00dc6c1932407d/1WUpukbBu0owamegRAbCyhuYiE0K54RLoug6t5slsKGeAHZWcY6rYQ6TD3AWrviaon0.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.5410378, "mid": "7959709456399"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/a164c93b5f579a09c346/1WUpukbBu0opQVG3ikVXnKP6mFu14J5hEx24TciBh4pcmFS7zTzLqY0TlwgbEcF6iFJ.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.6956415, "mid": "7959709460943"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/f41b99440f28ca769339/1WUpukbBu0ov9vZl5sysLEQ8Wd6BVUJTGxRxW92V8bx8lGpGaiXXlipaEob0usDvGdt.jpg", "width": 956, "height": 1276, "timestamp": 1782018230.7822442, "mid": "7959709466693"}]
+Videos: []
+Text2 preview: 11A Mã 335
+-6 tháng
+- 12 tháng
+🏢Ngõ 612 Đê La Thành - Đống Đa
+
+⏰ trống
+
+💰 Giá 9tr5
+
+👉 Phòng 2N1K
+👉 Thang máy - Tầng 7
+👉 Diện tích 65m2
+
+✅ Nội thất : giường , tủ , điều hòa , nóng lạnh , bàn bếp , tủ bếp , sofa , bàn trà , tủ lạnh , bàn ăn ...
+
+✅ Dịch vụ :
+Dịch vụ: Điện 4k/số, nước 35k/khối, thang má
+
+=== Room ID: 7199 ===
+Session ID: 1782034566907
+Address: 612 Đê La Thành, Đống Đa
+Price: 4.2tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-16.zdn.vn/gr/jpg/c8c0de542e3deb63b22c/2aOboQf4A1QUWehekTzzE2Q4yyW4hKt7ORF7WsWO.jpg", "width": 4032, "height": 3024, "timestamp": 1782034591.4834094, "mid": "7960401447881"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/f9b0df2f2f46ea18b357/2aOboQf4A1aIg46QaOVkGJ56afMbqucgQRnULpp2.jpg", "width": 3024, "height": 4032, "timestamp": 1782034591.5870957, "mid": "7960401447885"}, {"url": "https://photo-stal-15.zdn.vn/gr/jpg/557beee41e8ddbd3829c/2aOboQf4A1VYKeAYgGkd7WO7pWWKE2AcZPMPotH6.jpg", "width": 3024, "height": 4032, "timestamp": 1782034591.6799107, "mid": "7960401447884"}, {"url": "https://photo-stal-16.zdn.vn/gr/jpg/858efc160c7fc921906e/2aOboQf4A1lTyEST2ZcBqMzXju8OocDAqpEz6aJs.jpg", "width": 4032, "height": 3024, "timestamp": 1782034591.7919798, "mid": "7960401499033"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/9c04b2a442cd8793dedc/2aOboQf4A1tZ5UQYjLfXjo0idZq5F1eeBCmcJe4W.jpg", "width": 4032, "height": 3024, "timestamp": 1782034592.4408872, "mid": "7960401499089"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/8dbb93116378a626ff69/2aOboQf4A2BUmyjnlF6qVqNCbB2Ivjn5W0f8xAoq.jpg", "width": 3024, "height": 4032, "timestamp": 1782034592.5418665, "mid": "7960401499096"}, {"url": "https://photo-stal-6.zdn.vn/gr/jpg/a21c6bb09bd95e8707c8/2aOboQf4A2HXPVkBHDiGVkfIEXLu1po1TzwtSigK.jpg", "width": 4032, "height": 3024, "timestamp": 1782034592.737061, "mid": "7960401546557"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/fe9a402bb042751c2c53/2aOboQf4A2mXAbbevGDBO25SWVHldBy2tC7E9Nh2.jpg", "width": 4032, "height": 3024, "timestamp": 1782034593.9574249, "mid": "7960401595419"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/358adfcd2fa4eafab3b5/2aOboQf4A3IwVHMmgmAyeRpDeYzGWIQLWop6zcJs.jpg", "width": 4032, "height": 3024, "timestamp": 1782034594.6421206, "mid": "7960401595469"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/db3bc076301ff541ac0e/2aOboQf4A3abB15NCDUwW8c7cL3nMWLHUwwNGNQe.jpg", "width": 3024, "height": 4032, "timestamp": 1782034594.7361097, "mid": "7960401643837"}]
+Videos: [{"url": "https://video-stal-48.dlmd.me/gr/a58e70ec808545db1c94/2HGb6EtMWiO0V4decOCLk9akjjxT1RpTdF9U", "thumb": "https://photo-stal-14.zdn.vn/gr/7e41f2ad16b3d5ed8ca2/2778896723080181571.jpg", "duration": 38000, "width": 1280, "height": 720, "timestamp": 1782034603.1102986, "mid": "7960402037403"}]
+Text2 preview: 13A Mã : HO1120 1tr-12TH
+----------------
+🎯 Địa Chỉ: 612 Đê La Thành - ĐỐNG ĐA
+⏰ Trống ở luôn
+
+💠 P604 giá: 4tr2
+
+- Diện tích: 20m2
+
+❇️Nội Thất đầy đủ : - Cổng vân tay, thang máy, camera
+- Tủ lạnh, giường tủ, điều hòa, nóng lạnh, hút mùi ,
+-Máy giặt chung, kệ bếp, bếp từ
+
+❌ Dịch vụ :
+Dịch vụ 200k /1 
+
+=== Room ID: 7647 ===
+Session ID: 1782451117693
+Address: Ngõ 612 Đê La Thành
+Price: 9.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-28.zdn.vn/gr/jpg/8053a639c502005c5913/1748054480868122994.jpg", "width": 956, "height": 1276, "timestamp": 1782451124.7235196, "mid": "7977899519586"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/41bf36d355e890b6c9f9/1748054480868122994.jpg", "width": 956, "height": 1276, "timestamp": 1782451124.9119735, "mid": "7977899519590"}, {"url": "https://photo-stal-7.zdn.vn/gr/jpg/0ea078cc1bf7dea987e6/1748054480868122994.jpg", "width": 956, "height": 1276, "timestamp": 1782451125.0352674, "mid": "7977899519588"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/2b6c65330608c3569a19/1748054480868122994.jpg", "width": 956, "height": 1276, "timestamp": 1782451125.1659138, "mid": "7977899519589"}, {"url": "https://photo-stal-36.zdn.vn/gr/jpg/b221a481c0ba05e45cab/1748054480868122994.jpg", "width": 956, "height": 1276, "timestamp": 1782451125.430049, "mid": "7977899519591"}, {"url": "https://photo-stal-17.zdn.vn/gr/jpg/da2cda8cbeb77be922a6/1748054480868122994.jpg", "width": 956, "height": 1276, "timestamp": 1782451125.5574684, "mid": "7977899519592"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/59d1de42ba797f272668/1748054480868122994.jpg", "width": 956, "height": 1276, "timestamp": 1782451125.6931999, "mid": "7977899519593"}]
+Videos: []
+Text2 preview: dragon 📰 Mã Toà Nhà: F616
+📰 Địa Chỉ: Ngõ 612 Đê La Thành
+📰 Quận: Ba Đình
+
+📰 Giá Phòng: 9tr5
+📰 Số Phòng: P501 - Tầng 5
+📰 Loại Phòng: 2 Ngủ 1 Khách
+📰 Cầu Thang: Thang Máy
+📰 Tình Trạng: Đang Trống
+
+📰 Nội Thất Cơ Bản: Điều hoà, nóng lạnh, giường tủ, kệ bếp, máy giặt chung, tủ lạnh
+📰 Dịch Vụ: Điện 4k/ số
+
+=== Room ID: 7649 ===
+Session ID: 1782451127551
+Address: Ngõ 612 Đê La Thành
+Price: 7-7.5tr
+Category: phong-tro
+Photos: [{"url": "https://photo-stal-15.zdn.vn/gr/jpg/0e2c31fc59c79c99c5d6/1417037652521625162.jpg", "width": 960, "height": 551, "timestamp": 1782451134.3400548, "mid": "7977900069787"}, {"url": "https://photo-stal-35.zdn.vn/gr/jpg/c040c8eca0d765893cc6/1417037652521625162.jpg", "width": 956, "height": 1276, "timestamp": 1782451134.5360968, "mid": "7977900069797"}, {"url": "https://photo-stal-32.zdn.vn/gr/jpg/bc3433c35bf89ea6c7e9/1417037652521625162.jpg", "width": 956, "height": 1276, "timestamp": 1782451134.6610267, "mid": "7977900069798"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/99889c4af471312f6860/1417037652521625162.jpg", "width": 956, "height": 1276, "timestamp": 1782451134.783902, "mid": "7977900069800"}, {"url": "https://photo-stal-31.zdn.vn/gr/jpg/a099af35c70e02505b1f/1417037652521625162.jpg", "width": 956, "height": 1276, "timestamp": 1782451134.9103675, "mid": "7977900069801"}, {"url": "https://photo-stal-29.zdn.vn/gr/jpg/ecf262050a3ecf60962f/1417037652521625162.jpg", "width": 956, "height": 1276, "timestamp": 1782451135.0331893, "mid": "7977900069804"}, {"url": "https://photo-stal-28.zdn.vn/gr/jpg/5ce2e17a89414c1f1550/1417037652521625162.jpg", "width": 956, "height": 1276, "timestamp": 1782451135.1650786, "mid": "7977900069802"}]
+Videos: []
+Text2 preview: dragon 📰 Mã Toà Nhà: F616
+📰 Địa Chỉ: Ngõ 612 Đê La Thành
+📰 Quận: Ba Đình
+
+📰 Giá Phòng: 7tr - 7tr5
+📰 Số Phòng:
+📰 Loại Phòng: 1 Ngủ 1 Khách
+📰 Cầu Thang: Thang Máy
+📰 Tình Trạng: Đang Trống
+
+📰 Nội Thất Cơ Bản: Điều hoà, nóng lạnh, giường tủ, kệ bếp, máy giặt chung, tủ lạnh
+📰 Dịch Vụ: Điện 4k/ số, nước 3
+
+=== Room ID: 7759 ===
+Session ID: 1782458393295
+Address: Đê La Thành
+Price: 25tr
+Category: can-ho-dich-vu
+Photos: []
+Videos: []
+Text2 preview: Chinh trần CHDV CHDV / HOMESTAY ĐÊ LA THÀNH
+Nhà mặt tiền 7m , ô tô đỗ cửa
+Diện tích : 80m2 x 5 tầng , thang bộ
+Thiết kế: sẵn 6pkk - max 8pkk
+Nội thất : cơ bản
+Giá thuê : 25tr/th ( ctl )
+Hình thức tt : 3c1 - HĐ : lâu dài
+Phí khách : 15tr - phí chủ
+

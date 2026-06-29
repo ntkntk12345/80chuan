@@ -586,11 +586,8 @@ class ZaloListener(ZaloAPI):
                         buffer_check = {}
             
             elif content_type in ("photo", "video"):
-                # Ảnh/video phải có text trước trong buffer mới được nhận
-                has_text = len(buffer_check.get("texts", [])) > 0
-                if not has_text:
-                    print(f"[SESSION] Orphan {content_type} (chưa có text). Bỏ qua.")
-                    return
+                # Cho phép nhận ảnh/video trước khi có text để tránh mất ảnh khi gửi ảnh trước mô tả
+                pass
             
             # === Tạo buffer mới nếu chưa có ===
             if session_key not in self.session_buffers:
@@ -1068,6 +1065,61 @@ if __name__ == "__main__":
             print(f"{Fore.CYAN}[SYSTEM] Initializing ZaloListener...")
             bot = ZaloListener(API_KEY, SECRET_KEY, listener_acc)
             bot.listen(thread=False, delay=0)
+        except Exception as e:
+            print(f"{Fore.RED}Listener Error: {e}")
+            update_bot_service_status(
+                "listener",
+                running=False,
+                state="error",
+                lastError=str(e),
+            )
+            time.sleep(5)
+        finally:
+            print(f"{Fore.YELLOW}Listener thread exiting...")
+
+    while True:
+        try:
+            restart_count += 1
+            restart_value = increment_bot_service_restart("listener")
+            update_bot_service_status(
+                "listener",
+                running=True,
+                state="starting",
+                lastError=None,
+                restartCount=restart_value,
+            )
+            print(f"{Fore.GREEN}[SUPERVISOR] Starting listener thread... (Restart #{restart_count})")
+            t = threading.Thread(target=run_listener_safe, daemon=True)
+            t.start()
+            
+            # Main thread monitors the listener
+            while t.is_alive():
+                t.join(timeout=1.0)
+            
+            print(f"{Fore.YELLOW}[SUPERVISOR] Listener thread died. Auto-restarting in 5s...")
+            update_bot_service_status(
+                "listener",
+                running=False,
+            )
+            time.sleep(5)
+        except KeyboardInterrupt:
+            print(f"{Fore.RED}[SUPERVISOR] KeyboardInterrupt. Shutting down.")
+            update_bot_service_status(
+                "listener",
+                running=False,
+                state="stopped",
+            )
+            break
+        except Exception as e:
+            print(f"{Fore.RED}[SUPERVISOR] Global Error: {e}. Restarting in 5s...")
+            update_bot_service_status(
+                "listener",
+                running=False,
+                state="error",
+                lastError=str(e),
+            )
+            time.sleep(5)
+
         except Exception as e:
             print(f"{Fore.RED}Listener Error: {e}")
             update_bot_service_status(

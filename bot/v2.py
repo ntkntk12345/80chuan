@@ -8,13 +8,168 @@ from typing import Any
 import re
 import requests
 import sys
+import unicodedata
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from map1 import save_room_to_sqlite, init_db
 
 
+# Symbols for routing
+chung_cu_symbols = ["việt quốc 2", "vietquoc 2", "việt quốc 3", "vietquoc 3", "tc 2", "tc2", "vinsmartcity"]
+nguyen_can_symbols = ["tc 1", "tc1", "tc 3", "tc3", "đăng bài hn", "dang bai hn", "đại lộc land 1", "dai loc land 1"]
+mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
+chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
+tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
+vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+phong_tro_symbols = [
+    "2a", "2a1", "2a2", "3a", "4a", "8a", "9a", "10a", "11a", "11a1", "11a2", "11a3", "12a", "13a", "14a", 
+    "sleepbox", "3h", "avhome", "agp", "hdhome", "nd", "phongtot", "phongtot1", "phongtot2", "phongtot3", "phongtot4", "phongtot5",
+    "dl", "npland", "kingland", "phương thảo", "invest", "nova", "kt", "ae land 1", "7a", "nt home", "5a",
+    "havenhouse", "nvhome 1", "hhouse2", "hhouse1", "nk", "tdland", "dragon", "family", "tphomes", "ctv",
+    "tài phát", "alophongtro", "3m", "bee home", "timehouse", "hm", "lily 1", "lily 2", "sh48"
+]
+
+
+def _extract_price_tokens(value: str) -> list[str]:
+    normalized = unicodedata.normalize("NFD", str(value or ""))
+    normalized = "".join(ch for ch in normalized if unicodedata.category(ch) != "Mn")
+    normalized = normalized.lower().replace("trieu", "tr")
+    normalized = re.sub(r"[^a-z0-9.,]+", "", normalized)
+    return re.findall(r"\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?(?:tr\d+|tr|k|ty\d+|ty)", normalized)
+
+
+def _parse_price_token_to_vnd(value: str) -> int:
+    raw = str(value or "").strip().lower().replace(" ", "")
+    if not raw:
+        return 0
+
+    if re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", raw):
+        digits = re.sub(r"[^\d]", "", raw)
+        try:
+            return int(digits)
+        except Exception:
+            return 0
+
+    normalized = raw.replace(",", ".")
+
+    if "ty" in normalized:
+        major, _, minor = normalized.partition("ty")
+        try:
+            base = float(major or "0")
+            fraction = float(f"0.{re.sub(r'[^\\d]', '', minor)}") if re.search(r"\d", minor) else 0.0
+            return int(round((base + fraction) * 1_000_000_000))
+        except Exception:
+            return 0
+
+    if "tr" in normalized:
+        major, _, minor = normalized.partition("tr")
+        try:
+            base = float(major or "0")
+            if not re.search(r"\d", minor):
+                return int(round(base * 1_000_000))
+
+            digits = re.sub(r"[^\d]", "", minor)
+            decimal_places = len(digits)
+            fraction = int(digits) / (10 ** decimal_places) if decimal_places > 0 else 0
+            return int(round((base + fraction) * 1_000_000))
+        except Exception:
+            return 0
+
+    if normalized.endswith("k"):
+        try:
+            return int(round(float(normalized[:-1] or "0") * 1_000))
+        except Exception:
+            return 0
+
+    try:
+        numeric = float(normalized)
+    except Exception:
+        return 0
+
+    if numeric <= 0:
+        return 0
+    if numeric < 1000:
+        return int(round(numeric * 1_000_000))
+    return int(round(numeric))
+
+
+def _extract_price_bounds(text: str) -> tuple[int, int]:
+    candidates = []
+    for token in _extract_price_tokens(text):
+        value = _parse_price_token_to_vnd(token)
+        if value > 0:
+            candidates.append(value)
+
+    if not candidates:
+        return 0, 0
+
+    return min(candidates), max(candidates)
+
+
+def get_message_symbol(text2: str) -> str | None:
+    if not text2:
+        return None
+    text2_lower = text2.strip().lower()
+
+    all_symbols = (
+        chung_cu_symbols +
+        nguyen_can_symbols +
+        mbkd_symbols +
+        chdv_symbols +
+        tai_land_symbols +
+        vietquoc_1_symbols +
+        phong_tro_symbols
+    )
+    # Sort length descending
+    all_symbols = sorted(all_symbols, key=len, reverse=True)
+
+    for sym in all_symbols:
+        sym_lower = sym.lower()
+        if text2_lower.startswith(sym_lower):
+            sym_len = len(sym_lower)
+            if len(text2_lower) > sym_len:
+                next_char = text2_lower[sym_len]
+                if next_char.isalnum():
+                    continue
+            return sym_lower
+
+    return None
+
+
+def get_category_from_text2(text2: str, text1: str = "") -> str:
+    symbol = get_message_symbol(text2)
+    if not symbol:
+        return "phong-tro"
+
+    if symbol in chung_cu_symbols:
+        return "chung-cu"
+    elif symbol in nguyen_can_symbols:
+        return "nha-nguyen-can"
+    elif symbol in mbkd_symbols:
+        return "mat-bang-kinh-doanh"
+    elif symbol in chdv_symbols:
+        return "can-ho-dich-vu"
+    elif symbol in tai_land_symbols:
+        full_text = text1 if text1 else text2
+        price1, price2 = _extract_price_bounds(full_text)
+        price_val = max(price1, price2)
+        if price_val >= 25000000:
+            return "mat-bang-kinh-doanh"
+        else:
+            return "nha-nguyen-can"
+    elif symbol in vietquoc_1_symbols:
+        text2_lower = text2.lower()
+        if any(k in text2_lower for k in ["mbkd", "mặt bằng", "mặt bằng kinh doanh", "văn phòng"]):
+            return "mat-bang-kinh-doanh"
+        else:
+            return "nha-nguyen-can"
+
+    return "phong-tro"
+
+
+
 
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api.vietapi.tech/v1")
-API_MODEL = os.getenv("API_MODEL", "sonnet")
+API_MODEL = os.getenv("API_MODEL", "kimi-k2.6")
 API_TIMEOUT_CONNECT = float(os.getenv("API_TIMEOUT_CONNECT", "15"))
 API_TIMEOUT_READ = float(os.getenv("API_TIMEOUT_READ", "240"))
 API_RETRY_DELAY = float(os.getenv("API_RETRY_DELAY", "2"))
@@ -331,6 +486,7 @@ def normalize_ai_rows(rows: list[dict[str, Any]], session_id: str) -> list[dict[
                 "price1": price1_str,
                 "price2": price2_str,
                 "type": normalized_type,
+                "category": "phong-tro",
             }
         )
 
@@ -368,6 +524,7 @@ def normalize_ai_rows(rows: list[dict[str, Any]], session_id: str) -> list[dict[
             "price1": p1_str,
             "price2": p2_str,
             "type": merged_type,
+            "category": "phong-tro",
         }]
 
     return normalized
@@ -601,7 +758,18 @@ def resolve_ok_dir(cli_ok_dir: str | None, source_dir: str) -> str:
     return os.path.join(os.path.dirname(source_dir), "district_ai")
 
 
-def load_json_array(path: str) -> list[dict[str, Any]]:
+def load_json_array(path: str, use_lock: bool = False) -> list[dict[str, Any]]:
+    if not path or not os.path.isfile(path):
+        return []
+    if use_lock:
+        import bot_utils
+        lock_path = path + ".lock"
+        with bot_utils.FileLock(lock_path):
+            return _load_json_array_impl(path)
+    else:
+        return _load_json_array_impl(path)
+
+def _load_json_array_impl(path: str) -> list[dict[str, Any]]:
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     if isinstance(data, list):
@@ -609,10 +777,21 @@ def load_json_array(path: str) -> list[dict[str, Any]]:
     return []
 
 
-def save_json_array(path: str, data: list[dict[str, Any]]) -> None:
+def save_json_array(path: str, data: list[dict[str, Any]], use_lock: bool = False) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    if use_lock:
+        import bot_utils
+        lock_path = path + ".lock"
+        with bot_utils.FileLock(lock_path):
+            _save_json_array_impl(path, data)
+    else:
+        _save_json_array_impl(path, data)
+
+def _save_json_array_impl(path: str, data: list[dict[str, Any]]) -> None:
+    temp_file = f"{path}.tmp"
+    with open(temp_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(temp_file, path)
 
 
 def normalize_input_rows(rows: list[dict[str, Any]]) -> list[dict[str, str]]:
@@ -716,6 +895,7 @@ def archive_processed_sessions(district_file: str, session_ids: list[str]) -> No
     if not session_ids:
         return
 
+    import bot_utils
     bot_dir = os.path.dirname(os.path.abspath(__file__))
     target_dirs = [
         os.path.join(bot_dir, "districts_summary"),
@@ -741,46 +921,50 @@ def archive_processed_sessions(district_file: str, session_ids: list[str]) -> No
             if not os.path.isfile(file_path):
                 continue
 
-            try:
-                rows = load_json_array(file_path)
-            except Exception as e:
-                print(f"  [ARCHIVE] Error loading {file_path}: {e}")
-                continue
-
-            to_keep = []
-            to_archive = []
-
-            for row in rows:
-                row_id = str(row.get("id", "")).strip()
-                if row_id in session_ids_set:
-                    to_archive.append(row)
-                else:
-                    to_keep.append(row)
-
-            if to_archive:
+            lock_path = file_path + ".lock"
+            with bot_utils.FileLock(lock_path):
                 try:
-                    save_json_array(file_path, to_keep)
-                    print(f"  [ARCHIVE] Removed {len(to_archive)} sessions from {file_path}")
+                    rows = load_json_array(file_path, use_lock=False)
                 except Exception as e:
-                    print(f"  [ARCHIVE] Error saving kept records to {file_path}: {e}")
+                    print(f"  [ARCHIVE] Error loading {file_path}: {e}")
                     continue
 
-                archive_dir = os.path.join(bot_dir, "processed", os.path.basename(directory))
-                os.makedirs(archive_dir, exist_ok=True)
-                archive_file_path = os.path.join(archive_dir, os.path.basename(file_path))
+                to_keep = []
+                to_archive = []
 
-                try:
-                    existing_archived = load_json_array(archive_file_path) if os.path.isfile(archive_file_path) else []
-                    existing_ids = {str(item.get("id", "")).strip() for item in existing_archived if item.get("id")}
-                    for item in to_archive:
-                           item_id = str(item.get("id", "")).strip()
-                           if item_id not in existing_ids:
-                               existing_archived.append(item)
-                               existing_ids.add(item_id)
-                    save_json_array(archive_file_path, existing_archived)
-                    print(f"  [ARCHIVE] Saved {len(to_archive)} sessions to archive: {archive_file_path}")
-                except Exception as e:
-                    print(f"  [ARCHIVE] Error saving archived records to {archive_file_path}: {e}")
+                for row in rows:
+                    row_id = str(row.get("id", "")).strip()
+                    if row_id in session_ids_set:
+                        to_archive.append(row)
+                    else:
+                        to_keep.append(row)
+
+                if to_archive:
+                    try:
+                        save_json_array(file_path, to_keep, use_lock=False)
+                        print(f"  [ARCHIVE] Removed {len(to_archive)} sessions from {file_path}")
+                    except Exception as e:
+                        print(f"  [ARCHIVE] Error saving kept records to {file_path}: {e}")
+                        continue
+
+                    archive_dir = os.path.join(bot_dir, "processed", os.path.basename(directory))
+                    os.makedirs(archive_dir, exist_ok=True)
+                    archive_file_path = os.path.join(archive_dir, os.path.basename(file_path))
+                    archive_lock_path = archive_file_path + ".lock"
+
+                    try:
+                        with bot_utils.FileLock(archive_lock_path):
+                            existing_archived = load_json_array(archive_file_path, use_lock=False) if os.path.isfile(archive_file_path) else []
+                            existing_ids = {str(item.get("id", "")).strip() for item in existing_archived if item.get("id")}
+                            for item in to_archive:
+                                   item_id = str(item.get("id", "")).strip()
+                                   if item_id not in existing_ids:
+                                       existing_archived.append(item)
+                                       existing_ids.add(item_id)
+                            save_json_array(archive_file_path, existing_archived, use_lock=False)
+                            print(f"  [ARCHIVE] Saved {len(to_archive)} sessions to archive: {archive_file_path}")
+                    except Exception as e:
+                        print(f"  [ARCHIVE] Error saving archived records to {archive_file_path}: {e}")
 
 
 def process_one_district(
@@ -835,6 +1019,13 @@ def process_one_district(
     for idx, item in enumerate(input_rows):
         session_id = item["id"]
         raw_text = item["raw_text"]  # text1 nếu có, else text2
+        text1 = item.get("text1", "")
+        text2 = item.get("text2", "")
+        category = get_category_from_text2(text2, text1)
+        if category != "phong-tro":
+            print(f"  [{idx + 1}/{total_input}] Skipping session_id={session_id} because category={category} (non-phong-tro, handled by v3)")
+            continue
+
         print(f"  [{idx + 1}/{total_input}] Processing session_id={session_id}...")
 
         parsed_rooms = process_single_item(session_id, raw_text, max_retries=max_retries)

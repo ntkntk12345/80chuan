@@ -185,3 +185,109 @@ if __name__ == '__main__':
         fix_empty_photos()
     else:
         main()
+                photo_rich.append((rid, addr, p_json, v_json, rtype, dist, features))
+                
+        print(f"[PHOTO-FIX-V7] Tổng số phòng có ảnh: {len(photo_rich)}")
+        print(f"[PHOTO-FIX-V7] Tổng số phòng được duyệt đang trống ảnh: {len(photo_less)}")
+        
+        if not photo_less:
+            print("[PHOTO-FIX-V7] Không có phòng trống ảnh nào cần sửa.")
+            conn.close()
+            return
+
+        updated_count = 0
+        
+        for less_id, less_addr, less_type, less_dist, less_feat in photo_less:
+            er_dist = normalize_district(less_dist)
+            if less_feat["is_vague"] or (not less_feat["ngo"] and not less_feat["ngach"] and not less_feat["house_num"]):
+                continue
+                
+            candidates = []
+            
+            for rich_id, rich_addr, rich_p, rich_v, rich_type, rich_dist, rich_feat in photo_rich:
+                rr_dist = normalize_district(rich_dist)
+                
+                # 1. Enforce district match and reject vague addresses
+                if er_dist != rr_dist or rich_feat["is_vague"]:
+                    continue
+                    
+                # 2. Enforce that specific sub-address identifiers do not conflict
+                if less_feat["ngo"] and rich_feat["ngo"] and less_feat["ngo"] != rich_feat["ngo"]:
+                    continue
+                if less_feat["ngach"] and rich_feat["ngach"] and less_feat["ngach"] != rich_feat["ngach"]:
+                    continue
+                if less_feat["house_num"] and rich_feat["house_num"] and less_feat["house_num"] != rich_feat["house_num"]:
+                    continue
+                    
+                # 3. Match streets
+                if less_feat["street"] or rich_feat["street"]:
+                    if streets_match(less_feat["street"], rich_feat["street"]) and less_feat["ngo"] == rich_feat["ngo"]:
+                        score = 0
+                        if less_feat["ngach"] == rich_feat["ngach"]:
+                            if less_feat["ngach"]:
+                                score += 10
+                            if less_feat["house_num"] == rich_feat["house_num"] and less_feat["house_num"]:
+                                score += 5
+                        elif less_feat["ngach"] or rich_feat["ngach"]:
+                            score -= 5
+                            
+                        if less_type and less_type == rich_type:
+                            score += 3
+                            
+                        score += 2
+                        candidates.append((score, rich_id, rich_addr, rich_p, rich_v))
+                else:
+                    # Fallback when street is empty for both but ngo matches
+                    if less_feat["ngo"] == rich_feat["ngo"] and less_feat["ngo"] != "":
+                        score = 2
+                        if less_feat["ngach"] == rich_feat["ngach"]:
+                            if less_feat["ngach"]:
+                                score += 10
+                            if less_feat["house_num"] == rich_feat["house_num"] and less_feat["house_num"]:
+                                score += 5
+                        elif less_feat["ngach"] or rich_feat["ngach"]:
+                            score -= 5
+                        if less_type and less_type == rich_type:
+                            score += 3
+                        candidates.append((score, rich_id, rich_addr, rich_p, rich_v))
+                    
+            if candidates:
+                candidates.sort(key=lambda x: (x[0], x[1]), reverse=True)
+                best_score, best_id, best_addr, best_p, best_v = candidates[0]
+                
+                if best_score >= 2:
+                    cursor.execute("""
+                        UPDATE rooms 
+                        SET photos = ?, videos = ? 
+                        WHERE id = ?
+                    """, (best_p, best_v, less_id))
+                    updated_count += 1
+                    
+                    print(f"[PHOTO-FIX-V7] Đã sửa ID {less_id} ({less_addr}) -> Mượn ảnh từ ID {best_id} ({best_addr}) | Số ảnh: {len(json.loads(best_p))} (Score: {best_score})")
+  
+        if updated_count > 0:
+            conn.commit()
+            print(f"[PHOTO-FIX-V7] Đã cập nhật thành công {updated_count} phòng trống ảnh trong database.")
+        else:
+            print("[PHOTO-FIX-V7] Không tìm thấy phòng nào khớp để cập nhật.")
+            
+    except Exception as e:
+        print(f"[PHOTO-FIX-V7] Lỗi: {e}")
+    finally:
+        conn.close()
+
+def main():
+    print("[PHOTO-FIX-V7] Khởi chạy dịch vụ tự động cập nhật ảnh phòng trống...")
+    while True:
+        try:
+            fix_empty_photos()
+        except Exception as e:
+            print(f"[PHOTO-FIX-V7] Lỗi vòng lặp chính: {e}")
+        print("[PHOTO-FIX-V7] Đang ngủ 5 phút trước lượt quét tiếp theo...")
+        time.sleep(300)
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1 and sys.argv[1] == '--once':
+        fix_empty_photos()
+    else:
+        main()

@@ -1,0 +1,67 @@
+Line 290: # Photo cache for 11A/12A
+Line 291: self.photo_cache = {}
+Line 292: self.photo_cache_lock = threading.RLock()
+Line 368: media_count = len(item.get("photos", [])) + len(item.get("videos", []))
+Line 472: has_media = len(item.get("photos", [])) > 0 or len(item.get("videos", [])) > 0
+Line 516: has_media = len(buffer_check.get("photos", [])) > 0 or len(buffer_check.get("videos", [])) > 0
+Line 546: has_media = len(buffer_check.get("photos", [])) > 0 or len(buffer_check.get("videos", [])) > 0
+Line 572: or len(buffer_check.get("photos", [])) > 0
+Line 573: or len(buffer_check.get("videos", [])) > 0
+Line 588: elif content_type in ("photo", "video"):
+Line 589: # Ảnh/video phải có text trước trong buffer mới được nhận
+Line 599: "texts": [], "photos": [], "videos": [], "stickers": [],
+Line 641: elif content_type == "photo":
+Line 643: photo_obj = add_with_mid(content_data)
+Line 644: buffer["photos"].append(photo_obj)
+Line 645: buffer["timeline"].append({"type": "photo", "data": photo_obj, "timestamp": now})
+Line 647: elif content_type == "video":
+Line 649: video_obj = add_with_mid(content_data)
+Line 650: buffer["videos"].append(video_obj)
+Line 651: buffer["timeline"].append({"type": "video", "data": video_obj, "timestamp": now})
+Line 671: buffer["photos"] = [p for p in buffer["photos"] if p.get("mid") != msg_id_str]
+Line 672: buffer["videos"] = [v for v in buffer["videos"] if v.get("mid") != msg_id_str]
+Line 678: "photos": buffer.get("photos", []),
+Line 679: "videos": buffer.get("videos", []),
+Line 703: "texts": buffer.get("texts", []), "photos": buffer.get("photos", []),
+Line 704: "videos": buffer.get("videos", []), "stickers": [],
+Line 716: has_media = len(buffer.get("photos", [])) > 0 or len(buffer.get("videos", [])) > 0
+Line 721: "texts": buffer.get("texts", []), "photos": buffer.get("photos", []),
+Line 722: "videos": buffer.get("videos", []), "stickers": [],
+Line 729: print(f"{Fore.YELLOW}[DISCARD] 🗑️ Bỏ qua session chỉ có ảnh/video (không có text){Style.RESET_ALL}")
+Line 749: has_media = len(buffer.get("photos", [])) > 0 or len(buffer.get("videos", [])) > 0
+Line 779: with self.photo_cache_lock:
+Line 780: for key, data in self.photo_cache.items():
+Line 782: photos = data.get("photos", [])
+Line 783: if not photos: continue
+Line 784: ts = max([p.get("timestamp", 0) for p in photos])
+Line 841: if msg_type == "chat.photo":
+Line 842: photo_url = content.get("hd") or content.get("href")
+Line 843: if photo_url:
+Line 845: photo_data = {
+Line 846: "url": photo_url,
+Line 857: with self.photo_cache_lock:
+Line 858: if cache_key not in self.photo_cache:
+Line 859: self.photo_cache[cache_key] = {"photos": [], "symbol": symbol, "source_id": thread_id_str, "author_id": author_id_str}
+Line 860: self.photo_cache[cache_key]["photos"].append(photo_data)
+Line 862: # BUT also add to session so it stays with other texts/photos
+Line 863: self._add_to_session(thread_id_str, author_id_str, "photo", photo_data, symbol, mid=mid_str)
+Line 864: else: self._add_to_session(thread_id_str, author_id_str, "photo", photo_data, symbol, mid=mid_str)
+Line 866: elif msg_type == "webchat" or (isinstance(message, str) and message and msg_type not in ["chat.photo", "chat.video", "chat.video.msg", "chat.sticker"]):
+Line 889: "texts": [], "photos": [], "videos": [], "stickers": [],
+Line 899: with self.photo_cache_lock:
+Line 900: cached = self.photo_cache.get(cache_key)
+Line 902: existing_mids = {p.get("mid") for p in buffer["photos"]}
+Line 903: for p in cached["photos"]:
+Line 905: buffer["photos"].append(p)
+Line 907: tl_mids = {e["data"].get("mid") for e in buffer["timeline"] if e["type"] == "photo"}
+Line 909: buffer["timeline"].append({"type": "photo", "data": p, "timestamp": p.get("timestamp", now)})
+Line 910: del self.photo_cache[cache_key]
+Line 929: media_ts_list = [e["timestamp"] for e in buffer["timeline"] if e["type"] in ("photo", "video")]
+Line 993: elif msg_type in ["chat.video", "chat.video.msg"]:
+Line 995: self._add_to_session(thread_id_str, author_id_str, "video", {
+Line 1038: with self.photo_cache_lock:
+Line 1040: for key, data in self.photo_cache.items():
+Line 1041: photos = data.get("photos", [])
+Line 1042: if not photos:
+Line 1045: ts = max([p.get("timestamp", 0) for p in photos])
+Line 1048: for k in expired_keys: del self.photo_cache[k]

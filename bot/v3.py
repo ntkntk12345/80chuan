@@ -14,7 +14,7 @@ from map1 import save_room_to_sqlite, init_db
 
 
 API_BASE_URL = os.getenv("API_BASE_URL", "https://api.vietapi.tech/v1")
-API_MODEL = os.getenv("API_MODEL", "sonnet")
+API_MODEL = os.getenv("API_MODEL", "kimi-k2.6")
 API_TIMEOUT_CONNECT = float(os.getenv("API_TIMEOUT_CONNECT", "15"))
 API_TIMEOUT_READ = float(os.getenv("API_TIMEOUT_READ", "240"))
 API_RETRY_DELAY = float(os.getenv("API_RETRY_DELAY", "2"))
@@ -55,6 +55,13 @@ mbkd_symbols = ["1a", "tc 4", "tc4", "đại lộc land 2", "dai loc land 2"]
 chdv_symbols = ["tuananh chdv 1", "chdv chọn lọc", "chdv chon loc", "dũng chdv", "dung chdv", "tuananh chdv 2", "n34 chdv", "chinh trần chdv", "chinh tran chdv"]
 tai_land_symbols = ["tài land 1", "tai land 1", "tài land 2", "tai land 2"]
 vietquoc_1_symbols = ["việt quốc 1", "vietquoc 1"]
+phong_tro_symbols = [
+    "2a", "2a1", "2a2", "3a", "4a", "8a", "9a", "10a", "11a", "11a1", "11a2", "11a3", "12a", "13a", "14a", 
+    "sleepbox", "3h", "avhome", "agp", "hdhome", "nd", "phongtot", "phongtot1", "phongtot2", "phongtot3", "phongtot4", "phongtot5",
+    "dl", "npland", "kingland", "phương thảo", "invest", "nova", "kt", "ae land 1", "7a", "nt home", "5a",
+    "havenhouse", "nvhome 1", "hhouse2", "hhouse1", "nk", "tdland", "dragon", "family", "tphomes", "ctv",
+    "tài phát", "alophongtro", "3m", "bee home", "timehouse", "hm", "lily 1", "lily 2", "sh48"
+]
 
 
 SYSTEM_PROMPT = """Bạn là chuyên gia bóc tách dữ liệu bất động sản. Chỉ trả về JSON hợp lệ, không markdown, không giải thích.
@@ -99,7 +106,7 @@ Từ raw_text, trích xuất thông tin mặt bằng kinh doanh thành mảng JS
 6. "price1": Giá thấp nhất CHUYỂN SANG SỐ NGUYÊN HOÀN CHỈNH (thêm đủ 6 số 0 cho hàng triệu). VÍ DỤ CHUẨN: "5tr" => "5000000", "5.2tr" => "5200000", "4tr3" => "4300000", "4500k" => "4500000". TUYỆT ĐỐI KHÔNG trả về thiếu số 0.
 7. "price2": Giá cao nhất chuyển sang số nguyên (tương tự quy tắc 6 số 0 của price1). Nếu chỉ 1 mức giá, price2 = price1.
 8. "type": DIỆN TÍCH (số m2) của mặt bằng/văn phòng. Hãy tìm thông tin diện tích trong văn bản (VD: "Diện tích mặt bằng 40-42m2", "Diện tích 100m²", "35m2") và lưu vào trường này dưới dạng chuỗi (VD: "40-42m2", "100m2", "35m2"). TUYỆT ĐỐI KHÔNG dùng các tag dạng phòng như "studio", "1pn" hay "trọ thường" cho mặt bằng kinh doanh. Nếu hoàn toàn không tìm thấy diện tích thì để null.
-9. Không tự suy luận. Nếu thiếu địa chỉ hoặc thiếu giá, trả về mảng rỗng [].
+9. Nhận biết và lọc kỹ các thông tin. Không tự suy luận. Nếu thiếu địa chỉ hoặc thiếu giá, trả về mảng rỗng [].
 
 Chỉ trả về JSON hợp lệ."""
 
@@ -191,7 +198,8 @@ def get_message_symbol(text2: str) -> str | None:
         mbkd_symbols +
         chdv_symbols +
         tai_land_symbols +
-        vietquoc_1_symbols
+        vietquoc_1_symbols +
+        phong_tro_symbols
     )
     # Sort length descending
     all_symbols = sorted(all_symbols, key=len, reverse=True)
@@ -232,7 +240,7 @@ def get_category_from_text2(text2: str, text1: str = "") -> str:
             return "nha-nguyen-can"
     elif symbol in vietquoc_1_symbols:
         text2_lower = text2.lower()
-        if any(k in text2_lower for k in ["mbkd", "mặt bằng", "văn phòng"]):
+        if any(k in text2_lower for k in ["mbkd", "mặt bằng", "mặt bằng kinh doanh", "văn phòng"]):
             return "mat-bang-kinh-doanh"
         else:
             return "nha-nguyen-can"
@@ -774,7 +782,18 @@ def resolve_ok_dir(cli_ok_dir: str | None, source_dir: str) -> str:
     return os.path.join(os.path.dirname(source_dir), "district_ai")
 
 
-def load_json_array(path: str) -> list[dict[str, Any]]:
+def load_json_array(path: str, use_lock: bool = False) -> list[dict[str, Any]]:
+    if not path or not os.path.isfile(path):
+        return []
+    if use_lock:
+        import bot_utils
+        lock_path = path + ".lock"
+        with bot_utils.FileLock(lock_path):
+            return _load_json_array_impl(path)
+    else:
+        return _load_json_array_impl(path)
+
+def _load_json_array_impl(path: str) -> list[dict[str, Any]]:
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     if isinstance(data, list):
@@ -782,10 +801,21 @@ def load_json_array(path: str) -> list[dict[str, Any]]:
     return []
 
 
-def save_json_array(path: str, data: list[dict[str, Any]]) -> None:
+def save_json_array(path: str, data: list[dict[str, Any]], use_lock: bool = False) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
-    with open(path, "w", encoding="utf-8") as f:
+    if use_lock:
+        import bot_utils
+        lock_path = path + ".lock"
+        with bot_utils.FileLock(lock_path):
+            _save_json_array_impl(path, data)
+    else:
+        _save_json_array_impl(path, data)
+
+def _save_json_array_impl(path: str, data: list[dict[str, Any]]) -> None:
+    temp_file = f"{path}.tmp"
+    with open(temp_file, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+    os.replace(temp_file, path)
 
 
 def normalize_input_rows(rows: list[dict[str, Any]]) -> list[dict[str, str]]:
@@ -883,6 +913,7 @@ def archive_processed_sessions(district_file: str, session_ids: list[str]) -> No
     if not session_ids:
         return
 
+    import bot_utils
     bot_dir = os.path.dirname(os.path.abspath(__file__))
     target_dirs = [
         os.path.join(bot_dir, "districts_summary"),
@@ -908,46 +939,50 @@ def archive_processed_sessions(district_file: str, session_ids: list[str]) -> No
             if not os.path.isfile(file_path):
                 continue
 
-            try:
-                rows = load_json_array(file_path)
-            except Exception as e:
-                print(f"  [ARCHIVE] Error loading {file_path}: {e}")
-                continue
-
-            to_keep = []
-            to_archive = []
-
-            for row in rows:
-                row_id = str(row.get("id", "")).strip()
-                if row_id in session_ids_set:
-                    to_archive.append(row)
-                else:
-                    to_keep.append(row)
-
-            if to_archive:
+            lock_path = file_path + ".lock"
+            with bot_utils.FileLock(lock_path):
                 try:
-                    save_json_array(file_path, to_keep)
-                    print(f"  [ARCHIVE] Removed {len(to_archive)} sessions from {file_path}")
+                    rows = load_json_array(file_path, use_lock=False)
                 except Exception as e:
-                    print(f"  [ARCHIVE] Error saving kept records to {file_path}: {e}")
+                    print(f"  [ARCHIVE] Error loading {file_path}: {e}")
                     continue
 
-                archive_dir = os.path.join(bot_dir, "processed", os.path.basename(directory))
-                os.makedirs(archive_dir, exist_ok=True)
-                archive_file_path = os.path.join(archive_dir, os.path.basename(file_path))
+                to_keep = []
+                to_archive = []
 
-                try:
-                    existing_archived = load_json_array(archive_file_path) if os.path.isfile(archive_file_path) else []
-                    existing_ids = {str(item.get("id", "")).strip() for item in existing_archived if item.get("id")}
-                    for item in to_archive:
-                           item_id = str(item.get("id", "")).strip()
-                           if item_id not in existing_ids:
-                               existing_archived.append(item)
-                               existing_ids.add(item_id)
-                    save_json_array(archive_file_path, existing_archived)
-                    print(f"  [ARCHIVE] Saved {len(to_archive)} sessions to archive: {archive_file_path}")
-                except Exception as e:
-                    print(f"  [ARCHIVE] Error saving archived records to {archive_file_path}: {e}")
+                for row in rows:
+                    row_id = str(row.get("id", "")).strip()
+                    if row_id in session_ids_set:
+                        to_archive.append(row)
+                    else:
+                        to_keep.append(row)
+
+                if to_archive:
+                    try:
+                        save_json_array(file_path, to_keep, use_lock=False)
+                        print(f"  [ARCHIVE] Removed {len(to_archive)} sessions from {file_path}")
+                    except Exception as e:
+                        print(f"  [ARCHIVE] Error saving kept records to {file_path}: {e}")
+                        continue
+
+                    archive_dir = os.path.join(bot_dir, "processed", os.path.basename(directory))
+                    os.makedirs(archive_dir, exist_ok=True)
+                    archive_file_path = os.path.join(archive_dir, os.path.basename(file_path))
+                    archive_lock_path = archive_file_path + ".lock"
+
+                    try:
+                        with bot_utils.FileLock(archive_lock_path):
+                            existing_archived = load_json_array(archive_file_path, use_lock=False) if os.path.isfile(archive_file_path) else []
+                            existing_ids = {str(item.get("id", "")).strip() for item in existing_archived if item.get("id")}
+                            for item in to_archive:
+                                   item_id = str(item.get("id", "")).strip()
+                                   if item_id not in existing_ids:
+                                       existing_archived.append(item)
+                                       existing_ids.add(item_id)
+                            save_json_array(archive_file_path, existing_archived, use_lock=False)
+                            print(f"  [ARCHIVE] Saved {len(to_archive)} sessions to archive: {archive_file_path}")
+                    except Exception as e:
+                        print(f"  [ARCHIVE] Error saving archived records to {archive_file_path}: {e}")
 
 
 def process_one_district(
@@ -1006,6 +1041,10 @@ def process_one_district(
 
         # Route category based on symbol prefix
         category = get_category_from_text2(text2, text1)
+        if category == "phong-tro":
+            print(f"  [{idx + 1}/{total_input}] Skipping session_id={session_id} because category=phong-tro (handled by v2)")
+            continue
+
         print(f"  [{idx + 1}/{total_input}] Processing session_id={session_id} in category={category}...")
 
         parsed_rooms = process_single_item(session_id, raw_text, category, max_retries=max_retries)

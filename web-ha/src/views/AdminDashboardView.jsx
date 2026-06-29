@@ -532,7 +532,42 @@ const AdminDashboardView = ({ rooms, setRooms, setCurrentPage, isMobile, setting
       id: r.id,
       session_id: r.session_id,
       category,
-      title: isManual && manualData ? manualData.title : (r.room_code ? `Phòng trọ mã ${r.room_code}` : (r.room_type ? `Dạng phòng: ${r.room_type}` : 'Phòng trọ khép kín')),
+      title: (() => {
+        if (isManual && manualData) return manualData.title;
+        let prefix = 'Phòng trọ';
+        let defaultSuffix = 'khép kín';
+        
+        if (category === 'chung-cu') {
+          prefix = 'Chung cư';
+          defaultSuffix = 'cao cấp';
+        } else if (category === 'nha-nguyen-can') {
+          prefix = 'Nhà nguyên căn';
+          defaultSuffix = 'giá tốt';
+        } else if (category === 'can-ho-dich-vu') {
+          prefix = 'Căn hộ dịch vụ';
+          defaultSuffix = 'full đồ';
+        } else if (category === 'mat-bang-kinh-doanh') {
+          prefix = 'Mặt bằng kinh doanh';
+          defaultSuffix = 'tiện nghi';
+        } else if (category === 'pass-phong') {
+          prefix = 'Pass phòng';
+          defaultSuffix = 'nhanh';
+        } else if (category === 'o-ghep') {
+          prefix = 'Ở ghép';
+          defaultSuffix = 'tìm bạn';
+        }
+
+        if (r.room_code) {
+          return `${prefix} mã ${r.room_code}`;
+        }
+        if (r.room_type) {
+          if (category === 'mat-bang-kinh-doanh' && r.room_type.toLowerCase().includes('m2')) {
+            return `${prefix} diện tích ${r.room_type}`;
+          }
+          return `${prefix} ${r.room_type}`;
+        }
+        return defaultSuffix ? `${prefix} ${defaultSuffix}` : prefix;
+      })(),
       address,
       nearPlace,
       distanceText,

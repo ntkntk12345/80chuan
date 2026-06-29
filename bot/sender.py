@@ -993,20 +993,7 @@ class SenderBot:
             # --- ROUTING LOGIC ---
             symbol_lower = symbol.lower().strip() if symbol else ""
             mbkd_keywords = ["mbkd", "mặt bằng", "văn phòng", "sang nhượng", "kho xưởng", "cửa hàng"]
-            special_symbols = [
-                "taiphat",
-                "taiphat1",
-                "tài phát",
-                "vietquoc",
-                "vietquoc1",
-                "tc home",
-                "tc",
-                "tài land",
-                "chdv",
-                "chdv hưng phát",
-                "chdv chọn lọc",
-                "chdv chinh trần",
-            ]
+            special_symbols = []
             target_groups = set()
             keywords = []
             
@@ -1125,7 +1112,7 @@ class SenderBot:
                         print(f"[ROUTING] {symbol} with price {price_val} < 25M (or not found) routes to Nhóm nhà nguyên căn")
                         target_groups.update(sender["output_groups_map"].get("nguyen_can_ids", []))
                 elif symbol_lower in vietquoc_1_symbols:
-                    if any(k in full_text_lower for k in ["mbkd", "mặt bằng", "văn phòng"]):
+                    if any(k in full_text_lower for k in ["mbkd", "mặt bằng", "mặt bằng kinh doanh", "văn phòng"]):
                         print(f"[ROUTING] {symbol} with mbkd keywords routes to Nhóm Văn phòng , mặt bằng kinh doanh")
                         target_groups.update(sender["output_groups_map"].get("mbkd_ids", []))
                     else:
@@ -1825,26 +1812,28 @@ class SenderBot:
             return time.time()
 
     def _append_unique_record(self, file_path, record):
-        payload = self._load_json_file(file_path, [])
-        if not isinstance(payload, list):
-            payload = []
+        lock_path = file_path + ".lock"
+        with bot_utils.FileLock(lock_path):
+            payload = self._load_json_file(file_path, [])
+            if not isinstance(payload, list):
+                payload = []
 
-        record_id = str(record.get("id", "")).strip()
-        replaced = False
+            record_id = str(record.get("id", "")).strip()
+            replaced = False
 
-        if record_id:
-            for index, current in enumerate(payload):
-                if not isinstance(current, dict):
-                    continue
-                if str(current.get("id", "")).strip() == record_id:
-                    payload[index] = record
-                    replaced = True
-                    break
+            if record_id:
+                for index, current in enumerate(payload):
+                    if not isinstance(current, dict):
+                        continue
+                    if str(current.get("id", "")).strip() == record_id:
+                        payload[index] = record
+                        replaced = True
+                        break
 
-        if not replaced:
-            payload.append(record)
+            if not replaced:
+                payload.append(record)
 
-        self._write_json_file(file_path, payload)
+            self._write_json_file(file_path, payload)
 
     def _save_to_area_files(self, item):
         if item.get("session_type") == "featured_post":

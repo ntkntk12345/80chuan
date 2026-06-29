@@ -633,3 +633,94 @@ class ProcessLock:
             except:
                 pass
 
+def is_pid_running(pid):
+    if pid <= 0:
+        return False
+    import sys
+    if sys.platform.startswith('win'):
+        try:
+            import ctypes
+            kernel32 = ctypes.windll.kernel32
+            PROCESS_QUERY_LIMITED_INFORMATION = 0x1000
+            h_proc = kernel32.OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, False, pid)
+            if h_proc:
+                exit_code = ctypes.c_ulong()
+                kernel32.GetExitCodeProcess(h_proc, ctypes.byref(exit_code))
+                kernel32.CloseHandle(h_proc)
+                return exit_code.value == 259 # STILL_ACTIVE
+            return False
+        except:
+            return True # Fallback to active if checking fails
+    else:
+        import os
+        try:
+            os.kill(pid, 0)
+            return True
+        except OSError:
+            return False
+
+
+class FileLock:
+    def __init__(self, lock_path, timeout=10.0, delay=0.05):
+        self.lock_path = lock_path
+        self.timeout = timeout
+        self.delay = delay
+        self.fd = None
+
+    def __enter__(self):
+        import time
+        start_time = time.time()
+        while True:
+            try:
+                self.fd = os.open(self.lock_path, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                os.write(self.fd, str(os.getpid()).encode())
+                break
+            except OSError:
+                # Proactively check if the lock owner PID is not running anymore
+                try:
+                    with open(self.lock_path, 'r') as f:
+                        pid_str = f.read().strip()
+                        pid = int(pid_str) if pid_str.isdigit() else 0
+                    if pid > 0 and not is_pid_running(pid):
+                        print(f"[LOCK] Proactively removing stale lock file: {self.lock_path} (Owner PID {pid} is not running)")
+                        try:
+                            os.remove(self.lock_path)
+                            continue
+                        except OSError:
+                            pass
+                except OSError:
+                    pass
+
+                if time.time() - start_time > self.timeout:
+                    try:
+                        mtime = os.path.getmtime(self.lock_path)
+                        if time.time() - mtime > 60:
+                            print(f"[LOCK] Removing stale lock file by timeout: {self.lock_path}")
+                            try:
+                                os.remove(self.lock_path)
+                                continue
+                            except OSError:
+                                pass
+                    except OSError:
+                        pass
+                    raise TimeoutError(f"Could not acquire lock on {self.lock_path} within {self.timeout}s")
+                time.sleep(self.delay)
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if self.fd is not None:
+            try:
+                os.close(self.fd)
+            except OSError:
+                pass
+            
+            # Retry deleting the lock file up to 5 times with a tiny delay to handle Windows sharing violations
+            for i in range(5):
+                try:
+                    os.remove(self.lock_path)
+                    break
+                except OSError:
+                    import time
+                    time.sleep(0.01)
+
+

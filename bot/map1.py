@@ -360,13 +360,69 @@ def determine_category(text2):
         return 'mat-bang-kinh-doanh'
     elif 'nhà nguyên căn' in text_lower or 'nhà riêng' in text_lower:
         return 'nha-nguyen-can'
-    elif 'chdv' in text_lower or 'căn hộ dịch vụ' in text_lower or 'studio' in text_lower or 'căn hộ mini' in text_lower or 'chung cư mini' in text_lower:
+    elif 'chdv' in text_lower or 'căn hộ dịch vụ' in text_lower or 'studio' in text_lower or 'căn hộ mini' in text_lower or 'chung cư mini' in text_lower or 'căn hộ' in text_lower:
         return 'can-ho-dich-vu'
-    elif ('chung cư' in text_lower or 'căn hộ' in text_lower or 'masteri' in text_lower or 'waterfront' in text_lower or 'vinhomes' in text_lower) and \
+    elif ('chung cư' in text_lower or 'masteri' in text_lower or 'waterfront' in text_lower or 'vinhomes' in text_lower) and \
          'gác xép' not in text_lower and 'phòng trọ' not in text_lower and 'nhà trọ' not in text_lower and \
-         'gần chung cư' not in text_lower and 'cạnh chung cư' not in text_lower and 'sau chung cư' not in text_lower and 'đối diện chung cư' not in text_lower:
+         'gần chung cư' not in text_lower and 'cạnh chung cư' not in text_lower and 'sau chung cư' not in text_lower and 'đối diện chung cư' not in text_lower and \
+         'như chung cư' not in text_lower and 'chuẩn chung cư' not in text_lower and 'dạng chung cư' not in text_lower and 'giống chung cư' not in text_lower and 'kiểu chung cư' not in text_lower:
         return 'chung-cu'
     return 'phong-tro'
+
+def safe_to_int(val) -> int:
+    if not val:
+        return 0
+    if isinstance(val, (int, float)):
+        return int(val)
+    val_str = str(val).strip()
+    try:
+        return int(float(val_str))
+    except ValueError:
+        pass
+    
+    # Extract large digits matching >= 5 digits (e.g. 4600000)
+    large_match = re.findall(r'\b\d{5,12}\b', val_str)
+    if large_match:
+        try:
+            return int(large_match[-1])
+        except ValueError:
+            pass
+            
+    # Clean the string and try parsing like 4.6tr, 4tr6, 4500k
+    cleaned = re.sub(r'[^\d.,trkty]+', '', val_str.lower().replace('triệu', 'tr').replace('trieu', 'tr'))
+    if not cleaned:
+        return 0
+        
+    if 'tr' in cleaned:
+        parts = cleaned.split('tr')
+        try:
+            base = float(parts[0]) if parts[0] else 0.0
+            fraction = 0.0
+            if len(parts) > 1 and parts[1]:
+                frac_str = re.sub(r'\D', '', parts[1])
+                if frac_str:
+                    fraction = float(f"0.{frac_str}")
+            return int(round((base + fraction) * 1000000))
+        except ValueError:
+            pass
+            
+    if cleaned.endswith('k'):
+        try:
+            return int(round(float(cleaned[:-1]) * 1000))
+        except ValueError:
+            pass
+            
+    first_num_match = re.search(r'\d+', cleaned)
+    if first_num_match:
+        try:
+            val_int = int(first_num_match.group(0))
+            if val_int < 1000:
+                return val_int * 1000000
+            return val_int
+        except ValueError:
+            pass
+            
+    return 0
 
 def save_room_to_sqlite(room_data, session_info, district_name, db_path=DEFAULT_DB_PATH):
     """
@@ -377,8 +433,8 @@ def save_room_to_sqlite(room_data, session_info, district_name, db_path=DEFAULT_
     address = room_data.get("address")
     price = room_data.get("price")
     
-    price1 = int(room_data.get("price1", 0)) if room_data.get("price1") else 0
-    price2 = int(room_data.get("price2", 0)) if room_data.get("price2") else 0
+    price1 = safe_to_int(room_data.get("price1"))
+    price2 = safe_to_int(room_data.get("price2"))
     room_type = room_data.get("type")
     
     if not session_id or not address:
@@ -431,7 +487,19 @@ def save_room_to_sqlite(room_data, session_info, district_name, db_path=DEFAULT_
         dt_vn = datetime.now(tz=tz_vn)
         created_at_str = dt_vn.strftime("%Y-%m-%d %H:%M:%S")
     
-    category = room_data.get("category") or determine_category(text2)
+    category = room_data.get("category")
+    try:
+        from v3 import get_message_symbol, get_category_from_text2
+        symbol = get_message_symbol(text2)
+    except ImportError:
+        symbol = None
+
+    if not symbol:
+        if not category or category == 'phong-tro':
+            category = determine_category(text2)
+    else:
+        category = get_category_from_text2(text2, text1)
+
 
     # Geocode address
     geo = geocode_address_esri(address)
@@ -459,10 +527,19 @@ def save_room_to_sqlite(room_data, session_info, district_name, db_path=DEFAULT_
         # Check if room already exists based on text2 (matching 100% identical, non-empty text2)
         row = None
         if text2 and text2.strip():
-            cursor.execute("SELECT id FROM rooms WHERE text2 = ?", (text2,))
+            cursor.execute("SELECT id, photos, videos FROM rooms WHERE text2 = ?", (text2,))
             row = cursor.fetchone()
             if row:
                 room_id = row[0]
+                existing_photos = row[1]
+                existing_videos = row[2]
+                
+                # Prevent overwriting existing photos/videos with empty arrays
+                if (not photos or photos == []) and existing_photos and existing_photos != '[]':
+                    photos_json = existing_photos
+                if (not videos or videos == []) and existing_videos and existing_videos != '[]':
+                    videos_json = existing_videos
+
                 # Update existing room and also update session_id and room_code since it matched by text2
                 cursor.execute("""
                     UPDATE rooms 
@@ -476,13 +553,22 @@ def save_room_to_sqlite(room_data, session_info, district_name, db_path=DEFAULT_
         if not row:
             chk_code = room_code if room_code else ""
             cursor.execute("""
-                SELECT id FROM rooms 
+                SELECT id, photos, videos FROM rooms 
                 WHERE session_id = ? AND COALESCE(room_code, '') = ?
             """, (session_id, chk_code))
             
             row = cursor.fetchone()
             if row:
                 room_id = row[0]
+                existing_photos = row[1]
+                existing_videos = row[2]
+                
+                # Prevent overwriting existing photos/videos with empty arrays
+                if (not photos or photos == []) and existing_photos and existing_photos != '[]':
+                    photos_json = existing_photos
+                if (not videos or videos == []) and existing_videos and existing_videos != '[]':
+                    videos_json = existing_videos
+
                 # Update existing room
                 cursor.execute("""
                     UPDATE rooms 

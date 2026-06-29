@@ -119,10 +119,18 @@ const ListingView = ({
   const meta = categoryMeta[category] || categoryMeta['phong-tro'];
 
   // State-based filtering
-  const [searchQuery, setSearchQuery] = useState('');
-  const [localSearchQuery, setLocalSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState(() => {
+    return sessionStorage.getItem(`search_query_${category}`) || '';
+  });
+  const [localSearchQuery, setLocalSearchQuery] = useState(() => {
+    return sessionStorage.getItem(`search_query_${category}`) || '';
+  });
   const [animatedPlaceholder, setAnimatedPlaceholder] = useState('');
   const [activeSavedTab, setActiveSavedTab] = useState('all');
+
+  useEffect(() => {
+    sessionStorage.setItem(`search_query_${category}`, searchQuery);
+  }, [searchQuery, category]);
 
   // Sync local search query with parent searchQuery (e.g. on reset/change)
   useEffect(() => {
@@ -179,20 +187,71 @@ const ListingView = ({
       if (blinkInterval) clearInterval(blinkInterval);
     };
   }, [meta.searchPlaceholder]);
-  const [city, setCity] = useState('Hà Nội');
-  const [district, setDistrict] = useState('');
-  const [roomType, setRoomType] = useState('');
-  const [gender, setGender] = useState(''); // Only for o-ghep
   const maxPriceLimit = (category === 'can-ho-dich-vu' || category === 'mat-bang-kinh-doanh' || category === 'nha-nguyen-can') ? 50 : 20;
   const midPriceValue = maxPriceLimit / 2;
 
-  const [priceMin, setPriceMin] = useState(0); // Min price limit
-  const [priceMax, setPriceMax] = useState(maxPriceLimit); // Max price limit
-  const [sort, setSort] = useState('newest');
+  const [city, setCity] = useState(() => {
+    return sessionStorage.getItem(`city_${category}`) || 'Hà Nội';
+  });
+  const [district, setDistrict] = useState(() => {
+    return sessionStorage.getItem(`district_${category}`) || '';
+  });
+  const [roomType, setRoomType] = useState(() => {
+    return sessionStorage.getItem(`room_type_${category}`) || '';
+  });
+  const [gender, setGender] = useState(() => {
+    return sessionStorage.getItem(`gender_${category}`) || '';
+  }); // Only for o-ghep
+
+  const [priceMin, setPriceMin] = useState(() => {
+    const saved = sessionStorage.getItem(`price_min_${category}`);
+    return saved ? parseFloat(saved) : 0;
+  }); // Min price limit
+  const [priceMax, setPriceMax] = useState(() => {
+    const saved = sessionStorage.getItem(`price_max_${category}`);
+    return saved ? parseFloat(saved) : maxPriceLimit;
+  }); // Max price limit
+  const [sort, setSort] = useState(() => {
+    return sessionStorage.getItem(`sort_${category}`) || 'newest';
+  });
 
   // Landmark distance filter states
-  const [selectedLandmarkFilter, setSelectedLandmarkFilter] = useState('');
+  const [selectedLandmarkFilter, setSelectedLandmarkFilter] = useState(() => {
+    return sessionStorage.getItem(`selected_landmark_filter_${category}`) || '';
+  });
   const [showLandmarkModal, setShowLandmarkModal] = useState(false);
+
+  useEffect(() => {
+    sessionStorage.setItem(`city_${category}`, city);
+  }, [city, category]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`district_${category}`, district);
+  }, [district, category]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`room_type_${category}`, roomType);
+  }, [roomType, category]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`gender_${category}`, gender);
+  }, [gender, category]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`price_min_${category}`, priceMin);
+  }, [priceMin, category]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`price_max_${category}`, priceMax);
+  }, [priceMax, category]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`sort_${category}`, sort);
+  }, [sort, category]);
+
+  useEffect(() => {
+    sessionStorage.setItem(`selected_landmark_filter_${category}`, selectedLandmarkFilter);
+  }, [selectedLandmarkFilter, category]);
 
   // Helper formatting functions
   const formatPrice = (val) => {
@@ -384,7 +443,17 @@ const ListingView = ({
   };
 
   // Specific filters
-  const [selectedUniTag, setSelectedUniTag] = useState(null); // Filter by university tag
+  const [selectedUniTag, setSelectedUniTag] = useState(() => {
+    return sessionStorage.getItem(`selected_uni_tag_${category}`) || null;
+  }); // Filter by university tag
+
+  useEffect(() => {
+    if (selectedUniTag) {
+      sessionStorage.setItem(`selected_uni_tag_${category}`, selectedUniTag);
+    } else {
+      sessionStorage.removeItem(`selected_uni_tag_${category}`);
+    }
+  }, [selectedUniTag, category]);
   const [showUniList, setShowUniList] = useState(false); // Toggle university index view (image17)
   const [activeLandmarkType, setActiveLandmarkType] = useState('university');
 
@@ -415,7 +484,13 @@ const ListingView = ({
   const [showHistoryDropdown, setShowHistoryDropdown] = useState(false);
 
   // Sub-category tabs for o-ghep
-  const [oghepSubCategory, setOghepSubCategory] = useState('chung-cu'); // 'phong-tro' | 'chung-cu' | 'nha-nguyen-can'
+  const [oghepSubCategory, setOghepSubCategory] = useState(() => {
+    return sessionStorage.getItem(`oghep_sub_category_${category}`) || 'chung-cu';
+  }); // 'phong-tro' | 'chung-cu' | 'nha-nguyen-can'
+
+  useEffect(() => {
+    sessionStorage.setItem(`oghep_sub_category_${category}`, oghepSubCategory);
+  }, [oghepSubCategory, category]);
 
   // Pagination states
   const [listingPage, setListingPage] = useState(() => {
@@ -3048,7 +3123,7 @@ const getLandmarkTextMBKD = (room) => {
   if (room.id === 26 || room.id === '26') return "Gần ĐH Phenikaa, HV An Ninh";
   
   if (room.distances && room.distances.length > 0) {
-    const names = room.distances.slice(0, 2).map(d => d.landmark_name.replace('Đại học', 'ĐH').replace('Học viện', 'HV'));
+    const names = room.distances.slice(0, 2).map(d => d.landmark_name.replace('Đại học', 'ĐH').replace('Học viện', 'HV').replace('Bệnh viện', 'BV'));
     return `Gần ${names.join(', ')}`;
   }
   

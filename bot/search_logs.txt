@@ -1,0 +1,55 @@
+=== Searching keywords in listener.log ===
+[MSG] 4821092087160405160 (12a): 612/116/15 đê la thành hết ❌...
+[MSG] 8324134224549326794 (4a): Địa chỉ : Ngõ 418 Đê La Thành - Đống Đa
+[DEBUG_BUFFER] Adding text to buffer: '4a Địa chỉ : Ngõ 418 Đê La Thành - Đống Đa\n\nTrống '
+[DEBUG_BUFFER] Adding text to buffer: '9a HĐ 12T\n\n🛖Địa Chỉ : Ngõ 678 Đê La Thành , Đống Đ'
+🏢Địa chỉ : 319 Đê La Thành -...
+[DEBUG_BUFFER] Adding text to buffer: '2a1 🌷 - 12m Mã: 🏆 049\n\n🏢Địa chỉ : 319 Đê La Thành '
+[MSG] 2206089300911938258 (N34 CHDV): "NHƯỢNG HOMESTAY Ở ĐÊ LA THÀNH, BA ĐÌNH
+[DEBUG_BUFFER] Adding text to buffer: 'N34 CHDV "NHƯỢNG HOMESTAY Ở ĐÊ LA THÀNH, BA ĐÌNH\n-'
+[MSG] 2206089300911938258 (N34 CHDV): "NHƯỢNG HOMESTAY Ở ĐÊ LA THÀNH, BA ĐÌNH
+[DEBUG_BUFFER] Adding text to buffer: 'N34 CHDV "NHƯỢNG HOMESTAY Ở ĐÊ LA THÀNH, BA ĐÌNH\n-'
+[MSG] 1730416639802229324 (9a): 612  ĐÊ LA THÀNH FULL P ❌❌❌...
+[DEBUG_BUFFER] Adding text to buffer: '9a 612 ĐÊ LA THÀNH FULL P ❌❌❌'
+[MSG] 8324134224549326794 (4a): Địa chỉ : ngõ 612/50 Đê La Thành
+[DEBUG_BUFFER] Adding text to buffer: '4a Địa chỉ : ngõ 612/50 Đê La Thành\n(ngõ 112 Ngọc '
+🏢Cho thuê CCMN Địa chỉ: Ngõ 678 Đê La Thành...
+[DEBUG_BUFFER] Adding text to buffer: 'ND 🏢Cho thuê CCMN Địa chỉ: Ngõ 678 Đê La Thành - B'
+📰 Địa Chỉ: Ngõ 612 Đê La Thành...
+📰 Địa Chỉ: Ngõ 612 Đê La Thành...
+📰 Địa Chỉ: Ngõ 612 Đê La Thành...
+📰 Địa Chỉ: Ngõ 612 Đê La Thành...
+[DEBUG_BUFFER] Adding text to buffer: '10a 12th\nMã : Ts198\n\n🏡 Địa chỉ : 318 Đê La Thành -'
+[MSG] 2206089300911938258 (N34 CHDV): *Cho thuê nhà nguyên căn phố phúc xá,Ba đình,Hả Nộ...
+[DEBUG_BUFFER] Adding text to buffer: 'N34 CHDV *Cho thuê nhà nguyên căn phố phúc xá,Ba đ'
+[MSG] 6376924117457600048 (CHDV chọn lọc): CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, ...
+[DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phườ'
+[MSG] 6376924117457600048 (CHDV chọn lọc): CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, ...
+[DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phườ'
+[MSG] 8854918564912906669 (Chinh trần CHDV): CHDV / HOMESTAY ĐÊ LA THÀNH
+[DEBUG_BUFFER] Adding text to buffer: 'Chinh trần CHDV CHDV / HOMESTAY ĐÊ LA THÀNH\nNhà mặ'
+[MSG] 8854918564912906669 (Chinh trần CHDV): CHDV / HOMESTAY ĐÊ LA THÀNH
+[DEBUG_BUFFER] Adding text to buffer: 'Chinh trần CHDV CHDV / HOMESTAY ĐÊ LA THÀNH\nNhà mặ'
+[MSG] 2206089300911938258 (N34 CHDV): CHDV / HOMESTAY ĐÊ LA THÀNH
+[DEBUG_BUFFER] Adding text to buffer: 'N34 CHDV CHDV / HOMESTAY ĐÊ LA THÀNH\nNhà mặt tiền '
+[MSG] 2206089300911938258 (N34 CHDV): CHDV / HOMESTAY ĐÊ LA THÀNH
+[DEBUG_BUFFER] Adding text to buffer: 'N34 CHDV CHDV / HOMESTAY ĐÊ LA THÀNH\nNhà mặt tiền '
+=== Searching keywords in sender.log ===
+[ROUTING] Extracted Keywords: ['Đê La Thành']
+📰 Địa Chỉ: Ngõ 612 Đê La Thành
+[SAVE] Found keywords: ['Ba Đình', 'Đê La Thành']
+[ROUTING] Extracted Keywords: ['Đê La Thành']
+📰 Địa Chỉ: Ngõ 612 Đê La Thành
+[SAVE] Found keywords: ['Ba Đình', 'Đê La Thành']
+[ROUTING] Extracted Keywords: ['Đống Đa', 'Đê La Thành']
+🏡 Địa chỉ : 318 Đê La Thành - Đống Đa
+[SAVE] Found keywords: ['Đống Đa', 'Đê La Thành']
+[SAVE] Full text: N34 CHDV *Cho thuê nhà nguyên căn phố phúc xá,Ba đình,Hả Nội.
+☑️100m x 3tầng, ngõ thông chợ phúc xá...
+[SAVE] Found keywords: ['Long Biên', 'Ba Đình', 'Phúc Xá']
+[SAVE] Full text: CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, Hà Nội, cách đường Đê La Thành 80m
+[SAVE] Found keywords: ['Đê La Thành', 'Ô Chợ Dừa']
+[SAVE] Full text: Chinh trần CHDV CHDV / HOMESTAY ĐÊ LA THÀNH
+[SAVE] Found keywords: ['Đê La Thành']
+[ROUTING] Extracted Keywords: ['Đống Đa', 'Đê La Thành']
+[SAVE] Found keywords: ['Đống Đa', 'Đê La Thành']

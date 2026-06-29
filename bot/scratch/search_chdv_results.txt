@@ -1,0 +1,336 @@
+--- MATCH AT LINE 646 ---
+000644:   [Input] ✓ Found: AGP HOME- NGUỒN PHÒNG → agp
+000645:   [Input] ✓ Found: PHÒNG TỐT HN - Mã A - Nhà Mới → phongtot5
+000646:>> [Input] ✓ Found: Nguồn Chdv Chọn Lọc → CHDV chọn lọc
+000647:   [Input] ✓ Found: CTV Phòng trọ & CCMN sinh viên Hà Nội → ctv
+000648:   [Input] ✓ Found: Dragon.Nguồn Hàng → dragon
+000649:   [Input] ✓ Found: PHÒNG TỐT HN - DƯỚI 5 TR → phongtot1
+000650:   [Input] ✓ Found: 🐎TNR HOME - 2N + 3N + 4N + PENTHOUSE → 1a3
+000651:   [Input] ✓ Found: NGUỒN PHÒNG CD 😍😍😍 → 4a
+000652:   [Input] ✓ Found: 🏆TL21House🏆- NGUỒN TỔNG → 2a1
+000653:   [Input] ✓ Found: KT HOMES 🐣 → KT
+--------------------------------------------------
+--- MATCH AT LINE 2433 ---
+002431:   [Input] ✓ Found: AGP HOME- NGUỒN PHÒNG → agp
+002432:   [Input] ✓ Found: PHÒNG TỐT HN - Mã A - Nhà Mới → phongtot5
+002433:>> [Input] ✓ Found: Nguồn Chdv Chọn Lọc → CHDV chọn lọc
+002434:   [Input] ✓ Found: CTV Phòng trọ & CCMN sinh viên Hà Nội → ctv
+002435:   [Input] ✓ Found: Dragon.Nguồn Hàng → dragon
+002436:   [Input] ✓ Found: PHÒNG TỐT HN - DƯỚI 5 TR → phongtot1
+002437:   [Input] ✓ Found: 🐎TNR HOME - 2N + 3N + 4N + PENTHOUSE → 1a3
+002438:   [Input] ✓ Found: NGUỒN PHÒNG CD 😍😍😍 → 4a
+002439:   [Input] ✓ Found: 🏆TL21House🏆- NGUỒN TỔNG → 2a1
+002440:   [Input] ✓ Found: KT HOMES 🐣 → KT
+--------------------------------------------------
+--- MATCH AT LINE 3361 ---
+003359:   [Input] ✓ Found: AGP HOME- NGUỒN PHÒNG → agp
+003360:   [Input] ✓ Found: PHÒNG TỐT HN - Mã A - Nhà Mới → phongtot5
+003361:>> [Input] ✓ Found: Nguồn Chdv Chọn Lọc → CHDV chọn lọc
+003362:   [Input] ✓ Found: CTV Phòng trọ & CCMN sinh viên Hà Nội → ctv
+003363:   [Input] ✓ Found: Dragon.Nguồn Hàng → dragon
+003364:   [Input] ✓ Found: PHÒNG TỐT HN - DƯỚI 5 TR → phongtot1
+003365:   [Input] ✓ Found: 🐎TNR HOME - 2N + 3N + 4N + PENTHOUSE → 1a3
+003366:   [Input] ✓ Found: NGUỒN PHÒNG CD 😍😍😍 → 4a
+003367:   [Input] ✓ Found: 🏆TL21House🏆- NGUỒN TỔNG → 2a1
+003368:   [Input] ✓ Found: KT HOMES 🐣 → KT
+--------------------------------------------------
+--- MATCH AT LINE 27927 ---
+027925:   [Input] ✓ Found: AGP HOME- NGUỒN PHÒNG → agp
+027926:   [Input] ✓ Found: PHÒNG TỐT HN - Mã A - Nhà Mới → phongtot5
+027927:>> [Input] ✓ Found: Nguồn Chdv Chọn Lọc → CHDV chọn lọc
+027928:   [Input] ✓ Found: CTV Phòng trọ & CCMN sinh viên Hà Nội → ctv
+027929:   [Input] ✓ Found: Dragon.Nguồn Hàng → dragon
+027930:   [Input] ✓ Found: PHÒNG TỐT HN - DƯỚI 5 TR → phongtot1
+027931:   [Input] ✓ Found: 🐎TNR HOME - 2N + 3N + 4N + PENTHOUSE → 1a3
+027932:   [Input] ✓ Found: NGUỒN PHÒNG CD 😍😍😍 → 4a
+027933:   [Input] ✓ Found: 🏆TL21House🏆- NGUỒN TỔNG → 2a1
+027934:   [Input] ✓ Found: KT HOMES 🐣 → KT
+--------------------------------------------------
+--- MATCH AT LINE 28617 ---
+028615:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+028616:   [HEARTBEAT] Listener running. Buffers: 3. Uptime: 0.4h
+028617:>> [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV ngã tư sở
+028618:   - TX DT 60m, 4 Tầng, MT 6m, chia 2...
+028619:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV ngã tư sở\n- TX DT 60m, 4 Tầng, '
+028620:   [MSG] 5607388022277948830 (2a1): Message(rType=20, rMsg=[{'cMsgID': 1782014913306, ...
+028621:   [MSG] 3663272068970134937 (family): Message(title='', description='', href='https://ph...
+028622:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+028623:   [MSG] 3663272068970134937 (family): Message(title='', description='', href='https://ph...
+028624:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+--------------------------------------------------
+--- MATCH AT LINE 28619 ---
+028617:   [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV ngã tư sở
+028618:   - TX DT 60m, 4 Tầng, MT 6m, chia 2...
+028619:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV ngã tư sở\n- TX DT 60m, 4 Tầng, '
+028620:   [MSG] 5607388022277948830 (2a1): Message(rType=20, rMsg=[{'cMsgID': 1782014913306, ...
+028621:   [MSG] 3663272068970134937 (family): Message(title='', description='', href='https://ph...
+028622:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+028623:   [MSG] 3663272068970134937 (family): Message(title='', description='', href='https://ph...
+028624:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+028625:   [MSG] 3663272068970134937 (family): Message(title='', description='', href='https://ph...
+028626:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+--------------------------------------------------
+--- MATCH AT LINE 31215 ---
+031213:   [SESSION] Orphan video (chưa có text). Bỏ qua.
+031214:   [HEARTBEAT] Listener running. Buffers: 2. Uptime: 2.2h
+031215:>> [MSG] 6376924117457600048 (CHDV chọn lọc): CCMN MỄ TRÌ THƯỢNG
+031216:   Ô tải đỗ cửa , PCCC đầy đủ , h...
+031217:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CCMN MỄ TRÌ THƯỢNG\nÔ tải đỗ cửa , PC'
+031218:   [MSG] 4821092087160405160 (12a): 🌹30%.    HD 12 tháng.    Mã 607
+031219:   
+031220:   🏢207 Nguyễn Ngọc ...
+031221:   [FIX-LISTENER] Timeline reordered for 12a. Reply → top, rest preserved in order.
+031222:   [QUEUE] ✓ Enqueued 1 sessions.
+--------------------------------------------------
+--- MATCH AT LINE 31217 ---
+031215:   [MSG] 6376924117457600048 (CHDV chọn lọc): CCMN MỄ TRÌ THƯỢNG
+031216:   Ô tải đỗ cửa , PCCC đầy đủ , h...
+031217:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CCMN MỄ TRÌ THƯỢNG\nÔ tải đỗ cửa , PC'
+031218:   [MSG] 4821092087160405160 (12a): 🌹30%.    HD 12 tháng.    Mã 607
+031219:   
+031220:   🏢207 Nguyễn Ngọc ...
+031221:   [FIX-LISTENER] Timeline reordered for 12a. Reply → top, rest preserved in order.
+031222:   [QUEUE] ✓ Enqueued 1 sessions.
+031223:   [MSG] 7822574330289535680 (việt quốc 2): Cho thuê căn góc 3 ngủ view hồ, tâng thâp HH3C, đồ...
+031224:   [DEBUG_BUFFER] Adding text to buffer: 'việt quốc 2 Cho thuê căn góc 3 ngủ view hồ, tâng t'
+--------------------------------------------------
+--- MATCH AT LINE 34106 ---
+034104:   [MSG] 7083976060502766592 (hhouse1): Message(title='', description='', href='https://ph...
+034105:   [MSG] 7083976060502766592 (hhouse1): Message(title='', description='', href='https://ph...
+034106:>> [MSG] 6376924117457600048 (CHDV chọn lọc): 🔥🔥🔥Chắc cả Hà Nội không tìm được căn thứ 2 Thanh X...
+034107:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc 🔥🔥🔥Chắc cả Hà Nội không tìm được căn'
+034108:   [MSG] 726549256284292698 (1a2): 🌺 Hh30% 12th              Mã: A1244
+034109:   
+034110:   🏠 Địa chỉ: 10...
+034111:   [SESSION] ⏰ Idle 115s → đóng session cũ của 1a2
+034112:   [FIX-LISTENER] Prepending symbol 1a2 to text
+034113:   [DEBUG_BUFFER] Adding text to buffer: '1a Hh 12th Mã: A1244\n\n🏠 Địa chỉ: 105 Trung Phụng -'
+--------------------------------------------------
+--- MATCH AT LINE 34107 ---
+034105:   [MSG] 7083976060502766592 (hhouse1): Message(title='', description='', href='https://ph...
+034106:   [MSG] 6376924117457600048 (CHDV chọn lọc): 🔥🔥🔥Chắc cả Hà Nội không tìm được căn thứ 2 Thanh X...
+034107:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc 🔥🔥🔥Chắc cả Hà Nội không tìm được căn'
+034108:   [MSG] 726549256284292698 (1a2): 🌺 Hh30% 12th              Mã: A1244
+034109:   
+034110:   🏠 Địa chỉ: 10...
+034111:   [SESSION] ⏰ Idle 115s → đóng session cũ của 1a2
+034112:   [FIX-LISTENER] Prepending symbol 1a2 to text
+034113:   [DEBUG_BUFFER] Adding text to buffer: '1a Hh 12th Mã: A1244\n\n🏠 Địa chỉ: 105 Trung Phụng -'
+034114:   [QUEUE] ✓ Enqueued 1 sessions.
+--------------------------------------------------
+--- MATCH AT LINE 34160 ---
+034158:   [MSG] 7918125874218096301 (2a2): Message(title='', description='', href='https://ph...
+034159:   [HEARTBEAT] Listener running. Buffers: 8. Uptime: 3.7h
+034160:>> [MSG] 6376924117457600048 (CHDV chọn lọc): Message(rType=5, rMsg=[{'cMsgID': 1782202418966, '...
+034161:   [QUEUE] ✓ Enqueued 1 sessions.
+034162:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 3.7h
+034163:   [MSG] 4821092087160405160 (12a): Message(title='', description='', href='https://ph...
+034164:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+034165:   [MSG] 4821092087160405160 (12a): Message(title='', description='', href='https://ph...
+034166:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+034167:   [MSG] 4821092087160405160 (12a): Message(title='', description='', href='https://ph...
+--------------------------------------------------
+--- MATCH AT LINE 51656 ---
+051654:   [Input] ✓ Found: AGP HOME- NGUỒN PHÒNG → agp
+051655:   [Input] ✓ Found: PHÒNG TỐT HN - Mã A - Nhà Mới → phongtot5
+051656:>> [Input] ✓ Found: Nguồn Chdv Chọn Lọc → CHDV chọn lọc
+051657:   [Input] ✓ Found: CTV Phòng trọ & CCMN sinh viên Hà Nội → ctv
+051658:   [Input] ✓ Found: Dragon.Nguồn Hàng → dragon
+051659:   [Input] ✓ Found: PHÒNG TỐT HN - DƯỚI 5 TR → phongtot1
+051660:   [Input] ✓ Found: 🐎TNR HOME - 2N + 3N + 4N + PENTHOUSE → 1a3
+051661:   [Input] ✓ Found: NGUỒN PHÒNG CD 😍😍😍 → 4a
+051662:   [Input] ✓ Found: 🏆TL21House🏆- NGUỒN TỔNG → 2a1
+051663:   [Input] ✓ Found: KT HOMES 🐣 → KT
+--------------------------------------------------
+--- MATCH AT LINE 52001 ---
+051999:   [Input] ✓ Found: AGP HOME- NGUỒN PHÒNG → agp
+052000:   [Input] ✓ Found: PHÒNG TỐT HN - Mã A - Nhà Mới → phongtot5
+052001:>> [Input] ✓ Found: Nguồn Chdv Chọn Lọc → CHDV chọn lọc
+052002:   [Input] ✓ Found: CTV Phòng trọ & CCMN sinh viên Hà Nội → ctv
+052003:   [Input] ✓ Found: Dragon.Nguồn Hàng → dragon
+052004:   [Input] ✓ Found: PHÒNG TỐT HN - DƯỚI 5 TR → phongtot1
+052005:   [Input] ✓ Found: 🐎TNR HOME - 2N + 3N + 4N + PENTHOUSE → 1a3
+052006:   [Input] ✓ Found: NGUỒN PHÒNG CD 😍😍😍 → 4a
+052007:   [Input] ✓ Found: 🏆TL21House🏆- NGUỒN TỔNG → 2a1
+052008:   [Input] ✓ Found: KT HOMES 🐣 → KT
+--------------------------------------------------
+--- MATCH AT LINE 52089 ---
+052087:   [Input] ✓ Found: AGP HOME- NGUỒN PHÒNG → agp
+052088:   [Input] ✓ Found: PHÒNG TỐT HN - Mã A - Nhà Mới → phongtot5
+052089:>> [Input] ✓ Found: Nguồn Chdv Chọn Lọc → CHDV chọn lọc
+052090:   [Input] ✓ Found: CTV Phòng trọ & CCMN sinh viên Hà Nội → ctv
+052091:   [Input] ✓ Found: Dragon.Nguồn Hàng → dragon
+052092:   [Input] ✓ Found: PHÒNG TỐT HN - DƯỚI 5 TR → phongtot1
+052093:   [Input] ✓ Found: 🐎TNR HOME - 2N + 3N + 4N + PENTHOUSE → 1a3
+052094:   [Input] ✓ Found: NGUỒN PHÒNG CD 😍😍😍 → 4a
+052095:   [Input] ✓ Found: 🏆TL21House🏆- NGUỒN TỔNG → 2a1
+052096:   [Input] ✓ Found: KT HOMES 🐣 → KT
+--------------------------------------------------
+--- MATCH AT LINE 56032 ---
+056030:   [MSG] 3663272068970134937 (family): Message(title='', description='', href='https://ph...
+056031:   [MSG] 3663272068970134937 (family): Message(title='', description='', href='https://ph...
+056032:>> [MSG] 6376924117457600048 (CHDV chọn lọc): Chdv đình thôn thiên hiền
+056033:   Diện tích: 50m2 x  5 tầ...
+056034:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc Chdv đình thôn thiên hiền\nDiện tích:'
+056035:   [MSG] 2206089300911938258 (N34 CHDV): #dongda       CHDV- HOMTAY
+056036:   Cho thuê tại mặt ngõ 31...
+056037:   [DEBUG_BUFFER] Adding text to buffer: 'N34 CHDV #dongda CHDV- HOMTAY\nCho thuê tại mặt ngõ'
+056038:   [LISTENER] Error in onMessage: [Errno 13] Permission denied: 'C:\\Users\\Administrator\\Downloads\\80lankh\\bot\\bot_service_status.json.tmp'
+056039:   [MSG] 2206089300911938258 (N34 CHDV): Message(title='', description='', href='https://ph...
+--------------------------------------------------
+--- MATCH AT LINE 56034 ---
+056032:   [MSG] 6376924117457600048 (CHDV chọn lọc): Chdv đình thôn thiên hiền
+056033:   Diện tích: 50m2 x  5 tầ...
+056034:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc Chdv đình thôn thiên hiền\nDiện tích:'
+056035:   [MSG] 2206089300911938258 (N34 CHDV): #dongda       CHDV- HOMTAY
+056036:   Cho thuê tại mặt ngõ 31...
+056037:   [DEBUG_BUFFER] Adding text to buffer: 'N34 CHDV #dongda CHDV- HOMTAY\nCho thuê tại mặt ngõ'
+056038:   [LISTENER] Error in onMessage: [Errno 13] Permission denied: 'C:\\Users\\Administrator\\Downloads\\80lankh\\bot\\bot_service_status.json.tmp'
+056039:   [MSG] 2206089300911938258 (N34 CHDV): Message(title='', description='', href='https://ph...
+056040:   [MSG] 2206089300911938258 (N34 CHDV): Message(title='', description='', href='https://ph...
+056041:   [MSG] 2206089300911938258 (N34 CHDV): Message(title='', description='', href='https://ph...
+--------------------------------------------------
+--- MATCH AT LINE 56606 ---
+056604:   [DEBUG_BUFFER] Adding text to buffer: 'family 📰 Mã Toà Nhà: F620\n📰 Địa Chỉ: Ngõ 23 Đức Di'
+056605:   [QUEUE] ✓ Enqueued 1 sessions.
+056606:>> [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV LÊ TRỌNG TẤN TX
+056607:   Diện tích: 45m2 x 5 tầng , th...
+056608:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV LÊ TRỌNG TẤN TX\nDiện tích: 45m2'
+056609:   [HEARTBEAT] Listener running. Buffers: 7. Uptime: 1.6h
+056610:   [FIX-LISTENER] Prepending symbol 1a1 to text
+056611:   [QUEUE] ✓ Enqueued 1 sessions.
+056612:   [FIX-LISTENER] Prepending symbol 1a2 to text
+056613:   [QUEUE] ✓ Enqueued 1 sessions.
+--------------------------------------------------
+--- MATCH AT LINE 56608 ---
+056606:   [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV LÊ TRỌNG TẤN TX
+056607:   Diện tích: 45m2 x 5 tầng , th...
+056608:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV LÊ TRỌNG TẤN TX\nDiện tích: 45m2'
+056609:   [HEARTBEAT] Listener running. Buffers: 7. Uptime: 1.6h
+056610:   [FIX-LISTENER] Prepending symbol 1a1 to text
+056611:   [QUEUE] ✓ Enqueued 1 sessions.
+056612:   [FIX-LISTENER] Prepending symbol 1a2 to text
+056613:   [QUEUE] ✓ Enqueued 1 sessions.
+056614:   [MSG] 8324134224549326794 (4a): Tầng 6 : 4tr7...
+056615:   [DEBUG_BUFFER] Adding text to buffer: 'Tầng 6 : 4tr7'
+--------------------------------------------------
+--- MATCH AT LINE 58859 ---
+058857:   [MSG] 1551387869847505864 (dragon): Message(title='', description='', href='https://ph...
+058858:   [MSG] 1551387869847505864 (dragon): Message(title='', description='', href='https://ph...
+058859:>> [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV Cầu Giấy
+058860:   100mx7 tầng 6 tầng 1 tum.
+058861:   Tầng 1 - ...
+058862:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV Cầu Giấy\n100mx7 tầng 6 tầng 1 t'
+058863:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058864:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 2.3h
+058865:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058866:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+--------------------------------------------------
+--- MATCH AT LINE 58862 ---
+058860:   100mx7 tầng 6 tầng 1 tum.
+058861:   Tầng 1 - ...
+058862:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV Cầu Giấy\n100mx7 tầng 6 tầng 1 t'
+058863:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058864:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 2.3h
+058865:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058866:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058867:   [MSG] 1551387869847505864 (dragon): 📰 Mã Toà Nhà: F630
+058868:   📰 Địa Chỉ: Ngõ 32 Phùng Khoang...
+058869:   [SESSION] Listing mới + media cũ → đóng session cũ của dragon
+--------------------------------------------------
+--- MATCH AT LINE 58863 ---
+058861:   Tầng 1 - ...
+058862:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV Cầu Giấy\n100mx7 tầng 6 tầng 1 t'
+058863:>> [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058864:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 2.3h
+058865:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058866:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058867:   [MSG] 1551387869847505864 (dragon): 📰 Mã Toà Nhà: F630
+058868:   📰 Địa Chỉ: Ngõ 32 Phùng Khoang...
+058869:   [SESSION] Listing mới + media cũ → đóng session cũ của dragon
+058870:   [DEBUG_BUFFER] Adding text to buffer: 'dragon 📰 Mã Toà Nhà: F630\n📰 Địa Chỉ: Ngõ 32 Phùng '
+--------------------------------------------------
+--- MATCH AT LINE 58865 ---
+058863:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058864:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 2.3h
+058865:>> [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058866:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058867:   [MSG] 1551387869847505864 (dragon): 📰 Mã Toà Nhà: F630
+058868:   📰 Địa Chỉ: Ngõ 32 Phùng Khoang...
+058869:   [SESSION] Listing mới + media cũ → đóng session cũ của dragon
+058870:   [DEBUG_BUFFER] Adding text to buffer: 'dragon 📰 Mã Toà Nhà: F630\n📰 Địa Chỉ: Ngõ 32 Phùng '
+058871:   [QUEUE] ✓ Enqueued 1 sessions.
+058872:   [MSG] 1551387869847505864 (dragon): Message(title='', description='', href='https://ph...
+--------------------------------------------------
+--- MATCH AT LINE 58866 ---
+058864:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 2.3h
+058865:   [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058866:>> [MSG] 6376924117457600048 (CHDV chọn lọc): Message(title='', description='', href='https://ph...
+058867:   [MSG] 1551387869847505864 (dragon): 📰 Mã Toà Nhà: F630
+058868:   📰 Địa Chỉ: Ngõ 32 Phùng Khoang...
+058869:   [SESSION] Listing mới + media cũ → đóng session cũ của dragon
+058870:   [DEBUG_BUFFER] Adding text to buffer: 'dragon 📰 Mã Toà Nhà: F630\n📰 Địa Chỉ: Ngõ 32 Phùng '
+058871:   [QUEUE] ✓ Enqueued 1 sessions.
+058872:   [MSG] 1551387869847505864 (dragon): Message(title='', description='', href='https://ph...
+058873:   [MSG] 1551387869847505864 (dragon): Message(title='', description='', href='https://ph...
+--------------------------------------------------
+--- MATCH AT LINE 61154 ---
+061152:   [DEBUG_BUFFER] Adding text to buffer: '7a /-rose 12th\n🏠TPVT\n🏡Cho thuê phòng Studio ngõ 87'
+061153:   [QUEUE] ✓ Enqueued 1 sessions.
+061154:>> [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, ...
+061155:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phườ'
+061156:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061157:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061158:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061159:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061160:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 3.9h
+061161:   [MSG] 4821092087160405160 (12a): Message(title='', description='', href='https://ph...
+--------------------------------------------------
+--- MATCH AT LINE 61155 ---
+061153:   [QUEUE] ✓ Enqueued 1 sessions.
+061154:   [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, ...
+061155:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phườ'
+061156:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061157:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061158:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061159:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://f6...
+061160:   [HEARTBEAT] Listener running. Buffers: 5. Uptime: 3.9h
+061161:   [MSG] 4821092087160405160 (12a): Message(title='', description='', href='https://ph...
+061162:   [SESSION] Orphan photo (chưa có text). Bỏ qua.
+--------------------------------------------------
+--- MATCH AT LINE 61210 ---
+061208:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://ph...
+061209:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://vi...
+061210:>> [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, ...
+061211:   [SESSION] Listing mới + text cũ → đóng session cũ của CHDV chọn lọc
+061212:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phườ'
+061213:   [QUEUE] ✓ Enqueued 1 sessions.
+061214:   [HEARTBEAT] Listener running. Buffers: 3. Uptime: 4.0h
+061215:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7977776323267, 'cMsgID': ...
+061216:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7976913809556, 'cMsgID': ...
+061217:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7977465657864, 'cMsgID': ...
+--------------------------------------------------
+--- MATCH AT LINE 61211 ---
+061209:   [MSG] 8693569409782645994 (7a): Message(title='', description='', href='https://vi...
+061210:   [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, ...
+061211:>> [SESSION] Listing mới + text cũ → đóng session cũ của CHDV chọn lọc
+061212:   [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phườ'
+061213:   [QUEUE] ✓ Enqueued 1 sessions.
+061214:   [HEARTBEAT] Listener running. Buffers: 3. Uptime: 4.0h
+061215:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7977776323267, 'cMsgID': ...
+061216:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7976913809556, 'cMsgID': ...
+061217:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7977465657864, 'cMsgID': ...
+061218:   [HEARTBEAT] Listener running. Buffers: 2. Uptime: 4.0h
+--------------------------------------------------
+--- MATCH AT LINE 61212 ---
+061210:   [MSG] 6376924117457600048 (CHDV chọn lọc): CHDV- HOMTAY đường Đê La Thành, phường Ô Chợ Dừa, ...
+061211:   [SESSION] Listing mới + text cũ → đóng session cũ của CHDV chọn lọc
+061212:>> [DEBUG_BUFFER] Adding text to buffer: 'CHDV chọn lọc CHDV- HOMTAY đường Đê La Thành, phườ'
+061213:   [QUEUE] ✓ Enqueued 1 sessions.
+061214:   [HEARTBEAT] Listener running. Buffers: 3. Uptime: 4.0h
+061215:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7977776323267, 'cMsgID': ...
+061216:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7976913809556, 'cMsgID': ...
+061217:   [MSG] 5607388022277948830 (2a1): Message(rMsg=[{'gMsgID': 7977465657864, 'cMsgID': ...
+061218:   [HEARTBEAT] Listener running. Buffers: 2. Uptime: 4.0h
+061219:   [MSG] 4821092087160405160 (12a): 🌹30%        HD 6 tháng.     Mã 230.
+--------------------------------------------------
