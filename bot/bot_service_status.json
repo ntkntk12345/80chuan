@@ -3,19 +3,19 @@
     "running": true,
     "state": "error",
     "lastHeartbeatAt": null,
-    "lastWorkAt": "2026-06-29T13:01:06Z",
+    "lastWorkAt": "2026-06-30T18:20:55Z",
     "restartCount": 0,
-    "lastError": "[WinError 32] The process cannot access the file because it is being used by another process: 'C:\\\\Users\\\\Administrator\\\\Downloads\\\\80lankh\\\\bot\\\\bot_service_status.json.tmp' -> 'C:\\\\Users\\\\Administrator\\\\Downloads\\\\80lankh\\\\bot\\\\bot_service_status.json'",
-    "updatedAt": "2026-06-29T13:01:06Z"
+    "lastError": "[Errno 13] Permission denied: 'C:\\\\Users\\\\Administrator\\\\Downloads\\\\80lankh\\\\bot\\\\bot_service_status.json.tmp'",
+    "updatedAt": "2026-06-30T18:20:55Z"
   },
   "sender": {
     "running": false,
     "state": "stopped",
     "lastHeartbeatAt": null,
-    "lastWorkAt": "2026-06-29T13:01:30Z",
+    "lastWorkAt": "2026-06-30T21:00:23Z",
     "restartCount": 0,
     "lastError": null,
-    "updatedAt": "2026-06-29T13:01:30Z"
+    "updatedAt": "2026-06-30T21:00:23Z"
   },
-  "updatedAt": "2026-06-29T13:01:30Z"
+  "updatedAt": "2026-06-30T21:00:23Z"
 }
